@@ -941,6 +941,9 @@ body{background:#fff;color:#171717}
   var form=document.querySelector('form.form');
   if(!form)return;
   var ids=['inspiration1','inspiration2','inspiration3'];
+  // Les anciens champs d’inspiration ne sont plus présents dans les trois nouveaux formulaires.
+  // Ne pas laisser cette ancienne fonction interrompre l’animation d’accueil.
+  if(!ids.every(function(id){return document.getElementById(id);}))return;
   var error=document.getElementById('inspirationError');
   function updatePreview(index){
     var input=document.getElementById(ids[index]);
