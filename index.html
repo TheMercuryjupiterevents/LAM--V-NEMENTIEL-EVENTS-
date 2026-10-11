@@ -339,6 +339,37 @@ body{background:#fff;color:#171717}
 @media(max-width:700px){.inspiration-card>img{height:190px}.quick-tools-grid{grid-template-columns:1fr 1fr}.client-inspiration-upload{padding:16px}}
 @media(max-width:420px){.quick-tools-grid{grid-template-columns:1fr}}
 
+
+/* Pinterest-style decoration board */
+.decoration-builder-section{border:1px solid rgba(18,51,107,.15);border-radius:14px;padding:clamp(16px,3vw,28px);margin:24px 0;background:linear-gradient(135deg,#fff 0%,#f4f8ff 100%)}
+.decoration-builder-section h4{margin:20px 0 12px;color:#12336b}
+.decoration-builder-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.8fr);gap:24px;align-items:start}
+.decoration-choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.decoration-choice{display:flex;flex-direction:column;gap:8px;border:1px solid #d8dfeb;background:#fff;border-radius:10px;padding:8px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.decoration-choice:has(input:checked){border:2px solid #c5a04a;box-shadow:0 0 0 2px rgba(197,160,74,.13)}
+.decoration-choice input{align-self:flex-start;accent-color:#d71920}
+.decoration-choice img{width:100%;height:112px;object-fit:cover;border-radius:7px;background:#e9eef6}
+.decoration-choice span{font-size:.88rem;line-height:1.4;font-weight:600;color:#12336b}
+.decoration-pill-options{display:flex;flex-wrap:wrap;gap:8px}
+.decoration-pill-options label{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #d8dfeb;border-radius:30px;background:#fff;font-size:.88rem}
+.decoration-pill-options input{accent-color:#d71920}
+.decoration-board-panel{position:sticky;top:18px;background:#fff;border:1px solid #d8dfeb;border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(18,51,107,.08)}
+.decoration-board-header h4{margin:4px 0 5px;font-size:1.3rem}
+.decoration-board{min-height:280px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;border-radius:10px;background:#f7f2e9;border:1px dashed #c5a04a}
+.board-empty{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 12px;color:#12336b}
+.board-empty span{font-size:2.2rem;color:#c5a04a}
+.board-empty strong{margin:8px 0}
+.board-empty p{font-size:.85rem;line-height:1.5}
+.board-tile{position:relative;min-height:105px;border-radius:8px;overflow:hidden;background:#e5ecf6}
+.board-tile img{width:100%;height:100%;min-height:105px;position:absolute;inset:0;object-fit:cover}
+.board-tile:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.78))}
+.board-tile span{position:absolute;z-index:1;bottom:8px;left:8px;right:8px;color:#fff;font-size:.75rem;font-weight:700;line-height:1.3}
+.board-summary{margin:14px 0;color:#12336b}
+.board-summary p{font-size:.88rem;line-height:1.6}
+.decoration-board-panel>.btn{width:100%;margin:4px 0 10px}
+@media(max-width:900px){.decoration-builder-grid{grid-template-columns:1fr}.decoration-board-panel{position:static}.decoration-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.decoration-choice-grid{grid-template-columns:1fr 1fr;gap:8px}.decoration-choice img{height:95px}.decoration-choice span{font-size:.8rem}.decoration-board{min-height:230px}}
+
 </style>
 </head>
 <body>
@@ -720,6 +751,52 @@ body{background:#fff;color:#171717}
 <div class="field full"><label for="special">Demandes particulières</label><textarea id="special" name="Demandes particulières"></textarea></div>
 </div></div>
 
+
+
+<div class="form-section decoration-builder-section" id="decoration-builder">
+  <h3>05 — CRÉEZ VOTRE DÉCOR COMME SUR PINTEREST</h3>
+  <p class="small">Choisissez les éléments que vous aimez pour composer votre propre idée de décoration : arche de ballons, mur de fond, fleurs, table, lumières et accessoires. Vous pouvez sélectionner plusieurs options, visualiser votre tableau et joindre vos propres photos juste après.</p>
+  <div class="decoration-builder-grid">
+    <div class="decoration-picker">
+      <h4>1. Quel type de décoration souhaitez-vous ?</h4>
+      <div class="decoration-choice-grid">
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Arche de ballons organique"><img loading="lazy" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500&q=75" alt="Inspiration de fête avec ballons"><span>Arche de ballons organique</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Mur de ballons / backdrop"><img loading="lazy" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=500&q=75" alt="Inspiration de fond décoratif de fête"><span>Mur de ballons / backdrop</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Ballons au plafond"><img loading="lazy" src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=75" alt="Inspiration de décoration de fête"><span>Ballons au plafond</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Colonnes et bouquets de ballons"><img loading="lazy" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=500&q=75" alt="Inspiration de table et décoration de réception"><span>Colonnes et bouquets de ballons</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Décoration florale"><img loading="lazy" src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=500&q=75" alt="Inspiration florale pour événement"><span>Décoration florale</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Table d’honneur et art de la table"><img loading="lazy" src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=500&q=75" alt="Inspiration de table de réception"><span>Table d’honneur & art de la table</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Rideaux et drapés"><img loading="lazy" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=500&q=75" alt="Inspiration de salle décorée"><span>Rideaux et drapés</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Lumières et néons"><img loading="lazy" src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=500&q=75" alt="Inspiration de mise en lumière"><span>Lumières & néons</span></label>
+        <label class="decoration-choice"><input type="checkbox" name="Décor souhaité[]" value="Décor personnalisé / thème sur mesure"><img loading="lazy" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=500&q=75" alt="Inspiration de décoration personnalisée"><span>Décor personnalisé / sur mesure</span></label>
+      </div>
+      <h4>2. Choisissez la forme de vos ballons</h4>
+      <div class="decoration-pill-options">
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons ronds classiques"> Ronds classiques</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons chromés / métallisés"> Chromés / métallisés</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons transparents avec confettis"> Transparents avec confettis</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons géants"> Géants</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons chiffres"> Chiffres</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons lettres"> Lettres</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons en forme de cœur / étoile"> Cœur / étoile</label>
+        <label><input type="checkbox" name="Formes de ballons[]" value="Ballons personnalisés avec texte"> Personnalisés avec texte</label>
+      </div>
+      <h4>3. Palette et finition</h4>
+      <div class="field"><label for="balloonPalette">Couleurs des ballons</label><input id="balloonPalette" name="Couleurs spécifiques des ballons" placeholder="Ex. bleu cobalt, bleu ciel, blanc et doré"></div>
+      <div class="field"><label for="balloonFinish">Finition préférée</label><select id="balloonFinish" name="Finition des ballons"><option value="">Choisir une finition</option><option>Mat</option><option>Brillant</option><option>Chrome / métallisé</option><option>Transparent</option><option>Mélange de finitions</option><option>Je laisse l’équipe me conseiller</option></select></div>
+      <div class="field"><label for="decorationNotes">Détails supplémentaires</label><textarea id="decorationNotes" name="Détails du décor souhaité" rows="3" placeholder="Ex. arche asymétrique derrière la table du gâteau, nom en néon, fleurs sur les côtés…"></textarea></div>
+    </div>
+    <aside class="decoration-board-panel">
+      <div class="decoration-board-header"><span class="eyebrow">Votre création</span><h4>Mon tableau déco</h4><p class="small">Votre sélection s’affichera ici en direct.</p></div>
+      <div id="decorationBoard" class="decoration-board" aria-live="polite">
+        <div class="board-empty"><span>✧</span><strong>Votre événement, votre style</strong><p>Sélectionnez les éléments qui vous inspirent pour construire votre tableau.</p></div>
+      </div>
+      <div class="board-summary"><strong>Votre sélection</strong><p id="decorationBoardSummary">Aucun élément sélectionné pour le moment.</p></div>
+      <button type="button" class="btn secondary" id="clearDecorationBoard">Effacer ma sélection</button>
+      <p class="small">Ce tableau est une prévisualisation d’idées, pas une maquette 3D ni une garantie de disponibilité du matériel.</p>
+    </aside>
+  </div>
+</div>
 
 <div class="form-section"><h3>05 bis — Photos d’inspiration</h3>
 <p class="small">Vous avez vu une décoration, un gâteau, une mise en scène ou un événement qui vous plaît ? Ajoutez jusqu’à 3 photos pour nous montrer le style que vous souhaitez. Les images seront jointes à votre demande par e-mail. Taille totale maximale : 10 Mo.</p>
@@ -1301,6 +1378,60 @@ body{background:#fff;color:#171717}
     img.src=oldUrl;name.textContent=chosen.name;wrap.hidden=false;
     msg.textContent='Aperçu prêt. Cette photo reste sur votre appareil et ne sera pas jointe au formulaire automatiquement.';
   });
+})();
+</script>
+<script id="decoration-board-script">
+(function(){
+  var board=document.getElementById('decorationBoard');
+  var summary=document.getElementById('decorationBoardSummary');
+  var form=document.querySelector('form.form');
+  if(!board||!summary||!form)return;
+  var groups=['Décor souhaité[]','Formes de ballons[]'];
+  var sampleImages={
+    'Arche de ballons organique':'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500&q=75',
+    'Mur de ballons / backdrop':'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=500&q=75',
+    'Ballons au plafond':'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=500&q=75',
+    'Colonnes et bouquets de ballons':'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=500&q=75',
+    'Décoration florale':'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=500&q=75',
+    'Table d’honneur et art de la table':'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=500&q=75',
+    'Rideaux et drapés':'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=500&q=75',
+    'Lumières et néons':'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=500&q=75',
+    'Décor personnalisé / thème sur mesure':'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=500&q=75'
+  };
+  function chosenValues(){
+    return Array.from(form.querySelectorAll('input[type="checkbox"]:checked')).filter(function(el){
+      return groups.some(function(group){return el.name===group;});
+    }).map(function(el){return el.value;});
+  }
+  function update(){
+    var values=chosenValues();
+    board.innerHTML='';
+    if(!values.length){
+      var empty=document.createElement('div');empty.className='board-empty';
+      var star=document.createElement('span');star.textContent='✧';
+      var title=document.createElement('strong');title.textContent='Votre événement, votre style';
+      var p=document.createElement('p');p.textContent='Sélectionnez les éléments qui vous inspirent pour construire votre tableau.';
+      empty.append(star,title,p);board.appendChild(empty);
+      summary.textContent='Aucun élément sélectionné pour le moment.';return;
+    }
+    values.forEach(function(value){
+      var tile=document.createElement('div');tile.className='board-tile';
+      var src=sampleImages[value];
+      if(src){var img=document.createElement('img');img.src=src;img.alt='Inspiration : '+value;img.loading='lazy';tile.appendChild(img);}
+      var label=document.createElement('span');label.textContent=value;tile.appendChild(label);board.appendChild(tile);
+    });
+    summary.textContent=values.join(' • ');
+  }
+  form.querySelectorAll('input[name="Décor souhaité[]"],input[name="Formes de ballons[]"]').forEach(function(el){el.addEventListener('change',update);});
+  var clear=document.getElementById('clearDecorationBoard');
+  if(clear)clear.addEventListener('click',function(){
+    form.querySelectorAll('input[name="Décor souhaité[]"],input[name="Formes de ballons[]"]').forEach(function(el){el.checked=false;});
+    var palette=document.getElementById('balloonPalette');if(palette)palette.value='';
+    var finish=document.getElementById('balloonFinish');if(finish)finish.value='';
+    var notes=document.getElementById('decorationNotes');if(notes)notes.value='';
+    update();
+  });
+  update();
 })();
 </script>
 </body>
