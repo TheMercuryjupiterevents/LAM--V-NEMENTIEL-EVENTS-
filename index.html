@@ -166,21 +166,21 @@ body{background:#fff;color:#171717}
 @media(max-width:680px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.team-card{padding:8px}.team-card h3{font-size:.78rem}.team-role{font-size:.65rem}.team-photo{font-size:.48rem}.hero-event-label{font-size:.62rem}.section.dark .wrap>p{font-size:1rem!important}}
 
 
-/* Intro BIENVENUE — accueil élégant, style maison de prestige */
-#welcome-intro{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(22px,4vh,38px);padding:28px 20px;background:radial-gradient(ellipse at center,#fff 0%,#fff 48%,#f7f4f0 100%);color:#171717;opacity:1;visibility:visible;transition:opacity .85s ease,visibility .85s ease}
-#welcome-intro:before{content:"";position:absolute;inset:16px;border:1px solid #c5a45a;pointer-events:none}
-#welcome-intro:after{content:"";position:absolute;inset:22px;border:1px solid #c5a45a55;pointer-events:none}
+/* Intro BIENVENUE — accueil élégant, agence événementielle de prestige */
+#welcome-intro{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(22px,4vh,38px);padding:28px 20px;background:radial-gradient(ellipse at center,#fff 0%,#fff 42%,#fff4b8 100%);color:#171717;opacity:1;visibility:visible;transition:opacity .85s ease,visibility .85s ease}
+#welcome-intro:before{content:"";position:absolute;inset:16px;border:1px solid #d8b43a;pointer-events:none}
+#welcome-intro:after{content:"";position:absolute;inset:22px;border:1px solid #d8b43a88;pointer-events:none}
 #welcome-intro.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
 #welcome-intro .welcome-word{position:relative;z-index:1;display:flex;justify-content:center;gap:.045em;padding:0 8px;font:500 clamp(2.2rem,8.5vw,5.8rem)/1 Georgia,"Times New Roman",serif;letter-spacing:.105em;text-align:center}
 #welcome-intro .welcome-word span{display:inline-block;opacity:0;transform:translateY(14px);animation:welcome-letter .55s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*.11s)}
-#welcome-intro .welcome-word span:nth-child(odd){color:#d71920}
+#welcome-intro .welcome-word span:nth-child(odd){color:#fe0000}
 #welcome-intro .welcome-word span:nth-child(even){color:#171717}
-#welcome-intro .welcome-rule{position:relative;z-index:1;width:clamp(72px,16vw,140px);height:2px;background:linear-gradient(90deg,transparent,#c5a45a 18%,#c5a45a 82%,transparent);opacity:0;animation:welcome-fade .7s ease 1.15s forwards}
+#welcome-intro .welcome-rule{position:relative;z-index:1;width:clamp(72px,16vw,140px);height:2px;background:linear-gradient(90deg,transparent,#d8b43a 18%,#d8b43a 82%,transparent);opacity:0;animation:welcome-fade .7s ease 1.15s forwards}
 #welcome-intro .welcome-brand{position:relative;z-index:1;width:100%;max-width:920px;padding:0 12px;text-align:center;font:500 clamp(.92rem,3.1vw,1.65rem)/1.8 Georgia,"Times New Roman",serif;letter-spacing:.13em;text-transform:uppercase;color:#171717;overflow:visible;overflow-wrap:anywhere}
 #welcome-intro .welcome-brand span{display:inline-block;opacity:0;animation:welcome-fade .6s ease forwards;animation-delay:calc(var(--i)*.16s + 1.3s)}
 #welcome-intro .welcome-brand .white-word{color:#fff;-webkit-text-stroke:.65px #171717;text-shadow:0 0 1px #171717}
 #welcome-intro .welcome-brand .event-word{display:block;margin-top:2px;color:#171717;letter-spacing:.14em;font-size:clamp(.88rem,2.8vw,1.4rem);white-space:normal}
-#welcome-intro .welcome-tagline{position:relative;z-index:1;margin:0;color:#7a6745;font:italic 400 clamp(.78rem,2vw,1rem)/1.6 Georgia,"Times New Roman",serif;letter-spacing:.035em;text-align:center;opacity:0;animation:welcome-fade .7s ease 2.3s forwards}
+#welcome-intro .welcome-tagline{position:relative;z-index:1;margin:0;color:#8c6a00;font:italic 400 clamp(.78rem,2vw,1rem)/1.6 Georgia,"Times New Roman",serif;letter-spacing:.035em;text-align:center;opacity:0;animation:welcome-fade .7s ease 2.3s forwards}
 @keyframes welcome-letter{to{opacity:1;transform:translateY(0)}}
 @keyframes welcome-fade{to{opacity:1}}
 @media(max-width:520px){#welcome-intro{gap:22px;padding:24px 18px}#welcome-intro:before{inset:10px}#welcome-intro:after{inset:15px}#welcome-intro .welcome-word{font-size:clamp(1.65rem,8.2vw,2.8rem);letter-spacing:.055em;gap:.025em}#welcome-intro .welcome-brand{font-size:clamp(.78rem,3.8vw,1rem);line-height:2;letter-spacing:.055em;max-width:310px}#welcome-intro .welcome-tagline{max-width:270px;font-size:.78rem}}
@@ -281,8 +281,8 @@ body{background:#fff;color:#171717}
     <span style="--i:0">B</span><span style="--i:1">I</span><span style="--i:2">E</span><span style="--i:3">N</span><span style="--i:4">V</span><span style="--i:5">E</span><span style="--i:6">N</span><span style="--i:7">U</span><span style="--i:8">E</span>
   </div>
   <div class="welcome-rule" aria-hidden="true"></div>
-  <div class="welcome-brand" aria-label="Chez THE MERCURY JUPITER EVENTS et Événementiels">
-    <span style="--i:0">Chez&nbsp;</span><span class="white-word" style="--i:1">THE&nbsp;</span><span style="--i:2">MERCURY&nbsp;</span><span class="white-word" style="--i:3">JUPITER&nbsp;</span><span style="--i:4">EVENTS</span><span class="white-word" style="--i:5">&nbsp;&amp;</span><span class="event-word" style="--i:6">ÉVÉNEMENTIELS</span>
+  <div class="welcome-brand" aria-label="Agence événementielle THE MERCURY JUPITER EVENTS">
+    <span style="--i:0">AGENCE&nbsp;</span><span class="white-word" style="--i:1">ÉVÉNEMENTIELLE</span><span class="event-word" style="--i:2">THE MERCURY JUPITER EVENTS</span>
   </div>
   <p class="welcome-tagline">L’élégance au service de vos moments d’exception.</p>
 </div>
