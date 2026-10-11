@@ -570,9 +570,9 @@ body{background:#fff;color:#171717}
 <div class="eyebrow">17 — Votre projet</div><h2>CHOISISSEZ LE FORMULAIRE ADAPTÉ À VOTRE ÉVÉNEMENT.</h2>
 <p class="lead">Trois formulaires distincts pour vous faire gagner du temps. Choisissez la catégorie de votre projet ; seuls les champs qui vous concernent s’afficheront.</p>
 <div class="grid grid3" id="formChoiceCards" style="margin:28px 0">
-<article class="card"><div class="num">01 — PRESTIGE</div><h3>GRANDES RÉCEPTIONS & ÉVÉNEMENTS DE PRESTIGE</h3><p>Mariages de luxe, grands dîners, galas, grandes cérémonies et réceptions haut de gamme.</p><button class="btn primary" type="button" data-show-form="prestigeForm">Choisir cette formule</button></article>
-<article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm">Choisir cette formule</button></article>
-<article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm">Choisir cette formule</button></article>
+<article class="card"><div class="num">01 — PRESTIGE</div><h3>GRANDES RÉCEPTIONS & ÉVÉNEMENTS DE PRESTIGE</h3><p>Mariages de luxe, grands dîners, galas, grandes cérémonies et réceptions haut de gamme.</p><button class="btn primary" type="button" data-show-form="prestigeForm" onclick="return showEventForm('prestigeForm')" aria-controls="prestigeForm" aria-pressed="false">Choisir cette formule</button></article>
+<article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm" onclick="return showEventForm('privateForm')" aria-controls="privateForm" aria-pressed="false">Choisir cette formule</button></article>
+<article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 <div class="form-panel" id="prestigeForm" hidden style="margin-top:24px">
@@ -661,7 +661,27 @@ body{background:#fff;color:#171717}
 <button class="btn primary" type="submit">Envoyer la demande institutionnelle</button></form></div>
 <div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:carlanne.abbigaelleevents@gmail.com">carlanne.abbigaelleevents@gmail.com</a></div></div>
 </div></section>
-<script>(function(){var buttons=document.querySelectorAll('[data-show-form]');var panels=document.querySelectorAll('.form-panel');var status=document.getElementById('formChoiceStatus');buttons.forEach(function(button){button.addEventListener('click',function(){var target=button.getAttribute('data-show-form');panels.forEach(function(panel){panel.hidden=panel.id!==target;});buttons.forEach(function(item){item.classList.toggle('primary',item===button);});if(status){status.textContent='Formulaire sélectionné : '+button.closest('article').querySelector('h3').textContent+'.';}var panel=document.getElementById(target);if(panel){panel.scrollIntoView({behavior:'smooth',block:'start'});}});});})();</script>
+<script>
+function showEventForm(target){
+  var ids=['prestigeForm','privateForm','corporateForm'];
+  ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
+  document.querySelectorAll('[data-show-form]').forEach(function(button){
+    var active=button.getAttribute('data-show-form')===target;
+    button.classList.toggle('primary',active);
+    button.setAttribute('aria-pressed',active?'true':'false');
+  });
+  var selected=document.getElementById(target);
+  var status=document.getElementById('formChoiceStatus');
+  if(status&&selected){var heading=selected.querySelector('h3');status.textContent='Formulaire sélectionné : '+(heading?heading.textContent:'votre événement')+'.';}
+  if(selected){setTimeout(function(){selected.scrollIntoView({behavior:'auto',block:'start'});},50);}
+  return false;
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('[data-show-form]').forEach(function(button){
+    button.addEventListener('click',function(){showEventForm(button.getAttribute('data-show-form'));});
+  });
+});
+</script>
 
 
 <section id="partenariats" class="section alt">
