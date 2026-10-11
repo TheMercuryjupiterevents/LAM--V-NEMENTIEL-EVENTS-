@@ -370,6 +370,15 @@ body{background:#fff;color:#171717}
 @media(max-width:900px){.decoration-builder-grid{grid-template-columns:1fr}.decoration-board-panel{position:static}.decoration-choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.decoration-choice-grid{grid-template-columns:1fr 1fr;gap:8px}.decoration-choice img{height:95px}.decoration-choice span{font-size:.8rem}.decoration-board{min-height:230px}}
 
+
+/* Availability and advance booking notice */
+.availability-notice{display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;margin:22px 0;padding:20px;border:1px solid #d9c48d;border-left:5px solid #c5a04a;border-radius:12px;background:linear-gradient(135deg,#fffaf0,#fff 80%);color:#24344c}
+.availability-notice-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#f4e7c4;color:#8a6720;font-size:1.35rem}
+.availability-notice-label{margin:0 0 6px!important;color:#8a6720!important;font-size:.72rem!important;font-weight:800!important;letter-spacing:.12em;text-transform:uppercase}
+.availability-notice h3{margin:0 0 10px;color:#173563;font-size:1.15rem}
+.availability-notice p{margin:8px 0;line-height:1.65;font-size:.91rem}
+@media(max-width:520px){.availability-notice{grid-template-columns:1fr;padding:16px}.availability-notice-icon{width:34px;height:34px}}
+
 </style>
 </head>
 <body>
@@ -752,6 +761,18 @@ body{background:#fff;color:#171717}
 </div></div>
 
 
+
+
+<div class="availability-notice" id="disponibilite-decorations" role="note">
+  <div class="availability-notice-icon" aria-hidden="true">✦</div>
+  <div>
+    <p class="availability-notice-label">Disponibilité des décors & réservation anticipée</p>
+    <h3>Chaque création dépend des disponibilités.</h3>
+    <p>Toutes les décorations, couleurs, formes de ballons, fleurs, structures et accessoires présentés ici ne sont pas toujours disponibles. Certains éléments doivent être commandés, loués ou fabriqués sur mesure ; leur disponibilité dépend de la date, du lieu, du budget, des stocks et de nos partenaires.</p>
+    <p><strong>Pour un décor complexe, très personnalisé ou nécessitant des éléments rares, nous recommandons de nous contacter idéalement 12 à 24 mois à l’avance lorsque cela est possible.</strong> Pour les autres événements, contactez-nous dès que votre date est connue : nous vérifierons les possibilités et vous proposerons des alternatives adaptées si nécessaire.</p>
+    <p>La sélection dans ce tableau est une inspiration, pas une confirmation de stock ni une réservation. Votre décor est confirmé uniquement après vérification par notre équipe, validation du devis et confirmation écrite.</p>
+  </div>
+</div>
 
 <div class="form-section decoration-builder-section" id="decoration-builder">
   <h3>05 — CRÉEZ VOTRE DÉCOR COMME SUR PINTEREST</h3>
