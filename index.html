@@ -398,6 +398,46 @@ body{background:#fff;color:#171717}
 #devis .form-section:has(select[name="Montant du budget souhaité"]) p,#devis .form-section:has(select[name="Montant du budget souhaité"]) .small{color:#59636e!important}
 #devis .form-section:has(select[name="Montant du budget souhaité"]) select,#devis .form-section:has(select[name="Montant du budget souhaité"]) input,#devis .form-section:has(select[name="Montant du budget souhaité"]) textarea{border:1.5px solid #2457c5!important;background:#fff!important;color:#3e4650!important}
 #devis .form-section:has(select[name="Montant du budget souhaité"]) select:focus,#devis .form-section:has(select[name="Montant du budget souhaité"]) input:focus,#devis .form-section:has(select[name="Montant du budget souhaité"]) textarea:focus{border-color:#278447!important;box-shadow:0 0 0 3px rgba(39,132,71,.18)!important}
+
+/* Octobre 2026 — finition visuelle premium, responsive */
+:root{--ink:#211c1d;--muted:#6b6262;--line:#e9e1df;--paper:#fff;--red:#c8102e;--red2:#9f1025;--gold:#c8a45d;--blue:#79bfe0;--pink:#e78bb5}
+body{background:#fff!important;color:#292425}
+::selection{background:#c8102e;color:#fff}
+.nav{background:rgba(255,255,255,.96);backdrop-filter:blur(14px);box-shadow:0 5px 24px rgba(30,20,20,.045);border-bottom:1px solid #eee8e6}
+.brand{letter-spacing:.045em}
+.brand img{background:#fff;box-shadow:0 2px 12px #00000012}
+.navlinks a{transition:color .2s ease}
+.hero{background:linear-gradient(135deg,#fff 0%,#fffdfb 65%,#f8f1ee 100%)}
+.hero:before{background:radial-gradient(circle at 35% 35%,#f3e2e2,#ead8df 65%,#f7efeb);opacity:.75}
+.hero:after{border-color:#c8a45d55}
+.hero-logo{background:#fff;border:7px solid #fff;box-shadow:0 22px 55px rgba(50,20,20,.13),0 0 0 1px #c8a45d55}
+.eyebrow{font-weight:700;color:#9b2436}
+.btn{border-radius:999px;min-height:47px;padding:13px 22px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px #00000012}
+.btn.primary{background:#c8102e;border-color:#c8102e}
+.section{padding:84px 0}
+.section.alt{background:#fbf8f6}
+.section.dark{background:linear-gradient(135deg,#a90f25,#cf1633 70%,#b70e2a)}
+.section-head{margin-bottom:32px}
+.card,.form,.contactbox{border:1px solid #eee5e2;border-radius:18px;box-shadow:0 9px 30px rgba(45,20,20,.045);transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 15px 34px rgba(45,20,20,.09)}
+.card{padding:28px}
+.form{padding:30px}
+.field input,.field select,.field textarea{border-radius:10px;border-color:#e3d9d6;transition:border-color .2s ease,box-shadow .2s ease}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#c8102e;box-shadow:0 0 0 3px #c8102e12}
+.pill{border-radius:999px;background:#fff}
+.color-preference-grid .check{border-radius:10px;transition:border-color .2s ease,background .2s ease}
+.color-preference-grid .check:hover{border-color:#c8a45d;background:#fffdf8}
+.palette-preview{border-radius:16px}
+.contactline{border-color:#eee5e2}
+.footer{background:#211c1d}
+.wa{border:2px solid #fff;box-shadow:0 8px 24px #0002}
+#services .card{border-top:3px solid #2e9e45}
+#services .card:hover{border-color:#2e9e45}
+#budget-estimateur .card{border-radius:16px}
+@media(max-width:680px){.section{padding:60px 0}.hero-grid{padding:48px 0 62px}.hero-logo{box-shadow:0 14px 34px rgba(50,20,20,.12),0 0 0 1px #c8a45d55}.card,.form,.contactbox{border-radius:15px}.card{padding:22px}.actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body>
