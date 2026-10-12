@@ -512,7 +512,7 @@ body{background:#fff!important;color:#292425}
 
 <section class="section alt">
 <div class="wrap grid grid2">
-<div><div class="eyebrow">02 — Notre mission</div><h2>CONCEVOIR. ORGANISER. COORDONNER. PRODUIRE.</h2><p class="lead">Nous concevons, organisons, coordonnons et produisons des événements qui donnent vie à la vision de nos clients.</p></div>
+<div class="mission-intro"><div class="eyebrow">02 — Notre méthode</div><h2>UNE ORGANISATION PRÉCISE, DU PREMIER ÉCHANGE AU JOUR J.</h2><p class="lead">Chaque événement commence par votre vision. Nous la transformons en un plan clair, un univers cohérent et une expérience soigneusement coordonnée.</p><p>Nous avançons étape par étape, avec une communication transparente, un suivi rigoureux et une attention particulière aux détails.</p><div class="mission-tags"><span>Écoute</span><span>Planification</span><span>Coordination</span><span>Réalisation</span></div></div>
 <div class="card"><h3>CRÉATIVITÉ + PLANIFICATION + COORDINATION + PRODUCTION + EXPÉRIENCE</h3><p>Une approche structurée pour construire chaque projet avec clarté, cohérence et attention aux détails.</p><ul class="mission-details"><li><strong>01 — Écoute et conception :</strong> comprendre vos envies, votre thème, vos couleurs et votre budget.</li><li><strong>02 — Organisation :</strong> établir le calendrier, répartir les tâches et coordonner les prestataires.</li><li><strong>03 — Décoration :</strong> harmoniser ballons, fleurs, tissus, éclairage, tables et arrière-plans.</li><li><strong>04 — Jour J :</strong> superviser l’installation, l’accueil et le déroulement de l’événement.</li></ul></div>
 </div></section>
 
@@ -1408,4 +1408,21 @@ a{color:#e60023}
 .color-preference-grid{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}
 .palette-swatch{border:3px solid #fff;box-shadow:0 0 0 1px #d7c8c3,0 4px 12px #00000010}
 @media(max-width:600px){.hero-logo{border-width:3px!important;outline-width:1px;outline-offset:3px}.color-swatch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mission-details{padding-left:18px}}
+</style>
+
+
+<style id="organisation-02-premium">
+/* Section 02 — présentation claire et professionnelle */
+.mission-intro{padding:clamp(24px,4vw,42px);background:linear-gradient(145deg,#fff 0%,#fff8f7 100%);border:1px solid #f0dfdc;border-left:5px solid #f00024;border-radius:18px;box-shadow:0 12px 32px #4510160a}
+.mission-intro .eyebrow{color:#e60023!important;font-weight:800;letter-spacing:.12em}
+.mission-intro h2{margin:14px 0 18px;color:#282122;line-height:1.08}
+.mission-intro .lead{font-size:1.08rem;line-height:1.75;color:#43393a}
+.mission-intro p:not(.lead){line-height:1.8;color:#6b5c5d}
+.mission-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.mission-tags span{padding:8px 13px;border:1px solid #e9c75b;border-radius:999px;background:#fffdf5;color:#5b4612;font-size:.78rem;font-weight:700;letter-spacing:.03em}
+.mission-details{list-style:none;padding:0!important;margin:22px 0 0!important;counter-reset:mission-step}
+.mission-details li{position:relative;padding:14px 12px 14px 52px!important;margin:0 0 9px;border:1px solid #eee4e1!important;border-radius:12px;background:#fff;line-height:1.65}
+.mission-details li:before{counter-increment:mission-step;content:counter(mission-step,decimal-leading-zero);position:absolute;left:13px;top:13px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#f00024;color:#fff;font-size:.72rem;font-weight:800}
+.mission-details strong{color:#c90020!important}
+@media(max-width:650px){.mission-intro{padding:22px 18px;border-radius:14px}.mission-tags{gap:7px}.mission-tags span{font-size:.74rem;padding:7px 10px}.mission-details li{padding-left:48px!important}}
 </style>
