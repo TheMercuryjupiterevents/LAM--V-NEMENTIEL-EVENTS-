@@ -1481,3 +1481,24 @@ a{color:#e60023}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initColorMixers);else initColorMixers();
 })();
 </script>
+
+<style id="compact-color-palettes-forms-01-02-03">
+/* Réduire l’encombrement des sélecteurs de couleurs dans les formulaires 01, 02 et 03 */
+.form-section .color-mix-live{margin:8px 0 10px!important;padding:9px 10px!important;border-radius:10px!important}
+.form-section .color-mix-live strong{font-size:.86rem!important;margin-bottom:3px!important}
+.form-section .color-mix-live .small{font-size:.72rem!important;line-height:1.35!important;margin:0 0 7px!important}
+.form-section .color-mix-preview{height:28px!important;border-radius:7px!important}
+.form-section .color-mix-label{margin:6px 0 0!important}
+.form-section .color-swatch-grid{grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:5px!important}
+.form-section .color-swatch{gap:5px!important;padding:4px 6px!important;min-height:25px!important;border-radius:7px!important;font-size:.72rem!important;line-height:1.15!important}
+.form-section .color-swatch .swatch-dot{width:14px!important;height:14px!important;flex:0 0 14px!important}
+.form-section details.color-combinations,.form-section details.color-pickers{margin:7px 0!important}
+.form-section details.color-combinations>summary,.form-section details.color-pickers>summary{padding:8px 10px!important;font-size:.82rem!important}
+@media(max-width:520px){
+ .form-section .color-swatch-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important}
+ .form-section .color-swatch{gap:3px!important;padding:4px 3px!important;min-height:23px!important;font-size:.64rem!important}
+ .form-section .color-swatch .swatch-dot{width:11px!important;height:11px!important;flex-basis:11px!important}
+ .form-section .color-mix-live{padding:8px!important}
+ .form-section .color-mix-preview{height:24px!important}
+}
+</style>
