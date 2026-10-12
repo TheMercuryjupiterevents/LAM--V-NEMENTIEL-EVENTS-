@@ -977,7 +977,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="field"><label for="availabilityEvent">Type d’événement</label><select id="availabilityEvent"><option>Mariage</option><option>Fiançailles</option><option>Anniversaire</option><option>Baptême</option><option>Baby shower / Bridal shower</option><option>Gala ou dîner privé</option><option>Événement corporatif</option><option>Conférence / lancement</option><option>Concert / festival</option><option>Autre</option></select></div>
 <div class="field"><label for="availabilityGuests">Nombre approximatif d’invités</label><input id="availabilityGuests" type="number" min="1" placeholder="Ex. 80"></div>
 <div class="field"><label for="availabilityLocation">Ville / lieu envisagé</label><input id="availabilityLocation" type="text" placeholder="Ex. Port-au-Prince, Haïti"></div>
-<button class="btn" id="sendAvailability">Envoyer la demande sur WhatsApp</button><p class="tool-status" id="availabilityStatus" aria-live="polite"></p>
+<button type="button" class="btn" id="sendAvailability">Envoyer la demande sur WhatsApp</button><p class="tool-status" id="availabilityStatus" aria-live="polite"></p>
 </article>
 <article class="tool-card" id="moodboard">
 <div class="eyebrow">02 — Direction artistique</div><h3>Construire mon moodboard</h3>
@@ -994,7 +994,7 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <div class="field"><label for="moodColors">Couleurs souhaitées</label><input id="moodColors" type="text" placeholder="Ex. rouge, noir, blanc et doré"></div>
 <div class="field"><label for="moodNotes">Inspirations / détails</label><textarea id="moodNotes" placeholder="Décrivez l’ambiance, les fleurs, les lumières ou la décoration souhaitée…"></textarea></div>
-<button class="btn" id="sendMoodboard">Envoyer mon moodboard</button><p class="tool-status" id="moodStatus" aria-live="polite"></p>
+<button type="button" class="btn" id="sendMoodboard">Envoyer mon moodboard</button><p class="tool-status" id="moodStatus" aria-live="polite"></p>
 </article>
 <article class="tool-card" id="service-traiteur">
 <div class="eyebrow">03 — Production culinaire</div><h3>Service traiteur</h3>
@@ -1080,7 +1080,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <label><input type="checkbox" name="rental" value="Installation et démontage"> Installation / démontage</label>
 <label><input type="checkbox" name="rental" value="Décoration complète"> Décoration complète</label>
 </div>
-<button class="btn" id="sendCatalog">Demander les options disponibles</button><p class="tool-status" id="catalogStatus" aria-live="polite"></p>
+<button type="button" class="btn" id="sendCatalog">Demander les options disponibles</button><p class="tool-status" id="catalogStatus" aria-live="polite"></p>
 </article>
 <article class="tool-card" id="devenir-partenaire">
 <div class="eyebrow">05 — Réseau professionnel</div><h3>Devenir partenaire ou prestataire</h3>
@@ -1089,19 +1089,19 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="field"><label for="partnerService">Spécialité</label><select id="partnerService"><option>Décoration</option><option>Location de matériel</option><option>Cuisine / pâtisserie / traiteur</option><option>Photographie / vidéo</option><option>Musique / DJ / animation</option><option>Fleurs</option><option>Lieu de réception</option><option>Transport / logistique</option><option>Autre</option></select></div>
 <div class="field"><label for="partnerContact">Téléphone ou email</label><input id="partnerContact" type="text" placeholder="Vos coordonnées"></div>
 <div class="field"><label for="partnerDetails">Expérience et services proposés</label><textarea id="partnerDetails" placeholder="Décrivez votre expérience, votre zone de service et vos prestations…"></textarea></div>
-<button class="btn" id="sendPartner">Présenter ma candidature</button><p class="tool-status" id="partnerStatus" aria-live="polite"></p>
+<button type="button" class="btn" id="sendPartner">Présenter ma candidature</button><p class="tool-status" id="partnerStatus" aria-live="polite"></p>
 </article>
 <article class="tool-card" id="newsletter">
 <div class="eyebrow">06 — Actualités</div><h3>Recevoir nos nouveautés</h3>
 <p>Inscrivez-vous pour recevoir les actualités, annonces et nouveautés de l’agence. L’inscription ouvre votre application email afin de nous envoyer votre demande.</p>
 <div class="field"><label for="newsletterEmail">Votre adresse email</label><input id="newsletterEmail" type="email" placeholder="vous@exemple.com" required></div>
-<button class="btn" id="sendNewsletter">Demander mon inscription</button><p class="tool-status" id="newsletterStatus" aria-live="polite"></p>
+<button type="button" class="btn" id="sendNewsletter">Demander mon inscription</button><p class="tool-status" id="newsletterStatus" aria-live="polite"></p>
 </article>
 </div>
 <div class="tool-note" style="margin-top:22px"><strong>Transparence :</strong> le site est actuellement une vitrine statique. La réservation en ligne avec calendrier synchronisé, l’espace privé sécurisé pour les clients, la publication directe de photos depuis le téléphone et la gestion des abonnés nécessitent une base de données ou un service externe sécurisé. Aucun espace administrateur fictif ni aucune fausse disponibilité ne sont présentés comme opérationnels.</div>
 </div>
 
-<div class="card quick-client-tools" id="outils-rapides-clients"><h3>VOS OUTILS POUR PRÉPARER VOTRE PROJET</h3><div class="quick-tools-grid"><a href="#inspiration-exemples">Explorer les inspirations</a><a href="#inspiration-upload-client">Ajouter une photo</a><a href="#budget-estimateur">Estimer mon budget</a><a href="#formulaire">Demander un devis</a><a href="#faq">Consulter les questions fréquentes</a><a href="#confidentialite">Lire la politique de confidentialité</a></div></div>
+<div class="card quick-client-tools" id="outils-rapides-clients"><h3>VOS OUTILS POUR PRÉPARER VOTRE PROJET</h3><div class="quick-tools-grid"><a href="#galerie">Explorer les inspirations</a><a href="#galerie">Ajouter une photo</a><a href="#budget-estimateur">Estimer mon budget</a><a href="#formulaire">Demander un devis</a><a href="#faq">Consulter les questions fréquentes</a><a href="legal.html">Lire la politique de confidentialité</a></div></div>
 </section>
 
 <section id="apres-demande" class="section after-request"><div class="wrap"><div class="eyebrow">Après votre demande</div><h2>LES PROCHAINES ÉTAPES.</h2><div class="grid grid3"><article class="card"><h3>01 — ÉCHANGE</h3><p>Notre équipe prend connaissance de vos besoins et peut vous recontacter pour préciser votre projet.</p></article><article class="card"><h3>02 — PROPOSITION</h3><p>Nous préparons une proposition adaptée aux services demandés et aux informations disponibles.</p></article><article class="card"><h3>03 — CONFIRMATION</h3><p>La réservation n’est confirmée qu’après validation de la date, du devis et des conditions convenues.</p></article></div></div></section>
