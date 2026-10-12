@@ -513,7 +513,7 @@ body{background:#fff!important;color:#292425}
 <section class="section alt">
 <div class="wrap grid grid2">
 <div><div class="eyebrow">02 — Notre mission</div><h2>CONCEVOIR. ORGANISER. COORDONNER. PRODUIRE.</h2><p class="lead">Nous concevons, organisons, coordonnons et produisons des événements qui donnent vie à la vision de nos clients.</p></div>
-<div class="card"><h3>CRÉATIVITÉ + PLANIFICATION + COORDINATION + PRODUCTION + EXPÉRIENCE</h3><p>Une approche structurée pour construire chaque projet avec clarté, cohérence et attention aux détails.</p></div>
+<div class="card"><h3>CRÉATIVITÉ + PLANIFICATION + COORDINATION + PRODUCTION + EXPÉRIENCE</h3><p>Une approche structurée pour construire chaque projet avec clarté, cohérence et attention aux détails.</p><ul class="mission-details"><li><strong>01 — Écoute et conception :</strong> comprendre vos envies, votre thème, vos couleurs et votre budget.</li><li><strong>02 — Organisation :</strong> établir le calendrier, répartir les tâches et coordonner les prestataires.</li><li><strong>03 — Décoration :</strong> harmoniser ballons, fleurs, tissus, éclairage, tables et arrière-plans.</li><li><strong>04 — Jour J :</strong> superviser l’installation, l’accueil et le déroulement de l’événement.</li></ul></div>
 </div></section>
 
 <section id="services" class="section">
@@ -1388,4 +1388,25 @@ a{color:#e60023}
 #services .card{border-top:3px solid #2e9e45!important}
 #services .eyebrow,#services h2,#services .card .num,#services .card h3{color:#2e9e45!important}
 .form-section:has(#budget) h3{color:#2e9e45!important}
+</style>
+
+
+<style id="logo-cercle-rouge-dore-et-decoration">
+/* Cercle du logo : rouge vif + jaune doré */
+.hero-logo{border:9px solid #ff001e!important;outline:5px solid #f5c542;outline-offset:5px;box-shadow:0 0 0 11px #ff001e18,0 18px 42px #6b102022!important;background:#ffd400!important}
+.hero-logo{border-radius:50%!important}
+/* Section 02 : mission structurée et détaillée */
+.mission-details{padding-left:20px;margin:18px 0 0;color:#4b4141;line-height:1.75}
+.mission-details li{padding:7px 0;border-bottom:1px solid #f0e5e3}
+.mission-details li:last-child{border-bottom:0}
+.mission-details strong{color:#e60023}
+/* Sélecteurs couleur pour décoration et ballons : clairs, visibles et faciles à choisir */
+.color-swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}
+.color-swatch-grid .color-swatch,.color-preference-grid .check{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid #eadfda;border-radius:12px;background:#fff;min-height:52px;transition:border-color .2s,box-shadow .2s,transform .2s}
+.color-swatch-grid .color-swatch:hover,.color-preference-grid .check:hover{border-color:#f00024;box-shadow:0 4px 14px #f0002412;transform:translateY(-1px)}
+.color-swatch-grid input,.color-preference-grid input{accent-color:#f00024}
+.color-swatch-grid .swatch-dot{width:24px;height:24px;min-width:24px;border-radius:50%;border:1px solid #0002;box-shadow:0 0 0 2px #fff,0 0 0 3px #0001;background:var(--swatch)}
+.color-preference-grid{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}
+.palette-swatch{border:3px solid #fff;box-shadow:0 0 0 1px #d7c8c3,0 4px 12px #00000010}
+@media(max-width:600px){.hero-logo{border-width:7px!important;outline-width:3px;outline-offset:4px}.color-swatch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mission-details{padding-left:18px}}
 </style>
