@@ -1502,3 +1502,27 @@ a{color:#e60023}
  .form-section .color-mix-preview{height:24px!important}
 }
 </style>
+
+<style id="refined-color-picker-layout">
+/* Présentation harmonisée, nette et compacte des couleurs dans les trois formulaires */
+.form-section .color-mix-live{display:block;margin:10px 0 12px!important;padding:10px 12px!important;background:#fffdf9!important;border:1px solid #eadfca!important;border-radius:12px!important;box-shadow:none!important}
+.form-section .color-mix-live strong{font-size:.82rem!important;letter-spacing:.01em!important;color:#352d2d!important}
+.form-section .color-mix-live p{color:#706767!important}
+.form-section .color-mix-preview{height:24px!important;border:1px solid #e2d9d9!important;border-radius:7px!important;overflow:hidden}
+.form-section .color-mix-label{font-size:.72rem!important}
+.form-section .color-swatch-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(105px,1fr))!important;gap:6px!important;align-items:stretch!important;margin:8px 0!important}
+.form-section .color-swatch{display:flex!important;align-items:center!important;min-width:0!important;min-height:34px!important;gap:6px!important;padding:6px 8px!important;border:1px solid #e8e2df!important;border-radius:8px!important;background:#fff!important;box-shadow:none!important;font-size:.73rem!important;line-height:1.2!important;overflow-wrap:anywhere!important}
+.form-section .color-swatch:hover{border-color:#c8a85a!important;background:#fffdf7!important;transform:none!important;box-shadow:none!important}
+.form-section .color-swatch:has(input:checked){border-color:#b99436!important;background:#fffaf0!important;box-shadow:inset 0 0 0 1px #b99436!important}
+.form-section .color-swatch input{width:13px!important;height:13px!important;flex:0 0 13px!important;margin:0!important;accent-color:#b99436!important}
+.form-section .color-swatch .swatch-dot{width:17px!important;height:17px!important;flex:0 0 17px!important;border:1px solid #d8d2d2!important;border-radius:50%!important;box-shadow:inset 0 0 0 1px #ffffff70!important}
+.form-section details.color-combinations,.form-section details.color-pickers{margin:8px 0!important;border-radius:10px!important}
+.form-section details.color-combinations>summary,.form-section details.color-pickers>summary{padding:9px 11px!important;border-radius:9px!important}
+@media(max-width:520px){
+ .form-section .color-swatch-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:5px!important}
+ .form-section .color-swatch{min-height:32px!important;padding:5px 6px!important;font-size:.69rem!important;gap:5px!important}
+ .form-section .color-swatch .swatch-dot{width:15px!important;height:15px!important;flex-basis:15px!important}
+ .form-section .color-mix-live{padding:9px!important}
+ .form-section .color-mix-preview{height:22px!important}
+}
+</style>
