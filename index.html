@@ -156,14 +156,20 @@ body{background:#fff;color:#171717}
 .footer a:hover{color:#f7e9a9}
 .wa{background:#171717;border:1px solid #c5a45a;color:#fff}
 .team-section{background:#fff}
-.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:32px}
+.founders-section{background:linear-gradient(180deg,#f8f5ee 0%,#fff 100%)}
+.founders-hero-photo{aspect-ratio:16/7;max-width:980px;margin:28px auto 0;background:linear-gradient(135deg,#f4efe4,#e1d2b3);border:1px solid #c5a45a;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#776644;font-size:.72rem;letter-spacing:.18em}
+.founders-names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:760px;margin:24px auto 0;text-align:center}
+.founder-name{padding:18px 12px;border-top:1px solid #c5a45a}
+.founder-name h3{font:500 1.25rem Georgia,'Times New Roman',serif;margin:0 0 7px;color:#171717}
+.founder-name p{margin:0;color:#8c2025;font-size:.8rem;letter-spacing:.04em}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
 .team-card{min-width:0;text-align:left;border:1px solid #c5a45a44;background:#fff;padding:12px;box-shadow:0 8px 24px #17171708}
 .team-photo{aspect-ratio:4/5;background:linear-gradient(145deg,#f8f5ee,#e9dfc9);display:flex;align-items:center;justify-content:center;border:1px solid #d7c59b;color:#87754e;font-size:.56rem;letter-spacing:.16em;text-align:center;padding:8px}
 .team-card h3{margin:14px 0 5px;color:#171717;font-size:.9rem;letter-spacing:.015em}
-.team-role{margin:0;color:#d71920;font-size:.7rem;line-height:1.5}
+.team-role{margin:0;color:#8c2025;font-size:.7rem;line-height:1.5}
 .team-note{margin-top:24px;color:#6b6257;font-size:.8rem;font-style:italic}
 @media(max-width:850px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
-@media(max-width:680px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.team-card{padding:8px}.team-card h3{font-size:.78rem}.team-role{font-size:.65rem}.team-photo{font-size:.48rem}.hero-event-label{font-size:.62rem}.section.dark .wrap>p{font-size:1rem!important}}
+@media(max-width:680px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.team-card{padding:8px}.team-card h3{font-size:.78rem}.team-role{font-size:.65rem}.team-photo{font-size:.48rem}.founders-hero-photo{aspect-ratio:4/3;font-size:.58rem}.founders-names{gap:10px}.founder-name{padding:14px 6px}.founder-name h3{font-size:1rem}.hero-event-label{font-size:.62rem}.section.dark .wrap>p{font-size:1rem!important}}
 
 
 /* Intro BIENVENUE — accueil élégant, agence événementielle de prestige */
@@ -480,19 +486,32 @@ body{background:#fff!important;color:#292425}
 <div><img class="hero-logo" src="IMG_6691.png" width="1254" height="1254" decoding="async" fetchpriority="high" alt="Logo officiel rond THE MERCURY JUPITER EVENTS"></div>
 </div></section>
 
+<section id="fondatrices" class="section founders-section">
+<div class="wrap">
+<div class="eyebrow">02 — La direction</div>
+<h2>RENCONTREZ NOS FONDATRICES</h2>
+<p class="lead">Une vision commune, une ambition forte et une même exigence d’élégance.</p>
+<div class="founders-hero-photo" role="img" aria-label="Emplacement de la photo commune des fondatrices"><span>PHOTO D’ABBIGAËLLE MENTOR ET CARLANNE ZEPHIR À AJOUTER</span></div>
+<div class="founders-names">
+<div class="founder-name"><h3>Abbigaëlle Mentor</h3><p>Fondatrice</p></div>
+<div class="founder-name"><h3>Carlanne Zephir</h3><p>Co-fondatrice</p></div>
+</div>
+</div>
+</section>
+
 <section id="equipe" class="section team-section">
 <div class="wrap">
-<div class="eyebrow">02 — Maison Mercury Jupiter</div>
-<h2>NOTRE ÉQUIPE</h2>
-<p class="lead">Une vision commune. Des talents complémentaires. Une même exigence du détail.</p>
-<p class="small">Découvrez les personnes qui contribuent à donner vie à vos moments d’exception.</p>
+<div class="eyebrow">03 — Maison Mercury Jupiter</div>
+<h2>RENCONTREZ NOTRE ÉQUIPE</h2>
+<p class="lead">Des talents complémentaires réunis autour d’une même vision.</p>
+<p class="small">Chaque membre apporte son savoir-faire pour créer des événements élégants, organisés et mémorables.</p>
 <div class="team-grid">
-<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo d’Abbigaëlle Mentor"><span>PHOTO D’ABBIGAËLLE À AJOUTER</span></div><h3>Abbigaëlle Mentor</h3><p class="team-role">Fondatrice</p></article>
-<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo d’Anka Mentor"><span>PHOTO D’ANKA À AJOUTER</span></div><h3>Anka Mentor</h3><p class="team-role">Responsable de l’Administration et des Réseaux sociaux</p></article>
-<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Carlanne Zephir"><span>PHOTO DE CARLANNE À AJOUTER</span></div><h3>Carlanne Zephir</h3><p class="team-role">Co-fondatrice</p></article>
-<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Witherlie Theodore"><span>PHOTO DE WITHERLIE À AJOUTER</span></div><h3>Witherlie Theodore</h3><p class="team-role">Cheffe de Projet Événementiel</p></article>
+<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo individuelle d’Anka Mentor"><span>PHOTO INDIVIDUELLE D’ANKA À AJOUTER</span></div><h3>Anka Mentor</h3><p class="team-role">Responsable de l’Administration et des Réseaux sociaux</p></article>
+<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Malaïka Valmé"><span>PHOTO DE MALAÏKA À AJOUTER</span></div><h3>Malaïka Valmé</h3><p class="team-role">Cheffe de la logistique et de l’organisation</p></article>
+<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Witherlie Theodore"><span>PHOTO DE WITHERLIE À AJOUTER</span></div><h3>Witherlie Theodore</h3><p class="team-role">Cheffe de projet événementiel</p></article>
 <article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Sarah J"><span>PHOTO DE SARAH À AJOUTER</span></div><h3>Sarah J</h3><p class="team-role">Assistante responsable de la communication</p></article>
-<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Lebrun Leyla"><span>PHOTO DE LEYLA À AJOUTER</span></div><h3>Lebrun Leyla</h3><p class="team-role">Responsable du Département Service</p></article>
+<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Lebrun Leila"><span>PHOTO DE LEILA À AJOUTER</span></div><h3>Lebrun Leila</h3><p class="team-role">Responsable du département Service</p></article>
+<article class="team-card"><div class="team-photo" role="img" aria-label="Emplacement de la photo de Taina Laurore"><span>PHOTO DE TAINA À AJOUTER</span></div><h3>Taina Laurore</h3><p class="team-role">Responsable de la production culinaire et du service traiteur</p></article>
 </div>
 <p class="team-note">Ensemble, nous mettons notre créativité, notre savoir-faire et notre engagement au service de vos événements.</p>
 </div>
