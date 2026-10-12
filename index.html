@@ -1455,17 +1455,22 @@ a{color:#e60023}
 (function(){
  function initColorMixers(){
   document.querySelectorAll('.form-section').forEach(function(section){
-   var heading=section.querySelector('h3');
    var mixer=section.querySelector('.color-mix-live');
-   if(!heading||!mixer||mixer.dataset.ready==='true')return;
+   if(!mixer||mixer.dataset.ready==='true')return;
    mixer.dataset.ready='true';
-   var preview=mixer.querySelector('.color-mix-preview');
-   var label=mixer.querySelector('.color-mix-label');
+   var preview=mixer.querySelector('.color-mix-preview'),label=mixer.querySelector('.color-mix-label');
    function update(){
     var selected=Array.from(section.querySelectorAll('input[type="checkbox"]:checked')).filter(function(input){return input.name.indexOf('Couleurs')!==-1||input.name.indexOf('Combinaisons de couleurs')!==-1;});
-    var items=[];selected.forEach(function(input){var swatch=input.closest('label');var dot=swatch&&swatch.querySelector('.swatch-dot');var bg=dot&&(dot.style.getPropertyValue('--swatch')||dot.style.background);if(!bg&&dot)bg=getComputedStyle(dot).backgroundColor;if(bg)items.push({name:input.value,color:bg});});
-    if(!items.length){preview.style.background='linear-gradient(90deg,#f5f5f5 0%,#f5f5f5 100%)';label.textContent='Votre palette apparaîtra ici après votre sélection.';return;}
-    var stops=[];items.forEach(function(item,index){var start=(index/items.length*100).toFixed(2);var end=((index+1)/items.length*100).toFixed(2);stops.push(item.color+' '+start+'%',item.color+' '+end+'%');});
+    var items=[];
+    selected.forEach(function(input){
+     var dot=input.closest('label')&&input.closest('label').querySelector('.swatch-dot');
+     var bg=dot&&(dot.style.getPropertyValue('--swatch')||dot.style.background);
+     if(!bg&&dot)bg=getComputedStyle(dot).backgroundColor;
+     if(bg)items.push({name:input.value,color:bg});
+    });
+    if(!items.length){preview.style.background='#f5f5f5';label.textContent='Votre palette apparaîtra ici après votre sélection.';return;}
+    var stops=[];
+    items.forEach(function(item,index){stops.push(item.color+' '+(index/items.length*100).toFixed(2)+'%',item.color+' '+((index+1)/items.length*100).toFixed(2)+'%');});
     preview.style.background='linear-gradient(90deg,'+stops.join(',')+')';
     label.textContent='Couleurs choisies : '+items.map(function(item){return item.name;}).join(' + ');
    }
