@@ -445,6 +445,21 @@ body{background:#fff!important;color:#292425}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 </style>
+<style id="tmje-three-form-colors">
+/* Palette commune aux trois formulaires : vert, bleu cobalt et gris */
+:root{--tmje-green:#218653;--tmje-green-soft:#e8f2eb;--tmje-cobalt:#244fc0;--tmje-cobalt-soft:#e9eefb;--tmje-grey:#737780;--tmje-grey-soft:#f0f1f3}
+form.form{background:#fff;border:1px solid #dfe3e7;border-radius:18px;padding:clamp(14px,2.8vw,26px);box-shadow:0 8px 26px rgba(25,35,45,.06)}
+form.form .form-section{background:var(--tmje-grey-soft);border:1px solid #d8dade;border-radius:14px;padding:16px;margin-bottom:16px}
+form.form .form-section:has(.budget-currency){background:var(--tmje-green-soft);border-color:#a9cdb5}
+form.form .budget-currency,form.form .budget-amount{border:1px solid #218653!important;border-radius:9px!important;accent-color:var(--tmje-green)}
+form.form .field:has(input[name="Budget exact disponible"],input[name*="budget exact" i],input[name*="montant exact" i]){background:var(--tmje-cobalt-soft);border:1px solid #c2cef0;border-radius:11px;padding:12px}
+form.form .field label{color:#414751;font-weight:650}
+form.form input:not([type=checkbox]):not([type=file]):focus,form.form select:focus,form.form textarea:focus{outline:0;border-color:var(--tmje-cobalt)!important;box-shadow:0 0 0 3px rgba(36,79,192,.13)}
+form.form .form-section h3{color:#424852}
+form.form .btn.primary,form.form button[type=submit]{background:var(--tmje-cobalt);border-color:var(--tmje-cobalt);color:#fff;border-radius:999px}
+form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193c99}
+@media(max-width:600px){form.form{padding:12px;border-radius:14px}form.form .form-section{padding:12px}}
+</style>
 </head>
 <body>
 
