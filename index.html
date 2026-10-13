@@ -488,13 +488,14 @@ form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193
 #welcome-intro .intro-signature{width:min(300px,72vw);height:auto;overflow:visible;margin-top:-8px}
 #welcome-intro .signature-stroke,#welcome-intro .signature-flourish{fill:none;stroke:#d71920;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:700;stroke-dashoffset:700;animation:tmjeSign .8s ease 2.15s forwards}
 #welcome-intro .signature-flourish{stroke:#d8b43a;stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation-delay:2.45s}
-#welcome-intro .intro-pen{position:absolute;z-index:3;width:clamp(62px,14vw,94px);height:auto;left:calc(50% - min(36vw, 240px));top:calc(50% - 56px);transform:rotate(-12deg);filter:drop-shadow(0 3px 2px #0002);animation:tmjePenTravel 2.35s cubic-bezier(.45,.05,.55,.95) .08s forwards}
+#welcome-intro .intro-pen{position:absolute;z-index:5;display:block;width:clamp(112px,28vw,190px);height:auto;left:calc(50% - min(38vw, 255px));top:calc(50% - 76px);transform:rotate(-12deg);filter:drop-shadow(0 5px 4px #0003);overflow:visible;animation:tmjePenTravel 2.35s cubic-bezier(.45,.05,.55,.95) .08s forwards}
+#welcome-intro .intro-pen path{vector-effect:non-scaling-stroke}
 @keyframes tmjeWrite{to{clip-path:inset(0 0 0 0)}}
 @keyframes tmjeFade{to{opacity:1}}
 @keyframes tmjeSign{to{stroke-dashoffset:0}}
 @keyframes tmjePenTravel{0%{left:calc(50% - min(36vw, 240px));top:calc(50% - 70px);transform:rotate(-12deg)}38%{left:calc(50% + min(20vw, 130px));top:calc(50% - 68px);transform:rotate(-12deg)}57%{left:calc(50% - min(24vw, 150px));top:calc(50% - 4px);transform:rotate(-12deg)}78%{left:calc(50% + min(22vw, 135px));top:calc(50% + 45px);transform:rotate(-12deg)}100%{left:calc(50% + min(40vw, 260px));top:calc(50% + 100px);transform:rotate(-12deg);opacity:0}}
 @keyframes tmjeIntroExit{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(max-width:520px){#welcome-intro:before{inset:9px}#welcome-intro:after{inset:14px}#welcome-intro .welcome-word{font-size:clamp(2.25rem,11vw,3.5rem)}#welcome-intro .welcome-brand{font-size:clamp(.8rem,3.8vw,1rem);letter-spacing:.07em}#welcome-intro .welcome-brand small{letter-spacing:.2em}#welcome-intro .intro-pen{top:calc(50% - 55px)}}
+@media(max-width:520px){#welcome-intro:before{inset:9px}#welcome-intro:after{inset:14px}#welcome-intro .welcome-word{font-size:clamp(2.25rem,11vw,3.5rem)}#welcome-intro .welcome-brand{font-size:clamp(.8rem,3.8vw,1rem);letter-spacing:.07em}#welcome-intro .welcome-brand small{letter-spacing:.2em}#welcome-intro .intro-pen{width:clamp(100px,31vw,145px);top:calc(50% - 62px)}}
 @media(prefers-reduced-motion:reduce){#welcome-intro{animation:tmjeIntroExit .2s ease 1.8s forwards}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-stroke,#welcome-intro .signature-flourish,#welcome-intro .intro-pen{animation:none;opacity:1;clip-path:none;stroke-dashoffset:0}}
 </style>
 
@@ -510,11 +511,20 @@ form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193
       <path class="signature-flourish" d="M24 53 C102 61,230 58,337 43" />
     </svg>
   </div>
-  <svg class="intro-pen" viewBox="0 0 100 24" aria-hidden="true">
-    <path d="M5 7 L73 7 L89 12 L73 17 L5 17 Q0 12 5 7Z" fill="#d71920" stroke="#a80e18" stroke-width="1.5"/>
-    <path d="M73 7 L91 12 L73 17Z" fill="#d8b43a" stroke="#a98218" stroke-width="1"/>
-    <path d="M88 11 L96 12 L88 13Z" fill="#222"/>
-    <path d="M17 7 L17 17 M24 7 L24 17" stroke="#f4d46a" stroke-width="2"/>
+  <svg class="intro-pen" viewBox="0 0 160 42" aria-hidden="true">
+    <defs>
+      <linearGradient id="penRedBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5656"/><stop offset=".35" stop-color="#df1724"/><stop offset="1" stop-color="#970916"/></linearGradient>
+      <linearGradient id="penGoldParts" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a5"/><stop offset=".45" stop-color="#e0b83f"/><stop offset="1" stop-color="#9e7111"/></linearGradient>
+    </defs>
+    <path d="M13 11 Q7 21 13 31 L116 31 Q124 21 116 11Z" fill="#780b15" opacity=".2" transform="translate(0 3)"/>
+    <path d="M13 8 Q7 21 13 34 L116 34 Q125 21 116 8Z" fill="url(#penRedBody)" stroke="#8f0915" stroke-width="1.5"/>
+    <path d="M20 11 L108 11" stroke="#ffb1a7" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+    <path d="M30 8 L30 34 M35 8 L35 34" stroke="url(#penGoldParts)" stroke-width="3"/>
+    <path d="M91 8 L91 34" stroke="#f2cd5d" stroke-width="2"/>
+    <path d="M112 8 L133 15 L153 21 L133 27 L112 34 Q120 21 112 8Z" fill="url(#penGoldParts)" stroke="#987019" stroke-width="1.5"/>
+    <path d="M135 17 L154 21 L135 25Z" fill="#f7e9b4" stroke="#b58a24" stroke-width="1"/>
+    <path d="M151 20 L159 21 L151 22Z" fill="#222"/>
+    <path d="M122 13 L122 29" stroke="#fff0a5" stroke-width="1.5"/>
   </svg>
 </div>
 
