@@ -473,18 +473,49 @@ form.form .btn.primary,form.form button[type=submit]{background:var(--tmje-cobal
 form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193c99}
 @media(max-width:600px){form.form{padding:12px;border-radius:14px}form.form .form-section{padding:12px}}
 </style>
+
+<style id="tmje-short-signature-intro">
+#welcome-intro{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#fff;color:#171717;opacity:1;visibility:visible;padding:24px 18px;pointer-events:auto;animation:tmjeIntroExit .45s ease 3.45s forwards}
+#welcome-intro:before{content:"";position:absolute;inset:12px;border:1px solid #d8b43a;pointer-events:none}
+#welcome-intro:after{content:"";position:absolute;inset:18px;border:1px solid #d8b43a55;pointer-events:none}
+#welcome-intro.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+#welcome-intro .intro-writing{position:relative;z-index:2;width:min(760px,94vw);display:flex;flex-direction:column;align-items:center;gap:clamp(12px,2.5vh,22px);text-align:center}
+#welcome-intro .welcome-word{color:#d71920;font:italic 500 clamp(2.5rem,9vw,5.3rem)/1.05 "Brush Script MT","Segoe Script","URW Chancery L",cursive;letter-spacing:.015em;white-space:nowrap;clip-path:inset(0 100% 0 0);animation:tmjeWrite .85s steps(22,end) .12s forwards}
+#welcome-intro .welcome-brand{display:flex;flex-direction:column;align-items:center;gap:3px;color:#171717;font:500 clamp(.9rem,3.2vw,1.45rem)/1.35 Georgia,"Times New Roman",serif;letter-spacing:.12em;text-transform:uppercase;opacity:0;animation:tmjeFade .45s ease 1.05s forwards}
+#welcome-intro .welcome-brand strong{font-weight:600;color:#171717}
+#welcome-intro .intro-jupiter{color:#d71920;font-size:1.22em;letter-spacing:.09em}
+#welcome-intro .welcome-brand small{font:600 .66em/1.5 Arial,Helvetica,sans-serif;letter-spacing:.28em;color:#171717}
+#welcome-intro .intro-signature{width:min(300px,72vw);height:auto;overflow:visible;margin-top:-8px}
+#welcome-intro .signature-stroke,#welcome-intro .signature-flourish{fill:none;stroke:#d71920;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:700;stroke-dashoffset:700;animation:tmjeSign .8s ease 2.15s forwards}
+#welcome-intro .signature-flourish{stroke:#d8b43a;stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation-delay:2.45s}
+#welcome-intro .intro-pen{position:absolute;z-index:3;width:clamp(62px,14vw,94px);height:auto;left:calc(50% - min(36vw, 240px));top:calc(50% - 56px);transform:rotate(-12deg);filter:drop-shadow(0 3px 2px #0002);animation:tmjePenTravel 2.35s cubic-bezier(.45,.05,.55,.95) .08s forwards}
+@keyframes tmjeWrite{to{clip-path:inset(0 0 0 0)}}
+@keyframes tmjeFade{to{opacity:1}}
+@keyframes tmjeSign{to{stroke-dashoffset:0}}
+@keyframes tmjePenTravel{0%{left:calc(50% - min(36vw, 240px));top:calc(50% - 70px);transform:rotate(-12deg)}38%{left:calc(50% + min(20vw, 130px));top:calc(50% - 68px);transform:rotate(-12deg)}57%{left:calc(50% - min(24vw, 150px));top:calc(50% - 4px);transform:rotate(-12deg)}78%{left:calc(50% + min(22vw, 135px));top:calc(50% + 45px);transform:rotate(-12deg)}100%{left:calc(50% + min(40vw, 260px));top:calc(50% + 100px);transform:rotate(-12deg);opacity:0}}
+@keyframes tmjeIntroExit{to{opacity:0;visibility:hidden;pointer-events:none}}
+@media(max-width:520px){#welcome-intro:before{inset:9px}#welcome-intro:after{inset:14px}#welcome-intro .welcome-word{font-size:clamp(2.25rem,11vw,3.5rem)}#welcome-intro .welcome-brand{font-size:clamp(.8rem,3.8vw,1rem);letter-spacing:.07em}#welcome-intro .welcome-brand small{letter-spacing:.2em}#welcome-intro .intro-pen{top:calc(50% - 55px)}}
+@media(prefers-reduced-motion:reduce){#welcome-intro{animation:tmjeIntroExit .2s ease 1.8s forwards}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-stroke,#welcome-intro .signature-flourish,#welcome-intro .intro-pen{animation:none;opacity:1;clip-path:none;stroke-dashoffset:0}}
+</style>
+
 </head>
 <body>
 
-<div id="welcome-intro" role="status" aria-label="Bienvenue">
-  <div class="welcome-word" aria-label="BIENVENUE">
-    <span style="--i:0">B</span><span style="--i:1">I</span><span style="--i:2">E</span><span style="--i:3">N</span><span style="--i:4">V</span><span style="--i:5">E</span><span style="--i:6">N</span><span style="--i:7">U</span><span style="--i:8">E</span>
+<div id="welcome-intro" role="status" aria-label="Bienvenue chez THE MERCURY JUPITER EVENTS Événementiel">
+  <div class="intro-writing">
+    <div class="welcome-word">Bienvenue</div>
+    <div class="welcome-brand">Chez <strong>THE MERCURY</strong><span class="intro-jupiter">JUPITER EVENTS</span><small>ÉVÉNEMENTIEL</small></div>
+    <svg class="intro-signature" viewBox="0 0 360 62" aria-label="Signature décorative" role="img">
+      <path class="signature-stroke" d="M10 39 C26 8,37 8,32 34 S22 57,45 31 C56 17,62 17,58 38 S49 47,69 30 C80 20,84 20,79 37 C75 49,93 46,104 31 C116 15,124 17,119 36 C115 51,132 44,146 29 C158 16,164 20,159 36 C153 52,176 42,192 29 C207 17,216 17,208 36 C202 51,226 41,244 28 C263 15,276 20,267 34 C258 48,288 45,309 26 C323 14,337 18,346 26" />
+      <path class="signature-flourish" d="M24 53 C102 61,230 58,337 43" />
+    </svg>
   </div>
-  <div class="welcome-rule" aria-hidden="true"></div>
-  <div class="welcome-brand" aria-label="THE MERCURY JUPITER EVENTS — L’Art de célébrer">
-    <span style="--i:0">THE&nbsp;</span><span class="white-word" style="--i:1">MERCURY&nbsp;</span><span style="--i:2">JUPITER&nbsp;</span><span class="white-word" style="--i:3">EVENTS</span><span class="event-word" style="--i:4">L’ART DE CÉLÉBRER</span>
-  </div>
-  <p class="welcome-tagline">L’élégance au service de vos moments d’exception.</p>
+  <svg class="intro-pen" viewBox="0 0 100 24" aria-hidden="true">
+    <path d="M5 7 L73 7 L89 12 L73 17 L5 17 Q0 12 5 7Z" fill="#d71920" stroke="#a80e18" stroke-width="1.5"/>
+    <path d="M73 7 L91 12 L73 17Z" fill="#d8b43a" stroke="#a98218" stroke-width="1"/>
+    <path d="M88 11 L96 12 L88 13Z" fill="#222"/>
+    <path d="M17 7 L17 17 M24 7 L24 17" stroke="#f4d46a" stroke-width="2"/>
+  </svg>
 </div>
 
 <header class="nav">
@@ -1268,8 +1299,8 @@ document.addEventListener('DOMContentLoaded',function(){
 (function(){
   var intro=document.getElementById('welcome-intro');
   if(!intro)return;
-  window.setTimeout(function(){intro.classList.add('is-hidden');},3000);
-  window.setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},3900);
+  window.setTimeout(function(){intro.classList.add('is-hidden');},3500);
+  window.setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},4000);
   intro.addEventListener('click',function(){intro.classList.add('is-hidden');});
 })();
 </script>
