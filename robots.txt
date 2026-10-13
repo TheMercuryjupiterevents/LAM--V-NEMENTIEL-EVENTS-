@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.themercuryjupiter.com/sitemap.xml
+Sitemap: https://themercuryjupiterevents.github.io/the-mercury-jupiter-events/sitemap.xml
