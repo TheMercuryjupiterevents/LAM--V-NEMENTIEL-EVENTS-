@@ -485,9 +485,11 @@ form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193
 #welcome-intro .welcome-brand strong{font-weight:600;color:#171717}
 #welcome-intro .intro-jupiter{color:#d71920;font-size:1.22em;letter-spacing:.09em}
 #welcome-intro .welcome-brand small{font:600 .66em/1.5 Arial,Helvetica,sans-serif;letter-spacing:.28em;color:#171717}
-#welcome-intro .intro-signature{width:min(300px,72vw);height:auto;overflow:visible;margin-top:-8px}
-#welcome-intro .signature-stroke,#welcome-intro .signature-flourish{fill:none;stroke:#d71920;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:700;stroke-dashoffset:700;animation:tmjeSign .8s ease 2.15s forwards}
-#welcome-intro .signature-flourish{stroke:#d8b43a;stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation-delay:2.45s}
+#welcome-intro .intro-signature{width:min(360px,82vw);display:flex;flex-direction:column;align-items:center;gap:0;margin-top:-8px;overflow:visible}
+#welcome-intro .signature-name{display:block;max-width:100%;white-space:nowrap;font-family:"Brush Script MT","Segoe Script","URW Chancery L",cursive;font-style:italic;font-weight:500;line-height:1.18;letter-spacing:.005em;color:#d71920;opacity:0;clip-path:inset(0 100% 0 0);font-size:clamp(1.22rem,4.8vw,2rem);animation:tmjeWrite .55s steps(24,end) 2.05s forwards}
+#welcome-intro .signature-carlanne{color:#171717;font-size:clamp(1.15rem,4.4vw,1.8rem);animation-delay:2.35s}
+#welcome-intro .signature-swoosh{display:block;width:92%;height:auto;overflow:visible;margin-top:1px}
+#welcome-intro .signature-flourish{fill:none;stroke:#d8b43a;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:400;stroke-dashoffset:400;animation:tmjeSign .55s ease 2.7s forwards}
 #welcome-intro .intro-pen{position:absolute;z-index:5;display:block;width:clamp(112px,28vw,190px);height:auto;left:calc(50% - min(38vw, 255px));top:calc(50% - 76px);transform:rotate(-12deg);filter:drop-shadow(0 5px 4px #0003);overflow:visible;animation:tmjePenTravel 2.35s cubic-bezier(.45,.05,.55,.95) .08s forwards}
 #welcome-intro .intro-pen path{vector-effect:non-scaling-stroke}
 @keyframes tmjeWrite{to{clip-path:inset(0 0 0 0)}}
@@ -495,8 +497,8 @@ form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193
 @keyframes tmjeSign{to{stroke-dashoffset:0}}
 @keyframes tmjePenTravel{0%{left:calc(50% - min(36vw, 240px));top:calc(50% - 70px);transform:rotate(-12deg)}38%{left:calc(50% + min(20vw, 130px));top:calc(50% - 68px);transform:rotate(-12deg)}57%{left:calc(50% - min(24vw, 150px));top:calc(50% - 4px);transform:rotate(-12deg)}78%{left:calc(50% + min(22vw, 135px));top:calc(50% + 45px);transform:rotate(-12deg)}100%{left:calc(50% + min(40vw, 260px));top:calc(50% + 100px);transform:rotate(-12deg);opacity:0}}
 @keyframes tmjeIntroExit{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(max-width:520px){#welcome-intro:before{inset:9px}#welcome-intro:after{inset:14px}#welcome-intro .welcome-word{font-size:clamp(2.25rem,11vw,3.5rem)}#welcome-intro .welcome-brand{font-size:clamp(.8rem,3.8vw,1rem);letter-spacing:.07em}#welcome-intro .welcome-brand small{letter-spacing:.2em}#welcome-intro .intro-pen{width:clamp(100px,31vw,145px);top:calc(50% - 62px)}}
-@media(prefers-reduced-motion:reduce){#welcome-intro{animation:tmjeIntroExit .2s ease 1.8s forwards}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-stroke,#welcome-intro .signature-flourish,#welcome-intro .intro-pen{animation:none;opacity:1;clip-path:none;stroke-dashoffset:0}}
+@media(max-width:520px){#welcome-intro:before{inset:9px}#welcome-intro:after{inset:14px}#welcome-intro .welcome-word{font-size:clamp(2.25rem,11vw,3.5rem)}#welcome-intro .welcome-brand{font-size:clamp(.8rem,3.8vw,1rem);letter-spacing:.07em}#welcome-intro .welcome-brand small{letter-spacing:.2em}#welcome-intro .intro-pen{width:clamp(100px,31vw,145px);top:calc(50% - 62px)}#welcome-intro .intro-signature{width:min(340px,84vw)}#welcome-intro .signature-name{font-size:clamp(1.18rem,5.2vw,1.6rem)}#welcome-intro .signature-carlanne{font-size:clamp(1.08rem,4.8vw,1.48rem)}}
+@media(prefers-reduced-motion:reduce){#welcome-intro{animation:tmjeIntroExit .2s ease 1.8s forwards}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-name,#welcome-intro .intro-pen{animation:none;opacity:1;clip-path:none}#welcome-intro .signature-flourish{animation:none;stroke-dashoffset:0}}
 </style>
 
 </head>
@@ -506,10 +508,13 @@ form.form .btn.primary:hover,form.form button[type=submit]:hover{background:#193
   <div class="intro-writing">
     <div class="welcome-word">Bienvenue</div>
     <div class="welcome-brand">Chez <strong>THE MERCURY</strong><span class="intro-jupiter">JUPITER EVENTS</span><small>ÉVÉNEMENTIEL</small></div>
-    <svg class="intro-signature" viewBox="0 0 360 62" aria-label="Signature décorative" role="img">
-      <path class="signature-stroke" d="M10 39 C26 8,37 8,32 34 S22 57,45 31 C56 17,62 17,58 38 S49 47,69 30 C80 20,84 20,79 37 C75 49,93 46,104 31 C116 15,124 17,119 36 C115 51,132 44,146 29 C158 16,164 20,159 36 C153 52,176 42,192 29 C207 17,216 17,208 36 C202 51,226 41,244 28 C263 15,276 20,267 34 C258 48,288 45,309 26 C323 14,337 18,346 26" />
-      <path class="signature-flourish" d="M24 53 C102 61,230 58,337 43" />
-    </svg>
+    <div class="intro-signature" aria-label="Signature Abbigaëlle Mentor et Carlanne Zephir" role="img">
+      <span class="signature-name signature-abbigaelle">Abbigaëlle Mentor</span>
+      <span class="signature-name signature-carlanne">Carlan­ne Zephir</span>
+      <svg class="signature-swoosh" viewBox="0 0 360 34" aria-hidden="true">
+        <path class="signature-flourish" d="M8 22 C64 3,100 29,155 16 S263 8,352 7" />
+      </svg>
+    </div>
   </div>
   <svg class="intro-pen" viewBox="0 0 160 42" aria-hidden="true">
     <defs>
