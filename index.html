@@ -723,7 +723,32 @@ form{width:100%;max-width:100%}
     <div class="card" style="margin-top:24px">
       <h3>Commandes personnalisées</h3>
       <p>Quantités disponibles : 20, 40, 60, 80 ou 100 cartes. Le devis sera préparé selon la quantité choisie et les options de personnalisation.</p>
-      <div class="actions"><a class="btn primary" href="#formulaire">Demander mes cartes de mariage</a></div>
+      <div class="actions"><a class="btn primary" href="#formulaire-cartes-mariage">Remplir le formulaire de commande</a></div>
+    </div>
+   
+    <div id="formulaire-cartes-mariage" class="card" style="margin-top:28px">
+      <div class="eyebrow">Demande de personnalisation</div>
+      <h3>FORMULAIRE — CARTES D’INVITATION DE MARIAGE</h3>
+      <p>Complétez les informations ci-dessous pour préparer vos invitations, notamment celles destinées à votre famille. Nous vous contacterons pour confirmer les détails et établir un devis.</p>
+      <form class="form" action="https://formsubmit.co/carlanne.abbigaelleevents@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="DEMANDE DE CARTES D’INVITATION DE MARIAGE — THE MERCURY JUPITER EVENTS">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <div class="grid grid2">
+          <div><label for="invitationNom">Votre nom complet *</label><input id="invitationNom" type="text" name="Nom complet" autocomplete="name" required></div>
+          <div><label for="invitationEmail">Adresse e-mail *</label><input id="invitationEmail" type="email" name="E-mail" autocomplete="email" required></div>
+          <div><label for="invitationTelephone">Téléphone / WhatsApp *</label><input id="invitationTelephone" type="tel" name="Téléphone ou WhatsApp" autocomplete="tel" required></div>
+          <div><label for="invitationCouple">Noms des futurs mariés *</label><input id="invitationCouple" type="text" name="Noms des futurs mariés" required placeholder="Ex. : prénom et prénom"></div>
+          <div><label for="invitationDate">Date du mariage</label><input id="invitationDate" type="date" name="Date du mariage"></div>
+          <div><label for="invitationQuantite">Quantité souhaitée *</label><select id="invitationQuantite" name="Quantité souhaitée" required><option value="">Choisir une quantité</option><option>20 cartes</option><option>40 cartes</option><option>60 cartes</option><option>80 cartes</option><option>100 cartes</option><option>Autre quantité</option></select></div>
+          <div><label for="invitationStyle">Style de carte souhaité *</label><select id="invitationStyle" name="Style de carte" required><option value="">Choisir un style</option><option>Classique & élégante</option><option>Black & Gold</option><option>Romantique & florale</option><option>Minimaliste & moderne</option><option>Rouge & or</option><option>Nature & botanique</option><option>Prestige avec enveloppe & sceau</option><option>Je souhaite être conseillé(e)</option></select></div>
+          <div><label for="invitationDestinataires">À qui les invitations sont-elles destinées ?</label><select id="invitationDestinataires" name="Destinataires"><option>Famille uniquement</option><option>Famille et proches</option><option>Tous les invités du mariage</option></select></div>
+        </div>
+        <div style="margin-top:16px"><label for="invitationTexte">Texte ou message à faire figurer sur la carte</label><textarea id="invitationTexte" name="Texte souhaité" rows="4" placeholder="Vous pouvez indiquer les informations à inclure sur l’invitation."></textarea></div>
+        <div style="margin-top:16px"><label for="invitationReference">Image d’inspiration (facultatif)</label><input id="invitationReference" type="file" name="Image d’inspiration" accept="image/*"></div>
+        <p style="font-size:.92em">Aucun prix n’est affiché ici : le devis sera préparé selon la quantité et la personnalisation demandées.</p>
+        <button class="btn primary" type="submit">Envoyer ma demande</button>
+      </form>
     </div>
   </div>
 </section>
