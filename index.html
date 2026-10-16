@@ -615,6 +615,7 @@ form{width:100%;max-width:100%}
 <main id="accueil">
 <section class="hero">
 <span class="hero-color-dot hero-dot-pink-top" aria-hidden="true"></span><span class="hero-color-dot hero-dot-yellow" aria-hidden="true"></span><span class="hero-color-dot hero-dot-pink-bottom" aria-hidden="true"></span><span class="hero-color-dot hero-dot-orange" aria-hidden="true"></span>
+<div class="hero-three-stars" aria-label="Trois étoiles décoratives" role="img"><span class="star-pink">★</span><span class="star-yellow">★</span><span class="star-orange">★</span></div>
 <div class="wrap hero-grid">
 <div>
 <h1>THE MERCURY<br>JUPITER EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
@@ -1858,6 +1859,13 @@ form.form .form-section details.color-combinations>summary,form.form .form-secti
  form.form .form-section .color-mix-live{padding:8px!important}
 }
 
+/* Three small stars on one line: pink, yellow, orange */
+.hero .hero-three-stars{position:absolute;z-index:3;top:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:5px;font-size:15px;line-height:1;pointer-events:none}
+.hero .hero-three-stars span{display:block;font-size:15px}
+.hero .hero-three-stars .star-pink{color:#FF69B4}
+.hero .hero-three-stars .star-yellow{color:#FFD400}
+.hero .hero-three-stars .star-orange{color:#FF8C00}
+@media(max-width:520px){.hero .hero-three-stars{top:18px;gap:4px}.hero .hero-three-stars span{font-size:12px}}
 /* TMJE brand accents: distinct circles and visible small color dots */
 .hero:before{background:#00C853!important;opacity:1!important}
 .hero:after{background:#4169E1!important;border:0!important;opacity:1!important}
