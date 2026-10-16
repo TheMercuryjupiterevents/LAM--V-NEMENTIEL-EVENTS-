@@ -614,6 +614,7 @@ form{width:100%;max-width:100%}
 
 <main id="accueil">
 <section class="hero">
+<span class="hero-color-dot hero-dot-pink-top" aria-hidden="true"></span><span class="hero-color-dot hero-dot-yellow" aria-hidden="true"></span><span class="hero-color-dot hero-dot-pink-bottom" aria-hidden="true"></span><span class="hero-color-dot hero-dot-orange" aria-hidden="true"></span>
 <div class="wrap hero-grid">
 <div>
 <h1>THE MERCURY<br>JUPITER EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
@@ -1857,8 +1858,13 @@ form.form .form-section details.color-combinations>summary,form.form .form-secti
  form.form .form-section .color-mix-live{padding:8px!important}
 }
 
-/* TMJE brand accents: separate royal-blue and vivid-green circles, with small pink, yellow and orange accents */
-.hero{background-image:radial-gradient(circle at 78% 8%,#FF69B4 0 7px,transparent 8px),radial-gradient(circle at 88% 15%,#FFD400 0 7px,transparent 8px),radial-gradient(circle at 77% 91%,#FF69B4 0 7px,transparent 8px),radial-gradient(circle at 89% 84%,#FF8C00 0 7px,transparent 8px)!important}
+/* TMJE brand accents: distinct circles and visible small color dots */
 .hero:before{background:#00C853!important;opacity:1!important}
 .hero:after{background:#4169E1!important;border:0!important;opacity:1!important}
+.hero .hero-color-dot{position:absolute;z-index:2;display:block;width:12px;height:12px;border-radius:50%;pointer-events:none}
+.hero .hero-dot-pink-top{top:28px;right:78px;background:#FF69B4}
+.hero .hero-dot-yellow{top:72px;right:32px;background:#FFD400}
+.hero .hero-dot-pink-bottom{bottom:34px;right:80px;background:#FF69B4}
+.hero .hero-dot-orange{bottom:72px;right:28px;background:#FF8C00}
+@media(max-width:520px){.hero .hero-color-dot{width:10px;height:10px}.hero .hero-dot-pink-top{top:22px;right:48px}.hero .hero-dot-yellow{top:56px;right:20px}.hero .hero-dot-pink-bottom{bottom:25px;right:50px}.hero .hero-dot-orange{bottom:55px;right:18px}}
 </style>
