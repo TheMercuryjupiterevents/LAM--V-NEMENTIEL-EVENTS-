@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lamevenementieleventssitemap.xml
+Sitemap: https://lamevenementielevents/sitemap.xml
