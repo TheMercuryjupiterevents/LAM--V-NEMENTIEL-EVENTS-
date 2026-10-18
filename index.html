@@ -632,6 +632,25 @@ input,select,textarea{font-size:.84rem}
 }
 </style>
 
+
+<style id="logo-net-amelioration">
+/* Ajustement du logo uniquement : affichage plus grand et net, sans modifier le reste du site */
+.nav .brand img{
+  width:58px!important;height:58px!important;flex:0 0 58px;
+  object-fit:contain!important;object-position:center;
+  image-rendering:auto;filter:none;transform:translateZ(0);
+}
+.hero-grid>.hero-logo,.hero-logo{
+  width:min(380px,86vw)!important;height:auto!important;aspect-ratio:1;
+  object-fit:contain!important;object-position:center;
+  image-rendering:auto;filter:none;transform:translateZ(0);
+}
+@media(max-width:680px){
+  .nav .brand img{width:46px!important;height:46px!important;flex-basis:46px}
+  .hero-grid>.hero-logo,.hero-logo{width:min(245px,72vw)!important}
+}
+</style>
+
 </head>
 <body>
 
