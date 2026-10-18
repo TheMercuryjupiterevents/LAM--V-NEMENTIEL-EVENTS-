@@ -669,7 +669,7 @@ input,select,textarea{font-size:.84rem}
 
 <header class="nav">
 <div class="wrap navin">
-<a class="brand" href="#accueil" aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="brand-mark"><img src="assets/lam-logo.jpg?v=20261018" alt="Logo LAM ÉVÉNEMENTIEL & EVENTS"></span><span class="brand-name">LAM ÉVÉNEMENTIEL & EVENTS<small>ÉVÉNEMENTIEL</small></span></a>
+<a class="brand" href="#accueil" aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="brand-mark"><img src="assets/lam-logo.jpg?v=20261019" alt="Logo LAM ÉVÉNEMENTIEL & EVENTS"></span><span class="brand-name">LAM ÉVÉNEMENTIEL & EVENTS<small>ÉVÉNEMENTIEL</small></span></a>
 <nav class="navlinks" aria-label="Navigation principale">
 <a href="#apropos">À propos</a><a href="#services">Services</a><a href="#cartes-invitation-mariage">Cartes de mariage</a><a href="#galerie">Galerie photos</a><a href="#createur">Créer mon événement</a><a href="#budget-estimateur">Budget</a><a href="#personnalisez-evenement">Personnaliser</a><a href="#outils-clients">Outils clients</a><a href="#formules">Formules</a><a href="#experience">Expérience</a><a href="#vision2040">Vision 2040</a><a href="#partenariats">Partenariats</a><a href="presentation.html">Dossier de présentation</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><br><a href="#avis-clients-tmje">Partager un avis</a>
 </nav>
@@ -686,7 +686,7 @@ input,select,textarea{font-size:.84rem}
 
 <div class="hero-three-stars" aria-label="Étoiles décoratives rose, jaune, orange, gris, cristal, vert vif et or" role="img"><span class="star-pink">★</span><span class="star-yellow">★</span><span class="star-orange">★</span><span class="star-gray">★</span><span class="star-crystal">★</span><span class="star-green">★</span><span class="star-gold">★</span></div>
 <div class="wrap hero-grid">
-<img class="hero-logo" src="assets/lam-logo.jpg?v=20261018" alt="Logo officiel LAM ÉVÉNEMENTIEL & EVENTS, encadré par un cercle rouge et un cercle doré">
+<img class="hero-logo" src="assets/lam-logo.jpg?v=20261019" alt="Logo officiel LAM ÉVÉNEMENTIEL & EVENTS, encadré par un cercle rouge et un cercle doré">
 <div>
 <h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
 <p class="tagline">Votre vision. Notre créativité. Une expérience inoubliable.</p>
@@ -1934,4 +1934,23 @@ a.btn.primary[href="#formulaire"]:focus-visible,
 a.btn.primary[href="#formulaire"]:active{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-radius:0!important;-webkit-tap-highlight-color:transparent!important}
 a.btn.primary[href="#formulaire"]::before,
 a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!important}
+</style>
+
+
+<style id="lam-logo-display-clarity-20261019">
+/* Logo LAM : éviter le recadrage et les agrandissements excessifs sur tous les écrans */
+.brand-mark img{
+  width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center!important;
+  image-rendering:auto!important;transform:none!important;
+  background:#fff!important;
+}
+.hero-logo{
+  width:min(245px,72vw)!important;height:auto!important;
+  aspect-ratio:1!important;object-fit:contain!important;
+  object-position:center!important;image-rendering:auto!important;
+}
+@media (min-width:768px){
+  .hero-logo{width:min(300px,40vw)!important}
+}
 </style>
