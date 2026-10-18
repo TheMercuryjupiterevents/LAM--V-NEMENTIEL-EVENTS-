@@ -457,10 +457,10 @@ body{background:#fff!important;color:#292425}
 .brand{gap:10px}
 .brand-mark{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border:3px solid #f00024;outline:2px solid #d8b43a;outline-offset:2px;border-radius:50%;background:#fff;overflow:hidden}
 .brand-mark img{width:100%;height:100%;object-fit:cover;border-radius:50%;margin:0;border:2px solid #1248ed}
-.hero-grid{grid-template-columns:1fr;position:relative}
-.hero-grid:after{content:"";display:block;width:min(320px,72vw);aspect-ratio:1;grid-row:1;grid-column:1;justify-self:center;grid-row:1;grid-column:1;margin:0 auto 32px;border:5px solid #f00024;outline:3px solid #d8b43a;outline-offset:5px;border-radius:50%;background:#fff url('assets/lam-logo.jpg') center/cover no-repeat;box-shadow:0 16px 40px #0002}
-.hero-grid>div{grid-row:2;grid-column:1}
-@media(min-width:850px){.hero-grid{grid-template-columns:1fr 350px;gap:42px}.hero-grid:after{grid-column:2;grid-row:1;width:min(330px,100%);margin:0 auto}.hero-grid>div{grid-column:1;grid-row:1}}
+.hero-grid{grid-template-columns:1fr;position:relative;gap:30px}
+.hero-grid>.hero-logo{grid-column:1;grid-row:1;width:min(320px,72vw);aspect-ratio:1;object-fit:contain;display:block;justify-self:center;align-self:center;border:5px solid #f00024;outline:3px solid #d8b43a;outline-offset:5px;border-radius:50%;background:#fff;box-shadow:0 16px 40px #0002}
+.hero-grid>div{grid-column:1;grid-row:2}
+@media(min-width:850px){.hero-grid{grid-template-columns:minmax(0,1fr) 350px;gap:42px}.hero-grid>.hero-logo{grid-column:2;grid-row:1;width:min(330px,100%);margin:0 auto}.hero-grid>div{grid-column:1;grid-row:1}}
 @media(max-width:680px){.brand-mark{width:43px;height:43px;flex-basis:43px}.brand{gap:8px}.brand-name{font-size:.88rem}}
 </style>
 <style id="tmje-three-form-colors">
@@ -667,6 +667,7 @@ input,select,textarea{font-size:.84rem}
 
 <div class="hero-three-stars" aria-label="Étoiles décoratives rose, jaune, orange, gris, cristal, vert vif et or" role="img"><span class="star-pink">★</span><span class="star-yellow">★</span><span class="star-orange">★</span><span class="star-gray">★</span><span class="star-crystal">★</span><span class="star-green">★</span><span class="star-gold">★</span></div>
 <div class="wrap hero-grid">
+<img class="hero-logo" src="assets/lam-logo.jpg" alt="Logo officiel LAM ÉVÉNEMENTIEL & EVENTS, encadré par un cercle rouge et un cercle doré">
 <div>
 <h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
 <p class="tagline">Votre vision. Notre créativité. Une expérience inoubliable.</p>
