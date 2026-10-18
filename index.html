@@ -1914,3 +1914,13 @@ form.form .form-section details.color-combinations>summary,form.form .form-secti
 .hero:after{background:#4169E1!important;border:0!important;opacity:1!important}
 @media(max-width:520px){}
 </style>
+
+<style id="remove-blue-circle-planifier">
+/* Retire le rond bleu autour du bouton « Planifier mon événement » */
+.hero .actions a.btn.primary,
+.hero .actions a.btn.primary:focus,
+.hero .actions a.btn.primary:focus-visible,
+.hero .actions a.btn.primary:active{outline:0!important;box-shadow:none!important;border-radius:0!important;-webkit-tap-highlight-color:transparent!important}
+.hero .actions a.btn.primary::before,
+.hero .actions a.btn.primary::after{content:none!important;display:none!important}
+</style>
