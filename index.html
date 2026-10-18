@@ -1924,3 +1924,14 @@ form.form .form-section details.color-combinations>summary,form.form .form-secti
 .hero .actions a.btn.primary::before,
 .hero .actions a.btn.primary::after{content:none!important;display:none!important}
 </style>
+
+<style id="remove-blue-circle-planifier-v2">
+/* Supprime le cercle/halo bleu visible autour du bouton Planifier, sur mobile et ordinateur */
+a.btn.primary[href="#formulaire"],
+a.btn.primary[href="#formulaire"]:hover,
+a.btn.primary[href="#formulaire"]:focus,
+a.btn.primary[href="#formulaire"]:focus-visible,
+a.btn.primary[href="#formulaire"]:active{outline:none!important;outline-offset:0!important;box-shadow:none!important;border-radius:0!important;-webkit-tap-highlight-color:transparent!important}
+a.btn.primary[href="#formulaire"]::before,
+a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!important}
+</style>
