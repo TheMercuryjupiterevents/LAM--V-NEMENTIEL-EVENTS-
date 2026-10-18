@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254">
+  <title>Logo LAM ÉVÉNEMENTIEL &amp; EVENTS</title>
+  <defs>
+    <filter id="sharpen" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+      <feConvolveMatrix order="3" kernelMatrix="0 -0.22 0 -0.22 1.88 -0.22 0 -0.22 0" preserveAlpha="true"/>
+    </filter>
+  </defs>
+  <image href="lam-logo.jpg?v=20261020" width="1254" height="1254" preserveAspectRatio="xMidYMid meet" filter="url(#sharpen)"/>
+</svg>
