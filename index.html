@@ -2236,3 +2236,31 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
  .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
 }
 </style>
+
+<style id="lam-wings-position-correction">
+/* Correction de position : image des ailes centrée derrière le logo rond */
+.lam-wheat-emblem>.lam-wheat-wing{
+ position:absolute!important;left:50%!important;right:auto!important;top:50%!important;
+ width:128%!important;max-width:none!important;height:auto!important;max-height:none!important;
+ object-fit:contain!important;z-index:2!important;opacity:1!important;
+ will-change:transform!important;pointer-events:none!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-left{
+ clip-path:inset(0 50% 0 0)!important;
+ animation:lamWingPositionLeft 2.8s ease-in-out infinite!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-right{
+ clip-path:inset(0 0 0 50%)!important;
+ animation:lamWingPositionRight 2.8s ease-in-out infinite!important;
+}
+@keyframes lamWingPositionLeft{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotateZ(-10deg) rotateY(-20deg) scaleY(1.06)}
+ 65%{transform:translate(-50%,-50%) rotateZ(4deg) rotateY(10deg) scaleY(.98)}
+}
+@keyframes lamWingPositionRight{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotateZ(10deg) rotateY(20deg) scaleY(1.06)}
+ 65%{transform:translate(-50%,-50%) rotateZ(-4deg) rotateY(-10deg) scaleY(.98)}
+}
+</style>
