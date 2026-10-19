@@ -1,42 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Paired silver pearl wheat-stalk wings">
 <defs>
- <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#d7d8dc"/><stop offset=".7" stop-color="#fdfdfd"/><stop offset="1" stop-color="#a9abb1"/></linearGradient>
- <g id="ear" fill="url(#silver)" stroke="#aeb0b5" stroke-width="1.2">
-  <ellipse cx="0" cy="-9" rx="4" ry="9" transform="rotate(-35)"/>
-  <ellipse cx="0" cy="-9" rx="4" ry="9" transform="rotate(35)"/>
+ <linearGradient id="silver" x1="0" y1="0" x2="0.85" y2="1">
+  <stop offset="0" stop-color="#ffffff"/><stop offset=".22" stop-color="#e9eaed"/><stop offset=".48" stop-color="#bfc2c9"/><stop offset=".68" stop-color="#ffffff"/><stop offset="1" stop-color="#969aa3"/>
+ </linearGradient>
+ <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#bfc2c9"/><stop offset="1" stop-color="#f8f8fa"/>
+ </linearGradient>
+ <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <g id="grain" fill="url(#silver)" stroke="#a8abb3" stroke-width="1">
+  <ellipse cx="0" cy="-7" rx="4.6" ry="9.5" transform="rotate(-33)"/>
+  <ellipse cx="0" cy="-7" rx="4.6" ry="9.5" transform="rotate(33)"/>
  </g>
- <g id="stalk" fill="none" stroke="url(#silver)" stroke-width="2.2" stroke-linecap="round">
-  <path d="M0 0 Q-35 -55 -105 -105"/>
-  <path d="M-13 -17 Q-42 -75 -145 -130"/>
-  <path d="M-25 -35 Q-75 -90 -180 -100"/>
-  <path d="M-35 -50 Q-105 -105 -215 -72"/>
-  <path d="M-45 -63 Q-130 -105 -245 -35"/>
-  <path d="M-55 -75 Q-145 -100 -270 0"/>
+ <g id="sprig" fill="none" stroke="url(#stem)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M0 0 Q-62 -62 -155 -108"/>
+  <path d="M-24 -22 Q-83 -90 -195 -125"/>
+  <path d="M-49 -43 Q-117 -96 -233 -105"/>
+  <path d="M-72 -61 Q-146 -94 -265 -77"/>
+  <path d="M-96 -75 Q-175 -92 -292 -39"/>
+  <path d="M-119 -87 Q-195 -80 -315 4"/>
+  <path d="M-142 -96 Q-217 -67 -330 43"/>
+ </g>
+ <g id="ear">
+  <path d="M0 10 Q-6 -26 -13 -55" fill="none" stroke="url(#stem)" stroke-width="2.4" stroke-linecap="round"/>
+  <use href="#grain" transform="translate(-3 -3) rotate(-28)"/>
+  <use href="#grain" transform="translate(-7 -18) rotate(-35)"/>
+  <use href="#grain" transform="translate(-9 -32) rotate(-37)"/>
+  <use href="#grain" transform="translate(-11 -45) rotate(-39)"/>
+  <use href="#grain" transform="translate(5 -7) scale(-1 1) rotate(-28)"/>
+  <use href="#grain" transform="translate(2 -22) scale(-1 1) rotate(-35)"/>
+  <use href="#grain" transform="translate(0 -36) scale(-1 1) rotate(-37)"/>
+  <use href="#grain" transform="translate(-1 -49) scale(-1 1) rotate(-39)"/>
+  <path d="M-13 -55 l-5 -12 M-13 -55 l2 -13" stroke="#e9eaed" stroke-width="1.6" stroke-linecap="round"/>
+ </g>
+ <g id="half">
+  <use href="#sprig"/>
+  <use href="#ear" transform="translate(-32 -30) rotate(-35) scale(.95)"/>
+  <use href="#ear" transform="translate(-61 -48) rotate(-47) scale(.9)"/>
+  <use href="#ear" transform="translate(-91 -65) rotate(-57) scale(.86)"/>
+  <use href="#ear" transform="translate(-123 -80) rotate(-67) scale(.82)"/>
+  <use href="#ear" transform="translate(-155 -91) rotate(-76) scale(.78)"/>
+  <use href="#ear" transform="translate(-188 -97) rotate(-84) scale(.74)"/>
+  <use href="#ear" transform="translate(-220 -95) rotate(-92) scale(.7)"/>
+  <use href="#ear" transform="translate(-249 -83) rotate(-101) scale(.66)"/>
+  <use href="#ear" transform="translate(-275 -63) rotate(-110) scale(.62)"/>
+  <use href="#ear" transform="translate(-298 -37) rotate(-118) scale(.58)"/>
+  <use href="#ear" transform="translate(-316 -8) rotate(-125) scale(.54)"/>
+  <use href="#ear" transform="translate(-104 -79) rotate(-25) scale(.72)"/>
+  <use href="#ear" transform="translate(-76 -65) rotate(-20) scale(.72)"/>
+  <use href="#ear" transform="translate(-47 -48) rotate(-16) scale(.72)"/>
  </g>
 </defs>
-<g transform="translate(350 240)">
- <use href="#stalk"/>
- <g transform="translate(-45 -55) rotate(-32)"><use href="#ear"/></g>
- <g transform="translate(-62 -76) rotate(-40)"><use href="#ear"/></g>
- <g transform="translate(-88 -96) rotate(-48)"><use href="#ear"/></g>
- <g transform="translate(-112 -110) rotate(-52)"><use href="#ear"/></g>
- <g transform="translate(-145 -126) rotate(-58)"><use href="#ear"/></g>
- <g transform="translate(-173 -127) rotate(-66)"><use href="#ear"/></g>
- <g transform="translate(-200 -115) rotate(-72)"><use href="#ear"/></g>
- <g transform="translate(-225 -96) rotate(-78)"><use href="#ear"/></g>
- <g transform="translate(-245 -72) rotate(-85)"><use href="#ear"/></g>
- <g transform="translate(-260 -44) rotate(-92)"><use href="#ear"/></g>
- <g transform="translate(-270 -10) rotate(-100)"><use href="#ear"/></g>
- <g transform="translate(-278 16) rotate(-105)"><use href="#ear"/></g>
- <g transform="translate(-215 -72) rotate(-38)"><use href="#ear"/></g>
- <g transform="translate(-185 -91) rotate(-36)"><use href="#ear"/></g>
- <g transform="translate(-150 -106) rotate(-32)"><use href="#ear"/></g>
- <g transform="translate(-115 -111) rotate(-25)"><use href="#ear"/></g>
- <g transform="translate(-80 -95) rotate(-20)"><use href="#ear"/></g>
- <g transform="translate(-45 -70) rotate(-15)"><use href="#ear"/></g>
+<g filter="url(#glow)" transform="translate(450 300) scale(1.12 1)">
+ <use href="#half"/>
+ <use href="#half" transform="scale(-1 1)"/>
 </g>
-<g transform="translate(350 240) scale(-1 1)">
- <use href="#stalk"/>
- <g transform="translate(-45 -55) rotate(-32)"><use href="#ear"/></g><g transform="translate(-62 -76) rotate(-40)"><use href="#ear"/></g><g transform="translate(-88 -96) rotate(-48)"><use href="#ear"/></g><g transform="translate(-112 -110) rotate(-52)"><use href="#ear"/></g><g transform="translate(-145 -126) rotate(-58)"><use href="#ear"/></g><g transform="translate(-173 -127) rotate(-66)"><use href="#ear"/></g><g transform="translate(-200 -115) rotate(-72)"><use href="#ear"/></g><g transform="translate(-225 -96) rotate(-78)"><use href="#ear"/></g><g transform="translate(-245 -72) rotate(-85)"><use href="#ear"/></g><g transform="translate(-260 -44) rotate(-92)"><use href="#ear"/></g><g transform="translate(-270 -10) rotate(-100)"><use href="#ear"/></g><g transform="translate(-278 16) rotate(-105)"><use href="#ear"/></g><g transform="translate(-215 -72) rotate(-38)"><use href="#ear"/></g><g transform="translate(-185 -91) rotate(-36)"><use href="#ear"/></g><g transform="translate(-150 -106) rotate(-32)"><use href="#ear"/></g><g transform="translate(-115 -111) rotate(-25)"><use href="#ear"/></g><g transform="translate(-80 -95) rotate(-20)"><use href="#ear"/></g><g transform="translate(-45 -70) rotate(-15)"><use href="#ear"/></g>
+<!-- restrained pearl glints -->
+<g fill="#fff" opacity=".95">
+ <path d="M116 172 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+ <path d="M202 111 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
+ <path d="M784 172 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
+ <path d="M698 111 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
 </g>
 </svg>
