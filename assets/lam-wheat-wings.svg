@@ -54,12 +54,6 @@
  <use href="#half"/>
  <use href="#half" transform="scale(-1 1)"/>
 </g>
-<!-- LAM signature on each wing, in refined silver lettering -->
-<g fill="url(#silver)" stroke="#a8abb3" stroke-width=".65" paint-order="stroke" opacity=".98"
-   font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="700" letter-spacing="4" text-anchor="middle">
- <text x="272" y="198" transform="rotate(-24 272 198)" filter="url(#glow)">LAM</text>
- <text x="628" y="198" transform="rotate(24 628 198)" filter="url(#glow)">LAM</text>
-</g>
 <!-- restrained pearl glints -->
 <g fill="#fff" opacity=".95">
  <path d="M116 172 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
