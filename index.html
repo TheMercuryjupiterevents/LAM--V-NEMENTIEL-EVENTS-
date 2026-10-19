@@ -2188,3 +2188,51 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
  box-shadow:none!important;border-radius:0!important;background:transparent!important;
 }
 </style>
+
+<style id="lam-round-logo-and-side-wings">
+/* Logo bien rond au centre, liseré doré fin, une aile de chaque côté */
+.lam-wheat-emblem{
+ position:relative!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;isolation:isolate!important;overflow:visible!important;
+ width:min(100%,430px)!important;aspect-ratio:1.35!important;margin:0 auto!important;
+ perspective:1000px!important;
+}
+.lam-wheat-emblem>.hero-logo{
+ position:relative!important;z-index:4!important;flex:0 0 46%!important;
+ width:46%!important;max-width:210px!important;aspect-ratio:1!important;height:auto!important;
+ object-fit:contain!important;border:3px solid #D8B43A!important;
+ outline:0!important;outline-offset:0!important;border-radius:50%!important;
+ background:#fff!important;box-shadow:0 5px 18px #00000018!important;margin:0!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing{
+ position:absolute!important;top:50%!important;width:128%!important;max-width:none!important;
+ height:auto!important;max-height:none!important;object-fit:contain!important;
+ z-index:2!important;opacity:1!important;left:0!important;right:auto!important;
+ will-change:transform!important;pointer-events:none!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-left{
+ clip-path:inset(0 50% 0 0)!important;
+ transform-origin:100% 50%!important;
+ animation:lamSideLeftFlap 2.8s ease-in-out infinite!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-right{
+ clip-path:inset(0 0 0 50%)!important;
+ transform-origin:0% 50%!important;
+ animation:lamSideRightFlap 2.8s ease-in-out infinite!important;
+}
+@keyframes lamSideLeftFlap{
+ 0%,100%{transform:translate(-17%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-17%,-50%) rotateZ(-9deg) rotateY(-18deg) scaleY(1.05)}
+ 65%{transform:translate(-17%,-50%) rotateZ(4deg) rotateY(9deg) scaleY(.98)}
+}
+@keyframes lamSideRightFlap{
+ 0%,100%{transform:translate(-17%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-17%,-50%) rotateZ(9deg) rotateY(18deg) scaleY(1.05)}
+ 65%{transform:translate(-17%,-50%) rotateZ(-4deg) rotateY(-9deg) scaleY(.98)}
+}
+@media(max-width:680px){
+ .lam-wheat-emblem{width:min(100%,350px)!important;aspect-ratio:1.25!important}
+ .lam-wheat-emblem>.hero-logo{flex-basis:44%!important;width:44%!important;max-width:170px!important;border-width:2px!important}
+ .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
+}
+</style>
