@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+<defs>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#d7d8dc"/><stop offset=".7" stop-color="#fdfdfd"/><stop offset="1" stop-color="#a9abb1"/></linearGradient>
+ <g id="ear" fill="url(#silver)" stroke="#aeb0b5" stroke-width="1.2">
+  <ellipse cx="0" cy="-9" rx="4" ry="9" transform="rotate(-35)"/>
+  <ellipse cx="0" cy="-9" rx="4" ry="9" transform="rotate(35)"/>
+ </g>
+ <g id="stalk" fill="none" stroke="url(#silver)" stroke-width="2.2" stroke-linecap="round">
+  <path d="M0 0 Q-35 -55 -105 -105"/>
+  <path d="M-13 -17 Q-42 -75 -145 -130"/>
+  <path d="M-25 -35 Q-75 -90 -180 -100"/>
+  <path d="M-35 -50 Q-105 -105 -215 -72"/>
+  <path d="M-45 -63 Q-130 -105 -245 -35"/>
+  <path d="M-55 -75 Q-145 -100 -270 0"/>
+ </g>
+</defs>
+<g transform="translate(350 240)">
+ <use href="#stalk"/>
+ <g transform="translate(-45 -55) rotate(-32)"><use href="#ear"/></g>
+ <g transform="translate(-62 -76) rotate(-40)"><use href="#ear"/></g>
+ <g transform="translate(-88 -96) rotate(-48)"><use href="#ear"/></g>
+ <g transform="translate(-112 -110) rotate(-52)"><use href="#ear"/></g>
+ <g transform="translate(-145 -126) rotate(-58)"><use href="#ear"/></g>
+ <g transform="translate(-173 -127) rotate(-66)"><use href="#ear"/></g>
+ <g transform="translate(-200 -115) rotate(-72)"><use href="#ear"/></g>
+ <g transform="translate(-225 -96) rotate(-78)"><use href="#ear"/></g>
+ <g transform="translate(-245 -72) rotate(-85)"><use href="#ear"/></g>
+ <g transform="translate(-260 -44) rotate(-92)"><use href="#ear"/></g>
+ <g transform="translate(-270 -10) rotate(-100)"><use href="#ear"/></g>
+ <g transform="translate(-278 16) rotate(-105)"><use href="#ear"/></g>
+ <g transform="translate(-215 -72) rotate(-38)"><use href="#ear"/></g>
+ <g transform="translate(-185 -91) rotate(-36)"><use href="#ear"/></g>
+ <g transform="translate(-150 -106) rotate(-32)"><use href="#ear"/></g>
+ <g transform="translate(-115 -111) rotate(-25)"><use href="#ear"/></g>
+ <g transform="translate(-80 -95) rotate(-20)"><use href="#ear"/></g>
+ <g transform="translate(-45 -70) rotate(-15)"><use href="#ear"/></g>
+</g>
+<g transform="translate(350 240) scale(-1 1)">
+ <use href="#stalk"/>
+ <g transform="translate(-45 -55) rotate(-32)"><use href="#ear"/></g><g transform="translate(-62 -76) rotate(-40)"><use href="#ear"/></g><g transform="translate(-88 -96) rotate(-48)"><use href="#ear"/></g><g transform="translate(-112 -110) rotate(-52)"><use href="#ear"/></g><g transform="translate(-145 -126) rotate(-58)"><use href="#ear"/></g><g transform="translate(-173 -127) rotate(-66)"><use href="#ear"/></g><g transform="translate(-200 -115) rotate(-72)"><use href="#ear"/></g><g transform="translate(-225 -96) rotate(-78)"><use href="#ear"/></g><g transform="translate(-245 -72) rotate(-85)"><use href="#ear"/></g><g transform="translate(-260 -44) rotate(-92)"><use href="#ear"/></g><g transform="translate(-270 -10) rotate(-100)"><use href="#ear"/></g><g transform="translate(-278 16) rotate(-105)"><use href="#ear"/></g><g transform="translate(-215 -72) rotate(-38)"><use href="#ear"/></g><g transform="translate(-185 -91) rotate(-36)"><use href="#ear"/></g><g transform="translate(-150 -106) rotate(-32)"><use href="#ear"/></g><g transform="translate(-115 -111) rotate(-25)"><use href="#ear"/></g><g transform="translate(-80 -95) rotate(-20)"><use href="#ear"/></g><g transform="translate(-45 -70) rotate(-15)"><use href="#ear"/></g>
+</g>
+</svg>
