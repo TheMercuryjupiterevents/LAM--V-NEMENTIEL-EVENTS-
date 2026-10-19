@@ -2074,39 +2074,35 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
 
 
 <style id="lam-visible-wing-flap-fix">
-/* Les deux ailes bougent indépendamment depuis leur base, mouvement visible mais élégant */
+/* Mouvement plus net : chaque moitié du motif forme une aile indépendante */
 .lam-wheat-emblem>.lam-wheat-wing{
  position:absolute!important;left:50%!important;top:50%!important;
  width:128%!important;max-width:none!important;height:auto!important;
- clip-path:inset(0 50% 0 0)!important;
- transform-origin:100% 50%!important;
- animation:lamLeftWingFlap 2.4s ease-in-out infinite!important;
- will-change:transform,filter!important;
+ z-index:1!important;opacity:1!important;object-fit:contain!important;
+ will-change:transform!important;animation-duration:2s!important;animation-iteration-count:infinite!important;
 }
 .lam-wheat-emblem>.lam-wheat-wing-left{
- clip-path:inset(0 50% 0 0)!important;
- transform-origin:100% 50%!important;
- animation:lamLeftWingFlap 2.4s ease-in-out infinite!important;
+ clip-path:inset(0 50% 0 0)!important;transform-origin:100% 50%!important;
+ animation:lamLeftWingFlapVisible 2s ease-in-out infinite!important;
 }
 .lam-wheat-emblem>.lam-wheat-wing-right{
- clip-path:inset(0 0 0 50%)!important;
- transform-origin:0% 50%!important;
- animation:lamRightWingFlap 2.4s ease-in-out infinite!important;
+ clip-path:inset(0 0 0 50%)!important;transform-origin:0% 50%!important;
+ animation:lamRightWingFlapVisible 2s ease-in-out infinite!important;
 }
-@keyframes lamLeftWingFlap{
- 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) scaleY(1)}
- 45%{transform:translate(-50%,-50%) rotateZ(-5deg) scaleY(1.035)}
- 70%{transform:translate(-50%,-50%) rotateZ(2deg) scaleY(.99)}
+@keyframes lamLeftWingFlapVisible{
+ 0%,100%{transform:translate(-50%,-50%) rotate(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotate(-12deg) scaleY(1.08)}
+ 65%{transform:translate(-50%,-50%) rotate(5deg) scaleY(.96)}
 }
-@keyframes lamRightWingFlap{
- 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) scaleY(1)}
- 45%{transform:translate(-50%,-50%) rotateZ(5deg) scaleY(1.035)}
- 70%{transform:translate(-50%,-50%) rotateZ(-2deg) scaleY(.99)}
+@keyframes lamRightWingFlapVisible{
+ 0%,100%{transform:translate(-50%,-50%) rotate(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotate(12deg) scaleY(1.08)}
+ 65%{transform:translate(-50%,-50%) rotate(-5deg) scaleY(.96)}
 }
-@media(max-width:680px){
- .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
-}
+@media(max-width:680px){.lam-wheat-emblem>.lam-wheat-wing{width:132%!important}}
+/* Le mouvement des ailes reste actif, même si le navigateur réduit les autres animations */
 @media(prefers-reduced-motion:reduce){
- .lam-wheat-emblem>.lam-wheat-wing{animation:none!important}
+ .lam-wheat-emblem>.lam-wheat-wing-left{animation:lamLeftWingFlapVisible 2s ease-in-out infinite!important}
+ .lam-wheat-emblem>.lam-wheat-wing-right{animation:lamRightWingFlapVisible 2s ease-in-out infinite!important}
 }
 </style>
