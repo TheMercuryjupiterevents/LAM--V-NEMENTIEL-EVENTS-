@@ -2140,3 +2140,35 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
  .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
 }
 </style>
+
+<style id="lam-wing-motion-visible-fix">
+/* Les deux demi-ailes pivotent depuis le centre du logo pour que le battement soit visible */
+.lam-wheat-emblem{perspective:1000px!important;transform-style:preserve-3d!important}
+.lam-wheat-emblem>.lam-wheat-wing{
+ left:50%!important;top:50%!important;
+ width:128%!important;max-width:none!important;height:auto!important;
+ transform-origin:50% 50%!important;
+ will-change:transform!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-left{
+ clip-path:inset(0 50% 0 0)!important;
+ transform-origin:50% 50%!important;
+ animation:lamWingLeftActuallyMoves 2.4s ease-in-out infinite!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-right{
+ clip-path:inset(0 0 0 50%)!important;
+ transform-origin:50% 50%!important;
+ animation:lamWingRightActuallyMoves 2.4s ease-in-out infinite!important;
+}
+@keyframes lamWingLeftActuallyMoves{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotateZ(-11deg) rotateY(-16deg) scaleY(1.07)}
+ 65%{transform:translate(-50%,-50%) rotateZ(5deg) rotateY(8deg) scaleY(.97)}
+}
+@keyframes lamWingRightActuallyMoves{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) rotateY(0deg) scaleY(1)}
+ 35%{transform:translate(-50%,-50%) rotateZ(11deg) rotateY(16deg) scaleY(1.07)}
+ 65%{transform:translate(-50%,-50%) rotateZ(-5deg) rotateY(-8deg) scaleY(.97)}
+}
+@media(max-width:680px){.lam-wheat-emblem>.lam-wheat-wing{width:132%!important}}
+</style>
