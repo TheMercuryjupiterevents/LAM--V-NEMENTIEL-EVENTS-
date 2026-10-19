@@ -1,42 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img" aria-label="Prestige Royal white and bright silver feather wings with crystal accents, clear center for the LAM logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-label="LAM Quiet Luxury Model 15: symmetric ivory feather wings with fine silver edges and crystal accents">
 <defs>
- <linearGradient id="feather" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="#f7f8fb"/><stop offset=".52" stop-color="#c8ccd4"/><stop offset=".72" stop-color="#fff"/><stop offset="1" stop-color="#a3a9b4"/></linearGradient>
- <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#c6cad2"/><stop offset=".52" stop-color="#fff"/><stop offset=".75" stop-color="#9ea4b0"/><stop offset="1" stop-color="#fdfdff"/></linearGradient>
- <radialGradient id="crystal"><stop stop-color="#fff"/><stop offset=".45" stop-color="#f4ffff"/><stop offset=".78" stop-color="#c8e3ec"/><stop offset="1" stop-color="#8f9ca8"/></radialGradient>
- <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
- <g id="plume"><path d="M0 0 C-18 -20 -45 -54 -59 -92 C-31 -79 -7 -45 0 0Z" fill="url(#feather)" stroke="#b7bdc7" stroke-width="1.2"/><path d="M-2 -5 Q-27 -46 -53 -85" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".95"/><path d="M-9 -19 Q-27 -39 -39 -62" fill="none" stroke="#d8dce3" stroke-width="1" opacity=".8"/></g>
+ <linearGradient id="ivory" x1="0" y1="0" x2="0.85" y2="1"><stop stop-color="#fff"/><stop offset=".28" stop-color="#f8f8f6"/><stop offset=".55" stop-color="#d8dbe0"/><stop offset=".78" stop-color="#fff"/><stop offset="1" stop-color="#aeb4bd"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".35" stop-color="#c9cdd3"/><stop offset=".55" stop-color="#fff"/><stop offset=".8" stop-color="#9da4af"/><stop offset="1" stop-color="#f8f9fb"/></linearGradient>
+ <radialGradient id="gem"><stop stop-color="#fff"/><stop offset=".48" stop-color="#f7ffff"/><stop offset=".8" stop-color="#c5dbe5"/><stop offset="1" stop-color="#929eaa"/></radialGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="2.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <g id="feather">
+  <path d="M0 0 C-10 -26 -28 -60 -52 -94 C-21 -81 -2 -43 0 0Z" fill="url(#ivory)" stroke="#b8bec7" stroke-width="1.1"/>
+  <path d="M-1 -4 Q-23 -49 -47 -87" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <path d="M-8 -20 Q-25 -43 -35 -61" fill="none" stroke="#d1d5dc" stroke-width="1" opacity=".8"/>
+ </g>
  <g id="wing">
-  <path d="M18 317 C42 257 63 199 105 143 C151 83 214 45 288 42 C345 39 391 62 431 95 C378 82 333 87 292 105 C234 130 191 171 157 218 C119 270 71 308 18 317Z" fill="url(#silver)" stroke="#c3c8d1" stroke-width="2"/>
-  <g opacity=".99">
-   <use href="#plume" transform="translate(32 310) rotate(-70) scale(1.2)"/>
-   <use href="#plume" transform="translate(55 291) rotate(-65) scale(1.18)"/>
-   <use href="#plume" transform="translate(77 270) rotate(-59) scale(1.16)"/>
-   <use href="#plume" transform="translate(98 246) rotate(-53) scale(1.12)"/>
-   <use href="#plume" transform="translate(120 221) rotate(-47) scale(1.08)"/>
-   <use href="#plume" transform="translate(142 196) rotate(-41) scale(1.04)"/>
-   <use href="#plume" transform="translate(165 173) rotate(-35) scale(1)"/>
-   <use href="#plume" transform="translate(190 151) rotate(-29) scale(.95)"/>
-   <use href="#plume" transform="translate(216 132) rotate(-23) scale(.9)"/>
-   <use href="#plume" transform="translate(243 115) rotate(-17) scale(.85)"/>
-   <use href="#plume" transform="translate(271 101) rotate(-11) scale(.8)"/>
-   <use href="#plume" transform="translate(300 91) rotate(-5) scale(.75)"/>
-   <use href="#plume" transform="translate(329 87) rotate(2) scale(.68)"/>
-   <use href="#plume" transform="translate(357 89) rotate(8) scale(.61)"/>
-   <use href="#plume" transform="translate(383 96) rotate(15) scale(.54)"/>
+  <path d="M18 408 C44 328 77 247 134 171 C194 92 274 40 364 36 C429 33 484 62 530 107 C468 88 412 95 360 118 C290 149 235 203 191 267 C143 338 82 391 18 408Z" fill="url(#silver)" stroke="#c2c7d0" stroke-width="2"/>
+  <g>
+   <use href="#feather" transform="translate(36 395) rotate(-70) scale(1.23)"/>
+   <use href="#feather" transform="translate(62 372) rotate(-66) scale(1.2)"/>
+   <use href="#feather" transform="translate(88 345) rotate(-61) scale(1.17)"/>
+   <use href="#feather" transform="translate(114 315) rotate(-56) scale(1.14)"/>
+   <use href="#feather" transform="translate(140 284) rotate(-50) scale(1.1)"/>
+   <use href="#feather" transform="translate(166 254) rotate(-44) scale(1.06)"/>
+   <use href="#feather" transform="translate(194 225) rotate(-38) scale(1.02)"/>
+   <use href="#feather" transform="translate(222 198) rotate(-32) scale(.98)"/>
+   <use href="#feather" transform="translate(252 174) rotate(-26) scale(.94)"/>
+   <use href="#feather" transform="translate(282 153) rotate(-20) scale(.9)"/>
+   <use href="#feather" transform="translate(313 135) rotate(-14) scale(.85)"/>
+   <use href="#feather" transform="translate(344 121) rotate(-8) scale(.8)"/>
+   <use href="#feather" transform="translate(375 113) rotate(-2) scale(.75)"/>
+   <use href="#feather" transform="translate(405 112) rotate(5) scale(.69)"/>
+   <use href="#feather" transform="translate(434 118) rotate(12) scale(.63)"/>
+   <use href="#feather" transform="translate(461 129) rotate(18) scale(.57)"/>
+   <use href="#feather" transform="translate(486 143) rotate(24) scale(.51)"/>
   </g>
-  <path d="M28 311 C95 268 131 211 183 160 C238 108 302 76 388 96" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".96"/>
-  <path d="M37 320 C100 296 151 254 193 209 C247 151 313 113 389 111" fill="none" stroke="#9ea5b1" stroke-width="1.5" opacity=".65"/>
-  <path d="M67 289 Q136 257 182 204 M112 247 Q180 206 221 164 M167 196 Q234 151 278 126 M223 151 Q285 115 328 104" fill="none" stroke="#fff" stroke-width="1.3" opacity=".9"/>
-  <g fill="url(#crystal)" stroke="#fff" stroke-width="1.2">
-   <circle cx="91" cy="266" r="5"/><circle cx="131" cy="226" r="4.2"/><circle cx="173" cy="185" r="4.5"/><circle cx="218" cy="151" r="4"/><circle cx="266" cy="123" r="4.4"/><circle cx="313" cy="103" r="3.8"/><circle cx="357" cy="101" r="3.2"/>
+  <path d="M31 400 C116 344 166 268 230 206 C300 140 373 104 474 130" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M44 414 C134 377 196 318 249 258 C312 190 387 151 478 150" fill="none" stroke="#9ea6b2" stroke-width="1.5" opacity=".65"/>
+  <path d="M79 373 Q157 328 207 266 M128 319 Q201 269 251 216 M188 257 Q258 204 307 171 M249 204 Q316 161 362 143 M313 164 Q372 133 418 132" fill="none" stroke="#fff" stroke-width="1.4" opacity=".9"/>
+  <g fill="url(#gem)" stroke="#fff" stroke-width="1.3">
+   <circle cx="108" cy="339" r="5"/><circle cx="158" cy="285" r="4.3"/><circle cx="210" cy="235" r="4.7"/><circle cx="265" cy="194" r="4.1"/><circle cx="322" cy="161" r="4.5"/><circle cx="378" cy="140" r="3.9"/><circle cx="428" cy="137" r="3.3"/>
   </g>
-  <g fill="#fff" filter="url(#glow)">
-   <path d="M110 188 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z"/>
-   <path d="M204 112 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5Z"/>
-   <path d="M286 75 l2.2 5.5 5.5 2.2 -5.5 2.2 -2.2 5.5 -2.2 -5.5 -5.5 -2.2 5.5 -2.2Z"/>
-   <path d="M151 252 l2 4.5 4.5 2 -4.5 2 -2 4.5 -2 -4.5 -4.5 -2 4.5 -2Z"/>
+  <g fill="#fff" filter="url(#soft)">
+   <path d="M133 249 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z"/>
+   <path d="M248 163 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5Z"/>
+   <path d="M350 111 l2.3 5.5 5.5 2.3 -5.5 2.3 -2.3 5.5 -2.3 -5.5 -5.5 -2.3 5.5 -2.3Z"/>
+   <path d="M178 316 l2 4.5 4.5 2 -4.5 2 -2 4.5 -2 -4.5 -4.5 -2 4.5 -2Z"/>
   </g>
  </g>
 </defs>
-<g opacity=".99"><use href="#wing" transform="translate(500 0) scale(-1 1)"/><use href="#wing" transform="translate(500 0)"/></g>
+<g opacity=".99"><use href="#wing" transform="translate(600 0) scale(-1 1)"/><use href="#wing" transform="translate(600 0)"/></g>
 </svg>
