@@ -686,24 +686,8 @@ input,select,textarea{font-size:.84rem}
 
 <div class="hero-three-stars" aria-label="Étoiles décoratives rose, jaune, orange, gris, cristal, vert vif et or" role="img"><span class="star-pink">★</span><span class="star-yellow">★</span><span class="star-orange">★</span><span class="star-gray">★</span><span class="star-crystal">★</span><span class="star-green">★</span><span class="star-gold">★</span></div>
 <div class="wrap hero-grid">
-<div class="lam-wheat-emblem" aria-label="Logo LAM avec tracés animés en métal doré, jaune et orange sur fond blanc">
-<svg class="lam-metal-trace" viewBox="0 0 420 420" aria-hidden="true" focusable="false">
-  <defs>
-    <linearGradient id="lamMetalGoldOrange" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f5b400"/>
-      <stop offset="48%" stop-color="#d6a52b"/>
-      <stop offset="100%" stop-color="#f07822"/>
-    </linearGradient>
-    <filter id="lamMetalGlow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <circle class="lam-trace-orbit lam-trace-orbit-one" cx="210" cy="210" r="174"/>
-  <circle class="lam-trace-orbit lam-trace-orbit-two" cx="210" cy="210" r="190"/>
-  <path class="lam-trace-sweep" d="M64 272 C95 110 238 52 341 145 S300 345 130 326"/>
-  <path class="lam-trace-glint" d="M91 118 C150 57 249 54 311 102"/>
-</svg>
+<div class="lam-wheat-emblem" aria-label="Logo LAM au centre, intégré à des ailes métalliques 3D animées">
+<img class="lam-wheat-wing" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
 <img class="hero-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo principal LAM ÉVÉNEMENTIEL & EVENTS">
 </div>
 <div>
@@ -2045,3 +2029,45 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
 </style>
 
 <style id="lam-wheat-wing-sizing-update">.lam-wheat-emblem>.lam-wheat-wing{position:absolute;left:50%;top:50%;right:auto;width:130%;max-width:none;height:auto;max-height:none;transform:translate(-50%,-50%);z-index:1;opacity:.98;object-fit:contain;pointer-events:none}@media(max-width:680px){.lam-wheat-emblem>.lam-wheat-wing{width:130%;max-width:none}}</style>
+
+
+<style id="lam-integrated-metal-wings-animation">
+/* Logo LAM au centre, ailes métalliques intégrées derrière, animation 3D douce */
+.hero{background:#fff!important}
+.hero:before,.hero:after{content:none!important;display:none!important}
+.lam-wheat-emblem{
+ position:relative!important;isolation:isolate!important;display:flex!important;
+ align-items:center!important;justify-content:center!important;
+ width:min(100%,430px)!important;aspect-ratio:1.35!important;margin:0 auto!important;
+ perspective:1200px!important;overflow:visible!important
+}
+.lam-wheat-emblem>.lam-wheat-wing{
+ position:absolute!important;left:50%!important;top:50%!important;right:auto!important;
+ width:128%!important;max-width:none!important;height:auto!important;max-height:none!important;
+ transform:translate(-50%,-50%) scaleX(1)!important;transform-origin:center center!important;
+ z-index:1!important;opacity:1!important;object-fit:contain!important;pointer-events:none!important;
+ filter:contrast(1.12) saturate(.65) drop-shadow(0 5px 4px #59616a40)
+   drop-shadow(0 0 5px #d7dce3b0)!important;
+ animation:lamMetalWingsBreathe 4.8s ease-in-out infinite!important
+}
+.lam-wheat-emblem>.hero-logo{
+ position:relative!important;z-index:2!important;display:block!important;
+ flex:0 0 48%!important;width:48%!important;max-width:210px!important;height:auto!important;
+ margin:0!important;object-fit:contain!important;opacity:1!important;
+ filter:drop-shadow(0 7px 12px #24242424)!important;
+ animation:lamMetalLogoFloat 4.8s ease-in-out infinite!important
+}
+@keyframes lamMetalWingsBreathe{
+ 0%,100%{transform:translate(-50%,-50%) scaleX(1) scaleY(1);filter:contrast(1.1) saturate(.62) drop-shadow(0 5px 4px #59616a40) drop-shadow(0 0 4px #d7dce390)}
+ 50%{transform:translate(-50%,-50%) scaleX(1.025) scaleY(1.018);filter:contrast(1.2) saturate(.72) brightness(1.045) drop-shadow(0 7px 7px #59616a55) drop-shadow(0 0 8px #e7d5a0a8)}
+}
+@keyframes lamMetalLogoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@media(max-width:680px){
+ .lam-wheat-emblem{width:min(100%,350px)!important;aspect-ratio:1.25!important}
+ .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
+ .lam-wheat-emblem>.hero-logo{flex-basis:47%!important;width:47%!important;max-width:175px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .lam-wheat-emblem>.lam-wheat-wing,.lam-wheat-emblem>.hero-logo{animation:none!important}
+}
+</style>
