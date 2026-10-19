@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Symmetrical silver couture angel wings with pearl and crystal details and LAM lettering on each wing">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Symmetrical bright silver feather wings with crystal accents, clear center for the LAM logo">
 <defs>
  <linearGradient id="silver" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#e8e9ed"/><stop offset=".48" stop-color="#aeb2bc"/><stop offset=".68" stop-color="#fff"/><stop offset="1" stop-color="#858b97"/></linearGradient>
  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#aeb3bd"/><stop offset="1" stop-color="#fdfdff"/></linearGradient>
@@ -31,8 +31,9 @@
   <g fill="#fff" filter="url(#soft)">
    <path d="M124 137 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5Z"/>
    <path d="M216 79 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2Z"/>
+   <path d="M78 192 l2.3 5.5 5.5 2.3 -5.5 2.3 -2.3 5.5 -2.3 -5.5 -5.5 -2.3 5.5 -2.3Z"/>
+   <path d="M282 87 l1.8 4.2 4.2 1.8 -4.2 1.8 -1.8 4.2 -1.8 -4.2 -4.2 -1.8 4.2 -1.8Z"/>
   </g>
-  <text x="165" y="218" fill="#8e939e" stroke="#fff" stroke-width=".45" paint-order="stroke" font-family="Georgia,serif" font-size="26" font-weight="bold" letter-spacing="3" text-anchor="middle" transform="rotate(-28 165 218)">LAM</text>
  </g>
 </defs>
 <g opacity=".98"><use href="#wing" transform="translate(450 0) scale(-1 1)"/><use href="#wing" transform="translate(450 0)"/></g>
