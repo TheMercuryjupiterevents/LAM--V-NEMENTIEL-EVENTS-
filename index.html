@@ -687,7 +687,7 @@ input,select,textarea{font-size:.84rem}
 <div class="hero-three-stars" aria-label="Étoiles décoratives rose, jaune, orange, gris, cristal, vert vif et or" role="img"><span class="star-pink">★</span><span class="star-yellow">★</span><span class="star-orange">★</span><span class="star-gray">★</span><span class="star-crystal">★</span><span class="star-green">★</span><span class="star-gold">★</span></div>
 <div class="wrap hero-grid">
 <div class="lam-wheat-emblem" aria-label="Logo LAM au centre, intégré à des ailes métalliques 3D animées">
-<img class="lam-wheat-wing" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
+<img class="lam-wheat-wing lam-wheat-wing-left" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true"><img class="lam-wheat-wing lam-wheat-wing-right" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
 <img class="hero-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo principal LAM ÉVÉNEMENTIEL & EVENTS">
 </div>
 <div>
@@ -2069,5 +2069,44 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
 }
 @media(prefers-reduced-motion:reduce){
  .lam-wheat-emblem>.lam-wheat-wing,.lam-wheat-emblem>.hero-logo{animation:none!important}
+}
+</style>
+
+
+<style id="lam-visible-wing-flap-fix">
+/* Les deux ailes bougent indépendamment depuis leur base, mouvement visible mais élégant */
+.lam-wheat-emblem>.lam-wheat-wing{
+ position:absolute!important;left:50%!important;top:50%!important;
+ width:128%!important;max-width:none!important;height:auto!important;
+ clip-path:inset(0 50% 0 0)!important;
+ transform-origin:100% 50%!important;
+ animation:lamLeftWingFlap 2.4s ease-in-out infinite!important;
+ will-change:transform,filter!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-left{
+ clip-path:inset(0 50% 0 0)!important;
+ transform-origin:100% 50%!important;
+ animation:lamLeftWingFlap 2.4s ease-in-out infinite!important;
+}
+.lam-wheat-emblem>.lam-wheat-wing-right{
+ clip-path:inset(0 0 0 50%)!important;
+ transform-origin:0% 50%!important;
+ animation:lamRightWingFlap 2.4s ease-in-out infinite!important;
+}
+@keyframes lamLeftWingFlap{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) scaleY(1)}
+ 45%{transform:translate(-50%,-50%) rotateZ(-5deg) scaleY(1.035)}
+ 70%{transform:translate(-50%,-50%) rotateZ(2deg) scaleY(.99)}
+}
+@keyframes lamRightWingFlap{
+ 0%,100%{transform:translate(-50%,-50%) rotateZ(0deg) scaleY(1)}
+ 45%{transform:translate(-50%,-50%) rotateZ(5deg) scaleY(1.035)}
+ 70%{transform:translate(-50%,-50%) rotateZ(-2deg) scaleY(.99)}
+}
+@media(max-width:680px){
+ .lam-wheat-emblem>.lam-wheat-wing{width:132%!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .lam-wheat-emblem>.lam-wheat-wing{animation:none!important}
 }
 </style>
