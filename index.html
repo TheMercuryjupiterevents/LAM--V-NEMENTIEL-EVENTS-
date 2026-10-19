@@ -1694,6 +1694,38 @@ document.addEventListener('DOMContentLoaded',function(){
   update();
 })();
 </script>
+
+<style id="lam-quiet-luxury-wing-animation">
+/* Animation discrète Quiet Luxury : les ailes apparaissent doucement, puis le logo */
+.lam-wheat-emblem{perspective:900px}
+.lam-wheat-emblem>.lam-wheat-wing{
+ opacity:0;
+ animation:lamWingReveal 1.35s cubic-bezier(.2,.7,.2,1) .18s forwards,
+           lamWingShimmer 5.5s ease-in-out 1.65s infinite;
+ transform-origin:center;
+}
+.lam-wheat-emblem>.hero-logo{
+ opacity:0;
+ animation:lamLogoReveal .9s cubic-bezier(.2,.7,.2,1) .55s forwards;
+}
+@keyframes lamWingReveal{
+  0%{opacity:0;filter:blur(3px) drop-shadow(0 0 0 #fff);transform:translate(-50%,-50%) scale(.88)}
+  100%{opacity:.98;filter:blur(0) drop-shadow(0 1px 2px #aeb0b5aa);transform:translate(-50%,-50%) scale(1)}
+}
+@keyframes lamWingShimmer{
+  0%,100%{filter:drop-shadow(0 1px 2px #aeb0b522) brightness(1)}
+  50%{filter:drop-shadow(0 1px 5px #dfe8f0cc) brightness(1.045)}
+}
+@keyframes lamLogoReveal{
+  0%{opacity:0;transform:scale(.94)}
+  100%{opacity:1;transform:scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+ .lam-wheat-emblem>.lam-wheat-wing,.lam-wheat-emblem>.hero-logo{animation:none!important;opacity:1!important;transform:translate(-50%,-50%)!important}
+ .lam-wheat-emblem>.hero-logo{transform:none!important}
+}
+</style>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
