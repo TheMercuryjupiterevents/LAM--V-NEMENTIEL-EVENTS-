@@ -2136,6 +2136,42 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+
+<style id="lam-welcome-final-last-override">
+/* Final override: placed after every other style so the animation text stays visible */
+#welcome-intro{z-index:2147483647!important;background:#fff!important}
+#welcome-intro .intro-writing{display:flex!important;visibility:visible!important;opacity:1!important}
+#welcome-intro .welcome-word{
+ color:#f00!important;-webkit-text-fill-color:#f00!important;
+ font-family:"Brush Script MT","Segoe Script","URW Chancery L",cursive!important;
+ font-style:italic!important;font-weight:600!important;
+ opacity:1!important;clip-path:none!important;transform:none!important;
+ animation:lamWelcomeLastWrite 1.2s ease-out .15s both!important;
+}
+#welcome-intro .welcome-brand{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ visibility:visible!important;opacity:1!important;transform:none!important;
+ font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif!important;
+ font-style:italic!important;font-weight:500!important;letter-spacing:.045em!important;
+ color:#171717!important;animation:lamWelcomeLastBrand .8s ease 1s both!important;
+}
+#welcome-intro .welcome-brand strong{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif!important;
+ font-style:italic!important;font-weight:500!important;letter-spacing:.045em!important;
+ color:#fff!important;-webkit-text-fill-color:#fff!important;
+ -webkit-text-stroke:1px #171717!important;text-shadow:0 0 1px #171717!important;
+}
+#welcome-intro:before,#welcome-intro:after{
+ border:1px solid transparent!important;
+ background:linear-gradient(#fff,#fff) padding-box,linear-gradient(110deg,#8c9299,#f7f8f9,#aeb4ba,#fff,#8c9299) border-box!important;
+ background-size:100% 100%,250% 100%!important;animation:lamWelcomeLastSilver 3s linear infinite!important;
+}
+#welcome-intro .signature-flourish{stroke:#aeb4ba!important}
+@keyframes lamWelcomeLastWrite{from{letter-spacing:.25em;opacity:.3}to{letter-spacing:.015em;opacity:1}}
+@keyframes lamWelcomeLastBrand{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lamWelcomeLastSilver{from{background-position:0 0,200% 0}to{background-position:0 0,-200% 0}}
+</style>
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
