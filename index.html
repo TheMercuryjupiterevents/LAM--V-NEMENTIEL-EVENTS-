@@ -462,6 +462,30 @@ body{background:#fff!important;color:#292425}
 .hero-grid>div{grid-column:1;grid-row:2}
 @media(min-width:850px){.hero-grid{grid-template-columns:minmax(0,1fr) 350px;gap:42px}.hero-grid>.hero-logo{grid-column:2;grid-row:1;width:min(330px,100%);margin:0 auto}.hero-grid>div{grid-column:1;grid-row:1}}
 @media(max-width:680px){.brand-mark{width:43px;height:43px;flex-basis:43px}.brand{gap:8px}.brand-name{font-size:.88rem}}
+
+/* LAM — animations de tracés dorés et argentés */
+:root{--trace-gold:#d8b43a;--trace-silver:#c9c9c9}
+@keyframes lamTrace{0%{stroke-dashoffset:900;opacity:.35}100%{stroke-dashoffset:0;opacity:1}}
+@keyframes lamGoldSweep{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes lamSoftGlow{0%,100%{box-shadow:0 0 0 rgba(216,180,58,0)}50%{box-shadow:0 0 18px rgba(216,180,58,.2)}}
+@keyframes lamFloatLine{0%,100%{transform:translateX(-8px);opacity:.45}50%{transform:translateX(8px);opacity:1}}
+@keyframes lamReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.section{position:relative}
+.section:not(.hero)::before{content:"";display:block;width:min(180px,34vw);height:2px;margin:0 auto 30px;background:linear-gradient(90deg,transparent,var(--trace-silver),var(--trace-gold),#fff,var(--trace-gold),transparent);background-size:200% 100%;animation:lamGoldSweep 5s linear infinite}
+h2{position:relative}
+h2::after{content:"";display:block;width:clamp(56px,9vw,100px);height:2px;margin-top:15px;background:linear-gradient(90deg,var(--trace-gold),var(--trace-silver),transparent);transform-origin:left;animation:lamFloatLine 4s ease-in-out infinite}
+.hero:after{border-color:var(--trace-gold);border-style:solid;box-shadow:0 0 0 8px #c9c9c910;animation:lamSoftGlow 5s ease-in-out infinite}
+.hero:before{border:1px solid var(--trace-silver);background:linear-gradient(135deg,#d9c2e8 0%,#fff 60%,#f6e7b3 100%)}
+.btn,.card,.service-card,.package,.form-card,.panel{position:relative;overflow:hidden}
+.btn::after,.card::after,.service-card::after,.package::after,.form-card::after,.panel::after{content:"";position:absolute;inset:0;border:1px solid transparent;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 20%,#d8b43a 42%,#f7f5ee 50%,#c9c9c9 58%,transparent 78%) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:250% 100%;opacity:.55;animation:lamGoldSweep 7s linear infinite}
+.btn:hover{box-shadow:0 6px 22px #d8b43a35;transform:translateY(-2px);transition:transform .25s ease,box-shadow .25s ease}
+.nav{box-shadow:0 2px 14px #b69a4320}
+.nav::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--trace-gold),var(--trace-silver),var(--trace-gold),transparent);background-size:200% 100%;animation:lamGoldSweep 6s linear infinite}
+.reveal-on-scroll{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+:focus-visible{outline:2px solid var(--trace-gold);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal-on-scroll{opacity:1;transform:none}}
+
 </style>
 <style id="tmje-three-form-colors">
 /* Palette commune aux trois formulaires : vert, bleu cobalt et gris */
@@ -1971,6 +1995,23 @@ document.addEventListener('DOMContentLoaded',function(){
 @media(max-width:680px){.lam-wheat-emblem{width:min(100%,290px)!important}.lam-wheat-emblem>.hero-logo{width:64%!important;max-width:190px!important}.hero:before{width:190px!important;height:190px!important;right:-100px!important}.hero:after{right:20px!important;width:170px!important;height:170px!important}}
 @media(prefers-reduced-motion:reduce){.lam-trace-orbit,.lam-trace-sweep,.lam-trace-glint,.lam-wheat-emblem>.hero-logo{animation:none!important;stroke-dashoffset:0!important;opacity:1!important}.lam-wheat-emblem>.hero-logo{transform:none!important}}
 </style>
+
+
+<script>
+/* Reveal progressif au défilement, avec repli compatible */
+(function(){
+  var selectors='.section,.hero-grid,.card,.service-card,.package,.form-card,.panel,article';
+  var nodes=document.querySelectorAll(selectors);
+  if(!('IntersectionObserver' in window)) return;
+  nodes.forEach(function(el){el.classList.add('reveal-on-scroll')});
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+    });
+  },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+  nodes.forEach(function(el){observer.observe(el)});
+})();
+</script>
 
 </body>
 </html>
