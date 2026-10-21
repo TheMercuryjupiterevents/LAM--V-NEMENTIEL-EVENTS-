@@ -1,24 +1,32 @@
-# LAM ÉVÉNEMENTIEL & EVENTS — Mobile app starter
+# LAM ÉVÉNEMENTIEL & EVENTS — application multiplateforme
 
-This folder contains the first cross-platform mobile app prototype for iOS and Android, built with Expo and React Native.
+Le dossier comprend :
+- `App.js` : base Expo / React Native pour créer des applications iOS et Android.
+- `index.html` : version web responsive et installable pour téléphones, tablettes et ordinateurs.
+- `manifest.json` et `sw.js` : métadonnées d’installation et mise en cache de base.
 
-## Current prototype
-- Brand palette: Vert Anis, Gris, Bleu Cobalt, Rouge, Jaune, Orange.
-- Home, Services, Booking Request, and Contact screens.
-- Booking form fields for client and event details.
-- Link to the current official website.
+## Compatibilité visée
+- iPhone et iPad avec Safari et versions iOS/iPadOS prises en charge.
+- Samsung et autres téléphones/tablettes Android avec un navigateur compatible.
+- Ordinateurs Windows (Dell, Toshiba, etc.) et macOS via un navigateur récent.
 
-## Important before launch
-This is a starter prototype, not a store-ready release. The booking form currently validates fields locally and does **not** transmit or save requests. No payment is collected. Before release, connect a secure backend/email workflow, verify the 70% deposit contract and payment provider, add the approved LAM logo and app icon assets, complete privacy disclosures, test on physical devices, and configure Apple/Google developer accounts.
+## Version web
+Quand GitHub Pages sert ce dossier, la version web est accessible à :
+https://themercuryjupiterevents.github.io/LAM--V-NEMENTIEL-EVENTS-/mobile-app/
 
-## Run locally
-Install a current Node.js LTS release, then from this directory run:
+Sur les navigateurs compatibles, les visiteurs pourront ajouter l’application à leur écran d’accueil ou l’installer. Cela ne signifie pas encore qu’elle est publiée sur l’Apple App Store ou Google Play Store.
+
+## Démarrer la version native
+Installer une version LTS récente de Node.js, puis depuis ce dossier :
 
 ```sh
 npm install
 npx expo start
 ```
 
-Use Expo Go for an initial preview where supported. For App Store and Google Play builds, configure EAS Build and review the current Apple and Google submission requirements.
+Pour créer les versions de publication, configurer EAS Build, ajouter le vrai logo et les icônes de LAM, tester sur appareils physiques et respecter les exigences actuelles d’Apple et de Google.
 
-Official website: https://themercuryjupiterevents.github.io/LAM--V-NEMENTIEL-EVENTS-/
+## Obligatoire avant le lancement public
+Le formulaire de réservation est encore une démonstration : il ne transmet ni n’enregistre les données. Il faut connecter un backend sécurisé ou un système de réception de demandes approuvé, ajouter une politique de confidentialité et le consentement approprié, confirmer les conditions de dépôt de 70 %, choisir un prestataire de paiement sécurisé si nécessaire et tester toutes les fonctions. Aucun paiement n’est collecté dans ce prototype.
+
+Site officiel : https://themercuryjupiterevents.github.io/LAM--V-NEMENTIEL-EVENTS-/
