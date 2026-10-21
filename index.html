@@ -2599,4 +2599,39 @@ body .section:not(.hero) h2::after{background:linear-gradient(90deg,#d8b43a,#f7f
   #welcome-intro .welcome-word{white-space:normal!important}
   #welcome-intro .welcome-brand{max-width:310px!important;line-height:1.6!important}
 }
+
+/* Encadrement argent sur tout le site */
+:root{--lam-silver:#c9cdd1;--lam-silver-light:#f4f5f6;--lam-silver-dark:#8c9299}
+body{
+  background:#fff;
+}
+.nav,.card,.form,.contactbox,.tool-card,.gallery-slot,.team-card,.package,
+.field input,.field select,.field textarea,.btn,.pill,.inspiration-upload,
+.palette-preview,.creator-preview-inner,.budget-result,.contactline,
+.founders-hero-photo,.founder-name,.team-photo{
+  border-color:var(--lam-silver)!important;
+}
+.section,.section.alt,.section.dark,.hero,.footer{
+  border-color:var(--lam-silver)!important;
+}
+.section,.section.alt,.section.dark{
+  border-top:1px solid var(--lam-silver)!important;
+  border-bottom:1px solid var(--lam-silver)!important;
+}
+.card,.form,.contactbox,.tool-card,.team-card,.gallery-slot,.package,
+.palette-preview,.budget-result,.founders-hero-photo{
+  box-shadow:0 0 0 1px #c9cdd133,0 8px 24px #00000008;
+}
+#welcome-intro:before,#welcome-intro:after{
+  border:1px solid transparent!important;
+  background:linear-gradient(#fff,#fff) padding-box,
+    linear-gradient(110deg,#858b91,#e9ecef,#aeb4ba,#f7f8f9,#858b91) border-box!important;
+  background-size:100% 100%,250% 100%!important;
+  animation:lamWelcomeBorderFinal 3.2s linear infinite!important;
+}
+#welcome-intro:after{animation-delay:-1.6s!important}
+.footer{border-top:2px solid var(--lam-silver)!important}
+@media(prefers-reduced-motion:reduce){
+  #welcome-intro:before,#welcome-intro:after{animation:none!important}
+}
 </style>
