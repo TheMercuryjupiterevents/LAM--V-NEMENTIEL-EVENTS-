@@ -2543,3 +2543,25 @@ a.btn.primary[href="#formulaire"]::after{content:none!important;display:none!imp
 @keyframes lamWelcomeIntroExit{to{opacity:0!important;visibility:hidden;pointer-events:none}}
 @media(prefers-reduced-motion:reduce){#welcome-intro{animation:lamWelcomeIntroExit .35s ease 2.4s forwards!important}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-flourish{animation:none!important;opacity:1!important;clip-path:none!important;stroke-dashoffset:0!important}}
 </style>
+
+
+<!-- LAM final animation override: metallic gold/silver tracers -->
+<style id="lam-metal-trace-final">
+:root{--lam-metal-gold:#d8b43a;--lam-metal-silver:#c9cdd1}
+@keyframes lamMetalTravel{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@keyframes lamMetalPulse{0%,100%{box-shadow:0 0 0 1px #d8b43a33,0 0 0 #d8b43a00}50%{box-shadow:0 0 0 2px #c9cdd155,0 0 18px #d8b43a35}}
+@keyframes lamMetalUnderline{0%,100%{transform:scaleX(.72);opacity:.65}50%{transform:scaleX(1);opacity:1}}
+/* Keep metallic traces visible after all existing theme styles */
+body .nav{position:sticky!important}
+body .nav::after{content:""!important;display:block!important;position:absolute!important;left:0!important;right:0!important;bottom:-1px!important;height:3px!important;background:linear-gradient(90deg,transparent 0%,#d8b43a 22%,#f5f5f2 38%,#b7bdc4 50%,#f5f5f2 62%,#d8b43a 78%,transparent 100%)!important;background-size:220% 100%!important;animation:lamMetalTravel 4s linear infinite!important;pointer-events:none!important}
+body h2::after{content:""!important;display:block!important;width:clamp(70px,12vw,140px)!important;height:3px!important;margin-top:13px!important;background:linear-gradient(90deg,#d8b43a,#f7f4e9,#b7bdc4,transparent)!important;transform-origin:left center!important;animation:lamMetalUnderline 3s ease-in-out infinite!important}
+body .hero:after{border:2px solid #d8b43a!important;box-shadow:0 0 0 5px #c9cdd133!important;animation:lamMetalPulse 3.5s ease-in-out infinite!important}
+body .hero-logo{outline:2px solid #d8b43a!important;outline-offset:4px!important;animation:lamMetalPulse 3.5s ease-in-out infinite!important}
+body .section:not(.hero){border-top:1px solid #d8b43a33}
+body .section:not(.hero) h2::after{background:linear-gradient(90deg,#d8b43a,#f7f4e9,#b7bdc4,transparent)!important}
+@media(prefers-reduced-motion:reduce){
+ body .nav::after,body h2::after,body .hero:after,body .hero-logo{animation:none!important}
+ body .nav::after{background-position:center!important}
+ body h2::after{transform:none!important}
+}
+</style>
