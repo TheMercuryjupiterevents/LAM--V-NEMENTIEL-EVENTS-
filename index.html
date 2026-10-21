@@ -725,6 +725,52 @@ input,select,textarea{font-size:.84rem}
 @keyframes lamWelcomeExitFinal{to{opacity:0;visibility:hidden;pointer-events:none}}
 @media(prefers-reduced-motion:reduce){#welcome-intro{animation:lamWelcomeExitFinal .5s ease 4.5s forwards!important}#welcome-intro .welcome-word{animation:lamWelcomeWriteFinal .01ms steps(1,end) .01ms forwards!important}#welcome-intro .welcome-brand{animation:lamWelcomeBrandFinal .01ms ease .01ms forwards!important}#welcome-intro .signature-flourish{animation:lamWelcomeLineFinal .01ms ease .01ms forwards!important}#welcome-intro:before,#welcome-intro:after{animation:none!important}}
 </style>
+
+<style id="lam-all-silver-visible-fix">
+:root{--lam-metal-silver:#aeb4ba;--lam-silver:#aeb4ba}
+#welcome-intro{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:#fff!important;opacity:1!important;visibility:visible!important;
+ animation:lamSilverIntroExit .7s ease 6.5s forwards!important;
+}
+#welcome-intro:before,#welcome-intro:after{
+ content:""!important;position:absolute!important;pointer-events:none!important;
+ border:1px solid transparent!important;
+ background:linear-gradient(#fff,#fff) padding-box,
+ linear-gradient(110deg,#8c9299,#e9ecef,#aeb4ba,#f7f8f9,#8c9299) border-box!important;
+ background-size:100% 100%,250% 100%!important;
+ animation:lamSilverBorder 3.2s linear infinite!important;
+}
+#welcome-intro:before{inset:12px!important}
+#welcome-intro:after{inset:19px!important;animation-delay:-1.6s!important}
+#welcome-intro .intro-writing{position:relative!important;z-index:2!important;display:flex!important;flex-direction:column!important;align-items:center!important;text-align:center!important}
+#welcome-intro .welcome-word{
+ display:block!important;color:#8c9299!important;-webkit-text-fill-color:#8c9299!important;
+ opacity:1!important;clip-path:inset(0 100% 0 0)!important;
+ animation:lamSilverWrite 1.5s steps(20,end) .2s forwards!important;
+}
+#welcome-intro .welcome-brand{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ color:#8c9299!important;opacity:0!important;animation:lamSilverBrand .8s ease 1.8s forwards!important;
+}
+#welcome-intro .welcome-brand strong{
+ color:#aeb4ba!important;-webkit-text-fill-color:#aeb4ba!important;
+ -webkit-text-stroke:.6px #777e85!important;text-shadow:none!important;
+}
+#welcome-intro .signature-flourish{stroke:#aeb4ba!important;stroke-dasharray:400!important;stroke-dashoffset:400!important;animation:lamSilverLine 1.2s ease 2.7s forwards!important}
+body .nav::after{background:linear-gradient(90deg,transparent,#aeb4ba,#f7f8f9,#8c9299,#aeb4ba,transparent)!important}
+body h2::after{background:linear-gradient(90deg,#aeb4ba,#f7f8f9,#8c9299,transparent)!important}
+body .hero:after{border-color:#aeb4ba!important}
+body .hero-logo{outline-color:#aeb4ba!important}
+body .section:not(.hero){border-top-color:#aeb4ba55!important}
+@keyframes lamSilverWrite{to{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes lamSilverBrand{to{opacity:1}}
+@keyframes lamSilverLine{to{stroke-dashoffset:0}}
+@keyframes lamSilverBorder{0%{background-position:0 0,200% 0}100%{background-position:0 0,-200% 0}}
+@keyframes lamSilverIntroExit{to{opacity:0!important;visibility:hidden!important;pointer-events:none!important}}
+@media(max-width:520px){#welcome-intro .welcome-word{white-space:normal!important}#welcome-intro .welcome-brand{max-width:310px!important;line-height:1.6!important}}
+@media(prefers-reduced-motion:reduce){#welcome-intro:before,#welcome-intro:after{animation:none!important}#welcome-intro .welcome-word,#welcome-intro .welcome-brand,#welcome-intro .signature-flourish{animation:none!important;opacity:1!important;clip-path:none!important;stroke-dashoffset:0!important}}
+</style>
 </head>
 <body>
 
