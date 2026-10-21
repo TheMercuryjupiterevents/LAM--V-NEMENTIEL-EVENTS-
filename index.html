@@ -2580,4 +2580,23 @@ body .section:not(.hero) h2::after{background:linear-gradient(90deg,#d8b43a,#f7f
  body .nav::after{background-position:center!important}
  body h2::after{transform:none!important}
 }
+
+/* Correction finale de l'animation Bienvenue */
+#welcome-intro .welcome-word{
+  color:#d71920!important;
+  -webkit-text-fill-color:#d71920!important;
+}
+#welcome-intro .welcome-brand{
+  color:#171717!important;
+}
+#welcome-intro .welcome-brand strong{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  -webkit-text-stroke:1px #171717!important;
+  text-shadow:0 0 1px #171717!important;
+}
+@media(max-width:520px){
+  #welcome-intro .welcome-word{white-space:normal!important}
+  #welcome-intro .welcome-brand{max-width:310px!important;line-height:1.6!important}
+}
 </style>
