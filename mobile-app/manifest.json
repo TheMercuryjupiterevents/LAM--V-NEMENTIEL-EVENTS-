@@ -1,0 +1,15 @@
+{
+  "name": "LAM ÉVÉNEMENTIEL & EVENTS",
+  "short_name": "LAM Events",
+  "description": "Organisation et décoration événementielle — demandes de devis.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F7F5",
+  "theme_color": "#202124",
+  "orientation": "any",
+  "categories": [
+    "lifestyle",
+    "business"
+  ]
+}
