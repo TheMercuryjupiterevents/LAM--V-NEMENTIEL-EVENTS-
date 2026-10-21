@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#202124">
+  <meta name="description" content="LAM ÉVÉNEMENTIEL & EVENTS — organisation, décoration et demandes de devis.">
+  <link rel="manifest" href="./manifest.json">
+  <title>LAM ÉVÉNEMENTIEL & EVENTS</title>
+  <style>
+    :root{--green:#9ABF32;--gray:#85878C;--blue:#0047AB;--red:#D92332;--yellow:#F5C400;--orange:#F58220;--ink:#202124;--paper:#f7f7f5;--white:#fff}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .colorbar{height:5px;display:flex}.colorbar i{flex:1}.colorbar i:nth-child(1){background:var(--green)}.colorbar i:nth-child(2){background:var(--gray)}.colorbar i:nth-child(3){background:var(--blue)}.colorbar i:nth-child(4){background:var(--red)}.colorbar i:nth-child(5){background:var(--yellow)}.colorbar i:nth-child(6){background:var(--orange)}
+    header{position:sticky;top:0;z-index:3;background:#fffffff2;backdrop-filter:blur(12px);border-bottom:1px solid #e8e9e3}.head-inner{max-width:1100px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:12px}.mark{width:48px;height:48px;background:var(--ink);border-bottom:4px solid var(--green);border-radius:14px;color:white;display:grid;place-items:center;font-weight:900;letter-spacing:1px}.brand{font-size:13px;font-weight:900;letter-spacing:.5px}.sub{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:2.3px;margin-top:3px}.spacer{flex:1}
+    button,.button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:13px 17px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.blue{background:var(--blue);color:white}.pale{background:#eef2e2;color:var(--ink)}.outline{border:1px solid var(--blue);background:transparent;color:var(--blue);width:100%;margin-top:10px}
+    main{max-width:1100px;margin:auto;padding:24px 20px 100px}.hero{background:var(--ink);color:white;border-radius:24px;padding:clamp(24px,5vw,52px);overflow:hidden}.eyebrow{color:var(--green);font-size:11px;letter-spacing:1.2px;font-weight:900}.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-1.5px;max-width:680px;margin:18px 0}.hero p{color:#e2e4df;line-height:1.7;max-width:560px}.dots{display:flex;gap:7px;margin-top:28px}.dots i{height:5px;width:30px;border-radius:4px}.section{margin-top:32px}.section h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.7px;margin:0 0 7px}.muted{color:#656862;line-height:1.6;margin-top:0}.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.service{background:white;border:1px solid #e9eae5;border-radius:15px;display:flex;overflow:hidden;min-height:116px}.stripe{width:6px;flex-shrink:0}.service-body{padding:17px;flex:1}.service h3{font-size:15px;margin:0 0 7px}.service p{font-size:13px;line-height:1.5;color:#686b65;margin:0}.booking{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background:white;border:1px solid #e9eae5;padding:20px;border-radius:18px;margin-top:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800}.field input,.field textarea,.field select{font:inherit;padding:12px;border:1px solid #e1e3dc;border-radius:10px;background:#fafaf8;min-width:0;width:100%}.field textarea{min-height:110px;resize:vertical}.notice{grid-column:1/-1;background:#fff6db;border-left:4px solid var(--yellow);padding:14px;border-radius:8px;font-size:13px;line-height:1.55}.contact{background:#edf2e1;padding:22px;border-radius:18px}.hidden{display:none!important}.foot{font-size:12px;color:#686b65;margin-top:18px;line-height:1.6}.bottomnav{position:fixed;z-index:4;bottom:0;left:0;right:0;display:flex;justify-content:center;background:#ffffffed;border-top:1px solid #e6e7e1;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));backdrop-filter:blur(14px)}.bottomnav button{flex:1;max-width:190px;background:transparent;color:var(--gray);padding:8px 4px;display:flex;flex-direction:column;gap:3px;font-size:11px}.bottomnav button span{font-size:20px}.bottomnav button[aria-current="page"]{color:var(--blue)}.bottomnav button[aria-current="page"]::after{content:"";width:20px;height:3px;border-radius:3px;background:var(--blue)}.status{margin-top:12px;font-size:13px;line-height:1.5}
+    @media(min-width:760px){main{padding-top:36px}.hero{min-height:330px}.booking{padding:26px}.bottomnav{position:static;border:0;background:transparent;padding:14px 0 0;justify-content:flex-start}.bottomnav button{flex:0 0 auto;flex-direction:row;padding:10px 15px;border:1px solid #e1e3dc;border-radius:10px;margin-right:8px;background:white}.bottomnav button span{font-size:16px}.bottomnav button[aria-current="page"]::after{display:none}}
+    @media(max-width:540px){.head-inner{padding:11px 14px}.brand{font-size:11px}.web-link{display:none}main{padding:16px 14px 95px}.services{grid-template-columns:1fr}.booking{grid-template-columns:1fr;padding:15px}.field.full,.notice{grid-column:auto}.hero{border-radius:20px}.service{min-height:92px}}
+  </style>
+</head>
+<body>
+  <div class="colorbar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <header><div class="head-inner"><div class="mark" aria-label="LAM">LAM</div><div><div class="brand">LAM ÉVÉNEMENTIEL</div><div class="sub">& EVENTS</div></div><div class="spacer"></div><a class="button pale web-link" href="https://themercuryjupiterevents.github.io/LAM--V-NEMENTIEL-EVENTS-/" target="_blank" rel="noreferrer">Site officiel ↗</a><button class="pale" id="install" hidden>Installer l’app</button></div></header>
+  <main>
+    <section id="home">
+      <div class="hero"><div class="eyebrow">CRÉONS DES MOMENTS INOUBLIABLES</div><h1>Vos événements,<br>notre savoir-faire.</h1><p>Décoration, organisation et accompagnement pour des célébrations à votre image.</p><button class="blue" data-go="booking">Demander un devis →</button><div class="dots"><i style="background:var(--green)"></i><i style="background:var(--blue)"></i><i style="background:var(--orange)"></i><i style="background:var(--red)"></i></div></div>
+      <div class="section"><h2>Nos services</h2><p class="muted">Des idées bien pensées, des événements bien organisés.</p><div class="services" id="home-services"></div><button class="outline" data-go="services">Découvrir tous les services</button></div>
+      <div class="section contact"><h2>Un projet en tête ?</h2><p class="muted">Dites-nous ce que vous imaginez. Notre équipe pourra étudier votre demande.</p><button class="blue" data-go="booking">Commencer une demande →</button></div>
+    </section>
+    <section id="services" class="hidden"><div class="section"><h2>Nos services</h2><p class="muted">Choisissez un type d’événement pour commencer votre demande.</p><div class="services" id="all-services"></div></div></section>
+    <section id="booking" class="hidden"><div class="section"><h2>Demande de devis</h2><p class="muted">Partagez les premières informations de votre événement. Les champs marqués * sont obligatoires.</p>
+      <form class="booking" id="booking-form">
+        <div class="field"><label for="prenom">Prénom *</label><input id="prenom" name="prenom" autocomplete="given-name" required></div>
+        <div class="field"><label for="nom">Nom *</label><input id="nom" name="nom" autocomplete="family-name" required></div>
+        <div class="field"><label for="email">Adresse e-mail *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="telephone">Téléphone</label><input id="telephone" name="telephone" type="tel" autocomplete="tel"></div>
+        <div class="field full"><label for="type">Type d’événement *</label><select id="type" name="type" required><option value="">Choisir un service</option><option>Mariage</option><option>Anniversaire</option><option>Décoration événementielle</option><option>Dîner privé</option><option>Événement professionnel</option><option>Autre événement</option></select></div>
+        <div class="field"><label for="date">Date souhaitée</label><input id="date" name="date" type="date"></div>
+        <div class="field"><label for="lieu">Lieu de l’événement</label><input id="lieu" name="lieu" placeholder="Ville ou adresse"></div>
+        <div class="field full"><label for="budget">Budget estimé</label><input id="budget" name="budget" placeholder="Montant et devise"></div>
+        <div class="field full"><label for="details">Décrivez votre projet</label><textarea id="details" name="details" placeholder="Thème, couleurs, nombre d’invités, services..."></textarea></div>
+        <div class="notice"><strong>Conditions de paiement</strong><br>Le dépôt de 70 % sera présenté selon les conditions du devis et du contrat validés par LAM. Aucun paiement n’est collecté dans cette version.</div>
+        <div class="field full"><button class="blue" type="submit">Préparer ma demande →</button><p class="foot">Cette version de démonstration ne transmet pas encore les informations à LAM. Évitez de saisir des informations sensibles.</p><p class="status" id="form-status" role="status"></p></div>
+      </form></div></section>
+    <section id="contact" class="hidden"><div class="section"><div class="contact"><h2>Contactez LAM</h2><p class="muted">Parlons de votre prochain événement. Consultez notre site officiel pour les coordonnées et les détails de nos services.</p><a class="button blue" href="https://themercuryjupiterevents.github.io/LAM--V-NEMENTIEL-EVENTS-/" target="_blank" rel="noreferrer">Ouvrir le site officiel ↗</a></div><p class="foot">La connexion aux demandes de réservation et aux paiements sera configurée avant la publication officielle.</p></div></section>
+    <p class="foot">LAM ÉVÉNEMENTIEL & EVENTS · Une expérience adaptée aux écrans de téléphone, tablette et ordinateur.</p>
+    <nav class="bottomnav" aria-label="Navigation principale"><button data-page="home" aria-current="page"><span>⌂</span>Accueil</button><button data-page="services"><span>✦</span>Services</button><button data-page="booking"><span>▤</span>Réservation</button><button data-page="contact"><span>○</span>Contact</button></nav>
+  </main>
+  <script>
+    const services=[
+      ["Décoration événementielle","#9ABF32","Une décoration pensée autour de votre thème et de vos envies."],
+      ["Mariages","#0047AB","Un accompagnement élégant pour célébrer votre grand jour."],
+      ["Anniversaires","#D92332","Des moments mémorables, conçus selon votre style."],
+      ["Dîners privés","#F58220","Une ambiance soignée pour recevoir vos invités."],
+      ["Événements professionnels","#85878C","Une organisation structurée pour vos événements d’entreprise."],
+      ["Autres événements","#F5C400","Parlons de votre idée et imaginons le projet ensemble."]
+    ];
+    function serviceCard(s){const el=document.createElement("article");el.className="service";const stripe=document.createElement("div");stripe.className="stripe";stripe.style.background=s[1];const body=document.createElement("div");body.className="service-body";const h=document.createElement("h3");h.textContent=s[0];const p=document.createElement("p");p.textContent=s[2];body.append(h,p);el.append(stripe,body);el.tabIndex=0;el.setAttribute("role","button");el.setAttribute("aria-label","Demander un devis pour "+s[0]);const choose=()=>{document.querySelector("#type").value=s[0];go("booking")};el.addEventListener("click",choose);el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();choose()}});return el}
+    services.forEach((s,i)=>{document.querySelector("#all-services").append(serviceCard(s));if(i<4)document.querySelector("#home-services").append(serviceCard(s))});
+    function go(id){document.querySelectorAll("main>section").forEach(s=>s.classList.toggle("hidden",s.id!==id));document.querySelectorAll("[data-page]").forEach(b=>{if(b.dataset.page===id)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});window.scrollTo({top:0,behavior:"smooth"})}
+    document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+    document.querySelector("#booking-form").addEventListener("submit",e=>{e.preventDefault();document.querySelector("#form-status").textContent="Fòm nan verifye sou aparèy ou, men li poko voye bay LAM. N ap konekte sistèm voye demann lan anvan lansman.";});
+    let installPrompt;const installButton=document.querySelector("#install");window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();installPrompt=e;installButton.hidden=false});installButton.addEventListener("click",async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installButton.hidden=true});
+    if("serviceWorker" in navigator && location.protocol!=="file:"){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+  </script>
+</body>
+</html>
