@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "LAM ÉVÉNEMENTIEL & EVENTS",
+    "slug": "lam-evenementiel-events",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.lamevenementiel.events"
+    },
+    "android": {
+      "package": "com.lamevenementiel.events"
+    },
+    "splash": {
+      "backgroundColor": "#FFFFFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
