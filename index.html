@@ -922,9 +922,69 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="card"><div class="num">06</div><h3>EXPÉRIENCE</h3><p>Nous portons attention à l’accueil, au confort et aux détails qui rendent votre événement agréable et personnel.</p></div>
 <div class="card"><div class="num">07</div><h3>SERVICE TRAITEUR</h3><p>Selon vos besoins, une prestation traiteur peut compléter votre événement avec des repas, bouchées et un service adaptés.</p></div>
 <div class="card"><div class="num">08</div><h3>TRAITEUR & EXPÉRIENCE CULINAIRE</h3><p>Nous étudions vos préférences culinaires afin de proposer une formule adaptée au menu, au service et à la présentation souhaités.</p></div>
-<div class="card"><div class="num">09</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous accompagnons les projets de concerts et d’événements musicaux par la planification, la coordination logistique, l’accueil des artistes et des invités VIP, ainsi que la collaboration avec des partenaires techniques spécialisés selon les besoins du projet.</p></div>
+<div class="card"><div class="num">09</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous accompagnons les projets de concerts et d’événements musicaux par la planification, la coordination logistique, l’accueil des artistes et des invités VIP, ainsi que la collaboration avec des partenaires techniques spécialisés selon les besoins du projet.</p><p><a class="btn primary" href="#concert-form">Demander un devis</a></p></div>
 </div>
 </div></section>
+
+
+<section id="concert-form" class="section">
+<div class="wrap">
+<div class="eyebrow">Demande de devis</div>
+<h2>CONCERTS &amp; PRODUCTION ÉVÉNEMENTIELLE</h2>
+<p class="lead">Présentez-nous votre projet afin que notre équipe puisse comprendre vos besoins et préparer une proposition adaptée.</p>
+<div class="contactbox">
+<h3>FORMULAIRE — ORGANISATION DE CONCERTS</h3>
+<form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="DEMANDE DE DEVIS — CONCERTS & PRODUCTION ÉVÉNEMENTIELLE — LAM">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<div class="form-section"><h3>01 — Informations sur le client</h3><div class="fieldgrid">
+<div class="field"><label for="concertNom">Nom complet du responsable *</label><input id="concertNom" type="text" name="Nom du responsable" autocomplete="name" required></div>
+<div class="field"><label for="concertStructure">Entreprise ou organisation</label><input id="concertStructure" type="text" name="Entreprise ou organisation"></div>
+<div class="field"><label for="concertEmail">Adresse e-mail *</label><input id="concertEmail" type="email" name="E-mail" autocomplete="email" required></div>
+<div class="field"><label for="concertTelephone">Téléphone / WhatsApp *</label><input id="concertTelephone" type="tel" name="Téléphone ou WhatsApp" autocomplete="tel" required></div>
+</div></div>
+<div class="form-section"><h3>02 — Informations sur le programme</h3><div class="fieldgrid">
+<div class="field"><label for="concertType">Type de programme *</label><select id="concertType" name="Type de programme" required><option value="">Choisir une option</option><option>Concert</option><option>Festival musical</option><option>Showcase</option><option>Spectacle</option><option>Lancement artistique</option><option>Autre événement musical</option></select></div>
+<div class="field"><label for="concertTitre">Nom ou titre du programme</label><input id="concertTitre" type="text" name="Titre du programme"></div>
+<div class="field"><label for="concertDate">Date prévue *</label><input id="concertDate" type="date" name="Date prévue" required></div>
+<div class="field"><label for="concertVille">Ville et adresse / lieu envisagé *</label><input id="concertVille" type="text" name="Ville et lieu" required placeholder="Ville, salle ou espace en plein air"></div>
+<div class="field"><label for="concertLieuStatut">État du lieu</label><select id="concertLieuStatut" name="État du lieu"><option>Lieu déjà réservé</option><option>Lieu identifié, non réservé</option><option>Besoin d’aide pour trouver un lieu</option></select></div>
+<div class="field"><label for="concertStatut">Statut actuel du projet</label><select id="concertStatut" name="Statut du projet"><option>En préparation</option><option>En recherche de partenaires</option><option>Date et lieu confirmés</option></select></div>
+</div></div>
+<div class="form-section"><h3>03 — Participants et artistes</h3><div class="fieldgrid">
+<div class="field"><label for="concertParticipants">Nombre de personnes attendues *</label><select id="concertParticipants" name="Nombre de participants attendus" required><option value="">Choisir une estimation</option><option>Moins de 100</option><option>100 à 300</option><option>301 à 500</option><option>501 à 1 000</option><option>1 001 à 3 000</option><option>3 001 à 8 000</option><option>Plus de 8 000</option><option>À déterminer</option></select></div>
+<div class="field"><label for="concertNbArtistes">Nombre d’artistes ou de groupes prévus</label><input id="concertNbArtistes" type="number" name="Nombre d’artistes ou groupes" min="0" step="1"></div>
+<div class="field"><label for="concertNbVIP">Nombre d’invités VIP estimé</label><input id="concertNbVIP" type="number" name="Nombre d’invités VIP" min="0" step="1"></div>
+<div class="field"><label for="concertArtistes">Noms des artistes, DJ, groupes ou animateurs</label><textarea id="concertArtistes" name="Noms des artistes" rows="3" placeholder="Indiquez les noms si vous les connaissez déjà."></textarea></div>
+</div></div>
+<div class="form-section"><h3>04 — Services souhaités</h3><p class="small">Sélectionnez tous les services nécessaires à votre projet.</p><div class="checks">
+<label class="check"><input type="checkbox" name="Services souhaités" value="Organisation générale"> Organisation générale</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Planification et coordination"> Planification et coordination</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Recherche et gestion du lieu"> Recherche et gestion du lieu</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Production événementielle"> Production événementielle</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Coordination technique (son, lumière, scène)"> Coordination technique (son, lumière, scène)</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Logistique et transport"> Logistique et transport</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Accueil des artistes"> Accueil des artistes</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Accueil des invités VIP"> Accueil des invités VIP</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Gestion des invités et protocole"> Gestion des invités et protocole</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Décoration et aménagement"> Décoration et aménagement</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Communication et promotion"> Communication et promotion</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Coordination des prestataires"> Coordination des prestataires</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Restauration et service traiteur"> Restauration et service traiteur</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Gestion du déroulement le jour J"> Gestion du déroulement le jour J</label>
+<label class="check"><input type="checkbox" name="Services souhaités" value="Autre besoin"> Autre besoin</label>
+</div></div>
+<div class="form-section"><h3>05 — Style et détails complémentaires</h3>
+<div class="field"><label for="concertAmbiance">Style ou ambiance souhaitée</label><input id="concertAmbiance" type="text" name="Style et ambiance" placeholder="Prestige, moderne, culturel, festif…"></div>
+<div class="field" style="margin-top:15px"><label for="concertDetails">Informations complémentaires *</label><textarea id="concertDetails" name="Informations complémentaires" rows="5" required placeholder="Décrivez votre vision, vos besoins spécifiques, vos contraintes ou vos attentes."></textarea></div>
+</div>
+<div class="form-section"><h3>06 — Conditions de réservation</h3><p class="small"><strong>Acompte de 70 % :</strong> requis pour confirmer la réservation et bloquer la date. <strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement. L’envoi du formulaire constitue une demande de devis, et non une réservation confirmée.</p>
+<label class="consent"><input type="checkbox" name="Confirmation des conditions" value="J’ai compris que ce formulaire est une demande et non une réservation confirmée." required> Je comprends que ma demande doit être étudiée par LAM et que la réservation ne sera confirmée qu’après accord sur le devis et réception de l’acompte.</label></div>
+<button class="btn primary" type="submit">Envoyer ma demande</button>
+</form></div></div></section>
+
+
 
 
 <section id="cartes-invitation-mariage" class="section">
