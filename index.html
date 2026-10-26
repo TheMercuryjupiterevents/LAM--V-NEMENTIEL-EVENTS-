@@ -1375,9 +1375,13 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 </script>
 
 <script>
-function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm'];
-  ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
+window.showEventForm = function(target){
+  var allowed=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm'];
+  if(allowed.indexOf(target)===-1) return false;
+  allowed.forEach(function(id){
+    var panel=document.getElementById(id);
+    if(panel) panel.hidden=(id!==target);
+  });
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
     button.classList.toggle('primary',active);
@@ -1385,14 +1389,21 @@ function showEventForm(target){
   });
   var selected=document.getElementById(target);
   var status=document.getElementById('formChoiceStatus');
-  if(status&&selected){var heading=selected.querySelector('h3');status.textContent='Formulaire sélectionné : '+(heading?heading.textContent:'votre événement')+'.';}
-  if(selected){setTimeout(function(){selected.scrollIntoView({behavior:'auto',block:'start'});},50);}
+  if(status&&selected){
+    var heading=selected.querySelector('h2');
+    status.textContent='Formulaire sélectionné : '+(heading?heading.textContent:'votre demande')+'.';
+  }
+  if(selected){
+    selected.hidden=false;
+    selected.scrollIntoView({behavior:'auto',block:'start'});
+  }
   return false;
-}
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('[data-show-form]').forEach(function(button){
-    button.addEventListener('click',function(){showEventForm(button.getAttribute('data-show-form'));});
-  });
+};
+document.addEventListener('click',function(event){
+  var button=event.target.closest('[data-show-form]');
+  if(!button) return;
+  event.preventDefault();
+  window.showEventForm(button.getAttribute('data-show-form'));
 });
 </script>
 
