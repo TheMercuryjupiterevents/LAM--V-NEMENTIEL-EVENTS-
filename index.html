@@ -1304,51 +1304,61 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 </form></div></div></div>
 <div class="form-panel" id="pastryForm" hidden style="margin-top:24px">
 <div class="wrap">
-<div class="eyebrow">FORMULAIRE 05 — DEMANDE DE COMMANDE</div>
-<h2>PÂTISSERIE &amp; GÂTEAUX PERSONNALISÉS</h2>
-<p class="lead">Décrivez le gâteau ou les pâtisseries souhaités. Notre équipe étudiera votre demande et vous contactera pour préciser les détails et le devis.</p>
+<div class="eyebrow">FORMULAIRE 05 — PÂTISSERIE</div>
+<h2>COMMANDE DE GÂTEAUX &amp; PÂTISSERIES SUCRÉES</h2>
+<p class="lead">Parlez-nous de votre gâteau ou de vos pâtisseries personnalisés. Après réception, notre équipe vous contactera pour confirmer les détails, la disponibilité et le devis.</p>
 <div class="contactbox">
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="_subject" value="DEMANDE PÂTISSERIE & GÂTEAUX PERSONNALISÉS — LAM ÉVÉNEMENTIEL & EVENTS">
+<input type="hidden" name="_subject" value="FORMULAIRE 05 — COMMANDE PÂTISSERIE — LAM ÉVÉNEMENTIEL & EVENTS">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
-<input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre demande de pâtisserie. Merci d’avoir contacté LAM ÉVÉNEMENTIEL & EVENTS. Notre équipe examinera votre demande et vous répondra dès que possible.">
-<div class="form-section"><h3>01 — Informations du client</h3><div class="fieldgrid">
+<input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre demande de pâtisserie. Merci d’avoir contacté LAM ÉVÉNEMENTIEL & EVENTS. Notre équipe vous contactera après étude de votre demande. L’envoi du formulaire ne confirme pas automatiquement la commande.">
+<div class="form-section">
+<h3>01 — Vos coordonnées</h3>
+<div class="fieldgrid">
 <div class="field"><label for="pastryNom">Nom et prénom *</label><input id="pastryNom" name="Nom et prénom" autocomplete="name" required></div>
 <div class="field"><label for="pastryTel">Téléphone / WhatsApp *</label><input id="pastryTel" type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
 <div class="field"><label for="pastryEmail">Adresse e-mail *</label><input id="pastryEmail" type="email" name="Adresse e-mail" autocomplete="email" required></div>
-<div class="field"><label for="pastryAddress">Adresse de livraison (si nécessaire)</label><input id="pastryAddress" name="Adresse de livraison"></div>
+<div class="field"><label for="pastryAddress">Adresse de livraison, si nécessaire</label><input id="pastryAddress" name="Adresse de livraison"></div>
 </div></div>
-<div class="form-section"><h3>02 — Type de commande</h3><div class="fieldgrid">
-<div class="field full"><label for="pastryType">Type de produit *</label><select id="pastryType" name="Type de produit" required><option value="">Choisir un produit</option><optgroup label="Gâteaux"><option>Gâteau d’anniversaire</option><option>Gâteau de mariage</option><option>Gâteau de graduation</option><option>Gâteau de baby shower</option><option>Gâteau de baptême</option><option>Gâteau de fiançailles</option><option>Gâteau pour événement spécial</option><option>Gâteau personnalisé</option></optgroup><optgroup label="Pâtisseries individuelles"><option>Cupcakes</option><option>Macarons</option><option>Petits gâteaux</option><option>Mignardises sucrées</option><option>Autre pâtisserie sucrée</option></optgroup></select></div>
-<div class="field"><label for="pastryFlavor">Saveur souhaitée *</label><select id="pastryFlavor" name="Saveur souhaitée" required><option value="">Choisir une saveur</option><option>Chocolat</option><option>Vanille</option><option>Fraise</option><option>Red velvet</option><option>Citron</option><option>Marbré</option><option>Autre / à préciser</option></select></div>
-<div class="field"><label for="pastryQuantity">Quantité souhaitée *</label><input id="pastryQuantity" name="Quantité souhaitée" required placeholder="Ex. : 1 gâteau ou 24 cupcakes"></div>
-<div class="field"><label for="pastryFilling">Garniture souhaitée</label><select id="pastryFilling" name="Garniture souhaitée"><option value="">Choisir une option</option><option>Crème</option><option>Ganache au chocolat</option><option>Confiture</option><option>Crème au fromage</option><option>Autre</option><option>À conseiller</option></select></div>
-<div class="field"><label for="pastryCover">Couverture souhaitée</label><select id="pastryCover" name="Couverture souhaitée"><option value="">Choisir une option</option><option>Crème au beurre</option><option>Pâte à sucre</option><option>Ganache</option><option>Glaçage</option><option>Autre / à conseiller</option></select></div>
-<div class="field"><label for="pastrySize">Taille du gâteau</label><select id="pastrySize" name="Taille du gâteau"><option value="">Choisir une taille</option><option>Petit</option><option>Moyen</option><option>Grand</option><option>À plusieurs étages</option><option>À conseiller</option><option>Sans objet</option></select></div>
+<div class="form-section">
+<h3>02 — Votre commande</h3>
+<div class="fieldgrid">
+<div class="field full"><label for="pastryType">Que souhaitez-vous commander ? *</label><select id="pastryType" name="Type de produit" required><option value="">Sélectionner un produit</option><optgroup label="Gâteaux personnalisés"><option>Gâteau d’anniversaire</option><option>Gâteau de mariage</option><option>Gâteau de graduation</option><option>Gâteau de baby shower</option><option>Gâteau de baptême</option><option>Gâteau de fiançailles</option><option>Gâteau pour événement spécial</option><option>Gâteau personnalisé</option></optgroup><optgroup label="Pâtisseries sucrées"><option>Cupcakes</option><option>Macarons</option><option>Petits gâteaux</option><option>Mignardises sucrées</option><option>Autre pâtisserie sucrée</option></optgroup></select></div>
+<div class="field"><label for="pastryFlavor">Saveur principale *</label><select id="pastryFlavor" name="Saveur principale" required><option value="">Sélectionner une saveur</option><option>Chocolat</option><option>Vanille</option><option>Fraise</option><option>Red velvet</option><option>Citron</option><option>Marbré</option><option>Coco</option><option>Autre / à préciser</option><option>À conseiller</option></select></div>
+<div class="field"><label for="pastryQuantity">Quantité souhaitée *</label><input id="pastryQuantity" name="Quantité souhaitée" placeholder="Ex. : 1 gâteau, 24 cupcakes" required></div>
+<div class="field"><label for="pastryFilling">Garniture / fourrage</label><select id="pastryFilling" name="Garniture ou fourrage"><option value="">Sélectionner une option</option><option>Crème</option><option>Ganache au chocolat</option><option>Confiture</option><option>Crème au fromage</option><option>Autre</option><option>À conseiller</option><option>Sans objet</option></select></div>
+<div class="field"><label for="pastryCover">Couverture / glaçage</label><select id="pastryCover" name="Couverture ou glaçage"><option value="">Sélectionner une option</option><option>Crème au beurre</option><option>Pâte à sucre</option><option>Ganache</option><option>Glaçage</option><option>Autre / à conseiller</option><option>Sans objet</option></select></div>
+<div class="field"><label for="pastrySize">Taille du gâteau</label><select id="pastrySize" name="Taille du gâteau"><option value="">Sélectionner une taille</option><option>Petit</option><option>Moyen</option><option>Grand</option><option>Plusieurs étages</option><option>À conseiller</option><option>Sans objet</option></select></div>
 <div class="field"><label for="pastryGuests">Nombre de personnes à servir</label><input id="pastryGuests" type="number" min="1" name="Nombre de personnes à servir" placeholder="Ex. : 25"></div>
-<div class="field"><label for="pastryShape">Forme souhaitée</label><select id="pastryShape" name="Forme souhaitée"><option value="">Choisir une forme</option><option>Rond</option><option>Carré</option><option>Cœur</option><option>Personnalisée</option><option>Sans préférence</option><option>Sans objet</option></select></div>
-<div class="field"><label for="pastryStyle">Style souhaité</label><select id="pastryStyle" name="Style souhaité"><option value="">Choisir un style</option><option>Élégant</option><option>Classique</option><option>Moderne</option><option>Minimaliste</option><option>Luxueux</option><option>Enfant / ludique</option><option>Autre</option></select></div>
+<div class="field"><label for="pastryShape">Forme souhaitée</label><select id="pastryShape" name="Forme souhaitée"><option value="">Sélectionner une forme</option><option>Ronde</option><option>Carrée</option><option>Cœur</option><option>Personnalisée</option><option>Sans préférence</option><option>Sans objet</option></select></div>
 </div></div>
-<div class="form-section"><h3>03 — Personnalisation et décoration</h3><div class="fieldgrid">
+<div class="form-section">
+<h3>03 — Style et personnalisation</h3>
+<div class="fieldgrid">
+<div class="field"><label for="pastryStyle">Style souhaité</label><select id="pastryStyle" name="Style souhaité"><option value="">Sélectionner un style</option><option>Élégant</option><option>Classique</option><option>Moderne</option><option>Minimaliste</option><option>Luxueux</option><option>Enfant / ludique</option><option>Autre</option></select></div>
 <div class="field"><label for="pastryEvent">Type d’événement</label><input id="pastryEvent" name="Type d’événement" placeholder="Ex. : anniversaire, mariage"></div>
-<div class="field"><label for="pastryTheme">Thème de l’événement</label><input id="pastryTheme" name="Thème de l’événement"></div>
+<div class="field"><label for="pastryTheme">Thème</label><input id="pastryTheme" name="Thème de l’événement"></div>
 <div class="field"><label for="pastryColors">Couleurs souhaitées</label><input id="pastryColors" name="Couleurs souhaitées" placeholder="Ex. : rouge, blanc et argent"></div>
-<div class="field"><label for="pastryNameText">Prénom, âge ou numéro à afficher</label><input id="pastryNameText" name="Prénom, âge ou numéro à afficher"></div>
-<div class="field full"><label for="pastryText">Texte à inscrire sur le gâteau</label><input id="pastryText" name="Texte à inscrire sur le gâteau"></div>
-<div class="field full"><label for="pastryDecor">Décorations et instructions particulières</label><textarea id="pastryDecor" name="Décorations et instructions particulières" rows="3" placeholder="Décrivez les éléments souhaités."></textarea></div>
+<div class="field"><label for="pastryNameText">Nom, âge ou numéro à afficher</label><input id="pastryNameText" name="Nom, âge ou numéro à afficher"></div>
+<div class="field full"><label for="pastryText">Message à écrire sur le gâteau</label><input id="pastryText" name="Message à écrire sur le gâteau"></div>
+<div class="field full"><label for="pastryDecor">Décorations et instructions particulières</label><textarea id="pastryDecor" name="Décorations et instructions particulières" rows="3" placeholder="Décrivez les détails que vous souhaitez."></textarea></div>
 <div class="field full"><label for="pastryReference">Photo d’inspiration (facultatif)</label><input id="pastryReference" type="file" name="Photo d’inspiration" accept="image/*"></div>
 </div></div>
-<div class="form-section"><h3>04 — Date, livraison et précautions alimentaires</h3><div class="fieldgrid">
+<div class="form-section">
+<h3>04 — Date et réception</h3>
+<div class="fieldgrid">
 <div class="field"><label for="pastryEventDate">Date de l’événement</label><input id="pastryEventDate" type="date" name="Date de l’événement"></div>
-<div class="field"><label for="pastryNeededDate">Date souhaitée de livraison ou récupération *</label><input id="pastryNeededDate" type="date" name="Date souhaitée de livraison ou récupération" required></div>
+<div class="field"><label for="pastryNeededDate">Date souhaitée de réception *</label><input id="pastryNeededDate" type="date" name="Date souhaitée de réception" required></div>
 <div class="field"><label for="pastryTime">Heure souhaitée</label><input id="pastryTime" type="time" name="Heure souhaitée"></div>
-<div class="field"><label for="pastryDelivery">Mode de réception *</label><select id="pastryDelivery" name="Mode de réception" required><option value="">Choisir une option</option><option>Livraison</option><option>Récupération</option><option>À convenir</option></select></div>
-<div class="field full"><label for="pastryAllergies">Allergies ou restrictions alimentaires à signaler</label><textarea id="pastryAllergies" name="Allergies ou restrictions alimentaires" rows="2" placeholder="Veuillez préciser si nécessaire."></textarea></div>
+<div class="field"><label for="pastryDelivery">Livraison ou récupération ? *</label><select id="pastryDelivery" name="Mode de réception" required><option value="">Sélectionner une option</option><option>Livraison</option><option>Récupération</option><option>À convenir</option></select></div>
+<div class="field full"><label for="pastryAllergies">Allergies ou restrictions alimentaires</label><textarea id="pastryAllergies" name="Allergies ou restrictions alimentaires" rows="2" placeholder="Précisez toute allergie ou restriction importante."></textarea></div>
 <div class="field full"><label for="pastryExtra">Autres demandes ou informations complémentaires</label><textarea id="pastryExtra" name="Autres demandes ou informations complémentaires" rows="3"></textarea></div>
 </div></div>
-<div class="form-section"><p class="small">L’envoi du formulaire constitue une demande de commande et ne garantit pas automatiquement la réservation. La commande sera confirmée après validation par LAM ÉVÉNEMENTIEL &amp; EVENTS.</p>
-<label class="consent"><input type="checkbox" name="Consentement contact" value="Oui, j’accepte d’être contacté au sujet de cette demande." required> J’accepte que l’équipe me contacte au sujet de cette demande et confirme l’exactitude des informations fournies.</label></div>
+<div class="form-section">
+<p class="small">Important : ce formulaire constitue une demande et ne confirme pas automatiquement la commande. La commande sera confirmée après vérification des détails, de la disponibilité et du devis par LAM ÉVÉNEMENTIEL &amp; EVENTS.</p>
+<label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required> J’accepte que l’équipe me contacte au sujet de cette demande et confirme que les informations fournies sont exactes.</label>
+</div>
 <button class="btn primary" type="submit">Envoyer ma demande de pâtisserie</button>
 </form></div></div></div>
 </section>
