@@ -869,7 +869,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="wrap hero-grid">
 <div class="lam-wheat-emblem" aria-label="Logo LAM au centre, intégré à des ailes métalliques 3D animées">
 <img class="lam-wheat-wing lam-wheat-wing-left" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true"><img class="lam-wheat-wing lam-wheat-wing-right" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
-<div class="lam-door-hero" role="img" aria-label="Porte 3D rouge et noire LAM ÉVÉNEMENTIEL & EVENTS"><div class="lam-door-glow"></div><div class="lam-door-leaf lam-door-left"><span>LAM</span></div><div class="lam-door-leaf lam-door-right"><span>ÉVÉNEMENTIEL</span></div><div class="lam-door-threshold"></div></div>
+<img class="lam-center-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo officiel LAM ÉVÉNEMENTIEL & EVENTS au centre des ailes">
 </div>
 <div>
 <h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
@@ -2375,6 +2375,13 @@ document.addEventListener('click',function(event){
 @media(prefers-reduced-motion:reduce){.lam-door-leaf,.lam-door-glow{animation:none!important}.lam-door-left{transform:perspective(700px) rotateY(-48deg)!important}.lam-door-right{transform:perspective(700px) rotateY(48deg)!important}}
 </style>
 
+
+<style id="lam-center-logo-replacement">
+/* Logo officiel au centre des ailes : remplace la porte 3D */
+.lam-wheat-emblem{position:relative!important;isolation:isolate!important}
+.lam-wheat-emblem>.lam-center-logo{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;width:44%!important;height:auto!important;max-width:240px!important;max-height:70%!important;object-fit:contain!important;z-index:8!important;display:block!important;filter:drop-shadow(0 5px 12px rgba(0,0,0,.35))!important;pointer-events:none!important}
+@media(max-width:680px){.lam-wheat-emblem>.lam-center-logo{width:43%!important;max-width:150px!important;max-height:65%!important}}
+</style>
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
