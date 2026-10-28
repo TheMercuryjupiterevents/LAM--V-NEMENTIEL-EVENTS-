@@ -869,7 +869,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="wrap hero-grid">
 <div class="lam-wheat-emblem" aria-label="Logo LAM au centre, intégré à des ailes métalliques 3D animées">
 <img class="lam-wheat-wing lam-wheat-wing-left" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true"><img class="lam-wheat-wing lam-wheat-wing-right" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
-<img class="hero-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo principal LAM ÉVÉNEMENTIEL & EVENTS">
+<div class="lam-door-hero" role="img" aria-label="Porte 3D rouge et noire LAM ÉVÉNEMENTIEL & EVENTS"><div class="lam-door-glow"></div><div class="lam-door-leaf lam-door-left"><span>LAM</span></div><div class="lam-door-leaf lam-door-right"><span>ÉVÉNEMENTIEL</span></div><div class="lam-door-threshold"></div></div>
 </div>
 <div>
 <h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
@@ -2342,6 +2342,39 @@ document.addEventListener('click',function(event){
 @keyframes lamWelcomeLastSilver{from{background-position:0 0,200% 0}to{background-position:0 0,-200% 0}}
 </style>
 
+
+<style id="lam-red-black-door-final">
+/* La première intro blanche est retirée : une seule animation, courte, rouge et noire. */
+#welcome-intro{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+#lam-3d-welcome{background:radial-gradient(ellipse at 50% 42%,#242424,#090909 70%)!important}
+#lam-3d-welcome .lam-world{transition:transform 1.25s cubic-bezier(.65,0,.25,1)!important}
+#lam-3d-welcome .lam-wall{background:linear-gradient(90deg,#050505 0%,#151515 28%,#b51225 43%,#171717 50%,#b51225 57%,#151515 72%,#050505 100%)!important;opacity:.9!important}
+#lam-3d-welcome .lam-arch{border-color:#d71920!important;box-shadow:0 0 0 3px #fff,inset 0 0 0 4px #171717,0 0 0 7px #777,0 0 24px #d7192033!important}
+#lam-3d-welcome .lam-arch:before{border-color:#171717!important;box-shadow:inset 12px 0 24px #ffffff10,inset -18px 0 30px #000,0 0 0 2px #d71920!important}
+#lam-3d-welcome .lam-opening{background:#080808!important;border:1px solid #777!important;box-shadow:inset 0 0 0 3px #171717!important;overflow:visible!important}
+#lam-3d-welcome .lam-opening:before,#lam-3d-welcome .lam-opening:after{content:"";position:absolute;top:0;bottom:0;width:50%;border:2px solid #d71920;background:linear-gradient(135deg,#ed1b2f 0%,#a10f20 42%,#111 43%,#080808 100%);box-shadow:inset 0 0 0 3px #171717, inset 0 0 0 4px #777;transform-style:preserve-3d;transition:transform 1.05s cubic-bezier(.2,.75,.2,1);backface-visibility:hidden}
+#lam-3d-welcome .lam-opening:before{left:0;transform-origin:left center}
+#lam-3d-welcome .lam-opening:after{right:0;background:linear-gradient(225deg,#111 0%,#080808 38%,#a10f20 39%,#ed1b2f 100%);transform-origin:right center}
+#lam-3d-welcome.lam-opening .lam-opening:before{transform:perspective(600px) rotateY(-76deg)}
+#lam-3d-welcome.lam-opening .lam-opening:after{transform:perspective(600px) rotateY(76deg)}
+#lam-3d-welcome .lam-floor{background:linear-gradient(180deg,#d71920 0%,#171717 35%,#050505 100%)!important;border-top:2px solid #777!important;box-shadow:0 -2px 14px #d7192022!important}
+#lam-3d-welcome .lam-brand h2{color:#d71920!important;text-shadow:0 2px 8px #000!important}
+#lam-3d-welcome .lam-skip{background:#101010ee!important;border-color:#d71920!important;box-shadow:0 0 0 1px #777!important}
+.lam-door-hero{position:relative;z-index:2;width:48%;height:64%;min-height:190px;max-height:250px;display:flex;align-items:stretch;justify-content:center;perspective:1000px;transform-style:preserve-3d;filter:drop-shadow(0 14px 18px #0003)}
+.lam-door-glow{position:absolute;inset:8% 18% 0;background:radial-gradient(ellipse at center,#fff 0%,#d7192033 45%,transparent 72%);opacity:.9;animation:lamDoorGlow 2.4s ease-in-out infinite alternate}
+.lam-door-leaf{position:relative;z-index:2;width:50%;height:100%;display:flex;align-items:center;justify-content:center;border:2px solid #aeb4ba;box-shadow:inset 0 0 0 4px #171717,inset 0 0 0 5px #aeb4ba,0 0 0 1px #fff;background:linear-gradient(135deg,#ed1b2f 0%,#b51225 48%,#171717 49%,#080808 100%);transform-style:preserve-3d;backface-visibility:hidden;animation:lamHeroDoorOpen 1.6s cubic-bezier(.2,.75,.2,1) .2s both}
+.lam-door-left{transform-origin:left center;border-radius:42% 0 0 0}
+.lam-door-right{transform-origin:right center;border-radius:0 42% 0 0;background:linear-gradient(225deg,#171717 0%,#080808 48%,#b51225 49%,#ed1b2f 100%);animation-name:lamHeroDoorOpenRight}
+.lam-door-leaf span{writing-mode:vertical-rl;text-orientation:mixed;color:#fff;font:600 .58rem/1.2 Arial,sans-serif;letter-spacing:.18em;text-shadow:0 1px 5px #000;padding:8px}
+.lam-door-threshold{position:absolute;z-index:3;bottom:-5px;left:-8%;width:116%;height:7px;background:linear-gradient(90deg,#171717,#d71920,#aeb4ba,#171717);box-shadow:0 3px 7px #0003}
+@keyframes lamHeroDoorOpen{from{transform:rotateY(0)}to{transform:perspective(700px) rotateY(-48deg)}}
+@keyframes lamHeroDoorOpenRight{from{transform:rotateY(0)}to{transform:perspective(700px) rotateY(48deg)}}
+@keyframes lamDoorGlow{from{opacity:.45;transform:scale(.96)}to{opacity:.9;transform:scale(1.04)}}
+@media(max-width:950px){.lam-door-hero{width:46%;height:62%;min-height:180px}}
+@media(max-width:680px){.lam-wheat-emblem{width:min(100%,300px)!important;aspect-ratio:1!important;margin:0 auto 4px!important}.lam-door-hero{width:43%;height:60%;min-height:165px;max-height:190px}.lam-door-leaf span{font-size:.48rem;letter-spacing:.12em}.hero-grid{gap:18px!important;padding-top:28px!important}.lam-wheat-emblem>.lam-wheat-wing{animation-duration:.9s,5.5s!important}}
+@media(prefers-reduced-motion:reduce){.lam-door-leaf,.lam-door-glow{animation:none!important}.lam-door-left{transform:perspective(700px) rotateY(-48deg)!important}.lam-door-right{transform:perspective(700px) rotateY(48deg)!important}}
+</style>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
@@ -2974,6 +3007,6 @@ css+='#lam-3d-welcome .lam-wall{background:linear-gradient(90deg,#171717 0%,#777
 var st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 var el=document.createElement('div');el.id='lam-3d-welcome';el.setAttribute('role','dialog');el.setAttribute('aria-label','Bienvenue chez LAM Événementiel & Events');el.setAttribute('aria-modal','true');el.innerHTML='<div class="lam-world" aria-hidden="true"><div class="lam-wall"></div><div class="lam-arch"><div class="lam-opening"></div></div><div class="lam-floor"></div></div><div class="lam-brand"><h1>BIENVENUE CHEZ LAM</h1><h2>ÉVÉNEMENTIEL &amp; EVENTS</h2><p>L’élégance au service de vos moments d’exception.</p></div><button class="lam-skip" type="button">Passer l’introduction</button>';document.body.appendChild(el);
 var done=false;function end(){if(done)return;done=true;el.classList.add('lam-exit');setTimeout(function(){el.remove();st.remove()},900)}el.querySelector('button').addEventListener('click',end);
-if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.classList.add('lam-opening');setTimeout(end,800)}else{setTimeout(function(){el.classList.add('lam-opening')},500);setTimeout(end,2800)}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.classList.add('lam-opening');setTimeout(end,800)}else{setTimeout(function(){el.classList.add('lam-opening')},320);setTimeout(end,2200)}
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go,{once:true});else go()})();
 </script>
