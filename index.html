@@ -651,21 +651,37 @@ input,select,textarea{font-size:.84rem}
 }
 </style>
 
+<style id="lam-red-black-white-3d-door">
+:root{--red:#c8102e;--red2:#9f1025;--ink:#171717;--paper:#fff}
+html,body{background:#fff!important;color:#171717}
+.nav{background:#fff!important;border-bottom:1px solid #dedede!important}
+.hero{background:#fff!important}.hero:before{background:#f3f3f3!important;opacity:1!important}.hero:after{background:transparent!important;border:1px solid #e2e2e2!important}.hero h1{color:#171717!important}
+.section.dark{background:#171717!important;color:#fff!important}.section.dark h2,.section.dark h3,.section.dark .quote{color:#fff!important}.section.dark p,.section.dark .lead{color:#f0f0f0!important}
+.section.alt,.section-04-yellow{background:#f7f7f7!important}.section-04-yellow h2,.section-04-yellow p,.section-04-yellow .eyebrow{color:#171717!important}
+.btn{border-color:#c8102e!important}.btn.primary,.btn.primary:hover,.wa{background:#c8102e!important;border-color:#c8102e!important;color:#fff!important}
+.footer,.redlabel{background:#171717!important;color:#fff!important}.card,.form,.contactbox{border-color:#dedede!important}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#c8102e!important;box-shadow:0 0 0 2px #c8102e18!important}
+.hero .hero-three-stars{display:none!important}
+#welcome-intro{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px 16px;background:radial-gradient(ellipse at 50% 38%,#303030,#171717 58%,#080808)!important;color:#fff;opacity:1;visibility:visible;pointer-events:auto;transition:opacity .4s ease,visibility .4s ease;animation:none!important;overflow:hidden}
+#welcome-intro:before,#welcome-intro:after{content:none!important}#welcome-intro.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.lam-door-scene{position:relative;width:min(70vw,330px);height:min(48vh,390px);min-height:210px;perspective:1100px;filter:drop-shadow(0 22px 28px #0009)}
+.lam-door-frame{position:absolute;inset:0 0 4%;display:flex;overflow:hidden;border:7px solid #f4f4f4;background:#090909;box-shadow:inset 0 0 0 2px #777,0 0 0 1px #fff}
+.lam-door{position:relative;flex:1;height:100%;background:linear-gradient(135deg,#e21b35,#b30e25 48%,#780b1b);border:2px solid #f5f5f5;box-shadow:inset 0 0 0 2px #6d0b19;transform-style:preserve-3d}
+.lam-door-left{transform-origin:left center;animation:lamDoorOpenLeft 1.2s cubic-bezier(.6,0,.25,1) .35s forwards}.lam-door-right{transform-origin:right center;animation:lamDoorOpenRight 1.2s cubic-bezier(.6,0,.25,1) .35s forwards}
+.lam-door-panel{position:absolute;inset:10% 12%;border:2px solid #f0b9c1;box-shadow:inset 0 0 0 2px #780b1b}.lam-door-panel:before,.lam-door-panel:after{content:"";position:absolute;left:8%;right:8%;border:1px solid #f0b9c1}.lam-door-panel:before{top:8%;height:35%}.lam-door-panel:after{bottom:8%;height:35%}
+.lam-door-handle{position:absolute;top:50%;right:9%;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #777}.lam-door-right .lam-door-handle{left:9%;right:auto}
+.lam-door-sign{position:absolute;z-index:2;left:50%;top:45%;transform:translate(-50%,-50%);padding:5px 9px;background:#171717;color:#fff;border:1px solid #fff;font:600 16px Georgia,serif;letter-spacing:.18em;pointer-events:none}
+.lam-door-welcome{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;max-width:92vw;animation:lamWelcomeIn .45s ease .8s both}.lam-door-welcome span{font:500 .68rem/1.4 Arial,sans-serif;letter-spacing:.28em;color:#fff}.lam-door-welcome strong{font:500 clamp(.85rem,3.4vw,1.35rem)/1.5 Georgia,serif;letter-spacing:.06em;color:#fff}
+@keyframes lamDoorOpenLeft{to{transform:rotateY(-103deg)}}@keyframes lamDoorOpenRight{to{transform:rotateY(103deg)}}@keyframes lamWelcomeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){.lam-door-scene{width:min(76vw,280px);height:min(42vh,320px);min-height:190px}.lam-door-frame{border-width:5px}.lam-door-welcome strong{letter-spacing:.025em}}
+@media(prefers-reduced-motion:reduce){.lam-door-left,.lam-door-right,.lam-door-welcome{animation:none!important;opacity:1}.lam-door-left{transform:rotateY(-90deg)}.lam-door-right{transform:rotateY(90deg)}#welcome-intro{transition:none}}
+</style>
 </head>
 <body>
 
-<div id="welcome-intro" role="status" aria-label="Bienvenue chez LAM ÉVÉNEMENTIEL & EVENTS Événementiel">
-  <div class="intro-writing">
-    <div class="welcome-word">Bienvenue</div>
-    <div class="welcome-brand">Chez <strong>LAM ÉVÉNEMENTIEL & EVENTS</strong></div>
-    <div class="intro-signature" aria-label="Ligne décorative dorée" role="img">
-      <svg class="signature-swoosh" viewBox="0 0 360 34" aria-hidden="true">
-        <path class="signature-flourish" d="M8 22 C64 3,100 29,155 16 S263 8,352 7" />
-      </svg>
-    </div>
-  </div>
-
-</div>
+<div id="welcome-intro" role="status" aria-label="Bienvenue chez LAM ÉVÉNEMENTIEL & EVENTS">
+<div class="lam-door-scene" aria-hidden="true"><div class="lam-door-frame"><div class="lam-door lam-door-left"><span class="lam-door-panel"></span><span class="lam-door-handle"></span></div><div class="lam-door lam-door-right"><span class="lam-door-panel"></span><span class="lam-door-handle"></span></div><div class="lam-door-sign">LAM</div></div></div>
+<div class="lam-door-welcome"><span>BIENVENUE CHEZ</span><strong>LAM ÉVÉNEMENTIEL &amp; EVENTS</strong></div></div>
 
 <header class="nav">
 <div class="wrap navin">
@@ -1468,8 +1484,8 @@ document.addEventListener('DOMContentLoaded',function(){
 (function(){
   var intro=document.getElementById('welcome-intro');
   if(!intro)return;
-  window.setTimeout(function(){intro.classList.add('is-hidden');},3500);
-  window.setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},4000);
+  window.setTimeout(function(){intro.classList.add('is-hidden');},2450);
+  window.setTimeout(function(){if(intro.parentNode)intro.parentNode.removeChild(intro);},2900);
   intro.addEventListener('click',function(){intro.classList.add('is-hidden');});
 })();
 </script>
