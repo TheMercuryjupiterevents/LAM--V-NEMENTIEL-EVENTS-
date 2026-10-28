@@ -1079,6 +1079,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">04 — CONCERTS</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Concerts, festivals, spectacles, artistes, scène, sonorisation, éclairage et coordination technique.</p><button class="btn primary" type="button" data-show-form="concertForm" onclick="return showEventForm('concertForm')" aria-controls="concertForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">05 — PÂTISSERIE</div><h3>PÂTISSERIE & GÂTEAUX PERSONNALISÉS</h3><p>Gâteaux d’anniversaire, de mariage, de graduation et de baby shower, cupcakes, macarons, petits gâteaux et mignardises sucrées.</p><button class="btn primary" type="button" data-show-form="pastryForm" onclick="document.querySelectorAll('.form-panel').forEach(function(p){p.hidden=true;});var f=document.getElementById('pastryForm');if(f){f.hidden=false;f.scrollIntoView({behavior:'auto',block:'start'});}document.querySelectorAll('[data-show-form]').forEach(function(b){var a=b.getAttribute('data-show-form')==='pastryForm';b.setAttribute('aria-pressed',a?'true':'false');});var s=document.getElementById('formChoiceStatus');if(s)s.textContent='Formulaire sélectionné : PÂTISSERIE & GÂTEAUX PERSONNALISÉS.';return false;" aria-controls="pastryForm" aria-pressed="false">Choisir cette formule</button></article>
+<article class="card"><div class="num">06 — ÉVÉNEMENTS POUR MINEURS</div><h3>ANNIVERSAIRES & FÊTES POUR MINEURS</h3><p>Pour les jeunes qui souhaitent organiser leur événement avec les coordonnées d’un parent ou représentant légal, responsable du suivi et du paiement.</p><button class="btn primary" type="button" data-show-form="minorForm" onclick="return showEventForm('minorForm')" aria-controls="minorForm" aria-pressed="false">Choisir cette formule</button></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 <div class="form-panel" id="prestigeForm" hidden style="margin-top:24px">
@@ -1360,6 +1361,40 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required> J’accepte que l’équipe me contacte au sujet de cette demande et confirme que les informations fournies sont exactes.</label>
 </div>
 <button class="btn primary" type="submit">Envoyer ma demande de pâtisserie</button>
+</form></div></div>
+<div class="form-panel" id="minorForm" hidden style="margin-top:24px">
+<div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 06</div><h3>DEMANDE D’ÉVÉNEMENT POUR MINEUR</h3><p class="lead">Ce formulaire est à remplir par le jeune qui souhaite organiser son événement. Les coordonnées d’un parent ou représentant légal sont obligatoires afin que LAM puisse le contacter pour la suite et les modalités de paiement.</p><p class="small">L’envoi du formulaire ne confirme pas la réservation. Toute réservation devra être validée avec le parent ou représentant légal.</p></div>
+<form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="FORMULAIRE 06 — DEMANDE D’ÉVÉNEMENT POUR MINEUR — LAM ÉVÉNEMENTIEL & EVENTS">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL & EVENTS a bien reçu votre demande d’événement. Notre équipe contactera le parent ou représentant légal indiqué afin d’étudier les détails. L’envoi du formulaire ne confirme pas une réservation.">
+<div class="form-section"><h3>01 — Informations du jeune</h3><div class="fieldgrid">
+<div class="field"><label for="minorName">Nom et prénom du jeune *</label><input id="minorName" name="Nom et prénom du jeune" required autocomplete="name"></div>
+<div class="field"><label for="minorAge">Âge *</label><input id="minorAge" name="Âge" type="number" min="1" max="17" required></div>
+<div class="field"><label for="minorEmail">Adresse e-mail (si disponible)</label><input id="minorEmail" name="E-mail du jeune" type="email"></div>
+<div class="field"><label for="minorPhone">Téléphone du jeune (facultatif)</label><input id="minorPhone" name="Téléphone du jeune" type="tel"></div>
+</div></div>
+<div class="form-section"><h3>02 — Détails de l’événement</h3><div class="fieldgrid">
+<div class="field"><label for="minorEventType">Type d’événement *</label><select id="minorEventType" name="Type d’événement" required><option value="">Sélectionner</option><option>Anniversaire</option><option>Graduation</option><option>Fête entre amis</option><option>Baby shower / fête familiale</option><option>Autre</option></select></div>
+<div class="field"><label for="minorDate">Date souhaitée *</label><input id="minorDate" type="date" name="Date souhaitée" required></div>
+<div class="field"><label for="minorLocation">Lieu ou ville souhaité(e) *</label><input id="minorLocation" name="Lieu ou ville souhaité(e)" required></div>
+<div class="field"><label for="minorGuests">Nombre estimé d’invités *</label><input id="minorGuests" type="number" name="Nombre estimé d’invités" min="1" max="8000" required></div>
+<div class="field full"><label>Services souhaités</label><div class="checks">
+<label class="check"><input type="checkbox" name="Services souhaités[]" value="Organisation"> Organisation</label>
+<label class="check"><input type="checkbox" name="Services souhaités[]" value="Décoration"> Décoration</label>
+<label class="check"><input type="checkbox" name="Services souhaités[]" value="Service traiteur"> Service traiteur</label>
+<label class="check"><input type="checkbox" name="Services souhaités[]" value="Gâteau et pâtisserie"> Gâteau et pâtisserie</label>
+<label class="check"><input type="checkbox" name="Services souhaités[]" value="Sonorisation"> Sonorisation</label>
+</div></div>
+<div class="field full"><label for="minorDetails">Description, ambiance ou autres précisions</label><textarea id="minorDetails" name="Description et précisions" rows="3" placeholder="Décris ton idée et ce que tu aimerais pour ton événement."></textarea></div>
+</div></div>
+<div class="form-section"><h3>03 — Parent ou représentant légal</h3><p class="small">Ces informations sont obligatoires. LAM contactera cette personne pour discuter de la demande, du devis et du paiement.</p><div class="fieldgrid">
+<div class="field"><label for="guardianName">Nom et prénom du parent / représentant légal *</label><input id="guardianName" name="Nom et prénom du parent ou représentant légal" required></div>
+<div class="field"><label for="guardianRelation">Lien avec le jeune *</label><select id="guardianRelation" name="Lien avec le jeune" required><option value="">Sélectionner</option><option>Mère</option><option>Père</option><option>Tuteur / tutrice légal(e)</option><option>Autre représentant légal</option></select></div>
+<div class="field"><label for="guardianPhone">Téléphone du parent / représentant légal *</label><input id="guardianPhone" name="Téléphone du parent ou représentant légal" type="tel" required></div>
+<div class="field"><label for="guardianEmail">Adresse e-mail du parent (si disponible)</label><input id="guardianEmail" name="E-mail du parent ou représentant légal" type="email"></div>
+</div></div>
+<div class="form-section"><label class="consent"><input type="checkbox" name="Confirmation parent légal" value="Je confirme que les coordonnées du parent ou représentant légal sont fournies et que LAM peut le contacter au sujet de cette demande." required> Je confirme que les coordonnées du parent ou représentant légal sont exactes et que LAM peut le contacter au sujet de cette demande. *</label><p class="small">La demande ne constitue pas une réservation confirmée. Les modalités et le paiement seront discutés avec le parent ou représentant légal.</p></div>
+<button class="btn primary" type="submit">Envoyer la demande</button>
 </form></div></div></div>
 </section>
 
@@ -1386,7 +1421,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 
 <script>
 window.showEventForm = function(target){
-  var allowed=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm'];
+  var allowed=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm','minorForm'];
   if(allowed.indexOf(target)===-1) return false;
   allowed.forEach(function(id){
     var panel=document.getElementById(id);
