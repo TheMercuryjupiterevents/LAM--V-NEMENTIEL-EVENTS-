@@ -1066,7 +1066,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm" onclick="return showEventForm('privateForm')" aria-controls="privateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">04 — CONCERTS</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Concerts, festivals, spectacles, artistes, scène, sonorisation, éclairage et coordination technique.</p><button class="btn primary" type="button" data-show-form="concertForm" onclick="return showEventForm('concertForm')" aria-controls="concertForm" aria-pressed="false">Choisir cette formule</button></article>
-<article class="card"><div class="num">05 — PÂTISSERIE</div><h3>PÂTISSERIE & GÂTEAUX PERSONNALISÉS</h3><p>Gâteaux d’anniversaire, de mariage, de graduation et de baby shower, cupcakes, macarons, petits gâteaux et mignardises sucrées.</p><button class="btn primary" type="button" data-show-form="pastryForm" onclick="document.querySelectorAll('.form-panel').forEach(function(p){p.hidden=true;});var f=document.getElementById('pastryForm');if(f){f.hidden=false;f.scrollIntoView({behavior:'auto',block:'start'});}document.querySelectorAll('[data-show-form]').forEach(function(b){var a=b.getAttribute('data-show-form')==='pastryForm';b.setAttribute('aria-pressed',a?'true':'false');});var s=document.getElementById('formChoiceStatus');if(s)s.textContent='Formulaire sélectionné : PÂTISSERIE & GÂTEAUX PERSONNALISÉS.';return false;" aria-controls="pastryForm" aria-pressed="false">Choisir cette formule</button></article>
+<article class="card"><div class="num">05 — COCKTAILS & BOUCHÉES</div><h3>CHARCUTERIE, APÉRITIFS & FINGER FOOD</h3><p>Plateaux raffinés, bouchées chaudes et froides, mini-sandwiches et assortiments pour cocktails, réceptions et grandes fêtes.</p><button class="btn primary" type="button" data-show-form="pastryForm" onclick="return showEventForm('pastryForm')" aria-controls="pastryForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">06 — ÉVÉNEMENTS POUR MINEURS</div><h3>ANNIVERSAIRES & FÊTES POUR MINEURS</h3><p>Pour les jeunes qui souhaitent organiser leur événement avec les coordonnées d’un parent ou représentant légal, responsable du suivi et du paiement.</p><a class="btn primary" href="#minorForm" aria-controls="minorForm">Choisir cette formule</a></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
@@ -1293,63 +1293,87 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 </form></div></div></div>
 <div class="form-panel" id="pastryForm" hidden style="margin-top:24px">
 <div class="wrap">
-<div class="eyebrow">FORMULAIRE 05 — PÂTISSERIE</div>
-<h2>COMMANDE DE GÂTEAUX &amp; PÂTISSERIES SUCRÉES</h2>
-<p class="lead">Parlez-nous de votre gâteau ou de vos pâtisseries personnalisés. Après réception, notre équipe vous contactera pour confirmer les détails, la disponibilité et le devis.</p>
+<div class="eyebrow">FORMULAIRE 05 — COCKTAILS &amp; BOUCHÉES</div>
+<h2>CHARCUTERIE, APÉRITIFS &amp; FINGER FOOD</h2>
+<p class="lead">Des bouchées élégantes et raffinées, faciles à déguster debout, pour vos cocktails, réceptions et grandes célébrations.</p>
 <div class="contactbox">
-<form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="_subject" value="FORMULAIRE 05 — COMMANDE PÂTISSERIE — LAM ÉVÉNEMENTIEL & EVENTS">
+<form class="form" id="lamCocktailForm" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="FORMULAIRE 05 — COCKTAILS &amp; BOUCHÉES — LAM ÉVÉNEMENTIEL &amp; EVENTS">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
-<input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre demande de pâtisserie. Merci d’avoir contacté LAM ÉVÉNEMENTIEL & EVENTS. Notre équipe vous contactera après étude de votre demande. L’envoi du formulaire ne confirme pas automatiquement la commande.">
-<div class="form-section">
-<h3>01 — Vos coordonnées</h3>
-<div class="fieldgrid">
-<div class="field"><label for="pastryNom">Nom et prénom *</label><input id="pastryNom" name="Nom et prénom" autocomplete="name" required></div>
-<div class="field"><label for="pastryTel">Téléphone / WhatsApp *</label><input id="pastryTel" type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
-<div class="field"><label for="pastryEmail">Adresse e-mail *</label><input id="pastryEmail" type="email" name="Adresse e-mail" autocomplete="email" required></div>
-<div class="field"><label for="pastryAddress">Adresse de livraison, si nécessaire</label><input id="pastryAddress" name="Adresse de livraison"></div>
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL &amp; EVENTS a bien reçu votre demande Cocktails &amp; Bouchées. Notre équipe vous contactera après étude de vos choix et de vos besoins. L’envoi du formulaire ne confirme pas automatiquement la commande.">
+<div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+<div class="field"><label for="cocktailName">Nom et prénom *</label><input id="cocktailName" name="Nom et prénom" autocomplete="name" required></div>
+<div class="field"><label for="cocktailPhone">Téléphone / WhatsApp *</label><input id="cocktailPhone" type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+<div class="field"><label for="cocktailEmail">Adresse e-mail *</label><input id="cocktailEmail" type="email" name="Adresse e-mail" autocomplete="email" required></div>
+<div class="field"><label for="cocktailCompany">Entreprise (facultatif)</label><input id="cocktailCompany" name="Entreprise"></div>
 </div></div>
-<div class="form-section">
-<h3>02 — Votre commande</h3>
-<div class="fieldgrid">
-<div class="field full"><label for="pastryType">Que souhaitez-vous commander ? *</label><select id="pastryType" name="Type de produit" required><option value="">Sélectionner un produit</option><optgroup label="Gâteaux personnalisés"><option>Gâteau d’anniversaire</option><option>Gâteau de mariage</option><option>Gâteau de graduation</option><option>Gâteau de baby shower</option><option>Gâteau de baptême</option><option>Gâteau de fiançailles</option><option>Gâteau pour événement spécial</option><option>Gâteau personnalisé</option></optgroup><optgroup label="Pâtisseries sucrées"><option>Cupcakes</option><option>Macarons</option><option>Petits gâteaux</option><option>Mignardises sucrées</option><option>Autre pâtisserie sucrée</option></optgroup></select></div>
-<div class="field"><label for="pastryFlavor">Saveur principale *</label><select id="pastryFlavor" name="Saveur principale" required><option value="">Sélectionner une saveur</option><option>Chocolat</option><option>Vanille</option><option>Fraise</option><option>Red velvet</option><option>Citron</option><option>Marbré</option><option>Coco</option><option>Autre / à préciser</option><option>À conseiller</option></select></div>
-<div class="field"><label for="pastryQuantity">Quantité souhaitée *</label><input id="pastryQuantity" name="Quantité souhaitée" placeholder="Ex. : 1 gâteau, 24 cupcakes" required></div>
-<div class="field"><label for="pastryFilling">Garniture / fourrage</label><select id="pastryFilling" name="Garniture ou fourrage"><option value="">Sélectionner une option</option><option>Crème</option><option>Ganache au chocolat</option><option>Confiture</option><option>Crème au fromage</option><option>Autre</option><option>À conseiller</option><option>Sans objet</option></select></div>
-<div class="field"><label for="pastryCover">Couverture / glaçage</label><select id="pastryCover" name="Couverture ou glaçage"><option value="">Sélectionner une option</option><option>Crème au beurre</option><option>Pâte à sucre</option><option>Ganache</option><option>Glaçage</option><option>Autre / à conseiller</option><option>Sans objet</option></select></div>
-<div class="field"><label for="pastrySize">Taille du gâteau</label><select id="pastrySize" name="Taille du gâteau"><option value="">Sélectionner une taille</option><option>Petit</option><option>Moyen</option><option>Grand</option><option>Plusieurs étages</option><option>À conseiller</option><option>Sans objet</option></select></div>
-<div class="field"><label for="pastryGuests">Nombre de personnes à servir</label><input id="pastryGuests" type="number" min="1" name="Nombre de personnes à servir" placeholder="Ex. : 25"></div>
-<div class="field"><label for="pastryShape">Forme souhaitée</label><select id="pastryShape" name="Forme souhaitée"><option value="">Sélectionner une forme</option><option>Ronde</option><option>Carrée</option><option>Cœur</option><option>Personnalisée</option><option>Sans préférence</option><option>Sans objet</option></select></div>
+<div class="form-section"><h3>02 — Votre événement</h3><div class="fieldgrid">
+<div class="field"><label for="cocktailEventType">Type d’événement *</label><select id="cocktailEventType" name="Type d’événement" required><option value="">Sélectionner</option><option>Cocktail</option><option>Réception</option><option>Anniversaire</option><option>Mariage</option><option>Événement professionnel</option><option>Fête privée</option><option>Autre</option></select></div>
+<div class="field"><label for="cocktailDate">Date de l’événement *</label><input id="cocktailDate" type="date" name="Date de l’événement" required></div>
+<div class="field"><label for="cocktailTime">Heure de début</label><input id="cocktailTime" type="time" name="Heure de début"></div>
+<div class="field"><label for="cocktailGuests">Nombre d’invités *</label><input id="cocktailGuests" type="number" min="1" max="8000" name="Nombre d’invités" required placeholder="Ex. : 80"></div>
+<div class="field full"><label for="cocktailVenue">Lieu / adresse de l’événement *</label><input id="cocktailVenue" name="Lieu de l’événement" required></div>
 </div></div>
-<div class="form-section">
-<h3>03 — Style et personnalisation</h3>
-<div class="fieldgrid">
-<div class="field"><label for="pastryStyle">Style souhaité</label><select id="pastryStyle" name="Style souhaité"><option value="">Sélectionner un style</option><option>Élégant</option><option>Classique</option><option>Moderne</option><option>Minimaliste</option><option>Luxueux</option><option>Enfant / ludique</option><option>Autre</option></select></div>
-<div class="field"><label for="pastryEvent">Type d’événement</label><input id="pastryEvent" name="Type d’événement" placeholder="Ex. : anniversaire, mariage"></div>
-<div class="field"><label for="pastryTheme">Thème</label><input id="pastryTheme" name="Thème de l’événement"></div>
-<div class="field"><label for="pastryColors">Couleurs souhaitées</label><input id="pastryColors" name="Couleurs souhaitées" placeholder="Ex. : rouge, blanc et argent"></div>
-<div class="field"><label for="pastryNameText">Nom, âge ou numéro à afficher</label><input id="pastryNameText" name="Nom, âge ou numéro à afficher"></div>
-<div class="field full"><label for="pastryText">Message à écrire sur le gâteau</label><input id="pastryText" name="Message à écrire sur le gâteau"></div>
-<div class="field full"><label for="pastryDecor">Décorations et instructions particulières</label><textarea id="pastryDecor" name="Décorations et instructions particulières" rows="3" placeholder="Décrivez les détails que vous souhaitez."></textarea></div>
-<div class="field full"><label for="pastryReference">Photo d’inspiration (facultatif)</label><input id="pastryReference" type="file" name="Photo d’inspiration" accept="image/*"></div>
-</div></div>
-<div class="form-section">
-<h3>04 — Date et réception</h3>
-<div class="fieldgrid">
-<div class="field"><label for="pastryEventDate">Date de l’événement</label><input id="pastryEventDate" type="date" name="Date de l’événement"></div>
-<div class="field"><label for="pastryNeededDate">Date souhaitée de réception *</label><input id="pastryNeededDate" type="date" name="Date souhaitée de réception" required></div>
-<div class="field"><label for="pastryTime">Heure souhaitée</label><input id="pastryTime" type="time" name="Heure souhaitée"></div>
-<div class="field"><label for="pastryDelivery">Livraison ou récupération ? *</label><select id="pastryDelivery" name="Mode de réception" required><option value="">Sélectionner une option</option><option>Livraison</option><option>Récupération</option><option>À convenir</option></select></div>
-<div class="field full"><label for="pastryAllergies">Allergies ou restrictions alimentaires</label><textarea id="pastryAllergies" name="Allergies ou restrictions alimentaires" rows="2" placeholder="Précisez toute allergie ou restriction importante."></textarea></div>
-<div class="field full"><label for="pastryExtra">Autres demandes ou informations complémentaires</label><textarea id="pastryExtra" name="Autres demandes ou informations complémentaires" rows="3"></textarea></div>
-</div></div>
-<div class="form-section">
-<p class="small">Important : ce formulaire constitue une demande et ne confirme pas automatiquement la commande. La commande sera confirmée après vérification des détails, de la disponibilité et du devis par LAM ÉVÉNEMENTIEL &amp; EVENTS.</p>
-<label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required> J’accepte que l’équipe me contacte au sujet de cette demande et confirme que les informations fournies sont exactes.</label>
+<div class="form-section"><h3>03 — Galerie de photos d’inspiration</h3><p class="small">Sélectionnez une ou plusieurs photos pour montrer à notre équipe le style de bouchées et de présentation que vous souhaitez. Ces images sont des références d’inspiration et non des photos de réalisations LAM.</p>
+<style>
+#lamCocktailGallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#lamCocktailGallery label{display:block;position:relative;border:2px solid #dedede;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff}
+#lamCocktailGallery label:has(input:checked){border-color:#b3262e;box-shadow:0 0 0 2px #b3262e22}
+#lamCocktailGallery input{position:absolute;top:10px;left:10px;width:20px;height:20px;z-index:2;accent-color:#b3262e}
+#lamCocktailGallery img{display:block;width:100%;height:145px;object-fit:cover}
+#lamCocktailGallery span{display:block;padding:10px;font-weight:600;font-size:.9rem;color:#222}
+@media(min-width:700px){#lamCocktailGallery{grid-template-columns:repeat(3,minmax(0,1fr))}#lamCocktailGallery img{height:175px}}
+#cocktailSignature{display:block;width:100%;height:190px;background:#fff;border:1px solid #aaa;border-radius:10px;touch-action:none;cursor:crosshair}
+</style>
+<div id="lamCocktailGallery">
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Plateaux de charcuterie"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Plateau gourmand"><span>Plateaux de charcuterie</span></label>
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Canapés et apéritifs"><img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Apéritifs et canapés"><span>Canapés &amp; apéritifs</span></label>
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Mini-sandwiches"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Sandwiches"><span>Mini-sandwiches</span></label>
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Petits fours salés"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Petites bouchées et pâtisseries"><span>Petits fours salés</span></label>
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Bouchées chaudes"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bouchées chaudes"><span>Bouchées chaudes</span></label>
+<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Bouchées froides"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bouchées froides"><span>Bouchées froides</span></label>
 </div>
-<button class="btn primary" type="submit">Envoyer ma demande de pâtisserie</button>
-</form></div></div>
+</div>
+<div class="form-section"><h3>04 — Votre sélection de produits</h3><div class="checks">
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Charcuterie"> Charcuterie</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Plateaux de fromages"> Plateaux de fromages</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Apéritifs"> Apéritifs</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Finger food"> Finger food</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Mini-sandwiches"> Mini-sandwiches</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Petits fours salés"> Petits fours salés</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Bouchées chaudes"> Bouchées chaudes</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Bouchées froides"> Bouchées froides</label>
+<label class="check"><input type="checkbox" name="Produits souhaités[]" value="Assortiments personnalisés"> Assortiments personnalisés</label>
+</div><div class="fieldgrid" style="margin-top:14px">
+<div class="field"><label for="cocktailPieces">Nombre de bouchées par personne</label><input id="cocktailPieces" name="Bouchées par personne" placeholder="Ex. : 6 à 8"></div>
+<div class="field"><label for="cocktailTrays">Nombre de plateaux souhaités</label><input id="cocktailTrays" name="Nombre de plateaux" type="number" min="0"></div>
+<div class="field full"><label for="cocktailQuantities">Quantités ou assortiment souhaité</label><textarea id="cocktailQuantities" name="Quantités et assortiment souhaité" rows="3"></textarea></div>
+</div></div>
+<div class="form-section"><h3>05 — Type de prestation</h3><div class="checks">
+<label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Livraison uniquement"> Livraison uniquement</label>
+<label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Installation et présentation"> Installation et présentation</label>
+<label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Service pendant l’événement"> Service pendant l’événement</label>
+<label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Formule complète"> Formule complète</label>
+</div></div>
+<div class="form-section"><h3>06 — Préférences et inspirations personnelles</h3><div class="fieldgrid">
+<div class="field full"><label for="cocktailAllergies">Allergies ou restrictions alimentaires</label><textarea id="cocktailAllergies" name="Allergies et restrictions alimentaires" rows="2"></textarea></div>
+<div class="field full"><label for="cocktailPreferences">Préférences particulières et présentation souhaitée</label><textarea id="cocktailPreferences" name="Préférences et présentation souhaitée" rows="3"></textarea></div>
+<div class="field full"><label for="cocktailReference">Ajouter votre propre photo d’inspiration (facultatif)</label><input id="cocktailReference" type="file" name="Photo personnelle d’inspiration" accept="image/*"></div>
+</div></div>
+<div class="form-section"><h3>07 — Signature électronique du client</h3><p class="small">Veuillez tracer votre signature dans le cadre avec votre doigt sur téléphone ou votre souris sur ordinateur. La signature sera jointe à votre demande.</p>
+<canvas id="cocktailSignature" aria-label="Zone de signature manuscrite"></canvas>
+<input type="file" id="cocktailSignatureFile" name="Signature électronique du client" accept="image/png" hidden>
+<div class="field" style="margin-top:10px"><button class="btn secondary" type="button" id="clearCocktailSignature">Effacer la signature</button><span id="cocktailSignatureStatus" class="small" role="status" aria-live="polite">Signature requise.</span></div>
+</div>
+<div class="form-section"><h3>08 — Conditions de réservation et de paiement</h3>
+<p class="small"><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date. <strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement.</p>
+<p class="small">L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
+<label class="consent"><input type="checkbox" name="Acceptation des conditions" value="J’ai lu et accepté les conditions de réservation et de paiement." required> J’ai lu et accepté les conditions de réservation et de paiement. *</label>
+<label class="consent"><input type="checkbox" name="Consentement contact" value="J’accepte que LAM me contacte au sujet de cette demande." required> J’accepte que LAM me contacte au sujet de cette demande. *</label>
+</div>
+<button class="btn primary" type="submit">Envoyer ma demande Cocktails &amp; Bouchées</button>
+</form></div></div></div>
 <div class="form-panel" id="minorForm" style="margin-top:24px">
 <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 06</div><h3>DEMANDE D’ÉVÉNEMENT POUR MINEUR</h3><p class="lead">Ce formulaire est à remplir par le jeune qui souhaite organiser son événement. Les coordonnées d’un parent ou représentant légal sont obligatoires afin que LAM puisse le contacter pour la suite et les modalités de paiement.</p><p class="small">L’envoi du formulaire ne confirme pas la réservation. Toute réservation devra être validée avec le parent ou représentant légal.</p></div>
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
@@ -2523,6 +2547,43 @@ document.addEventListener('click',function(event){
   transform: none !important;
 }
 </style>
+<script id="lam-cocktail-signature-handler">
+(function(){
+ var form=document.getElementById('lamCocktailForm');
+ var canvas=document.getElementById('cocktailSignature');
+ var fileInput=document.getElementById('cocktailSignatureFile');
+ var clear=document.getElementById('clearCocktailSignature');
+ var status=document.getElementById('cocktailSignatureStatus');
+ if(!form||!canvas||!fileInput||!clear)return;
+ var ctx=canvas.getContext('2d'),drawing=false,hasInk=false,submitting=false;
+ function setupCanvas(){
+  var ratio=Math.max(window.devicePixelRatio||1,1),rect=canvas.getBoundingClientRect();
+  var old=hasInk?canvas.toDataURL():null;
+  canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(190*ratio);
+  ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#171717';
+  if(old){var img=new Image();img.onload=function(){ctx.drawImage(img,0,0,rect.width,190);};img.src=old;}
+ }
+ function point(e){var r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
+ canvas.addEventListener('pointerdown',function(e){e.preventDefault();drawing=true;canvas.setPointerCapture(e.pointerId);var p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x+.1,p.y+.1);ctx.stroke();hasInk=true;status.textContent='Signature enregistrée dans le cadre.';});
+ canvas.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke();});
+ ['pointerup','pointercancel','lostpointercapture'].forEach(function(name){canvas.addEventListener(name,function(){drawing=false;});});
+ clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;fileInput.value='';status.textContent='Signature effacée. Veuillez signer.';});
+ setupCanvas();
+ window.addEventListener('resize',function(){if(!hasInk)setupCanvas();});
+ form.addEventListener('submit',function(e){
+  if(submitting)return;
+  if(!hasInk){e.preventDefault();status.textContent='Veuillez tracer votre signature avant l’envoi.';canvas.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  e.preventDefault();
+  canvas.toBlob(function(blob){
+   if(!blob){status.textContent='Impossible de préparer la signature. Veuillez réessayer.';return;}
+   try{
+    var dt=new DataTransfer();dt.items.add(new File([blob],'signature-client-lam.png',{type:'image/png'}));fileInput.files=dt.files;
+    submitting=true;form.requestSubmit();
+   }catch(err){submitting=false;status.textContent='La signature n’a pas pu être jointe. Veuillez réessayer.';}
+  },'image/png');
+ });
+})();
+</script>
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
