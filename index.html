@@ -2568,8 +2568,24 @@ document.addEventListener('click',function(event){
  canvas.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke();});
  ['pointerup','pointercancel','lostpointercapture'].forEach(function(name){canvas.addEventListener(name,function(){drawing=false;});});
  clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;fileInput.value='';status.textContent='Signature effacée. Veuillez signer.';});
- setupCanvas();
- window.addEventListener('resize',function(){if(!hasInk)setupCanvas();});
+ // Le formulaire 05 est masqué au chargement : attendre qu’il soit affiché
+ // avant de dimensionner le canvas, sinon sa largeur initiale vaut zéro.
+ function refreshCanvas(){
+  var rect=canvas.getBoundingClientRect();
+  if(rect.width>0&&!hasInk)setupCanvas();
+ }
+ if(typeof ResizeObserver!=='undefined'){
+  var signatureObserver=new ResizeObserver(function(){refreshCanvas();});
+  signatureObserver.observe(canvas);
+ }else{
+  var panel=document.getElementById('pastryForm');
+  if(typeof MutationObserver!=='undefined'&&panel){
+   new MutationObserver(function(){refreshCanvas();}).observe(panel,{attributes:true,attributeFilter:['hidden','style','class']});
+  }
+  window.addEventListener('resize',refreshCanvas);
+ }
+ refreshCanvas();
+ window.addEventListener('resize',refreshCanvas);
  form.addEventListener('submit',function(e){
   if(submitting)return;
   if(!hasInk){e.preventDefault();status.textContent='Veuillez tracer votre signature avant l’envoi.';canvas.scrollIntoView({behavior:'smooth',block:'center'});return;}
