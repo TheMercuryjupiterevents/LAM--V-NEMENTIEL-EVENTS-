@@ -1315,7 +1315,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field"><label for="cocktailGuests">Nombre d’invités *</label><input id="cocktailGuests" type="number" min="1" max="8000" name="Nombre d’invités" required placeholder="Ex. : 80"></div>
 <div class="field full"><label for="cocktailVenue">Lieu / adresse de l’événement *</label><input id="cocktailVenue" name="Lieu de l’événement" required></div>
 </div></div>
-<style id="cocktail-signature-style">#cocktailSignature{display:block;width:100%;height:190px;background:#fff;border:1px solid #aaa;border-radius:10px;touch-action:none;cursor:crosshair}</style>
+
 <div class="form-section"><h3>03 — Votre sélection de produits</h3><div class="checks">
 <label class="check"><input type="checkbox" name="Produits souhaités[]" value="Charcuterie"> Charcuterie</label>
 <label class="check"><input type="checkbox" name="Produits souhaités[]" value="Plateaux de fromages"> Plateaux de fromages</label>
@@ -1342,12 +1342,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field full"><label for="cocktailPreferences">Préférences particulières et présentation souhaitée</label><textarea id="cocktailPreferences" name="Préférences et présentation souhaitée" rows="3"></textarea></div>
 <div class="field full"><label for="cocktailReference">Ajouter votre propre photo d’inspiration (facultatif)</label><input id="cocktailReference" type="file" name="Photo personnelle d’inspiration" accept="image/*"></div>
 </div></div>
-<div class="form-section"><h3>06 — Signature électronique du client</h3><p class="small">Veuillez tracer votre signature dans le cadre avec votre doigt sur téléphone ou votre souris sur ordinateur. La signature sera jointe à votre demande.</p>
-<canvas id="cocktailSignature" aria-label="Zone de signature manuscrite"></canvas>
-<input type="file" id="cocktailSignatureFile" name="Signature électronique du client" accept="image/png" hidden>
-<div class="field" style="margin-top:10px"><button class="btn secondary" type="button" id="clearCocktailSignature">Effacer la signature</button><span id="cocktailSignatureStatus" class="small" role="status" aria-live="polite">Signature requise.</span></div>
-</div>
-<div class="form-section"><h3>07 — Conditions de réservation et de paiement</h3>
+<div class="form-section"><h3>06 — Conditions de réservation et de paiement</h3>
 <p class="small"><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date. <strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement.</p>
 <p class="small">L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 <label class="consent"><input type="checkbox" name="Acceptation des conditions" value="J’ai lu et accepté les conditions de réservation et de paiement." required> J’ai lu et accepté les conditions de réservation et de paiement. *</label>
@@ -2528,59 +2523,7 @@ document.addEventListener('click',function(event){
   transform: none !important;
 }
 </style>
-<script id="lam-cocktail-signature-handler">
-(function(){
- var form=document.getElementById('lamCocktailForm');
- var canvas=document.getElementById('cocktailSignature');
- var fileInput=document.getElementById('cocktailSignatureFile');
- var clear=document.getElementById('clearCocktailSignature');
- var status=document.getElementById('cocktailSignatureStatus');
- if(!form||!canvas||!fileInput||!clear)return;
- var ctx=canvas.getContext('2d'),drawing=false,hasInk=false,submitting=false;
- function setupCanvas(){
-  var ratio=Math.max(window.devicePixelRatio||1,1),rect=canvas.getBoundingClientRect();
-  var old=hasInk?canvas.toDataURL():null;
-  canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(190*ratio);
-  ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#171717';
-  if(old){var img=new Image();img.onload=function(){ctx.drawImage(img,0,0,rect.width,190);};img.src=old;}
- }
- function point(e){var r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
- canvas.addEventListener('pointerdown',function(e){e.preventDefault();drawing=true;canvas.setPointerCapture(e.pointerId);var p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x+.1,p.y+.1);ctx.stroke();hasInk=true;status.textContent='Signature enregistrée dans le cadre.';});
- canvas.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke();});
- ['pointerup','pointercancel','lostpointercapture'].forEach(function(name){canvas.addEventListener(name,function(){drawing=false;});});
- clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;fileInput.value='';status.textContent='Signature effacée. Veuillez signer.';});
- // Le formulaire 05 est masqué au chargement : attendre qu’il soit affiché
- // avant de dimensionner le canvas, sinon sa largeur initiale vaut zéro.
- function refreshCanvas(){
-  var rect=canvas.getBoundingClientRect();
-  if(rect.width>0&&!hasInk)setupCanvas();
- }
- if(typeof ResizeObserver!=='undefined'){
-  var signatureObserver=new ResizeObserver(function(){refreshCanvas();});
-  signatureObserver.observe(canvas);
- }else{
-  var panel=document.getElementById('pastryForm');
-  if(typeof MutationObserver!=='undefined'&&panel){
-   new MutationObserver(function(){refreshCanvas();}).observe(panel,{attributes:true,attributeFilter:['hidden','style','class']});
-  }
-  window.addEventListener('resize',refreshCanvas);
- }
- refreshCanvas();
- window.addEventListener('resize',refreshCanvas);
- form.addEventListener('submit',function(e){
-  if(submitting)return;
-  if(!hasInk){e.preventDefault();status.textContent='Veuillez tracer votre signature avant l’envoi.';canvas.scrollIntoView({behavior:'smooth',block:'center'});return;}
-  e.preventDefault();
-  canvas.toBlob(function(blob){
-   if(!blob){status.textContent='Impossible de préparer la signature. Veuillez réessayer.';return;}
-   try{
-    var dt=new DataTransfer();dt.items.add(new File([blob],'signature-client-lam.png',{type:'image/png'}));fileInput.files=dt.files;
-    submitting=true;form.requestSubmit();
-   }catch(err){submitting=false;status.textContent='La signature n’a pas pu être jointe. Veuillez réessayer.';}
-  },'image/png');
- });
-})();
-</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
