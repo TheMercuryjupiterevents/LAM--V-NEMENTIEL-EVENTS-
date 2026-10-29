@@ -1315,27 +1315,8 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field"><label for="cocktailGuests">Nombre d’invités *</label><input id="cocktailGuests" type="number" min="1" max="8000" name="Nombre d’invités" required placeholder="Ex. : 80"></div>
 <div class="field full"><label for="cocktailVenue">Lieu / adresse de l’événement *</label><input id="cocktailVenue" name="Lieu de l’événement" required></div>
 </div></div>
-<div class="form-section"><h3>Galerie de photos d’inspiration</h3><p class="small">Sélectionnez une ou plusieurs photos pour montrer à notre équipe le style de bouchées et de présentation que vous souhaitez. Ces images sont des références d’inspiration et non des photos de réalisations LAM.</p>
-<style>
-#lamCocktailGallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-#lamCocktailGallery label{display:block;position:relative;border:2px solid #dedede;border-radius:12px;overflow:hidden;cursor:pointer;background:#fff}
-#lamCocktailGallery label:has(input:checked){border-color:#b3262e;box-shadow:0 0 0 2px #b3262e22}
-#lamCocktailGallery input{position:absolute;top:10px;left:10px;width:20px;height:20px;z-index:2;accent-color:#b3262e}
-#lamCocktailGallery img{display:block;width:100%;height:145px;object-fit:cover}
-#lamCocktailGallery span{display:block;padding:10px;font-weight:600;font-size:.9rem;color:#222}
-@media(min-width:700px){#lamCocktailGallery{grid-template-columns:repeat(3,minmax(0,1fr))}#lamCocktailGallery img{height:175px}}
-#cocktailSignature{display:block;width:100%;height:190px;background:#fff;border:1px solid #aaa;border-radius:10px;touch-action:none;cursor:crosshair}
-</style>
-<div id="lamCocktailGallery">
-<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Plateaux de charcuterie"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Plateau gourmand"><span>Plateaux de charcuterie</span></label>
-<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Canapés et apéritifs"><img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Apéritifs et canapés"><span>Canapés &amp; apéritifs</span></label>
-
-<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Petits fours salés"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Petites bouchées et pâtisseries"><span>Petits fours salés</span></label>
-<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Bouchées chaudes"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bouchées chaudes"><span>Bouchées chaudes</span></label>
-<label><input type="checkbox" name="Photos d’inspiration sélectionnées[]" value="Bouchées froides"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Bouchées froides"><span>Bouchées froides</span></label>
-</div>
-</div>
-<div class="form-section"><h3>04 — Votre sélection de produits</h3><div class="checks">
+<style id="cocktail-signature-style">#cocktailSignature{display:block;width:100%;height:190px;background:#fff;border:1px solid #aaa;border-radius:10px;touch-action:none;cursor:crosshair}</style>
+<div class="form-section"><h3>03 — Votre sélection de produits</h3><div class="checks">
 <label class="check"><input type="checkbox" name="Produits souhaités[]" value="Charcuterie"> Charcuterie</label>
 <label class="check"><input type="checkbox" name="Produits souhaités[]" value="Plateaux de fromages"> Plateaux de fromages</label>
 <label class="check"><input type="checkbox" name="Produits souhaités[]" value="Apéritifs"> Apéritifs</label>
@@ -1350,23 +1331,23 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field"><label for="cocktailTrays">Nombre de plateaux souhaités</label><input id="cocktailTrays" name="Nombre de plateaux" type="number" min="0"></div>
 <div class="field full"><label for="cocktailQuantities">Quantités ou assortiment souhaité</label><textarea id="cocktailQuantities" name="Quantités et assortiment souhaité" rows="3"></textarea></div>
 </div></div>
-<div class="form-section"><h3>05 — Type de prestation</h3><div class="checks">
+<div class="form-section"><h3>04 — Type de prestation</h3><div class="checks">
 <label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Livraison uniquement"> Livraison uniquement</label>
 <label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Installation et présentation"> Installation et présentation</label>
 <label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Service pendant l’événement"> Service pendant l’événement</label>
 <label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Formule complète"> Formule complète</label>
 </div></div>
-<div class="form-section"><h3>06 — Préférences et inspirations personnelles</h3><div class="fieldgrid">
+<div class="form-section"><h3>05 — Préférences et inspirations personnelles</h3><div class="fieldgrid">
 <div class="field full"><label for="cocktailAllergies">Allergies ou restrictions alimentaires</label><textarea id="cocktailAllergies" name="Allergies et restrictions alimentaires" rows="2"></textarea></div>
 <div class="field full"><label for="cocktailPreferences">Préférences particulières et présentation souhaitée</label><textarea id="cocktailPreferences" name="Préférences et présentation souhaitée" rows="3"></textarea></div>
 <div class="field full"><label for="cocktailReference">Ajouter votre propre photo d’inspiration (facultatif)</label><input id="cocktailReference" type="file" name="Photo personnelle d’inspiration" accept="image/*"></div>
 </div></div>
-<div class="form-section"><h3>07 — Signature électronique du client</h3><p class="small">Veuillez tracer votre signature dans le cadre avec votre doigt sur téléphone ou votre souris sur ordinateur. La signature sera jointe à votre demande.</p>
+<div class="form-section"><h3>06 — Signature électronique du client</h3><p class="small">Veuillez tracer votre signature dans le cadre avec votre doigt sur téléphone ou votre souris sur ordinateur. La signature sera jointe à votre demande.</p>
 <canvas id="cocktailSignature" aria-label="Zone de signature manuscrite"></canvas>
 <input type="file" id="cocktailSignatureFile" name="Signature électronique du client" accept="image/png" hidden>
 <div class="field" style="margin-top:10px"><button class="btn secondary" type="button" id="clearCocktailSignature">Effacer la signature</button><span id="cocktailSignatureStatus" class="small" role="status" aria-live="polite">Signature requise.</span></div>
 </div>
-<div class="form-section"><h3>08 — Conditions de réservation et de paiement</h3>
+<div class="form-section"><h3>07 — Conditions de réservation et de paiement</h3>
 <p class="small"><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date. <strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement.</p>
 <p class="small">L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 <label class="consent"><input type="checkbox" name="Acceptation des conditions" value="J’ai lu et accepté les conditions de réservation et de paiement." required> J’ai lu et accepté les conditions de réservation et de paiement. *</label>
