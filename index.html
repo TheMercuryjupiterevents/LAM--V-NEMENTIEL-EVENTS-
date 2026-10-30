@@ -682,16 +682,18 @@ input,select,textarea{font-size:.84rem}
 .payment-policy-section .payment-kicker{color:#7b9b16;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
 .payment-policy-section .payment-title{color:#0047ab}
 .payment-policy-section .payment-intro{max-width:760px;color:#5f6670;line-height:1.85}
-.payment-policy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:30px 0}
+.payment-policy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:30px 0}
 .payment-policy-card{padding:25px;background:#fff;border:1px solid #d7dbe0;border-top:4px solid #a8c83a;box-shadow:0 8px 24px #1720330a}
 .payment-policy-card.balance{border-top-color:#0047ab}
+.payment-policy-card.cancellation{border-top-color:#7b9b16}
+.payment-policy-card.cancellation .payment-policy-number{color:#7b9b16}
 .payment-policy-number{display:block;font:500 clamp(2.2rem,5vw,3.6rem)/1 Georgia,"Times New Roman",serif;color:#0047ab;margin-bottom:12px}
 .payment-policy-card h3{color:#303740;margin-bottom:10px}
 .payment-policy-card p{color:#5f6670;margin-bottom:0;line-height:1.8}
 .payment-policy-note{padding:18px 20px;border-left:4px solid #0047ab;background:#e8edf5;color:#303740;line-height:1.8}
 .payment-policy-note strong{color:#0047ab}
 .payment-policy-signature{margin-top:24px;color:#0047ab;font:500 1.05rem Georgia,"Times New Roman",serif;letter-spacing:.04em}
-@media(max-width:680px){.payment-policy-grid{grid-template-columns:1fr;gap:12px}.payment-policy-card{padding:21px}.payment-policy-section{padding:54px 0!important}}
+@media(max-width:900px){.payment-policy-grid{grid-template-columns:1fr;gap:12px}.payment-policy-card{padding:21px}.payment-policy-section{padding:54px 0!important}}
 </style>
 
 
@@ -950,6 +952,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1078,6 +1081,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1133,6 +1137,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1191,6 +1196,7 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1620,6 +1626,7 @@ document.addEventListener('click',function(event){
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1862,6 +1869,7 @@ document.addEventListener('click',function(event){
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
   <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
   <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
+  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
   <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
 </div>
 
@@ -1947,7 +1955,7 @@ document.addEventListener('click',function(event){
     <div class="section-head">
       <div class="payment-kicker">Informations clients</div>
       <h2 class="payment-title" id="payment-policy-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</h2>
-      <p class="payment-intro">Afin de garantir une organisation optimale et de préparer chaque événement dans les meilleures conditions, LAM ÉVÉNEMENTIEL &amp; EVENTS applique les modalités de paiement suivantes.</p>
+      <p class="payment-intro">Afin de garantir une organisation optimale et de préparer chaque événement dans les meilleures conditions, LAM ÉVÉNEMENTIEL &amp; EVENTS applique les modalités de réservation, de paiement et d’annulation suivantes.</p>
     </div>
     <div class="payment-policy-grid">
       <article class="payment-policy-card">
@@ -1960,8 +1968,13 @@ document.addEventListener('click',function(event){
         <h3>Solde restant</h3>
         <p>Le solde de 30 % doit être réglé au plus tard 7 jours avant la date prévue de l’événement.</p>
       </article>
+      <article class="payment-policy-card cancellation">
+        <span class="payment-policy-number">1 %</span>
+        <h3>Indemnité d’annulation</h3>
+        <p>En cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à 1 % du montant total du contrat sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
+      </article>
     </div>
-    <div class="payment-policy-note"><strong>Confirmation :</strong> la réservation est considérée comme définitive après réception de l’acompte requis. Les modalités convenues avec le client sont précisées lors de la confirmation du projet.</div>
+    <div class="payment-policy-note"><strong>Confirmation :</strong> la réservation est considérée comme définitive après acceptation des conditions contractuelles et réception de l’acompte requis. Toute demande d’annulation doit être communiquée par écrit à LAM ÉVÉNEMENTIEL &amp; EVENTS.</div>
     <p class="payment-policy-signature">LAM ÉVÉNEMENTIEL &amp; EVENTS</p>
   </div>
 </section>
