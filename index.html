@@ -847,16 +847,6 @@ body .nav::after,body h2::after{
 body .section:not(.hero){border-top-color:#aeb4ba55!important}
 </style>
 
-
-<script id="lam-desktop-layout-on-mobile">
-/* Sur téléphone, conserver la composition ordinateur au lieu d'activer la mise en page mobile. */
-(function () {
-  var isSmallTouch = window.matchMedia && window.matchMedia("(max-width: 680px) and (pointer: coarse)").matches;
-  if (!isSmallTouch) return;
-  var viewport = document.querySelector('meta[name="viewport"]');
-  if (viewport) viewport.setAttribute("content", "width=1200, initial-scale=1, viewport-fit=cover, user-scalable=yes");
-})();
-</script>
 </head>
 <body>
 
