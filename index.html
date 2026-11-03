@@ -1987,7 +1987,7 @@ document.addEventListener('click',function(event){
 </div>
 <div class="wrap footerbottom"><span>© 2026 LAM ÉVÉNEMENTIEL & EVENTS</span><span>CONCEVOIR DES EXPÉRIENCES. CRÉER DES MOMENTS. CONSTRUIRE L’AVENIR.</span></div>
 </footer>
-<a class="wa" href="https://wa.me/50937469553?text=Hello!%20Welcome%20to%20LAM.%20How%20may%20we%20assist%20you%20with%20your%20event%3F" aria-label="Contacter LAM ÉVÉNEMENTIEL & EVENTS sur WhatsApp">WhatsApp</a>
+<a class="wa" href="https://wa.me/50937469553?text=Hello!%20Welcome%20to%20LAM.%20How%20may%20we%20assist%20you%20with%20your%20event%3F" aria-label="Contacter LAM ÉVÉNEMENTIEL & EVENTS sur WhatsApp">Écrivez-nous sur WhatsApp</a>
 
 <script>
 
@@ -2536,6 +2536,40 @@ document.addEventListener('click',function(event){
   transform: none !important;
 }
 </style>
+
+
+<style id="lam-whatsapp-visibility">
+/* WhatsApp : bouton de contact bien visible et couleur officielle */
+#lam-3d-welcome ~ .wa,
+a.wa{
+  position:fixed!important;right:22px!important;bottom:22px!important;z-index:9999!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:56px!important;padding:16px 23px!important;border-radius:999px!important;
+  background:#25D366!important;color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border:2px solid #fff!important;font-size:15px!important;font-weight:800!important;
+  letter-spacing:.01em!important;text-transform:none!important;text-decoration:none!important;
+  box-shadow:0 5px 22px rgba(0,0,0,.28),0 0 0 3px #25D36655!important;
+  opacity:1!important;visibility:visible!important;
+}
+a.wa:hover{background:#128C7E!important;transform:translateY(-2px)!important}
+a[href*="wa.me"]{--lam-whatsapp:#25D366}
+.contactline a[href*="wa.me"],.footer a[href*="wa.me"]{
+  color:#128C7E!important;font-weight:800!important;text-decoration:underline!important;
+  text-decoration-thickness:1px!important;text-underline-offset:3px!important;
+}
+a.btn[href*="wa.me"],button.lam-whatsapp-action{
+  background:#25D366!important;border:1px solid #25D366!important;color:#fff!important;
+  -webkit-text-fill-color:#fff!important;font-weight:800!important;
+}
+@media(max-width:680px){
+ a.wa{right:12px!important;bottom:12px!important;min-height:54px!important;padding:15px 19px!important;font-size:14px!important}
+}
+</style>
+<script id="lam-whatsapp-action-labels">
+document.querySelectorAll('button').forEach(function(button){
+ if(/whatsapp/i.test(button.textContent||'')){button.classList.add('lam-whatsapp-action');}
+});
+</script>
 
 </body>
 </html>
