@@ -2648,7 +2648,7 @@ document.addEventListener('click',function(event){
     var forms = Array.from(document.querySelectorAll("form")).filter(function(form){
       var subject = form.querySelector('input[name="_subject"]');
       var marker = ((subject && subject.value) || "") + " " + (form.id || "");
-      return !/AVIS CLIENT|reviewNameTMJE/i.test(marker);
+      return true;
     });
     forms.forEach(function(form, index){
       if(form.dataset.lamSignatureReady === "true") return;
@@ -2667,22 +2667,22 @@ document.addEventListener('click',function(event){
 
       var panel = document.createElement("section");
       panel.className = "lam-contract-signature-panel";
-      panel.setAttribute("aria-label","Contrat et signature électronique obligatoires");
+      panel.setAttribute("aria-label","Confirmation et signature électronique obligatoires");
       panel.innerHTML =
-        '<div class="lam-contract-heading"><span>ÉTAPE OBLIGATOIRE</span><h3>CONTRAT DE PRESTATION &amp; SIGNATURE ÉLECTRONIQUE</h3><p>Veuillez lire les conditions applicables à votre demande, puis signer directement dans l’espace prévu.</p></div>'+
-        '<details class="lam-contract-terms"><summary>Lire le contrat et les conditions de prestation</summary>'+
-        '<div class="lam-contract-document"><h4>LAM ÉVÉNEMENTIEL &amp; EVENTS</h4><p><strong>Contrat de prestation — '+escapeHtml(title)+'</strong></p>'+
+        '<div class="lam-contract-heading"><span>ÉTAPE OBLIGATOIRE</span><h3>CONFIRMATION DE LA DEMANDE &amp; SIGNATURE ÉLECTRONIQUE</h3><p>Veuillez lire les conditions applicables à votre demande, puis signer directement dans l’espace prévu.</p></div>'+
+        '<details class="lam-contract-terms"><summary>Lire les conditions de traitement de votre demande</summary>'+
+        '<div class="lam-contract-document"><h4>LAM ÉVÉNEMENTIEL &amp; EVENTS</h4><p><strong>Confirmation de demande — '+escapeHtml(title)+'</strong></p>'+
         '<p><em>L’élégance au service de vos moments d’exception.</em></p>'+
-        '<p><strong>1. Objet.</strong> Le présent document encadre la demande de prestation décrite dans le formulaire et les échanges écrits entre le client et LAM ÉVÉNEMENTIEL &amp; EVENTS. La nature, le contenu, les quantités, la date, le lieu et les livrables seront ceux confirmés dans le devis ou le récapitulatif accepté par les deux parties.</p>'+
+        '<p><strong>1. Objet.</strong> Le présent document encadre la demande de prestation décrite dans le formulaire et les échanges écrits entre le client et LAM ÉVÉNEMENTIEL &amp; EVENTS. Les informations communiquées dans le formulaire servent à comprendre et étudier la demande. Les détails définitifs seront confirmés séparément, si nécessaire.</p>'+
         '<p><strong>2. Devis et confirmation.</strong> L’envoi du formulaire constitue une demande. Il ne confirme pas à lui seul la disponibilité, la commande ou le blocage d’une date. La prestation devient confirmée après validation écrite du devis et réception de l’acompte convenu, selon les modalités indiquées sur le devis.</p>'+
         '<p><strong>3. Prix et paiement.</strong> Le montant, l’acompte, le solde et leurs échéances sont ceux indiqués dans le devis accepté. Pour les prestations événementielles auxquelles s’applique la politique de réservation LAM, l’acompte est de 70 % et le solde de 30 % est dû au plus tard sept (7) jours avant l’événement, sauf accord écrit différent. Pour les commandes de produits ou prestations spécifiques, les modalités confirmées sur le devis prévalent.</p>'+
-        '<p><strong>4. Obligations du client.</strong> Le client s’engage à fournir des informations exactes, à communiquer à l’avance toute contrainte utile (notamment allergies ou restrictions alimentaires pour les prestations culinaires), à respecter les échéances convenues et à obtenir les autorisations nécessaires pour le lieu ou l’événement.</p>'+
+        '<p><strong>4. Obligations du client.</strong> Le signataire confirme que les informations transmises sont exactes à sa connaissance et s’engage à signaler toute correction utile à LAM.</p>'+
         '<p><strong>5. Modifications.</strong> Toute modification de date, quantité, menu, décoration, lieu ou contenu doit être demandée par écrit. Elle reste soumise à l’accord de LAM, à la disponibilité et peut entraîner une adaptation du devis.</p>'+
         '<p><strong>6. Annulation et imprévus.</strong> Les conditions d’annulation, de remboursement, de report et de traitement des dépenses déjà engagées sont celles précisées au devis ou dans un accord écrit spécifique accepté par les deux parties. Aucune condition non communiquée au client ne sera ajoutée après validation.</p>'+
         '<p><strong>7. Acceptation.</strong> En cochant la case d’acceptation et en apposant sa signature électronique, le signataire confirme avoir lu les présentes conditions et demande à LAM ÉVÉNEMENTIEL &amp; EVENTS de traiter sa demande sur cette base. La confirmation définitive de la prestation demeure soumise au devis accepté et aux conditions de confirmation ci-dessus.</p>'+
         '<p><strong>Coordonnées du prestataire :</strong> infolamevenementiels@gmail.com — +509 37 46 9553.</p></div></details>'+
         '<div class="lam-contract-signer"><label>Nom complet du signataire (client ou représentant légal) *<input type="text" name="Nom complet du signataire du contrat" autocomplete="name" required></label>'+
-        '<label class="lam-contract-accept"><input type="checkbox" name="Acceptation du contrat LAM" value="Oui, contrat lu et accepté" required><span>Je confirme avoir lu et accepté le contrat et les conditions de prestation ci-dessus. *</span></label></div>'+
+        '<label class="lam-contract-accept"><input type="checkbox" name="Acceptation du contrat LAM" value="Oui, conditions lues et demande confirmée" required><span>Je confirme avoir lu les conditions de traitement de ma demande et autorise LAM à la recevoir et à me contacter à ce sujet. *</span></label></div>'+
         '<div class="lam-signature-area"><div class="lam-signature-title"><strong>Signature électronique *</strong><span>Signez avec votre doigt, votre stylet ou votre souris.</span></div>'+
         '<canvas class="lam-signature-canvas" width="1000" height="260" aria-label="Zone de signature électronique"></canvas>'+
         '<div class="lam-signature-actions"><button type="button" class="lam-signature-clear">Effacer la signature</button><span class="lam-signature-status" aria-live="polite">Signature requise</span></div></div>'+
