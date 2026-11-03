@@ -1510,7 +1510,7 @@ document.addEventListener('click',function(event){
 <div class="eyebrow">Soumission officielle</div>
 <h3>FORMULAIRE DE PROPOSITION DE PARTENARIAT</h3>
 <p class="small">Merci de fournir des informations exactes et suffisamment détaillées. Les champs marqués d'un astérisque (*) sont obligatoires.</p>
-<form class="form" style="padding:0;border:0;box-shadow:none" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<form class="form" style="padding:0;border:0;box-shadow:none" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
 <input type="hidden" name="_subject" value="NOUVELLE PROPOSITION DE PARTENARIAT — LAM ÉVÉNEMENTIEL & EVENTS">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
@@ -1545,8 +1545,13 @@ document.addEventListener('click',function(event){
 </div>
 <div class="form-section">
 <h3>03 — Documents et références</h3>
-<p class="small">Vous pouvez transmettre votre dossier de présentation, vos références ou vos documents complémentaires par e-mail à <a href="mailto:infolamevenementiels@gmail.com"><strong>infolamevenementiels@gmail.com</strong></a>, en indiquant le nom de votre organisation et « Proposition de partenariat » en objet. L'envoi de ce formulaire ne joint pas automatiquement de fichier.</p>
-<div class="field"><label for="partnerDocs">Lien vers un dossier ou une présentation en ligne (facultatif)</label><input id="partnerDocs" type="url" name="Lien vers les documents" placeholder="https://"></div>
+<p class="small">Joignez votre dossier de présentation ou vos documents complémentaires au format PDF. Le fichier sera transmis directement à LAM par e-mail. Taille maximale : 10 Mo.</p>
+<div class="field">
+<label for="partnerPdf">Dossier de présentation (PDF, facultatif)</label>
+<input id="partnerPdf" type="file" name="Dossier de présentation PDF" accept=".pdf,application/pdf">
+<p class="small" style="margin:7px 0 0">Un seul fichier PDF, jusqu'à 10 Mo.</p>
+</div>
+<div class="field" style="margin-top:14px"><label for="partnerDocs">Lien vers un dossier ou une présentation en ligne (facultatif)</label><input id="partnerDocs" type="url" name="Lien vers les documents" placeholder="https://"></div>
 </div>
 <div class="partnership-terms">
 <div class="eyebrow">Conditions générales de soumission</div>
@@ -1753,6 +1758,29 @@ document.addEventListener('click',function(event){
 <div class="birthday-hint" style="margin-top:18px">Votre demande ne constitue pas une réservation confirmée. Notre équipe échangera avec vous pour préciser les besoins, la disponibilité et le devis.</div>
 <div style="margin-top:18px"><button type="submit" class="btn">Envoyer ma demande sur WhatsApp</button></div>
 <p id="birthdayInquiryStatus" class="small" role="status" aria-live="polite"></p>
+<script>
+(function(){
+  var partnershipForm = document.querySelector('#formulaire-partenariat form');
+  if (!partnershipForm) return;
+  partnershipForm.addEventListener('submit', function(event) {
+    var fileInput = document.getElementById('partnerPdf');
+    if (!fileInput || !fileInput.files || !fileInput.files.length) return;
+    var file = fileInput.files[0];
+    var isPdf = file.type === 'application/pdf' || /\\.pdf$/i.test(file.name);
+    if (!isPdf) {
+      event.preventDefault();
+      alert('Veuillez sélectionner un document au format PDF.');
+      fileInput.focus();
+      return;
+    }
+    if (file.size > 10 * 1024 * 1024) {
+      event.preventDefault();
+      alert('Le fichier PDF ne doit pas dépasser 10 Mo.');
+      fileInput.focus();
+    }
+  });
+})();
+</script>
 </form>
 </div>
 </div>
