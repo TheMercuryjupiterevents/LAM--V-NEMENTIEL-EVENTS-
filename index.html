@@ -3400,9 +3400,9 @@ var welcomeTitle=el.querySelector('.lam-brand h1');
 var welcomeLine=el.querySelector('.lam-welcome-line');
 [welcomeTitle,welcomeLine].forEach(function(node){if(node){node.style.setProperty('color','#FFFFFF','important');node.style.setProperty('-webkit-text-fill-color','#FFFFFF','important');node.style.setProperty('text-shadow','0 1px 4px #8B0000','important')}});
 var arch=el.querySelector('.lam-arch'),opening=el.querySelector('.lam-opening'),floor=el.querySelector('.lam-floor'),skip=el.querySelector('.lam-skip');
-if(arch){arch.style.setProperty('border-color','#FFFFFF','important');arch.style.setProperty('box-shadow','0 0 0 2px #B7F000,inset 0 0 0 3px #FFFFFF,0 0 16px #B7F00033','important')}
-if(opening){opening.style.setProperty('border','2px solid #FFFFFF','important');opening.style.setProperty('box-shadow','inset 0 0 0 1px #B7F000,0 0 12px #B7F00022','important')}
-if(floor){floor.style.setProperty('border-top','1px solid #FFFFFF','important');floor.style.setProperty('box-shadow','inset 0 2px 0 #B7F00022','important')}
+if(arch){arch.style.setProperty('border-color','#FFFFFF','important');arch.style.setProperty('box-shadow','0 0 0 2px #B7F000,inset 0 0 0 3px #FFFFFF,0 0 16px #B7F00033,0 0 9px #ED1B2F55','important')}
+if(opening){opening.style.setProperty('border','2px solid #FFFFFF','important');opening.style.setProperty('box-shadow','inset 0 0 0 1px #B7F000,inset 0 0 0 2px #ED1B2F44,0 0 12px #B7F00022','important')}
+if(floor){floor.style.setProperty('border-top','1px solid #FFFFFF','important');floor.style.setProperty('box-shadow','inset 0 2px 0 #B7F00022,0 -2px 8px #ED1B2F22','important')}
 if(skip){skip.style.setProperty('border-color','#B7F000','important');skip.style.setProperty('box-shadow','0 0 0 1px #FFFFFF55','important')}
 var done=false;function end(){if(done)return;done=true;el.classList.add('lam-exit');setTimeout(function(){el.remove();st.remove()},900)}el.querySelector('button').addEventListener('click',end);
 /* Laisser le temps de voir la porte se fermer puis s’ouvrir avant de quitter l’accueil. */setTimeout(function(){el.classList.add('lam-opening')},900);setTimeout(end,6800)
