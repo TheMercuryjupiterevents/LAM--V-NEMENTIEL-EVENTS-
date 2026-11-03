@@ -1447,41 +1447,150 @@ document.addEventListener('click',function(event){
 </script>
 
 
+<style id="lam-partnerships-page">
+#partenariats .partnership-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0}
+#partenariats .partnership-type{padding:22px;border:1px solid #aeb4ba66;background:#fff;min-height:180px}
+#partenariats .partnership-type .num{display:block;margin-bottom:13px}
+#partenariats .partnership-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+#partenariats .partnership-step{padding:18px;border:1px solid #aeb4ba66;background:#fff}
+#partenariats .partnership-step p{margin-bottom:0}
+#partenariats .partnership-form{margin-top:34px;padding:clamp(18px,3vw,32px);background:#fff;border:1px solid #aeb4ba66;box-shadow:0 8px 28px #211c1d08}
+#partenariats .partnership-form .fieldgrid{margin-top:14px}
+#partenariats .partnership-terms{padding:22px;background:#f7f3e9;border:1px solid #aeb4ba66;margin-top:24px}
+#partenariats .partnership-terms ol{padding-left:20px;margin-bottom:0}
+#partenariats .partnership-terms li{margin:0 0 10px}
+#partenariats .partnership-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+#partenariats .partnership-status span{display:block;padding:12px;border:1px solid #aeb4ba66;background:#fff;font-size:.82rem}
+#partenariats .partnership-consent{display:flex;gap:10px;align-items:flex-start;margin:20px 0;font-size:.84rem}
+#partenariats .partnership-consent input{width:18px;height:18px;flex:0 0 auto;margin-top:3px}
+@media(max-width:850px){#partenariats .partnership-types{grid-template-columns:repeat(2,minmax(0,1fr))}#partenariats .partnership-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#partenariats .partnership-types,#partenariats .partnership-process,#partenariats .partnership-status{grid-template-columns:1fr}#partenariats .partnership-type{min-height:0}}
+</style>
 <section id="partenariats" class="section alt">
 <div class="wrap">
-<div class="eyebrow">Entreprises • Organisations • Partenaires</div>
-<h2>CONSTRUISONS ENSEMBLE DE BELLES EXPÉRIENCES.</h2>
-<p class="lead">LAM ÉVÉNEMENTIEL & EVENTS accompagne les entreprises, institutions, établissements scolaires et partenaires qui souhaitent concevoir des événements soignés et mémorables. Présentez-nous votre projet ou votre proposition de collaboration : nous étudierons ensemble les possibilités.</p>
-<div class="grid grid3" style="margin-top:30px">
-<article class="card">
-<div class="num">01 — ENTREPRISES & ORGANISATIONS</div>
-<h3>Vos événements professionnels</h3>
-<p>Gala, conférence, networking, lancement de produit, cérémonie ou événement d’entreprise : discutons de vos objectifs et de l’expérience que vous souhaitez offrir à vos invités.</p>
-<div class="actions"><a class="btn primary" href="mailto:infolamevenementiels@gmail.com?subject=Demande%20de%20proposition%20professionnelle%20%E2%80%94%20LAM%20%C3%89V%C3%89NEMENTIEL%20%26%20EVENTS">Présenter mon projet</a></div>
-</article>
-<article class="card">
-<div class="num">02 — PARTENAIRES</div>
-<h3>Développons une collaboration</h3>
-<p>Vous représentez un hôtel, un lieu de réception, un prestataire, un décorateur, un traiteur ou une entreprise de location ? Proposons-nous une collaboration claire et avantageuse.</p>
-<div class="actions"><a class="btn" href="mailto:infolamevenementiels@gmail.com?subject=Proposition%20de%20partenariat%20%E2%80%94%20LAM%20%C3%89V%C3%89NEMENTIEL%20%26%20EVENTS">Proposer un partenariat</a></div>
-</article>
-<article class="card">
-<div class="eyebrow">Présentation professionnelle</div>
-<h3>Présentons notre entreprise</h3>
-<p>Vous souhaitez étudier une collaboration ou présenter notre agence à votre organisation ? Demandez notre dossier de présentation professionnel par e-mail.</p>
-<div class="actions"><a class="btn primary" href="presentation.html">Consulter le dossier</a><a class="btn" href="mailto:infolamevenementiels@gmail.com?subject=Demande%20du%20dossier%20de%20pr%C3%A9sentation%20professionnel">Demander le dossier par e-mail</a></div>
-</article>
+<div class="eyebrow">Partenariats • Collaborations professionnelles</div>
+<h2>DEVENIR PARTENAIRE DE LAM.</h2>
+<p class="lead">LAM ÉVÉNEMENTIEL &amp; EVENTS accueille les propositions de partenariat des entreprises, marques, institutions, organisations et professionnels qui souhaitent construire une collaboration sérieuse, transparente et mutuellement bénéfique. Chaque proposition est étudiée avant toute décision.</p>
+
+<div class="section-head" style="margin-top:38px">
+<div class="eyebrow">Types de partenariats proposés à LAM</div>
+<h3>QUELLE COLLABORATION SOUHAITEZ-VOUS NOUS PROPOSER ?</h3>
+<p class="small">Sélectionnez le type de partenariat qui correspond à votre proposition dans le formulaire ci-dessous.</p>
 </div>
-<div class="card" style="margin-top:22px">
-<div class="eyebrow">Notre approche</div>
-<h3>Une collaboration claire, de la première discussion à la réalisation</h3>
-<div class="grid grid4" style="margin-top:18px">
-<div><div class="num">ÉTAPE 01</div><p><strong>Échange</strong><br>Nous écoutons vos objectifs et vos besoins.</p></div>
-<div><div class="num">ÉTAPE 02</div><p><strong>Proposition</strong><br>Nous préparons une approche adaptée à votre demande.</p></div>
-<div><div class="num">ÉTAPE 03</div><p><strong>Validation</strong><br>Les prestations, le budget et les conditions sont clarifiés avant tout engagement.</p></div>
-<div><div class="num">ÉTAPE 04</div><p><strong>Coordination</strong><br>Nous organisons les prochaines étapes convenues ensemble.</p></div>
+<div class="partnership-types">
+<article class="partnership-type"><span class="num">01 — STRATÉGIQUE</span><h3>Partenariat stratégique</h3><p>Collaboration à long terme autour d'une vision commune, de projets structurants et d'objectifs de développement partagés.</p></article>
+<article class="partnership-type"><span class="num">02 — COMMERCIAL</span><h3>Partenariat commercial</h3><p>Proposition d'échanges commerciaux, de produits, de services ou d'avantages professionnels entre les parties.</p></article>
+<article class="partnership-type"><span class="num">03 — ÉVÉNEMENTIEL</span><h3>Partenariat événementiel</h3><p>Collaboration autour de la conception, de l'organisation, de la production ou de la réalisation d'événements.</p></article>
+<article class="partnership-type"><span class="num">04 — MÉDIA</span><h3>Partenariat média</h3><p>Collaboration en communication, couverture médiatique, visibilité, création de contenu ou promotion.</p></article>
+<article class="partnership-type"><span class="num">05 — SPONSORING</span><h3>Sponsoring</h3><p>Proposition de soutien financier, matériel, technique ou logistique en faveur d'un projet ou d'un événement de LAM.</p></article>
 </div>
-<p class="small" style="margin-bottom:0">Toute collaboration reste soumise à l’étude du projet, à la disponibilité de l’équipe et à l’accord écrit des parties.</p>
+
+<div class="card" style="margin-top:26px">
+<div class="eyebrow">Une collaboration réfléchie</div>
+<h3>POURQUOI PROPOSER UN PARTENARIAT À LAM ?</h3>
+<div class="grid grid2" style="margin-top:16px">
+<p>• Développer des opportunités professionnelles et commerciales.<br>• Mettre en commun des compétences et des ressources.<br>• Participer à des projets et initiatives événementiels.</p>
+<p>• Construire une relation professionnelle durable.<br>• Développer une visibilité et des actions de communication convenues.<br>• Créer des retombées pertinentes pour les parties concernées.</p>
+</div>
+<p class="small" style="margin-bottom:0">Les avantages, contributions et résultats attendus seront définis au cas par cas et confirmés par écrit. Ils ne sont pas garantis par le simple dépôt d'une proposition.</p>
+</div>
+
+<div style="margin-top:38px">
+<div class="eyebrow">Notre processus</div>
+<h3>LES ÉTAPES D'UNE PROPOSITION DE PARTENARIAT</h3>
+<div class="partnership-process">
+<div class="partnership-step"><div class="num">ÉTAPE 01</div><h3>Soumission</h3><p>Vous transmettez votre proposition à l'aide du formulaire officiel.</p></div>
+<div class="partnership-step"><div class="num">ÉTAPE 02</div><h3>Réception &amp; étude</h3><p>LAM examine les informations, la pertinence et la faisabilité de la proposition.</p></div>
+<div class="partnership-step"><div class="num">ÉTAPE 03</div><h3>Échange &amp; négociation</h3><p>Si nécessaire, notre équipe vous contacte pour préciser les modalités et les contributions.</p></div>
+<div class="partnership-step"><div class="num">ÉTAPE 04</div><h3>Validation &amp; accord</h3><p>Si les parties s'entendent, un accord écrit est préparé et signé avant le lancement.</p></div>
+</div>
+</div>
+
+<div class="partnership-form" id="formulaire-partenariat">
+<div class="eyebrow">Soumission officielle</div>
+<h3>FORMULAIRE DE PROPOSITION DE PARTENARIAT</h3>
+<p class="small">Merci de fournir des informations exactes et suffisamment détaillées. Les champs marqués d'un astérisque (*) sont obligatoires.</p>
+<form class="form" style="padding:0;border:0;box-shadow:none" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="NOUVELLE PROPOSITION DE PARTENARIAT — LAM ÉVÉNEMENTIEL & EVENTS">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL & EVENTS confirme la réception de votre proposition de partenariat. Notre équipe procédera à son étude. Cette confirmation de réception ne constitue pas une acceptation ni un engagement de partenariat. Nous vous contacterons si des informations complémentaires sont nécessaires ou si une suite peut être donnée à votre proposition. Merci de votre intérêt envers LAM.">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="form-section">
+<h3>01 — Identité du partenaire</h3>
+<div class="fieldgrid">
+<div class="field"><label for="partnerOrg">Nom de l'entreprise / organisation *</label><input id="partnerOrg" name="Nom de l'entreprise ou organisation" required maxlength="160" autocomplete="organization"></div>
+<div class="field"><label for="partnerRep">Nom complet du représentant *</label><input id="partnerRep" name="Nom complet du représentant" required maxlength="120" autocomplete="name"></div>
+<div class="field"><label for="partnerRole">Fonction du représentant *</label><input id="partnerRole" name="Fonction du représentant" required maxlength="120"></div>
+<div class="field"><label for="partnerDomain">Domaine d'activité *</label><input id="partnerDomain" name="Domaine d'activité" required maxlength="160"></div>
+<div class="field"><label for="partnerEmail">Adresse e-mail professionnelle *</label><input id="partnerEmail" type="email" name="Adresse e-mail" required autocomplete="email"></div>
+<div class="field"><label for="partnerPhone">Téléphone / WhatsApp *</label><input id="partnerPhone" type="tel" name="Téléphone / WhatsApp" required autocomplete="tel"></div>
+<div class="field"><label for="partnerWebsite">Site web (facultatif)</label><input id="partnerWebsite" type="url" name="Site web" placeholder="https://"></div>
+<div class="field"><label for="partnerSocial">Réseaux sociaux (facultatif)</label><input id="partnerSocial" name="Réseaux sociaux" maxlength="250"></div>
+</div>
+</div>
+<div class="form-section">
+<h3>02 — Votre proposition</h3>
+<div class="fieldgrid">
+<div class="field full"><label for="partnerType">Type de partenariat proposé à LAM *</label><select id="partnerType" name="Type de partenariat proposé" required><option value="">Sélectionner un type</option><option>Partenariat stratégique</option><option>Partenariat commercial</option><option>Partenariat événementiel</option><option>Partenariat média</option><option>Sponsoring</option></select></div>
+<div class="field full"><label for="partnerTitle">Titre de votre proposition *</label><input id="partnerTitle" name="Titre de la proposition" required maxlength="180" placeholder="Résumez votre proposition en quelques mots"></div>
+<div class="field full"><label for="partnerDescription">Description détaillée de la proposition *</label><textarea id="partnerDescription" name="Description détaillée de la proposition" required minlength="30" maxlength="5000" placeholder="Présentez votre idée, le projet concerné et la manière dont vous souhaitez collaborer."></textarea></div>
+<div class="field full"><label for="partnerGoals">Objectifs et résultats attendus *</label><textarea id="partnerGoals" name="Objectifs et résultats attendus" required maxlength="2500" placeholder="Quels sont les objectifs de cette collaboration ?"></textarea></div>
+<div class="field full"><label for="partnerOffer">Contribution proposée à LAM *</label><textarea id="partnerOffer" name="Contribution proposée à LAM" required maxlength="2500" placeholder="Précisez votre offre : financement, services, produits, visibilité, ressources, expertise, matériel, etc."></textarea></div>
+<div class="field full"><label for="partnerBenefits">Avantages envisagés pour chaque partie *</label><textarea id="partnerBenefits" name="Avantages envisagés pour chaque partie" required maxlength="2500"></textarea></div>
+<div class="field"><label for="partnerDuration">Durée souhaitée *</label><select id="partnerDuration" name="Durée souhaitée" required><option value="">Sélectionner</option><option>Projet ponctuel</option><option>Moins de 6 mois</option><option>6 à 12 mois</option><option>1 à 2 ans</option><option>Plus de 2 ans</option><option>À définir ensemble</option></select></div>
+<div class="field"><label for="partnerStart">Date de début envisagée (facultatif)</label><input id="partnerStart" type="date" name="Date de début envisagée"></div>
+<div class="field full"><label for="partnerOther">Informations complémentaires (facultatif)</label><textarea id="partnerOther" name="Informations complémentaires" maxlength="2500"></textarea></div>
+</div>
+</div>
+<div class="form-section">
+<h3>03 — Documents et références</h3>
+<p class="small">Vous pouvez transmettre votre dossier de présentation, vos références ou vos documents complémentaires par e-mail à <a href="mailto:infolamevenementiels@gmail.com"><strong>infolamevenementiels@gmail.com</strong></a>, en indiquant le nom de votre organisation et « Proposition de partenariat » en objet. L'envoi de ce formulaire ne joint pas automatiquement de fichier.</p>
+<div class="field"><label for="partnerDocs">Lien vers un dossier ou une présentation en ligne (facultatif)</label><input id="partnerDocs" type="url" name="Lien vers les documents" placeholder="https://"></div>
+</div>
+<div class="partnership-terms">
+<div class="eyebrow">Conditions générales de soumission</div>
+<h3>À LIRE AVANT L'ENVOI</h3>
+<ol>
+<li><strong>Soumission :</strong> toute proposition doit être transmise par le formulaire officiel ou par le canal de contact indiqué par LAM.</li>
+<li><strong>Étude :</strong> chaque demande est évaluée selon sa pertinence, sa faisabilité, ses objectifs et sa compatibilité avec les valeurs et les exigences professionnelles de LAM.</li>
+<li><strong>Aucune acceptation automatique :</strong> le dépôt d'une demande ne garantit ni son acceptation ni la conclusion d'un partenariat.</li>
+<li><strong>Informations complémentaires :</strong> LAM peut demander des renseignements ou documents supplémentaires afin d'évaluer la proposition.</li>
+<li><strong>Négociation :</strong> les contributions, responsabilités, avantages, conditions financières et délais seront discutés entre les parties.</li>
+<li><strong>Validation officielle :</strong> aucun partenariat n'est officiel avant l'approbation expresse de LAM et la signature d'un accord écrit par les parties concernées.</li>
+<li><strong>Respect des engagements :</strong> chaque partie devra respecter les obligations définies dans l'accord signé.</li>
+<li><strong>Droit de refus :</strong> LAM se réserve le droit de refuser toute proposition qui ne correspond pas à ses objectifs, à ses valeurs ou à ses exigences professionnelles.</li>
+<li><strong>Confidentialité :</strong> les informations transmises seront traitées avec discrétion et utilisées aux fins d'évaluation de la proposition, sous réserve des obligations légales applicables.</li>
+<li><strong>Nom, logo et communication :</strong> aucun candidat ne peut utiliser le nom, le logo ou l'identité de LAM, ni annoncer une collaboration, sans autorisation écrite préalable.</li>
+<li><strong>Modification ou cessation :</strong> toute modification ou cessation d'un partenariat sera encadrée par les dispositions de l'accord signé.</li>
+</ol>
+</div>
+<label class="partnership-consent"><input type="checkbox" name="Acceptation des conditions" value="J'ai lu et j'accepte les conditions générales de soumission d'une proposition de partenariat." required><span>Je reconnais avoir lu et accepté les conditions générales de soumission d'une proposition de partenariat. Je comprends que l'envoi de ce formulaire confirme uniquement la transmission de ma demande et ne constitue pas une acceptation de partenariat. *</span></label>
+<button class="btn primary" type="submit">Envoyer ma proposition</button>
+<p class="small" style="margin:14px 0 0">Après réception, un message de confirmation vous sera envoyé à l'adresse e-mail fournie. LAM vous contactera si une suite est donnée à votre proposition.</p>
+</form>
+</div>
+
+<div class="card" style="margin-top:28px">
+<div class="eyebrow">Suivi interne de la demande</div>
+<h3>LES STATUTS POSSIBLES</h3>
+<div class="partnership-status">
+<span><strong>Demande reçue</strong><br>Votre proposition est parvenue à LAM.</span>
+<span><strong>En cours d'étude</strong><br>Notre équipe évalue votre proposition.</span>
+<span><strong>Informations requises</strong><br>Des précisions complémentaires sont nécessaires.</span>
+<span><strong>En négociation</strong><br>Les modalités sont discutées entre les parties.</span>
+<span><strong>Acceptée</strong><br>La proposition est approuvée, sous réserve de l'accord écrit.</span>
+<span><strong>Non retenue</strong><br>La proposition n'est pas sélectionnée.</span>
+</div>
+<p class="small" style="margin:16px 0 0">Ces statuts décrivent le traitement de la demande par LAM. Ils ne constituent pas un espace de suivi automatique en ligne ; toute mise à jour sera communiquée directement au candidat par e-mail ou téléphone.</p>
+</div>
+
+<div class="contactbox" style="margin-top:22px">
+<div class="eyebrow">Service des partenariats</div>
+<h3>UNE QUESTION AVANT DE SOUMETTRE VOTRE PROPOSITION ?</h3>
+<p class="small">Notre équipe reste disponible pour les renseignements relatifs aux propositions de collaboration.</p>
+<div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div>
+<div class="contactline"><small>Téléphone / WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div>
 </div>
 </div>
 </section>
