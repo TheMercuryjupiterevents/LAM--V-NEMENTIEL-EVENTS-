@@ -2687,7 +2687,7 @@ document.addEventListener('click',function(event){
         '<canvas class="lam-signature-canvas" width="1000" height="260" aria-label="Zone de signature électronique"></canvas>'+
         '<div class="lam-signature-actions"><button type="button" class="lam-signature-clear">Effacer la signature</button><span class="lam-signature-status" aria-live="polite">Signature requise</span></div></div>'+
         '<input type="hidden" name="Signature électronique (image PNG)" class="lam-signature-data">'+
-        '<input type="file" name="Signature électronique PNG" class="lam-signature-file" accept="image/png" hidden>'+
+        '<input type="file" name="attachment" class="lam-signature-file" accept="image/png" hidden>'+
         '<input type="hidden" name="Date et heure de signature" class="lam-signature-date">';
       form.appendChild(panel);
 
@@ -2731,7 +2731,7 @@ document.addEventListener('click',function(event){
           var byteString=atob(data.split(",")[1]), bytes=new Uint8Array(byteString.length);
           for(var i=0;i<byteString.length;i++)bytes[i]=byteString.charCodeAt(i);
           var blob=new Blob([bytes],{type:"image/png"});
-          var file=new File([blob],"signature-contrat-lam-"+(index+1)+".png",{type:"image/png"});
+          var file=new File([blob],"signature-electronique-lam-"+(index+1)+".png",{type:"image/png"});
           var transfer=new DataTransfer();transfer.items.add(file);
           form.querySelector(".lam-signature-file").files=transfer.files;
         }catch(err){}
