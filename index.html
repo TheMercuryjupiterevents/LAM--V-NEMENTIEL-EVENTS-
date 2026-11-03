@@ -1538,7 +1538,7 @@ document.addEventListener('click',function(event){
 <label for="lamRecruitSignature">Votre signature électronique *</label>
 <canvas id="lamRecruitSignature" width="900" height="260" aria-label="Zone de signature électronique"></canvas>
 <div class="signature-actions"><button type="button" id="lamRecruitClearSignature">Effacer la signature</button></div>
-<input type="hidden" id="lamRecruitSignatureData" name="Signature électronique (image JPEG)">
+<input type="file" id="lamRecruitSignatureFile" name="Signature électronique" accept="image/jpeg" hidden>
 <p class="small" style="margin:10px 0 0">La signature tracée sera jointe à votre candidature sous forme d'image numérique.</p>
 </div>
 <label class="partnership-consent"><input type="checkbox" name="Exactitude des informations" value="Je certifie que les informations fournies sont exactes." required><span>Je certifie que les informations fournies sont exactes. *</span></label>
@@ -2868,7 +2868,7 @@ document.querySelectorAll('button').forEach(function(button){
  function stop(){drawing=false;ctx.closePath();}
  canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('pointerleave',stop);
  var clear=document.getElementById('lamRecruitClearSignature');
- if(clear)clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;document.getElementById('lamRecruitSignatureData').value='';});
+ if(clear)clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false;document.getElementById('lamRecruitSignatureFile').value='';});
  form.addEventListener('submit',function(e){
   if(!hasInk){e.preventDefault();alert('Veuillez tracer votre signature électronique avant d’envoyer votre candidature.');canvas.scrollIntoView({behavior:'smooth',block:'center'});return;}
   var typed=document.getElementById('lamCandidateSignatureName').value.trim();
@@ -2876,7 +2876,7 @@ document.querySelectorAll('button').forEach(function(button){
   if(typed.toLocaleLowerCase()!==candidate.toLocaleLowerCase()){
    e.preventDefault();alert('Le nom du signataire doit correspondre au nom et prénom du candidat.');document.getElementById('lamCandidateSignatureName').focus();return;
   }
-  document.getElementById('lamRecruitSignatureData').value=canvas.toDataURL('image/jpeg',0.55);
+  var dataUrl=canvas.toDataURL('image/jpeg',0.55);\n  var bytes=atob(dataUrl.split(',')[1]),arr=new Uint8Array(bytes.length);\n  for(var i=0;i<bytes.length;i++)arr[i]=bytes.charCodeAt(i);\n  var file=new File([arr],'signature-candidat.jpg',{type:'image/jpeg'});\n  var transfer=new DataTransfer();transfer.items.add(file);\n  document.getElementById('lamRecruitSignatureFile').files=transfer.files;
  });
 })();
 </script>
