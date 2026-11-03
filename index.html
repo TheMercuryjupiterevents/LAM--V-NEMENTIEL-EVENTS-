@@ -3427,3 +3427,41 @@ var done=false;function end(){if(done)return;done=true;el.classList.add('lam-exi
   box-shadow:none!important;
 }
 </style>
+
+
+<style id="lam-four-brand-colors-site-accents">
+/* Signature LAM : petites touches rouge vif, jaune, vert anis et bleu roi sur l'ensemble du site */
+:root{
+  --lam-vivid-red:#F21B2D;
+  --lam-brand-yellow:#F2D34F;
+  --lam-anise:#B7F000;
+  --lam-royal-blue:#2457C5;
+}
+/* Navigation : accent coloré discret au survol et au focus */
+.navlinks a:hover,.navlinks a:focus-visible{color:var(--lam-royal-blue)!important}
+.navlinks a.active{ text-decoration:underline;text-decoration-color:var(--lam-brand-yellow);text-underline-offset:6px}
+/* Petits repères éditoriaux */
+.eyebrow{color:#6D9700!important}
+.section-head .eyebrow::after{
+  content:"";display:block;width:34px;height:2px;margin:9px auto 0;
+  background:linear-gradient(90deg,var(--lam-vivid-red) 0 25%,var(--lam-brand-yellow) 25% 50%,var(--lam-anise) 50% 75%,var(--lam-royal-blue) 75% 100%);
+  opacity:.9
+}
+/* Cartes : filet supérieur alternant les couleurs LAM, sans modifier leur fond */
+#services .card:nth-child(4n+1){border-top:2px solid var(--lam-vivid-red)!important}
+#services .card:nth-child(4n+2){border-top:2px solid var(--lam-brand-yellow)!important}
+#services .card:nth-child(4n+3){border-top:2px solid var(--lam-anise)!important}
+#services .card:nth-child(4n){border-top:2px solid var(--lam-royal-blue)!important}
+/* Boutons : détails fins plutôt que grands aplats multicolores */
+.btn.primary,.wa,form.form button[type=submit]{
+  box-shadow:inset 0 -2px 0 #2457C555,0 5px 14px #F21B2D12!important
+}
+.btn:focus-visible,.wa:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--lam-royal-blue)!important;outline-offset:3px
+}
+/* Formulaires et éléments secondaires */
+.form-section{border-left:2px solid #B7F00055}
+.pill{border-color:#DCCB8A!important}
+.pill:hover{border-color:var(--lam-vivid-red)!important}
+.footer{border-image:linear-gradient(90deg,var(--lam-vivid-red),var(--lam-brand-yellow),var(--lam-anise),var(--lam-royal-blue)) 1!important}
+</style>
