@@ -3546,3 +3546,61 @@ img{max-width:100%;height:auto}
   .section{padding-top:clamp(42px,9vw,64px)!important;padding-bottom:clamp(42px,9vw,64px)!important}
 }
 </style>
+
+
+<style id="lam-red-label-contrast-and-clarity">
+/* RED LABEL : carte premium à fort contraste et texte parfaitement lisible */
+#formules .grid.grid4{align-items:stretch}
+#formules .card.package.redlabel{
+  background:#171717!important;
+  color:#FFFDF7!important;
+  border:2px solid #F21B2D!important;
+  border-top:5px solid #F21B2D!important;
+  border-radius:14px!important;
+  padding:clamp(22px,2.5vw,32px)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.14)!important;
+  display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+  min-width:0!important;overflow:visible!important
+}
+#formules .card.package.redlabel .eyebrow{
+  color:#F2D34F!important;
+  font-size:14px!important;font-weight:800!important;
+  letter-spacing:.12em!important;text-transform:uppercase!important;
+  line-height:1.5!important;opacity:1!important
+}
+#formules .card.package.redlabel h3{
+  color:#FFFDF7!important;font-size:clamp(22px,2.2vw,30px)!important;
+  line-height:1.2!important;letter-spacing:.06em!important;
+  margin:12px 0 16px!important;overflow-wrap:anywhere!important
+}
+#formules .card.package.redlabel p{
+  color:#FFFDF7!important;-webkit-text-fill-color:#FFFDF7!important;
+  font-size:16px!important;line-height:1.75!important;
+  font-weight:450!important;opacity:1!important;margin:0 0 24px!important;
+  overflow-wrap:break-word!important
+}
+#formules .card.package.redlabel .actions{margin-top:auto!important}
+#formules .card.package.redlabel .actions a.btn{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:48px!important;padding:12px 20px!important;
+  background:#F21B2D!important;color:#FFFFFF!important;
+  -webkit-text-fill-color:#FFFFFF!important;border:2px solid #F21B2D!important;
+  font-size:15px!important;font-weight:750!important;line-height:1.35!important;
+  text-align:center!important;white-space:normal!important;text-decoration:none!important;
+  border-radius:6px!important
+}
+#formules .card.package.redlabel .actions a.btn:hover,
+#formules .card.package.redlabel .actions a.btn:focus-visible{
+  background:#FFFFFF!important;color:#171717!important;-webkit-text-fill-color:#171717!important;
+  border-color:#FFFFFF!important
+}
+@media(max-width:900px){
+  #formules .grid.grid4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:600px){
+  #formules .grid.grid4{grid-template-columns:minmax(0,1fr)!important}
+  #formules .card.package.redlabel{padding:24px!important}
+  #formules .card.package.redlabel p{font-size:16px!important;line-height:1.75!important}
+  #formules .card.package.redlabel .actions a.btn{width:100%!important}
+}
+</style>
