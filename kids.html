@@ -67,7 +67,7 @@ footer{background:var(--ink);color:#fff;text-align:center;padding:28px 14px;font
 <div class="field"><label for="childFirst">Prénom de l'enfant *</label><input id="childFirst" name="Prénom de l'enfant" required></div>
 <div class="field"><label for="childLast">Nom de l'enfant *</label><input id="childLast" name="Nom de l'enfant" required></div>
 <div class="field"><label for="birth">Date de naissance *</label><input id="birth" name="Date de naissance" type="date" min="2009-11-05" max="2025-11-04" required><p class="hint">L'âge sera vérifié automatiquement : de 1 à 16 ans.</p></div>
-<div class="field"><label for="childAge">Âge de l'enfant (1 à 16 ans)</label><input id="childAge" name="Âge calculé" readonly placeholder="De 1 à 16 ans"></div>
+<div class="field"><label for="childAge">Âge de l'enfant *</label><select id="childAge" name="Âge de l'enfant" required><option value="">Choisir l’âge (1 à 16 ans)</option><option value="1">1 an</option><option value="2">2 ans</option><option value="3">3 ans</option><option value="4">4 ans</option><option value="5">5 ans</option><option value="6">6 ans</option><option value="7">7 ans</option><option value="8">8 ans</option><option value="9">9 ans</option><option value="10">10 ans</option><option value="11">11 ans</option><option value="12">12 ans</option><option value="13">13 ans</option><option value="14">14 ans</option><option value="15">15 ans</option><option value="16">16 ans</option></select><p class="hint">L’âge est calculé automatiquement à partir de la date de naissance.</p></div>
 <div class="field full"><label for="childAddress">Adresse de résidence *</label><input id="childAddress" name="Adresse de résidence de l'enfant" required></div>
 </div></fieldset>
 <fieldset><legend>02 — Parent ou tuteur légal</legend><div class="grid">
@@ -110,7 +110,7 @@ footer{background:var(--ink);color:#fff;text-align:center;padding:28px 14px;font
 <script>
 const birth=document.getElementById('birth'),age=document.getElementById('childAge');
 function calcAge(v){if(!v)return '';const d=new Date(v+'T12:00:00'),n=new Date();let a=n.getFullYear()-d.getFullYear();if(n.getMonth()<d.getMonth()||(n.getMonth()===d.getMonth()&&n.getDate()<d.getDate()))a--;return a}
-birth.addEventListener('change',()=>{const a=calcAge(birth.value);age.value=a>=0?a+' ans':'';birth.setCustomValidity(a<1||a>16?'L’enfant doit avoir entre 1 et 16 ans.':'')});
+birth.addEventListener('change',()=>{const a=calcAge(birth.value);age.value=a>=1&&a<=16?String(a):'';birth.setCustomValidity(a<1||a>16?'L’enfant doit avoir entre 1 et 16 ans.':'')});
 const canvas=document.getElementById('signatureCanvas'),ctx=canvas.getContext('2d');let drawing=false,signed=false;
 function sizeCanvas(){const r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(160*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#171717'}
 sizeCanvas();window.addEventListener('resize',sizeCanvas);
