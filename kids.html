@@ -67,13 +67,6 @@ footer{background:#263746;color:#fff;text-align:center;padding:28px 14px;font-si
 .kids-promo-swatches span:nth-child(3){background:#ffe58a}
 @media(max-width:600px){.kids-promo{padding-top:20px}.kids-promo-inner{border-radius:14px}.kids-promo-dates{font-size:.9rem}}
 
-
-.kids-color-choices{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:10px 0 14px}
-.kids-color-choice{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;margin:0}
-.kids-color-choice input{position:absolute;opacity:0;width:1px;height:1px}
-.kids-color-choice span{display:block;width:42px;height:42px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #cfc5d8;transition:transform .15s,box-shadow .15s}
-.kids-color-choice input:checked+span{box-shadow:0 0 0 3px #806394;transform:scale(1.1)}
-.kids-color-choice input:focus-visible+span{outline:3px solid #806394;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -136,12 +129,24 @@ footer{background:#263746;color:#fff;text-align:center;padding:28px 14px;font-si
 <fieldset><legend>05 — Thème, couleurs et décoration</legend>
 <div class="subhead">Thème souhaité</div><div class="options">
 <label class="option"><input type="checkbox" name="Thème" value="Princesse / Prince">Princesse / Prince</label><label class="option"><input type="checkbox" name="Thème" value="Barbie">Barbie</label><label class="option"><input type="checkbox" name="Thème" value="Super-héros">Super-héros</label><label class="option"><input type="checkbox" name="Thème" value="Safari">Safari</label><label class="option"><input type="checkbox" name="Thème" value="Licorne">Licorne</label><label class="option"><input type="checkbox" name="Thème" value="Football">Football</label><label class="option"><input type="checkbox" name="Thème" value="Jungle">Jungle</label><label class="option"><input type="checkbox" name="Thème" value="Voitures">Voitures</label><label class="option"><input type="checkbox" name="Thème" value="Espace">Espace</label><label class="option"><input type="checkbox" name="Thème" value="Conte de fées">Conte de fées</label><label class="option"><input type="checkbox" name="Thème" value="Cirque">Cirque</label><label class="option"><input type="checkbox" name="Thème" value="Nature">Nature</label><label class="option"><input type="checkbox" name="Thème" value="Thème personnalisé">Thème personnalisé</label><label class="option"><input type="checkbox" name="Thème" value="Autre">Autre</label>
-</div><div class="subhead">Choisissez les couleurs souhaitées</div>
-<div class="kids-color-choices" role="group" aria-label="Sélection des couleurs">
-<label class="kids-color-choice" title="Mauve"><input type="checkbox" name="Couleurs souhaitées" value="Mauve"><span style="background:#d9c2e8" aria-label="Mauve"></span></label>
-<label class="kids-color-choice" title="Rose pâle"><input type="checkbox" name="Couleurs souhaitées" value="Rose pâle"><span style="background:#f7dce8" aria-label="Rose pâle"></span></label>
-<label class="kids-color-choice" title="Bleu ciel"><input type="checkbox" name="Couleurs souhaitées" value="Bleu ciel"><span style="background:#bfe8f8" aria-label="Bleu ciel"></span></label>
-<label class="kids-color-choice" title="Jaune doux"><input type="checkbox" name="Couleurs souhaitées" value="Jaune doux"><span style="background:#ffe58a" aria-label="Jaune doux"></span></label>
+</div><div class="subhead">Couleurs souhaitées — plusieurs choix possibles</div>
+<div class="options">
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Mauve">Mauve</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Rose pâle">Rose pâle</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Bleu ciel">Bleu ciel</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Jaune doux">Jaune doux</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Rose">Rose</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Bleu">Bleu</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Rouge">Rouge</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Orange">Orange</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Vert">Vert</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Lilas">Lilas</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Blanc">Blanc</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Noir">Noir</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Beige">Beige</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Doré">Doré</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Argenté">Argenté</label>
+<label class="option"><input type="checkbox" name="Couleurs souhaitées" value="Autre">Autre</label>
 </div><div class="grid" style="margin-top:14px"><div class="field"><label>Couleur principale</label><input name="Couleur principale"></div><div class="field"><label>Couleur secondaire</label><input name="Couleur secondaire"></div><label>Décrivez le thème, la décoration et l’ambiance souhaités</label><textarea name="Description thème et décoration"></textarea></div></div></fieldset>
 <fieldset><legend>06 — Activités et animations</legend><div class="options">
 <label class="option"><input type="checkbox" name="Animations souhaitées" value="Jeux collectifs et défis">Jeux collectifs et défis</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Chasse au trésor">Chasse au trésor</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Maquillage artistique">Maquillage artistique</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Sculpture sur ballons">Sculpture sur ballons</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Dessin et coloriage">Dessin et coloriage</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Ateliers créatifs">Ateliers créatifs</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Danse et mini-disco">Danse et mini-disco</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Karaoké">Karaoké</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Contes et lecture">Contes et lecture</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Magicien">Magicien</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Spectacle">Spectacle</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Mascotte">Mascotte</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Jeux sportifs">Jeux sportifs</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Atelier cuisine et pâtisserie">Atelier cuisine et pâtisserie</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Expériences scientifiques adaptées à l’âge">Expériences scientifiques adaptées à l’âge</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Cinéma pour enfants">Cinéma pour enfants</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Jeux extérieurs">Jeux extérieurs</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Structures gonflables">Structures gonflables</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Espace bébés et tout-petits">Espace bébés et tout-petits</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Photobooth">Photobooth</label><label class="option"><input type="checkbox" name="Animations souhaitées" value="Autre">Autre</label>
