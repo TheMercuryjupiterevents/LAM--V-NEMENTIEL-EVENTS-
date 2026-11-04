@@ -50,11 +50,42 @@ button{cursor:pointer;border:1px solid var(--ink);background:#fff;padding:9px 14
 footer{background:#263746;color:#fff;text-align:center;padding:28px 14px;font-size:.8rem}
 @media(max-width:800px){.layout{grid-template-columns:1fr}aside{position:static}.hero{padding:54px 0 45px}}
 @media(max-width:560px){.grid,.options{grid-template-columns:1fr}.nav{min-height:60px}.brand{font-size:.8rem}main{padding:34px 0 55px}}
+
+/* Promotion saisonnière LAM KIDS — palette mauve, rose, bleu ciel et jaune */
+.kids-promo{padding:30px 0 12px;background:#fbfdff}
+.kids-promo-inner{width:min(900px,92%);margin:0 auto;padding:clamp(24px,5vw,42px);text-align:center;border:1px solid #dfd0e9;border-radius:18px;background:linear-gradient(120deg,#f0e7f7 0%,#fdebf2 36%,#e5f5fc 72%,#fff7d8 100%);box-shadow:0 12px 30px #5b477010}
+.kids-promo-kicker{margin:0 0 8px;color:#795b91;font-size:.75rem;font-weight:800;letter-spacing:.2em}
+.kids-promo-discount{font:600 clamp(3.4rem,10vw,5.6rem)/1 Georgia,"Times New Roman",serif;color:#795b91;letter-spacing:.02em}
+.kids-promo-inner h2{margin:12px 0 8px;color:#59456e;font-size:clamp(1.35rem,4vw,2rem)}
+.kids-promo-copy{margin:0;color:#4d5262;font-size:1.02rem}
+.kids-promo-dates{display:inline-block;margin:18px 0 8px;padding:9px 16px;border:1px solid #d8c4e6;border-radius:999px;background:#ffffffc9;color:#59456e;font-weight:700}
+.kids-promo-age{margin:0;color:#647887;font-size:.88rem}
+.kids-promo-swatches{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.kids-promo-swatches span{width:28px;height:28px;border-radius:50%;border:1px solid #ffffff;box-shadow:0 0 0 1px #00000018}
+.kids-promo-swatches span:nth-child(1){background:#d9c2e8}
+.kids-promo-swatches span:nth-child(2){background:#f6d2df}
+.kids-promo-swatches span:nth-child(3){background:#bfe5f5}
+.kids-promo-swatches span:nth-child(4){background:#ffe58a}
+@media(max-width:600px){.kids-promo{padding-top:20px}.kids-promo-inner{border-radius:14px}.kids-promo-dates{font-size:.9rem}}
+
 </style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="index.html"><b>LAM</b> ÉVÉNEMENTIEL & EVENTS</a><a class="back" href="index.html">← Retour au site</a></div></header>
 <section class="hero"><div class="wrap"><div class="kicker">FORMULAIRE 07 — INSCRIPTION LAM KIDS</div><h1><span>LAM</span> KIDS</h1><p class="subtitle">ESPACE ENFANTS</p><p class="intro">Des activités, des célébrations et des expériences pensées pour accompagner les enfants dans un cadre organisé, attentif et bienveillant.</p><div class="age">Pour les enfants de 1 à 16 ans</div></div></section>
+<section class="kids-promo" aria-label="Promotion LAM KIDS">
+  <div class="kids-promo-inner">
+    <p class="kids-promo-kicker">OFFRE SPÉCIALE LAM KIDS</p>
+    <div class="kids-promo-discount">-15 %</div>
+    <h2>Une attention spéciale pour les enfants</h2>
+    <p class="kids-promo-copy">Profitez de <strong>15 % de réduction</strong> sur les prestations LAM KIDS.</p>
+    <p class="kids-promo-dates">Du 1er décembre 2026 au 30 avril 2027</p>
+    <p class="kids-promo-age">Offre destinée aux enfants de 1 à 16 ans.</p>
+    <div class="kids-promo-swatches" aria-label="Palette mauve pâle, rose pâle, bleu ciel et jaune">
+      <span title="Mauve pâle"></span><span title="Rose pâle"></span><span title="Bleu ciel"></span><span title="Jaune"></span>
+    </div>
+  </div>
+</section>
 <main class="wrap"><div class="layout">
 <aside><div class="kicker">Avant de commencer</div><h2>Inscription par un parent ou tuteur légal</h2><p>Ce formulaire doit être rempli par un adulte légalement responsable de l'enfant. Une demande doit être envoyée pour chaque enfant.</p><ul><li>Les informations marquées d'un astérisque sont obligatoires.</li><li>La signature du parent ou tuteur légal est requise.</li><li>L'autorisation de photographie est facultative et séparée.</li><li>L'envoi du formulaire constitue une demande, pas une confirmation automatique de participation.</li></ul><p><strong>LAM ÉVÉNEMENTIEL & EVENTS</strong><br><em>L’élégance au service de vos moments d’exception.</em></p></aside>
 <form id="lamKidsForm" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
