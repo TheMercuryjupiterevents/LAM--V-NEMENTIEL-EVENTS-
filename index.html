@@ -3316,6 +3316,8 @@ h3{font:500 1.15rem/1.35 Georgia,"Times New Roman",serif!important;color:var(--l
 #lam-editorial-intro .lam-editorial-name span{display:block;color:#fff;opacity:0;transform:translateY(10px);animation:lamEditorialReveal .8s ease forwards}
 #lam-editorial-intro .lam-editorial-name .lam-event{font-size:clamp(.9rem,3.3vw,1.45rem);animation-delay:1.05s}
 #lam-editorial-intro .lam-editorial-name .lam-events{font-size:clamp(.9rem,3.3vw,1.45rem);letter-spacing:.34em;animation-delay:1.35s}
+#lam-editorial-intro .lam-editorial-name .lam-event{color:#2457C5!important}
+#lam-editorial-intro .lam-editorial-name .lam-events{color:#FF7900!important;letter-spacing:.22em}
 #lam-editorial-intro .lam-editorial-rule{position:relative;z-index:1;width:clamp(70px,15vw,126px);height:1px;background:linear-gradient(90deg,transparent,#aeb4ba,#f4f5f6,#aeb4ba,transparent);opacity:0;transform:scaleX(.5);animation:lamEditorialRule .9s ease 1.7s forwards}
 #lam-editorial-intro .lam-editorial-country{position:relative;z-index:1;margin:0;color:#fff;font:500 clamp(.68rem,2vw,.88rem)/1.4 Arial,Helvetica,sans-serif;letter-spacing:.48em;text-transform:uppercase;opacity:0;animation:lamEditorialReveal .8s ease 1.95s forwards}
 #lam-editorial-intro .lam-editorial-enter{position:relative;z-index:1;margin-top:clamp(8px,2vh,18px);padding:11px 23px;border:1px solid #aeb4ba;background:transparent;color:#fff;font:500 .65rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;opacity:0;animation:lamEditorialReveal .7s ease 2.25s forwards}
@@ -3330,7 +3332,7 @@ var old=document.getElementById('lam-3d-welcome');if(old)old.remove();
 var legacy=document.getElementById('welcome-intro');if(legacy)legacy.remove();
 if(document.getElementById('lam-editorial-intro'))return;
 var intro=document.createElement('section');intro.id='lam-editorial-intro';intro.setAttribute('role','dialog');intro.setAttribute('aria-label','LAM ÉVÉNEMENTIEL EVENTS HAÏTI');intro.setAttribute('aria-modal','true');
-intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p><button class="lam-editorial-enter" type="button">ENTRER CHEZ LAM</button>';
+intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">&amp; EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p><button class="lam-editorial-enter" type="button">ENTRER CHEZ LAM</button>';
 document.body.appendChild(intro);var done=false;function close(){if(done)return;done=true;intro.classList.add('is-leaving');window.setTimeout(function(){intro.remove()},850)}
 intro.querySelector('button').addEventListener('click',close);window.setTimeout(close,5600);
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();})();
