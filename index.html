@@ -1248,32 +1248,49 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field"><label>Ville et lieu *</label><input name="Ville et lieu" required placeholder="Ville, salle ou adresse"></div><div class="field"><label>Nombre d’invités / participants *</label><select name="Tranche du nombre d’invités" required><option value="">Choisir une tranche</option><option>1–10 invités</option><option>11–20 invités</option><option>21–30 invités</option><option>31–50 invités</option><option>51–100 invités</option><option>101–150 invités</option><option>151–200 invités</option><option>201–300 invités</option><option>301–500 invités</option><option>501–750 invités</option><option>751–1 000 invités</option><option>1 001–1 500 invités</option><option>1 501–2 000 invités</option><option>2 001–3 000 invités</option><option>3 001–5 000 invités</option><option>5 001–8 000 invités</option><option>Autre nombre — préciser ci-dessous</option></select></div><div class="field"><label>Nombre exact (facultatif)</label><input type="number" name="Nombre exact d’invités" min="1" max="8000" step="1" placeholder="De 1 à 8 000 personnes"></div></div></div>
 <div class="form-section"><h3>03 — Prestations souhaitées</h3><div class="checks"><label class="check"><input type="checkbox" name="Prestations[]" value="Organisation complète">Organisation complète</label><label class="check"><input type="checkbox" name="Prestations[]" value="Coordination le jour J">Coordination le jour J</label><label class="check"><input type="checkbox" name="Prestations[]" value="Décoration et scénographie">Décoration et scénographie</label><label class="check"><input type="checkbox" name="Prestations[]" value="Fleurs et art de la table">Fleurs et art de la table</label><label class="check"><input type="checkbox" name="Prestations[]" value="Service traiteur et boissons">Service traiteur et boissons</label><label class="check"><input type="checkbox" name="Prestations[]" value="Mobilier et matériel">Mobilier et matériel</label><label class="check"><input type="checkbox" name="Prestations[]" value="Sonorisation et éclairage">Sonorisation et éclairage</label><label class="check"><input type="checkbox" name="Prestations[]" value="Accueil et service des invités">Accueil et service des invités</label></div></div>
 
+
 <div class="form-section" id="boissons-section-01">
 <h3>BOISSONS &amp; FOURNITURE</h3>
-<p class="small">Sélectionnez les boissons souhaitées pour votre événement. Plusieurs choix sont possibles.</p>
+<p class="small">Sélectionnez toutes les boissons souhaitées pour votre événement.</p>
 <div class="checks">
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale">Eau minérale</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels">Jus naturels</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses">Boissons gazeuses</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool">Cocktails sans alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails">Mocktails</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool">Cocktails avec alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rouge">Vin rouge</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin blanc">Vin blanc</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rosé">Vin rosé</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne">Champagne</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins mousseux">Vins mousseux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Bières">Bières</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Spiritueux">Spiritueux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres boissons">Autres boissons</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale"> Eau minérale</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels"> Jus naturels</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses"> Boissons gazeuses</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool"> Cocktails avec alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool"> Cocktails sans alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails"> Mocktails</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rouges"> Vins rouges</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins blancs"> Vins blancs</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rosés"> Vins rosés</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne"> Champagne</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons pétillantes"> Boissons pétillantes</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres"> Autres (à préciser)</label>
 </div>
 <div class="fieldgrid" style="margin-top:14px">
 <div class="field"><label>Quantités / nombre de bouteilles souhaités</label><input name="Quantités de boissons souhaitées" placeholder="Précisez les quantités estimées"></div>
-<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes pour les boissons" min="1"></div>
-<div class="field full"><label>Marques, préférences ou précisions (facultatif)</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques souhaitées, boissons particulières, service au verre, etc."></textarea></div>
-<div class="field full"><label>Qui fournira les boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM fournit les boissons">LAM ÉVÉNEMENTIEL &amp; EVENTS fournit les boissons</option><option value="Le client fournit les boissons">Le client fournit les boissons</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes à servir pour les boissons" min="1"></div>
+<div class="field full"><label>Qui prendra en charge la fourniture des boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM ÉVÉNEMENTIEL &amp; EVENTS">LAM ÉVÉNEMENTIEL &amp; EVENTS</option><option value="Le client">Le client</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field full"><label>Autres précisions sur les boissons</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques, préférences, boissons particulières, etc."></textarea></div>
 </div>
-<p class="small"><strong>Information tarifaire :</strong> si LAM prend en charge l’achat des boissons, leur coût ainsi que les frais d’approvisionnement, de transport et de service applicables seront intégrés au devis et facturés au client après validation. Si le client fournit les boissons, leur achat reste à sa charge. Tout service de bar ou de service des boissons demandé à LAM sera indiqué séparément dans le devis.</p>
+<div class="form-section" style="padding-bottom:0">
+<h3>Service des boissons</h3>
+<p class="small">Souhaitez-vous que LAM assure également le service des boissons pendant votre événement ?</p>
+<div class="checks">
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Oui, LAM assure le service" required> Oui, LAM assure le service des boissons.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Non, le client prend en charge le service"> Non, le client prend en charge le service.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Service partagé entre LAM et le client"> Service partagé entre LAM et le client.</label>
+</div>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>BUDGET &amp; FACTURATION</h3>
+<p class="small">Les boissons demandées seront intégrées à la proposition financière de l’événement.</p>
+<p class="small">Lorsque LAM prend en charge leur fourniture, leur coût sera ajouté au devis du client. Lorsque le client fournit lui-même les boissons, celles-ci ne seront pas facturées par LAM.</p>
+<p class="small">Lorsque LAM assure le service des boissons, les frais de personnel et de service seront ajoutés au devis. Toute demande supplémentaire fera l’objet d’une facturation complémentaire après validation du client.</p>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>PRÉCISIONS SUPPLÉMENTAIRES</h3>
+<div class="field full"><label>Demandes particulières concernant les boissons, leur présentation, leur préparation ou leur service</label><textarea name="Demandes particulières concernant les boissons" rows="3" placeholder="Ajoutez ici toute précision utile."></textarea></div>
+</div>
 </div>
 <div class="form-section"><h3>Couleurs & décoration</h3><p class="small">Ouvrez uniquement la rubrique souhaitée. Vous pouvez sélectionner plusieurs couleurs.</p><div class="color-mix-live" aria-live="polite" style="margin:16px 0 20px;padding:16px;border:1px solid #e7d9bd;border-radius:16px;background:linear-gradient(135deg,#fffdf8,#ffffff)"><strong style="display:block;margin-bottom:6px">Votre mélange de couleurs en direct</strong><p class="small" style="margin:0 0 12px">Cochez plusieurs couleurs ci-dessous : elles s’assembleront ici pour vous aider à visualiser votre palette. Vous pouvez en choisir autant que vous le souhaitez.</p><div class="color-mix-preview" style="height:54px;border-radius:12px;border:1px solid #ddd;background:linear-gradient(90deg,#f5f5f5 0%,#f5f5f5 100%);box-shadow:inset 0 1px 3px #00000012"></div><p class="color-mix-label small" style="margin:10px 0 0">Votre palette apparaîtra ici après votre sélection.</p></div><details class="color-combinations"><summary><strong>Combinaisons de couleurs</strong> <span class="small">(facultatif — ouvrir pour voir les suggestions)</span></summary><div class="field full"><label>Choisissez une ou plusieurs associations</label><p class="small">Vous pouvez aussi choisir librement vos couleurs dans les listes ci-dessous.</p><div class="color-swatch-grid"><label class="color-swatch" title="Blanc + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Blanc + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ffffff 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #ffffff 0 50%, #aeb4ba 50% 100%)"></span><span>Blanc + doré</span></label><label class="color-swatch" title="Noir + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Noir + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #111111 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #111111 0 50%, #aeb4ba 50% 100%)"></span><span>Noir + doré</span></label><label class="color-swatch" title="Rouge + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rouge + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #aeb4ba 50% 100%)"></span><span>Rouge + doré</span></label><label class="color-swatch" title="Rouge + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rouge + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #ffffff 50% 100%)"></span><span>Rouge + blanc</span></label><label class="color-swatch" title="Bleu cobalt + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu cobalt + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #0047ab 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #0047ab 0 50%, #ffffff 50% 100%)"></span><span>Bleu cobalt + blanc</span></label><label class="color-swatch" title="Bleu ciel + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu ciel + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #87ceeb 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #87ceeb 0 50%, #ffffff 50% 100%)"></span><span>Bleu ciel + blanc</span></label><label class="color-swatch" title="Bleu marine + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu marine + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #001f3f 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #001f3f 0 50%, #aeb4ba 50% 100%)"></span><span>Bleu marine + doré</span></label><label class="color-swatch" title="Vert émeraude + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Vert émeraude + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #50c878 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #50c878 0 50%, #aeb4ba 50% 100%)"></span><span>Vert émeraude + doré</span></label><label class="color-swatch" title="Vert sauge + crème"><input type="checkbox" name="Combinaisons de couleurs[]" value="Vert sauge + crème"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #9caf88 0 50%, #fffdd0 50% 100%);background:linear-gradient(135deg, #9caf88 0 50%, #fffdd0 50% 100%)"></span><span>Vert sauge + crème</span></label><label class="color-swatch" title="Rose poudré + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rose poudré + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #e8b4b8 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #e8b4b8 0 50%, #aeb4ba 50% 100%)"></span><span>Rose poudré + doré</span></label><label class="color-swatch" title="Rose gold + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rose gold + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #b76e79 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #b76e79 0 50%, #ffffff 50% 100%)"></span><span>Rose gold + blanc</span></label><label class="color-swatch" title="Violet + argent"><input type="checkbox" name="Combinaisons de couleurs[]" value="Violet + argent"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #800080 0 50%, #c0c0c0 50% 100%);background:linear-gradient(135deg, #800080 0 50%, #c0c0c0 50% 100%)"></span><span>Violet + argent</span></label><label class="color-swatch" title="Orange + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Orange + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff7f00 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #ff7f00 0 50%, #ffffff 50% 100%)"></span><span>Orange + blanc</span></label><label class="color-swatch" title="Noir + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Noir + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #111111 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #111111 0 50%, #ffffff 50% 100%)"></span><span>Noir + blanc</span></label><label class="color-swatch" title="Champagne + beige"><input type="checkbox" name="Combinaisons de couleurs[]" value="Champagne + beige"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #f7e7ce 0 50%, #f5f5dc 50% 100%);background:linear-gradient(135deg, #f7e7ce 0 50%, #f5f5dc 50% 100%)"></span><span>Champagne + beige</span></label><label class="color-swatch" title="Turquoise + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Turquoise + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #40e0d0 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #40e0d0 0 50%, #aeb4ba 50% 100%)"></span><span>Turquoise + doré</span></label><label class="color-swatch" title="Bordeaux + crème"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bordeaux + crème"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #800020 0 50%, #fffdd0 50% 100%);background:linear-gradient(135deg, #800020 0 50%, #fffdd0 50% 100%)"></span><span>Bordeaux + crème</span></label><label class="color-swatch" title="Jaune + gris"><input type="checkbox" name="Combinaisons de couleurs[]" value="Jaune + gris"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ffdf00 0 50%, #808080 50% 100%);background:linear-gradient(135deg, #ffdf00 0 50%, #808080 50% 100%)"></span><span>Jaune + gris</span></label><label class="color-swatch" title="Multicolore"><input type="checkbox" name="Combinaisons de couleurs[]" value="Multicolore"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #0047ab 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #0047ab 50% 100%)"></span><span>Multicolore</span></label></div><p class="small">Les associations sont des suggestions : vous gardez la liberté de choisir les couleurs que vous aimez.</p></div></details>
 <div class="fieldgrid">
@@ -1329,6 +1346,50 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 
 <div class="form-section"><h3>02 — Les détails essentiels</h3><div class="fieldgrid"><div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div><div class="field"><label>Heure de début de l’événement *</label><input type="time" name="Heure de début de l’événement" required></div><div class="field"><label>Heure de fin de l’événement *</label><input type="time" name="Heure de fin de l’événement" required></div><div class="field"><label>Ville / lieu *</label><input name="Ville et lieu" required></div><div class="field"><label>Nombre d’invités / participants *</label><select name="Tranche du nombre d’invités" required><option value="">Choisir une tranche</option><option>1–10 invités</option><option>11–20 invités</option><option>21–30 invités</option><option>31–50 invités</option><option>51–100 invités</option><option>101–150 invités</option><option>151–200 invités</option><option>201–300 invités</option><option>301–500 invités</option><option>501–750 invités</option><option>751–1 000 invités</option><option>1 001–1 500 invités</option><option>1 501–2 000 invités</option><option>2 001–3 000 invités</option><option>3 001–5 000 invités</option><option>5 001–8 000 invités</option><option>Autre nombre — préciser ci-dessous</option></select></div><div class="field"><label>Nombre exact (facultatif)</label><input type="number" name="Nombre exact d’invités" min="1" max="8000" step="1" placeholder="De 1 à 8 000 personnes"></div></div></div>
 <div class="form-section"><h3>03 — Services souhaités</h3><div class="checks"><label class="check"><input type="checkbox" name="Services[]" value="Décoration">Décoration</label><label class="check"><input type="checkbox" name="Services[]" value="Organisation">Organisation</label><label class="check"><input type="checkbox" name="Services[]" value="Dîner / service traiteur">Dîner / service traiteur</label><label class="check"><input type="checkbox" name="Services[]" value="Gâteau et desserts">Gâteau et desserts</label><label class="check"><input type="checkbox" name="Services[]" value="Ballons et arrière-plan photo">Ballons et arrière-plan photo</label><label class="check"><input type="checkbox" name="Services[]" value="Tables, chaises et accessoires">Tables, chaises et accessoires</label><label class="check"><input type="checkbox" name="Services[]" value="Coordination le jour J">Coordination le jour J</label></div></div>
+
+<div class="form-section" id="boissons-section-02">
+<h3>BOISSONS &amp; FOURNITURE</h3>
+<p class="small">Sélectionnez toutes les boissons souhaitées pour votre événement.</p>
+<div class="checks">
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale"> Eau minérale</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels"> Jus naturels</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses"> Boissons gazeuses</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool"> Cocktails avec alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool"> Cocktails sans alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails"> Mocktails</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rouges"> Vins rouges</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins blancs"> Vins blancs</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rosés"> Vins rosés</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne"> Champagne</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons pétillantes"> Boissons pétillantes</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres"> Autres (à préciser)</label>
+</div>
+<div class="fieldgrid" style="margin-top:14px">
+<div class="field"><label>Quantités / nombre de bouteilles souhaités</label><input name="Quantités de boissons souhaitées" placeholder="Précisez les quantités estimées"></div>
+<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes à servir pour les boissons" min="1"></div>
+<div class="field full"><label>Qui prendra en charge la fourniture des boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM ÉVÉNEMENTIEL &amp; EVENTS">LAM ÉVÉNEMENTIEL &amp; EVENTS</option><option value="Le client">Le client</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field full"><label>Autres précisions sur les boissons</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques, préférences, boissons particulières, etc."></textarea></div>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>Service des boissons</h3>
+<p class="small">Souhaitez-vous que LAM assure également le service des boissons pendant votre événement ?</p>
+<div class="checks">
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Oui, LAM assure le service" required> Oui, LAM assure le service des boissons.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Non, le client prend en charge le service"> Non, le client prend en charge le service.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Service partagé entre LAM et le client"> Service partagé entre LAM et le client.</label>
+</div>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>BUDGET &amp; FACTURATION</h3>
+<p class="small">Les boissons demandées seront intégrées à la proposition financière de l’événement.</p>
+<p class="small">Lorsque LAM prend en charge leur fourniture, leur coût sera ajouté au devis du client. Lorsque le client fournit lui-même les boissons, celles-ci ne seront pas facturées par LAM.</p>
+<p class="small">Lorsque LAM assure le service des boissons, les frais de personnel et de service seront ajoutés au devis. Toute demande supplémentaire fera l’objet d’une facturation complémentaire après validation du client.</p>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>PRÉCISIONS SUPPLÉMENTAIRES</h3>
+<div class="field full"><label>Demandes particulières concernant les boissons, leur présentation, leur préparation ou leur service</label><textarea name="Demandes particulières concernant les boissons" rows="3" placeholder="Ajoutez ici toute précision utile."></textarea></div>
+</div>
+</div>
 
 <div class="form-section" id="boissons-section-02">
 <h3>BOISSONS &amp; FOURNITURE</h3>
@@ -1418,32 +1479,49 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <div class="field full"><label>Participants officiels / délégations</label><select name="Participants officiels"><option>Non</option><option>Dirigeants</option><option>Personnalités officielles / délégations</option><option>À confirmer</option></select></div></div></div>
 <div class="form-section"><h3>03 — Besoins techniques et logistiques</h3><div class="checks"><label class="check"><input type="checkbox" name="Besoins[]" value="Planification et coordination">Planification et coordination</label><label class="check"><input type="checkbox" name="Besoins[]" value="Protocole et accueil">Protocole et accueil</label><label class="check"><input type="checkbox" name="Besoins[]" value="Aménagement de salle et sièges">Aménagement de salle et sièges</label><label class="check"><input type="checkbox" name="Besoins[]" value="Scène, podium et pupitre">Scène, podium et pupitre</label><label class="check"><input type="checkbox" name="Besoins[]" value="Sonorisation et microphones">Sonorisation et microphones</label><label class="check"><input type="checkbox" name="Besoins[]" value="Projection et écrans">Projection et écrans</label><label class="check"><input type="checkbox" name="Besoins[]" value="Décoration et signalétique">Décoration et signalétique</label><label class="check"><input type="checkbox" name="Besoins[]" value="Service traiteur et pauses-café">Service traiteur et pauses-café</label><label class="check"><input type="checkbox" name="Besoins[]" value="Gestion des invités">Gestion des invités</label><label class="check"><input type="checkbox" name="Besoins[]" value="Logistique sur place">Logistique sur place</label></div></div>
 
+
 <div class="form-section" id="boissons-section-03">
 <h3>BOISSONS &amp; FOURNITURE</h3>
-<p class="small">Sélectionnez les boissons souhaitées pour votre événement. Plusieurs choix sont possibles.</p>
+<p class="small">Sélectionnez toutes les boissons souhaitées pour votre événement.</p>
 <div class="checks">
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale">Eau minérale</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels">Jus naturels</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses">Boissons gazeuses</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool">Cocktails sans alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails">Mocktails</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool">Cocktails avec alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rouge">Vin rouge</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin blanc">Vin blanc</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rosé">Vin rosé</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne">Champagne</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins mousseux">Vins mousseux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Bières">Bières</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Spiritueux">Spiritueux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres boissons">Autres boissons</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale"> Eau minérale</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels"> Jus naturels</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses"> Boissons gazeuses</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool"> Cocktails avec alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool"> Cocktails sans alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails"> Mocktails</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rouges"> Vins rouges</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins blancs"> Vins blancs</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rosés"> Vins rosés</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne"> Champagne</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons pétillantes"> Boissons pétillantes</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres"> Autres (à préciser)</label>
 </div>
 <div class="fieldgrid" style="margin-top:14px">
 <div class="field"><label>Quantités / nombre de bouteilles souhaités</label><input name="Quantités de boissons souhaitées" placeholder="Précisez les quantités estimées"></div>
-<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes pour les boissons" min="1"></div>
-<div class="field full"><label>Marques, préférences ou précisions (facultatif)</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques souhaitées, boissons particulières, service au verre, etc."></textarea></div>
-<div class="field full"><label>Qui fournira les boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM fournit les boissons">LAM ÉVÉNEMENTIEL &amp; EVENTS fournit les boissons</option><option value="Le client fournit les boissons">Le client fournit les boissons</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes à servir pour les boissons" min="1"></div>
+<div class="field full"><label>Qui prendra en charge la fourniture des boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM ÉVÉNEMENTIEL &amp; EVENTS">LAM ÉVÉNEMENTIEL &amp; EVENTS</option><option value="Le client">Le client</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field full"><label>Autres précisions sur les boissons</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques, préférences, boissons particulières, etc."></textarea></div>
 </div>
-<p class="small"><strong>Information tarifaire :</strong> si LAM prend en charge l’achat des boissons, leur coût ainsi que les frais d’approvisionnement, de transport et de service applicables seront intégrés au devis et facturés au client après validation. Si le client fournit les boissons, leur achat reste à sa charge. Tout service de bar ou de service des boissons demandé à LAM sera indiqué séparément dans le devis.</p>
+<div class="form-section" style="padding-bottom:0">
+<h3>Service des boissons</h3>
+<p class="small">Souhaitez-vous que LAM assure également le service des boissons pendant votre événement ?</p>
+<div class="checks">
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Oui, LAM assure le service" required> Oui, LAM assure le service des boissons.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Non, le client prend en charge le service"> Non, le client prend en charge le service.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Service partagé entre LAM et le client"> Service partagé entre LAM et le client.</label>
+</div>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>BUDGET &amp; FACTURATION</h3>
+<p class="small">Les boissons demandées seront intégrées à la proposition financière de l’événement.</p>
+<p class="small">Lorsque LAM prend en charge leur fourniture, leur coût sera ajouté au devis du client. Lorsque le client fournit lui-même les boissons, celles-ci ne seront pas facturées par LAM.</p>
+<p class="small">Lorsque LAM assure le service des boissons, les frais de personnel et de service seront ajoutés au devis. Toute demande supplémentaire fera l’objet d’une facturation complémentaire après validation du client.</p>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>PRÉCISIONS SUPPLÉMENTAIRES</h3>
+<div class="field full"><label>Demandes particulières concernant les boissons, leur présentation, leur préparation ou leur service</label><textarea name="Demandes particulières concernant les boissons" rows="3" placeholder="Ajoutez ici toute précision utile."></textarea></div>
+</div>
 </div>
 <div class="form-section"><h3>Couleurs de décoration &amp; ballons</h3><p class="small">Choisissez ici les couleurs pour votre décoration et vos ballons. Sélectionnez plusieurs couleurs dans la même liste.</p><div class="color-mix-live" aria-live="polite" style="margin:12px 0 18px;padding:14px;border:1px solid #e7d9bd;border-radius:14px;background:linear-gradient(135deg,#fffdf8,#ffffff)"><strong style="display:block;margin-bottom:6px">Aperçu de votre mélange de couleurs</strong><p class="small" style="margin:0 0 10px">Sélectionnez plusieurs couleurs ci-dessous pour visualiser votre palette personnalisée.</p><div class="color-mix-preview" style="height:48px;border-radius:10px;border:1px solid #ddd;background:linear-gradient(90deg,#f5f5f5 0%,#f5f5f5 100%)"></div><p class="color-mix-label small" style="margin:9px 0 0">Votre palette apparaîtra ici après votre sélection.</p></div><div class="field full"><label>Combinaisons de couleurs harmonieuses (facultatif)</label><p class="small">Choisissez une ou plusieurs associations prêtes à l’emploi, ou sélectionnez librement vos couleurs dans la liste ci-dessus pour créer votre propre mélange.</p><div class="color-swatch-grid"><label class="color-swatch" title="Blanc + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Blanc + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ffffff 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #ffffff 0 50%, #aeb4ba 50% 100%)"></span><span>Blanc + doré</span></label><label class="color-swatch" title="Noir + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Noir + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #111111 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #111111 0 50%, #aeb4ba 50% 100%)"></span><span>Noir + doré</span></label><label class="color-swatch" title="Rouge + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rouge + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #aeb4ba 50% 100%)"></span><span>Rouge + doré</span></label><label class="color-swatch" title="Rouge + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rouge + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #ffffff 50% 100%)"></span><span>Rouge + blanc</span></label><label class="color-swatch" title="Bleu cobalt + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu cobalt + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #0047ab 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #0047ab 0 50%, #ffffff 50% 100%)"></span><span>Bleu cobalt + blanc</span></label><label class="color-swatch" title="Bleu ciel + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu ciel + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #87ceeb 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #87ceeb 0 50%, #ffffff 50% 100%)"></span><span>Bleu ciel + blanc</span></label><label class="color-swatch" title="Bleu marine + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bleu marine + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #001f3f 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #001f3f 0 50%, #aeb4ba 50% 100%)"></span><span>Bleu marine + doré</span></label><label class="color-swatch" title="Vert émeraude + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Vert émeraude + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #50c878 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #50c878 0 50%, #aeb4ba 50% 100%)"></span><span>Vert émeraude + doré</span></label><label class="color-swatch" title="Vert sauge + crème"><input type="checkbox" name="Combinaisons de couleurs[]" value="Vert sauge + crème"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #9caf88 0 50%, #fffdd0 50% 100%);background:linear-gradient(135deg, #9caf88 0 50%, #fffdd0 50% 100%)"></span><span>Vert sauge + crème</span></label><label class="color-swatch" title="Rose poudré + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rose poudré + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #e8b4b8 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #e8b4b8 0 50%, #aeb4ba 50% 100%)"></span><span>Rose poudré + doré</span></label><label class="color-swatch" title="Rose gold + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Rose gold + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #b76e79 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #b76e79 0 50%, #ffffff 50% 100%)"></span><span>Rose gold + blanc</span></label><label class="color-swatch" title="Violet + argent"><input type="checkbox" name="Combinaisons de couleurs[]" value="Violet + argent"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #800080 0 50%, #c0c0c0 50% 100%);background:linear-gradient(135deg, #800080 0 50%, #c0c0c0 50% 100%)"></span><span>Violet + argent</span></label><label class="color-swatch" title="Orange + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Orange + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff7f00 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #ff7f00 0 50%, #ffffff 50% 100%)"></span><span>Orange + blanc</span></label><label class="color-swatch" title="Noir + blanc"><input type="checkbox" name="Combinaisons de couleurs[]" value="Noir + blanc"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #111111 0 50%, #ffffff 50% 100%);background:linear-gradient(135deg, #111111 0 50%, #ffffff 50% 100%)"></span><span>Noir + blanc</span></label><label class="color-swatch" title="Champagne + beige"><input type="checkbox" name="Combinaisons de couleurs[]" value="Champagne + beige"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #f7e7ce 0 50%, #f5f5dc 50% 100%);background:linear-gradient(135deg, #f7e7ce 0 50%, #f5f5dc 50% 100%)"></span><span>Champagne + beige</span></label><label class="color-swatch" title="Turquoise + doré"><input type="checkbox" name="Combinaisons de couleurs[]" value="Turquoise + doré"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #40e0d0 0 50%, #aeb4ba 50% 100%);background:linear-gradient(135deg, #40e0d0 0 50%, #aeb4ba 50% 100%)"></span><span>Turquoise + doré</span></label><label class="color-swatch" title="Bordeaux + crème"><input type="checkbox" name="Combinaisons de couleurs[]" value="Bordeaux + crème"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #800020 0 50%, #fffdd0 50% 100%);background:linear-gradient(135deg, #800020 0 50%, #fffdd0 50% 100%)"></span><span>Bordeaux + crème</span></label><label class="color-swatch" title="Jaune + gris"><input type="checkbox" name="Combinaisons de couleurs[]" value="Jaune + gris"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ffdf00 0 50%, #808080 50% 100%);background:linear-gradient(135deg, #ffdf00 0 50%, #808080 50% 100%)"></span><span>Jaune + gris</span></label><label class="color-swatch" title="Multicolore"><input type="checkbox" name="Combinaisons de couleurs[]" value="Multicolore"><span class="swatch-dot" style="--swatch:linear-gradient(135deg, #ff0000 0 50%, #0047ab 50% 100%);background:linear-gradient(135deg, #ff0000 0 50%, #0047ab 50% 100%)"></span><span>Multicolore</span></label></div><p class="small">Les associations sont des suggestions : vous gardez la liberté de choisir les couleurs que vous aimez.</p></div>
 <div class="fieldgrid">
@@ -1578,32 +1656,49 @@ body .section:not(.hero){border-top-color:#aeb4ba55!important}
 <label class="check"><input type="checkbox" name="Prestation souhaitée[]" value="Formule complète"> Formule complète</label>
 </div></div>
 
+
 <div class="form-section" id="boissons-section-05">
 <h3>BOISSONS &amp; FOURNITURE</h3>
-<p class="small">Sélectionnez les boissons souhaitées pour votre événement. Plusieurs choix sont possibles.</p>
+<p class="small">Sélectionnez toutes les boissons souhaitées pour votre événement.</p>
 <div class="checks">
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale">Eau minérale</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels">Jus naturels</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses">Boissons gazeuses</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool">Cocktails sans alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails">Mocktails</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool">Cocktails avec alcool</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rouge">Vin rouge</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin blanc">Vin blanc</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vin rosé">Vin rosé</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne">Champagne</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins mousseux">Vins mousseux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Bières">Bières</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Spiritueux">Spiritueux</label>
-<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres boissons">Autres boissons</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Eau minérale"> Eau minérale</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Jus naturels"> Jus naturels</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons gazeuses"> Boissons gazeuses</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails avec alcool"> Cocktails avec alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Cocktails sans alcool"> Cocktails sans alcool</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Mocktails"> Mocktails</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rouges"> Vins rouges</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins blancs"> Vins blancs</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Vins rosés"> Vins rosés</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Champagne"> Champagne</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Boissons pétillantes"> Boissons pétillantes</label>
+<label class="check"><input type="checkbox" name="Boissons souhaitées[]" value="Autres"> Autres (à préciser)</label>
 </div>
 <div class="fieldgrid" style="margin-top:14px">
 <div class="field"><label>Quantités / nombre de bouteilles souhaités</label><input name="Quantités de boissons souhaitées" placeholder="Précisez les quantités estimées"></div>
-<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes pour les boissons" min="1"></div>
-<div class="field full"><label>Marques, préférences ou précisions (facultatif)</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques souhaitées, boissons particulières, service au verre, etc."></textarea></div>
-<div class="field full"><label>Qui fournira les boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM fournit les boissons">LAM ÉVÉNEMENTIEL &amp; EVENTS fournit les boissons</option><option value="Le client fournit les boissons">Le client fournit les boissons</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field"><label>Nombre de personnes à servir</label><input type="number" name="Nombre de personnes à servir pour les boissons" min="1"></div>
+<div class="field full"><label>Qui prendra en charge la fourniture des boissons ? *</label><select name="Responsable de la fourniture des boissons" required><option value="">Sélectionner</option><option value="LAM ÉVÉNEMENTIEL &amp; EVENTS">LAM ÉVÉNEMENTIEL &amp; EVENTS</option><option value="Le client">Le client</option><option value="Fourniture partagée entre LAM et le client">Fourniture partagée entre LAM et le client</option></select></div>
+<div class="field full"><label>Autres précisions sur les boissons</label><textarea name="Précisions sur les boissons" rows="2" placeholder="Marques, préférences, boissons particulières, etc."></textarea></div>
 </div>
-<p class="small"><strong>Information tarifaire :</strong> si LAM prend en charge l’achat des boissons, leur coût ainsi que les frais d’approvisionnement, de transport et de service applicables seront intégrés au devis et facturés au client après validation. Si le client fournit les boissons, leur achat reste à sa charge. Tout service de bar ou de service des boissons demandé à LAM sera indiqué séparément dans le devis.</p>
+<div class="form-section" style="padding-bottom:0">
+<h3>Service des boissons</h3>
+<p class="small">Souhaitez-vous que LAM assure également le service des boissons pendant votre événement ?</p>
+<div class="checks">
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Oui, LAM assure le service" required> Oui, LAM assure le service des boissons.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Non, le client prend en charge le service"> Non, le client prend en charge le service.</label>
+<label class="check"><input type="radio" name="Service des boissons par LAM" value="Service partagé entre LAM et le client"> Service partagé entre LAM et le client.</label>
+</div>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>BUDGET &amp; FACTURATION</h3>
+<p class="small">Les boissons demandées seront intégrées à la proposition financière de l’événement.</p>
+<p class="small">Lorsque LAM prend en charge leur fourniture, leur coût sera ajouté au devis du client. Lorsque le client fournit lui-même les boissons, celles-ci ne seront pas facturées par LAM.</p>
+<p class="small">Lorsque LAM assure le service des boissons, les frais de personnel et de service seront ajoutés au devis. Toute demande supplémentaire fera l’objet d’une facturation complémentaire après validation du client.</p>
+</div>
+<div class="form-section" style="padding-bottom:0">
+<h3>PRÉCISIONS SUPPLÉMENTAIRES</h3>
+<div class="field full"><label>Demandes particulières concernant les boissons, leur présentation, leur préparation ou leur service</label><textarea name="Demandes particulières concernant les boissons" rows="3" placeholder="Ajoutez ici toute précision utile."></textarea></div>
+</div>
 </div>
 <div class="form-section"><h3>05 — Préférences et inspirations personnelles</h3><div class="fieldgrid">
 <div class="field full"><label for="cocktailAllergies">Allergies ou restrictions alimentaires</label><textarea id="cocktailAllergies" name="Allergies et restrictions alimentaires" rows="2"></textarea></div>
