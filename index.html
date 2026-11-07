@@ -3562,7 +3562,7 @@ var old=document.getElementById('lam-3d-welcome');if(old)old.remove();
 var legacy=document.getElementById('welcome-intro');if(legacy)legacy.remove();
 if(document.getElementById('lam-editorial-intro'))return;
 var intro=document.createElement('section');intro.id='lam-editorial-intro';intro.setAttribute('role','dialog');intro.setAttribute('aria-label','LAM ÉVÉNEMENTIEL EVENTS HAÏTI');intro.setAttribute('aria-modal','true');
-intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">&amp; EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p><button class="lam-editorial-enter" type="button">ENTRER CHEZ LAM</button>';
+intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">&amp; EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p>';
 document.body.appendChild(intro);var done=false;function close(){if(done)return;done=true;intro.classList.add('is-leaving');window.setTimeout(function(){intro.remove()},850)}
 intro.querySelector('button').addEventListener('click',close);window.setTimeout(close,5600);
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();})();
