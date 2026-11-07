@@ -3300,6 +3300,42 @@ h3{font:500 1.15rem/1.35 Georgia,"Times New Roman",serif!important;color:var(--l
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
+
+<style id="lam-editorial-luxury-intro-final">
+#lam-3d-welcome,#welcome-intro{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+#lam-editorial-intro{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:clamp(14px,2.5vh,24px);padding:28px 18px;background:#050505;color:#fff;overflow:hidden;opacity:1;visibility:visible;transition:opacity .8s ease,visibility .8s ease}
+#lam-editorial-intro:before,#lam-editorial-intro:after{content:"";position:absolute;pointer-events:none;border:1px solid #aeb4ba}
+#lam-editorial-intro:before{inset:14px;opacity:.9}#lam-editorial-intro:after{inset:21px;border-color:#aeb4ba66}
+#lam-editorial-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+#lam-editorial-intro .lam-editorial-mark{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:.055em;font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif;font-size:clamp(4.8rem,18vw,10.5rem);font-weight:500;line-height:.95;letter-spacing:.025em}
+#lam-editorial-intro .lam-editorial-mark span{display:inline-block;opacity:0;transform:translateY(18px);animation:lamEditorialLetter .75s cubic-bezier(.2,.7,.2,1) forwards}
+#lam-editorial-intro .lam-editorial-mark .lam-l{color:#F21B2D;animation-delay:.25s}
+#lam-editorial-intro .lam-editorial-mark .lam-a{color:#FFD500;animation-delay:.48s}
+#lam-editorial-intro .lam-editorial-mark .lam-m{color:#F21B2D;animation-delay:.71s}
+#lam-editorial-intro .lam-editorial-name{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;font-family:"Bodoni MT","Didot","Baskerville","Times New Roman",serif;font-weight:500;text-transform:uppercase;letter-spacing:.2em;line-height:1.65}
+#lam-editorial-intro .lam-editorial-name span{display:block;color:#fff;opacity:0;transform:translateY(10px);animation:lamEditorialReveal .8s ease forwards}
+#lam-editorial-intro .lam-editorial-name .lam-event{font-size:clamp(.9rem,3.3vw,1.45rem);animation-delay:1.05s}
+#lam-editorial-intro .lam-editorial-name .lam-events{font-size:clamp(.9rem,3.3vw,1.45rem);letter-spacing:.34em;animation-delay:1.35s}
+#lam-editorial-intro .lam-editorial-rule{position:relative;z-index:1;width:clamp(70px,15vw,126px);height:1px;background:linear-gradient(90deg,transparent,#aeb4ba,#f4f5f6,#aeb4ba,transparent);opacity:0;transform:scaleX(.5);animation:lamEditorialRule .9s ease 1.7s forwards}
+#lam-editorial-intro .lam-editorial-country{position:relative;z-index:1;margin:0;color:#fff;font:500 clamp(.68rem,2vw,.88rem)/1.4 Arial,Helvetica,sans-serif;letter-spacing:.48em;text-transform:uppercase;opacity:0;animation:lamEditorialReveal .8s ease 1.95s forwards}
+#lam-editorial-intro .lam-editorial-enter{position:relative;z-index:1;margin-top:clamp(8px,2vh,18px);padding:11px 23px;border:1px solid #aeb4ba;background:transparent;color:#fff;font:500 .65rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;opacity:0;animation:lamEditorialReveal .7s ease 2.25s forwards}
+#lam-editorial-intro .lam-editorial-enter:hover{background:#fff;color:#050505}
+@keyframes lamEditorialLetter{to{opacity:1;transform:translateY(0)}}@keyframes lamEditorialReveal{to{opacity:1;transform:translateY(0)}}@keyframes lamEditorialRule{to{opacity:1;transform:scaleX(1)}}
+@media(max-width:520px){#lam-editorial-intro{gap:18px;padding:24px 18px}#lam-editorial-intro:before{inset:10px}#lam-editorial-intro:after{inset:16px}#lam-editorial-intro .lam-editorial-mark{font-size:clamp(4.2rem,22vw,7rem)}#lam-editorial-intro .lam-editorial-name .lam-event,#lam-editorial-intro .lam-editorial-name .lam-events{font-size:clamp(.82rem,4vw,1.08rem);letter-spacing:.14em}#lam-editorial-intro .lam-editorial-country{letter-spacing:.36em}}
+@media(prefers-reduced-motion:reduce){#lam-editorial-intro *{animation:none!important;opacity:1!important;transform:none!important}#lam-editorial-intro{transition:none}}
+</style>
+<script id="lam-editorial-luxury-intro-installer">
+(function(){function install(){
+var old=document.getElementById('lam-3d-welcome');if(old)old.remove();
+var legacy=document.getElementById('welcome-intro');if(legacy)legacy.remove();
+if(document.getElementById('lam-editorial-intro'))return;
+var intro=document.createElement('section');intro.id='lam-editorial-intro';intro.setAttribute('role','dialog');intro.setAttribute('aria-label','LAM ÉVÉNEMENTIEL EVENTS HAÏTI');intro.setAttribute('aria-modal','true');
+intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p><button class="lam-editorial-enter" type="button">ENTRER CHEZ LAM</button>';
+document.body.appendChild(intro);var done=false;function close(){if(done)return;done=true;intro.classList.add('is-leaving');window.setTimeout(function(){intro.remove()},850)}
+intro.querySelector('button').addEventListener('click',close);window.setTimeout(close,5600);
+}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();})();
+</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
