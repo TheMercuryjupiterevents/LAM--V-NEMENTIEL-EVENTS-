@@ -3533,7 +3533,7 @@ h3{font:500 1.15rem/1.35 Georgia,"Times New Roman",serif!important;color:var(--l
 
 <style id="lam-editorial-luxury-intro-final">
 #lam-3d-welcome,#welcome-intro{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
-#lam-editorial-intro{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:clamp(14px,2.5vh,24px);padding:28px 18px;background:#050505;color:#fff;overflow:hidden;opacity:1;visibility:visible;transition:opacity .8s ease,visibility .8s ease}
+#lam-editorial-intro{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:clamp(14px,2.5vh,24px);padding:28px 18px;background:#FFFDD0;color:#111;overflow:hidden;opacity:1;visibility:visible;transition:opacity .8s ease,visibility .8s ease}
 #lam-editorial-intro:before,#lam-editorial-intro:after{content:"";position:absolute;pointer-events:none;border:1px solid #aeb4ba}
 #lam-editorial-intro:before{inset:14px;opacity:.9}#lam-editorial-intro:after{inset:21px;border-color:#aeb4ba66}
 #lam-editorial-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
@@ -3564,7 +3564,7 @@ if(document.getElementById('lam-editorial-intro'))return;
 var intro=document.createElement('section');intro.id='lam-editorial-intro';intro.setAttribute('role','dialog');intro.setAttribute('aria-label','LAM ÉVÉNEMENTIEL EVENTS HAÏTI');intro.setAttribute('aria-modal','true');
 intro.innerHTML='<div class="lam-editorial-mark" aria-label="LAM"><span class="lam-l">L</span><span class="lam-a">A</span><span class="lam-m">M</span></div><div class="lam-editorial-name"><span class="lam-event">ÉVÉNEMENTIEL</span><span class="lam-events">&amp; EVENTS</span></div><div class="lam-editorial-rule" aria-hidden="true"></div><p class="lam-editorial-country">HAÏTI</p>';
 document.body.appendChild(intro);var done=false;function close(){if(done)return;done=true;intro.classList.add('is-leaving');window.setTimeout(function(){intro.remove()},850)}
-intro.querySelector('button').addEventListener('click',close);window.setTimeout(close,5600);
+window.setTimeout(close,7000);
 }if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',install,{once:true});else install();})();
 </script>
 
@@ -3704,7 +3704,7 @@ intro.querySelector('button').addEventListener('click',close);window.setTimeout(
 
 
 <style id="lam-editorial-star-formation-fix">
-#lam-editorial-intro{background:#fff!important;color:#111!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#lam-editorial-intro{background:#FFFDD0!important;color:#111!important;display:flex!important;align-items:center!important;justify-content:center!important}
 #lam-editorial-intro:before,#lam-editorial-intro:after{display:none!important}
 #lam-editorial-intro .lam-editorial-mark,#lam-editorial-intro .lam-editorial-name,#lam-editorial-intro .lam-editorial-rule,#lam-editorial-intro .lam-editorial-country{display:none!important}
 #lam-editorial-intro .lam-star-composition{position:relative;z-index:2;width:min(96vw,960px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:1!important;transform:none!important}
@@ -3739,7 +3739,7 @@ intro.querySelector('button').addEventListener('click',close);window.setTimeout(
   var particles=targets.map(function(p){return{x:Math.random()*W,y:Math.random()*H,tx:p.x,ty:p.y,size:2+Math.random()*1.8,delay:Math.random()*450,phase:Math.random()*6.28}});
   var start=0,raf=0,stopped=false;
   function drawStar(x,y,r,angle){ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.beginPath();for(var k=0;k<10;k++){var a=-Math.PI/2+k*Math.PI/5,rr=k%2===0?r:r*.42,px=Math.cos(a)*rr,py=Math.sin(a)*rr;if(k===0)ctx.moveTo(px,py);else ctx.lineTo(px,py)}ctx.closePath();ctx.fillStyle="#111";ctx.fill();ctx.restore()}
-  function frame(now){if(stopped||!document.body.contains(intro))return;if(!start)start=now;var elapsed=now-start;ctx.clearRect(0,0,W,H);particles.forEach(function(p){var t=Math.max(0,Math.min(1,(elapsed-p.delay)/2450)),ease=1-Math.pow(1-t,3),x=p.x+(p.tx-p.x)*ease,y=p.y+(p.ty-p.y)*ease,pulse=.82+.18*Math.sin(elapsed*.004+p.phase);drawStar(x,y,p.size*pulse,Math.sin(elapsed*.001+p.phase)*.12)});if(elapsed>3400)subtitle.classList.add("is-visible");if(elapsed<5900)raf=requestAnimationFrame(frame)}
+  function frame(now){if(stopped||!document.body.contains(intro))return;if(!start)start=now;var elapsed=now-start;ctx.clearRect(0,0,W,H);particles.forEach(function(p){var t=Math.max(0,Math.min(1,(elapsed-p.delay)/2450)),ease=1-Math.pow(1-t,3),x=p.x+(p.tx-p.x)*ease,y=p.y+(p.ty-p.y)*ease,pulse=.82+.18*Math.sin(elapsed*.004+p.phase);drawStar(x,y,p.size*pulse,Math.sin(elapsed*.001+p.phase)*.12)});if(elapsed>3400)subtitle.classList.add("is-visible");if(elapsed<6200)raf=requestAnimationFrame(frame)}
   raf=requestAnimationFrame(frame);
   var observer=new MutationObserver(function(){if(!document.body.contains(intro)){stopped=true;cancelAnimationFrame(raf);observer.disconnect()}});
   observer.observe(document.body,{childList:true,subtree:true});
