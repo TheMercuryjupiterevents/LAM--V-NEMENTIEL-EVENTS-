@@ -1070,26 +1070,7 @@ form.form .form-note,form.form small{line-height:1.65!important;color:#686868!im
 }
 </style>
 
-<style id="lam-red-door-intro-style">
-#lam-red-door-intro{position:fixed;inset:0;z-index:100000;background:#171717;display:grid;place-items:center;perspective:1400px;animation:lam-door-screen-out .8s ease 4.1s forwards;pointer-events:auto}
-.lam-door-frame{position:relative;width:min(430px,78vw);height:min(620px,76vh);min-height:360px;background:#111;box-shadow:0 25px 90px #0008;border:10px solid #aeb4ba;transform-style:preserve-3d;overflow:hidden}
-.lam-door-panel{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(135deg,#ed1c24,#97000a);border:2px solid #f7a1a5;box-shadow:inset 0 0 35px #520008;transform-style:preserve-3d;z-index:2}
-.lam-door-left{left:0;transform-origin:left center;animation:lam-door-open-left 1.6s cubic-bezier(.7,0,.2,1) 1.65s forwards}
-.lam-door-right{right:0;transform-origin:right center;animation:lam-door-open-right 1.6s cubic-bezier(.7,0,.2,1) 1.65s forwards}
-.lam-door-inlay{position:absolute;inset:18px 12px;border:2px solid #ffb7b9;box-shadow:inset 0 0 18px #65000a}
-.lam-door-panel:after{content:"";position:absolute;inset:30px 24px;border:1px solid #ffb7b9}
-.lam-door-panel i{position:absolute;top:50%;width:9px;height:9px;border-radius:50%;background:#d8d8d8;box-shadow:0 0 8px #fff}
-.lam-door-left i{right:12px}.lam-door-right i{left:12px}
-.lam-door-welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;z-index:1;gap:12px;animation:lam-door-welcome 1s ease .35s both}
-.lam-door-welcome img{width:clamp(88px,18vw,150px);height:auto;object-fit:contain;border-radius:50%;background:#fff}
-.lam-door-welcome p{font:600 clamp(1.15rem,4vw,2rem) Georgia,serif;letter-spacing:.12em;margin:0}
-.lam-door-welcome small{font-size:.68rem;letter-spacing:.28em}
-@keyframes lam-door-open-left{to{transform:rotateY(-105deg)}}
-@keyframes lam-door-open-right{to{transform:rotateY(105deg)}}
-@keyframes lam-door-welcome{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
-@keyframes lam-door-screen-out{to{opacity:0;visibility:hidden;pointer-events:none}}
-@media(prefers-reduced-motion:reduce){#lam-red-door-intro{display:none}}
-</style>
+
 <style id="lam-complete-redesign-nov-2026">
 /* LAM — refonte visuelle cohérente : blanc, rouge, jaune, bleu, rose et orange */
 :root{--lam-red:#ed1c24;--lam-yellow:#ffd400;--lam-blue:#2878c7;--lam-pink:#e78bb5;--lam-orange:#f28c28;--lam-black:#171717;--lam-gray:#6d6d6d;--lam-line:#e5e5e5;--max:1440px}
@@ -1189,13 +1170,6 @@ input[type=checkbox],input[type=radio]{accent-color:var(--lam-red)}
 </head>
 <body>
 
-<div id="lam-red-door-intro" aria-label="Bienvenue chez LAM ÉVÉNEMENTIEL & EVENTS" role="dialog" aria-modal="true">
- <div class="lam-door-frame">
-  <div class="lam-door-panel lam-door-left"><span class="lam-door-inlay"></span><i></i></div>
-  <div class="lam-door-panel lam-door-right"><span class="lam-door-inlay"></span><i></i></div>
-  <div class="lam-door-welcome"><img src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo LAM"><p>BIENVENUE CHEZ LAM</p><small>ÉVÉNEMENTIEL &amp; EVENTS</small></div>
- </div>
-</div>
 
 <header class="nav">
 <div class="wrap navin">
