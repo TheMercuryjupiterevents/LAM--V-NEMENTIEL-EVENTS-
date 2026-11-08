@@ -3710,6 +3710,7 @@ window.setTimeout(close,7000);
 #lam-editorial-intro .lam-star-composition{position:relative;z-index:2;width:min(96vw,960px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:1!important;transform:none!important}
 #lam-editorial-intro .lam-star-canvas{display:block;width:100%;height:clamp(150px,30vh,250px)}
 #lam-editorial-intro .lam-star-subtitle{color:#111!important;-webkit-text-fill-color:#111!important;font:600 clamp(13px,2.4vw,21px)/1.5 Georgia,"Times New Roman",serif;letter-spacing:.2em;text-align:center;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .65s ease,transform .65s ease}
+#lam-editorial-intro .lam-star-subtitle>span{display:block}#lam-editorial-intro .lam-star-subtitle .lam-star-country{font-size:.78em;letter-spacing:.42em;margin-top:3px}
 #lam-editorial-intro .lam-star-subtitle.is-visible{opacity:1;transform:translateY(0)}
 #lam-editorial-intro .lam-editorial-enter{color:#111!important;border:1px solid #111!important;background:#fff!important;margin-top:20px;opacity:0;animation:lamStarEnter .5s ease 4s forwards}
 #lam-editorial-intro .lam-editorial-enter:hover{background:#111!important;color:#fff!important}
@@ -3726,7 +3727,7 @@ window.setTimeout(close,7000);
   intro.dataset.starFormationReady="true";
   var stage=document.createElement("div"),canvas=document.createElement("canvas"),subtitle=document.createElement("div");
   stage.className="lam-star-composition";canvas.className="lam-star-canvas";subtitle.className="lam-star-subtitle";
-  subtitle.textContent="ÉVÉNEMENTIEL & EVENTS";stage.appendChild(canvas);stage.appendChild(subtitle);
+  subtitle.innerHTML="<span>ÉVÉNEMENTIEL &amp; EVENTS</span><span class=\"lam-star-country\">HAITI</span>";stage.appendChild(canvas);stage.appendChild(subtitle);
   var enter=intro.querySelector(".lam-editorial-enter");if(enter)stage.appendChild(enter);intro.appendChild(stage);
   var ctx=canvas.getContext("2d");if(!ctx)return;
   var W=960,H=260,dpr=Math.min(window.devicePixelRatio||1,2);
