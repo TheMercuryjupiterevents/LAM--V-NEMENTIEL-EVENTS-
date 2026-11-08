@@ -5279,3 +5279,38 @@ input,select,textarea,.field input,.field select,.field textarea{border-radius:1
 img,video,iframe,.card,.team-card,.tool-card,.contactbox,.payment-policy-card,.form,.form-section,article,aside{border-radius:18px!important}
 .pill,.tag,.color-swatch,.color-choice{border-radius:999px!important}
 </style>
+
+
+<style id="lam-ancien-site-rouge-partout">
+/* Garder l'ancien design LAM et renforcer le rouge dans toute l'interface */
+:root{--lam-red:#E32636!important;--lam-red-deep:#B71935!important;--lam-red-soft:#FCE8EA!important}
+html{scroll-behavior:smooth}
+.eyebrow,.section-kicker,.num,.red,.accent,.highlight,.hero-event-label,
+.section-title span,.section-head span{color:#E32636!important}
+.nav{border-bottom:2px solid #E32636!important}
+.navlinks a:hover,.navlinks a:focus,.footer a:hover{color:#E32636!important}
+.btn.primary,.actions .btn.primary,button.primary,button[type=submit],
+input[type=submit],.wa,.whatsapp-button{
+ background:linear-gradient(135deg,#E32636,#B71935)!important;
+ border-color:#E32636!important;color:#fff!important;
+}
+.btn.primary:hover,button[type=submit]:hover,input[type=submit]:hover{
+ background:#99172B!important;border-color:#99172B!important
+}
+.btn:not(.primary):hover,.menu:hover{border-color:#E32636!important;color:#E32636!important}
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,.form,.form-section,
+.lam-inspiration-card,.creator-card{border-top:2px solid #E32636!important}
+.card .pill,.card .tag,.pill,.tag{border-color:#E32636!important}
+a:not(.btn):hover{color:#B71935}
+input:focus,select:focus,textarea:focus,.field input:focus,.field select:focus,.field textarea:focus{
+ border-color:#E32636!important;box-shadow:0 0 0 3px #E326361C!important
+}
+input[type=checkbox],input[type=radio]{accent-color:#E32636!important}
+::selection{background:#E32636!important;color:#fff!important}
+.footer{border-top:4px solid #E32636!important}
+.hero .tagline,.hero .eyebrow{color:#E32636!important}
+@media(max-width:680px){
+ .nav{border-bottom-width:2px!important}
+ .btn.primary,button[type=submit],input[type=submit]{width:100%}
+}
+</style>
