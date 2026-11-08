@@ -5535,3 +5535,26 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
   }
 }
 </style>
+
+
+<style id="lam-remove-page-white-background">
+/* Retirer les aplats blancs du fond de page, sans modifier les cartes */
+html,body{
+  background:transparent!important;
+  background-color:transparent!important;
+}
+main,section,.section,.section.alt,.hero,
+.team-section,.founders-section,
+#accueil,#services,#equipe,#contact{
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+}
+/* Les cartes gardent leur apparence et leur fond propres */
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+.form,#formules .card.package:not(.redlabel),
+#services .card,#equipe .card,#contact .contactbox{
+  background:#FFFFFF!important;
+  background-color:#FFFFFF!important;
+}
+</style>
