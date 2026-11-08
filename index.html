@@ -5399,3 +5399,55 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
   .grid2,.grid3,.grid4{column-gap:clamp(28px,4vw,64px)!important;row-gap:28px!important}
 }
 </style>
+
+
+<style id="lam-restore-elegant-rounded-cards">
+/* Restaurer les cartes : conserver leur contenu, avec des angles doux et une finition premium */
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,.palette-preview,
+#formules .card.package:not(.redlabel),#services .card,#equipe .card,#contact .contactbox{
+  display:block!important;
+  background:#FFFFFF!important;
+  background-color:#FFFFFF!important;
+  border:1px solid #E5E5E5!important;
+  border-radius:22px!important;
+  box-shadow:0 8px 26px rgba(20,20,20,.07)!important;
+  overflow:hidden;
+}
+.grid>.card,.grid>.team-card,.grid>.tool-card{
+  height:100%!important;
+}
+.card,.team-card,.tool-card{
+  padding:clamp(20px,2.5vw,32px)!important;
+}
+.grid>.card+.card,.grid>.team-card+.team-card,.grid>.tool-card+.tool-card{
+  border-top:1px solid #E5E5E5!important;
+}
+.card:hover,.team-card:hover,.tool-card:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 34px rgba(20,20,20,.10)!important;
+}
+.form{
+  background:#FFFFFF!important;
+  border:1px solid #E5E5E5!important;
+  border-radius:22px!important;
+  box-shadow:0 8px 26px rgba(20,20,20,.06)!important;
+}
+.form-section{
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid #E5E5E5!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+#formules .card.package.redlabel{
+  background:linear-gradient(135deg,#E32636,#B71935)!important;
+  color:#FFFFFF!important;
+  border-color:#E32636!important;
+  border-radius:22px!important;
+}
+@media(max-width:680px){
+ .card,.team-card,.tool-card,.contactbox,.payment-policy-card,.form{
+   border-radius:18px!important;
+ }
+}
+</style>
