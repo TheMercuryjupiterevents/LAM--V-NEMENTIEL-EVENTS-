@@ -5351,3 +5351,51 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
 #lam-3d-welcome .lam-door-right,
 #lam-3d-welcome .lam-floor{background-color:#FFFFFF!important}
 </style>
+
+
+<style id="lam-editorial-no-card-layout">
+/* Présentation éditoriale : supprimer l'effet cartes et privilégier des sections ouvertes */
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,.palette-preview,
+#formules .card.package:not(.redlabel),#services .card,#equipe .card,#contact .contactbox{
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.grid>.card,.grid>.team-card,.grid>.tool-card{
+  height:auto!important;
+}
+.card,.team-card,.tool-card{
+  padding:clamp(18px,2.5vw,32px) 0!important;
+}
+.grid>.card+ .card,
+.grid>.team-card+ .team-card,
+.grid>.tool-card+ .tool-card{
+  border-top:1px solid #D7D7D7!important;
+}
+.card:hover,.team-card:hover,.tool-card:hover{
+  transform:none!important;
+  box-shadow:none!important;
+}
+.form{
+  background:#F7F7F7!important;
+  border:0!important;
+  border-radius:8px!important;
+  box-shadow:none!important;
+}
+.form-section{
+  background:transparent!important;
+  border:0!important;
+  border-top:1px solid #D7D7D7!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.redlabel{
+  background:#E32636!important;
+  color:#FFFFFF!important;
+}
+@media(min-width:681px){
+  .grid2,.grid3,.grid4{column-gap:clamp(28px,4vw,64px)!important;row-gap:28px!important}
+}
+</style>
