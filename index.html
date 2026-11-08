@@ -5985,3 +5985,60 @@ form:not([class*="search"]) select,form:not([class*="search"]) textarea{
  .footergrid{grid-template-columns:1fr!important}
 }
 </style>
+
+
+<style id="lam-compact-layout-final">
+/* Réduire les grands vides et rapprocher les contenus */
+html{scroll-behavior:smooth}
+body{margin:0!important}
+section,.section,.section.alt,.section.dark,
+#accueil,#services,#departements,#formules,#experience,#galerie,#contact,
+.team-section,.founders-section{
+  min-height:0!important;
+  height:auto!important;
+  padding-top:clamp(38px,4.5vw,64px)!important;
+  padding-bottom:clamp(38px,4.5vw,64px)!important;
+}
+.wrap{width:min(1400px,calc(100% - 64px))!important}
+.hero{min-height:0!important;height:auto!important}
+.hero-grid{
+  min-height:0!important;
+  padding:clamp(48px,6vw,82px) 0!important;
+  gap:clamp(24px,4vw,58px)!important;
+  align-items:center!important;
+}
+.section-head{margin:0 0 24px!important}
+.section-head h2{margin:0 0 12px!important}
+.section-head p,.section-head .lead{margin:8px 0 0!important}
+h1,h2,h3,h4{margin-top:0!important}
+p{margin-top:0!important}
+.grid,.grid2,.grid3,.grid4{
+  row-gap:clamp(14px,2vw,26px)!important;
+  column-gap:clamp(18px,2.4vw,34px)!important;
+  align-content:start!important;
+}
+.card,.team-card,.tool-card{margin:0!important;min-height:0!important}
+.card p:last-child,.team-card p:last-child,.tool-card p:last-child{margin-bottom:0!important}
+img{max-width:100%}
+footer,.footer{margin-top:0!important}
+@media(max-width:950px){
+ .wrap,.hero-grid{width:calc(100% - 40px)!important}
+ .hero-grid{padding:42px 0 50px!important}
+ section,.section,.section.alt,.section.dark,
+ #accueil,#services,#departements,#formules,#experience,#galerie,#contact,
+ .team-section,.founders-section{
+   padding-top:42px!important;padding-bottom:42px!important;
+ }
+}
+@media(max-width:680px){
+ .wrap,.hero-grid{width:calc(100% - 32px)!important}
+ .hero-grid{padding:36px 0 42px!important;gap:24px!important}
+ section,.section,.section.alt,.section.dark,
+ #accueil,#services,#departements,#formules,#experience,#galerie,#contact,
+ .team-section,.founders-section{
+   padding-top:32px!important;padding-bottom:32px!important;
+ }
+ .section-head{margin-bottom:18px!important}
+ .grid,.grid2,.grid3,.grid4{row-gap:16px!important}
+}
+</style>
