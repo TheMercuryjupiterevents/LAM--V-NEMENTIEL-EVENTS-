@@ -6042,3 +6042,40 @@ footer,.footer{margin-top:0!important}
  .grid,.grid2,.grid3,.grid4{row-gap:16px!important}
 }
 </style>
+
+
+<style id="lam-soft-organic-finish">
+/* Fini pi dous: pa gen bwat kare ni ankadreman lou */
+:root{--lam-soft-radius:22px}
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+.palette-preview,#formules .card.package:not(.redlabel),
+#services .card,#equipe .card,#contact .contactbox{
+  border:0!important;box-shadow:none!important;
+  border-radius:var(--lam-soft-radius)!important;
+}
+.card img,.team-card img,.tool-card img,.gallery img,
+figure img,.service-image,.department-image{
+  border-radius:var(--lam-soft-radius)!important;
+}
+.btn,.btn.primary,.btn.blue,button[type=submit],input[type=submit],.wa{
+  border-radius:999px!important;
+}
+.pill,.tag,.eyebrow{border-radius:999px!important}
+.form,.form-section,.contactbox{
+  border-radius:var(--lam-soft-radius)!important;
+}
+.field input,.field select,.field textarea,
+form:not([class*="search"]) input:not([type="checkbox"]):not([type="radio"]),
+form:not([class*="search"]) select,form:not([class*="search"]) textarea{
+  border-radius:12px!important;
+}
+.section-head{margin-bottom:clamp(22px,3vw,38px)!important}
+.card,.team-card,.tool-card{padding:clamp(16px,1.8vw,24px) 0!important}
+.grid>.card+.card,.grid>.team-card+.team-card,.grid>.tool-card+.tool-card{
+  border-top:0!important;
+}
+@media(max-width:680px){
+ .card,.team-card,.tool-card{padding:16px 0!important}
+ .form{padding:22px!important}
+}
+</style>
