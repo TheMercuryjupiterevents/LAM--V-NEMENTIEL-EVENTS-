@@ -5314,3 +5314,118 @@ input[type=checkbox],input[type=radio]{accent-color:#E32636!important}
  .btn.primary,button[type=submit],input[type=submit]{width:100%}
 }
 </style>
+
+
+<style id="lam-ancien-design-large-refined">
+/* LAM — conserver le design classique, améliorer l'échelle et la lisibilité */
+:root{
+  --lam-red:#E32636;
+  --lam-red-deep:#B71935;
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{overflow-x:hidden}
+.wrap,.container,.navin,.footerin{
+  width:min(1460px,94%)!important;
+  max-width:1460px!important;
+}
+.hero{
+  min-height:clamp(620px,82vh,900px)!important;
+  padding-top:clamp(64px,8vw,112px)!important;
+  padding-bottom:clamp(64px,8vw,112px)!important;
+}
+.hero-grid{
+  width:100%!important;
+  max-width:1380px!important;
+  gap:clamp(32px,5vw,76px)!important;
+}
+.hero h1,.hero h2{
+  font-size:clamp(3rem,6.2vw,6.4rem)!important;
+  line-height:.98!important;
+  max-width:100%!important;
+}
+.hero .lead,.hero p{
+  font-size:clamp(1.05rem,1.35vw,1.28rem)!important;
+  line-height:1.8!important;
+  max-width:760px;
+}
+.section{
+  padding-top:clamp(76px,8vw,122px)!important;
+  padding-bottom:clamp(76px,8vw,122px)!important;
+}
+.section h2,.section .section-title{
+  font-size:clamp(2.2rem,4.2vw,4.2rem)!important;
+  line-height:1.08!important;
+}
+.section p,.section li{
+  line-height:1.78;
+}
+.section .wrap>p,.section .wrap>.lead{
+  max-width:920px;
+  font-size:clamp(1rem,1.2vw,1.16rem);
+}
+.grid,.cards,.services-grid,.team-grid{
+  gap:clamp(20px,2.4vw,34px)!important;
+}
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+.form,.form-section,.lam-inspiration-card,.creator-card{
+  border-radius:24px!important;
+  padding:clamp(24px,3vw,40px)!important;
+  min-height:100%;
+  box-shadow:0 14px 38px rgba(20,12,12,.075)!important;
+}
+.card h3,.team-card h3,.tool-card h3{
+  font-size:clamp(1.2rem,1.6vw,1.55rem)!important;
+  line-height:1.25!important;
+}
+.btn,button,.whatsapp-button{
+  min-height:52px;
+  padding:14px 25px!important;
+  font-size:1rem!important;
+  border-radius:999px!important;
+}
+.btn.primary,button[type=submit],input[type=submit],.whatsapp-button{
+  background:linear-gradient(135deg,#E32636,#B71935)!important;
+  border-color:#E32636!important;
+  color:#fff!important;
+}
+.redlabel{
+  padding:clamp(30px,4vw,54px)!important;
+  border-radius:24px!important;
+  background:#E32636!important;
+  color:#fff!important;
+}
+.redlabel h2,.redlabel h3,.redlabel p,.redlabel .eyebrow{
+  color:#fff!important;
+}
+.nav,.navin{
+  min-height:82px;
+}
+.navlinks a{
+  font-size:1rem!important;
+}
+img,video,iframe{
+  max-width:100%;
+}
+@media(min-width:1500px){
+  .wrap,.container,.navin,.footerin{width:min(1500px,94%)!important}
+}
+@media(max-width:900px){
+  .wrap,.container,.navin,.footerin{width:92%!important}
+  .hero{min-height:auto!important;padding-top:76px!important;padding-bottom:76px!important}
+  .hero h1,.hero h2{font-size:clamp(2.6rem,9vw,4.5rem)!important}
+  .section{padding-top:68px!important;padding-bottom:68px!important}
+  .section h2,.section .section-title{font-size:clamp(2rem,7vw,3.2rem)!important}
+}
+@media(max-width:600px){
+  .wrap,.container,.navin,.footerin{width:90%!important}
+  .hero{padding-top:58px!important;padding-bottom:58px!important}
+  .hero-grid{gap:28px!important}
+  .hero h1,.hero h2{font-size:clamp(2.35rem,11vw,3.5rem)!important}
+  .section{padding-top:56px!important;padding-bottom:56px!important}
+  .card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+  .form,.form-section,.lam-inspiration-card,.creator-card{
+    padding:23px!important;border-radius:20px!important;
+  }
+  .btn,button,.whatsapp-button{width:100%;justify-content:center}
+}
+</style>
