@@ -5451,3 +5451,41 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
  }
 }
 </style>
+
+
+<style id="lam-cards-larger-layout">
+/* Agrandir les cartes dans la page sans changer leur identité visuelle */
+.grid3,.grid4{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:clamp(22px,3vw,38px)!important;
+}
+.grid2{
+  gap:clamp(22px,3vw,38px)!important;
+}
+.grid>.card,.grid>.team-card,.grid>.tool-card{
+  min-height:300px!important;
+}
+.card,.team-card,.tool-card{
+  padding:clamp(28px,3.2vw,44px)!important;
+}
+.card h2,.card h3,.team-card h2,.team-card h3,.tool-card h2,.tool-card h3{
+  font-size:clamp(1.2rem,1.8vw,1.65rem)!important;
+  line-height:1.2!important;
+}
+.card p,.card li,.team-card p,.tool-card p{
+  font-size:clamp(1rem,1.1vw,1.08rem)!important;
+  line-height:1.7!important;
+}
+@media(max-width:680px){
+  .grid2,.grid3,.grid4{
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:20px!important;
+  }
+  .grid>.card,.grid>.team-card,.grid>.tool-card{
+    min-height:240px!important;
+  }
+  .card,.team-card,.tool-card{
+    padding:26px!important;
+  }
+}
+</style>
