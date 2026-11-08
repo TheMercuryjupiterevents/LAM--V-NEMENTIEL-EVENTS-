@@ -5489,3 +5489,49 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
   }
 }
 </style>
+
+
+<style id="lam-reduce-empty-white-space-expand-content">
+/* Réduire les grands vides blancs et donner plus de largeur au contenu */
+.wrap{
+  width:min(1380px,calc(100% - 64px))!important;
+  max-width:1380px!important;
+}
+.section{
+  padding-top:clamp(38px,4.5vw,64px)!important;
+  padding-bottom:clamp(38px,4.5vw,64px)!important;
+}
+.section-head{
+  margin-bottom:clamp(20px,2.5vw,32px)!important;
+}
+.grid2,.grid3,.grid4{
+  width:100%!important;
+  gap:clamp(18px,2vw,28px)!important;
+}
+.grid>.card,.grid>.team-card,.grid>.tool-card{
+  min-width:0!important;
+}
+.hero-grid{
+  width:min(1380px,calc(100% - 64px))!important;
+  max-width:1380px!important;
+  padding-top:clamp(36px,4vw,58px)!important;
+  padding-bottom:clamp(42px,4.5vw,64px)!important;
+}
+@media(max-width:950px){
+  .wrap,.hero-grid{
+    width:calc(100% - 40px)!important;
+  }
+}
+@media(max-width:680px){
+  .wrap,.hero-grid{
+    width:calc(100% - 28px)!important;
+  }
+  .section{
+    padding-top:34px!important;
+    padding-bottom:34px!important;
+  }
+  .section-head{
+    margin-bottom:18px!important;
+  }
+}
+</style>
