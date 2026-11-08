@@ -5867,3 +5867,121 @@ form:not([class*="search"]) button[type="submit"],form:not([class*="search"]) in
 form:not([class*="search"]) button[type="submit"]:hover,form:not([class*="search"]) input[type="submit"]:hover{background:#171717;border-color:#171717;}
 @media(max-width:640px){form:not([class*="search"]) input:not([type="checkbox"]):not([type="radio"]),form:not([class*="search"]) select,form:not([class*="search"]) textarea{font-size:16px!important;}form:not([class*="search"]) button[type="submit"],form:not([class*="search"]) input[type="submit"]{width:100%;}}
 </style>
+
+
+<style id="lam-soatelier-editorial-redesign-2026">
+/* LAM — nouvelle direction visuelle éditoriale, inspirée de SO ATELIER.
+   Le contenu, les formulaires et les interactions existants sont conservés. */
+:root{
+  --lam-editorial-red:#c9152b;
+  --lam-editorial-ink:#191919;
+  --lam-editorial-muted:#686868;
+  --lam-editorial-line:#dedede;
+  --lam-editorial-white:#fff;
+}
+html,body{background:#fff!important;color:var(--lam-editorial-ink)!important}
+body{font-family:Arial,Helvetica,sans-serif!important;line-height:1.65!important}
+.wrap{width:min(1320px,calc(100% - 72px))!important;max-width:1320px!important}
+.nav{background:rgba(255,255,255,.97)!important;border-bottom:1px solid var(--lam-editorial-line)!important;backdrop-filter:blur(12px)}
+.navin{min-height:82px!important}
+.brand{font-family:Georgia,"Times New Roman",serif!important;letter-spacing:.035em}
+.brand img{width:48px!important;height:48px!important;box-shadow:none!important;background:#fff!important}
+.navlinks{gap:clamp(12px,2vw,28px)!important;font-size:.62rem!important;letter-spacing:.13em!important}
+.navlinks a{transition:color .2s ease}
+.navlinks a:hover{color:var(--lam-editorial-red)!important}
+.menu{background:#fff!important;border:1px solid var(--lam-editorial-line)!important;color:#191919!important;border-radius:0!important}
+.hero{min-height:min(760px,calc(100vh - 82px))!important;background:#fff!important}
+.hero:before,.hero:after{display:none!important}
+.hero-grid{width:min(1320px,calc(100% - 72px))!important;max-width:1320px!important;grid-template-columns:1.05fr .95fr!important;gap:clamp(36px,6vw,100px)!important;padding:clamp(70px,9vw,130px) 0!important}
+.hero h1{font:500 clamp(2.8rem,6.4vw,6.2rem)/.98 Georgia,"Times New Roman",serif!important;letter-spacing:-.045em!important;text-transform:none!important;color:#191919!important;max-width:760px}
+.hero h1 .red,.hero .red{color:var(--lam-editorial-red)!important}
+.hero .eyebrow,.eyebrow{font-size:.62rem!important;letter-spacing:.24em!important;color:#777!important}
+.hero .tagline{font:italic 400 clamp(1.05rem,1.6vw,1.35rem)/1.55 Georgia,"Times New Roman",serif!important;letter-spacing:0!important;color:#555!important;max-width:580px}
+.hero .lead{font-size:.94rem!important;line-height:1.9!important;color:#626262!important;max-width:590px}
+.hero-logo{width:min(470px,100%)!important;box-shadow:none!important;background:#fff!important}
+.hero-event-label{color:var(--lam-editorial-red)!important;letter-spacing:.24em!important}
+.section,.section.alt,.section.dark,.team-section,.founders-section,
+#accueil,#services,#departements,#formules,#experience,#galerie,#contact{
+  background:#fff!important;color:#191919!important;
+}
+.section{padding:clamp(64px,8vw,112px) 0!important}
+.section.alt{background:#f7f7f5!important}
+.section.dark{background:#f7f7f5!important}
+.section.dark h1,.section.dark h2,.section.dark h3,.section.dark p,
+.section.dark li,.section.dark .lead,.section.dark .small,
+.section.dark .quote,.section.dark .wrap>p{color:#191919!important;text-shadow:none!important}
+.section.dark .pill{background:transparent!important;color:#191919!important;border:1px solid #d5d5d5!important}
+h2{font:500 clamp(2rem,4.2vw,3.8rem)/1.05 Georgia,"Times New Roman",serif!important;letter-spacing:-.035em!important;color:#191919!important}
+h3{font:500 clamp(1.15rem,1.7vw,1.5rem)/1.25 Georgia,"Times New Roman",serif!important;letter-spacing:-.015em!important;color:#191919!important}
+p,.lead{color:#5f5f5f}
+.lead{font-size:.95rem!important;line-height:1.9!important;max-width:760px}
+.section-head{max-width:820px;margin-bottom:clamp(30px,4vw,58px)!important}
+.section-head .eyebrow{color:var(--lam-editorial-red)!important}
+.grid{gap:clamp(24px,3vw,46px)!important}
+.grid2,.grid3,.grid4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,.palette-preview,
+#formules .card.package:not(.redlabel),#services .card,#equipe .card,#contact .contactbox{
+  background:transparent!important;background-color:transparent!important;
+  border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#191919!important;overflow:visible!important;
+}
+.card,.team-card,.tool-card{padding:clamp(18px,2vw,30px) 0!important}
+.card h2,.card h3,.card h4,.team-card h3,.tool-card h3{color:#191919!important}
+.card p,.card li,.team-card p,.tool-card p,.contactbox p{color:#626262!important}
+.grid>.card,.grid>.team-card,.grid>.tool-card{height:auto!important;min-height:0!important}
+.grid>.card+.card,.grid>.team-card+.team-card,.grid>.tool-card+.tool-card{
+  border-top:1px solid var(--lam-editorial-line)!important;
+}
+.card:hover,.team-card:hover,.tool-card:hover{transform:none!important;box-shadow:none!important}
+.num{color:var(--lam-editorial-red)!important;font-size:.68rem!important;letter-spacing:.2em!important}
+.pill{border-radius:0!important;border-color:#d7d7d7!important;background:transparent!important;color:#333!important}
+.btn,.btn.primary,.btn.blue,button[type=submit],input[type=submit]{
+  min-height:50px!important;padding:14px 24px!important;border:1px solid #191919!important;
+  border-radius:0!important;background:#191919!important;color:#fff!important;
+  font-size:.64rem!important;letter-spacing:.15em!important;font-weight:600!important;
+  transition:background .2s ease,border-color .2s ease,color .2s ease!important;
+}
+.btn.primary{background:var(--lam-editorial-red)!important;border-color:var(--lam-editorial-red)!important}
+.btn:hover,.btn.primary:hover,button[type=submit]:hover,input[type=submit]:hover{
+  background:#fff!important;border-color:#191919!important;color:#191919!important
+}
+.redlabel,#formules .card.package.redlabel{background:#191919!important;color:#fff!important;border:0!important}
+.redlabel p,.redlabel h2,.redlabel h3{color:#fff!important}
+.form-layout{grid-template-columns:.75fr 1.25fr!important;gap:clamp(30px,5vw,72px)!important}
+.form,.form-section,.contactbox{border-radius:0!important;box-shadow:none!important}
+.form{background:#f7f7f5!important;border:0!important;padding:clamp(22px,4vw,48px)!important}
+.form-section{border-top:1px solid #dedede!important}
+.field input,.field select,.field textarea,
+form:not([class*="search"]) input:not([type="checkbox"]):not([type="radio"]),
+form:not([class*="search"]) select,form:not([class*="search"]) textarea{
+  border:1px solid #d7d7d7!important;border-radius:0!important;background:#fff!important;color:#191919!important
+}
+.field label,.group-title{color:#333!important;letter-spacing:.09em!important}
+.footer{background:#191919!important;color:#fff!important;padding:clamp(54px,7vw,90px) 0 24px!important}
+.footer h1,.footer h2,.footer h3,.footer h4,.footer p,.footer a,.footerbottom{color:#fff!important}
+.footer .eyebrow{color:#d5a0a6!important}
+.wa{background:var(--lam-editorial-red)!important;border:0!important;border-radius:0!important;color:#fff!important}
+#mobileNav{background:#fff!important;color:#191919!important;border-top:1px solid #dedede!important}
+#mobileNav a{color:#191919!important}
+#mobileNav a:hover{color:var(--lam-editorial-red)!important}
+@media(max-width:950px){
+ .wrap,.hero-grid{width:calc(100% - 44px)!important}
+ .hero-grid{grid-template-columns:1fr!important;gap:42px!important}
+ .hero-logo{width:min(360px,80vw)!important;margin:0 auto!important}
+ .form-layout{grid-template-columns:1fr!important}
+}
+@media(max-width:680px){
+ .wrap,.hero-grid{width:calc(100% - 36px)!important}
+ .navin{min-height:68px!important}
+ .hero{min-height:auto!important}
+ .hero-grid{padding:58px 0 68px!important;gap:34px!important}
+ .hero h1{font-size:clamp(2.55rem,12vw,4rem)!important;line-height:1.02!important}
+ .hero-logo{width:min(260px,72vw)!important}
+ .section{padding:58px 0!important}
+ .grid2,.grid3,.grid4{grid-template-columns:1fr!important;gap:22px!important}
+ .card,.team-card,.tool-card{padding:22px 0!important}
+ .section-head{margin-bottom:28px!important}
+ .actions .btn{width:auto!important}
+ .footergrid{grid-template-columns:1fr!important}
+}
+</style>
