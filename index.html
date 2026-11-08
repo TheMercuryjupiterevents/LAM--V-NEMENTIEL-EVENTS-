@@ -5238,3 +5238,34 @@ input,select,textarea,.field input,.field select,.field textarea{
   background:linear-gradient(135deg,#E32636,#B71935)!important;color:#fff!important;
 }
 </style>
+
+
+<style id="lam-rounded-elegant-corners-final">
+/* Harmoniser les angles : supprimer l'effet carré sans toucher aux fonctions */
+:root{--lam-soft-radius:18px;--lam-card-radius:20px}
+.card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+.form,.form-section,.lam-inspiration-copy,.lam-inspiration-visual,
+.lam-inspiration-form,.lam-inspiration-card,.birthday-panel,
+.decoration-builder-section,.decoration-board-panel,
+.client-inspiration-upload,.quick-client-tools,.availability-notice,
+.inspiration-board-preview,.creator-card,.creator-preview,
+#service-brunch,#service-charcuterie,#service-securite-evenements{
+  border-radius:var(--lam-card-radius)!important;
+}
+form.form{border-radius:22px!important}
+form.form .form-section{border-radius:16px!important}
+button,.btn,a.btn,.menu,.wa,.lam-signature-clear,
+input,select,textarea,.field input,.field select,.field textarea{
+  border-radius:12px!important;
+}
+.pill,.tag,.color-swatch,.color-choice,.decoration-pill-options label{
+  border-radius:999px!important;
+}
+.card img,.team-card img,.tool-card img,.inspiration-card img{
+  border-radius:14px!important;
+}
+@media(max-width:680px){
+ .card,.team-card,.tool-card,.contactbox,.payment-policy-card,
+ .form,.form-section{border-radius:16px!important}
+}
+</style>
