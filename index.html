@@ -994,6 +994,81 @@ a{color:#5A3825}
 .redlabel p,.redlabel .eyebrow{color:#fff!important}
 :focus-visible{outline:2px solid #29B6E6!important;outline-offset:3px}
 </style>
+
+<style id="lam-form-refinement-2026">
+/* LAM — formulaires raffinés, sans toucher aux traitements ni aux champs */
+form.form, form#birthdayInquiryForm, form.lam-inspiration-form{
+  width:100%; max-width:1120px; margin:28px auto 0!important;
+  padding:clamp(22px,3.5vw,48px)!important;
+  background:#fff!important; border:1px solid #e9e9e9!important;
+  border-top:4px solid #e60012!important; border-radius:0!important;
+  box-shadow:0 16px 42px rgba(20,20,20,.055)!important;
+}
+form.form h2,form.form h3,form.form legend,
+form#birthdayInquiryForm h2,form#birthdayInquiryForm h3{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-weight:500!important; letter-spacing:-.035em!important;
+  line-height:1.18!important; color:#171717!important;
+}
+form.form fieldset,form#birthdayInquiryForm fieldset{
+  border:0!important; border-top:1px solid #ededed!important;
+  padding:25px 0 8px!important; margin:26px 0 0!important;
+}
+form.form legend,form#birthdayInquiryForm legend{
+  padding:0 14px 0 0!important; font-size:clamp(20px,2vw,26px)!important;
+}
+form.form label,form#birthdayInquiryForm label{
+  display:block; margin:0 0 9px!important; color:#292929!important;
+  font-size:13px!important; font-weight:700!important;
+  letter-spacing:.035em!important;
+}
+form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+form.form select,form.form textarea,
+form#birthdayInquiryForm input:not([type=checkbox]):not([type=radio]),
+form#birthdayInquiryForm select,form#birthdayInquiryForm textarea{
+  display:block; width:100%!important; min-height:54px!important;
+  padding:14px 16px!important; color:#191919!important;
+  background:#fff!important; border:1px solid #dcdcdc!important;
+  border-radius:0!important; box-shadow:none!important;
+  font:inherit!important; transition:border-color .18s ease,background .18s ease!important;
+}
+form.form textarea,form#birthdayInquiryForm textarea{min-height:138px!important;resize:vertical!important;}
+form.form input:focus,form.form select:focus,form.form textarea:focus,
+form#birthdayInquiryForm input:focus,form#birthdayInquiryForm select:focus,
+form#birthdayInquiryForm textarea:focus{
+  outline:none!important; border-color:#e60012!important;
+  box-shadow:0 0 0 3px rgba(230,0,18,.075)!important;
+}
+form.form input[type=checkbox],form.form input[type=radio],
+form#birthdayInquiryForm input[type=checkbox],form#birthdayInquiryForm input[type=radio]{
+  accent-color:#e60012!important; width:17px!important; height:17px!important;
+}
+form.form input[type=file]{max-width:100%;padding:12px!important;border:1px dashed #cfcfcf!important;background:#fafafa!important;}
+form.form button[type=submit],form.form input[type=submit],
+form#birthdayInquiryForm button[type=submit]{
+  min-height:56px!important; padding:16px 30px!important;
+  border:1px solid #e60012!important; border-radius:0!important;
+  background:#e60012!important; color:#fff!important;
+  font-size:12px!important; font-weight:800!important;
+  letter-spacing:.12em!important; text-transform:uppercase!important;
+  transition:background .2s ease,border-color .2s ease!important;
+}
+form.form button[type=submit]:hover,form.form input[type=submit]:hover,
+form#birthdayInquiryForm button[type=submit]:hover{
+  background:#171717!important;border-color:#171717!important;
+}
+form.form .grid2,form.form .grid3,form.form .grid4{
+  align-items:start!important; column-gap:22px!important; row-gap:20px!important;
+}
+form.form .form-note,form.form small{line-height:1.65!important;color:#686868!important;}
+@media(max-width:680px){
+  form.form,form#birthdayInquiryForm,form.lam-inspiration-form{
+    margin-top:18px!important;padding:22px 17px!important;
+  }
+  form.form button[type=submit],form.form input[type=submit],
+  form#birthdayInquiryForm button[type=submit]{width:100%!important;}
+}
+</style>
 </head>
 <body>
 
