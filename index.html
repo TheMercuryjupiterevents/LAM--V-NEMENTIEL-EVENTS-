@@ -5538,19 +5538,16 @@ input,select,textarea,.field input,.field select,.field textarea{background:#FFF
 
 
 <style id="lam-remove-page-white-background">
-/* Retirer les aplats blancs du fond de page, sans modifier les cartes */
-html,body{
-  background:transparent!important;
-  background-color:transparent!important;
-}
-main,section,.section,.section.alt,.hero,
+/* Supprimer les fonds Crème Clair et blanc des zones de page ; conserver les cartes */
+html,body,nav,.nav,#mobileNav,main,footer,.footer,
+.hero,.section,.section.alt,section,
 .team-section,.founders-section,
 #accueil,#services,#equipe,#contact{
   background:transparent!important;
   background-color:transparent!important;
   background-image:none!important;
 }
-/* Les cartes gardent leur apparence et leur fond propres */
+/* Les cartes et leurs surfaces restent inchangées */
 .card,.team-card,.tool-card,.contactbox,.payment-policy-card,
 .form,#formules .card.package:not(.redlabel),
 #services .card,#equipe .card,#contact .contactbox{
