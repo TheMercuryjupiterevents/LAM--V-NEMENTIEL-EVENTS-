@@ -3853,6 +3853,74 @@ window.setTimeout(close,7000);
 })();
 </script>
 
+
+<style id="lam-homepage-client-experience-2026">
+/* LAM — homepage éditoriale, fond blanc et navigation lisible */
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body,html,main,.section,.section.alt,.hero{background:#fff!important;color:#171717!important}
+.nav{background:rgba(255,255,255,.97)!important;border-bottom:1px solid #e8e8e8!important;backdrop-filter:blur(12px)}
+.navin{gap:24px!important}
+.navlinks{max-width:calc(100vw - 290px)!important;overflow-x:auto!important;overflow-y:hidden!important;white-space:nowrap!important;scrollbar-width:thin!important;scrollbar-color:#e60012 #f3f3f3!important;padding:8px 0!important}
+.navlinks a{flex:0 0 auto!important;text-decoration:none!important}
+.navlinks a:hover{color:#e60012!important}
+.hero{min-height:0!important;padding:clamp(34px,5vw,68px) 0!important;overflow:hidden!important}
+.hero:before,.hero:after{display:none!important}
+.hero-grid{width:min(1260px,calc(100% - 48px))!important;max-width:1260px!important;grid-template-columns:minmax(0,1fr)!important;gap:22px!important;padding:clamp(24px,4vw,48px) 0!important;text-align:center!important}
+.lam-wheat-emblem{width:min(440px,82vw)!important;max-width:100%!important;margin:0 auto 12px!important}
+.hero-grid>div:last-child{max-width:930px!important;margin:0 auto!important}
+.hero h1{font-size:clamp(2.2rem,5.2vw,4.5rem)!important;line-height:1.02!important;letter-spacing:.015em!important;margin:12px auto!important}
+.hero-event-label{letter-spacing:.28em!important}
+.hero .tagline{margin:16px auto 12px!important;letter-spacing:.13em!important}
+.hero .lead{max-width:760px!important;margin:0 auto!important;line-height:1.8!important;color:#555!important}
+.hero .actions{justify-content:center!important;gap:12px!important;margin-top:26px!important}
+.hero .actions .btn{min-width:190px!important}
+.section{scroll-margin-top:86px}
+.section>.wrap>h2,.section .wrap>h2{max-width:1000px!important}
+#departements .lam-departments-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:clamp(22px,3vw,38px)!important;margin-top:30px!important}
+#departements .lam-departments-grid>.card{display:flex!important;flex-direction:column!important;align-items:flex-start!important;min-height:100%!important;padding:clamp(24px,3vw,38px)!important;border:1px solid #e6e6e6!important;border-top:3px solid #e60012!important;border-radius:0!important;background:#fff!important;box-shadow:0 12px 34px rgba(20,20,20,.045)!important}
+#departements .lam-departments-grid>.card .btn{margin-top:auto!important}
+#departements .lam-departments-grid>.card h3{font:500 clamp(22px,2.4vw,30px)/1.15 Georgia,serif!important;letter-spacing:-.025em!important}
+#departements .lam-departments-grid>.card p,#departements .lam-departments-grid>.card li{line-height:1.7!important;color:#555!important}
+#formulaire #formChoiceCards{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important}
+#formulaire #formChoiceCards>.card{display:flex!important;flex-direction:column!important;align-items:flex-start!important;min-height:285px!important;padding:clamp(22px,2.5vw,32px)!important;background:#fff!important;border:1px solid #e5e5e5!important;border-top:3px solid #d8d8d8!important;border-radius:0!important;box-shadow:0 10px 30px rgba(20,20,20,.04)!important;transition:border-color .2s,box-shadow .2s,transform .2s!important}
+#formulaire #formChoiceCards>.card:has([aria-pressed="true"]){border-top-color:#e60012!important;box-shadow:0 14px 36px rgba(230,0,18,.09)!important;transform:translateY(-2px)!important}
+#formulaire #formChoiceCards>.card h3{font:500 clamp(19px,1.7vw,23px)/1.2 Georgia,serif!important;letter-spacing:-.02em!important}
+#formulaire #formChoiceCards>.card p{color:#5b5b5b!important;line-height:1.7!important}
+#formulaire #formChoiceCards>.card .btn{margin-top:auto!important;width:100%!important}
+#formulaire #formChoiceStatus{padding:14px 18px!important;border-left:3px solid #e60012!important;background:#f8f8f8!important;color:#454545!important}
+#formulaire .form-panel{scroll-margin-top:100px!important}
+#formulaire .form-panel>.card{padding:clamp(22px,3vw,38px)!important;background:#fff!important;border:0!important;border-left:3px solid #e60012!important;box-shadow:none!important}
+#formulaire .form-panel>.card h3{font:500 clamp(23px,2.5vw,32px)/1.15 Georgia,serif!important}
+#formulaire .form-panel .payment-policy-inline{padding:22px 24px!important;margin:0 0 28px!important;background:#fafafa!important;border:1px solid #e8e8e8!important;border-left:3px solid #e60012!important;line-height:1.7!important}
+#formulaire .form-panel .form-section{margin-top:26px!important;padding-top:22px!important;border-top:1px solid #ececec!important}
+#formulaire .form-panel .form-section>h3{font:500 23px Georgia,serif!important;color:#171717!important;margin-bottom:18px!important}
+#formulaire .form-panel .fieldgrid{gap:18px 22px!important}
+#formulaire .form-panel .field{min-width:0!important}
+#formulaire .form-panel .field input,#formulaire .form-panel .field select,#formulaire .form-panel .field textarea{min-height:54px!important;width:100%!important;max-width:100%!important}
+#formulaire .form-panel .field textarea{min-height:130px!important}
+#formulaire .form-panel .consent{display:flex!important;align-items:flex-start!important;gap:12px!important;line-height:1.6!important;margin:24px 0!important}
+#formulaire .form-panel .consent input{flex:0 0 auto!important;margin-top:4px!important}
+@media(max-width:950px){
+ .navlinks{max-width:calc(100vw - 230px)!important}
+ #formulaire #formChoiceCards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:680px){
+ .navin{min-height:64px!important}
+ .navlinks{display:none!important}
+ .hero-grid{width:calc(100% - 30px)!important;padding:18px 0 28px!important}
+ .lam-wheat-emblem{width:min(330px,78vw)!important}
+ .hero h1{font-size:clamp(2rem,9vw,3rem)!important}
+ .hero .actions{display:grid!important;grid-template-columns:1fr!important;width:100%!important;max-width:440px!important;margin:22px auto 0!important}
+ .hero .actions .btn{width:100%!important}
+ #departements .lam-departments-grid{grid-template-columns:1fr!important}
+ #formulaire #formChoiceCards{grid-template-columns:1fr!important}
+ #formulaire #formChoiceCards>.card{min-height:0!important;padding:23px!important}
+ #formulaire .form-panel>.card{padding:22px 18px!important}
+ #formulaire .form-panel .fieldgrid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
