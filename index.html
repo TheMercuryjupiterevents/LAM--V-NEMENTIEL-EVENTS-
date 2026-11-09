@@ -8921,3 +8921,96 @@ html body .section .lead{
   }
 }
 </style>
+
+
+<style id="lam-step4-individual-form-colors-2026-11-09">
+/* ETAPE 4 — palettes par formulaire ; champs blancs, lisibles et boutons jamais noirs */
+#privateForm{--form-accent:#C97891;--form-soft:#F9EDF1;--form-line:#E8C7D2}
+#prestigeForm{--form-accent:#C97891;--form-soft:#F9EDF1;--form-line:#E8C7D2}
+#corporateForm{--form-accent:#5AAED0;--form-soft:#EDF7FB;--form-line:#C5E5F0}
+#concertForm{--form-accent:#D71920;--form-soft:#FFF0F0;--form-line:#F0BFC2}
+#pastryForm{--form-accent:#C49A35;--form-soft:#FBF6E8;--form-line:#E9D9A9}
+#minorForm{--form-accent:#9A83C6;--form-soft:#F4F0FA;--form-line:#D9CDEC}
+#communionForm{--form-accent:#86A94B;--form-soft:#F2F7E9;--form-line:#D6E4C1}
+#lam-kids-form{--form-accent:#79BBD8;--form-soft:#F2F8FC;--form-line:#D8EAF3}
+#privateForm,#prestigeForm,#corporateForm,#concertForm,#pastryForm,#minorForm,#communionForm,
+#lam-kids-form{
+  --form-accent:var(--form-accent,#5AAED0);
+}
+#privateForm .card,#prestigeForm .card,#corporateForm .card,
+#concertForm .contactbox,#pastryForm .contactbox,#minorForm>.card,#communionForm>.card,
+#lam-kids-form .kids-instructions{
+  background:var(--form-soft)!important;border:0!important;
+  border-top:3px solid var(--form-accent)!important;border-radius:0!important;
+  box-shadow:none!important;
+}
+#privateForm form.form,#prestigeForm form.form,#corporateForm form.form,
+#concertForm form.form,#pastryForm form.form,#minorForm form.form,
+#communionForm form.form,#lam-kids-form form{
+  background:#FFFFFF!important;border:1px solid var(--form-line)!important;
+  border-top:4px solid var(--form-accent)!important;border-radius:0!important;
+  box-shadow:none!important;
+}
+#privateForm .form-section h3,#prestigeForm .form-section h3,
+#corporateForm .form-section h3,#concertForm .form-section h3,
+#pastryForm .form-section h3,#minorForm .form-section h3,
+#communionForm .form-section h3,#lam-kids-form legend,
+#lam-kids-form fieldset legend{
+  color:var(--form-accent)!important;
+}
+#privateForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#privateForm form.form select,#privateForm form.form textarea,
+#prestigeForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#prestigeForm form.form select,#prestigeForm form.form textarea,
+#corporateForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#corporateForm form.form select,#corporateForm form.form textarea,
+#concertForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#concertForm form.form select,#concertForm form.form textarea,
+#pastryForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#pastryForm form.form select,#pastryForm form.form textarea,
+#minorForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#minorForm form.form select,#minorForm form.form textarea,
+#communionForm form.form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#communionForm form.form select,#communionForm form.form textarea,
+#lam-kids-form form input:not([type=checkbox]):not([type=radio]):not([type=file]),
+#lam-kids-form form select,#lam-kids-form form textarea{
+  background:#FFFFFF!important;border:1px solid var(--form-line)!important;
+  color:#202020!important;border-radius:0!important;
+}
+#privateForm form.form input:focus,#privateForm form.form select:focus,#privateForm form.form textarea:focus,
+#prestigeForm form.form input:focus,#prestigeForm form.form select:focus,#prestigeForm form.form textarea:focus,
+#corporateForm form.form input:focus,#corporateForm form.form select:focus,#corporateForm form.form textarea:focus,
+#concertForm form.form input:focus,#concertForm form.form select:focus,#concertForm form.form textarea:focus,
+#pastryForm form.form input:focus,#pastryForm form.form select:focus,#pastryForm form.form textarea:focus,
+#minorForm form.form input:focus,#minorForm form.form select:focus,#minorForm form.form textarea:focus,
+#communionForm form.form input:focus,#communionForm form.form select:focus,#communionForm form.form textarea:focus{
+  border-color:var(--form-accent)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--form-accent) 14%,transparent)!important;
+}
+#privateForm form.form button[type=submit],#prestigeForm form.form button[type=submit],
+#corporateForm form.form button[type=submit],#concertForm form.form button[type=submit],
+#pastryForm form.form button[type=submit],#minorForm form.form button[type=submit],
+#communionForm form.form button[type=submit],#lam-kids-form form button[type=submit]{
+  background:var(--form-accent)!important;border-color:var(--form-accent)!important;
+  color:#FFFFFF!important;border-radius:0!important;box-shadow:none!important;
+}
+#formChoiceCards>.card{
+  background:transparent!important;border:0!important;border-top:1px solid #e7e0da!important;
+  border-radius:0!important;box-shadow:none!important;padding:22px 12px!important;
+}
+#formChoiceCards>.card .num{color:#D71920!important;letter-spacing:.14em!important}
+#formChoiceCards>.card h3{font:500 17px/1.35 Georgia,serif!important;color:#202020!important}
+#formChoiceCards>.card p{font:13px/1.8 Arial,sans-serif!important;color:#666!important}
+#formChoiceCards>.card .btn{background:#D71920!important;border-color:#D71920!important;color:#fff!important;border-radius:0!important}
+#lam-kids-form{--form-accent:#79BBD8;--form-line:#D8EAF3}
+#lam-kids-form form{background:#FFFFFF!important;border-top:4px solid #79BBD8!important}
+#lam-kids-form fieldset{border-top:1px solid #D8EAF3!important}
+#lam-kids-form legend{color:#79BBD8!important}
+#lam-kids-form button,#lam-kids-form input[type=submit]{
+  background:#79BBD8!important;border-color:#79BBD8!important;color:#202020!important;
+}
+@media(max-width:700px){
+ #privateForm form.form,#prestigeForm form.form,#corporateForm form.form,
+ #concertForm form.form,#pastryForm form.form,#minorForm form.form,
+ #communionForm form.form,#lam-kids-form form{padding:20px 16px!important}
+}
+</style>
