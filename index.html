@@ -1946,6 +1946,31 @@ button:hover,.btn:hover,[type=submit]:hover,[type=button]:hover{
 }
 </style>
 
+
+<style id="lam-wider-editorial-panels-2026-11-09">
+/* Élargir les blocs et cartes sur l'ensemble du site */
+:root{--max:1500px!important}
+.wrap,.hero-grid{
+ width:min(96%,1500px)!important;
+ max-width:1500px!important;
+ margin-left:auto!important;margin-right:auto!important
+}
+.grid3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.grid4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.card,.package,.form,.palette-preview{
+ width:100%!important;max-width:none!important;
+ min-width:0!important
+}
+.card{padding:clamp(24px,3vw,38px)!important}
+.form-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr)!important}
+@media(max-width:760px){
+ .wrap,.hero-grid{width:94%!important}
+ .grid2,.grid3,.grid4,.form-layout{grid-template-columns:minmax(0,1fr)!important}
+ .card,.form{padding:22px!important}
+}
+</style>
+
 </head>
 <body>
 
