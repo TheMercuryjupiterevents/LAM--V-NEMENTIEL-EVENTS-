@@ -7379,3 +7379,36 @@ form:not([class*="search"]) select,form:not([class*="search"]) textarea{
  .form{padding:22px!important}
 }
 </style>
+
+
+<style id="LAM-OVERRIDE-TYPOGRAPHY-FINAL-2026-11-08">
+/* Correctif final : couleurs de texte appliquees apres toutes les anciennes feuilles de style */
+:root{
+ --lam-text-brown:#563E2D;
+ --lam-text-black:#171717;
+ --lam-text-red:#D71920;
+ --lam-text-sky:#168DB8;
+}
+body{color:var(--lam-text-brown)!important}
+body :is(h1,h2,h3,h4,h5,h6){color:var(--lam-text-black)!important;-webkit-text-fill-color:var(--lam-text-black)!important}
+body :is(p,li,label,small,strong,em,blockquote,figcaption,.lead,.small,.quote,.eyebrow,.section-kicker,.field label,.group-title,.form-note,.privacy-note,.team-role,.founder-name,.payment-policy-card p,.payment-policy-note){
+ color:var(--lam-text-brown)!important;-webkit-text-fill-color:var(--lam-text-brown)!important
+}
+body :is(.eyebrow,.section-kicker,.num,.red,.founder-name,.team-role,.payment-policy-number,.payment-policy-inline-title){
+ color:var(--lam-text-red)!important;-webkit-text-fill-color:var(--lam-text-red)!important
+}
+body a:not(.btn):not(.wa),body a:not(.btn):not(.wa) :is(span,strong){
+ color:var(--lam-text-sky)!important;-webkit-text-fill-color:var(--lam-text-sky)!important
+}
+body :is(.footer,.footer *){color:var(--lam-text-sky)!important;-webkit-text-fill-color:var(--lam-text-sky)!important}
+body :is(.btn,.btn *,button,button *,input[type=submit],.wa,.wa *){color:var(--lam-text-black)!important;-webkit-text-fill-color:var(--lam-text-black)!important}
+body :is(.redlabel,#formules .card.package.redlabel){
+ background:#F3F0ED!important;color:var(--lam-text-black)!important
+}
+body :is(.redlabel,#formules .card.package.redlabel) :is(h1,h2,h3,h4,p,li,span,strong,.eyebrow){
+ color:var(--lam-text-black)!important;-webkit-text-fill-color:var(--lam-text-black)!important
+}
+body :is(.section.dark,.section.dark *){color:var(--lam-text-brown)!important;-webkit-text-fill-color:var(--lam-text-brown)!important}
+body :is(.section.dark){background:#F3F0ED!important}
+body :is(input,select,textarea,.field input,.field select,.field textarea){color:var(--lam-text-black)!important;-webkit-text-fill-color:var(--lam-text-black)!important}
+</style>
