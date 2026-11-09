@@ -9250,3 +9250,46 @@ html,body{scroll-behavior:auto!important}
  setTimeout(function(){observer.disconnect()},10000);
 })();
 </script>
+
+<style id="lam-hero-letter-only-motion-2026-11-09">
+/* Seule animation conservée : formation des lettres L-A-M dans le titre principal */
+#lam-hero .lam-letter{
+ animation:lamLetterForm .95s cubic-bezier(.2,.72,.25,1) both!important;
+}
+#lam-hero .lam-letter-l{animation-delay:.12s!important}
+#lam-hero .lam-letter-a{animation-delay:.48s!important}
+#lam-hero .lam-letter-m{animation-delay:.84s!important}
+</style>
+<script id="lam-signature-all-main-forms-2026-11-09">
+(function(){
+ const selectors=['#prestigeForm form','#privateForm form','#corporateForm form','#concertForm form','#pastryForm form','#minorForm form','#communionForm form'];
+ selectors.forEach(function(selector,index){
+  const form=document.querySelector(selector);
+  if(!form||form.querySelector('[data-lam-signature]'))return;
+  const wrap=document.createElement('section');
+  wrap.setAttribute('data-lam-signature','');
+  wrap.style.cssText='margin:26px 0 18px;padding:18px 0;border-top:1px solid #d7c8ba';
+  const title=document.createElement('h3');title.textContent='Signature électronique du client';title.style.cssText='font-size:1rem;margin:0 0 8px;color:#302820';
+  const note=document.createElement('p');note.textContent='En signant, vous confirmez l’exactitude des informations transmises et votre accord pour être recontacté(e) au sujet de cette demande.';note.style.cssText='font-size:.88rem;margin:0 0 12px;color:#51463c';
+  const canvas=document.createElement('canvas');canvas.width=720;canvas.height=170;canvas.style.cssText='display:block;width:100%;max-width:560px;height:132px;background:#fff;border:1px solid #b9a895;border-radius:8px;touch-action:none';
+  canvas.setAttribute('aria-label','Zone de signature électronique');
+  const hidden=document.createElement('input');hidden.type='hidden';hidden.name='Signature électronique du client';hidden.required=true;
+  const clear=document.createElement('button');clear.type='button';clear.textContent='Effacer la signature';clear.style.cssText='margin:9px 0 0;padding:9px 14px;border:1px solid #8b6a47;border-radius:22px;background:#e9ded2;color:#302820;cursor:pointer';
+  const error=document.createElement('p');error.textContent='Veuillez signer avant d’envoyer le formulaire.';error.style.cssText='display:none;color:#b4232d;font-size:.85rem;margin:8px 0 0';
+  wrap.append(title,note,canvas,hidden,clear,error);
+  const submit=form.querySelector('button[type="submit"],input[type="submit"]');
+  if(submit)form.insertBefore(wrap,submit);else form.appendChild(wrap);
+  const ctx=canvas.getContext('2d');ctx.strokeStyle='#302820';ctx.lineWidth=2.5;ctx.lineCap='round';ctx.lineJoin='round';
+  let drawing=false,signed=false;
+  function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height}}
+  canvas.addEventListener('pointerdown',function(e){drawing=true;canvas.setPointerCapture(e.pointerId);const p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);e.preventDefault()});
+  canvas.addEventListener('pointermove',function(e){if(!drawing)return;const p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke();signed=true;error.style.display='none';e.preventDefault()});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(name){canvas.addEventListener(name,function(){drawing=false})});
+  clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);signed=false;hidden.value='';error.style.display='none'});
+  form.addEventListener('submit',function(e){
+   if(!signed){e.preventDefault();error.style.display='block';wrap.scrollIntoView({behavior:'auto',block:'center'});return}
+   hidden.value=canvas.toDataURL('image/png');
+  });
+ });
+})();
+</script>
