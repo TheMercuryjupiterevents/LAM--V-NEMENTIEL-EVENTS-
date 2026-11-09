@@ -1538,6 +1538,17 @@ input[type=checkbox],input[type=radio]{accent-color:var(--wine2)!important}
 @media(max-width:420px){.gallery-grid,.inspiration-grid,.lam-inspiration-examples{grid-template-columns:1fr!important}.team-grid{grid-template-columns:1fr 1fr!important}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
+<style id="lam-remove-all-animations">
+/* Suppression de l'écran d'introduction et des animations du site */
+#welcome-intro,#welcome-intro.is-hidden{
+ display:none!important;visibility:hidden!important;opacity:0!important;
+ pointer-events:none!important;animation:none!important;transition:none!important
+}
+*,*::before,*::after{
+ animation:none!important;transition:none!important;
+ scroll-behavior:auto!important
+}
+</style>
 </head>
 <body>
 
