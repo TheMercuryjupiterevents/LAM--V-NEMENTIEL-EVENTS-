@@ -1659,37 +1659,106 @@ img{max-width:100%}
 }
 </style>
 
+
+<style id="lam-interior-structure-redesign-2026">
+/* Recomposition réelle de l'accueil et de la navigation */
+#lam-main-navigation .brand-name{font-size:1.18rem!important;line-height:1.1!important}
+#lam-main-navigation .brand-name small{font-size:.57rem!important;letter-spacing:.22em!important;margin-top:5px}
+#lam-main-navigation .navlinks a{white-space:nowrap}
+#mobileNav{padding:18px 0!important}
+#mobileNav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+#mobileNav a{display:block;padding:13px 0;border-bottom:1px solid #ffffff25;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+#lam-hero{position:relative;isolation:isolate;overflow:hidden}
+#lam-hero:before{content:"";position:absolute;z-index:-1;width:54vw;height:54vw;max-width:760px;max-height:760px;border-radius:50%;right:-19vw;top:-28vw;background:#E00024;opacity:.2}
+#lam-hero:after{content:"";position:absolute;z-index:-1;width:35vw;height:35vw;max-width:500px;max-height:500px;border:1px solid #ffffff45;border-radius:50%;right:4vw;bottom:-24vw}
+#lam-hero .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)!important;align-items:center!important;gap:clamp(44px,7vw,112px)!important;padding:clamp(72px,10vw,142px) 0!important}
+#lam-hero .lam-hero-copy{max-width:760px}
+#lam-hero h1{font-size:clamp(3.4rem,7.8vw,7.4rem)!important;line-height:.88!important;letter-spacing:-.065em!important;font-weight:500!important;margin:18px 0 20px!important}
+#lam-hero .hero-name-rest{display:block;font-size:.72em;line-height:1.02;letter-spacing:-.045em}
+#lam-hero .hero-event-label{font-size:.62rem!important;letter-spacing:.2em!important;line-height:1.8}
+#lam-hero .tagline{font-size:clamp(1.12rem,1.8vw,1.48rem)!important;margin:24px 0 12px!important}
+#lam-hero .lead{font-size:.94rem!important;max-width:590px!important}
+#lam-hero .actions{margin-top:30px!important}
+#lam-hero .lam-hero-signature{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:38px;color:#fff;font-size:.56rem;letter-spacing:.16em}
+#lam-hero .lam-hero-signature i{display:inline-block;width:22px;height:1px;background:#ffffff80}
+#lam-hero .lam-hero-visual{max-width:520px;width:100%;justify-self:end}
+#lam-hero .lam-hero-frame{position:relative;padding:clamp(18px,3vw,34px);border:1px solid #ffffff70;background:#ffffff0b}
+#lam-hero .lam-hero-frame:before{content:"";position:absolute;inset:9px;border:1px solid #ffffff35;pointer-events:none}
+#lam-hero .lam-center-logo{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:#fff;position:relative;z-index:1}
+#lam-hero .lam-hero-caption{margin:15px 0 0;text-align:right;color:#fff!important;font-size:.6rem!important;letter-spacing:.18em}
+#lam-hero .lam-hero-caption span{opacity:.7}
+#apropos .grid{align-items:center!important}
+#services .grid,#departements .grid{margin-top:34px}
+#services .card,#departements .card{height:100%}
+#departements .card h4{color:#64152B;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:20px 0 8px}
+#departements .card ul{padding-left:18px;line-height:1.9}
+#formulaire .form-layout{align-items:start}
+#contact .contactbox{height:100%}
+@media(max-width:950px){
+ #lam-hero .hero-grid{grid-template-columns:1fr!important}
+ #lam-hero .lam-hero-visual{justify-self:center;max-width:390px}
+ #lam-hero .lam-hero-copy{max-width:760px}
+}
+@media(max-width:680px){
+ #mobileNav .wrap{grid-template-columns:1fr}
+ #lam-hero .hero-grid{width:calc(100% - 34px)!important;padding:54px 0 62px!important;gap:34px!important}
+ #lam-hero h1{font-size:clamp(3rem,15vw,5rem)!important}
+ #lam-hero .hero-name-rest{font-size:.68em}
+ #lam-hero .lam-hero-visual{width:min(100%,310px)}
+ #lam-hero .lam-hero-signature{font-size:.49rem;gap:7px;margin-top:26px}
+ #lam-hero .lam-hero-signature i{width:12px}
+}
+</style>
+
 </head>
 <body>
 
 
-<header class="nav">
-<div class="wrap navin">
-<a class="brand" href="#accueil" aria-label="Retour au site LAM"><span class="brand-name">LAM ÉVÉNEMENTIEL & EVENTS<small>L’ART DE RECEVOIR</small></span></a>
-<nav class="navlinks" aria-label="Navigation principale">
-<a href="#accueil">Accueil</a><a href="#services">Expertises</a><a href="#departements">Départements</a><a href="#lam-kids">LAM Kids</a><a href="#formulaire">Formulaires</a><a href="#presentation">Présentation</a><a href="#informations-legales">Informations légales</a><a href="#contact">Contact</a>
-</nav>
-<button class="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="const m=document.getElementById('mobileNav');m.hidden=!m.hidden;this.setAttribute('aria-expanded',String(!m.hidden))">☰</button>
-</div>
-<div id="mobileNav" hidden><div class="wrap">
-<a href="#accueil">Accueil</a><a href="#services">Expertises</a><a href="#departements">Départements</a><a href="#lam-kids">LAM Kids</a><a href="#formulaire">Formulaires</a><a href="#presentation">Présentation</a><a href="#informations-legales">Informations légales</a><a href="#contact">Contact</a>
-</div></div></header>
+<header class="nav" id="lam-main-navigation">
+  <div class="wrap navin">
+    <a class="brand" href="#accueil" aria-label="Accueil LAM ÉVÉNEMENTIEL & EVENTS">
+      <span class="brand-name">LAM <small>ÉVÉNEMENTIEL & EVENTS</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#apropos">Notre vision</a>
+      <a href="#services">Services</a>
+      <a href="#departements">Départements</a>
+      <a href="#formules">Formules</a>
+      <a href="#formulaire">Demandes</a>
+      <a href="#presentation">Présentation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="const m=document.getElementById('mobileNav');m.hidden=!m.hidden;this.setAttribute('aria-expanded',String(!m.hidden))">☰</button>
+  </div>
+  <div id="mobileNav" hidden><div class="wrap">
+    <a href="#accueil">Accueil</a><a href="#apropos">Notre vision</a><a href="#services">Services</a><a href="#departements">Départements</a><a href="#formules">Formules</a><a href="#formulaire">Demandes & formulaires</a><a href="#presentation">Présentation</a><a href="#contact">Contact</a>
+  </div></div>
+</header>
 
 <main id="accueil">
-<section class="hero">
-
-
-<div class="wrap hero-grid">
-<div class="lam-wheat-emblem" aria-label="Logo LAM au centre, intégré à des ailes métalliques 3D animées">
-<img class="lam-wheat-wing lam-wheat-wing-left" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true"><img class="lam-wheat-wing lam-wheat-wing-right" src="/LAM--V-NEMENTIEL-EVENTS-/assets/lam-wheat-wings.svg?v=20261018metal3d" alt="" aria-hidden="true">
-<img class="lam-center-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo officiel LAM ÉVÉNEMENTIEL & EVENTS au centre des ailes">
-</div>
-<div>
-<h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
-<p class="tagline">L’élégance au service de vos moments d’exception.</p>
-<p class="lead">De la première inspiration à la réalisation, LAM imagine des événements sur mesure qui reflètent votre style, respectent vos priorités et réunissent vos invités autour d’un moment unique.</p>
-<div class="actions"><a class="btn primary" href="#formulaire">Planifier mon événement</a><a class="btn" href="#services">Découvrir nos services</a><a class="btn" href="#lam-kids">Découvrir LAM KIDS</a><a class="btn" href="#formulaire-partenariat">Proposer un partenariat</a><a class="btn" href="#formulaire-recrutement">Rejoindre l’équipe LAM</a></div></div>
-</div></section>
+<section class="hero" id="lam-hero">
+  <div class="wrap hero-grid">
+    <div class="lam-hero-copy">
+      <div class="eyebrow">L’art de créer des moments inoubliables</div>
+      <h1>LAM <span class="hero-name-rest">ÉVÉNEMENTIEL<br>&amp; EVENTS</span></h1>
+      <div class="hero-event-label">HAÏTI · ÉVÉNEMENTS PRIVÉS &amp; PROFESSIONNELS</div>
+      <p class="tagline">L’élégance au service de vos moments d’exception.</p>
+      <p class="lead">Nous imaginons, organisons et coordonnons vos événements avec créativité, précision et sens du détail. De la première idée à la réalisation, chaque projet est pensé autour de votre histoire.</p>
+      <div class="actions">
+        <a class="btn primary" href="#formulaire">Présenter mon projet</a>
+        <a class="btn" href="#services">Explorer nos expertises</a>
+      </div>
+      <div class="lam-hero-signature"><span>ORGANISATION</span><i></i><span>DÉCORATION</span><i></i><span>TRAITEUR</span><i></i><span>PRODUCTION</span></div>
+    </div>
+    <div class="lam-hero-visual">
+      <div class="lam-hero-frame">
+        <img class="lam-center-logo" src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo LAM ÉVÉNEMENTIEL & EVENTS">
+      </div>
+      <p class="lam-hero-caption">LAM ÉVÉNEMENTIEL &amp; EVENTS <span>— HAÏTI</span></p>
+    </div>
+  </div>
+</section>
 
 <section id="lam-kids" class="section alt">
 <div class="wrap">
