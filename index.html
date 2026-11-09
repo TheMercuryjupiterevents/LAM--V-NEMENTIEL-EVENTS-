@@ -3230,6 +3230,9 @@ document.addEventListener('click',function(event){
 </div>
 
 <div class="birthday-form-grid">
+<div class="birthday-field"><label for="birthdayClientName">Nom et prénom *</label><input id="birthdayClientName" type="text" autocomplete="name" required placeholder="Votre nom complet"></div>
+<div class="birthday-field"><label for="birthdayClientPhone">Téléphone / WhatsApp *</label><input id="birthdayClientPhone" type="tel" autocomplete="tel" required placeholder="+509 ..."></div>
+<div class="birthday-field"><label for="birthdayClientEmail">Adresse e-mail *</label><input id="birthdayClientEmail" type="email" autocomplete="email" required placeholder="vous@exemple.com"></div>
 <div class="birthday-field"><label for="birthdayEventType">Quel type d’événement souhaitez-vous organiser ?</label><select id="birthdayEventType" required><option value="">Choisir un type</option><option>Dîner</option><option>Anniversaire</option><option>Fête pour enfant</option><option>Fête pour adolescent</option><option>Anniversaire surprise</option><option>Fiançailles</option><option>Mariage</option><option>Baby shower</option><option>Bridal shower</option><option>Graduation</option><option>Dîner privé</option><option>Autre célébration</option></select></div>
 <div class="birthday-field"><label for="birthdayForWho">Pour qui organisez-vous la fête ?</label><select id="birthdayForWho" required><option value="">Choisir</option><option>Un enfant</option><option>Un adolescent</option><option>Une adulte / une dame</option><option>Un adulte / un homme</option><option>Un couple</option><option>Un membre de la famille</option><option>Un ami / une amie</option><option>Moi-même</option><option>Autre</option></select></div>
 <div class="birthday-field"><label for="birthdayAge">Quel âge la personne va-t-elle avoir ?</label><input id="birthdayAge" type="text" placeholder="Ex. 5 ans, 18 ans, 30 ans, 50 ans"></div>
@@ -3942,6 +3945,9 @@ Haïti<br>
   event.preventDefault();
   var get=function(id){return (document.getElementById(id).value||'À préciser').trim();};
   var fields=[
+   ['Nom et prénom',get('birthdayClientName')],
+   ['Téléphone / WhatsApp',get('birthdayClientPhone')],
+   ['Adresse e-mail',get('birthdayClientEmail')],
    ['Type d’événement',get('birthdayEventType')],
    ['Pour qui',get('birthdayForWho')],
    ['Âge célébré',get('birthdayAge')],
