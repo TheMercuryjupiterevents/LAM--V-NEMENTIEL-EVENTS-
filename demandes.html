@@ -1268,23 +1268,71 @@ background:transparent!important;border:0!important;border-radius:0!important;bo
 .lam-signature-note{padding:22px 0 0;border-top:1px solid #cbbdb5;color:#68564d;font-size:.82rem;line-height:1.8}
 @media(max-width:760px){.lam-signature-feature,.lam-signature-second{grid-template-columns:1fr;gap:24px}.lam-signature-second .lam-signature-number,.lam-signature-second .lam-signature-copy,.lam-signature-second .lam-signature-visual{grid-column:1;grid-row:auto}.lam-signature-visual{min-height:300px}.lam-signature-intro{margin-bottom:28px}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style id="lam-unified-site-identity">
+:root{--wine:#59232d;--wine-deep:#351a20;--wine-soft:#86535a;--espresso:#3b2a24;--cocoa:#806454;--ivory:#f3eee6;--paper:#fbf9f5;--ink:#292321;--muted:#756a63;--line:#d9cec3;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+html{scroll-behavior:smooth;background:var(--paper)!important;scroll-padding-top:95px}body{margin:0!important;background:var(--paper)!important;color:var(--ink)!important;font-family:var(--sans)!important;line-height:1.7!important}
+.wrap{width:min(1320px,calc(100% - 9vw))!important;margin-inline:auto!important}
+.nav{position:sticky!important;top:0!important;z-index:100!important;background:#fbf9f5f2!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(16px)!important}
+.navin{min-height:78px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important}
+.brand{display:flex!important;align-items:center!important;color:var(--wine)!important;white-space:nowrap!important}.brand-mark,.brand img{display:none!important}
+.brand-name{display:block!important;color:var(--wine)!important;font:500 17px var(--serif)!important;letter-spacing:.1em!important;line-height:1.2!important}
+.brand-name small{display:block!important;margin-top:5px!important;color:var(--cocoa)!important;font:600 8px var(--sans)!important;letter-spacing:.27em!important}
+.navlinks{display:flex!important;align-items:center!important;gap:clamp(12px,1.6vw,23px)!important;font:600 9px var(--sans)!important;letter-spacing:.13em!important;text-transform:uppercase!important;color:var(--espresso)!important}
+.navlinks a{white-space:nowrap!important}.navlinks a:hover{color:var(--wine-soft)!important}.navlinks .btn{padding:12px 15px!important;min-height:auto!important}
+.menu{display:none!important;border:1px solid var(--line)!important;background:transparent!important;color:var(--wine)!important;padding:10px 14px!important}
+#mobileNav{background:var(--paper)!important;border-top:1px solid var(--line)!important}#mobileNav .wrap{padding:12px 0 20px!important;display:grid!important;gap:0!important}
+#mobileNav a{padding:13px 0!important;border-bottom:1px solid var(--line)!important;color:var(--wine-deep)!important;font:600 10px var(--sans)!important;letter-spacing:.13em!important;text-transform:uppercase!important}
+.hero{min-height:0!important;background:var(--ivory)!important;overflow:hidden!important}.hero:before{width:38vw!important;height:38vw!important;right:-16vw!important;top:-22vw!important;background:#dfcec2!important;opacity:.6!important}.hero:after{width:26vw!important;height:26vw!important;right:7vw!important;bottom:-18vw!important;border:1px solid #b99e91!important}
+.hero-grid{width:min(1320px,calc(100% - 9vw))!important;max-width:1320px!important;display:block!important;padding:clamp(70px,9vw,120px) 0!important}
+.lam-wheat-emblem,.hero-logo,.lam-center-logo,.lam-wheat-wing{display:none!important}
+.hero h1{font:500 clamp(43px,7vw,86px)/1.02 var(--serif)!important;letter-spacing:-.055em!important;text-transform:uppercase!important;color:var(--wine-deep)!important;max-width:900px!important;margin:20px 0 12px!important}
+.hero-event-label,.eyebrow{font:700 9px var(--sans)!important;letter-spacing:.25em!important;color:var(--cocoa)!important}
+.tagline{font:italic 400 clamp(19px,2.2vw,26px)/1.45 var(--serif)!important;color:var(--cocoa)!important;margin:20px 0 12px!important}
+.lead,.hero .lead{font:400 14px/1.95 var(--sans)!important;color:var(--muted)!important;max-width:690px!important}
+.actions{gap:12px!important;margin-top:28px!important}
+.btn,.btn.primary,.btn.blue,button[type=submit],input[type=submit]{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:49px!important;padding:14px 20px!important;border:1px solid var(--wine)!important;border-radius:0!important;background:var(--wine)!important;color:#fff!important;font:600 9px var(--sans)!important;letter-spacing:.15em!important;text-transform:uppercase!important;box-shadow:none!important}
+.btn:hover,.btn.primary:hover,.btn.blue:hover,button[type=submit]:hover,input[type=submit]:hover{background:var(--espresso)!important;border-color:var(--espresso)!important;color:#fff!important}
+.section,.section.alt,.section.dark,.team-section,.founders-section{background:var(--paper)!important;color:var(--ink)!important}.section.alt{background:var(--ivory)!important}.section.dark{background:var(--wine-deep)!important;color:var(--paper)!important}
+.section{padding:clamp(65px,8vw,112px) 0!important}.section h2,.section-head h2{font:500 clamp(34px,5vw,65px)/1.07 var(--serif)!important;letter-spacing:-.045em!important;color:var(--wine-deep)!important}
+.section h3,.card h3,.tool-card h3,.team-card h3{font:500 clamp(21px,2.4vw,30px)/1.2 var(--serif)!important;color:var(--espresso)!important;letter-spacing:-.02em!important}
+.section p,.section li,.section .lead,.card p,.tool-card p{color:var(--muted)!important;line-height:1.9!important}.section.dark h1,.section.dark h2,.section.dark h3,.section.dark p,.section.dark li,.section.dark .lead{color:var(--paper)!important}
+.grid{gap:clamp(18px,2.5vw,32px)!important}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))!important}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))!important}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+.card,.team-card,.tool-card,.contactbox{border:0!important;border-top:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:25px 0!important}
+.num{color:var(--wine-soft)!important}.pill,.pills span,.mission-tags span{border:1px solid var(--line)!important;border-radius:0!important;background:transparent!important;color:var(--wine)!important}
+.redlabel{background:var(--wine)!important;color:#fff!important;border:0!important;padding:clamp(24px,3vw,42px)!important}.redlabel h2,.redlabel h3,.redlabel p,.redlabel .eyebrow{color:var(--paper)!important}
+.form-layout{grid-template-columns:.75fr 1.25fr!important;gap:clamp(28px,5vw,70px)!important;align-items:start!important}
+.form{background:var(--ivory)!important;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;padding:clamp(20px,3.2vw,42px)!important}
+.form-section{border-top:1px solid var(--line)!important;margin-top:26px!important;padding-top:22px!important}
+.field label,.group-title,.form-section h3{color:var(--espresso)!important;font:600 10px var(--sans)!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.field input,.field select,.field textarea,form:not([class*="search"]) input:not([type=checkbox]):not([type=radio]),form:not([class*="search"]) select,form:not([class*="search"]) textarea{width:100%!important;max-width:100%!important;min-height:50px!important;border:1px solid #cbbcb2!important;border-radius:0!important;background:var(--paper)!important;color:var(--ink)!important;padding:13px 14px!important;font:13px var(--sans)!important;box-shadow:none!important}
+.field textarea,form textarea{min-height:120px!important}.field input:focus,.field select:focus,.field textarea:focus{outline:0!important;border-color:var(--wine)!important;box-shadow:0 0 0 2px #59232d15!important}
+input[type=checkbox],input[type=radio]{accent-color:var(--wine)!important}
+.payment-policy-inline,.payment-policy-card{background:#e9dfd5!important;border:1px solid var(--line)!important;border-radius:0!important;color:var(--espresso)!important}
+.sky-gallery,.tools-hub,.creator-preview,.budget-result,.gallery-slot,.gallery-upload,.inspiration-upload{background:var(--ivory)!important;border-color:var(--line)!important;border-radius:0!important;box-shadow:none!important;color:var(--ink)!important}
+.sky-gallery .lead,.gallery-slot p,.tool-card p{color:var(--muted)!important}.gallery-slot h3,.creator-preview h3,.tool-card h3{color:var(--wine)!important}.creator-preview-inner{background:var(--paper)!important;border:1px solid var(--line)!important;border-radius:0!important}
+.founders-section,.founders-hero-photo,.founders-names{display:none!important}
+.footer{background:var(--wine-deep)!important;color:var(--paper)!important;padding:65px 0 25px!important}.footer h1,.footer h2,.footer h3,.footer h4,.footer p,.footer a,.footerbottom{color:var(--paper)!important}.footer .eyebrow{color:#d5b9a9!important}.wa{background:var(--wine)!important;border:1px solid #d5b9a9!important;border-radius:0!important;color:#fff!important}
+#welcome-intro{display:none!important;visibility:hidden!important;pointer-events:none!important}
+@media(max-width:1050px){.navlinks{display:none!important}.menu{display:block!important}.wrap,.hero-grid{width:calc(100% - 44px)!important}}
+@media(max-width:760px){.wrap,.hero-grid{width:calc(100% - 36px)!important}.navin{min-height:70px!important}.brand-name{font-size:14px!important}.hero-grid{padding:58px 0 62px!important}.hero h1{font-size:clamp(38px,11vw,62px)!important}.section{padding:58px 0!important}.grid2,.grid3,.grid4,.form-layout,.tools-grid{grid-template-columns:1fr!important}.actions .btn{width:100%!important}.form{padding:20px!important}.footergrid{grid-template-columns:1fr!important}.inspiration-files,.inspiration-previews{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
 
 
 <header class="nav">
 <div class="wrap navin">
-<a class="brand" href="#accueil" aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="brand-mark"><img src="/LAM--V-NEMENTIEL-EVENTS-/assets/IMG_7123.png?v=20261018clear" alt="Logo LAM ÉVÉNEMENTIEL & EVENTS"></span><span class="brand-name">LAM ÉVÉNEMENTIEL & EVENTS<small>ÉVÉNEMENTIEL</small></span></a>
+<a class="brand" href="index.html" aria-label="Retour au site LAM"><span class="brand-name">LAM ÉVÉNEMENTIEL & EVENTS<small>L’ART DE RECEVOIR</small></span></a>
 <nav class="navlinks" aria-label="Navigation principale">
-<a href="#apropos">À propos</a><a href="#services">Services</a><a href="#departements">Nos départements</a><a href="#lam-couture">Couture</a><a href="kids.html">LAM KIDS</a><a href="#cartes-invitation-mariage">Cartes de mariage</a><a href="#galerie">Galerie photos</a><a href="#createur">Créer mon événement</a><a href="#inspiration-evenement">Trouver des idées</a><a href="#budget-estimateur">Budget</a><a href="#personnalisez-evenement">Personnaliser</a><a href="#outils-clients">Outils clients</a><a href="#formulaire">LAM COMMUNION</a><a href="#formules">Formules</a><a href="#experience">Expérience</a><a href="#experiences-signature">Expériences signature</a><a href="#vision2040">Vision 2040</a><a href="#recrutement">Rejoindre l’équipe</a><a href="#partenariats">Partenariats</a><a href="presentation.html">Dossier de présentation</a><a href="#faq">FAQ</a><a href="#paiement">Paiement</a><a href="#contact">Contact</a><br><a href="#avis-clients-tmje">Partager un avis</a><a class="btn" href="https://themercuryjupiterevents.github.io/lam-evenementiel-events-english/" lang="en">English</a><a class="btn" href="https://themercuryjupiterevents.github.io/lam-evenementiel-events-english/kreyol/" lang="ht">Kreyòl</a>
+<a href="index.html">Accueil</a><a href="index.html#services">Expertises</a><a href="index.html#departements">Départements</a><a href="#formulaire">Formulaires</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a class="btn primary" href="index.html#contact">Nous contacter ↗</a>
 </nav>
-<button class="menu" type="button" onclick="document.getElementById('mobileNav').hidden=!document.getElementById('mobileNav').hidden" aria-label="Ouvrir le menu">☰</button>
+<button class="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="const m=document.getElementById('mobileNav');m.hidden=!m.hidden;this.setAttribute('aria-expanded',String(!m.hidden))">☰</button>
 </div>
-<div id="mobileNav" hidden style="border-top:1px solid #211c1d20;background:#fff">
-<div class="wrap" style="padding:12px 0 18px;display:grid;gap:12px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">
-<a href="#apropos" onclick="document.getElementById('mobileNav').hidden=true">À propos</a><a href="#services" onclick="document.getElementById('mobileNav').hidden=true">Services</a><a href="#departements" onclick="document.getElementById('mobileNav').hidden=true">Nos départements</a><a href="#lam-couture" onclick="document.getElementById('mobileNav').hidden=true">Couture</a><a href="kids.html">LAM Kids — Espace enfants</a><a href="#cartes-invitation-mariage" onclick="document.getElementById('mobileNav').hidden=true">Cartes de mariage</a><a href="#galerie" onclick="document.getElementById('mobileNav').hidden=true">Galerie photos</a><a href="#createur" onclick="document.getElementById('mobileNav').hidden=true">Créer mon événement</a><a href="#inspiration-evenement" onclick="document.getElementById('mobileNav').hidden=true">Trouver des idées</a><a href="#budget-estimateur" onclick="document.getElementById('mobileNav').hidden=true">Budget</a><a href="#formulaire" onclick="document.getElementById('mobileNav').hidden=true">LAM COMMUNION</a><a href="#formules" onclick="document.getElementById('mobileNav').hidden=true">Formules</a><a href="#experience" onclick="document.getElementById('mobileNav').hidden=true">Expérience</a><a href="#experiences-signature" onclick="document.getElementById('mobileNav').hidden=true">Expériences signature</a><a href="#vision2040" onclick="document.getElementById('mobileNav').hidden=true">Vision 2040</a><a href="#recrutement" onclick="document.getElementById('mobileNav').hidden=true">Rejoindre l’équipe</a><a href="#partenariats" onclick="document.getElementById('mobileNav').hidden=true">Partenariats</a><a href="#paiement" onclick="document.getElementById('mobileNav').hidden=true">Paiement</a><a href="#contact" onclick="document.getElementById('mobileNav').hidden=true">Contact</a><a href="https://themercuryjupiterevents.github.io/lam-evenementiel-events-english/" lang="en">English</a><a href="https://themercuryjupiterevents.github.io/lam-evenementiel-events-english/kreyol/" lang="ht">Kreyòl Ayisyen</a>
-</div></div>
-</header>
+<div id="mobileNav" hidden><div class="wrap">
+<a href="index.html">Accueil</a><a href="index.html#services">Expertises</a><a href="index.html#departements">Départements</a><a href="#formulaire">Formulaires</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="index.html#contact">Nous contacter ↗</a>
+</div></div></header>
 
 <main id="accueil">
 <section class="hero">
@@ -1297,9 +1345,9 @@ background:transparent!important;border:0!important;border-radius:0!important;bo
 </div>
 <div>
 <h1>LAM ÉVÉNEMENTIEL & EVENTS</h1><div class="hero-event-label">ÉVÉNEMENTIEL</div>
-<p class="tagline">PUISSANCE. PRESTIGE. PERFECTION.</p>
+<p class="tagline">L’élégance au service de vos moments d’exception.</p>
 <p class="lead">De la première inspiration à la réalisation, LAM imagine des événements sur mesure qui reflètent votre style, respectent vos priorités et réunissent vos invités autour d’un moment unique.</p>
-<div class="actions"><a class="btn primary" href="#formulaire">Planifier mon événement</a><a class="btn" href="#services">Découvrir nos services</a><a class="btn" href="kids.html">Découvrir LAM KIDS</a><a class="btn" href="#formulaire-partenariat">Proposer un partenariat</a><a class="btn" href="#formulaire-recrutement">Rejoindre l’équipe LAM</a></div></div>
+<div class="actions"><a class="btn primary" href="#formulaire">Planifier mon événement</a><a class="btn" href="#services">Découvrir nos services</a><a class="btn" href="#lam-kids">Découvrir LAM KIDS</a><a class="btn" href="#formulaire-partenariat">Proposer un partenariat</a><a class="btn" href="#formulaire-recrutement">Rejoindre l’équipe LAM</a></div></div>
 </div></section>
 
 <section id="lam-kids" class="section alt">
