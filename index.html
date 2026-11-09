@@ -8212,3 +8212,32 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+
+
+<style id="lam-soft-organic-shapes-2026-11-09">
+/* Nouvelle finition : abandon des angles carrés au profit de formes douces */
+:root{--lam-round:24px;--lam-round-lg:34px;--lam-round-pill:999px}
+#lam-hero{border-radius:0 0 42px 42px!important;overflow:hidden!important}
+#lam-hero:before,#lam-hero:after{border-radius:50%!important}
+.card,.form,.form-panel,.form-section,.contactbox,.payment-policy-inline,.payment-policy-card,.payment-policy-note{
+  border-radius:var(--lam-round)!important;
+}
+.card{border:0!important;border-top:0!important;background:#faf8f7!important;padding:26px!important;margin:0 0 18px!important}
+#formChoiceCards .card{border-top:0!important}
+.form,.form-panel{border:1px solid #eadfdb!important;border-top:1px solid #eadfdb!important;background:#fff!important;padding:clamp(20px,3vw,34px)!important;box-shadow:0 12px 34px rgba(45,30,24,.055)!important}
+.form-section{border:0!important;border-top:1px solid #eee7e3!important;background:transparent!important;padding:24px 0!important}
+.field input,.field select,.field textarea,input,select,textarea{
+  border-radius:14px!important;border:1px solid #d9cbc5!important;
+}
+.btn,button.btn,.actions .btn{border-radius:var(--lam-round-pill)!important;padding:13px 24px!important}
+#lam-main-navigation .menu{border-radius:14px!important}
+#mobileNav{border-radius:0 0 22px 22px!important;overflow:hidden!important}
+.payment-policy-inline,.payment-policy-card,.payment-policy-note{border-left-width:5px!important}
+img,.gallery img,.portfolio img,.service-image{border-radius:20px!important}
+@media(max-width:600px){
+  #lam-hero{border-radius:0 0 28px 28px!important}
+  .card{padding:21px!important;border-radius:20px!important}
+  .form,.form-panel{border-radius:20px!important}
+  .btn,button.btn,.actions .btn{border-radius:999px!important}
+}
+</style>
