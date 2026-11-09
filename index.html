@@ -4253,7 +4253,8 @@ Haïti<br>
         '<input type="hidden" name="Signature électronique (image PNG)" class="lam-signature-data">'+
         '<input type="file" name="attachment" class="lam-signature-file" accept="image/png" hidden>'+
         '<input type="hidden" name="Date et heure de signature" class="lam-signature-date">';
-      form.appendChild(panel);
+      var submitButton = form.querySelector('button[type="submit"],input[type="submit"]');
+      if(submitButton) form.insertBefore(panel,submitButton); else form.appendChild(panel);
 
       var canvas = panel.querySelector("canvas");
       var ctx = canvas.getContext("2d");
