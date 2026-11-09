@@ -1745,18 +1745,16 @@ img{max-width:100%}
     </a>
     <nav class="navlinks" aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
-      <a href="#apropos">Notre vision</a>
       <a href="#services">Services</a>
       <a href="#departements">Départements</a>
       <a href="#formules">Formules</a>
       <a href="#formulaire">Demandes</a>
-      <a href="#presentation">Présentation</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="const m=document.getElementById('mobileNav');m.hidden=!m.hidden;this.setAttribute('aria-expanded',String(!m.hidden))">☰</button>
   </div>
   <div id="mobileNav" hidden><div class="wrap">
-    <a href="#accueil">Accueil</a><a href="#apropos">Notre vision</a><a href="#services">Services</a><a href="#departements">Départements</a><a href="#formules">Formules</a><a href="#formulaire">Demandes & formulaires</a><a href="#presentation">Présentation</a><a href="#contact">Contact</a>
+    <a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#departements">Départements</a><a href="#formules">Formules</a><a href="#formulaire">Demandes & formulaires</a><a href="#contact">Contact</a>
   </div></div>
 </header>
 
@@ -8685,4 +8683,137 @@ html body .payment-policy-inline-title,
 html body .payment-policy-card h3{color:#0047AB!important}
 html body .payment-policy-inline strong,
 html body .payment-policy-card strong{color:#6F9415!important}
+</style>
+
+
+<style id="lam-step2-editorial-navigation-hero-2026-11-09">
+/* ETAPE 2 — navigation et accueil au style editorial minimal, sans ajout d'image */
+#lam-main-navigation{
+  position:sticky!important;top:0!important;z-index:100!important;
+  background:rgba(251,249,246,.96)!important;color:#202020!important;
+  border-bottom:1px solid #e8e1dc!important;box-shadow:none!important;
+  backdrop-filter:blur(12px)!important;
+}
+#lam-main-navigation .navin{
+  width:min(1440px,calc(100% - 8vw))!important;min-height:78px!important;
+  display:flex!important;align-items:center!important;justify-content:space-between!important;
+  gap:28px!important;
+}
+#lam-main-navigation .brand,
+#lam-main-navigation .brand-name{
+  color:#202020!important;text-decoration:none!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-size:clamp(17px,1.6vw,23px)!important;font-weight:600!important;
+  letter-spacing:.13em!important;line-height:1.1!important;
+}
+#lam-main-navigation .brand-name small{
+  display:block!important;margin-top:7px!important;color:#D71920!important;
+  font:600 8px/1.2 Arial,Helvetica,sans-serif!important;letter-spacing:.22em!important;
+}
+#lam-main-navigation .navlinks{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  flex-wrap:wrap!important;gap:clamp(12px,1.65vw,25px)!important;
+  color:#202020!important;font:600 9px/1.4 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.13em!important;
+}
+#lam-main-navigation .navlinks a{
+  color:#343434!important;text-decoration:none!important;padding:10px 0!important;
+  border-bottom:1px solid transparent!important;transition:none!important;
+}
+#lam-main-navigation .navlinks a:hover,
+#lam-main-navigation .navlinks a:focus{
+  color:#D71920!important;border-bottom-color:#D71920!important;
+}
+#lam-main-navigation .menu{
+  display:none!important;background:transparent!important;color:#D71920!important;
+  border:1px solid #D71920!important;border-radius:0!important;
+}
+#mobileNav{
+  background:#FBF9F6!important;border-top:1px solid #e8e1dc!important;
+  box-shadow:none!important;
+}
+#mobileNav .wrap{display:grid!important;gap:0!important;padding:10px 0 18px!important}
+#mobileNav a{
+  padding:14px 0!important;border-bottom:1px solid #e8e1dc!important;
+  color:#202020!important;font:600 10px/1.3 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.14em!important;text-transform:uppercase!important;
+}
+#lam-hero{
+  min-height:0!important;overflow:hidden!important;
+  background:
+    radial-gradient(ellipse at 95% 12%,rgba(169,221,240,.24),transparent 34%),
+    radial-gradient(ellipse at 5% 90%,rgba(168,201,54,.12),transparent 32%),
+    #FBF9F6!important;
+  color:#202020!important;
+}
+#lam-hero:before,#lam-hero:after{display:none!important}
+#lam-hero .hero-grid{
+  width:min(1440px,calc(100% - 10vw))!important;max-width:1440px!important;
+  min-height:min(760px,calc(100svh - 78px))!important;
+  grid-template-columns:minmax(0,1.08fr) minmax(240px,.72fr)!important;
+  gap:clamp(35px,7vw,110px)!important;
+  align-items:center!important;padding:clamp(76px,10vw,140px) 0!important;
+}
+#lam-hero .eyebrow,#lam-hero .hero-event-label{
+  color:#6b7775!important;font:700 9px/1.5 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.22em!important;text-transform:uppercase!important;
+}
+#lam-hero h1{
+  max-width:900px!important;margin:24px 0 12px!important;
+  color:#202020!important;font:500 clamp(42px,6.5vw,88px)/.98 Georgia,"Times New Roman",serif!important;
+  letter-spacing:-.045em!important;text-transform:uppercase!important;
+}
+#lam-hero .lam-formed-word{display:inline-flex!important;gap:.015em!important}
+#lam-hero .lam-letter-l,#lam-hero .lam-letter-m{color:#D71920!important}
+#lam-hero .lam-letter-a{color:#E5B900!important}
+#lam-hero .hero-name-rest{color:#202020!important}
+#lam-hero .tagline{
+  color:#D71920!important;font:500 clamp(17px,2vw,23px)/1.4 Georgia,"Times New Roman",serif!important;
+  letter-spacing:.035em!important;margin:22px 0 14px!important;
+}
+#lam-hero .lead{
+  max-width:610px!important;color:#555!important;font:400 14px/1.9 Arial,Helvetica,sans-serif!important;
+}
+#lam-hero .actions{display:flex!important;flex-wrap:wrap!important;gap:10px!important;margin-top:28px!important}
+#lam-hero .actions .btn{
+  min-height:42px!important;padding:13px 17px!important;border-radius:0!important;
+  background:transparent!important;border:1px solid #D71920!important;color:#D71920!important;
+  font:700 9px/1.3 Arial,Helvetica,sans-serif!important;letter-spacing:.11em!important;
+  box-shadow:none!important;
+}
+#lam-hero .actions .btn.primary{background:#D71920!important;color:#fff!important}
+#lam-hero .lam-hero-signature{
+  margin-top:30px!important;color:#68716e!important;font:700 8px/1.6 Arial,Helvetica,sans-serif!important;
+  letter-spacing:.16em!important;
+}
+#lam-hero .lam-hero-frame{
+  background:transparent!important;border:0!important;box-shadow:none!important;
+  padding:0!important;border-radius:0!important;
+}
+#lam-hero .lam-center-logo{
+  width:min(100%,330px)!important;height:auto!important;aspect-ratio:1!important;
+  object-fit:contain!important;border-radius:50%!important;box-shadow:none!important;
+  background:transparent!important;outline:none!important;
+}
+#lam-hero .lam-hero-caption{
+  margin:18px 0 0!important;text-align:center!important;color:#68716e!important;
+  font:700 8px/1.5 Arial,Helvetica,sans-serif!important;letter-spacing:.2em!important;
+}
+@media(max-width:1050px){
+  #lam-main-navigation .navlinks{display:none!important}
+  #lam-main-navigation .menu{display:block!important}
+}
+@media(max-width:760px){
+  #lam-main-navigation .navin{width:calc(100% - 36px)!important;min-height:68px!important}
+  #lam-hero .hero-grid{
+    width:calc(100% - 36px)!important;min-height:0!important;
+    grid-template-columns:1fr!important;gap:32px!important;
+    padding:64px 0 70px!important;text-align:left!important;
+  }
+  #lam-hero .lam-hero-copy{grid-row:1!important}
+  #lam-hero .lam-hero-visual{grid-row:2!important;max-width:260px!important;margin:0 auto!important}
+  #lam-hero h1{font-size:clamp(39px,11vw,66px)!important}
+  #lam-hero .actions .btn{width:auto!important;flex:1 1 100%!important;text-align:center!important}
+  #lam-hero .lam-center-logo{width:min(62vw,230px)!important;margin:auto!important}
+}
 </style>
