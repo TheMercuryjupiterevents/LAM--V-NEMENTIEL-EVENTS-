@@ -8273,3 +8273,35 @@ footer p,footer a,#contact p,#contact a{font-size:14px!important;line-height:1.6
  .btn,button,.actions .btn{font-size:12.5px!important}
 }
 </style>
+
+
+<style id="lam-no-animation-permanently-2026-11-09">
+/* Aucune animation, ouverture automatique, transition ou défilement animé */
+html{scroll-behavior:auto!important}
+*,*::before,*::after{
+  animation:none!important;
+  transition:none!important;
+  scroll-behavior:auto!important;
+}
+#welcome-intro,#lam-3d-welcome,.welcome-intro,.door-intro,#intro-door,
+[id*="door-intro"],[id*="door-animation"],[class*="door-animation"]{
+  display:none!important;visibility:hidden!important;opacity:0!important;
+  pointer-events:none!important;animation:none!important;transition:none!important;
+}
+</style>
+<script id="lam-delete-intro-animation-permanently">
+(function(){
+  function removeLamIntro(){
+    document.querySelectorAll('#welcome-intro,#lam-3d-welcome,.welcome-intro,.door-intro,#intro-door,[id*="door-intro"],[id*="door-animation"],[class*="door-animation"]').forEach(function(el){el.remove()});
+  }
+  removeLamIntro();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',removeLamIntro,{once:true});
+  if(document.body&&window.MutationObserver){
+    new MutationObserver(removeLamIntro).observe(document.body,{childList:true,subtree:true});
+  }else{
+    document.addEventListener('DOMContentLoaded',function(){
+      if(document.body&&window.MutationObserver)new MutationObserver(removeLamIntro).observe(document.body,{childList:true,subtree:true});
+    },{once:true});
+  }
+})();
+</script>
