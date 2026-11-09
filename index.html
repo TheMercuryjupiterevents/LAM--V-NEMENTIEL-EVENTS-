@@ -7620,3 +7620,11 @@ hr{border:0!important;border-top:1px solid var(--lam-line)!important}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*:before,*:after{transition:none!important;animation:none!important}}
 </style>
+
+
+<!-- LAM: remove all welcome animations -->
+<style id="lam-disable-welcome-animations">
+#welcome-intro,#lam-3d-welcome{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;animation:none!important;transition:none!important}
+html,body{scroll-behavior:auto!important}
+</style>
+<script id="lam-remove-welcome-overlays">document.addEventListener('DOMContentLoaded',function(){document.getElementById('welcome-intro')?.remove();document.getElementById('lam-3d-welcome')?.remove();});</script>
