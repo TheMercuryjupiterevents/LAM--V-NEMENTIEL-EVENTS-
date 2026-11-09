@@ -486,6 +486,21 @@ h2::after{content:"";display:block;width:clamp(56px,9vw,100px);height:2px;margin
 :focus-visible{outline:2px solid var(--trace-gold);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal-on-scroll{opacity:1;transform:none}}
 
+
+/* Palette typographique demandee : aucun texte blanc */
+:root{--lam-text-brown:#39251F;--lam-text-black:#101010;--lam-text-red:#D71920;--lam-text-sky:#78C9E8}
+.redlabel,.redlabel p,.redlabel h1,.redlabel h2,.redlabel h3,.redlabel .eyebrow,
+#formules .card.package.redlabel,
+#formules .card.package.redlabel p,
+#formules .card.package.redlabel h2,
+#formules .card.package.redlabel h3{color:var(--lam-text-black)!important}
+.footer,.footer h1,.footer h2,.footer h3,.footer h4,.footer p,.footer a,.footer small,.footerbottom,
+.footer .eyebrow{color:var(--lam-text-sky)!important}
+.btn,.btn.primary,.btn.blue,button[type=submit],input[type=submit]{color:var(--lam-text-black)!important}
+.btn:hover,.btn.primary:hover,button[type=submit]:hover,input[type=submit]:hover{color:var(--lam-text-red)!important}
+.wa{color:var(--lam-text-sky)!important}
+.section.dark,.section.dark p,.section.dark h1,.section.dark h2,.section.dark h3,.section.dark li{color:var(--lam-text-brown)!important}
+
 </style>
 <style id="tmje-three-form-colors">
 /* Palette commune aux trois formulaires : vert, bleu cobalt et gris */
