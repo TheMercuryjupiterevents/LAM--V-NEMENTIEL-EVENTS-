@@ -7628,3 +7628,111 @@ hr{border:0!important;border-top:1px solid var(--lam-line)!important}
 html,body{scroll-behavior:auto!important}
 </style>
 <script id="lam-remove-welcome-overlays">document.addEventListener('DOMContentLoaded',function(){document.getElementById('welcome-intro')?.remove();document.getElementById('lam-3d-welcome')?.remove();});</script>
+
+<!-- LAM editorial luxury redesign: refined portfolio layout, preserve all existing forms and behavior -->
+<style id="lam-editorial-atelier-redesign-2026-11-08">
+:root{
+ --lam-paper:#f7f3ec!important;--lam-soft:#eee6d9!important;--lam-ink:#28231f!important;
+ --lam-brown:#76695d!important;--lam-line:#d9cbb8!important;--lam-red:#9c7850!important;
+ --lam-red-dark:#75583b!important;--lam-blue:#9c7850!important;--lam-radius:0!important;
+ --lam-shadow:0 18px 48px rgba(49,38,26,.09)!important;
+}
+html{scroll-behavior:smooth!important}
+body{background:#f7f3ec!important;color:#28231f!important;font-family:Arial,Helvetica,sans-serif!important;
+ letter-spacing:.005em!important;-webkit-font-smoothing:antialiased!important}
+.wrap{width:min(1320px,calc(100% - 9vw))!important;max-width:1320px!important}
+#lam-main-navigation{background:rgba(247,243,236,.96)!important;border-bottom:1px solid #d9cbb8!important;
+ box-shadow:none!important;backdrop-filter:blur(16px)!important}
+#lam-main-navigation .navin{min-height:90px!important}
+#lam-main-navigation .brand-name{font-family:Georgia,serif!important;font-size:1.85rem!important;
+ letter-spacing:.12em!important;color:#8b6a47!important;font-weight:500!important}
+#lam-main-navigation .brand-name small{font-size:.52rem!important;letter-spacing:.24em!important;color:#76695d!important}
+#lam-main-navigation .navlinks{gap:clamp(12px,2.2vw,34px)!important}
+#lam-main-navigation .navlinks a,#mobileNav a{font-size:.65rem!important;letter-spacing:.15em!important;
+ font-weight:600!important;color:#51483f!important}
+#lam-main-navigation .menu{border:1px solid #d9cbb8!important;background:transparent!important;color:#28231f!important}
+#mobileNav{background:#f7f3ec!important;border-bottom:1px solid #d9cbb8!important}
+#lam-hero{background:#eee6d9!important;color:#28231f!important;min-height:min(780px,calc(100vh - 90px))!important;
+ position:relative!important;overflow:hidden!important;padding:clamp(80px,12vw,160px) 0!important}
+#lam-hero:before{right:-8vw!important;top:-16vw!important;width:55vw!important;height:55vw!important;
+ border:1px solid rgba(156,120,80,.24)!important;border-radius:50%!important}
+#lam-hero:after{right:8%!important;bottom:-220px!important;width:430px!important;height:430px!important;
+ border:1px solid rgba(156,120,80,.3)!important;transform:rotate(45deg)!important}
+#lam-hero .hero-grid{max-width:1320px!important;padding:0!important}
+#lam-hero .lam-hero-copy{max-width:1000px!important}
+#lam-hero .eyebrow{color:#94734f!important;font-size:.66rem!important;letter-spacing:.28em!important}
+#lam-hero h1{color:#28231f!important;font-size:clamp(3.2rem,8.2vw,8.5rem)!important;
+ line-height:.91!important;letter-spacing:-.065em!important;font-weight:400!important;max-width:1050px!important}
+#lam-hero .hero-name-rest{color:#28231f!important}
+#lam-hero .hero-event-label{color:#76695d!important;font-size:.68rem!important;letter-spacing:.25em!important}
+#lam-hero .tagline{color:#8b6a47!important;font-size:clamp(1.3rem,2.4vw,2rem)!important;
+ font-style:italic!important;font-weight:400!important;letter-spacing:0!important}
+#lam-hero .lead{color:#76695d!important;max-width:640px!important;font-size:1rem!important;line-height:1.9!important}
+#lam-hero .lam-hero-signature span{color:#76695d!important}
+#lam-hero .lam-hero-signature i{background:#b89569!important}
+.section{padding:clamp(76px,9vw,132px) 0!important;background:#f7f3ec!important;border-bottom:1px solid #e8dfd3!important}
+.section.alt{background:#eee6d9!important}
+.section.dark{background:#302a25!important;color:#f7f3ec!important}
+.section.dark h2,.section.dark h3{color:#f7f3ec!important}
+.section.dark p,.section.dark li,.section.dark .lead{color:#e2d8ca!important}
+.section-head{max-width:850px!important;margin-bottom:48px!important}
+.eyebrow{color:#9c7850!important;font-size:.63rem!important;letter-spacing:.24em!important;font-weight:700!important}
+body h1,body h2,body h3,body h4{font-family:Georgia,"Times New Roman",serif!important;
+ color:#28231f!important;letter-spacing:-.045em!important;font-weight:400!important}
+body h2{font-size:clamp(2.3rem,5vw,4.5rem)!important;line-height:1.02!important}
+body h3{font-size:clamp(1.3rem,2.1vw,1.8rem)!important}
+body p,body li,body label,body small{color:#76695d!important}
+.section .lead{font-size:1.02rem!important;line-height:1.9!important;color:#76695d!important}
+.grid{gap:clamp(16px,2.3vw,30px)!important}
+.card{background:#fbf9f5!important;border:1px solid #e0d5c6!important;border-radius:0!important;
+ padding:clamp(24px,3.2vw,42px)!important;box-shadow:none!important;transition:transform .35s ease,border-color .35s ease!important}
+.card:hover{transform:translateY(-5px)!important;border-color:#b89569!important;box-shadow:0 18px 42px rgba(49,38,26,.07)!important}
+.card .num{color:#a1845e!important;letter-spacing:.2em!important}
+.card h3{color:#302a25!important}
+.card p,.card li{font-size:.92rem!important;line-height:1.85!important}
+.mission-tags span{background:transparent!important;border:1px solid #d9cbb8!important;color:#76695d!important;
+ padding:10px 16px!important;letter-spacing:.1em!important}
+.btn,button.btn,.actions .btn{border:1px solid #8b6a47!important;border-radius:0!important;background:#8b6a47!important;
+ color:#fff!important;min-height:52px!important;padding:15px 25px!important;font-size:.63rem!important;
+ letter-spacing:.17em!important;font-weight:700!important}
+.btn.primary,.actions .btn.primary{background:#302a25!important;border-color:#302a25!important;color:#fff!important}
+.btn:hover,button.btn:hover{background:#6f5238!important;border-color:#6f5238!important}
+.form,.form-panel,.form-section{background:#fbf9f5!important;border:1px solid #e0d5c6!important;
+ border-radius:0!important;box-shadow:0 12px 38px rgba(49,38,26,.045)!important}
+.form label,.form-panel label{color:#302a25!important;font-size:.78rem!important;letter-spacing:.02em!important}
+input,select,textarea,.form input,.form select,.form textarea,.form-panel input,.form-panel select,.form-panel textarea{
+ border:1px solid #d9cbb8!important;border-radius:0!important;background:#fffdfa!important;color:#302a25!important}
+input:focus,select:focus,textarea:focus{outline:1px solid #b89569!important;border-color:#b89569!important}
+input[type=checkbox],input[type=radio]{accent-color:#8b6a47!important}
+#formulaire{background:#eee6d9!important}
+#formulaire .card{background:#f9f6f0!important}
+#contact{background:#302a25!important}
+#contact h2,#contact h3{color:#f7f3ec!important}
+#contact p,#contact .lead{color:#e2d8ca!important}
+#contact .eyebrow{color:#c7a77e!important}
+#contact .contactbox{background:#39322c!important;border:1px solid #625344!important;border-radius:0!important}
+#contact .contactline{border-bottom:1px solid #625344!important}
+#contact .contactline small{color:#c7a77e!important}
+#contact .contactline a,#contact .contactline span{color:#f7f3ec!important}
+footer,.footer{background:#211d19!important;color:#f7f3ec!important}
+footer p,footer a,footer small,.footer p,.footer a{color:#ded2c2!important}
+#publicGallery img,#galerie img{border-radius:0!important;object-fit:cover!important}
+#publicGallery .gallery-slot{border:1px solid #d9cbb8!important}
+#lam-kids{border-top:2px solid #b89569!important}
+hr{border-top:1px solid #d9cbb8!important}
+@media(max-width:900px){
+ .wrap{width:calc(100% - 40px)!important}
+ #lam-main-navigation .navin{min-height:74px!important}
+ #lam-hero{min-height:0!important;padding:88px 0!important}
+ #lam-hero h1{font-size:clamp(3rem,11vw,5.6rem)!important}
+}
+@media(max-width:600px){
+ .wrap{width:calc(100% - 30px)!important}
+ #lam-main-navigation .brand-name{font-size:1.55rem!important}
+ #lam-hero{padding:72px 0!important}
+ #lam-hero h1{font-size:clamp(2.8rem,14vw,4.5rem)!important}
+ .section{padding:64px 0!important}
+ .card{padding:24px!important}
+ .actions .btn{width:100%!important}
+}
+</style>
