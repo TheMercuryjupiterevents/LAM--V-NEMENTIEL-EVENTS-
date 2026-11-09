@@ -1807,6 +1807,41 @@ img{max-width:100%}
   background:#83BBD5!important;border-color:#83BBD5!important;color:#26343B!important
 }
 </style>
+
+<style id="lam-disable-every-intro-and-motion-final-2026-11-09">
+/* Suppression définitive de toutes les animations d'accueil et effets animés */
+html,body{scroll-behavior:auto!important}
+*,*::before,*::after,*:before,*:after{
+ animation:none!important;animation-delay:0s!important;animation-duration:0s!important;
+ animation-iteration-count:1!important;transition:none!important;scroll-behavior:auto!important
+}
+#lam-3d-welcome,#welcome-intro,#lam-editorial-intro,#lam-red-door-intro,
+#lam-star-reveal,#lam-opening-overlay,[id*="door-intro"],[id*="door-animation"],
+[class*="door-animation"],#lam-stars-stage,#lam-stars-canvas{
+ display:none!important;visibility:hidden!important;opacity:0!important;
+ pointer-events:none!important;animation:none!important;transition:none!important
+}
+.reveal-on-scroll,.reveal-on-scroll.is-visible{
+ opacity:1!important;visibility:visible!important;transform:none!important
+}
+</style>
+<script id="lam-remove-all-intros-final-2026-11-09">
+(function(){
+ var selectors='#lam-3d-welcome,#welcome-intro,#lam-editorial-intro,#lam-red-door-intro,#lam-star-reveal,#lam-opening-overlay,[id*="door-intro"],[id*="door-animation"],[class*="door-animation"],#lam-stars-stage';
+ function clean(root){
+  if(root&&root.nodeType===1&&root.matches&&root.matches(selectors))root.remove();
+  if(root&&root.querySelectorAll)root.querySelectorAll(selectors).forEach(function(el){el.remove()});
+ }
+ function start(){
+  clean(document);
+  if(window.MutationObserver&&document.documentElement){
+   new MutationObserver(function(records){records.forEach(function(record){record.addedNodes.forEach(clean)})})
+    .observe(document.documentElement,{childList:true,subtree:true});
+  }
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
+})();
+</script>
 </head>
 <body>
 
@@ -4684,110 +4719,7 @@ window.setTimeout(close,7000);
  #lam-3d-welcome #lam-stars-subtitle{transition:none!important}
 }
 </style>
-<script id="lam-star-particle-intro-script">
-(function(){
-  "use strict";
-  function attachStarReveal(){
-    var overlay=document.getElementById("lam-3d-welcome");
-    if(!overlay || overlay.dataset.starRevealReady==="true") return;
-    overlay.dataset.starRevealReady="true";
-    var oldBrand=overlay.querySelector(".lam-brand");
-    if(oldBrand) oldBrand.style.setProperty("display","none","important");
 
-    var stage=document.createElement("div");
-    stage.id="lam-stars-stage";
-    stage.setAttribute("aria-label","Des étoiles noires se rassemblent pour former LAM ÉVÉNEMENTIEL & EVENTS");
-    var canvas=document.createElement("canvas");
-    canvas.id="lam-stars-canvas";
-    var subtitle=document.createElement("div");
-    subtitle.id="lam-stars-subtitle";
-    subtitle.innerHTML="ÉVÉNEMENTIEL &amp; EVENTS<br><span style=\"display:block;margin-top:5px;font-size:.82em;letter-spacing:.32em\">HAÏTI</span>";
-    stage.appendChild(canvas);
-    stage.appendChild(subtitle);
-    overlay.appendChild(stage);
-
-    var ctx=canvas.getContext("2d");
-    if(!ctx) return;
-    var cssW=1000, cssH=260, dpr=Math.min(window.devicePixelRatio||1,2);
-    canvas.width=cssW*dpr; canvas.height=cssH*dpr;
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-
-    var mask=document.createElement("canvas");
-    mask.width=cssW; mask.height=cssH;
-    var m=mask.getContext("2d");
-    m.fillStyle="#000"; m.textAlign="center"; m.textBaseline="middle";
-    m.font="700 238px Georgia, 'Times New Roman', serif";
-    m.fillText("LAM",cssW/2,cssH/2+4);
-    var pixels=m.getImageData(0,0,cssW,cssH).data;
-    var targets=[];
-    for(var y=12;y<cssH-12;y+=8){
-      for(var x=12;x<cssW-12;x+=8){
-        if(pixels[(y*cssW+x)*4+3]>120) targets.push({x:x,y:y});
-      }
-    }
-    var particles=targets.map(function(p,i){
-      var angle=Math.random()*Math.PI*2;
-      var radius=250+Math.random()*420;
-      return {
-        x:cssW/2+Math.cos(angle)*radius,
-        y:cssH/2+Math.sin(angle)*radius,
-        tx:p.x,ty:p.y,
-        size:1.8+Math.random()*1.7,
-        delay:Math.random()*520,
-        phase:Math.random()*Math.PI*2
-      };
-    });
-    var startAt=0, raf=0, stopped=false;
-    function star(x,y,r,rotation){
-      ctx.save();ctx.translate(x,y);ctx.rotate(rotation);
-      ctx.beginPath();
-      for(var k=0;k<10;k++){
-        var a=-Math.PI/2+k*Math.PI/5;
-        var rr=k%2===0?r:r*.43;
-        var px=Math.cos(a)*rr,py=Math.sin(a)*rr;
-        if(k===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);
-      }
-      ctx.closePath();ctx.fillStyle="#111111";ctx.fill();ctx.restore();
-    }
-    function frame(now){
-      if(stopped || !document.body.contains(overlay)) return;
-      if(!startAt) startAt=now;
-      var elapsed=now-startAt;
-      ctx.clearRect(0,0,cssW,cssH);
-      particles.forEach(function(p){
-        var t=Math.max(0,Math.min(1,(elapsed-p.delay)/2200));
-        var ease=1-Math.pow(1-t,3);
-        var x=p.x+(p.tx-p.x)*ease;
-        var y=p.y+(p.ty-p.y)*ease;
-        var twinkle=.78+.22*Math.sin(elapsed*.004+p.phase);
-        star(x,y,p.size*twinkle,Math.sin(elapsed*.001+p.phase)*.18);
-      });
-      if(elapsed>3350) subtitle.classList.add("is-visible");
-      if(elapsed<5600) raf=requestAnimationFrame(frame);
-    }
-    var begin=function(){
-      if(stopped) return;
-      if(!overlay.classList.contains("lam-opening")){setTimeout(begin,120);return;}
-      raf=requestAnimationFrame(frame);
-      overlay.removeEventListener("transitionend",begin);
-    };
-    overlay.addEventListener("transitionend",begin);
-    setTimeout(begin,1050);
-    var observer=new MutationObserver(function(){
-      if(!document.body.contains(overlay)){stopped=true;cancelAnimationFrame(raf);observer.disconnect();}
-    });
-    observer.observe(document.body,{childList:true,subtree:true});
-  }
-  var watchForWelcome=new MutationObserver(function(){
-    if(document.getElementById("lam-3d-welcome")){
-      attachStarReveal();
-      watchForWelcome.disconnect();
-    }
-  });
-  watchForWelcome.observe(document.documentElement,{childList:true,subtree:true});
-  attachStarReveal();
-})();
-</script>
 
 
 <style id="lam-editorial-star-formation-fix">
