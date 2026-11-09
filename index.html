@@ -3957,7 +3957,6 @@ Haïti<br>
    ['Style / ambiance',get('birthdayStyle')],
    ['Nombre d’invités',get('birthdayGuests')],
    ['Couleurs',get('birthdayPalette')],
-   ['Budget envisagé',document.getElementById('birthdayBudget').value?document.getElementById('birthdayBudget').value+' gourdes HTG':'Non précisé'],
    ['Idée / thème',get('birthdayDetails')]
   ];
   var message='Bonjour LAM ÉVÉNEMENTIEL & EVENTS — ÉVÉNEMENTIEL. Je souhaite discuter de mon projet de célébration :\n\n'+fields.map(function(item){return item[0]+' : '+item[1];}).join('\n')+'\n\nMerci de me renseigner sur les options, la disponibilité et le devis.';
@@ -9251,9 +9250,8 @@ html,body{scroll-behavior:auto!important}
 </style>
 <script id="lam-signature-all-main-forms-2026-11-09">
 (function(){
- const selectors=['#prestigeForm form','#privateForm form','#corporateForm form','#concertForm form','#pastryForm form','#minorForm form','#communionForm form'];
- selectors.forEach(function(selector,index){
-  const form=document.querySelector(selector);
+ const forms=Array.from(document.querySelectorAll('form[action^="https://formsubmit.co/"]')).filter(function(form){return form.id!=='lamKidsForm'&&!form.querySelector('.lam-signature-panel')&&!form.querySelector('[data-lam-signature]')});
+ forms.forEach(function(form,index){
   if(!form||form.querySelector('[data-lam-signature]'))return;
   const wrap=document.createElement('section');
   wrap.setAttribute('data-lam-signature','');
