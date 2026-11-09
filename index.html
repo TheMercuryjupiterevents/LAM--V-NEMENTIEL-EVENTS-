@@ -1725,6 +1725,15 @@ img{max-width:100%}
 }
 </style>
 
+
+<style id="lam-home-four-actions">
+#lam-hero .lam-home-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;max-width:820px!important}
+#lam-hero .lam-home-actions .btn{width:100%!important;min-height:58px!important;text-align:center!important;line-height:1.45!important;padding:14px 16px!important;font-size:.62rem!important;letter-spacing:.11em!important}
+#lam-hero .lam-home-actions .btn:not(.primary){background:transparent!important;color:#28231f!important;border-color:#8b6a47!important}
+#lam-hero .lam-home-actions .btn:not(.primary):hover{background:#8b6a47!important;color:#fff!important}
+@media(max-width:600px){#lam-hero .lam-home-actions{grid-template-columns:1fr!important;gap:10px!important}#lam-hero .lam-home-actions .btn{min-height:52px!important}}
+</style>
+
 </head>
 <body>
 
@@ -1760,9 +1769,11 @@ img{max-width:100%}
       <div class="hero-event-label">HAÏTI · ÉVÉNEMENTS PRIVÉS &amp; PROFESSIONNELS</div>
       <p class="tagline">L’élégance au service de vos moments d’exception.</p>
       <p class="lead">Nous imaginons, organisons et coordonnons vos événements avec créativité, précision et sens du détail. De la première idée à la réalisation, chaque projet est pensé autour de votre histoire.</p>
-      <div class="actions">
-        <a class="btn primary" href="#formulaire">Présenter mon projet</a>
-        <a class="btn" href="#services">Explorer nos expertises</a>
+      <div class="actions lam-home-actions">
+        <a class="btn primary" href="#formulaire">PLANIFIER MON ÉVÉNEMENT</a>
+        <a class="btn" href="#services">DÉCOUVRIR NOS SERVICES</a>
+        <a class="btn" href="#partenariats">PROPOSER UN PARTENARIAT</a>
+        <a class="btn" href="#recrutement">REJOINDRE L'ÉQUIPE LAM</a>
       </div>
       <div class="lam-hero-signature"><span>ORGANISATION</span><i></i><span>DÉCORATION</span><i></i><span>TRAITEUR</span><i></i><span>PRODUCTION</span></div>
     </div>
