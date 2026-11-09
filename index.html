@@ -9423,3 +9423,31 @@ html,body{scroll-behavior:auto!important}
 
 </style>
 
+
+
+<style id="lam-cards-extra-size-2026-11-09">
+/* Cartes LAM encore plus grandes et plus aérées */
+main .grid,.wrap.grid{width:min(98%,1750px)!important;max-width:1750px!important}
+main .grid.grid2,main .grid.grid3,main .grid.grid4,
+main .grid2,main .grid3,main .grid4{
+ grid-template-columns:minmax(0,1fr)!important;
+ gap:34px!important;
+}
+main .card,main .package,main .lam-couture-form-card,
+main .contactbox,main .palette-preview{
+ box-sizing:border-box!important;
+ width:100%!important;
+ max-width:none!important;
+ min-height:340px!important;
+ padding:clamp(36px,5vw,64px)!important;
+}
+main .card h2,main .card h3{margin-bottom:18px!important}
+@media(max-width:760px){
+ main .grid,main .wrap.grid{width:96%!important}
+ main .card,main .package,main .lam-couture-form-card,
+ main .contactbox,main .palette-preview{
+  min-height:270px!important;
+  padding:30px 26px!important;
+ }
+}
+</style>
