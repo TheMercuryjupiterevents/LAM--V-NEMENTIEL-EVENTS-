@@ -1967,6 +1967,7 @@ img{max-width:100%}
       <h3>FORMULAIRE — CARTES D’INVITATION DE MARIAGE</h3>
       <p>Complétez les informations ci-dessous pour préparer vos invitations, notamment celles destinées à votre famille. Nous vous contacterons pour confirmer les détails et établir un devis.</p>
       <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL &amp; EVENTS confirme la réception de votre demande de cartes d’invitation. Notre équipe étudiera les informations transmises et vous contactera pour la suite.">
 
 <div class="payment-policy-inline" role="note" aria-label="Politique de réservation et de paiement">
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
@@ -2452,6 +2453,7 @@ img{max-width:100%}
 <div class="contactbox">
 <h3>FORMULAIRE 04 — ORGANISATION DE CONCERTS</h3>
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL &amp; EVENTS confirme la réception de votre demande concernant les concerts et la production événementielle. Notre équipe vous contactera après étude de votre projet.">
 <input type="hidden" name="_subject" value="DEMANDE DE DEVIS — CONCERTS & PRODUCTION ÉVÉNEMENTIELLE — LAM">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
@@ -3496,6 +3498,7 @@ document.addEventListener('click',function(event){
 <h3>Préparer mon contrat de mariage</h3>
 <p>Après discussion de votre projet et validation de la proposition, transmettez les informations de base pour que notre équipe puisse préparer un contrat adapté.</p>
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL &amp; EVENTS confirme la réception de votre demande relative au contrat de mariage. Notre équipe vérifiera les informations transmises et vous contactera pour les prochaines étapes.">
 
 <div class="payment-policy-inline" role="note" aria-label="Politique de réservation et de paiement">
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
@@ -3728,6 +3731,7 @@ Haïti<br>
         <p class="small"><strong>Important :</strong> ce formulaire recueille votre avis, mais ne publie pas automatiquement votre commentaire sur le site.</p>
       </div>
       <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST">
+<input type="hidden" name="_autoresponse" value="Bonjour, LAM ÉVÉNEMENTIEL &amp; EVENTS vous remercie d’avoir pris le temps de partager votre avis. Votre retour a bien été reçu.">
         <input type="hidden" name="_subject" value="AVIS CLIENT — LAM ÉVÉNEMENTIEL & EVENTS">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="true">
@@ -9220,3 +9224,29 @@ html body .btn:hover,html body button:hover{filter:brightness(.96)!important;bac
  #paiement .payment-policy-grid{grid-template-columns:1fr!important}
 }
 </style>
+
+<!-- LAM QA — suppression définitive des animations et réponses automatiques manquantes -->
+<style id="lam-no-motion-final-2026-11-09">
+html,body{scroll-behavior:auto!important}
+*,*::before,*::after{
+ animation:none!important;
+ animation-delay:0s!important;
+ animation-duration:0s!important;
+ transition:none!important;
+ scroll-behavior:auto!important;
+}
+#lam-red-door-intro,#lam-3d-welcome,#welcome-intro,
+[id*="door-intro"],[id*="door-animation"],[class*="door-animation"],
+#lam-star-reveal,#lam-opening-overlay{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+</style>
+<script id="lam-final-motion-cleanup-2026-11-09">
+(function(){
+ function removeUnwantedIntros(){
+  document.querySelectorAll('#lam-red-door-intro,#lam-3d-welcome,#welcome-intro,[id*="door-intro"],[id*="door-animation"],[class*="door-animation"],#lam-star-reveal,#lam-opening-overlay').forEach(function(el){el.remove()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',removeUnwantedIntros,{once:true});else removeUnwantedIntros();
+ var observer=new MutationObserver(removeUnwantedIntros);
+ observer.observe(document.documentElement,{childList:true,subtree:true});
+ setTimeout(function(){observer.disconnect()},10000);
+})();
+</script>
