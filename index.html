@@ -5809,32 +5809,49 @@ img{max-width:100%;height:auto}
   const input=document.getElementById('lamNeedInput');
   const results=document.getElementById('lamSearchResults');
   if(!form||!input||!results)return;
-  const catalog=[
-    {title:'Organisation et planification événementielle',desc:'Mariage, fiançailles, anniversaire, réception et événement professionnel.',href:'#services',keys:'mariage mariages wedding fiançailles anniversaire anniversaire fête réception gala soirée entreprise professionnel séminaire conférence organisation planification coordination événement event'},
-    {title:'Décoration & design',desc:'Thème, couleurs, décoration de salle, tables, buffet et scénographie.',href:'#departements',keys:'décoration decor design salle fleurs tables ballons arche thème couleurs scénographie aménagement'},
-    {title:'Service traiteur & gastronomie',desc:'Repas, menus, bouchées, cocktails, pâtisserie et service.',href:'#services',keys:'traiteur catering repas nourriture cuisine menu bouchées cocktail mocktail boissons pâtisserie gâteau charcuterie finger food buffet'},
-    {title:'Concerts & production',desc:'Organisation, coordination logistique et accompagnement de concerts.',href:'#concertForm',keys:'concert concerts musique spectacle artiste production scène vip son lumière'},
-    {title:'Couture & mode',desc:'Création, haute couture, confection sur mesure et retouches.',href:'#lam-couture',keys:'couture mode vêtement vêtements robe haute couture confection stylisme retouche sur mesure uniforme'},
-    {title:'Événements pour enfants — LAM Kids',desc:'Anniversaires, activités et célébrations pour les enfants de 1 à 16 ans.',href:'#lam-kids',keys:'enfant enfants kids bébé baby anniversaire enfant activité famille jeux'},
-    {title:'Communion et célébrations familiales',desc:'Découvrez les formules et envoyez votre demande à LAM.',href:'#formulaire',keys:'communion baptême célébration religieuse famille première communion'},
-    {title:'Demander un devis ou présenter un projet',desc:'Accédez aux formulaires pour décrire votre besoin et recevoir une proposition.',href:'#formulaire',keys:'devis prix tarif demande formulaire réserver réservation projet budget consultation'},
-    {title:'Partenariat',desc:'Proposer une collaboration ou devenir partenaire de LAM.',href:'#partenariats',keys:'partenaire partenariat collaboration sponsor entreprise fournisseur'},
-    {title:'Contacter LAM',desc:'Échangez directement avec notre équipe au sujet de votre projet.',href:'#contact',keys:'contact parler appeler téléphone whatsapp email question information'}
-  ];
-  const normalize=value=>value.toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').trim();
+  const normalize=value=>(value||'').toLocaleLowerCase('fr').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9\\s]/g,' ').replace(/\\s+/g,' ').trim();
+  const ignored=new Set(['lam-search-section','informations-legales']);
+  const index=[];
+  document.querySelectorAll('main section, main article, main form, footer').forEach((node,i)=>{
+    if(node.closest('#lam-search-section')||ignored.has(node.id))return;
+    let id=node.id;
+    if(!id){id='lam-search-target-'+(i+1);node.id=id;}
+    const heading=node.querySelector('h1,h2,h3,h4,legend');
+    const title=(heading?.textContent||node.getAttribute('aria-label')||'Section du site LAM').trim();
+    const text=(node.innerText||node.textContent||'').replace(/\\s+/g,' ').trim();
+    if(text.length>15)index.push({id,title,text,haystack:normalize(title+' '+text)});
+  });
   form.addEventListener('submit',function(event){
     event.preventDefault();
     const query=normalize(input.value);
+    results.replaceChildren();
     results.hidden=false;
-    if(!query){results.innerHTML='<p class="lam-search-empty">Écrivez quelques mots sur votre besoin pour voir les services correspondants.</p>';return;}
-    const terms=query.split(/\s+/).filter(Boolean);
-    const matches=catalog.map(item=>{
-      const haystack=normalize(item.title+' '+item.desc+' '+item.keys);
-      const score=terms.reduce((total,term)=>total+(haystack.includes(term)?1:0),0);
-      return {item,score};
-    }).filter(entry=>entry.score>0).sort((a,b)=>b.score-a.score).slice(0,5);
-    if(!matches.length){results.innerHTML='<h3>Aucun résultat exact</h3><p class="lam-search-empty">Nous n’avons pas trouvé de correspondance. Essayez un autre mot ou <a href="#contact">contactez directement LAM</a> pour expliquer votre besoin.</p>';return;}
-    results.innerHTML='<h3>Voici les services qui peuvent vous intéresser</h3>'+matches.map(({item})=>'<div class="lam-search-result"><div><strong>'+item.title+'</strong><p>'+item.desc+'</p></div><a href="'+item.href+'">Voir le service →</a></div>').join('');
+    if(!query){
+      const p=document.createElement('p');p.className='lam-search-empty';p.textContent='Écrivez un mot ou une phrase pour rechercher dans l’ensemble du site LAM.';results.appendChild(p);return;
+    }
+    const terms=query.split(' ').filter(term=>term.length>1);
+    const matches=index.map(item=>{
+      const score=terms.reduce((total,term)=>total+(item.haystack.includes(term)?(item.title.toLowerCase().includes(term)?3:1):0),0);
+      return {...item,score};
+    }).filter(item=>item.score>0).sort((x,y)=>y.score-x.score).slice(0,10);
+    const heading=document.createElement('h3');
+    heading.textContent=matches.length?'Résultats dans tout le site LAM':'Aucun résultat trouvé';
+    results.appendChild(heading);
+    if(!matches.length){
+      const p=document.createElement('p');p.className='lam-search-empty';p.textContent='Aucune correspondance trouvée. Essayez un autre mot, une expression différente ou contactez notre équipe.';results.appendChild(p);
+      const contact=document.createElement('a');contact.href='#contact';contact.textContent='Contacter LAM';results.appendChild(contact);return;
+    }
+    matches.forEach(item=>{
+      const row=document.createElement('div');row.className='lam-search-result';
+      const content=document.createElement('div');
+      const strong=document.createElement('strong');strong.textContent=item.title;content.appendChild(strong);
+      const p=document.createElement('p');
+      const pos=item.text.toLocaleLowerCase('fr').indexOf(query);
+      p.textContent=pos>=0?item.text.slice(Math.max(0,pos-65),Math.min(item.text.length,pos+query.length+135))+(pos+query.length+135<item.text.length?'…':''):item.text.slice(0,190)+(item.text.length>190?'…':'');
+      content.appendChild(p);
+      const link=document.createElement('a');link.href='#'+item.id;link.textContent='Voir →';
+      row.append(content,link);results.appendChild(row);
+    });
   });
 })();
 </script>
