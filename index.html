@@ -2317,6 +2317,26 @@ body{background-color:var(--lam-cream)!important}
 a{color:var(--lam-red)}
 @media(max-width:760px){#lam-main-navigation .navin{background:var(--lam-cream)!important}}
 </style>
+
+<style id="lam-client-need-search-2026-11-10">
+#lam-search-section{background:#FFFCF5!important;border-top:1px solid rgba(185,145,78,.22)!important;border-bottom:1px solid rgba(185,145,78,.22)!important}
+#lam-search-section .lam-search-wrap{max-width:980px!important}
+#lam-search-section h2{margin:10px 0 14px!important}
+.lam-need-search{display:flex;gap:12px;align-items:stretch;margin:28px 0 12px}
+.lam-need-search input{flex:1;min-width:0;min-height:58px;padding:16px 20px!important;border:1px solid #D8B875!important;border-radius:12px!important;background:#fff!important;color:#594532!important;font:inherit!important}
+.lam-need-search button{min-height:58px;white-space:nowrap}
+.lam-search-hint{font-size:.88rem!important;opacity:.8}
+.lam-search-results{margin-top:22px;padding:20px 22px;background:#FFF8E9;border:1px solid rgba(185,145,78,.35);border-radius:14px}
+.lam-search-results h3{margin:0 0 12px;color:#594532!important}
+.lam-search-result{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-top:1px solid rgba(185,145,78,.2)}
+.lam-search-result a{font-weight:700;color:#F00018!important;text-decoration:none}
+.lam-search-result a:hover{color:#F28C18!important}
+.lam-search-result p{margin:4px 0 0;font-size:.9rem}
+.lam-search-empty{margin:0}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:620px){.lam-need-search{flex-direction:column}.lam-need-search button{width:100%}.lam-search-result{align-items:flex-start;flex-direction:column}}
+</style>
+
 </head>
 <body>
 
@@ -2366,6 +2386,22 @@ a{color:var(--lam-red)}
     </div>
   </div>
 </section>
+
+<section id="lam-search-section" class="section" aria-labelledby="lam-search-title">
+  <div class="wrap lam-search-wrap">
+    <div class="eyebrow">VOTRE PROJET, EN QUELQUES MOTS</div>
+    <h2 id="lam-search-title">QUE RECHERCHEZ-VOUS ?</h2>
+    <p class="lead">Décrivez directement votre besoin. LAM vous orientera vers le service ou le formulaire correspondant.</p>
+    <form id="lamNeedSearch" class="lam-need-search" role="search">
+      <label class="sr-only" for="lamNeedInput">Rechercher un service ou un besoin</label>
+      <input id="lamNeedInput" type="search" placeholder="Ex. : mariage, décoration, traiteur, anniversaire…" autocomplete="off" aria-describedby="lamSearchHint">
+      <button class="btn primary" type="submit">RECHERCHER</button>
+    </form>
+    <p id="lamSearchHint" class="lam-search-hint">Vous pouvez rechercher : mariage, anniversaire, décoration, traiteur, concert, couture, communion, événement pour enfants ou devis.</p>
+    <div id="lamSearchResults" class="lam-search-results" aria-live="polite" hidden></div>
+  </div>
+</section>
+
 
 <section id="lam-kids" class="section alt">
 <div class="wrap">
@@ -5765,6 +5801,43 @@ img{max-width:100%;height:auto}
  #lam-main-navigation .navin{min-height:64px!important}
 }
 </style>
+
+
+<script id="lam-client-need-search-script">
+(function(){
+  const form=document.getElementById('lamNeedSearch');
+  const input=document.getElementById('lamNeedInput');
+  const results=document.getElementById('lamSearchResults');
+  if(!form||!input||!results)return;
+  const catalog=[
+    {title:'Organisation et planification événementielle',desc:'Mariage, fiançailles, anniversaire, réception et événement professionnel.',href:'#services',keys:'mariage mariages wedding fiançailles anniversaire anniversaire fête réception gala soirée entreprise professionnel séminaire conférence organisation planification coordination événement event'},
+    {title:'Décoration & design',desc:'Thème, couleurs, décoration de salle, tables, buffet et scénographie.',href:'#departements',keys:'décoration decor design salle fleurs tables ballons arche thème couleurs scénographie aménagement'},
+    {title:'Service traiteur & gastronomie',desc:'Repas, menus, bouchées, cocktails, pâtisserie et service.',href:'#services',keys:'traiteur catering repas nourriture cuisine menu bouchées cocktail mocktail boissons pâtisserie gâteau charcuterie finger food buffet'},
+    {title:'Concerts & production',desc:'Organisation, coordination logistique et accompagnement de concerts.',href:'#concertForm',keys:'concert concerts musique spectacle artiste production scène vip son lumière'},
+    {title:'Couture & mode',desc:'Création, haute couture, confection sur mesure et retouches.',href:'#lam-couture',keys:'couture mode vêtement vêtements robe haute couture confection stylisme retouche sur mesure uniforme'},
+    {title:'Événements pour enfants — LAM Kids',desc:'Anniversaires, activités et célébrations pour les enfants de 1 à 16 ans.',href:'#lam-kids',keys:'enfant enfants kids bébé baby anniversaire enfant activité famille jeux'},
+    {title:'Communion et célébrations familiales',desc:'Découvrez les formules et envoyez votre demande à LAM.',href:'#formulaire',keys:'communion baptême célébration religieuse famille première communion'},
+    {title:'Demander un devis ou présenter un projet',desc:'Accédez aux formulaires pour décrire votre besoin et recevoir une proposition.',href:'#formulaire',keys:'devis prix tarif demande formulaire réserver réservation projet budget consultation'},
+    {title:'Partenariat',desc:'Proposer une collaboration ou devenir partenaire de LAM.',href:'#partenariats',keys:'partenaire partenariat collaboration sponsor entreprise fournisseur'},
+    {title:'Contacter LAM',desc:'Échangez directement avec notre équipe au sujet de votre projet.',href:'#contact',keys:'contact parler appeler téléphone whatsapp email question information'}
+  ];
+  const normalize=value=>value.toLocaleLowerCase('fr').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\s]/g,' ').trim();
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    const query=normalize(input.value);
+    results.hidden=false;
+    if(!query){results.innerHTML='<p class="lam-search-empty">Écrivez quelques mots sur votre besoin pour voir les services correspondants.</p>';return;}
+    const terms=query.split(/\s+/).filter(Boolean);
+    const matches=catalog.map(item=>{
+      const haystack=normalize(item.title+' '+item.desc+' '+item.keys);
+      const score=terms.reduce((total,term)=>total+(haystack.includes(term)?1:0),0);
+      return {item,score};
+    }).filter(entry=>entry.score>0).sort((a,b)=>b.score-a.score).slice(0,5);
+    if(!matches.length){results.innerHTML='<h3>Aucun résultat exact</h3><p class="lam-search-empty">Nous n’avons pas trouvé de correspondance. Essayez un autre mot ou <a href="#contact">contactez directement LAM</a> pour expliquer votre besoin.</p>';return;}
+    results.innerHTML='<h3>Voici les services qui peuvent vous intéresser</h3>'+matches.map(({item})=>'<div class="lam-search-result"><div><strong>'+item.title+'</strong><p>'+item.desc+'</p></div><a href="'+item.href+'">Voir le service →</a></div>').join('');
+  });
+})();
+</script>
 
 </body>
 </html>
