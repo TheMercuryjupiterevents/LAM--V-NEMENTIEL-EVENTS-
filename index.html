@@ -3474,6 +3474,8 @@ window.showEventForm = function(target){
   }
   if(selected){
     selected.hidden=false;
+    // Show the complete selected form immediately; no extra accordion clicks.
+    selected.querySelectorAll('details').forEach(function(detail){detail.open=true;});
     selected.scrollIntoView({behavior:'auto',block:'start'});
   }
   return false;
@@ -5785,8 +5787,22 @@ img{max-width:100%;height:auto}
       p.textContent=pos>=0?item.text.slice(Math.max(0,pos-55),Math.min(item.text.length,pos+termsInText.length+145))+(pos+termsInText.length+145<item.text.length?'…':''):item.text.slice(0,190)+(item.text.length>190?'…':'');
       content.appendChild(p);
       const link=document.createElement('a');link.href='#'+item.target.id;link.textContent=item.target.matches('input,select,textarea')?'Ouvrir ce champ →':'Voir le formulaire / la section →';
-      link.addEventListener('click',function(){
-        window.setTimeout(()=>{item.target.scrollIntoView({behavior:'smooth',block:'center'});if(item.target.matches('input,select,textarea'))item.target.focus({preventScroll:true});},30);
+      link.addEventListener('click',function(event){
+        const formNode=item.target.matches('form')?item.target:item.target.closest('form');
+        const panel=formNode?.closest('.form-panel');
+        if(panel&&typeof window.showEventForm==='function'){
+          event.preventDefault();
+          window.showEventForm(panel.id);
+          panel.querySelectorAll('details').forEach(detail=>{detail.open=true;});
+          window.setTimeout(()=>{panel.scrollIntoView({behavior:'smooth',block:'start'});},50);
+          return;
+        }
+        window.setTimeout(()=>{
+          const destination=formNode||item.target;
+          destination.scrollIntoView({behavior:'smooth',block:'start'});
+          if(item.target.matches('input,select,textarea'))item.target.focus({preventScroll:true});
+          destination.querySelectorAll?.('details').forEach(detail=>{detail.open=true;});
+        },30);
       });
       row.append(content,link);results.appendChild(row);
     });
