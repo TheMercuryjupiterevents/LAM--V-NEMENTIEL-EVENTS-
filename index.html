@@ -10002,3 +10002,32 @@ a{color:#A98755!important}a:hover{color:#F00018!important}
  .card,.team-card,.tool-card{padding:0!important;margin-bottom:28px!important}
 }
 </style>
+
+
+<style id="lam-natural-layout-no-square-tiles-2026-11-10">
+/* Mise en page naturelle : pas de tuiles carrées, pas de blocs rigides */
+.card,.team-card,.tool-card,.grid>.card,.grid>.team-card,.grid>.tool-card{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ min-height:0!important;
+ aspect-ratio:auto!important;
+ padding:clamp(22px,3vw,36px)!important;
+ margin:0 0 24px!important;
+ background:rgba(255,252,243,.62)!important;
+ border:1px solid rgba(185,145,78,.28)!important;
+ border-radius:18px!important;
+ box-shadow:0 5px 18px rgba(89,69,50,.055)!important;
+ overflow:visible!important;
+}
+.card:before,.card:after,.team-card:before,.team-card:after,.tool-card:before,.tool-card:after{display:none!important}
+.grid{align-items:stretch!important;grid-auto-rows:auto!important}
+.grid>.card,.grid>.team-card,.grid>.tool-card{align-self:stretch!important}
+.section,.section.alt,.section.dark{border-radius:0!important;box-shadow:none!important}
+.lam-hero-frame{border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;background:transparent!important}
+@media(max-width:700px){
+ .card,.team-card,.tool-card,.grid>.card,.grid>.team-card,.grid>.tool-card{
+  padding:22px!important;margin:0 0 18px!important;border-radius:16px!important;
+ }
+}
+</style>
