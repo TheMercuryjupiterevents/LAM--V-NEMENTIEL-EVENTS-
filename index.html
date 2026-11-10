@@ -10275,3 +10275,31 @@ hr{border:0!important;border-top:1px solid var(--lam-rule)!important}
  if(menu)menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.hidden=true;var button=document.querySelector('#lam-main-navigation .menu');if(button)button.setAttribute('aria-expanded','false');});});
 })();
 </script>
+
+
+<style id="lam-remove-info-cards-2026-11-10">
+/* Retirer les boîtes autour des informations : conserver le contenu et sa structure */
+main .card,main article.card,main .team-card,main .tool-card,main .package,
+main .palette-preview,main .info-card,main .service-card,main .department-card{
+ background:transparent!important;background-color:transparent!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;
+ outline:0!important;min-height:0!important;height:auto!important;
+ padding:12px 0!important;margin:0!important;overflow:visible!important;
+}
+main .card::before,main .card::after,main .team-card::before,main .team-card::after,
+main .tool-card::before,main .tool-card::after,main .package::before,main .package::after{
+ content:none!important;display:none!important;
+}
+main .grid,main .grid2,main .grid3,main .grid4{column-gap:clamp(28px,4vw,64px)!important;row-gap:clamp(26px,4vw,52px)!important}
+main .card h3,main .team-card h3,main .tool-card h3,main .package h3{margin:0 0 10px!important}
+main .card p,main .team-card p,main .tool-card p,main .package p{margin:0 0 12px!important}
+main .card .num,main .team-card .num,main .tool-card .num{display:block!important;margin-bottom:10px!important}
+#formChoiceCards .card{padding:18px 0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+#formChoiceCards .card .btn{align-self:flex-start!important}
+main .contactbox,main .payment-policy-card,main .payment-policy-inline,main .payment-policy-note{
+ background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+}
+main .contactbox{padding:0!important}
+main .contactline{padding:12px 0!important;border-bottom:1px solid var(--lam-rule)!important}
+@media(max-width:640px){main .card,main article.card,main .team-card,main .tool-card,main .package{padding:10px 0!important;margin:0!important}}
+</style>
