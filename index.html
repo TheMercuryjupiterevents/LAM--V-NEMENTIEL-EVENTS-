@@ -10370,3 +10370,46 @@ main fieldset::before,main fieldset::after{
  content:none!important;display:none!important;
 }
 </style>
+
+
+<style id="lam-transparent-all-content-wrappers">
+/* Les informations restent visibles, mais aucun bloc ne doit avoir son propre fond ou cadre */
+main div,main article,main aside,main fieldset,main .form,main .form-panel,
+main .form-layout,main .form-section,main .contactbox,main .payment-policy-card,
+main .payment-policy-inline,main .payment-policy-note,main .info-card,
+main .service-card,main .department-card,main .lam-search-result,
+main #lam-search-section,main #lam-kids,main .birthday-panel,
+main .quick-client-tools,main .lam-couture-choice,main .lam-couture-choice-team,
+main .lam-couture-form-card,main .lam-couture-service-card,
+main .creator-card,main .balance,main .cancellation {
+ background:transparent!important;background-color:transparent!important;
+ border:0!important;outline:0!important;border-radius:0!important;
+ box-shadow:none!important;
+}
+main div::before,main div::after,main article::before,main article::after,
+main aside::before,main aside::after,main fieldset::before,main fieldset::after{
+ box-shadow:none!important;outline:0!important;
+}
+main .form,main .form-panel,main fieldset,main .form-section,
+main .contactbox,main .payment-policy-card,main .payment-policy-inline,
+main .payment-policy-note{padding:0!important}
+main .form-section{margin:28px 0!important}
+main .lam-search-result{border-bottom:0!important}
+</style>
+<script id="lam-flatten-wrappers-on-render">
+(function(){
+ function flatten(){
+  document.querySelectorAll('main div,main article,main aside,main fieldset').forEach(function(el){
+   el.style.setProperty('background','transparent','important');
+   el.style.setProperty('background-color','transparent','important');
+   el.style.setProperty('border','0','important');
+   el.style.setProperty('outline','0','important');
+   el.style.setProperty('border-radius','0','important');
+   el.style.setProperty('box-shadow','none','important');
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',flatten);
+ else flatten();
+ new MutationObserver(flatten).observe(document.querySelector('main')||document.body,{childList:true,subtree:true});
+})();
+</script>
