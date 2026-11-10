@@ -10413,3 +10413,36 @@ main .lam-search-result{border-bottom:0!important}
  new MutationObserver(flatten).observe(document.querySelector('main')||document.body,{childList:true,subtree:true});
 })();
 </script>
+
+
+<style id="lam-nappes-colors-more-visible">
+/* Échantillons de couleurs des nappes : plus grands, saturés et faciles à distinguer */
+main .color-preference-grid{
+ display:grid!important;
+ grid-template-columns:repeat(auto-fit,minmax(145px,1fr))!important;
+ gap:12px!important;
+}
+main .color-preference-grid .check{
+ display:flex!important;align-items:center!important;gap:12px!important;
+ min-height:62px!important;padding:10px 12px!important;
+ background:transparent!important;border:0!important;border-radius:0!important;
+ box-shadow:none!important;color:inherit!important;font-weight:600!important;
+}
+main .color-preference-grid .color-dot{
+ display:inline-block!important;flex:0 0 42px!important;
+ width:42px!important;height:42px!important;min-width:42px!important;
+ border-radius:50%!important;
+ border:2px solid rgba(40,30,20,.35)!important;
+ box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(40,30,20,.22)!important;
+ opacity:1!important;
+}
+main .color-preference-grid .check:has(input:checked) .color-dot{
+ outline:3px solid #c49a42!important;outline-offset:3px!important;
+}
+main .color-preference-grid input{accent-color:#c49a42!important}
+@media(max-width:600px){
+ main .color-preference-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ main .color-preference-grid .check{min-height:56px!important;padding:6px 2px!important;font-size:.82rem!important}
+ main .color-preference-grid .color-dot{flex-basis:34px!important;width:34px!important;height:34px!important;min-width:34px!important}
+}
+</style>
