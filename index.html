@@ -2362,6 +2362,21 @@ a{color:var(--lam-red)}
 </header>
 
 <main id="accueil">
+<section id="lam-search-section" class="section" aria-labelledby="lam-search-title">
+  <div class="wrap lam-search-wrap">
+    <div class="eyebrow">VOTRE PROJET, EN QUELQUES MOTS</div>
+    <h2 id="lam-search-title">QUE RECHERCHEZ-VOUS ?</h2>
+    <p class="lead">Décrivez directement votre besoin. LAM vous orientera vers le service ou le formulaire correspondant.</p>
+    <form id="lamNeedSearch" class="lam-need-search" role="search">
+      <label class="sr-only" for="lamNeedInput">Rechercher un service ou un besoin</label>
+      <input id="lamNeedInput" type="search" placeholder="Ex. : mariage, décoration, traiteur, anniversaire…" autocomplete="off" aria-describedby="lamSearchHint">
+      <button class="btn primary" type="submit">RECHERCHER</button>
+    </form>
+    <p id="lamSearchHint" class="lam-search-hint">Vous pouvez rechercher : mariage, anniversaire, décoration, traiteur, concert, couture, communion, événement pour enfants ou devis.</p>
+    <div id="lamSearchResults" class="lam-search-results" aria-live="polite" hidden></div>
+  </div>
+</section>
+
 <section class="hero" id="lam-hero">
   <div class="wrap hero-grid">
     <div class="lam-hero-copy">
@@ -2387,20 +2402,7 @@ a{color:var(--lam-red)}
   </div>
 </section>
 
-<section id="lam-search-section" class="section" aria-labelledby="lam-search-title">
-  <div class="wrap lam-search-wrap">
-    <div class="eyebrow">VOTRE PROJET, EN QUELQUES MOTS</div>
-    <h2 id="lam-search-title">QUE RECHERCHEZ-VOUS ?</h2>
-    <p class="lead">Décrivez directement votre besoin. LAM vous orientera vers le service ou le formulaire correspondant.</p>
-    <form id="lamNeedSearch" class="lam-need-search" role="search">
-      <label class="sr-only" for="lamNeedInput">Rechercher un service ou un besoin</label>
-      <input id="lamNeedInput" type="search" placeholder="Ex. : mariage, décoration, traiteur, anniversaire…" autocomplete="off" aria-describedby="lamSearchHint">
-      <button class="btn primary" type="submit">RECHERCHER</button>
-    </form>
-    <p id="lamSearchHint" class="lam-search-hint">Vous pouvez rechercher : mariage, anniversaire, décoration, traiteur, concert, couture, communion, événement pour enfants ou devis.</p>
-    <div id="lamSearchResults" class="lam-search-results" aria-live="polite" hidden></div>
-  </div>
-</section>
+
 
 
 <section id="lam-kids" class="section alt">
