@@ -3760,169 +3760,13 @@ document.addEventListener('click',function(event){
 </div>
 </section>
 
-<section id="createur" class="section alt">
-<div class="wrap">
-<div class="eyebrow">Votre projet, votre univers</div>
-<h2>IMAGINEZ UN ÉVÉNEMENT À VOTRE IMAGE.</h2>
-<p class="lead">Choisissez vos préférences pour nous aider à comprendre votre vision. Votre sélection pourra être envoyée à notre équipe sur WhatsApp.</p>
-<div class="grid grid2 creator-layout">
-<div class="card creator-card">
-<div class="field"><label for="creatorType">Type d’événement</label><select id="creatorType"><option>Mariage</option><option>Fiançailles</option><option>Anniversaire</option><option>Baptême</option><option>Baby shower</option><option>Gala</option><option>Dîner</option><option>Dîner privé</option><option>Événement corporatif</option><option>Conférence</option><option>Lancement de produit</option><option>Concert ou festival</option><option>Autre événement</option></select></div>
-<div class="field"><label for="creatorStyle">Style recherché</label><select id="creatorStyle"><option>Élégant et intemporel</option><option>Old Money / luxe discret</option><option>Romantique et floral</option><option>Moderne et minimaliste</option><option>Coloré et festif</option><option>VIP / prestige</option></select></div>
-<div class="field"><label>Choisissez une ou plusieurs couleurs</label>
-<p class="small">Choisissez une seule couleur ou mélangez plusieurs couleurs pour créer votre propre palette.</p>
-<div class="color-choice-grid" id="creatorColorChoices">
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Rouge" data-color="#e31b23"><span class="color-dot" style="background:#e31b23"></span>Rouge</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Orange" data-color="#f58220"><span class="color-dot" style="background:#f58220"></span>Orange</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Jaune" data-color="#ffd500"><span class="color-dot" style="background:#ffd500"></span>Jaune</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Doré" data-color="#aeb4ba"><span class="color-dot" style="background:#aeb4ba"></span>Doré</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Vert" data-color="#239447"><span class="color-dot" style="background:#239447"></span>Vert</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Vert sauge" data-color="#a7bca4"><span class="color-dot" style="background:#a7bca4"></span>Vert sauge</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Bleu ciel" data-color="#87ceeb"><span class="color-dot" style="background:#87ceeb"></span>Bleu ciel</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Bleu royal" data-color="#4169e1"><span class="color-dot" style="background:#4169e1"></span>Bleu royal</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Bleu marine" data-color="#102a43"><span class="color-dot" style="background:#102a43"></span>Bleu marine</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Violet" data-color="#7f3fbf"><span class="color-dot" style="background:#7f3fbf"></span>Violet</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Mauve" data-color="#b784c7"><span class="color-dot" style="background:#b784c7"></span>Mauve</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Rose" data-color="#ef8fa8"><span class="color-dot" style="background:#ef8fa8"></span>Rose</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Rose poudré" data-color="#e8b7c8"><span class="color-dot" style="background:#e8b7c8"></span>Rose poudré</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Fuchsia" data-color="#d62976"><span class="color-dot" style="background:#d62976"></span>Fuchsia</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Blanc" data-color="#ffffff"><span class="color-dot" style="background:#ffffff"></span>Blanc</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Crème / ivoire" data-color="#f3ead7"><span class="color-dot" style="background:#f3ead7"></span>Crème / ivoire</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Beige" data-color="#d8c3a5"><span class="color-dot" style="background:#d8c3a5"></span>Beige</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Marron" data-color="#795548"><span class="color-dot" style="background:#795548"></span>Marron</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Noir" data-color="#171717"><span class="color-dot" style="background:#171717"></span>Noir</label>
-<label class="color-choice"><input type="checkbox" name="creatorColors" value="Gris / argenté" data-color="#aeb4ba"><span class="color-dot" style="background:#aeb4ba"></span>Gris / argenté</label>
-</div>
-<div class="field" style="margin-top:12px"><label for="creatorPalette">Autres couleurs ou mélange personnalisé</label><input id="creatorPalette" type="text" placeholder="Ex. rouge + orange + jaune, ou bleu ciel + blanc + doré"></div>
-</div>
-<div class="field"><label for="creatorGuests">Nombre approximatif d’invités</label><input id="creatorGuests" type="number" min="1" max="10000" placeholder="Ex. 100"></div>
-<div class="field"><label for="creatorNotes">Vos idées ou détails</label><textarea id="creatorNotes" placeholder="Décrivez votre vision, le lieu souhaité ou les éléments importants…"></textarea></div>
-<button type="button" class="btn primary" id="sendCreatorWhatsApp">Envoyer mon idée sur WhatsApp</button>
-</div>
-<div class="creator-preview">
-<div class="creator-preview-inner"><div class="eyebrow">Votre concept</div><div class="creator-sparkle">✧</div><h3 id="creatorPreviewType">MARIAGE</h3><p id="creatorPreviewStyle">Élégant et intemporel</p><div class="creator-swatches" id="creatorSwatches"><span></span><span></span><span></span></div><p id="creatorPreviewPalette" class="small">Choisissez une ou plusieurs couleurs</p><p id="creatorPreviewGuests" class="small">Votre nombre d’invités apparaîtra ici</p><p class="small">Concept indicatif, à affiner avec notre équipe.</p></div>
-</div>
-</div>
-</div>
-</section>
 
 
 
-<section id="inspiration-evenement" class="section lam-inspiration">
- <div class="wrap">
-  <div class="eyebrow">Votre projet commence ici</div>
-  <h2>EN PANNE D’INSPIRATION ? NOUS VOUS GUIDONS.</h2>
-  <p class="lead">Vous souhaitez organiser un événement, mais vous ne savez pas quel thème choisir ? LAM ÉVÉNEMENTIEL &amp; EVENTS vous aide à imaginer un concept adapté à vos envies, à vos couleurs et à vos fleurs préférées.</p>
-  <div class="lam-inspiration-intro">
-   <div class="lam-inspiration-copy">
-    <span class="lam-inspiration-kicker">NOTRE ACCOMPAGNEMENT</span>
-    <h3>De la première idée aux détails qui font la différence.</h3>
-    <p>Découvrez des suggestions pour choisir votre thème, harmoniser les couleurs, sélectionner les fleurs et imaginer une décoration cohérente.</p>
-    <ul><li>Thème et ambiance</li><li>Palette de couleurs harmonieuse</li><li>Fleurs et centres de table</li><li>Décoration selon le lieu et le nombre d’invités</li><li>Conseils pour organiser un dîner et dresser une table élégante</li></ul>
-   </div>
-   <div class="lam-inspiration-visual">
-    <div class="lam-inspiration-visual-top">EXEMPLE DE CONCEPT</div>
-    <div class="lam-inspiration-table"><span class="lam-inspiration-flower">✿</span><div class="lam-inspiration-plates"><span></span></div><div class="lam-inspiration-candles"><i></i><i></i><i></i></div></div>
-    <h3>Dîner élégant</h3><p>Bleu cobalt · Gris · Blanc</p>
-    <div class="lam-inspiration-swatches"><span></span><span></span><span></span></div>
-    <p class="lam-inspiration-caption">Nappe claire, serviettes bleu cobalt, fleurs blanches, bougies et verrerie soigneusement disposée.</p>
-   </div>
-  </div>
-  <div class="lam-inspiration-examples">
-   <article class="lam-inspiration-card"><span class="lam-inspiration-number">01</span><h3>Mariage et fiançailles</h3><p>Une ambiance romantique, des compositions florales et une palette harmonieuse.</p></article>
-   <article class="lam-inspiration-card"><span class="lam-inspiration-number">02</span><h3>Anniversaire</h3><p>Un thème personnalisé, un décor photo et des détails adaptés à la personne célébrée.</p></article>
-   <article class="lam-inspiration-card"><span class="lam-inspiration-number">03</span><h3>Dîner privé ou romantique</h3><p>Un plan de table, des centres de table, des bougies et une disposition élégante des couverts.</p></article>
-   <article class="lam-inspiration-card"><span class="lam-inspiration-number">04</span><h3>Événement professionnel</h3><p>Une présentation soignée et une décoration adaptée à l’occasion.</p></article>
-  </div>
-  <div class="lam-inspiration-form-layout">
-   <div class="lam-inspiration-form-intro"><span class="lam-inspiration-kicker">PARLONS DE VOTRE PROJET</span><h3>Recevez des idées adaptées à votre événement.</h3><p>Remplissez les champs ci-dessous. Si vous n’avez aucune idée précise, choisissez « J’ai besoin de conseils » : nous vous guiderons.</p><p class="lam-inspiration-note">Votre demande ne confirme pas une réservation. La disponibilité et le devis seront étudiés avec notre équipe.</p></div>
-   <form id="lamInspirationForm" class="form lam-inspiration-form">
-    <div class="form-section"><h3>Vos coordonnées</h3><div class="fieldgrid">
-     <div class="field"><label for="lamInspNom">Nom *</label><input id="lamInspNom" name="Nom" autocomplete="family-name" required placeholder="Votre nom"></div>
-     <div class="field"><label for="lamInspPrenom">Prénom *</label><input id="lamInspPrenom" name="Prénom" autocomplete="given-name" required placeholder="Votre prénom"></div>
-     <div class="field"><label for="lamInspEmail">Adresse e-mail *</label><input id="lamInspEmail" name="E-mail" type="email" autocomplete="email" required placeholder="vous@exemple.com"></div>
-     <div class="field"><label for="lamInspPhone">Téléphone *</label><input id="lamInspPhone" name="Téléphone" type="tel" autocomplete="tel" required placeholder="Votre numéro"></div>
-    </div></div>
-    <div class="form-section"><h3>Votre événement</h3><div class="fieldgrid">
-     <div class="field"><label for="lamInspType">Type d’événement *</label><select id="lamInspType" name="Type d’événement" required><option value="">Choisir un type</option><option>Mariage ou fiançailles</option><option>Anniversaire</option><option>Dîner romantique</option><option>Dîner privé ou familial</option><option>Dîner professionnel</option><option>Baby shower ou bridal shower</option><option>Graduation</option><option>Autre événement</option><option>J’ai besoin de conseils</option></select></div>
-     <div class="field"><label for="lamInspDate">Date souhaitée</label><input id="lamInspDate" name="Date souhaitée" type="date"></div>
-     <div class="field"><label for="lamInspPlace">Lieu ou ville</label><input id="lamInspPlace" name="Lieu ou ville" placeholder="Lieu envisagé ou ville"></div>
-     <div class="field"><label for="lamInspGuests">Nombre d’invités</label><select id="lamInspGuests" name="Nombre d’invités"><option>À déterminer</option><option>Moins de 20</option><option>20 à 50</option><option>51 à 100</option><option>Plus de 100</option></select></div>
-     
-     <div class="field"><label for="lamInspStyle">Style souhaité</label><select id="lamInspStyle" name="Style souhaité"><option>J’ai besoin de conseils</option><option>Élégant et raffiné</option><option>Luxe et prestige</option><option>Moderne et minimaliste</option><option>Romantique et floral</option><option>Festif et coloré</option><option>Classique et intemporel</option></select></div>
-     <div class="field full"><label for="lamInspColors">Couleurs préférées</label><input id="lamInspColors" name="Couleurs préférées" placeholder="Ex. bleu cobalt, gris et blanc"></div>
-     <div class="field"><label for="lamInspFlowers">Fleurs souhaitées</label><select id="lamInspFlowers" name="Fleurs souhaitées"><option>J’ai besoin de conseils</option><option>Roses</option><option>Orchidées</option><option>Hortensias</option><option>Fleurs de saison</option><option>Mélange de fleurs</option><option>Sans fleurs</option></select></div>
-     <div class="field"><label for="lamInspDecor">Décoration souhaitée</label><select id="lamInspDecor" name="Décoration souhaitée"><option>J’ai besoin de conseils</option><option>Décoration de table et centres de table</option><option>Fleurs et bougies</option><option>Arche ou arrière-plan photo</option><option>Ballons et décor festif</option><option>Décoration complète du lieu</option></select></div>
-     <div class="field full"><label for="lamInspDetails">Votre idée ou vos questions</label><textarea id="lamInspDetails" name="Idées et besoins" placeholder="Ex. : Je souhaite organiser un dîner élégant, mais j’ai besoin d’aide pour choisir les fleurs, les couleurs et la disposition de la table."></textarea></div>
-    </div></div>
-    <label class="consent"><input type="checkbox" id="lamInspConsent" required><span>J’accepte que LAM ÉVÉNEMENTIEL &amp; EVENTS me contacte au sujet de cette demande. *</span></label>
-    <button type="submit" class="btn primary">Envoyer ma demande sur WhatsApp</button>
-    <p class="small">Les champs marqués d’un astérisque sont obligatoires. Votre demande sera préparée dans WhatsApp pour que vous puissiez l’envoyer à notre équipe.</p>
-   </form>
-  </div>
- </div>
-</section>
 
-<section id="personnalisez-evenement" class="section birthday-orange">
-<div class="wrap">
-<div class="eyebrow">Votre célébration, votre histoire</div>
-<h2>PERSONNALISEZ VOTRE ÉVÉNEMENT.</h2>
-<p class="lead">Un anniversaire d’enfant, une fête pour adolescent, une célébration élégante pour une dame ou un événement familial : dites-nous ce que vous imaginez, et notre équipe pourra mieux comprendre votre projet.</p>
-<div class="birthday-panel">
-<form id="birthdayInquiryForm">
 
-<div class="payment-policy-inline" role="note" aria-label="Politique de réservation et de paiement">
-  <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
-  <p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date de l’événement.</p>
-  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant la date prévue de l’événement.</p>
-  <p><strong>Annulation :</strong> en cas d’annulation à l’initiative du client après la signature du contrat, une indemnité équivalente à <strong>1 % du montant total du contrat</strong> sera retenue sur les sommes déjà versées. Le solde éventuel sera remboursé au client.</p>
-  <p>L’envoi du formulaire constitue une demande, et non une réservation confirmée. La date sera bloquée après accord sur les conditions et réception de l’acompte prévu.</p>
-</div>
 
-<div class="birthday-form-grid">
-<div class="birthday-field"><label for="birthdayClientName">Nom et prénom *</label><input id="birthdayClientName" type="text" autocomplete="name" required placeholder="Votre nom complet"></div>
-<div class="birthday-field"><label for="birthdayClientPhone">Téléphone / WhatsApp *</label><input id="birthdayClientPhone" type="tel" autocomplete="tel" required placeholder="+509 ..."></div>
-<div class="birthday-field"><label for="birthdayClientEmail">Adresse e-mail *</label><input id="birthdayClientEmail" type="email" autocomplete="email" required placeholder="vous@exemple.com"></div>
-<div class="birthday-field"><label for="birthdayEventType">Quel type d’événement souhaitez-vous organiser ?</label><select id="birthdayEventType" required><option value="">Choisir un type</option><option>Dîner</option><option>Anniversaire</option><option>Fête pour enfant</option><option>Fête pour adolescent</option><option>Anniversaire surprise</option><option>Fiançailles</option><option>Mariage</option><option>Baby shower</option><option>Bridal shower</option><option>Graduation</option><option>Dîner privé</option><option>Autre célébration</option></select></div>
-<div class="birthday-field"><label for="birthdayForWho">Pour qui organisez-vous la fête ?</label><select id="birthdayForWho" required><option value="">Choisir</option><option>Un enfant</option><option>Un adolescent</option><option>Une adulte / une dame</option><option>Un adulte / un homme</option><option>Un couple</option><option>Un membre de la famille</option><option>Un ami / une amie</option><option>Moi-même</option><option>Autre</option></select></div>
-<div class="birthday-field"><label for="birthdayAge">Quel âge la personne va-t-elle avoir ?</label><input id="birthdayAge" type="text" placeholder="Ex. 5 ans, 18 ans, 30 ans, 50 ans"></div>
-<div class="birthday-field"><label for="birthdayDate">Date souhaitée</label><input id="birthdayDate" type="date" required></div>
-<div class="birthday-field"><label for="birthdayStyle">Style ou ambiance souhaitée</label><select id="birthdayStyle" required><option value="">Choisir une ambiance</option><option>Élégant et luxueux</option><option>Royal et sophistiqué</option><option>Moderne et tendance</option><option>Enfantin et coloré</option><option>Glamour</option><option>Chic et minimaliste</option><option>Thème personnalisé</option><option>J’aimerais des conseils</option></select></div>
-<div class="birthday-field"><label for="birthdayGuests">Nombre approximatif d’invités</label><select id="birthdayGuests"><option>À déterminer</option><option>Moins de 20 personnes</option><option>20 à 50 personnes</option><option>51 à 100 personnes</option><option>Plus de 100 personnes</option></select></div>
-<div class="birthday-field"><label for="birthdayPalette">Couleurs préférées</label><input id="birthdayPalette" type="text" placeholder="Ex. orange et blanc, rouge et or"></div>
 
-<div class="birthday-field full"><label for="birthdayDetails">Racontez-nous votre idée ou votre thème</label><textarea id="birthdayDetails" placeholder="Ex. anniversaire de princesse pour une petite fille, fête élégante pour une dame, fête surprise, décoration, traiteur…"></textarea></div>
-</div>
-<div class="birthday-hint" style="margin-top:18px">Votre demande ne constitue pas une réservation confirmée. Notre équipe échangera avec vous pour préciser les besoins, la disponibilité et le devis.</div>
-<div style="margin-top:18px"><button type="submit" class="btn">Envoyer ma demande sur WhatsApp</button></div>
-<p id="birthdayInquiryStatus" class="small" role="status" aria-live="polite"></p>
-<script>
-(function(){
-  var partnershipForm = document.querySelector('#formulaire-partenariat form');
-  if (!partnershipForm) return;
-  partnershipForm.addEventListener('submit', function(event) {
-    var fileInput = document.getElementById('partnerPdf');
-    if (!fileInput || !fileInput.files || !fileInput.files.length) return;
-    var file = fileInput.files[0];
-    var isPdf = file.type === 'application/pdf' || /\\.pdf$/i.test(file.name);
-    if (!isPdf) {
-      event.preventDefault();
-      alert('Veuillez sélectionner un document au format PDF.');
-      fileInput.focus();
-      return;
-    }
-    if (file.size > 10 * 1024 * 1024) {
-      event.preventDefault();
-      alert('Le fichier PDF ne doit pas dépasser 10 Mo.');
-      fileInput.focus();
-    }
-  });
-})();
-</script>
-</form>
-</div>
-</div>
-</section>
 
 <section id="budget-estimateur" class="section">
 <div class="wrap">
@@ -4426,7 +4270,7 @@ Haïti<br>
 <footer class="footer">
 <div class="wrap footergrid">
 <div><div class="eyebrow" style="color:#79bfe0">LAM ÉVÉNEMENTIEL & EVENTS</div><h3>Événements & Événementiels</h3><p>PUISSANCE. PRESTIGE. PERFECTION.</p></div>
-<div><div class="eyebrow" style="color:#79bfe0">Navigation</div><p style="margin-top:14px"><a href="#apropos">À propos</a><br><a href="#services">Services</a><br><a href="#lam-couture">LAM Couture</a><br><a href="#formules">Formules</a><br><a href="#experience">Expérience</a><br><a href="#vision2040">Vision 2040</a><br><a href="#faq">Questions fréquentes</a><br><a href="#outils-clients">Outils clients</a><br><a href="#personnalisez-evenement">Personnaliser mon événement</a><br><a href="#inspiration-evenement">Trouver des idées pour mon événement</a><br><a href="#presentation">Dossier de présentation</a><br><a href="#paiement">Politique de paiement</a><br><a href="#contact">Contact</a><br><a href="#informations-legales">Informations légales & confidentialité</a></p></div>
+<div><div class="eyebrow" style="color:#79bfe0">Navigation</div><p style="margin-top:14px"><a href="#apropos">À propos</a><br><a href="#services">Services</a><br><a href="#lam-couture">LAM Couture</a><br><a href="#formules">Formules</a><br><a href="#experience">Expérience</a><br><a href="#vision2040">Vision 2040</a><br><a href="#faq">Questions fréquentes</a><br><a href="#outils-clients">Outils clients</a><br><a href="#presentation">Dossier de présentation</a><br><a href="#paiement">Politique de paiement</a><br><a href="#contact">Contact</a><br><a href="#informations-legales">Informations légales & confidentialité</a></p></div>
 <div><div class="eyebrow" style="color:#79bfe0">Présence numérique</div><p style="margin-top:14px"><a href="https://www.instagram.com/lamevenementielevents/" target="_blank" rel="noopener">Instagram</a><br><a href="https://wa.me/50937469553?text=Hello!%20Welcome%20to%20LAM.%20How%20may%20we%20assist%20you%20with%20your%20event%3F">WhatsApp</a><br><a href="mailto:infolamevenementiels@gmail.com">Email</a></p></div>
 </div>
 <div class="wrap footerbottom"><span>© 2026 LAM ÉVÉNEMENTIEL & EVENTS</span><span>CONCEVOIR DES EXPÉRIENCES. CRÉER DES MOMENTS. CONSTRUIRE L’AVENIR.</span></div>
