@@ -1686,7 +1686,7 @@ img{max-width:100%}
 #lam-hero{position:relative;isolation:isolate;overflow:hidden}
 #lam-hero:before{content:"";position:absolute;z-index:-1;width:54vw;height:54vw;max-width:760px;max-height:760px;border-radius:50%;right:-19vw;top:-28vw;background:#E00024;opacity:.2}
 #lam-hero:after{content:"";position:absolute;z-index:-1;width:35vw;height:35vw;max-width:500px;max-height:500px;border:1px solid #ffffff45;border-radius:50%;right:4vw;bottom:-24vw}
-#lam-hero .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)!important;align-items:center!important;gap:clamp(44px,7vw,112px)!important;padding:clamp(72px,10vw,142px) 0!important}
+#lam-hero .hero-grid{grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr)!important;align-items:center!important;gap:clamp(34px,4vw,72px)!important;padding:clamp(64px,8vw,112px) 0!important}
 #lam-hero .lam-hero-copy{max-width:760px}
 #lam-hero h1{font-size:clamp(3.4rem,7.8vw,7.4rem)!important;line-height:.88!important;letter-spacing:-.065em!important;font-weight:500!important;margin:18px 0 20px!important}
 #lam-hero .hero-name-rest{display:block;font-size:.72em;line-height:1.02;letter-spacing:-.045em}
@@ -1696,10 +1696,10 @@ img{max-width:100%}
 #lam-hero .actions{margin-top:30px!important}
 #lam-hero .lam-hero-signature{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:38px;color:#fff;font-size:.56rem;letter-spacing:.16em}
 #lam-hero .lam-hero-signature i{display:inline-block;width:22px;height:1px;background:#ffffff80}
-#lam-hero .lam-hero-visual{max-width:680px;width:100%;justify-self:end}
+#lam-hero .lam-hero-visual{max-width:900px;width:100%;justify-self:end}
 #lam-hero .lam-hero-frame{position:relative;padding:clamp(10px,1.5vw,18px);border:1px solid #ffffff70;background:#ffffff0b}
 #lam-hero .lam-hero-frame:before{content:"";position:absolute;inset:7px;border:1px solid #ffffff35;pointer-events:none}
-#lam-hero .lam-center-logo{display:block;width:100%;max-width:none;aspect-ratio:4/5;object-fit:cover;background:#fff;position:relative;z-index:1}
+#lam-hero .lam-center-logo{display:block;width:100%;max-width:none;height:auto;aspect-ratio:auto;object-fit:contain;background:#fff;position:relative;z-index:1}
 #lam-hero .lam-hero-caption{margin:15px 0 0;text-align:right;color:#fff!important;font-size:.6rem!important;letter-spacing:.18em}
 #lam-hero .lam-hero-caption span{opacity:.7}
 #apropos .grid{align-items:center!important}
@@ -1711,7 +1711,7 @@ img{max-width:100%}
 #contact .contactbox{height:100%}
 @media(max-width:950px){
  #lam-hero .hero-grid{grid-template-columns:1fr!important}
- #lam-hero .lam-hero-visual{justify-self:center;max-width:390px}
+ #lam-hero .lam-hero-visual{justify-self:center;max-width:min(100%,900px)}
  #lam-hero .lam-hero-copy{max-width:760px}
 }
 @media(max-width:680px){
