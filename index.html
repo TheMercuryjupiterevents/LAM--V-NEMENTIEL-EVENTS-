@@ -10303,3 +10303,41 @@ main .contactbox{padding:0!important}
 main .contactline{padding:12px 0!important;border-bottom:1px solid var(--lam-rule)!important}
 @media(max-width:640px){main .card,main article.card,main .team-card,main .tool-card,main .package{padding:10px 0!important;margin:0!important}}
 </style>
+
+<style id="lam-no-boxes-anywhere-final">
+/* Aucune carte décorative : informations présentées directement dans la page */
+.card,.team-card,.tool-card,.package,.contactbox,.palette-preview,
+.lam-inspiration-card,.lam-couture-form-card,.lam-couture-service-card,
+.lam-couture-choice,.lam-couture-choice-team,.creator-card,.birthday-panel,
+.quick-client-tools,.payment-policy-card,.payment-policy-inline,.payment-policy-note,
+.info-card,.service-card,.department-card,.box,.balance,.cancellation{
+ background:transparent!important;background-color:transparent!important;
+ border:0!important;border-color:transparent!important;outline:0!important;
+ border-radius:0!important;box-shadow:none!important;
+}
+.card::before,.card::after,.team-card::before,.team-card::after,
+.tool-card::before,.tool-card::after,.package::before,.package::after,
+.lam-inspiration-card::before,.lam-inspiration-card::after{
+ display:none!important;content:none!important;border:0!important;box-shadow:none!important;
+}
+main .card,main .team-card,main .tool-card,main .package,main .lam-inspiration-card,
+main .lam-couture-form-card,main .lam-couture-service-card,main .creator-card,
+main .birthday-panel,main .quick-client-tools{
+ padding:8px 0!important;margin:0!important;min-height:0!important;
+}
+main .grid,main .grid2,main .grid3,main .grid4{gap:clamp(26px,4vw,58px)!important}
+</style>
+<script id="lam-enforce-flat-information-layout">
+(function(){
+ function flatten(){
+  document.querySelectorAll('.card,.team-card,.tool-card,.package,.contactbox,.palette-preview,.lam-inspiration-card,.lam-couture-form-card,.lam-couture-service-card,.lam-couture-choice,.lam-couture-choice-team,.creator-card,.birthday-panel,.quick-client-tools,.payment-policy-card,.payment-policy-inline,.payment-policy-note,.info-card,.service-card,.department-card,.box,.balance,.cancellation').forEach(function(el){
+   ['background','background-color','border','border-top','border-right','border-bottom','border-left','outline','border-radius','box-shadow'].forEach(function(p){el.style.setProperty(p,p.startsWith('border')?'0':'none','important');});
+   el.style.setProperty('background','transparent','important');
+   el.style.setProperty('padding','8px 0','important');
+   el.style.setProperty('margin','0','important');
+   el.style.setProperty('min-height','0','important');
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',flatten);else flatten();
+})();
+</script>
