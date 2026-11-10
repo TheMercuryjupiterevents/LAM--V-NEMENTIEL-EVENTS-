@@ -10341,3 +10341,32 @@ main .grid,main .grid2,main .grid3,main .grid4{gap:clamp(26px,4vw,58px)!importan
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',flatten);else flatten();
 })();
 </script>
+
+
+<style id="lam-remove-all-box-backgrounds-2026-11-10">
+/* Suppression définitive des fonds et cadres décoratifs */
+main .form,main .form-panel,main .contactbox,main .payment-policy-card,
+main .payment-policy-inline,main .payment-policy-note,main fieldset,
+main .info-card,main .service-card,main .department-card,
+main .lam-couture-choice,main .lam-couture-choice-team,
+main .lam-couture-form-card,main .lam-couture-service-card,
+main .creator-card,main .birthday-panel,main .quick-client-tools,
+main .contactbox,main .box,main .balance,main .cancellation,
+#lam-search-section,#lam-kids{
+ background:transparent!important;
+ background-color:transparent!important;
+ border:0!important;
+ outline:0!important;
+ border-radius:0!important;
+ box-shadow:none!important;
+}
+main .form,main .form-panel,main fieldset,
+main .payment-policy-card,main .payment-policy-inline,main .payment-policy-note{
+ padding:0!important;
+}
+main .form-panel::before,main .form-panel::after,
+main .form::before,main .form::after,
+main fieldset::before,main fieldset::after{
+ content:none!important;display:none!important;
+}
+</style>
