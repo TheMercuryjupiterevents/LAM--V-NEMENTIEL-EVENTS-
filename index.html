@@ -2570,7 +2570,22 @@ a{color:var(--lam-red)}
             <div class="field full"><label for="coutureClientInspiration">Photo d’inspiration ou modèle de référence</label><input id="coutureClientInspiration" type="file" name="Photo d’inspiration" accept="image/*,.pdf"></div>
           </div></div>
           <label class="consent"><input type="checkbox" name="Accord de contact" value="J’accepte d’être contacté(e) au sujet de cette demande." required><span>J’accepte d’être contacté(e) par LAM au sujet de cette demande.</span></label>
-          <button class="btn primary" type="submit">ENVOYER MA DEMANDE</button>
+          
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName3">Nom complet du signataire *</label><input id="lamSignerName3" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas3" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas3" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData3">
+    <button type="button" class="btn" data-clear-lam-signature="3" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">ENVOYER MA DEMANDE</button>
         </form>
       </div>
     </div>
@@ -2623,7 +2638,22 @@ a{color:var(--lam-red)}
         <div style="margin-top:16px"><label for="invitationTexte">Texte ou message à faire figurer sur la carte</label><textarea id="invitationTexte" name="Texte souhaité" rows="4" placeholder="Vous pouvez indiquer les informations à inclure sur l’invitation."></textarea></div>
         <div style="margin-top:16px"><label for="invitationReference">Image d’inspiration (facultatif)</label><input id="invitationReference" type="file" name="Image d’inspiration" accept="image/*"></div>
         <p style="font-size:.92em">Aucun prix n’est affiché ici : le devis sera préparé selon la quantité et la personnalisation demandées.</p>
-        <button class="btn primary" type="submit">Envoyer ma demande</button>
+        
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName4">Nom complet du signataire *</label><input id="lamSignerName4" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas4" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas4" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData4">
+    <button type="button" class="btn" data-clear-lam-signature="4" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande</button>
       </form>
     </div>
   </div>
@@ -2869,7 +2899,22 @@ a{color:var(--lam-red)}
 </div>
 <div class="form-section"><div class="field"><label>Exigences particulières</label><textarea name="Exigences particulières" placeholder="Programme, invités d’honneur, demandes spécifiques..."></textarea></div></div>
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
-<button class="btn primary" type="submit">Envoyer ma demande de prestige</button></form></div>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName5">Nom complet du signataire *</label><input id="lamSignerName5" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas5" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas5" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData5">
+    <button type="button" class="btn" data-clear-lam-signature="5" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande de prestige</button></form></div>
 <div class="form-panel" id="privateForm" hidden style="margin-top:24px">
 <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 02</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p class="small">Un formulaire plus rapide pour les anniversaires, dîners privés et demandes de décoration.</p></div>
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
@@ -2965,7 +3010,22 @@ a{color:var(--lam-red)}
 </div>
 
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
-<button class="btn primary" type="submit">Envoyer ma demande privée</button></form></div>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName6">Nom complet du signataire *</label><input id="lamSignerName6" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas6" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas6" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData6">
+    <button type="button" class="btn" data-clear-lam-signature="6" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande privée</button></form></div>
 <div class="form-panel" id="corporateForm" hidden style="margin-top:24px">
 <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 03</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p class="small">Pour les organisations ayant des besoins de protocole, logistique et coordination technique.</p></div>
 <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
@@ -3056,7 +3116,22 @@ a{color:var(--lam-red)}
 <div class="form-section"><h3>Suivi professionnel</h3><div class="fieldgrid">
 <div class="field"><label>Suivi souhaité</label><select name="Suivi souhaité"><option>Devis professionnel détaillé</option><option>Rendez-vous de consultation</option><option>Les deux</option></select></div><div class="field"><label>Confidentialité, protocole ou exigences particulières</label><textarea name="Exigences particulières"></textarea></div><div class="field full"><label>Joindre le cahier des charges (facultatif)</label><input type="file" name="Cahier des charges" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></div></div></div>
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
-<button class="btn primary" type="submit">Envoyer la demande institutionnelle</button></form></div>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName7">Nom complet du signataire *</label><input id="lamSignerName7" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas7" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas7" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData7">
+    <button type="button" class="btn" data-clear-lam-signature="7" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer la demande institutionnelle</button></form></div>
 <div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
 </div><div class="form-panel" id="concertForm" hidden style="margin-top:24px">
 <div class="wrap">
@@ -3113,7 +3188,22 @@ a{color:var(--lam-red)}
 </div>
 <div class="form-section"><h3>06 — Conditions de réservation</h3><p class="small"><strong>Acompte de 70 % :</strong> requis pour confirmer la réservation et bloquer la date. <strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement. L’envoi du formulaire constitue une demande de devis, et non une réservation confirmée.</p>
 <label class="consent"><input type="checkbox" name="Confirmation des conditions" value="J’ai compris que ce formulaire est une demande et non une réservation confirmée." required> Je comprends que ma demande doit être étudiée par LAM et que la réservation ne sera confirmée qu’après accord sur le devis et réception de l’acompte.</label></div>
-<button class="btn primary" type="submit">Envoyer ma demande</button>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName8">Nom complet du signataire *</label><input id="lamSignerName8" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas8" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas8" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData8">
+    <button type="button" class="btn" data-clear-lam-signature="8" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande</button>
 </form></div></div></div>
 <div class="form-panel" id="pastryForm" hidden style="margin-top:24px">
 <div class="wrap">
@@ -3217,7 +3307,22 @@ a{color:var(--lam-red)}
 <label class="consent"><input type="checkbox" name="Acceptation des conditions" value="J’ai lu et accepté les conditions de réservation et de paiement." required> J’ai lu et accepté les conditions de réservation et de paiement. *</label>
 <label class="consent"><input type="checkbox" name="Consentement contact" value="J’accepte que LAM me contacte au sujet de cette demande." required> J’accepte que LAM me contacte au sujet de cette demande. *</label>
 </div>
-<button class="btn primary" type="submit">Envoyer ma demande Cocktails &amp; Bouchées</button>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName9">Nom complet du signataire *</label><input id="lamSignerName9" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas9" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas9" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData9">
+    <button type="button" class="btn" data-clear-lam-signature="9" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande Cocktails &amp; Bouchées</button>
 </form></div></div></div>
 <div class="form-panel" id="minorForm" hidden style="margin-top:24px">
 <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 06</div><h3>DEMANDE D’ÉVÉNEMENT POUR MINEUR</h3><p class="lead">Ce formulaire est à remplir par le jeune qui souhaite organiser son événement. Les coordonnées d’un parent ou représentant légal sont obligatoires afin que LAM puisse le contacter pour la suite et les modalités de paiement.</p><p class="small">L’envoi du formulaire ne confirme pas la réservation. Toute réservation devra être validée avec le parent ou représentant légal.</p></div>
@@ -3251,7 +3356,22 @@ a{color:var(--lam-red)}
 <div class="field"><label for="guardianEmail">Adresse e-mail du parent (si disponible)</label><input id="guardianEmail" type="email" name="email"></div>
 </div></div>
 <div class="form-section"><label class="consent"><input type="checkbox" name="Confirmation parent légal" value="Je confirme que les coordonnées du parent ou représentant légal sont fournies et que LAM peut le contacter au sujet de cette demande." required> Je confirme que les coordonnées du parent ou représentant légal sont exactes et que LAM peut le contacter au sujet de cette demande. *</label><p class="small">La demande ne constitue pas une réservation confirmée. Les modalités et le paiement seront discutés avec le parent ou représentant légal.</p></div>
-<button class="btn primary" type="submit">Envoyer la demande</button>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName10">Nom complet du signataire *</label><input id="lamSignerName10" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas10" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas10" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData10">
+    <button type="button" class="btn" data-clear-lam-signature="10" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer la demande</button>
 </form></div></div></div>
 
 
@@ -3395,7 +3515,22 @@ a{color:var(--lam-red)}
 <label class="consent"><input type="checkbox" name="Acceptation des conditions de réservation" value="J'ai lu et j'accepte les conditions de réservation et de paiement." required> J'ai lu et j'accepte les conditions de réservation et de paiement. *</label>
 <label class="consent"><input type="checkbox" name="Consentement de contact" value="J'accepte que LAM me contacte au sujet de cette demande." required> J'accepte que LAM me contacte au sujet de cette demande. *</label>
 <div class="field" style="margin-top:16px"><label for="lc-signature">Signature électronique — tapez votre nom complet *</label><input id="lc-signature" name="Signature électronique du parent / responsable légal" required placeholder="Nom complet du parent ou responsable légal"></div><p class="small">En saisissant votre nom et en cochant les cases ci-dessus, vous confirmez votre accord pour la transmission de cette demande. Le contrat définitif sera communiqué pour validation avant confirmation de la réservation.</p></div>
-<button class="btn primary" type="submit">ENVOYER MA DEMANDE LAM COMMUNION</button></form></div>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName11">Nom complet du signataire *</label><input id="lamSignerName11" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas11" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas11" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData11">
+    <button type="button" class="btn" data-clear-lam-signature="11" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">ENVOYER MA DEMANDE LAM COMMUNION</button></form></div>
 <style>
 #communionForm .communion-palette-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
 #communionForm .communion-palette-option{display:flex;align-items:center;gap:8px;min-width:0;padding:8px;border:1px solid #cdbf9f;border-radius:7px;background:#fffcf5;font-size:.82rem}
@@ -3962,7 +4097,22 @@ document.addEventListener('click',function(event){
 <div class="field"><label for="contractServices">Prestations à inclure</label><textarea id="contractServices" name="Prestations souhaitées" rows="4" placeholder="Organisation, décoration, location, Cuisine &amp; Traiteur…" required></textarea></div>
 <div class="field"><label for="contractQuoteRef">Référence du devis (si disponible)</label><input id="contractQuoteRef" name="Référence du devis" type="text" placeholder="Facultatif"></div>
 <label class="check"><input type="checkbox" name="Confirmation" value="Je comprends que cette demande ne confirme pas une réservation et ne constitue pas un contrat signé." required> Je comprends que cette demande ne confirme pas une réservation et ne constitue pas un contrat signé.</label>
-<button class="btn primary" type="submit">Envoyer ma demande de contrat</button>
+
+<div class="lam-required-terms-signature" style="margin:28px 0;padding:22px 0;border-top:1px solid #b8a99b">
+  <h3 style="margin:0 0 14px">Conditions de réservation et de paiement</h3>
+  <p><strong>Acompte de 70 % :</strong> requis pour confirmer la commande et bloquer la date.</p>
+  <p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant l’événement ou la prestation.</p>
+  <p>L’envoi du formulaire constitue une demande et non une réservation confirmée. La date est bloquée après accord sur le devis et réception de l’acompte.</p>
+  <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
+  <div class="lam-electronic-signature" style="margin-top:18px">
+    <div class="field"><label for="lamSignerName14">Nom complet du signataire *</label><input id="lamSignerName14" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+    <label for="lamSignatureCanvas14" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+    <canvas id="lamSignatureCanvas14" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+    <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData14">
+    <button type="button" class="btn" data-clear-lam-signature="14" style="margin-top:8px">Effacer la signature</button>
+    <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+  </div>
+</div><button class="btn primary" type="submit">Envoyer ma demande de contrat</button>
 <p class="small">L’équipe LAM vous contactera pour vérifier les informations, convenir des clauses et transmettre le contrat personnalisé. La signature devra intervenir séparément.</p>
 </form>
 </div>
@@ -5624,6 +5774,34 @@ img{max-width:100%;height:auto}
     });
   });
   input.addEventListener('input',function(){if(!input.value.trim()){results.replaceChildren();results.hidden=true;}});
+})();
+</script>
+
+
+<script id="lam-required-electronic-signatures-20261110">
+(function(){
+  function initLamRequiredSignatures(){
+    document.querySelectorAll('.lam-electronic-signature canvas').forEach(function(canvas){
+      if(canvas.dataset.lamReady==='1') return;
+      canvas.dataset.lamReady='1';
+      var ctx=canvas.getContext('2d'), drawing=false, signed=false, last=null;
+      ctx.strokeStyle='#171717';ctx.lineWidth=4;ctx.lineCap='round';ctx.lineJoin='round';
+      function point(e){var r=canvas.getBoundingClientRect();return {x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height};}
+      canvas.addEventListener('pointerdown',function(e){e.preventDefault();drawing=true;last=point(e);canvas.setPointerCapture(e.pointerId);});
+      canvas.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=point(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;signed=true;});
+      function stop(){drawing=false;last=null;}
+      canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
+      var form=canvas.closest('form');
+      var hidden=form.querySelector('#lamSignatureData'+canvas.id.replace('lamSignatureCanvas',''));
+      var clear=form.querySelector('[data-clear-lam-signature="'+canvas.id.replace('lamSignatureCanvas','')+'"]');
+      if(clear)clear.addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);signed=false;if(hidden)hidden.value='';});
+      if(form)form.addEventListener('submit',function(e){
+        if(!signed){e.preventDefault();alert('Veuillez tracer votre signature électronique avant d’envoyer le formulaire.');canvas.scrollIntoView({behavior:'smooth',block:'center'});return;}
+        if(hidden)hidden.value=canvas.toDataURL('image/png');
+      });
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLamRequiredSignatures);else initLamRequiredSignatures();
 })();
 </script>
 
