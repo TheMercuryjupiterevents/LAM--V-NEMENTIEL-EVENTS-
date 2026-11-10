@@ -5811,36 +5811,80 @@ img{max-width:100%;height:auto}
   const input=document.getElementById('lamNeedInput');
   const results=document.getElementById('lamSearchResults');
   if(!form||!input||!results)return;
-  const normalize=value=>(value||'').toLocaleLowerCase('fr').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').replace(/[^a-z0-9\\s]/g,' ').replace(/\\s+/g,' ').trim();
-  const ignored=new Set(['lam-search-section','informations-legales']);
+
+  const normalize=value=>(value||'').toLocaleLowerCase('fr')
+    .normalize('NFD').replace(/[\\u0300-\\u036f]/g,'')
+    .replace(/[^a-z0-9\\s]/g,' ').replace(/\\s+/g,' ').trim();
+
   const index=[];
-  document.querySelectorAll('main section, main article, main form, footer').forEach((node,i)=>{
-    if(node.closest('#lam-search-section')||ignored.has(node.id))return;
-    let id=node.id;
-    if(!id){id='lam-search-target-'+(i+1);node.id=id;}
+  const usedIds=new Set(Array.from(document.querySelectorAll('[id]')).map(el=>el.id));
+  function ensureId(node,prefix){
+    if(node.id)return node.id;
+    let n=1,id;
+    do{id=prefix+'-'+n++;}while(usedIds.has(id));
+    node.id=id;usedIds.add(id);return id;
+  }
+  function addRecord(node,title,text,target){
+    const clean=(text||'').replace(/\\s+/g,' ').trim();
+    if(clean.length<2)return;
+    index.push({title:(title||'Information LAM').trim(),text:clean,target:target||node,haystack:normalize((title||'')+' '+clean)});
+  }
+
+  // Index the complete content of every page section and article.
+  document.querySelectorAll('main section, main article, footer, body > section').forEach((node,i)=>{
+    if(node.closest('#lam-search-section')||node.id==='lam-search-section')return;
+    const id=ensureId(node,'lam-search-section-result');
     const heading=node.querySelector('h1,h2,h3,h4,legend');
     const title=(heading?.textContent||node.getAttribute('aria-label')||'Section du site LAM').trim();
-    const text=(node.innerText||node.textContent||'').replace(/\\s+/g,' ').trim();
-    if(text.length>15)index.push({id,title,text,haystack:normalize(title+' '+text)});
+    addRecord(node,title,node.innerText||node.textContent,node);
   });
+
+  // Index every form individually, including every label, field, placeholder,
+  // select option, legend, and helper text. Results can jump to the exact field.
+  document.querySelectorAll('form').forEach((formNode,formIndex)=>{
+    if(formNode===form)return;
+    const formId=ensureId(formNode,'lam-formulaire');
+    const section=formNode.closest('section,article')||formNode.parentElement;
+    const sectionHeading=section?.querySelector('h1,h2,h3,h4');
+    const hiddenSubject=formNode.querySelector('input[name="_subject"]')?.value||'';
+    const title=(formNode.getAttribute('aria-label')||sectionHeading?.textContent||hiddenSubject||('Formulaire LAM '+(formIndex+1))).trim();
+    const fieldParts=[];
+    formNode.querySelectorAll('input,select,textarea,button,fieldset,legend').forEach((field,fieldIndex)=>{
+      if(field.type==='hidden'||field.type==='submit'||field.type==='button')return;
+      const fieldId=ensureId(field,'lam-champ');
+      const labels=Array.from(field.labels||[]).map(label=>label.innerText||label.textContent||'');
+      const parentLabel=field.closest('label')?.innerText||'';
+      const legend=field.closest('fieldset')?.querySelector('legend')?.innerText||'';
+      const options=field.tagName==='SELECT'?Array.from(field.options).map(option=>option.textContent||'').join(' '):'';
+      const details=[...labels,parentLabel,legend,field.getAttribute('aria-label'),field.getAttribute('name'),field.getAttribute('placeholder'),field.getAttribute('autocomplete'),options].filter(Boolean).join(' ');
+      if(details.trim())fieldParts.push(details);
+      addRecord(field,title+' — '+(labels.join(' ')||field.getAttribute('placeholder')||field.getAttribute('name')||'Champ du formulaire'),details,field);
+    });
+    const formText=[formNode.innerText||formNode.textContent,hiddenSubject,fieldParts.join(' ')].filter(Boolean).join(' ');
+    addRecord(formNode,title,formText,formNode);
+  });
+
+  function showMessage(message){
+    const p=document.createElement('p');p.className='lam-search-empty';p.textContent=message;results.appendChild(p);
+  }
   form.addEventListener('submit',function(event){
     event.preventDefault();
     const query=normalize(input.value);
-    results.replaceChildren();
-    results.hidden=false;
-    if(!query){
-      const p=document.createElement('p');p.className='lam-search-empty';p.textContent='Écrivez un mot ou une phrase pour rechercher dans l’ensemble du site LAM.';results.appendChild(p);return;
-    }
+    results.replaceChildren();results.hidden=false;
+    if(!query){showMessage('Écrivez un mot ou une phrase pour rechercher dans tous les services et formulaires LAM.');return;}
     const terms=query.split(' ').filter(term=>term.length>1);
     const matches=index.map(item=>{
-      const score=terms.reduce((total,term)=>total+(item.haystack.includes(term)?(item.title.toLowerCase().includes(term)?3:1):0),0);
+      const score=terms.reduce((total,term)=>total+(item.haystack.includes(term)?(normalize(item.title).includes(term)?4:1):0),0);
       return {...item,score};
-    }).filter(item=>item.score>0).sort((x,y)=>y.score-x.score).slice(0,10);
+    }).filter(item=>item.score>0)
+      .sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title,'fr'))
+      .filter((item,i,all)=>all.findIndex(other=>other.target===item.target)===i)
+      .slice(0,15);
     const heading=document.createElement('h3');
-    heading.textContent=matches.length?'Résultats dans tout le site LAM':'Aucun résultat trouvé';
+    heading.textContent=matches.length?'Résultats dans les services et formulaires LAM':'Aucun résultat trouvé';
     results.appendChild(heading);
     if(!matches.length){
-      const p=document.createElement('p');p.className='lam-search-empty';p.textContent='Aucune correspondance trouvée. Essayez un autre mot, une expression différente ou contactez notre équipe.';results.appendChild(p);
+      showMessage('Aucune correspondance trouvée. Essayez un autre mot ou contactez notre équipe.');
       const contact=document.createElement('a');contact.href='#contact';contact.textContent='Contacter LAM';results.appendChild(contact);return;
     }
     matches.forEach(item=>{
@@ -5848,13 +5892,19 @@ img{max-width:100%;height:auto}
       const content=document.createElement('div');
       const strong=document.createElement('strong');strong.textContent=item.title;content.appendChild(strong);
       const p=document.createElement('p');
-      const pos=item.text.toLocaleLowerCase('fr').indexOf(query);
-      p.textContent=pos>=0?item.text.slice(Math.max(0,pos-65),Math.min(item.text.length,pos+query.length+135))+(pos+query.length+135<item.text.length?'…':''):item.text.slice(0,190)+(item.text.length>190?'…':'');
+      const termsInText=terms.find(term=>normalize(item.text).includes(term));
+      const normalizedText=normalize(item.text);
+      const pos=termsInText?normalizedText.indexOf(termsInText):-1;
+      p.textContent=pos>=0?item.text.slice(Math.max(0,pos-55),Math.min(item.text.length,pos+termsInText.length+145))+(pos+termsInText.length+145<item.text.length?'…':''):item.text.slice(0,190)+(item.text.length>190?'…':'');
       content.appendChild(p);
-      const link=document.createElement('a');link.href='#'+item.id;link.textContent='Voir →';
+      const link=document.createElement('a');link.href='#'+item.target.id;link.textContent=item.target.matches('input,select,textarea')?'Ouvrir ce champ →':'Voir le formulaire / la section →';
+      link.addEventListener('click',function(){
+        window.setTimeout(()=>{item.target.scrollIntoView({behavior:'smooth',block:'center'});if(item.target.matches('input,select,textarea'))item.target.focus({preventScroll:true});},30);
+      });
       row.append(content,link);results.appendChild(row);
     });
   });
+  input.addEventListener('input',function(){if(!input.value.trim()){results.replaceChildren();results.hidden=true;}});
 })();
 </script>
 
