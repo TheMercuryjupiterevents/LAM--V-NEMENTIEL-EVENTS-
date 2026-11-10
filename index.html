@@ -2319,22 +2319,27 @@ a{color:var(--lam-red)}
 </style>
 
 <style id="lam-client-need-search-2026-11-10">
-#lam-search-section{background:#FFFCF5!important;border-top:1px solid rgba(185,145,78,.22)!important;border-bottom:1px solid rgba(185,145,78,.22)!important}
+#lam-search-section{background:#F5EBDD!important;border-top:1px solid rgba(185,145,78,.28)!important;border-bottom:1px solid rgba(185,145,78,.28)!important;text-align:center!important;padding:64px 0!important}
 #lam-search-section .lam-search-wrap{max-width:980px!important}
-#lam-search-section h2{margin:10px 0 14px!important}
+#lam-search-section .eyebrow{color:#A92327!important;letter-spacing:.16em!important}
+#lam-search-section h2{margin:10px 0 14px!important;color:#713C2B!important;font-size:clamp(1.8rem,4vw,2.8rem)!important}
+#lam-search-section .lead{color:#713C2B!important;max-width:680px;margin:0 auto!important}
 .lam-need-search{display:flex;gap:12px;align-items:stretch;margin:28px 0 12px}
-.lam-need-search input{flex:1;min-width:0;min-height:58px;padding:16px 20px!important;border:1px solid #D8B875!important;border-radius:12px!important;background:#fff!important;color:#594532!important;font:inherit!important}
-.lam-need-search button{min-height:58px;white-space:nowrap}
-.lam-search-hint{font-size:.88rem!important;opacity:.8}
-.lam-search-results{margin-top:22px;padding:20px 22px;background:#FFF8E9;border:1px solid rgba(185,145,78,.35);border-radius:14px}
+.lam-need-search input{flex:1;min-width:0;min-height:60px;padding:16px 20px!important;border:1px solid #C5A77B!important;border-radius:8px!important;background:#fff!important;color:#594532!important;font:inherit!important;text-align:left!important}
+.lam-need-search button{min-height:60px;white-space:nowrap;background:#A92327!important;border-color:#A92327!important;color:#fff!important}
+.lam-search-hint{font-size:.88rem!important;color:#8A6A53!important;opacity:1!important}
+.lam-search-shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px auto 0;max-width:850px}
+.lam-search-shortcuts button{min-height:48px;padding:10px 12px;border:1px solid #D9C7AE;border-radius:6px;background:#FFFDF9;color:#713C2B;font:inherit;font-size:.88rem;font-weight:650;cursor:pointer}
+.lam-search-shortcuts button:hover,.lam-search-shortcuts button:focus{border-color:#A92327;color:#A92327}
+.lam-search-results{margin-top:22px;padding:20px 22px;background:#FFFDF9;border:1px solid rgba(185,145,78,.45);border-radius:8px;text-align:left}
 .lam-search-results h3{margin:0 0 12px;color:#594532!important}
 .lam-search-result{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-top:1px solid rgba(185,145,78,.2)}
-.lam-search-result a{font-weight:700;color:#F00018!important;text-decoration:none}
+.lam-search-result a{font-weight:700;color:#A92327!important;text-decoration:none}
 .lam-search-result a:hover{color:#F28C18!important}
-.lam-search-result p{margin:4px 0 0;font-size:.9rem}
-.lam-search-empty{margin:0}
+.lam-search-result p{margin:4px 0 0;font-size:.9rem;color:#594532!important}
+.lam-search-empty{margin:0;color:#594532!important}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:620px){.lam-need-search{flex-direction:column}.lam-need-search button{width:100%}.lam-search-result{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){#lam-search-section{padding:48px 0!important}.lam-need-search{flex-direction:column}.lam-need-search button{width:100%}.lam-search-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.lam-search-result{align-items:flex-start;flex-direction:column}}
 </style>
 
 </head>
@@ -2364,15 +2369,25 @@ a{color:var(--lam-red)}
 <main id="accueil">
 <section id="lam-search-section" class="section" aria-labelledby="lam-search-title">
   <div class="wrap lam-search-wrap">
-    <div class="eyebrow">VOTRE PROJET, EN QUELQUES MOTS</div>
-    <h2 id="lam-search-title">QUE RECHERCHEZ-VOUS ?</h2>
-    <p class="lead">Décrivez directement votre besoin. LAM vous orientera vers le service ou le formulaire correspondant.</p>
+    <div class="eyebrow">LAM ÉVÉNEMENTIEL &amp; EVENTS</div>
+    <h2 id="lam-search-title">TROUVEZ VOTRE BESOIN</h2>
+    <p class="lead">Dites-nous ce que vous recherchez. Accédez directement au service ou au formulaire qui vous correspond.</p>
     <form id="lamNeedSearch" class="lam-need-search" role="search">
       <label class="sr-only" for="lamNeedInput">Rechercher un service ou un besoin</label>
-      <input id="lamNeedInput" type="search" placeholder="Ex. : mariage, décoration, traiteur, anniversaire…" autocomplete="off" aria-describedby="lamSearchHint">
+      <input id="lamNeedInput" type="search" placeholder="Ex. : mariage, traiteur, anniversaire, décoration…" autocomplete="off" aria-describedby="lamSearchHint">
       <button class="btn primary" type="submit">RECHERCHER</button>
     </form>
-    <p id="lamSearchHint" class="lam-search-hint">Vous pouvez rechercher : mariage, anniversaire, décoration, traiteur, concert, couture, communion, événement pour enfants ou devis.</p>
+    <p id="lamSearchHint" class="lam-search-hint">Recherchez un service, une prestation ou un besoin précis dans les formulaires LAM.</p>
+    <div class="lam-search-shortcuts" aria-label="Accès rapide aux services">
+      <button type="button" data-search-term="événementiel">Événementiel</button>
+      <button type="button" data-search-term="décoration design">Décoration &amp; Design</button>
+      <button type="button" data-search-term="traiteur cuisine cocktail">Service traiteur</button>
+      <button type="button" data-search-term="couture mode">Couture &amp; Mode</button>
+      <button type="button" data-search-term="enfant kids anniversaire">LAM Kids Events</button>
+      <button type="button" data-search-term="communion">Communion</button>
+      <button type="button" data-search-term="concert production">Concerts &amp; Production</button>
+      <button type="button" data-search-term="partenariat">Partenariats</button>
+    </div>
     <div id="lamSearchResults" class="lam-search-results" aria-live="polite" hidden></div>
   </div>
 </section>
@@ -5730,7 +5745,7 @@ img{max-width:100%;height:auto}
       const options=field.tagName==='SELECT'?Array.from(field.options).map(option=>option.textContent||'').join(' '):'';
       const details=[...labels,parentLabel,legend,field.getAttribute('aria-label'),field.getAttribute('name'),field.getAttribute('placeholder'),field.getAttribute('autocomplete'),options].filter(Boolean).join(' ');
       if(details.trim())fieldParts.push(details);
-      addRecord(field,title+' — '+(labels.join(' ')||field.getAttribute('placeholder')||field.getAttribute('name')||'Champ du formulaire'),details,field);
+      addRecord(field,title+' — '+(labels.join(' ')||field.getAttribute('placeholder')||field.getAttribute('name')||'Champ du formulaire'),details,formNode);
     });
     const formText=[formNode.innerText||formNode.textContent,hiddenSubject,fieldParts.join(' ')].filter(Boolean).join(' ');
     addRecord(formNode,title,formText,formNode);
@@ -5774,6 +5789,12 @@ img{max-width:100%;height:auto}
         window.setTimeout(()=>{item.target.scrollIntoView({behavior:'smooth',block:'center'});if(item.target.matches('input,select,textarea'))item.target.focus({preventScroll:true});},30);
       });
       row.append(content,link);results.appendChild(row);
+    });
+  });
+  document.querySelectorAll('#lam-search-section [data-search-term]').forEach(button=>{
+    button.addEventListener('click',function(){
+      input.value=button.getAttribute('data-search-term')||'';
+      form.requestSubmit();
     });
   });
   input.addEventListener('input',function(){if(!input.value.trim()){results.replaceChildren();results.hidden=true;}});
