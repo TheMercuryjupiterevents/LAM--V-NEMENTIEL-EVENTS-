@@ -2542,7 +2542,16 @@ a{color:var(--lam-red)}
             <div class="field full"><label for="coutureCandidatePortfolio">Portfolio ou photos de vos créations</label><input id="coutureCandidatePortfolio" type="file" name="Portfolio ou photos de créations" accept="image/*,.pdf"></div>
           </div></div>
           <label class="consent"><input type="checkbox" name="Confirmation des informations" value="Je confirme que les informations fournies sont exactes." required><span>Je confirme que les informations fournies sont exactes.</span></label>
-          <button class="btn primary" type="submit">ENVOYER MA CANDIDATURE</button>
+          
+          <div class="lam-electronic-signature" style="margin-top:18px">
+            <div class="field"><label for="lamSignerName1">Nom complet du signataire *</label><input id="lamSignerName1" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+            <label for="lamSignatureCanvas1" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+            <canvas id="lamSignatureCanvas1" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+            <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData1">
+            <button type="button" class="btn" data-clear-lam-signature="1" style="margin-top:8px">Effacer la signature</button>
+            <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+          </div>
+<button class="btn primary" type="submit">ENVOYER MA CANDIDATURE</button>
         </form>
       </div>
       <div class="lam-couture-form-card" id="lam-couture-client">
@@ -3817,6 +3826,15 @@ document.addEventListener('click',function(event){
 </ol>
 </div>
 <label class="partnership-consent"><input type="checkbox" name="Acceptation des conditions" value="J'ai lu et j'accepte les conditions générales de soumission d'une proposition de partenariat." required><span>Je reconnais avoir lu et accepté les conditions générales de soumission d'une proposition de partenariat. Je comprends que l'envoi de ce formulaire confirme uniquement la transmission de ma demande et ne constitue pas une acceptation de partenariat. *</span></label>
+
+          <div class="lam-electronic-signature" style="margin-top:18px">
+            <div class="field"><label for="lamSignerName12">Nom complet du signataire *</label><input id="lamSignerName12" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+            <label for="lamSignatureCanvas12" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+            <canvas id="lamSignatureCanvas12" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+            <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData12">
+            <button type="button" class="btn" data-clear-lam-signature="12" style="margin-top:8px">Effacer la signature</button>
+            <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+          </div>
 <button class="btn primary" type="submit">Envoyer ma proposition</button>
 <p class="small" style="margin:14px 0 0">Après réception, un message de confirmation vous sera envoyé à l'adresse e-mail fournie. LAM vous contactera si une suite est donnée à votre proposition.</p>
 </form>
@@ -4346,7 +4364,16 @@ Haïti<br>
         <div class="form-section">
           <div class="field"><label for="reviewCommentTMJE">Votre commentaire</label><textarea id="reviewCommentTMJE" name="Commentaire du client" placeholder="Racontez-nous ce que vous avez apprécié ou ce que nous pourrions améliorer…" required></textarea></div>
           <label class="consent"><input type="checkbox" name="Autorisation de publication" value="Oui, j’autorise l’entreprise à me recontacter pour discuter de mon avis et demander une autorisation distincte de publication." required><span>J’accepte que l’équipe me contacte au sujet de mon avis. Cette case n’autorise pas sa publication publique.</span></label>
-          <button class="btn primary" type="submit">Envoyer mon avis</button>
+          
+          <div class="lam-electronic-signature" style="margin-top:18px">
+            <div class="field"><label for="lamSignerName15">Nom complet du signataire *</label><input id="lamSignerName15" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+            <label for="lamSignatureCanvas15" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+            <canvas id="lamSignatureCanvas15" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+            <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData15">
+            <button type="button" class="btn" data-clear-lam-signature="15" style="margin-top:8px">Effacer la signature</button>
+            <p class="small">La signature électronique doit être tracée avant l’envoi du formulaire.</p>
+          </div>
+<button class="btn primary" type="submit">Envoyer mon avis</button>
         </div>
       </form>
     </div>
