@@ -1989,6 +1989,72 @@ button:hover,.btn:hover,[type=submit]:hover,[type=button]:hover{
 }
 </style>
 
+
+<style id="lam-editorial-redesign">
+/* Présentation éditoriale grand format — LAM */
+:root{scroll-behavior:smooth}
+#lam-main-navigation{background:#fbf8f2!important;border-bottom:1px solid #ded5c9!important;box-shadow:none!important}
+#lam-main-navigation .navin{min-height:88px!important}
+#lam-main-navigation .brand-name{color:#171717!important;font-weight:850!important;letter-spacing:-.06em!important}
+#lam-main-navigation .brand-name small{color:#171717!important}
+#lam-main-navigation .navlinks a{color:#171717!important;font-size:.68rem!important;letter-spacing:.12em!important}
+#lam-main-navigation .navlinks a:hover{color:#e00024!important}
+#lam-main-navigation .menu{color:#171717!important}
+#lam-hero{background:#fbf8f2!important;color:#171717!important;min-height:min(850px,calc(100svh - 88px))!important;display:flex!important;align-items:center!important}
+#lam-hero:before{background:#e00024!important;opacity:.055!important}
+#lam-hero:after{border-color:#17171720!important}
+#lam-hero .hero-grid{width:min(1440px,92%)!important;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr)!important;gap:clamp(36px,6vw,100px)!important;padding:clamp(62px,8vw,112px) 0!important}
+#lam-hero .lam-hero-copy{max-width:780px!important}
+#lam-hero .eyebrow,#lam-hero .hero-event-label{color:#34302c!important}
+#lam-hero h1{color:#171717!important;font-size:clamp(3.6rem,7.4vw,7.7rem)!important;line-height:.9!important}
+#lam-hero .hero-name-rest{color:#171717!important}
+#lam-hero .tagline{color:#e00024!important;font-weight:800!important;letter-spacing:.08em!important}
+#lam-hero .lead{color:#49443e!important;font-size:1rem!important;line-height:1.9!important}
+#lam-hero .lam-hero-signature{color:#171717!important;font-size:.62rem!important;letter-spacing:.13em!important}
+#lam-hero .lam-hero-signature i{background:#17171755!important}
+#lam-hero .lam-hero-visual{max-width:640px!important}
+#lam-hero .lam-hero-frame{padding:0!important;border:0!important;background:transparent!important}
+#lam-hero .lam-hero-frame:before{display:none!important}
+#lam-hero .lam-center-logo{aspect-ratio:1/1!important;object-fit:contain!important;background:#fff!important}
+#lam-hero .lam-hero-caption{color:#171717!important;font-size:.65rem!important;letter-spacing:.16em!important}
+#lam-hero .lam-home-actions{max-width:760px!important;gap:10px!important}
+#lam-hero .lam-home-actions .btn{min-height:56px!important;border-radius:0!important;font-size:.65rem!important}
+#lam-hero .lam-home-actions .btn.primary{background:#e00024!important;border-color:#e00024!important;color:#fff!important}
+#lam-hero .lam-home-actions .btn:not(.primary){background:transparent!important;border:1px solid #24211e!important;color:#24211e!important}
+#lam-hero .lam-home-actions .btn:not(.primary):hover{background:#24211e!important;color:#fff!important}
+#services.section,#departements.section,#lam-kids.section{padding-top:clamp(72px,9vw,130px)!important;padding-bottom:clamp(72px,9vw,130px)!important}
+#services .wrap,#departements .wrap,#lam-kids .wrap{width:min(1440px,92%)!important}
+#services h2,#departements h2,#lam-kids h2{max-width:980px!important;font-size:clamp(2.2rem,4.4vw,4.6rem)!important;line-height:1.02!important;letter-spacing:-.045em!important}
+#services .lead,#departements .lead{max-width:780px!important;line-height:1.85!important}
+#services .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 54px!important;margin-top:54px!important}
+#services .card,#departements .card{background:transparent!important;border:0!important;border-top:1px solid #b9ad9f!important;border-radius:0!important;box-shadow:none!important;padding:34px 0 42px!important;min-height:0!important}
+#services .card .num,#departements .card .num{color:#e00024!important;font-size:.72rem!important;letter-spacing:.16em!important}
+#services .card h3,#departements .card h3{font-size:clamp(1.35rem,2.2vw,2.1rem)!important;line-height:1.1!important;letter-spacing:-.025em!important;color:#171717!important}
+#services .card p,#departements .card p,#departements .card li{color:#514b44!important;line-height:1.85!important}
+#departements .lam-departments-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 64px!important;margin-top:52px!important}
+#departements .card h4{color:#e00024!important;font-size:.68rem!important;letter-spacing:.15em!important}
+#departements .card ul{padding-left:18px!important}
+#departements .card .btn{border-radius:0!important}
+#lam-kids{background:#f3edf5!important}
+#lam-kids .grid{gap:clamp(30px,6vw,90px)!important}
+@media(max-width:900px){
+ #lam-hero .hero-grid{grid-template-columns:1fr!important;width:min(720px,92%)!important}
+ #lam-hero .lam-hero-visual{justify-self:start!important;max-width:560px!important;width:100%!important}
+ #lam-hero{min-height:0!important}
+}
+@media(max-width:680px){
+ #lam-main-navigation .navin{min-height:70px!important}
+ #lam-hero .hero-grid{padding:48px 0 58px!important;gap:30px!important}
+ #lam-hero h1{font-size:clamp(3.1rem,14vw,5rem)!important}
+ #lam-hero .lam-home-actions{grid-template-columns:1fr!important}
+ #lam-hero .lam-home-actions .btn{min-height:52px!important}
+ #lam-hero .lam-hero-visual{width:100%!important;max-width:100%!important}
+ #services .grid,#departements .lam-departments-grid{grid-template-columns:1fr!important;gap:0!important}
+ #services .card,#departements .card{padding:28px 0 34px!important}
+ #services h2,#departements h2,#lam-kids h2{font-size:clamp(2rem,10vw,3rem)!important}
+}
+</style>
+
 </head>
 <body>
 
