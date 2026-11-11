@@ -2425,7 +2425,7 @@ body{background:#FCFAF6!important}
   <div class="wrap hero-grid">
     <div class="lam-hero-copy">
       <div class="eyebrow">L’art de créer des moments inoubliables</div>
-      <h1 aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="lam-formed-word"><span class="lam-letter lam-letter-l">L</span><span class="lam-letter lam-letter-a">A</span><span class="lam-letter lam-letter-m">M</span></span><img class="lam-sun-moon-mark" src="assets/lam-lune-soleil.svg" alt="Symbole Lune et Soleil"> <span class="hero-name-rest">ÉVÉNEMENTIEL<br>&amp; EVENTS</span></h1>
+      <h1 aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="lam-formed-word"><span class="lam-letter lam-letter-l">L</span><span class="lam-letter lam-letter-a">A</span><span class="lam-letter lam-letter-m">M</span></span><span class="lam-celestial-group" aria-label="Lune, soleil et étoile"><span class="lam-celestial-symbol lam-moon" aria-hidden="true">☾</span><span class="lam-celestial-symbol lam-sun" aria-hidden="true">☀</span><span class="lam-celestial-symbol lam-star" aria-hidden="true">✦</span></span> <span class="hero-name-rest">ÉVÉNEMENTIEL<br>&amp; EVENTS</span></h1>
       <div class="hero-event-label">HAÏTI · ÉVÉNEMENTS PRIVÉS &amp; PROFESSIONNELS</div>
       <p class="tagline" aria-label="PUISSANCE. PRESTIGE. PERFECTION."><span style="color:#FFFFFF">PUISSANCE.</span> <span style="color:#E32636">PRESTIGE.</span> <span style="color:#111111">PERFECTION.</span></p>
       <p class="lead">Nous imaginons, organisons et coordonnons vos événements avec créativité, précision et sens du détail. De la première idée à la réalisation, chaque projet est pensé autour de votre histoire.</p>
@@ -10533,7 +10533,12 @@ main .color-preference-grid input{accent-color:#c49a42!important}
 <style id="lam-celestial-mark-2026-11-10">
 #lam-hero h1{display:flex!important;align-items:center!important;flex-wrap:wrap!important;column-gap:clamp(7px,1.4vw,16px)!important;row-gap:5px!important}
 #lam-hero .lam-formed-word{display:inline-flex!important;align-items:center!important;white-space:nowrap!important}
-#lam-hero .lam-sun-moon-mark{display:inline-block!important;width:clamp(54px,8vw,92px)!important;height:auto!important;flex:0 0 auto!important;overflow:visible!important;vertical-align:middle!important;animation:lamCelestialAppear .9s cubic-bezier(.2,.7,.2,1) .95s both!important}
-@keyframes lamCelestialAppear{from{opacity:0;transform:translateY(8px) scale(.78) rotate(-8deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
-@media(max-width:680px){#lam-hero .lam-sun-moon-mark{width:clamp(48px,15vw,66px)!important}#lam-hero h1{column-gap:8px!important}}
+#lam-hero .lam-celestial-group{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:clamp(4px,.8vw,9px)!important;white-space:nowrap!important;flex:0 0 auto!important}
+#lam-hero .lam-celestial-symbol{display:inline-block!important;line-height:1!important;font-family:Georgia,serif!important;color:#C6A15B!important;opacity:0;animation:lamCelestialAppear .65s cubic-bezier(.2,.7,.2,1) forwards!important}
+#lam-hero .lam-moon{font-size:clamp(25px,3.8vw,42px)!important;animation-delay:.35s!important}
+#lam-hero .lam-sun{font-size:clamp(23px,3.4vw,38px)!important;animation-delay:.95s!important}
+#lam-hero .lam-star{font-size:clamp(19px,2.8vw,31px)!important;animation-delay:1.55s!important}
+@keyframes lamCelestialAppear{from{opacity:0;transform:translateY(8px) scale(.72) rotate(-12deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@media(max-width:680px){#lam-hero .lam-celestial-group{gap:4px!important}#lam-hero .lam-moon{font-size:clamp(22px,7vw,30px)!important}#lam-hero .lam-sun{font-size:clamp(20px,6.5vw,28px)!important}#lam-hero .lam-star{font-size:clamp(17px,5.5vw,24px)!important}#lam-hero h1{column-gap:8px!important}}
+@media(prefers-reduced-motion:reduce){#lam-hero .lam-celestial-symbol{opacity:1!important;animation:none!important}}
 </style>
