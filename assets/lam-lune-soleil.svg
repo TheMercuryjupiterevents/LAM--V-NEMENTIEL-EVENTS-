@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 716 716" role="img" aria-label="Soleil et lune en traits fins">
+<defs><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .94 0 0 0 0 .93 0 0 0 0 .90 0 0 0 .08 0"/></filter></defs>
+<rect width="716" height="716" fill="#fbfaf7"/><rect width="716" height="716" filter="url(#paper)" opacity=".22"/>
+<g fill="none" stroke="#282828" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+<path d="M356 284 A76 76 0 1 0 356 436 A76 76 0 1 0 356 284" opacity=".96"/>
+<path d="M417 303 C378 300 352 330 352 361 C352 395 380 421 417 417 C434 415 448 408 460 397 C443 403 424 399 410 386 C390 367 391 339 410 319 C420 309 434 304 449 304 C438 300 427 300 417 303Z" opacity=".92"/>
+<path d="M355 269 L355 220 M333 271 L323 190 M314 280 L279 220 M301 298 L258 263 M286 338 L238 338 M289 378 L250 400 M306 410 L271 446 M344 444 L344 490 M376 445 L386 486" opacity=".9"/>
+</g>
+</svg>
