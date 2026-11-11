@@ -2433,12 +2433,25 @@ body{background:#FCFAF6!important}
 </style>
 
 <style id="lam-round-emblem-2026-11-11">
-/* Emblème circulaire autonome : aucun visuel d'ailes ni cadre carré */
-#lam-hero .lam-round-emblem{width:clamp(112px,15vw,164px)!important;aspect-ratio:1/1!important;height:auto!important;margin:14px auto 18px!important;border-radius:50%!important;box-sizing:border-box!important;position:relative!important;display:block!important;background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.98),rgba(235,235,232,.38) 42%,rgba(170,177,184,.13) 72%,rgba(255,255,255,.04) 100%)!important;border:1px solid rgba(135,145,153,.78)!important;box-shadow:inset 0 0 0 5px rgba(255,255,255,.72),inset 0 0 0 7px rgba(145,153,160,.55),0 5px 18px rgba(40,45,50,.10)!important}
-#lam-hero .lam-round-emblem:before{content:""!important;position:absolute!important;inset:12px!important;border:1px solid rgba(155,163,170,.55)!important;border-radius:50%!important}
+/* Cercle argenté avec les ailes originales intégrées à l’intérieur */
+#lam-hero .lam-round-emblem{
+ width:clamp(150px,19vw,190px)!important;aspect-ratio:1/1!important;height:auto!important;
+ margin:14px auto 18px!important;border-radius:50%!important;box-sizing:border-box!important;
+ position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;
+ overflow:hidden!important;background:#fff!important;border:2px solid #aeb7bf!important;
+ box-shadow:inset 0 0 0 5px #fff,inset 0 0 0 7px #aeb7bf,0 5px 18px rgba(40,45,50,.12)!important;
+}
+#lam-hero .lam-round-emblem-wings{
+ display:block!important;width:94%!important;height:auto!important;max-width:none!important;
+ object-fit:contain!important;position:relative!important;z-index:1!important;
+}
+#lam-hero .lam-round-emblem-ring{
+ position:absolute!important;inset:11px!important;border:1px solid rgba(155,163,170,.65)!important;
+ border-radius:50%!important;z-index:2!important;pointer-events:none!important;
+}
 #lam-hero .lam-standalone-wings{display:none!important}
 #lam-hero .lam-celestial-group:before,#lam-hero .lam-celestial-group:after{display:none!important;content:none!important}
-@media(max-width:680px){#lam-hero .lam-round-emblem{width:clamp(104px,34vw,138px)!important;margin:12px auto 16px!important}}
+@media(max-width:680px){#lam-hero .lam-round-emblem{width:clamp(142px,42vw,170px)!important;margin:12px auto 16px!important}}
 </style>
 </head>
 <body>
@@ -2471,7 +2484,10 @@ body{background:#FCFAF6!important}
   <div class="wrap hero-grid">
     <div class="lam-hero-copy">
       <div class="eyebrow">L’art de créer des moments inoubliables</div>
-      <div class="lam-round-emblem" role="img" aria-label="Cercle décoratif argenté"></div>
+      <div class="lam-round-emblem" role="img" aria-label="Ailes argentées à l’intérieur d’un cercle">
+<img class="lam-round-emblem-wings" alt="" src="data:image/jpeg;base64,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">
+<span class="lam-round-emblem-ring" aria-hidden="true"></span>
+</div>
       <h1 aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="lam-formed-word"><span class="lam-letter lam-letter-l">L</span><span class="lam-letter lam-letter-a">A</span><span class="lam-letter lam-letter-m">M</span></span><span class="lam-celestial-group" aria-label="Lune, soleil et étoile"><span class="lam-celestial-symbol lam-moon" aria-hidden="true">☾</span><span class="lam-celestial-symbol lam-sun" aria-hidden="true">☀</span><span class="lam-celestial-symbol lam-star" aria-hidden="true">✦</span><span class="lam-celestial-symbol lam-star-two" aria-hidden="true">✧</span></span> <span class="hero-name-rest">ÉVÉNEMENTIEL<br>&amp; EVENTS</span></h1>
       <div class="hero-event-label">HAÏTI · ÉVÉNEMENTS PRIVÉS &amp; PROFESSIONNELS</div>
       <p class="tagline" aria-label="PUISSANCE. PRESTIGE. PERFECTION."><span style="color:#FFFFFF">PUISSANCE.</span> <span style="color:#E32636">PRESTIGE.</span> <span style="color:#111111">PERFECTION.</span></p>
