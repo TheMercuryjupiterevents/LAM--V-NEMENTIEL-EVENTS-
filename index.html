@@ -2424,10 +2424,12 @@ body{background:#FCFAF6!important}
 
 
 <style id="lam-real-silver-wings-photo">
-#lam-hero .lam-real-wings{display:flex;justify-content:center;align-items:center;width:min(100%,340px);margin:10px 0 2px;position:relative;z-index:2;}
-#lam-hero .lam-real-wings img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain;filter:drop-shadow(0 5px 9px rgba(75,83,92,.16));}
+/* LAM signature: silver wings blended into the wordmark, not displayed as a pasted photo */
+#lam-hero .lam-formed-word{display:inline-block;position:relative;isolation:isolate;z-index:0;}
+#lam-hero .lam-formed-word::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:50%;top:50%;width:clamp(300px,43vw,540px);height:clamp(180px,26vw,320px);transform:translate(-50%,-50%);background-image:url("/LAM--V-NEMENTIEL-EVENTS-/lam-wings-silver.jpg");background-repeat:no-repeat;background-position:center;background-size:contain;mix-blend-mode:multiply;opacity:.88;filter:drop-shadow(0 5px 9px rgba(70,78,90,.18));}
+#lam-hero .lam-letter{position:relative;z-index:1;}
 #lam-hero .lam-celestial-group::before,#lam-hero .lam-celestial-group::after{display:none!important;content:none!important;}
-@media(max-width:700px){#lam-hero .lam-real-wings{width:min(100%,290px);margin:8px auto 0;}#lam-hero .lam-real-wings img{max-height:165px;}}
+@media(max-width:700px){#lam-hero .lam-formed-word::before{width:min(88vw,390px);height:230px;}}
 </style>
 </head>
 <body>
@@ -2460,7 +2462,6 @@ body{background:#FCFAF6!important}
   <div class="wrap hero-grid">
     <div class="lam-hero-copy">
       <div class="eyebrow">L’art de créer des moments inoubliables</div>
-      <div class="lam-real-wings" aria-label="Ailes argentées protégeant le logo LAM"><img src="/LAM--V-NEMENTIEL-EVENTS-/lam-wings-silver.jpg" alt="Paire d’ailes argentées métalliques" loading="eager" decoding="async"></div>
       <h1 aria-label="LAM ÉVÉNEMENTIEL & EVENTS"><span class="lam-formed-word"><span class="lam-letter lam-letter-l">L</span><span class="lam-letter lam-letter-a">A</span><span class="lam-letter lam-letter-m">M</span></span><span class="lam-celestial-group" aria-label="Lune, soleil et étoile"><span class="lam-celestial-symbol lam-moon" aria-hidden="true">☾</span><span class="lam-celestial-symbol lam-sun" aria-hidden="true">☀</span><span class="lam-celestial-symbol lam-star" aria-hidden="true">✦</span><span class="lam-celestial-symbol lam-star-two" aria-hidden="true">✧</span></span> <span class="hero-name-rest">ÉVÉNEMENTIEL<br>&amp; EVENTS</span></h1>
       <div class="hero-event-label">HAÏTI · ÉVÉNEMENTS PRIVÉS &amp; PROFESSIONNELS</div>
       <p class="tagline" aria-label="PUISSANCE. PRESTIGE. PERFECTION."><span style="color:#FFFFFF">PUISSANCE.</span> <span style="color:#E32636">PRESTIGE.</span> <span style="color:#111111">PERFECTION.</span></p>
