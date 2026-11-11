@@ -10717,15 +10717,16 @@ table{max-width:100%}
 
 
 <style id="lam-culinary-rose-white-text-2026-11-11">
-/* Partie culinaire : conserver le fond rose et passer les textes à l'intérieur en blanc */
+/* Partie culinaire : tous les textes sur les zones roses sont blancs */
 #service-traiteur,
-#service-culinaire-mondes{
+#service-culinaire-mondes,
+#service-traiteur *,
+#service-culinaire-mondes *{
   color:#FFFFFF!important;
   -webkit-text-fill-color:#FFFFFF!important;
 }
-#service-traiteur :is(h1,h2,h3,h4,p,li,strong,span,.eyebrow,.small,.tool-note),
-#service-culinaire-mondes :is(h1,h2,h3,h4,p,li,strong,span,.eyebrow,.small,.tool-note){
-  color:#FFFFFF!important;
-  -webkit-text-fill-color:#FFFFFF!important;
+#service-traiteur img,
+#service-culinaire-mondes img{
+  -webkit-text-fill-color:initial!important;
 }
 </style>
