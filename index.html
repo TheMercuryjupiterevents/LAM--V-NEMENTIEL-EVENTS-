@@ -10636,3 +10636,81 @@ main .color-preference-grid input{accent-color:#c49a42!important}
   visibility:visible!important;
 }
 </style>
+
+
+<style id="lam-responsive-all-screens-2026-11-11">
+/* Responsive global : téléphones, tablettes, ordinateurs et grands écrans */
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;max-width:100%;scroll-padding-top:clamp(72px,10vw,110px)}
+body{width:100%;max-width:100%;min-width:320px;margin:0;overflow-x:hidden}
+img,video,iframe,svg{max-width:100%}
+img,video{height:auto}
+.wrap{width:min( min(92%, 1280px), calc(100% - 32px));margin-left:auto;margin-right:auto}
+.grid,.hero-grid,.navin,.form-grid,.form-row{min-width:0}
+.grid>* ,.hero-grid>* ,.form-grid>* ,.form-row>*{min-width:0;max-width:100%}
+p,h1,h2,h3,h4,a,button,label,small{overflow-wrap:anywhere}
+input,select,textarea,button{max-width:100%;font:inherit}
+input,select,textarea{min-width:0}
+button,a,.btn{touch-action:manipulation}
+#lam-main-navigation{width:100%;max-width:100%}
+#lam-main-navigation .navin{display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,2vw,24px)}
+#lam-main-navigation .navlinks{min-width:0;flex-wrap:wrap}
+#lam-hero .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(22px,4vw,56px)}
+#lam-hero .lam-hero-copy,#lam-hero .lam-hero-visual{min-width:0;width:100%}
+#lam-hero .lam-center-logo{display:block;width:100%;max-width:100%;height:auto;object-fit:contain}
+#lam-hero .lam-hero-signature{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(6px,1vw,12px);line-height:1.8}
+#services .grid,#departements .grid,.section .grid{align-items:stretch}
+.card,.form-panel,.form,.package,.team-card{min-width:0;max-width:100%}
+form{width:100%;max-width:100%}
+form input:not([type=checkbox]):not([type=radio]),form select,form textarea{width:100%;max-width:100%;min-height:44px}
+form textarea{min-height:110px}
+form button,.btn{min-height:44px}
+table{max-width:100%}
+@media(max-width:1024px){
+ .wrap{width:calc(100% - 40px)}
+ #lam-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+ #lam-main-navigation .navlinks{gap:clamp(8px,1.2vw,16px)}
+ .grid.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 32px)}
+ #lam-main-navigation .navin{min-height:68px;gap:10px}
+ #lam-main-navigation .navlinks{display:none!important}
+ #lam-main-navigation .menu{display:inline-flex!important;align-items:center;justify-content:center;min-width:44px;min-height:44px;flex:0 0 auto}
+ #lam-hero .hero-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+ #lam-hero .lam-hero-copy{text-align:center}
+ #lam-hero .lam-hero-visual{max-width:620px;margin-inline:auto}
+ #lam-hero .lam-hero-signature{justify-content:center}
+ .grid,.grid.grid2,.grid.grid3,.lam-departments-grid{grid-template-columns:minmax(0,1fr)!important}
+ .section{padding-block:clamp(42px,8vw,64px)}
+ .section h2{font-size:clamp(1.55rem,6vw,2.25rem);line-height:1.16}
+ .actions{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+ .actions .btn,.actions a{width:100%;max-width:100%;justify-content:center}
+ .form,.form-panel{padding:clamp(14px,4vw,22px)!important}
+ .form-panel .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .form-panel .check{min-width:0}
+ #lam-main-navigation .brand-name{max-width:calc(100vw - 90px);white-space:normal;line-height:1.1}
+}
+@media(max-width:420px){
+ .wrap{width:calc(100% - 24px)}
+ #lam-main-navigation .navin{width:calc(100% - 24px)!important}
+ #lam-main-navigation .brand-name{font-size:1rem!important}
+ #lam-main-navigation .brand-name small{font-size:.42rem!important;letter-spacing:.08em!important}
+ #lam-hero h1{font-size:clamp(2.2rem,13vw,3.4rem)!important;line-height:1.05}
+ #lam-hero .eyebrow{letter-spacing:.12em}
+ .form-panel .checks{grid-template-columns:minmax(0,1fr)}
+ form input,form select,form textarea{font-size:16px!important}
+}
+@media(min-width:761px) and (max-width:1024px){
+ .grid.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #lam-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ #lam-main-navigation .navlinks a{font-size:.78rem}
+}
+@media(min-width:1400px){
+ .wrap{width:min( min(90%, 1440px), calc(100% - 64px))}
+}
+@media(orientation:landscape) and (max-height:520px) and (max-width:900px){
+ #lam-hero .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:18px}
+ #lam-hero .lam-center-logo{max-height:68vh;width:100%;object-fit:contain}
+}
+</style>
