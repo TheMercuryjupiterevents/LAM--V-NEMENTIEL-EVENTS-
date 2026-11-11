@@ -10689,3 +10689,61 @@ table{max-width:100%}
   -webkit-text-fill-color:#FFFFFF!important;
 }
 </style>
+
+
+<!-- LAM — centralisation des formulaires événementiels -->
+<style id="lam-event-forms-only-in-form-section">
+  #formulaire #formChoiceCards,
+  #formulaire #prestigeForm,
+  #formulaire #privateForm,
+  #formulaire #corporateForm,
+  #formulaire #concertForm,
+  #formulaire #pastryForm,
+  #formulaire #minorForm,
+  #formulaire #communionForm,
+  #formulaire #lam-kids-form {
+    max-width: 100%;
+  }
+  #formulaire .form-panel[hidden] { display: none !important; }
+  #lam-hero #formChoiceCards,
+  #lam-hero #prestigeForm,
+  #lam-hero #privateForm,
+  #lam-hero #corporateForm,
+  #lam-hero #concertForm,
+  #lam-hero #pastryForm,
+  #lam-hero #minorForm,
+  #lam-hero #communionForm,
+  [data-lam-image-preview] #formChoiceCards,
+  [data-lam-image-preview] .form-panel {
+    display: none !important;
+  }
+</style>
+<script id="lam-keep-event-forms-in-form-section">
+(function () {
+  function keepEventFormsInSection() {
+    var section = document.getElementById('formulaire');
+    if (!section) return;
+    var container = section.querySelector('.wrap') || section;
+    var ids = [
+      'formChoiceCards', 'formChoiceStatus',
+      'prestigeForm', 'privateForm', 'corporateForm',
+      'concertForm', 'pastryForm', 'minorForm', 'communionForm'
+    ];
+    ids.forEach(function (id) {
+      var node = document.getElementById(id);
+      if (node && !container.contains(node)) container.appendChild(node);
+    });
+    section.querySelectorAll('.form-panel').forEach(function (panel) {
+      if (panel.id && !ids.includes(panel.id)) return;
+      if (!panel.hasAttribute('hidden') && !panel.querySelector('form')) {
+        panel.setAttribute('hidden', '');
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', keepEventFormsInSection);
+  } else {
+    keepEventFormsInSection();
+  }
+})();
+</script>
