@@ -61,25 +61,34 @@ function doPost(e) {
   const subject = 'LAM ÉVÉNEMENTIEL & EVENTS | Référence client : ' + reference;
 
   const customerBody = [
-    customerName ? 'Bonjour ' + customerName + ',' : 'Bonjour,',
+    customerName ? 'CHÈR(E) CLIENT(E), ' + customerName : 'CHÈR(E) CLIENT(E),',
     '',
-    'LAM ÉVÉNEMENTIEL & EVENTS vous remercie pour votre demande.',
-    'Votre demande a bien été reçue.',
+    'Nous vous remercions d’avoir choisi LAM ÉVÉNEMENTIEL & EVENTS.',
     '',
-    'VOTRE NUMÉRO CLIENT PERSONNEL : ' + reference,
+    'Nous vous confirmons que votre formulaire a bien été reçu et enregistré dans notre système.',
     '',
-    'Cette référence est unique et reste la même pour vos prochaines demandes envoyées avec cette adresse e-mail.',
-    'Veuillez la conserver et la rappeler lors de vos échanges avec notre équipe.',
+    'VOTRE RÉFÉRENCE CLIENT PERSONNELLE',
     '',
-    'Notre équipe étudiera votre demande et vous contactera pour les prochaines étapes.',
+    reference,
+    '',
+    'Cette référence est strictement personnelle. Elle vous permettra d’identifier votre dossier et de faciliter le suivi de vos prochaines demandes auprès de notre équipe.',
+    '',
+    'PROCHAINES ÉTAPES',
+    '',
+    'Notre équipe procédera à l’analyse de votre demande. Nous vous contacterons pour les informations complémentaires, les éventuelles propositions et les modalités de suivi.',
+    '',
+    'Veuillez noter que la réception de ce formulaire ne constitue pas une confirmation définitive de réservation ou de commande.',
+    '',
+    'Nous vous remercions pour votre confiance.',
+    '',
+    'LAM ÉVÉNEMENTIEL & EVENTS',
     '',
     'PUISSANCE. PRESTIGE. PERFECTION.',
     '',
-    'L’équipe LAM ÉVÉNEMENTIEL & EVENTS',
-    LAM_CONFIG.adminEmail,
-    '+509 37 46 9553',
-    '@lamevenementielevents'
-  ].join('\n');
+    'Haïti',
+    'E-mail : infolamevenementiels@gmail.com',
+    'WhatsApp : +509 37 46 9553'
+  ].join('\\n');
 
   const adminLines = Object.keys(data)
     .filter(function(key) { return key.charAt(0) !== '_'; })
