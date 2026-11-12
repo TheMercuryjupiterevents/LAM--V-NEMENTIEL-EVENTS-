@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+<title id="title">LAM dans le triangle</title>
+<desc id="desc">Triangle crème avec les lettres LAM jaunes au centre, sans cercle extérieur.</desc>
+<path d="M512 92 L132 760 L892 760 Z" fill="none" stroke="#F7E4B5" stroke-width="19" stroke-linejoin="round"/>
+<text x="512" y="642" text-anchor="middle" fill="#FFD400" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="205" font-weight="900" letter-spacing="-10">LAM</text>
+</svg>
