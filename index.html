@@ -6151,6 +6151,123 @@ document.addEventListener('DOMContentLoaded',function(){
   }
 })();
 </script>
+
+<style id="lam-client-reference-system-20261112">
+.lam-client-reference-notice{margin:14px 0;padding:14px 16px;border:1px solid #C6A56B;border-radius:12px;background:#FBF7EF;color:#514638;font-size:14px;line-height:1.5}
+.lam-client-reference-notice strong{display:block;color:#9A7543;font-size:12px;letter-spacing:.09em;margin-bottom:5px}
+.lam-client-reference-code{font-weight:800;font-size:20px;letter-spacing:.06em;color:#9A7543;overflow-wrap:anywhere}
+.lam-client-reference-help{display:block;margin-top:5px;font-size:12px;color:#786B5C}
+</style>
+<script id="lam-client-reference-system-20261112">
+(function(){
+  'use strict';
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbySlp0vFcyGaltOr58i0SlaT-oGDZwiLXcT5IWkr8mVqYc4DPXpKjmrsyPIpwuJ68nmBQ/exec';
+  var sequence=0;
+
+  function emailField(form){
+    return form.querySelector('input[type="email"],input[name*="email" i],input[name*="courriel" i]');
+  }
+  function noticeFor(form){
+    var box=form.querySelector('.lam-client-reference-notice');
+    if(!box){
+      box=document.createElement('div');
+      box.className='lam-client-reference-notice';
+      box.setAttribute('aria-live','polite');
+      box.hidden=true;
+      form.insertBefore(box,form.firstChild);
+    }
+    return box;
+  }
+  function showNotice(form,reference){
+    var box=noticeFor(form);
+    box.innerHTML='<strong>VOTRE RÉFÉRENCE CLIENT LAM</strong><span class="lam-client-reference-code"></span><span class="lam-client-reference-help">Conservez ce numéro. Il restera le même pour vos prochaines demandes avec cette adresse e-mail.</span>';
+    box.querySelector('.lam-client-reference-code').textContent=reference;
+    box.hidden=false;
+  }
+  function setHiddenReference(form,reference){
+    var hidden=form.querySelector('input[name="Référence client LAM"]');
+    if(!hidden){
+      hidden=document.createElement('input');
+      hidden.type='hidden';
+      hidden.name='Référence client LAM';
+      form.appendChild(hidden);
+    }
+    hidden.value=reference;
+  }
+  function requestReference(email){
+    return new Promise(function(resolve,reject){
+      var callback='lamClientReferenceCallback'+(++sequence);
+      var script=document.createElement('script');
+      var done=false;
+      var timer=window.setTimeout(function(){finish(new Error('timeout'));},15000);
+      function finish(error,result){
+        if(done)return;done=true;window.clearTimeout(timer);
+        try{delete window[callback];}catch(e){window[callback]=undefined;}
+        if(script.parentNode)script.parentNode.removeChild(script);
+        if(error)reject(error);else if(result&&result.ok&&result.reference)resolve(result.reference);else reject(new Error('reference unavailable'));
+      }
+      window[callback]=function(result){finish(null,result);};
+      script.onerror=function(){finish(new Error('network'));};
+      script.src=ENDPOINT+'?email='+encodeURIComponent(email)+'&callback='+callback+'&_='+Date.now();
+      document.head.appendChild(script);
+    });
+  }
+  function attach(form){
+    if(form.dataset.lamReferenceReady==='true')return;
+    var email=emailField(form);
+    if(!email)return;
+    form.dataset.lamReferenceReady='true';
+
+    email.addEventListener('change',function(){
+      var value=(email.value||'').trim();
+      if(!value||!email.checkValidity())return;
+      requestReference(value).then(function(ref){
+        setHiddenReference(form,ref);showNotice(form,ref);
+      }).catch(function(){});
+    });
+
+    form.addEventListener('submit',function(event){
+      if(event.defaultPrevented)return;
+      var value=(email.value||'').trim();
+      if(!value||!email.checkValidity())return;
+      var existing=form.querySelector('input[name="Référence client LAM"]');
+      if(existing&&existing.value){
+        showNotice(form,existing.value);
+        return;
+      }
+      event.preventDefault();
+      var submitters=form.querySelectorAll('button[type="submit"],input[type="submit"]');
+      submitters.forEach(function(button){button.disabled=true;});
+      var box=noticeFor(form);
+      box.textContent='Génération de votre référence client LAM…';
+      box.hidden=false;
+      requestReference(value).then(function(ref){
+        setHiddenReference(form,ref);
+        showNotice(form,ref);
+        submitToFormSubmit(form,submitters);
+      }).catch(function(){
+        box.textContent='La référence client n’a pas pu être générée. Veuillez réessayer dans quelques instants. Votre demande n’a pas encore été envoyée.';
+        submitters.forEach(function(button){button.disabled=false;});
+      });
+    });
+  }
+  function submitToFormSubmit(form,submitters){
+    var frameName='lamFormSubmitFrame'+(++sequence);
+    var frame=document.createElement('iframe');
+    frame.name=frameName;frame.title='Confirmation d’envoi du formulaire LAM';
+    frame.style.display='none';document.body.appendChild(frame);
+    form.target=frameName;
+    HTMLFormElement.prototype.submit.call(form);
+    window.setTimeout(function(){submitters.forEach(function(button){button.disabled=false;});},2500);
+  }
+  function init(){
+    document.querySelectorAll('form[action*="formsubmit.co"]').forEach(attach);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
