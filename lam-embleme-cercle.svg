@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
-  <title id="title">LAM — emblème cercle et triangle</title>
-  <desc id="desc">Logo LAM jaune au centre d’un triangle crème inscrit dans un cercle crème, sur fond blanc.</desc>
-  <rect width="1024" height="1024" fill="#FFFFFF"/>
-  <circle cx="512" cy="512" r="492" fill="none" stroke="#F7E4B5" stroke-width="17"/>
-  <path d="M512 28 L91 760 L933 760 Z" fill="none" stroke="#F7E4B5" stroke-width="17" stroke-linejoin="miter"/>
-  <text x="512" y="625" text-anchor="middle" fill="#FFD400" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="205" font-weight="900" letter-spacing="-10">LAM</text>
+<title id="title">LAM — cercle crème clair et triangle intérieur</title>
+<desc id="desc">Cercle crème clair bien visible. Triangle champagne crème entièrement à l’intérieur du cercle, avec un espace régulier entre ses pointes et le cercle. LAM jaune au centre. Fond blanc.</desc>
+<rect width="1024" height="1024" fill="#FFFFFF"/>
+<circle cx="512" cy="512" r="490" fill="none" stroke="#E9D8B6" stroke-width="19"/>
+<path d="M512 66 L115 746 L909 746 Z" fill="none" stroke="#F3E3BD" stroke-width="18" stroke-linejoin="round"/>
+<text x="512" y="625" text-anchor="middle" fill="#FFD400" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="205" font-weight="900" letter-spacing="-10">LAM</text>
 </svg>
