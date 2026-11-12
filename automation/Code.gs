@@ -17,6 +17,34 @@ const LAM_CONFIG = {
   emailMapPrefix: 'LAM_CLIENT_REFERENCE_'
 };
 
+function doGet(e) {
+  const params = (e && e.parameter) ? e.parameter : {};
+  const callback = String(params.callback || '');
+  const email = String(params.email || '').trim();
+
+  if (!/^[A-Za-z_$][0-9A-Za-z_$]*$/.test(callback)) {
+    return ContentService.createTextOutput('Invalid callback')
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
+
+  if (!email || email.indexOf('@') < 1) {
+    return jsonp_(callback, { ok: false, message: 'Adresse e-mail invalide.' });
+  }
+
+  try {
+    const reference = getOrCreateClientReference_(email);
+    return jsonp_(callback, { ok: true, reference: reference });
+  } catch (err) {
+    return jsonp_(callback, { ok: false, message: 'Impossible de générer la référence.' });
+  }
+}
+
+function jsonp_(callback, payload) {
+  return ContentService
+    .createTextOutput(callback + '(' + JSON.stringify(payload) + ');')
+    .setMimeType(ContentService.MimeType.JAVASCRIPT);
+}
+
 function doPost(e) {
   const data = (e && e.parameter) ? e.parameter : {};
   const customerEmail = findCustomerEmail_(data);
