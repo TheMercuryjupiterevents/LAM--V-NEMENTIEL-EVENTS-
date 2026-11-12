@@ -1,18 +1,20 @@
 /**
- * LAM ÉVÉNEMENTIEL & EVENTS — Références automatiques des demandes
+ * LAM ÉVÉNEMENTIEL & EVENTS — Référence client unique
  *
  * À déployer comme application Web Google Apps Script.
- * Exécuter chaque soumission via POST (application/x-www-form-urlencoded).
+ * Une même adresse e-mail reçoit toujours la même référence LAM,
+ * même si le client soumet plusieurs formulaires.
  *
- * Les références sont séquentielles et protégées contre les doublons
- * par LockService : LAM-2026-000001, LAM-2026-000002, etc.
+ * IMPORTANT : ce fichier seul ne rend pas le système actif.
+ * Le site doit envoyer ses soumissions à l'URL de déploiement Web App.
  */
 
 const LAM_CONFIG = {
   adminEmail: 'infolamevenementiels@gmail.com',
   prefix: 'LAM',
   year: '2026',
-  propertyKey: 'LAM_LAST_REFERENCE_NUMBER'
+  counterKey: 'LAM_LAST_REFERENCE_NUMBER',
+  emailMapPrefix: 'LAM_CLIENT_REFERENCE_'
 };
 
 function doPost(e) {
@@ -20,38 +22,33 @@ function doPost(e) {
   const customerEmail = findCustomerEmail_(data);
 
   if (!customerEmail) {
-    return HtmlService.createHtmlOutput(
-      '<p>Votre demande n’a pas pu être traitée : adresse e-mail manquante. Veuillez revenir au formulaire LAM.</p>'
-    );
+    return output_({
+      ok: false,
+      message: 'Adresse e-mail manquante. Veuillez vérifier le formulaire et réessayer.'
+    });
   }
 
-  const reference = nextReference_();
-  const subject = 'LAM ÉVÉNEMENTIEL & EVENTS | Référence : ' + reference;
   const customerName = findCustomerName_(data);
-  const greeting = customerName ? 'Bonjour ' + customerName + ',' : 'Bonjour,';
+  const reference = getOrCreateClientReference_(customerEmail);
+  const subject = 'LAM ÉVÉNEMENTIEL & EVENTS | Référence client : ' + reference;
 
-  const body = [
-    greeting,
+  const customerBody = [
+    customerName ? 'Bonjour ' + customerName + ',' : 'Bonjour,',
     '',
-    'Nous vous remercions d’avoir contacté LAM ÉVÉNEMENTIEL & EVENTS.',
+    'LAM ÉVÉNEMENTIEL & EVENTS vous remercie pour votre demande.',
+    'Votre demande a bien été reçue.',
     '',
-    'Nous vous confirmons que votre demande a bien été reçue et enregistrée dans notre système.',
+    'VOTRE NUMÉRO CLIENT PERSONNEL : ' + reference,
     '',
-    'Votre numéro de référence : ' + reference,
+    'Cette référence est unique et reste la même pour vos prochaines demandes envoyées avec cette adresse e-mail.',
+    'Veuillez la conserver et la rappeler lors de vos échanges avec notre équipe.',
     '',
-    'Ce numéro est personnel et unique. Il permettra à notre équipe d’identifier votre dossier et d’assurer le suivi de votre demande.',
+    'Notre équipe étudiera votre demande et vous contactera pour les prochaines étapes.',
     '',
-    'Notre équipe procédera à l’examen des informations transmises et vous contactera dans les meilleurs délais pour les prochaines étapes.',
+    'PUISSANCE. PRESTIGE. PERFECTION.',
     '',
-    'Veuillez conserver votre numéro de référence pour toute communication ultérieure concernant votre demande.',
-    '',
-    'Nous vous remercions pour votre confiance et l’intérêt que vous portez à LAM ÉVÉNEMENTIEL & EVENTS.',
-    '',
-    'L’élégance au service de vos moments d’exception.',
-    '',
-    'Cordialement,',
     'L’équipe LAM ÉVÉNEMENTIEL & EVENTS',
-    'infolamevenementiels@gmail.com',
+    LAM_CONFIG.adminEmail,
     '+509 37 46 9553',
     '@lamevenementielevents'
   ].join('\n');
@@ -63,7 +60,7 @@ function doPost(e) {
   MailApp.sendEmail({
     to: customerEmail,
     subject: subject,
-    body: body,
+    body: customerBody,
     name: 'LAM ÉVÉNEMENTIEL & EVENTS',
     replyTo: LAM_CONFIG.adminEmail
   });
@@ -72,9 +69,10 @@ function doPost(e) {
     to: LAM_CONFIG.adminEmail,
     subject: 'NOUVELLE DEMANDE — ' + reference,
     body: [
-      'Une nouvelle demande a été soumise sur le site LAM.',
-      'Référence : ' + reference,
-      'E-mail client : ' + customerEmail,
+      'Nouvelle demande reçue depuis le site LAM.',
+      'Référence client : ' + reference,
+      'Nom : ' + (customerName || 'Non renseigné'),
+      'E-mail : ' + customerEmail,
       '',
       adminLines.join('\n')
     ].join('\n'),
@@ -82,38 +80,59 @@ function doPost(e) {
     name: 'Système de suivi LAM'
   });
 
-  return HtmlService.createHtmlOutput(
-    '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demande reçue — LAM</title></head>' +
-    '<body style="font-family:Arial,sans-serif;background:#f5f0e6;color:#25221f;padding:36px 18px;text-align:center">' +
-    '<main style="max-width:560px;margin:8vh auto;background:#fff;padding:36px 24px;border-radius:12px">' +
-    '<h1 style="font-size:22px">LAM ÉVÉNEMENTIEL &amp; EVENTS</h1>' +
-    '<p>Votre demande a bien été transmise.</p><p>Votre numéro de référence :</p>' +
-    '<p style="font-size:24px;font-weight:bold;letter-spacing:1px">' + reference + '</p>' +
-    '<p>Un e-mail de confirmation vient de vous être envoyé. Veuillez conserver votre référence.</p>' +
-    '<p>L’élégance au service de vos moments d’exception.</p>' +
-    '</main></body></html>'
-  );
+  return output_({
+    ok: true,
+    reference: reference,
+    message: 'Votre demande a bien été transmise. Votre référence client personnelle est ' + reference + '.'
+  });
 }
 
-function nextReference_() {
+function getOrCreateClientReference_(email) {
+  const normalizedEmail = String(email).trim().toLowerCase();
+  const emailKey = LAM_CONFIG.emailMapPrefix + digest_(normalizedEmail);
   const lock = LockService.getScriptLock();
+
   lock.waitLock(30000);
   try {
     const props = PropertiesService.getScriptProperties();
-    const last = Number(props.getProperty(LAM_CONFIG.propertyKey) || '0');
+    const existing = props.getProperty(emailKey);
+    if (existing) return existing;
+
+    const last = Number(props.getProperty(LAM_CONFIG.counterKey) || '0');
     const next = last + 1;
-    props.setProperty(LAM_CONFIG.propertyKey, String(next));
-    return LAM_CONFIG.prefix + '-' + LAM_CONFIG.year + '-' + String(next).padStart(6, '0');
+    const reference = LAM_CONFIG.prefix + '-' + LAM_CONFIG.year + '-' + String(next).padStart(6, '0');
+
+    props.setProperty(LAM_CONFIG.counterKey, String(next));
+    props.setProperty(emailKey, reference);
+    return reference;
   } finally {
     lock.releaseLock();
   }
+}
+
+function digest_(value) {
+  const bytes = Utilities.computeDigest(
+    Utilities.DigestAlgorithm.SHA_256,
+    value,
+    Utilities.Charset.UTF_8
+  );
+  return bytes.map(function(b) {
+    const n = (b + 256) % 256;
+    return ('0' + n.toString(16)).slice(-2);
+  }).join('');
+}
+
+function output_(payload) {
+  return ContentService
+    .createTextOutput(JSON.stringify(payload))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 function findCustomerEmail_(data) {
   const preferred = [
     'email', 'E-mail', 'Adresse e-mail', 'Adresse e-mail de contact',
     'E-mail de contact', 'E-mail du parent ou représentant légal',
-    'E-mail du jeune'
+    'E-mail du jeune', 'Adresse électronique'
   ];
   for (var i = 0; i < preferred.length; i++) {
     if (data[preferred[i]] && String(data[preferred[i]]).indexOf('@') > 0) {
