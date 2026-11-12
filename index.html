@@ -6087,6 +6087,47 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+
+<style id="lam-form-panels-private-content-20261112">
+/* Les détails de prestation ne doivent jamais apparaître comme des sections publiques */
+#formulaire .form-panel[hidden],
+#formulaire [data-lam-private-form][hidden]{display:none!important}
+#formulaire .lam-table-fleurs-accordion{margin:18px 0;border:1px solid #c9ad70;border-radius:12px;background:#fffdf9;overflow:hidden}
+#formulaire .lam-table-fleurs-accordion>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;cursor:pointer;color:#8b6c32;font-weight:700}
+#formulaire .lam-table-fleurs-accordion>summary::-webkit-details-marker{display:none}
+#formulaire .lam-table-fleurs-accordion>summary:after{content:"＋";font-size:1.2rem;color:#c8102e}
+#formulaire .lam-table-fleurs-accordion[open]>summary:after{content:"−"}
+#formulaire .lam-table-fleurs-accordion[open]>summary{border-bottom:1px solid #c9ad704d}
+#formulaire .lam-table-fleurs-content{padding:16px}
+</style>
+<script id="lam-form-only-table-fleurs-20261112">
+(function(){
+  function organizeFormDetails(){
+    var root=document.getElementById('formulaire');
+    if(!root)return;
+    root.querySelectorAll('.form-panel').forEach(function(panel){
+      if(!panel.querySelector('form'))panel.hidden=true;
+    });
+    root.querySelectorAll('form .form-section').forEach(function(section){
+      var heading=section.querySelector(':scope > h3');
+      if(!heading || !/art de la table\s*&\s*fleurs/i.test(heading.textContent) || section.closest('.lam-table-fleurs-accordion'))return;
+      var details=document.createElement('details');
+      details.className='lam-table-fleurs-accordion';
+      var summary=document.createElement('summary');
+      summary.textContent='Personnaliser l’art de la table & les fleurs';
+      var content=document.createElement('div');
+      content.className='lam-table-fleurs-content';
+      while(section.firstChild)content.appendChild(section.firstChild);
+      details.appendChild(summary);
+      details.appendChild(content);
+      section.replaceWith(details);
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',organizeFormDetails);
+  else organizeFormDetails();
+})();
+</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
