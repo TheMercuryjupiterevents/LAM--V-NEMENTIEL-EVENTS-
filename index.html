@@ -10928,3 +10928,42 @@ table{max-width:100%}
 #lam-hero .lam-round-emblem-wings,#lam-hero .lam-round-emblem-mark,#lam-hero .lam-round-emblem-ring{display:none!important}
 @media(max-width:680px){#lam-hero .lam-round-emblem{width:min(86vw,390px)!important}}
 </style>
+
+
+<style id="lam-remove-empty-white-space-above-hero-title-20261112">
+/* Remove the oversized blank area between the navigation and hero heading */
+#lam-hero{
+  min-height:0!important;
+  height:auto!important;
+  padding-top:0!important;
+  margin-top:0!important;
+  display:block!important;
+}
+#lam-hero>.wrap.hero-grid{
+  min-height:0!important;
+  height:auto!important;
+  align-content:start!important;
+  align-items:start!important;
+  justify-content:start!important;
+  padding-top:clamp(12px,2.5vh,24px)!important;
+  padding-bottom:34px!important;
+  margin-top:0!important;
+  gap:0!important;
+}
+#lam-hero .lam-hero-copy{
+  justify-content:flex-start!important;
+  align-self:start!important;
+  margin-top:0!important;
+  padding-top:0!important;
+}
+#lam-hero .eyebrow{
+  margin-top:0!important;
+  margin-bottom:clamp(14px,2.2vh,20px)!important;
+}
+@media(max-width:680px){
+  #lam-hero>.wrap.hero-grid{
+    padding-top:12px!important;
+    padding-bottom:28px!important;
+  }
+}
+</style>
