@@ -6165,7 +6165,10 @@ document.addEventListener('DOMContentLoaded',function(){
   var sequence=0;
 
   function emailField(form){
-    return form.querySelector('input[type="email"],input[name*="email" i],input[name*="courriel" i]');
+    // Use the main contact email consistently; some forms also ask for a minor's email.
+    return form.querySelector('input[type="email"][name="email"]') ||
+      form.querySelector('input[autocomplete="email"]') ||
+      form.querySelector('input[type="email"],input[name*="email" i],input[name*="courriel" i]');
   }
   function noticeFor(form){
     var box=form.querySelector('.lam-client-reference-notice');
