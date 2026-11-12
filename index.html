@@ -2483,16 +2483,17 @@ body{background:#FCFAF6!important}
     </a>
     <nav class="navlinks" aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
+      <a href="#apropos">À propos</a>
       <a href="#services">Services</a>
-      <a href="#departements">Départements</a>
-      <a href="#formules">Formules</a>
-      <a href="#formulaire">Demandes</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#formulaire">Formulaires</a>
+      <a href="#paiement">Réservation & paiement</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" onclick="const m=document.getElementById('mobileNav');m.hidden=!m.hidden;this.setAttribute('aria-expanded',String(!m.hidden))">☰</button>
   </div>
   <div id="mobileNav" hidden><div class="wrap">
-    <a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#departements">Départements</a><a href="#formules">Formules</a><a href="#formulaire">Demandes & formulaires</a><a href="#contact">Contact</a>
+    <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#services">Services</a><a href="#galerie">Galerie</a><a href="#formulaire">Formulaires</a><a href="#paiement">Réservation & paiement</a><a href="#contact">Contact</a>
   </div></div>
 </header>
 
@@ -5942,6 +5943,38 @@ input[type=checkbox],input[type=radio]{accent-color:#C85F91!important}
 .decoration-choice:has(input:checked){
   background:#F5C7DC!important;
   border:2px solid #C13F7A!important;
+}
+</style>
+
+
+<style id="lam-compact-organization-2026-11-12">
+/* Organisation compacte : préserver les formulaires et raccourcir le parcours */
+:root{--lam-section-space:clamp(34px,4.5vw,54px)}
+.section{padding:var(--lam-section-space) 0}
+.section-head{margin-bottom:22px}
+.section .wrap>h2{margin-bottom:10px}
+.card{padding:clamp(16px,2vw,22px)}
+.grid{gap:14px}
+#formulaire{scroll-margin-top:82px}
+#formulaire #formChoiceCards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0!important}
+#formulaire #formChoiceCards .card{padding:16px;gap:8px}
+#formulaire #formChoiceCards .card p{margin-bottom:4px;font-size:.82rem;line-height:1.55}
+#formulaire #formChoiceCards .card h3{font-size:.86rem}
+#formulaire .form-panel[hidden]{display:none!important}
+#formulaire .form-panel:not([hidden]){max-width:920px;margin:22px auto 0!important}
+#formulaire .form-section{padding:17px 0}
+#formulaire .form{padding:clamp(16px,2.4vw,24px)}
+#mobileNav .wrap{display:grid;gap:0;padding:8px 0 14px}
+#mobileNav a{display:block;padding:10px 0;border-top:1px solid #aeb4ba44;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+#contact{scroll-margin-top:82px}
+#paiement{scroll-margin-top:82px}
+/* Retirer les répétitions éditoriales du parcours principal sans supprimer leur contenu du fichier */
+#experience,#experiences-signature,#vision2040,#presentation,#outils-clients,#apres-demande{display:none!important}
+@media(max-width:680px){
+  .section{padding:36px 0}
+  #formulaire #formChoiceCards{grid-template-columns:1fr;gap:10px}
+  #formulaire #formChoiceCards .card{padding:14px}
+  #formulaire #formChoiceCards .card p{font-size:.8rem}
 }
 </style>
 
