@@ -11647,57 +11647,20 @@ html body main#accueil section#lam-hero.hero .eyebrow{
 
 
 <script id="lam-complete-section-order-2026-11-13">
-/* Ordre éditorial complet du site LAM — conservation des sections et formulaires. */
-(function () {
-  function arrangeLamContent() {
-    var main = document.querySelector('main');
-    if (!main) return;
-    var sections = Array.prototype.filter.call(main.children, function (el) {
-      return el.tagName === 'SECTION';
-    });
-    function byId(id) {
-      return sections.find(function (el) { return el.id === id; });
-    }
-    function byHeading(phrase) {
-      return sections.find(function (el) {
-        var heading = el.querySelector('h2');
-        return heading && heading.textContent.trim().toLocaleUpperCase().indexOf(phrase) !== -1;
-      });
-    }
-    var ordered = [
-      byId('lam-hero'),
-      byId('apropos'),
-      byId('presentation'),
-      byHeading('CHAQUE DÉTAIL A SA PLACE'),
-      byId('services'),
-      byId('departements'),
-      byHeading('UN PROJET UNIQUE'),
-      byId('formules'),
-      byHeading('UNE MÉTHODE CLAIRE'),
-      byId('experience'),
-      byId('experiences-signature'),
-      byId('vision2040'),
-      byId('formulaire'),
-      byId('cartes-invitation-mariage'),
-      byId('contrat-mariage-lam'),
-      byId('partenariats'),
-      byId('recrutement'),
-      byId('avis-clients-tmje'),
-      byId('galerie'),
-      byId('budget-estimateur'),
-      byId('faq'),
-      byId('outils-clients'),
-      byId('apres-demande'),
-      byId('contact')
-    ].filter(Boolean);
-    var seen = new Set(ordered);
-    var remaining = sections.filter(function (el) { return !seen.has(el); });
-    ordered.concat(remaining).forEach(function (el) { main.appendChild(el); });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', arrangeLamContent);
-  } else {
-    arrangeLamContent();
-  }
-})();
+(function(){function arrange(){var main=document.querySelector('main');if(!main)return;var sections=Array.prototype.filter.call(main.children,function(el){return el.tagName==='SECTION'});function byId(id){return sections.find(function(el){return el.id===id})}function byHeading(phrase){return sections.find(function(el){var h=el.querySelector('h2');return h&&h.textContent.trim().toLocaleUpperCase().indexOf(phrase)!==-1})}var ordered=[byId('lam-hero'),byId('apropos'),byId('presentation'),byHeading('CHAQUE DÉTAIL A SA PLACE'),byId('services'),byId('departements'),byHeading('UN PROJET UNIQUE'),byId('formules'),byHeading('UNE MÉTHODE CLAIRE'),byId('experience'),byId('experiences-signature'),byId('vision2040'),byId('galerie'),byId('avis-clients-tmje'),byId('formulaire'),byId('cartes-invitation-mariage'),byId('outils-clients'),byId('apres-demande'),byId('contrat-mariage-lam'),byId('paiement'),byId('partenariats'),byId('recrutement'),byId('faq'),byId('contact'),byId('informations-legales'),byId('budget-estimateur')].filter(Boolean);var seen=new Set(ordered);sections.filter(function(el){return !seen.has(el)}).forEach(function(el){ordered.push(el)});ordered.forEach(function(el){main.appendChild(el)});var hero=document.getElementById('lam-hero');if(hero)hero.querySelectorAll('.hero-event-label').forEach(function(el){if(/HAY\s*TI/i.test(el.textContent||''))el.textContent='HAYTI'})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arrange);else arrange()})();
 </script>
+<style id="lam-luxury-editorial-structure-2026-11-13">
+:root{--lam-ivory:#FBF8F1;--lam-champagne:#C9A96E;--lam-ink:#342D28}
+html{scroll-behavior:smooth}
+main#accueil>section:not(#lam-hero){position:relative;padding-block:clamp(44px,7vw,92px)!important;scroll-margin-top:88px}
+main#accueil>section:not(#lam-hero)>.wrap{width:min(100% - 44px,1120px)!important;margin-inline:auto!important}
+main#accueil>section:not(#lam-hero) h2{max-width:900px;margin:0 auto clamp(18px,2.8vw,30px)!important;color:var(--lam-ink);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,4vw,3.05rem)!important;font-weight:500!important;line-height:1.12!important;letter-spacing:.025em;text-wrap:balance}
+main#accueil>section:not(#lam-hero) h2:after{content:"";display:block;width:54px;height:1px;margin:18px auto 0;background:var(--lam-champagne)}
+main#accueil>section:not(#lam-hero) p{line-height:1.8}
+main#accueil>section:not(#lam-hero) .eyebrow,main#accueil>section:not(#lam-hero) .section-kicker{color:#9B7A45!important;letter-spacing:.18em!important;text-transform:uppercase;font-size:.72rem!important}
+main#accueil>section:not(#lam-hero) .wrap>p,main#accueil>section:not(#lam-hero) .wrap>.lead{max-width:760px;margin-inline:auto}
+main#accueil>section:nth-of-type(even):not(#lam-hero){background:linear-gradient(180deg,#FCFAF5 0%,#F8F3EA 100%)!important}
+main#accueil>section:nth-of-type(odd):not(#lam-hero){background:#FFFDFC!important}
+main#accueil>section:not(#lam-hero) hr{border:0;border-top:1px solid rgba(201,169,110,.35)}
+@media(max-width:680px){main#accueil>section:not(#lam-hero){padding-block:38px!important}main#accueil>section:not(#lam-hero)>.wrap{width:calc(100% - 32px)!important}main#accueil>section:not(#lam-hero) h2{font-size:1.65rem!important}}
+</style>
