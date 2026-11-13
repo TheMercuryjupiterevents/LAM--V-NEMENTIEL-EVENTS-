@@ -4,5 +4,5 @@
 <rect width="1024" height="1024" fill="#FFFFFF"/>
 <circle cx="512" cy="512" r="490" fill="none" stroke="#E9D8B6" stroke-width="19"/>
 <path d="M512 66 L115 746 L909 746 Z" fill="none" stroke="#F3E3BD" stroke-width="18" stroke-linejoin="round"/>
-<text x="512" y="625" text-anchor="middle" fill="#FFD400" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="205" font-weight="900" letter-spacing="-10">LAM</text>
+<text x="512" y="625" text-anchor="middle" fill="#F00018" font-family="'Arial Rounded MT Bold','Trebuchet MS',Arial,sans-serif" font-size="205" font-weight="900" letter-spacing="-10">LAM</text>
 </svg>
