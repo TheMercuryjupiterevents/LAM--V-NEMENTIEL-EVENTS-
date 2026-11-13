@@ -5320,7 +5320,7 @@ window.setTimeout(close,7000);
   intro.dataset.starFormationReady="true";
   var stage=document.createElement("div"),canvas=document.createElement("canvas"),subtitle=document.createElement("div");
   stage.className="lam-star-composition";canvas.className="lam-star-canvas";subtitle.className="lam-star-subtitle";
-  subtitle.innerHTML="<span>ÉVÉNEMENTIEL &amp; EVENTS</span><span class=\"lam-star-country\">HAITI</span>";stage.appendChild(canvas);stage.appendChild(subtitle);
+  subtitle.innerHTML="<span>ÉVÉNEMENTIEL &amp; EVENTS</span><span class=\"lam-star-country\">HA<span class="lam-haiti-noir">NOIR</span>TI<span class="lam-haiti-rouge">ROUGE</span></span>";stage.appendChild(canvas);stage.appendChild(subtitle);
   var enter=intro.querySelector(".lam-editorial-enter");if(enter)stage.appendChild(enter);intro.appendChild(stage);
   var ctx=canvas.getContext("2d");if(!ctx)return;
   var W=960,H=260,dpr=Math.min(window.devicePixelRatio||1,2);
@@ -6474,6 +6474,10 @@ document.addEventListener('DOMContentLoaded',function(){
 #lam-main-navigation .brand-name .brand-m{color:#F00018!important;-webkit-text-fill-color:#F00018!important}
 #lam-main-navigation .brand-name small .brand-event-word{color:#2450C5!important;-webkit-text-fill-color:#2450C5!important}
 #lam-main-navigation .brand-name small .brand-events-word{color:#F28C18!important;-webkit-text-fill-color:#F28C18!important}
+</style>
+<style id="lam-haiti-black-red-colors-20261113">
+.lam-haiti-noir{color:#111111!important;-webkit-text-fill-color:#111111!important}
+.lam-haiti-rouge{color:#F00018!important;-webkit-text-fill-color:#F00018!important}
 </style>
 </body>
 </html>
