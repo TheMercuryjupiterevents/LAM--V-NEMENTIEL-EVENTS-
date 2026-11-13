@@ -6528,6 +6528,57 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 </style>
 
+
+<style id="lam-reliable-button-interactions-20261113">
+/* Fiabiliser les interactions tactiles sans modifier le design */
+button,a,.btn,[role="button"]{pointer-events:auto;touch-action:manipulation}
+button:disabled{cursor:not-allowed;opacity:.65}
+</style>
+<script id="lam-reliable-button-interactions-20261113">
+(function(){
+  function initLamButtonInteractions(){
+    var menu=document.querySelector('#lam-main-navigation .menu');
+    var mobileNav=document.getElementById('mobileNav');
+    if(menu&&mobileNav&&!menu.dataset.lamClickReady){
+      menu.removeAttribute('onclick');
+      menu.dataset.lamClickReady='1';
+      menu.addEventListener('click',function(event){
+        event.preventDefault();
+        var opening=mobileNav.hidden;
+        mobileNav.hidden=!opening;
+        menu.setAttribute('aria-expanded',opening?'true':'false');
+      });
+    }
+    document.querySelectorAll('[data-show-form]').forEach(function(button){
+      if(button.dataset.lamClickReady==='1')return;
+      button.removeAttribute('onclick');
+      button.dataset.lamClickReady='1';
+      button.addEventListener('click',function(event){
+        event.preventDefault();
+        var target=button.getAttribute('data-show-form');
+        if(typeof window.showEventForm==='function')window.showEventForm(target);
+        else{
+          var panel=document.getElementById(target);
+          if(panel){document.querySelectorAll('.form-panel').forEach(function(item){item.hidden=true;});panel.hidden=false;panel.scrollIntoView({behavior:'smooth',block:'start'});}
+        }
+      });
+    });
+    if(mobileNav){
+      mobileNav.querySelectorAll('a[href^="#"]').forEach(function(link){
+        if(link.dataset.lamClickReady==='1')return;
+        link.dataset.lamClickReady='1';
+        link.addEventListener('click',function(){
+          mobileNav.hidden=true;
+          if(menu)menu.setAttribute('aria-expanded','false');
+        });
+      });
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLamButtonInteractions,{once:true});
+  else initLamButtonInteractions();
+})();
+</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
