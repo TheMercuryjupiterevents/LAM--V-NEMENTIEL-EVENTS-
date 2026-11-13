@@ -11644,3 +11644,60 @@ html body main#accueil section#lam-hero.hero .eyebrow{
   -webkit-text-fill-color:#FFFFFF!important;
 }
 </style>
+
+
+<script id="lam-complete-section-order-2026-11-13">
+/* Ordre éditorial complet du site LAM — conservation des sections et formulaires. */
+(function () {
+  function arrangeLamContent() {
+    var main = document.querySelector('main');
+    if (!main) return;
+    var sections = Array.prototype.filter.call(main.children, function (el) {
+      return el.tagName === 'SECTION';
+    });
+    function byId(id) {
+      return sections.find(function (el) { return el.id === id; });
+    }
+    function byHeading(phrase) {
+      return sections.find(function (el) {
+        var heading = el.querySelector('h2');
+        return heading && heading.textContent.trim().toLocaleUpperCase().indexOf(phrase) !== -1;
+      });
+    }
+    var ordered = [
+      byId('lam-hero'),
+      byId('apropos'),
+      byId('presentation'),
+      byHeading('CHAQUE DÉTAIL A SA PLACE'),
+      byId('services'),
+      byId('departements'),
+      byHeading('UN PROJET UNIQUE'),
+      byId('formules'),
+      byHeading('UNE MÉTHODE CLAIRE'),
+      byId('experience'),
+      byId('experiences-signature'),
+      byId('vision2040'),
+      byId('formulaire'),
+      byId('cartes-invitation-mariage'),
+      byId('contrat-mariage-lam'),
+      byId('partenariats'),
+      byId('recrutement'),
+      byId('avis-clients-tmje'),
+      byId('galerie'),
+      byId('budget-estimateur'),
+      byId('faq'),
+      byId('outils-clients'),
+      byId('apres-demande'),
+      byId('contact')
+    ].filter(Boolean);
+    var seen = new Set(ordered);
+    var remaining = sections.filter(function (el) { return !seen.has(el); });
+    ordered.concat(remaining).forEach(function (el) { main.appendChild(el); });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', arrangeLamContent);
+  } else {
+    arrangeLamContent();
+  }
+})();
+</script>
