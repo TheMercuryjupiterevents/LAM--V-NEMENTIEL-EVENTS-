@@ -2502,6 +2502,46 @@ main>section:not([id]){display:none!important}
 }
 </style>
 
+
+<style id="lam-animation-letter-colors-final-20261113">
+/* Animation officielle LAM : L rouge vif, A jaune, M rouge vif */
+#lam-hero .lam-formed-word .lam-letter{
+  display:inline-block!important;
+  opacity:1!important;
+  -webkit-text-fill-color:currentColor!important;
+  animation:lamLetterReveal2026 .8s cubic-bezier(.2,.75,.25,1) both,
+            lamLetterGlow2026 3.2s ease-in-out 1s infinite!important;
+}
+#lam-hero .lam-formed-word .lam-letter-l{
+  color:#F00018!important;
+  -webkit-text-fill-color:#F00018!important;
+  animation-delay:0s,1s!important;
+}
+#lam-hero .lam-formed-word .lam-letter-a{
+  color:#FFD400!important;
+  -webkit-text-fill-color:#FFD400!important;
+  animation-delay:.18s,1.18s!important;
+}
+#lam-hero .lam-formed-word .lam-letter-m{
+  color:#F00018!important;
+  -webkit-text-fill-color:#F00018!important;
+  animation-delay:.36s,1.36s!important;
+}
+@keyframes lamLetterReveal2026{
+  from{opacity:0;transform:translateY(16px) scale(.92)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+@keyframes lamLetterGlow2026{
+  0%,100%{filter:drop-shadow(0 0 0 rgba(0,0,0,0))}
+  50%{filter:drop-shadow(0 2px 7px rgba(240,0,24,.18))}
+}
+@media(prefers-reduced-motion:reduce){
+  #lam-hero .lam-formed-word .lam-letter{
+    animation:none!important;opacity:1!important;transform:none!important;filter:none!important
+  }
+}
+</style>
+
 </head>
 <body>
 
