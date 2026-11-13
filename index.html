@@ -6383,6 +6383,54 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+
+<style id="lam-animation-letters-red-yellow-red-final">
+#lam-hero .lam-formed-word .lam-letter-l,
+#welcome-intro .welcome-brand strong .lam-intro-l{
+  color:#F00018!important;-webkit-text-fill-color:#F00018!important;
+}
+#lam-hero .lam-formed-word .lam-letter-a,
+#welcome-intro .welcome-brand strong .lam-intro-a{
+  color:#FFD400!important;-webkit-text-fill-color:#FFD400!important;
+}
+#lam-hero .lam-formed-word .lam-letter-m,
+#welcome-intro .welcome-brand strong .lam-intro-m{
+  color:#F00018!important;-webkit-text-fill-color:#F00018!important;
+}
+#welcome-intro .welcome-brand strong .lam-intro-letter{
+  display:inline-block!important;animation:lamIntroLetterReveal .65s ease both;
+}
+#welcome-intro .welcome-brand strong .lam-intro-a{animation-delay:.14s}
+#welcome-intro .welcome-brand strong .lam-intro-m{animation-delay:.28s}
+@keyframes lamIntroLetterReveal{
+  from{opacity:0;transform:translateY(9px) scale(.92)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+</style>
+<script id="lam-animation-letter-wrap-final">
+(function(){
+  function colorLAM(){
+    document.querySelectorAll('#welcome-intro .welcome-brand strong').forEach(function(node){
+      if(node.dataset.lamColorized==='yes')return;
+      if(node.textContent.trim().toUpperCase()!=='LAM')return;
+      node.textContent='';
+      [['L','lam-intro-l'],['A','lam-intro-a'],['M','lam-intro-m']].forEach(function(item){
+        var span=document.createElement('span');
+        span.className='lam-intro-letter '+item[1];
+        span.textContent=item[0];
+        node.appendChild(span);
+      });
+      node.dataset.lamColorized='yes';
+    });
+  }
+  colorLAM();
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',colorLAM);
+  if(document.body&&window.MutationObserver){
+    new MutationObserver(colorLAM).observe(document.body,{childList:true,subtree:true});
+  }
+})();
+</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
