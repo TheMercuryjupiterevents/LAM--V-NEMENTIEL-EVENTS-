@@ -4467,6 +4467,20 @@ document.addEventListener('click',function(event){
 
 
 
+
+<section class="section alt" id="informations-legales" aria-labelledby="lam-legal-title">
+  <div class="wrap legal-content">
+    <div class="eyebrow">Informations clients</div>
+    <h2 id="lam-legal-title">INFORMATIONS LÉGALES &amp; CONFIDENTIALITÉ</h2>
+    <h3>Utilisation des informations transmises</h3>
+    <p>Les informations envoyées à LAM ÉVÉNEMENTIEL &amp; EVENTS au moyen des formulaires, par email ou par WhatsApp servent à étudier les demandes, préparer les propositions et communiquer avec les personnes concernées.</p>
+    <h3>Demandes et formulaires</h3>
+    <p>Veuillez transmettre uniquement les renseignements nécessaires à votre projet. Pour les demandes concernant des enfants, le parent ou tuteur légal doit remplir le formulaire prévu à cet effet.</p>
+    <h3>Contact</h3>
+    <p>Pour toute question concernant une demande ou les informations communiquées, contactez LAM ÉVÉNEMENTIEL &amp; EVENTS à <a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a> ou au <a href="https://wa.me/50937469553">+509 3746-9553 sur WhatsApp</a>.</p>
+  </div>
+</section>
+
 <section class="section payment-policy-section" id="paiement" aria-labelledby="payment-policy-title">
   <div class="wrap">
     <div class="section-head">
@@ -6312,6 +6326,20 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();
+})();
+</script>
+
+
+<script id="lam-all-buttons-skip-intro-fix">
+(function(){
+  document.addEventListener('click',function(event){
+    var skip=event.target.closest('.lam-skip');
+    if(!skip)return;
+    ['lam-3d-welcome','welcome-intro'].forEach(function(id){
+      var intro=document.getElementById(id);
+      if(intro){intro.classList.add('is-hidden');intro.remove();}
+    });
+  });
 })();
 </script>
 
