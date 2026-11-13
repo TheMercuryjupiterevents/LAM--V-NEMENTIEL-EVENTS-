@@ -11649,14 +11649,16 @@ html body main#accueil section#lam-hero.hero .eyebrow{
 <script id="lam-complete-section-order-2026-11-13">
 (function(){
  function arrange(){
-  var main=document.querySelector('main'); if(!main)return;
+  var main=document.querySelector('main');if(!main)return;
   var sections=Array.prototype.filter.call(main.children,function(el){return el.tagName==='SECTION'});
   function byId(id){return sections.find(function(el){return el.id===id})}
   function byHeading(phrase){return sections.find(function(el){var h=el.querySelector('h1,h2');return h&&h.textContent.trim().toLocaleUpperCase().indexOf(phrase)!==-1})}
   var order=[
    byId('lam-hero'),byId('apropos'),byId('presentation'),
-   byHeading('CHAQUE DÉTAIL A SA PLACE'),byId('services'),byId('departements'),
-   byHeading('UN PROJET UNIQUE'),byId('formules'),byHeading('UNE MÉTHODE CLAIRE'),
+   byHeading('CHAQUE DÉTAIL A SA PLACE'),
+   byId('services'),byId('departements'),
+   byHeading('UN PROJET UNIQUE'),byId('formules'),
+   byHeading('UNE MÉTHODE CLAIRE'),
    byId('experience'),byId('experiences-signature'),byId('vision2040'),
    byId('galerie'),byId('avis-clients-tmje'),
    byId('formulaire'),byId('lam-couture'),byId('lam-kids-form'),
@@ -11668,46 +11670,8 @@ html body main#accueil section#lam-hero.hero .eyebrow{
   var used=new Set(order);
   sections.filter(function(el){return !used.has(el)}).forEach(function(el){order.push(el)});
   order.forEach(function(el){main.appendChild(el)});
-  var hero=byId('lam-hero');
-  if(hero)hero.querySelectorAll('.hero-event-label').forEach(function(el){if(/HAY\s*TI/i.test(el.textContent||''))el.textContent='HAYTI'});
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',arrange);else arrange();
 })();
 </script>
-<style id="lam-luxury-editorial-structure-2026-11-13">
-:root{--lam-ivory:#FBF8F1;--lam-champagne:#C9A96E;--lam-ink:#342D28}
-html{scroll-behavior:smooth}
-main#accueil>section:not(#lam-hero){position:relative;padding-block:clamp(44px,7vw,92px)!important;scroll-margin-top:88px}
-main#accueil>section:not(#lam-hero)>.wrap{width:min(100% - 44px,1120px)!important;margin-inline:auto!important}
-main#accueil>section:not(#lam-hero) h2{max-width:900px;margin:0 auto clamp(18px,2.8vw,30px)!important;color:var(--lam-ink);font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,4vw,3.05rem)!important;font-weight:500!important;line-height:1.12!important;letter-spacing:.025em;text-wrap:balance}
-main#accueil>section:not(#lam-hero) h2:after{content:"";display:block;width:54px;height:1px;margin:18px auto 0;background:var(--lam-champagne)}
-main#accueil>section:not(#lam-hero) p{line-height:1.8}
-main#accueil>section:not(#lam-hero) .eyebrow,main#accueil>section:not(#lam-hero) .section-kicker{color:#9B7A45!important;letter-spacing:.18em!important;text-transform:uppercase;font-size:.72rem!important}
-main#accueil>section:not(#lam-hero) .wrap>p,main#accueil>section:not(#lam-hero) .wrap>.lead{max-width:760px;margin-inline:auto}
-main#accueil>section:nth-of-type(even):not(#lam-hero){background:linear-gradient(180deg,#FCFAF5 0%,#F8F3EA 100%)!important}
-main#accueil>section:nth-of-type(odd):not(#lam-hero){background:#FFFDFC!important}
-main#accueil>section:not(#lam-hero) hr{border:0;border-top:1px solid rgba(201,169,110,.35)}
-@media(max-width:680px){main#accueil>section:not(#lam-hero){padding-block:38px!important}main#accueil>section:not(#lam-hero)>.wrap{width:calc(100% - 32px)!important}main#accueil>section:not(#lam-hero) h2{font-size:1.65rem!important}}
-</style>
-<style id="lam-mobile-layout-repair-2026-11-13">
-/* Mobile: restore a clear first-screen hierarchy and keep floating contact controls off the text */
-html,body{overflow-x:hidden!important}
-body{scroll-padding-top:88px}
-header,nav{z-index:1000}
-main#accueil{display:block!important}
-main#accueil>#lam-hero{order:-1;display:block!important;margin:0!important}
-main#accueil>section:not(#lam-hero){clear:both;position:relative}
-@media(max-width:680px){
- main#accueil>#lam-hero{padding-top:0!important}
- main#accueil>#lam-hero>.wrap.hero-grid{padding-top:10px!important;padding-bottom:26px!important}
- main#accueil>section:not(#lam-hero){padding-top:34px!important;padding-bottom:38px!important}
- main#accueil>section:not(#lam-hero)>.wrap{max-width:100%!important}
- /* Give floating WhatsApp/contact controls their own safe area */
- a[href*="wa.me"].whatsapp-float,
- .whatsapp-float,.whatsapp-button,.floating-whatsapp,#whatsapp-float{
-  bottom:calc(18px + env(safe-area-inset-bottom))!important;
-  right:14px!important;max-width:calc(100vw - 28px)!important;
-  z-index:900!important
- }
-}
-</style>
+
