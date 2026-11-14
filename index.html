@@ -4088,20 +4088,27 @@ main>section:not([id]){display:none!important}
 </div>
 <div class="form-section">
 <h3>05 — Validation et signature électronique</h3>
-<p class="small">Veuillez saisir votre nom complet, puis tracer votre signature dans l'espace prévu avec votre doigt ou votre souris.</p>
-<div class="field"><label for="lamCandidateSignatureName">Nom complet du signataire *</label><input id="lamCandidateSignatureName" name="Nom complet du signataire" required maxlength="160" autocomplete="name"></div>
-<div class="signature-box" style="margin-top:14px">
-<label for="lamRecruitSignature">Votre signature électronique *</label>
-<canvas id="lamRecruitSignature" width="900" height="260" aria-label="Zone de signature électronique"></canvas>
-<div class="signature-actions"><button type="button" id="lamRecruitClearSignature">Effacer la signature</button></div>
-<input type="file" id="lamRecruitSignatureFile" name="Signature électronique" accept="image/jpeg" hidden>
-<p class="small" style="margin:10px 0 0">La signature tracée sera jointe à votre candidature sous forme d'image numérique.</p>
+<p class="small">Veuillez saisir votre nom complet, puis créer ou tracer votre signature dans l’espace prévu avec votre doigt ou votre souris.</p>
+<div class="lam-electronic-signature" style="margin-top:18px">
+  <div class="field"><label for="lamRecruitSignerName">Nom complet du signataire *</label><input id="lamRecruitSignerName" name="Nom complet du signataire" required maxlength="160" autocomplete="name" placeholder="Nom et prénom"></div>
+  <div class="lam-signature-direct-tools">
+    <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+    <div class="lam-signature-direct-row">
+      <select class="lam-direct-style" aria-label="Style de signature"><option value="script">Plume élégante</option><option value="classic">Classique</option><option value="formal">Raffinée</option><option value="modern">Moderne</option></select>
+      <select class="lam-direct-color" aria-label="Couleur de signature"><option value="#172b63">Bleu encre</option><option value="#171717">Noir</option></select>
+    </div>
+    <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+    <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+  </div>
+  <label for="lamRecruitSignatureCanvas" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
+  <canvas id="lamRecruitSignatureCanvas" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
+  <input type="hidden" name="Signature électronique (dessin)" id="lamRecruitSignatureData">
+  <button type="button" class="btn" data-clear-lam-signature="recruit" style="margin-top:8px">Effacer la signature</button>
+  <p class="small">La signature sera jointe à votre candidature sous forme d’image numérique.</p>
 </div>
 <label class="partnership-consent"><input type="checkbox" name="Exactitude des informations" value="Je certifie que les informations fournies sont exactes." required><span>Je certifie que les informations fournies sont exactes. *</span></label>
 <label class="partnership-consent"><input type="checkbox" name="Consentement traitement candidature" value="J'accepte que LAM utilise les informations transmises pour étudier ma candidature et me contacter." required><span>J'accepte que LAM utilise les informations transmises pour étudier ma candidature et me contacter. *</span></label>
-<p class="privacy-note">La signature confirme la soumission de votre candidature et vos déclarations ci-dessus. Elle ne constitue pas un contrat de travail ni une promesse d'embauche.</p>
-</div>
-<button class="btn primary" type="submit">ENVOYER MA CANDIDATURE</button>
+<p class="privacy-note">La signature confirme la soumission de votre candidature et vos déclarations ci-dessus. Elle ne constitue pas un contrat de travail ni une promesse d'embauche.<button class="btn primary" type="submit">ENVOYER MA CANDIDATURE</button>
 <p class="small" style="margin:14px 0 0">Un accusé de réception sera envoyé à l'adresse e-mail indiquée après la transmission du formulaire.</p>
 </form>
 </div>
