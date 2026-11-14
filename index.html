@@ -11991,6 +11991,55 @@ html body label:has(input[type="checkbox"]){
 .lam-electronic-signature canvas{touch-action:none}
 @media(max-width:600px){.lam-signature-pen-tools{gap:10px}.lam-signature-style-select{flex:1;min-width:130px}.lam-signature-preview-btn{width:100%}}
 </style>
+
+<script id="lam-typed-signature-20261114">
+(function(){
+ 'use strict';
+ function init(){
+  document.querySelectorAll('.lam-electronic-signature').forEach(function(box){
+   if(box.dataset.lamTypedReady==='1')return;
+   var canvas=box.querySelector('canvas');if(!canvas)return;
+   var name=box.querySelector('input[name="Nom complet du signataire"],input[autocomplete="name"]');
+   var form=canvas.closest('form');
+   var suffix=(canvas.id.match(/(\\d+)$/)||[])[1]||'';
+   var hidden=(form&&form.querySelector('#lamSignatureData'+suffix))||box.querySelector('input[type="hidden"]');
+   box.dataset.lamTypedReady='1';
+   var panel=document.createElement('div');panel.className='lam-typed-signature-panel';
+   var title=document.createElement('p');title.className='lam-typed-title';title.textContent='OU CRÉEZ VOTRE SIGNATURE AVEC VOTRE NOM';
+   var controls=document.createElement('div');controls.className='lam-typed-controls';
+   var style=document.createElement('select');style.setAttribute('aria-label','Choisir un style de signature');
+   [['script','Plume élégante'],['classic','Classique'],['formal','Signature raffinée'],['modern','Moderne']].forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=x[1];style.appendChild(o)});
+   var color=document.createElement('select');color.setAttribute('aria-label','Choisir la couleur de la signature');
+   [['#172b63','Bleu encre'],['#171717','Noir']].forEach(function(x){var o=document.createElement('option');o.value=x[0];o.textContent=x[1];color.appendChild(o)});
+   var make=document.createElement('button');make.type='button';make.className='lam-typed-create';make.textContent='Créer ma signature';
+   controls.append(style,color,make);panel.append(title,controls);
+   canvas.parentNode.insertBefore(panel,canvas);
+   make.addEventListener('click',function(){
+    var value=name?name.value.trim():'';
+    if(!value){if(name)name.focus();title.textContent='Veuillez écrire votre nom complet dans le champ ci-dessus.';return;}
+    var ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;
+    ctx.clearRect(0,0,w,h);ctx.fillStyle=color.value;ctx.textAlign='center';ctx.textBaseline='middle';
+    var families={script:'"Snell Roundhand","Segoe Script","Brush Script MT",cursive',classic:'"Apple Chancery","URW Chancery L","Brush Script MT",cursive',formal:'"Palatino Linotype","Book Antiqua",cursive',modern:'"Segoe Script","Lucida Handwriting",cursive'};
+    var fontSize=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));
+    ctx.font=(style.value==='modern'?'italic ':'')+fontSize+'px '+families[style.value];
+    ctx.fillText(value,w/2,h*.49,w-48);
+    ctx.strokeStyle=color.value;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.25,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.78,h*.68);ctx.stroke();
+    if(hidden)hidden.value=canvas.toDataURL('image/png');
+    title.textContent='Votre signature est prête. Vous pouvez changer de style ou de couleur.';
+   });
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<style id="lam-typed-signature-style">
+.lam-typed-signature-panel{margin:14px 0 12px;padding:14px;border:1px solid #d9c9ad;border-radius:10px;background:#fffdf8}
+.lam-typed-title{margin:0 0 10px;color:#9b7a43;font-size:.78rem;font-weight:700;letter-spacing:.045em;line-height:1.5}
+.lam-typed-controls{display:flex;flex-wrap:wrap;gap:9px}
+.lam-typed-controls select{min-height:42px;flex:1 1 125px;min-width:0;padding:8px 10px;border:1px solid #cbb995;border-radius:7px;background:white;color:#29231e;font-size:.85rem}
+.lam-typed-create{min-height:42px;flex:1 1 100%;padding:10px 14px;border:0;border-radius:7px;background:#f5c400;color:#171717;font-weight:700;cursor:pointer}
+@media(min-width:600px){.lam-typed-create{flex:0 1 auto}}
+</style>
 </body></html>');
         popup.document.close();
         message('Fenêtre PDF ouverte : choisissez « Enregistrer en PDF » dans les options d’impression.',true);
