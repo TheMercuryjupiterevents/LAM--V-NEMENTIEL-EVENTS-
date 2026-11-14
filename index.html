@@ -12232,67 +12232,7 @@ html body label:has(input[type="checkbox"]){
 
 
 
-<style id="lam-whatsapp-form-actions-style">
-.lam-form-send-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 4px}
-.lam-form-send-options .lam-send-whatsapp{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:13px 16px;border:1px solid #17834b;border-radius:3px;background:#17834b;color:#fff;font-weight:800;font-size:.76rem;letter-spacing:.045em;text-align:center;cursor:pointer}
-.lam-form-send-options .lam-send-whatsapp:hover{background:#116b3c}
-.lam-form-send-options .lam-send-email-note{grid-column:1/-1;margin:0;color:#766b5e;font-size:.76rem;line-height:1.5}
-@media(max-width:640px){.lam-form-send-options{grid-template-columns:1fr}.lam-form-send-options .lam-send-whatsapp{width:100%}}
-</style>
-<script id="lam-send-forms-email-whatsapp-20261114">
-(function(){
- 'use strict';
- var WA_NUMBER='50937469553';
- function clean(v){return String(v||'').replace(/\\s+/g,' ').trim();}
- function fieldLabel(el){
-   var labels=el.labels?Array.from(el.labels).map(function(x){return clean(x.textContent)}).filter(Boolean):[];
-   return labels[0]||clean(el.getAttribute('aria-label'))||clean(el.getAttribute('placeholder'))||clean(el.name)||'Information';
- }
- function init(){
-   document.querySelectorAll('form[action*="formsubmit.co/infolamevenementiels@gmail.com"]').forEach(function(form){
-     if(form.dataset.lamSendOptionsReady==='1')return;
-     form.dataset.lamSendOptionsReady='1';
-     var actions=document.createElement('div');
-     actions.className='lam-form-send-options';
-     var wa=document.createElement('button');
-     wa.type='button';wa.className='lam-send-whatsapp';
-     wa.innerHTML='<span aria-hidden="true">✆</span> ENVOYER PAR WHATSAPP';
-     wa.addEventListener('click',function(){
-       if(!form.reportValidity())return;
-       var subject=form.querySelector('input[name="_subject"]');
-       var lines=['Bonjour LAM ÉVÉNEMENTIEL & EVENTS,','Je souhaite envoyer ma demande via le formulaire en ligne.'];
-       if(subject&&clean(subject.value))lines.push('',clean(subject.value));
-       var seen={};
-       Array.from(form.elements).forEach(function(el){
-         if(!el.name||el.disabled||['_subject','_captcha','_template','_next','_autoresponse','_honey'].includes(el.name))return;
-         var type=(el.type||'').toLowerCase();
-         if(['submit','button','reset','file','password'].includes(type)||type==='hidden')return;
-         if((type==='checkbox'||type==='radio')&&!el.checked)return;
-         var value=type==='select-multiple'?Array.from(el.selectedOptions).map(function(o){return clean(o.textContent)}).join(', '):clean(el.value);
-         if(!value)return;
-         var label=fieldLabel(el);
-         var key=label+'|'+value;
-         if(seen[key])return;
-         seen[key]=true;
-         lines.push(label+': '+value);
-       });
-       var files=Array.from(form.querySelectorAll('input[type="file"]')).filter(function(el){return el.files&&el.files.length;});
-       if(files.length)lines.push('','Pièces jointes : je les enverrai séparément dans cette conversation WhatsApp.');
-       lines.push('','Merci.');
-       var url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
-       var opened=window.open(url,'_blank','noopener,noreferrer');
-       if(!opened)window.location.href=url;
-     });
-     var note=document.createElement('p');
-     note.className='lam-send-email-note';
-     note.textContent='Vous pouvez aussi envoyer ce formulaire par e-mail avec le bouton « Envoyer » ci-dessus. Pour WhatsApp, vérifiez le message prérempli puis appuyez sur Envoyer dans WhatsApp.';
-     actions.append(wa,note);
-     form.appendChild(actions);
-   });
- }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
-</script>
+
 
 </body></html>');
         popup.document.close();
@@ -12378,5 +12318,66 @@ html body label:has(input[type="checkbox"]){
 .lam-typed-create{min-height:42px;flex:1 1 100%;padding:10px 14px;border:0;border-radius:7px;background:#f5c400;color:#171717;font-weight:700;cursor:pointer}
 @media(min-width:600px){.lam-typed-create{flex:0 1 auto}}
 </style>
+<style id="lam-whatsapp-form-actions-style">
+.lam-form-send-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0 4px}
+.lam-form-send-options .lam-send-whatsapp{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:13px 16px;border:1px solid #17834b;border-radius:3px;background:#17834b;color:#fff;font-weight:800;font-size:.76rem;letter-spacing:.045em;text-align:center;cursor:pointer}
+.lam-form-send-options .lam-send-whatsapp:hover{background:#116b3c}
+.lam-form-send-options .lam-send-email-note{grid-column:1/-1;margin:0;color:#766b5e;font-size:.76rem;line-height:1.5}
+@media(max-width:640px){.lam-form-send-options{grid-template-columns:1fr}.lam-form-send-options .lam-send-whatsapp{width:100%}}
+</style>
+<script id="lam-send-forms-email-whatsapp-20261114">
+(function(){
+ 'use strict';
+ var WA_NUMBER='50937469553';
+ function clean(v){return String(v||'').replace(/\\s+/g,' ').trim();}
+ function fieldLabel(el){
+   var labels=el.labels?Array.from(el.labels).map(function(x){return clean(x.textContent)}).filter(Boolean):[];
+   return labels[0]||clean(el.getAttribute('aria-label'))||clean(el.getAttribute('placeholder'))||clean(el.name)||'Information';
+ }
+ function init(){
+   document.querySelectorAll('form[action*="formsubmit.co/infolamevenementiels@gmail.com"]').forEach(function(form){
+     if(form.dataset.lamSendOptionsReady==='1')return;
+     form.dataset.lamSendOptionsReady='1';
+     var actions=document.createElement('div');
+     actions.className='lam-form-send-options';
+     var wa=document.createElement('button');
+     wa.type='button';wa.className='lam-send-whatsapp';
+     wa.innerHTML='<span aria-hidden="true">✆</span> ENVOYER PAR WHATSAPP';
+     wa.addEventListener('click',function(){
+       if(!form.reportValidity())return;
+       var subject=form.querySelector('input[name="_subject"]');
+       var lines=['Bonjour LAM ÉVÉNEMENTIEL & EVENTS,','Je souhaite envoyer ma demande via le formulaire en ligne.'];
+       if(subject&&clean(subject.value))lines.push('',clean(subject.value));
+       var seen={};
+       Array.from(form.elements).forEach(function(el){
+         if(!el.name||el.disabled||['_subject','_captcha','_template','_next','_autoresponse','_honey'].includes(el.name))return;
+         var type=(el.type||'').toLowerCase();
+         if(['submit','button','reset','file','password'].includes(type)||type==='hidden')return;
+         if((type==='checkbox'||type==='radio')&&!el.checked)return;
+         var value=type==='select-multiple'?Array.from(el.selectedOptions).map(function(o){return clean(o.textContent)}).join(', '):clean(el.value);
+         if(!value)return;
+         var label=fieldLabel(el);
+         var key=label+'|'+value;
+         if(seen[key])return;
+         seen[key]=true;
+         lines.push(label+': '+value);
+       });
+       var files=Array.from(form.querySelectorAll('input[type="file"]')).filter(function(el){return el.files&&el.files.length;});
+       if(files.length)lines.push('','Pièces jointes : je les enverrai séparément dans cette conversation WhatsApp.');
+       lines.push('','Merci.');
+       var url='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'));
+       var opened=window.open(url,'_blank','noopener,noreferrer');
+       if(!opened)window.location.href=url;
+     });
+     var note=document.createElement('p');
+     note.className='lam-send-email-note';
+     note.textContent='Vous pouvez aussi envoyer ce formulaire par e-mail avec le bouton « Envoyer » ci-dessus. Pour WhatsApp, vérifiez le message prérempli puis appuyez sur Envoyer dans WhatsApp.';
+     actions.append(wa,note);
+     form.appendChild(actions);
+   });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </body>
 </html>
