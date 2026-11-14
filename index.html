@@ -11927,7 +11927,71 @@ html body label:has(input[type="checkbox"]){
         var safeName=signer.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});
         var image=data();
         popup.document.open();
-        popup.document.write('<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Signature électronique LAM</title><style>body{font-family:Arial,sans-serif;color:#211c1d;padding:36px;max-width:760px;margin:auto}h1{font-family:Georgia,serif} .line{border-top:1px solid #c9a875;margin:24px 0}img{display:block;width:100%;max-width:620px;height:180px;object-fit:contain;border:1px solid #ddd;background:white}small{color:#665b5d}@media print{button{display:none}}</style></head><body><h1>LAM ÉVÉNEMENTIEL &amp; EVENTS</h1><h2>Signature électronique</h2><p><strong>Signataire :</strong> '+safeName+'</p><p><strong>Date :</strong> '+new Date().toLocaleString('fr-FR')+'</p><div class="line"></div><p>Signature :</p><img src="'+image+'" alt="Signature du signataire"><p><small>Document de preuve de signature généré depuis le formulaire LAM. Conservez également le contrat correspondant.</small></p><button onclick="window.print()">Imprimer / Enregistrer en PDF</button><script>window.onload=function(){setTimeout(function(){window.print()},300)};<\/script></body></html>');
+        popup.document.write('<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Signature électronique LAM</title><style>body{font-family:Arial,sans-serif;color:#211c1d;padding:36px;max-width:760px;margin:auto}h1{font-family:Georgia,serif} .line{border-top:1px solid #c9a875;margin:24px 0}img{display:block;width:100%;max-width:620px;height:180px;object-fit:contain;border:1px solid #ddd;background:white}small{color:#665b5d}@media print{button{display:none}}</style></head><body><h1>LAM ÉVÉNEMENTIEL &amp; EVENTS</h1><h2>Signature électronique</h2><p><strong>Signataire :</strong> '+safeName+'</p><p><strong>Date :</strong> '+new Date().toLocaleString('fr-FR')+'</p><div class="line"></div><p>Signature :</p><img src="'+image+'" alt="Signature du signataire"><p><small>Document de preuve de signature généré depuis le formulaire LAM. Conservez également le contrat correspondant.</small></p><button onclick="window.print()">Imprimer / Enregistrer en PDF</button><script>window.onload=function(){setTimeout(function(){window.print()},300)};<\/script>
+<script id="lam-signature-pen-styles-20261114">
+(function(){
+ 'use strict';
+ function init(){
+  document.querySelectorAll('.lam-electronic-signature').forEach(function(box){
+   if(box.dataset.lamPenStylesReady==='1')return;
+   var canvas=box.querySelector('canvas');if(!canvas)return;
+   box.dataset.lamPenStylesReady='1';
+   var ctx=canvas.getContext('2d');
+   var tools=document.createElement('div');tools.className='lam-signature-pen-tools';
+   var heading=document.createElement('p');heading.className='lam-signature-tools-title';heading.textContent='CHOISISSEZ VOTRE PLUME';
+   var colors=document.createElement('div');colors.className='lam-signature-colors';
+   var selected='#172b63';
+   [{value:'#172b63',label:'Bleu encre'},{value:'#171717',label:'Noir'}].forEach(function(item){
+    var b=document.createElement('button');b.type='button';b.className='lam-signature-color';b.setAttribute('aria-label',item.label);b.title=item.label;b.style.setProperty('--pen-color',item.value);
+    if(item.value===selected)b.classList.add('is-selected');
+    b.addEventListener('click',function(){selected=item.value;colors.querySelectorAll('button').forEach(function(x){x.classList.remove('is-selected')});b.classList.add('is-selected');ctx.strokeStyle=selected;ctx.fillStyle=selected;});
+    colors.appendChild(b);
+   });
+   var label=document.createElement('label');label.className='lam-signature-style-label';label.textContent='Style de signature';
+   var select=document.createElement('select');select.className='lam-signature-style-select';
+   [['hand','Écriture à la main'],['classic','Classique élégante'],['flourish','Plume raffinée'],['modern','Moderne fluide']].forEach(function(item){var o=document.createElement('option');o.value=item[0];o.textContent=item[1];select.appendChild(o)});
+   var preview=document.createElement('button');preview.type='button';preview.className='lam-signature-preview-btn';preview.textContent='Créer avec mon nom';
+   var hint=document.createElement('small');hint.className='lam-signature-pen-hint';hint.textContent='Vous pouvez signer à la main avec votre doigt ou choisir une écriture stylisée à partir de votre nom.';
+   tools.append(heading,colors,label,select,preview,hint);
+   canvas.parentNode.insertBefore(tools,canvas);
+   canvas.addEventListener('pointerdown',function(){ctx.strokeStyle=selected;ctx.fillStyle=selected;},true);
+   preview.addEventListener('click',function(){
+    var form=canvas.closest('form');
+    var name=(form&&form.querySelector('input[name="Nom complet du signataire"],input[autocomplete="name"]'))||box.querySelector('input');
+    var value=name?name.value.trim():'';
+    if(!value){if(name)name.focus();hint.textContent='Saisissez d’abord le nom complet du signataire.';return;}
+    var dpr=window.devicePixelRatio||1,w=canvas.width,h=canvas.height;
+    ctx.clearRect(0,0,w,h);ctx.fillStyle=selected;textAlign='center';
+    var style=select.value;
+    var families={classic:'"Brush Script MT","Segoe Script",cursive',flourish:'"URW Chancery L","Apple Chancery","Brush Script MT",cursive',modern:'"Segoe Script","Lucida Handwriting",cursive',hand:'cursive'};
+    var size=Math.min(58,Math.max(25,w/(value.length*.62)));
+    ctx.font=(style==='modern'?'italic ':'')+size+'px '+families[style];
+    ctx.textBaseline='middle';ctx.fillText(value,w/2,h/2, w-24);
+    ctx.strokeStyle=selected;ctx.lineWidth=1.2;ctx.beginPath();ctx.moveTo(w*.22,h*.72);ctx.quadraticCurveTo(w*.5,h*.84,w*.78,h*.68);ctx.stroke();
+    canvas.dispatchEvent(new Event('change',{bubbles:true}));
+    var hidden=form&&form.querySelector('#lamSignatureData'+canvas.id.replace('lamSignatureCanvas',''));
+    if(hidden)hidden.value=canvas.toDataURL('image/png');
+    hint.textContent='Signature créée. Vous pouvez changer le style ou signer à la main.';
+   });
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<style id="lam-signature-pen-styles-css">
+.lam-signature-pen-tools{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 12px;padding:13px 15px;border:1px solid #e8dfd2;border-radius:12px;background:#fffdf9}
+.lam-signature-tools-title{width:100%;margin:0;font-size:.7rem;letter-spacing:.13em;font-weight:700;color:#8a6c43}
+.lam-signature-colors{display:flex;gap:10px;align-items:center}
+.lam-signature-color{width:30px;height:30px;border-radius:50%;background:var(--pen-color);border:3px solid #fff;outline:1px solid #c8bcae;cursor:pointer}
+.lam-signature-color.is-selected{outline:2px solid #c49b55;outline-offset:2px}
+.lam-signature-style-label{font-size:.8rem;color:#54483f}
+.lam-signature-style-select{min-height:38px;padding:7px 10px;border:1px solid #d8cbb9;border-radius:7px;background:#fff;color:#292522}
+.lam-signature-preview-btn{min-height:38px;padding:8px 13px;border:1px solid #c49b55;border-radius:7px;background:#f6eddf;color:#45331f;font-size:.75rem;font-weight:700;cursor:pointer}
+.lam-signature-pen-hint{flex-basis:100%;color:#766c63;font-size:.75rem;line-height:1.45}
+.lam-electronic-signature canvas{touch-action:none}
+@media(max-width:600px){.lam-signature-pen-tools{gap:10px}.lam-signature-style-select{flex:1;min-width:130px}.lam-signature-preview-btn{width:100%}}
+</style>
+</body></html>');
         popup.document.close();
         message('Fenêtre PDF ouverte : choisissez « Enregistrer en PDF » dans les options d’impression.',true);
       });
