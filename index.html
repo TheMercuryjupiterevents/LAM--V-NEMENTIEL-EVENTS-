@@ -11961,7 +11961,7 @@ html body label:has(input[type="checkbox"]){
     var value=name?name.value.trim():'';
     if(!value){if(name)name.focus();hint.textContent='Saisissez d’abord le nom complet du signataire.';return;}
     var dpr=window.devicePixelRatio||1,w=canvas.width,h=canvas.height;
-    ctx.clearRect(0,0,w,h);ctx.fillStyle=selected;textAlign='center';
+    ctx.clearRect(0,0,w,h);ctx.fillStyle=selected;ctx.textAlign='center';
     var style=select.value;
     var families={classic:'"Brush Script MT","Segoe Script",cursive',flourish:'"URW Chancery L","Apple Chancery","Brush Script MT",cursive',modern:'"Segoe Script","Lucida Handwriting",cursive',hand:'cursive'};
     var size=Math.min(58,Math.max(25,w/(value.length*.62)));
