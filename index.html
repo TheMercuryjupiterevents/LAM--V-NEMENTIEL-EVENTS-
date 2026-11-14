@@ -5158,7 +5158,12 @@ document.querySelectorAll('button').forEach(function(button){
   if(typed.toLocaleLowerCase()!==candidate.toLocaleLowerCase()){
    e.preventDefault();alert('Le nom du signataire doit correspondre au nom et prénom du candidat.');document.getElementById('lamCandidateSignatureName').focus();return;
   }
-  var dataUrl=canvas.toDataURL('image/jpeg',0.55);\n  var bytes=atob(dataUrl.split(',')[1]),arr=new Uint8Array(bytes.length);\n  for(var i=0;i<bytes.length;i++)arr[i]=bytes.charCodeAt(i);\n  var file=new File([arr],'signature-candidat.jpg',{type:'image/jpeg'});\n  var transfer=new DataTransfer();transfer.items.add(file);\n  document.getElementById('lamRecruitSignatureFile').files=transfer.files;
+  var dataUrl=canvas.toDataURL('image/jpeg',0.55);
+  var bytes=atob(dataUrl.split(',')[1]),arr=new Uint8Array(bytes.length);
+  for(var i=0;i<bytes.length;i++)arr[i]=bytes.charCodeAt(i);
+  var file=new File([arr],'signature-candidat.jpg',{type:'image/jpeg'});
+  var transfer=new DataTransfer();transfer.items.add(file);
+  document.getElementById('lamRecruitSignatureFile').files=transfer.files;
  });
 })();
 </script>
@@ -6589,8 +6594,7 @@ button:disabled{cursor:not-allowed;opacity:.65}
 })();
 </script>
 
-</body>
-</html>
+
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
 <script id="budget-currency-refresh">(function(){var rate=130.5488;document.querySelectorAll("#devis .form-section").forEach(function(section){var currency=section.querySelector("select[name=\"Devise souhaitée\"]"),amount=section.querySelector("select[name=\"Montant du budget souhaité\"]"),exact=section.querySelector("input[name=\"Budget exact disponible\"]");if(!currency||!amount)return;var htg=Array.from(amount.options).map(function(o){return {value:o.value,text:o.text};});function refresh(){var old=amount.value;amount.innerHTML="";var first=new Option("Choisir un montant","");amount.add(first);if(currency.value==="USD"){for(var n=1000;n<=100000;n+=1000){amount.add(new Option("$"+n.toLocaleString("en-US")+" USD (≈ "+Math.round(n*rate).toLocaleString("fr-FR")+" HTG)",n+" USD"));}amount.add(new Option("Autre montant en USD","Autre montant USD"));if(exact)exact.placeholder="Montant exact en USD";}else{htg.slice(1).forEach(function(o){amount.add(new Option(o.text,o.value));});if(exact)exact.placeholder="Montant exact en HTG";}if(Array.from(amount.options).some(function(o){return o.value===old;}))amount.value=old;}currency.addEventListener("change",refresh);refresh();});})();</script>
 
@@ -11820,3 +11824,5 @@ html body input[type=radio]{accent-color:#F5C400!important}
 })();
 </script>
 
+</body>
+</html>
