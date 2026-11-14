@@ -2542,7 +2542,15 @@ main>section:not([id]){display:none!important}
 }
 </style>
 
-</head>
+
+<style id="lam-signature-direct-tools-css">
+.lam-signature-direct-tools{margin:14px 0;padding:14px;border:1px solid #d6c5a7;border-radius:10px;background:#fffdf8}
+.lam-signature-direct-title{margin:0 0 10px;color:#92713f;font-size:.76rem;font-weight:800;letter-spacing:.07em}
+.lam-signature-direct-row{display:flex;gap:9px;flex-wrap:wrap}
+.lam-signature-direct-row select{flex:1 1 130px;min-width:0;min-height:42px;padding:8px;border:1px solid #cbb995;border-radius:7px;background:#fff;color:#29231e}
+.lam-direct-create{width:100%;margin-top:10px;min-height:44px;border:0;border-radius:8px;background:#f5c400;color:#171717;font-weight:800}
+.lam-direct-note{margin:8px 0 0;font-size:.78rem;line-height:1.45;color:#766c63}
+</style></head>
 <body>
 
 
@@ -2926,6 +2934,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName5">Nom complet du signataire *</label><input id="lamSignerName5" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas5" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas5" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData5">
@@ -3038,6 +3063,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName6">Nom complet du signataire *</label><input id="lamSignerName6" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas6" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas6" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData6">
@@ -3145,6 +3187,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName7">Nom complet du signataire *</label><input id="lamSignerName7" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas7" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas7" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData7">
@@ -3225,6 +3284,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName8">Nom complet du signataire *</label><input id="lamSignerName8" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas8" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas8" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData8">
@@ -3345,6 +3421,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName9">Nom complet du signataire *</label><input id="lamSignerName9" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas9" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas9" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData9">
@@ -3395,6 +3488,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName10">Nom complet du signataire *</label><input id="lamSignerName10" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas10" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas10" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData10">
@@ -3555,6 +3665,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName11">Nom complet du signataire *</label><input id="lamSignerName11" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas11" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas11" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData11">
@@ -3621,6 +3748,23 @@ main>section:not([id]){display:none!important}
           
           <div class="lam-electronic-signature" style="margin-top:18px">
             <div class="field"><label for="lamSignerName1">Nom complet du signataire *</label><input id="lamSignerName1" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
             <label for="lamSignatureCanvas1" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
             <canvas id="lamSignatureCanvas1" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
             <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData1">
@@ -3665,6 +3809,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName3">Nom complet du signataire *</label><input id="lamSignerName3" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas3" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas3" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData3">
@@ -3839,6 +4000,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation."><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName4">Nom complet du signataire *</label><input id="lamSignerName4" name="Nom complet du signataire" autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas4" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas4" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData4">
@@ -4051,6 +4229,23 @@ main>section:not([id]){display:none!important}
 
           <div class="lam-electronic-signature" style="margin-top:18px">
             <div class="field"><label for="lamSignerName12">Nom complet du signataire *</label><input id="lamSignerName12" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
             <label for="lamSignatureCanvas12" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
             <canvas id="lamSignatureCanvas12" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
             <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData12">
@@ -4133,6 +4328,23 @@ main>section:not([id]){display:none!important}
   <label class="consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0"><input type="checkbox" name="Acceptation politique de paiement" value="J’ai lu et accepté la politique de réservation et de paiement : acompte de 70 %, solde de 30 % au plus tard 7 jours avant la prestation." required><span>Je confirme avoir lu et accepté la politique de réservation et de paiement. *</span></label>
   <div class="lam-electronic-signature" style="margin-top:18px">
     <div class="field"><label for="lamSignerName14">Nom complet du signataire *</label><input id="lamSignerName14" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
     <label for="lamSignatureCanvas14" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
     <canvas id="lamSignatureCanvas14" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
     <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData14">
@@ -4190,6 +4402,23 @@ main>section:not([id]){display:none!important}
           
           <div class="lam-electronic-signature" style="margin-top:18px">
             <div class="field"><label for="lamSignerName15">Nom complet du signataire *</label><input id="lamSignerName15" name="Nom complet du signataire" required autocomplete="name" placeholder="Nom et prénom"></div>
+<div class="lam-signature-direct-tools">
+  <p class="lam-signature-direct-title">CRÉER UNE SIGNATURE SANS DESSINER</p>
+  <div class="lam-signature-direct-row">
+    <select class="lam-direct-style" aria-label="Style de signature">
+      <option value="script">Plume élégante</option>
+      <option value="classic">Classique</option>
+      <option value="formal">Raffinée</option>
+      <option value="modern">Moderne</option>
+    </select>
+    <select class="lam-direct-color" aria-label="Couleur de signature">
+      <option value="#172b63">Bleu encre</option>
+      <option value="#171717">Noir</option>
+    </select>
+  </div>
+  <button type="button" class="lam-direct-create" onclick="(function(btn){var box=btn.closest('.lam-electronic-signature');var canvas=box.querySelector('canvas');var name=box.querySelector('input[name=&quot;Nom complet du signataire&quot;],input[autocomplete=&quot;name&quot;]');var value=name?name.value.trim():'';var note=box.querySelector('.lam-direct-note');if(!value){if(name)name.focus();note.textContent='Veuillez saisir votre nom complet ci-dessus.';return;}var style=box.querySelector('.lam-direct-style').value;var color=box.querySelector('.lam-direct-color').value;var ctx=canvas.getContext('2d');var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';var fonts={script:'&quot;Snell Roundhand&quot;,&quot;Segoe Script&quot;,&quot;Brush Script MT&quot;,cursive',classic:'&quot;Apple Chancery&quot;,&quot;URW Chancery L&quot;,&quot;Brush Script MT&quot;,cursive',formal:'&quot;Palatino Linotype&quot;,&quot;Book Antiqua&quot;,cursive',modern:'&quot;Segoe Script&quot;,&quot;Lucida Handwriting&quot;,cursive'};var size=Math.min(68,Math.max(30,(w-70)/(value.length*.58)));ctx.font=(style==='modern'?'italic ':'')+size+'px '+fonts[style];ctx.fillText(value,w/2,h*.49,w-48);ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(w*.23,h*.72);ctx.bezierCurveTo(w*.38,h*.86,w*.64,h*.83,w*.79,h*.68);ctx.stroke();var hidden=box.querySelector('input[type=&quot;hidden&quot;]');if(hidden)hidden.value=canvas.toDataURL('image/png');note.textContent='Signature créée. Vérifiez-la avant d’envoyer le formulaire.';})(this)">Créer ma signature</button>
+  <p class="lam-direct-note" aria-live="polite">Écrivez votre nom, choisissez un style et une couleur, puis créez votre signature.</p>
+</div>
             <label for="lamSignatureCanvas15" style="display:block;margin:14px 0 8px;font-weight:700">Signature électronique — signez dans l’espace ci-dessous *</label>
             <canvas id="lamSignatureCanvas15" width="900" height="260" aria-label="Zone de signature électronique obligatoire" style="display:block;width:100%;height:150px;border:1px solid #a99b8e;background:#fff;touch-action:none;cursor:crosshair"></canvas>
             <input type="hidden" name="Signature électronique (dessin)" id="lamSignatureData15">
