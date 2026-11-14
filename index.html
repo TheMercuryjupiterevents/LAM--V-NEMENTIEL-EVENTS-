@@ -11859,5 +11859,107 @@ html body label:has(input[type="checkbox"]){
 })();
 </script>
 
+
+<script id="lam-signature-complete-workflow-20261114">
+(function(){
+  'use strict';
+  function init(){
+    document.querySelectorAll('.lam-electronic-signature').forEach(function(box){
+      if(box.dataset.lamWorkflowReady==='1') return;
+      var canvas=box.querySelector('canvas');
+      if(!canvas) return;
+      box.dataset.lamWorkflowReady='1';
+      var form=canvas.closest('form');
+      var suffix=canvas.id.replace('lamSignatureCanvas','');
+      var nameField=box.querySelector('input[name="Nom complet du signataire"], input[autocomplete="name"]');
+      var hidden=form && form.querySelector('#lamSignatureData'+suffix);
+      var clear=box.querySelector('[data-clear-lam-signature="'+suffix+'"]');
+      var status=document.createElement('p');
+      status.className='lam-signature-status';
+      status.setAttribute('role','status');
+      status.setAttribute('aria-live','polite');
+      status.textContent='Tracez votre signature, puis validez-la.';
+      var actions=document.createElement('div');
+      actions.className='lam-signature-workflow-actions';
+      var validate=document.createElement('button');
+      validate.type='button';validate.className='btn';validate.textContent='Valider la signature';
+      var save=document.createElement('button');
+      save.type='button';save.className='btn';save.textContent='Enregistrer';
+      var download=document.createElement('button');
+      download.type='button';download.className='btn';download.textContent='Télécharger en PDF';
+      actions.append(validate,save,download);
+      box.append(status,actions);
+      var key='lam-signature-'+(canvas.id||'client')+'-'+(location.pathname||'/');
+      var validated=false;
+      function data(){return canvas.toDataURL('image/png');}
+      function hasInk(){
+        try{
+          var blank=document.createElement('canvas');blank.width=canvas.width;blank.height=canvas.height;
+          return data()!==blank.toDataURL('image/png');
+        }catch(e){return false;}
+      }
+      function message(text,ok){
+        status.textContent=text;
+        status.style.color=ok?'#26733b':'#9b2525';
+      }
+      function syncHidden(){if(hidden)hidden.value=data();}
+      validate.addEventListener('click',function(){
+        if(nameField && !nameField.value.trim()){
+          nameField.focus();message('Veuillez saisir le nom complet du signataire.',false);return;
+        }
+        if(!hasInk()){message('Veuillez tracer votre signature avant de la valider.',false);return;}
+        validated=true;syncHidden();message('Signature validée. Vous pouvez l’enregistrer ou envoyer le formulaire.',true);
+      });
+      save.addEventListener('click',function(){
+        if(!hasInk()){message('Tracez votre signature avant de l’enregistrer.',false);return;}
+        try{
+          var record={image:data(),name:nameField?nameField.value.trim():'',savedAt:new Date().toISOString()};
+          localStorage.setItem(key,JSON.stringify(record));
+          syncHidden();message('Signature enregistrée sur cet appareil.',true);
+        }catch(e){message('Enregistrement local indisponible sur cet appareil. Utilisez le téléchargement PDF.',false);}
+      });
+      download.addEventListener('click',function(){
+        if(!hasInk()){message('Tracez votre signature avant de télécharger.',false);return;}
+        syncHidden();
+        var popup=window.open('','_blank');
+        if(!popup){message('Autorisez les fenêtres surgissantes pour créer le PDF.',false);return;}
+        var signer=nameField?nameField.value.trim():'';
+        var safeName=signer.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});
+        var image=data();
+        popup.document.open();
+        popup.document.write('<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Signature électronique LAM</title><style>body{font-family:Arial,sans-serif;color:#211c1d;padding:36px;max-width:760px;margin:auto}h1{font-family:Georgia,serif} .line{border-top:1px solid #c9a875;margin:24px 0}img{display:block;width:100%;max-width:620px;height:180px;object-fit:contain;border:1px solid #ddd;background:white}small{color:#665b5d}@media print{button{display:none}}</style></head><body><h1>LAM ÉVÉNEMENTIEL &amp; EVENTS</h1><h2>Signature électronique</h2><p><strong>Signataire :</strong> '+safeName+'</p><p><strong>Date :</strong> '+new Date().toLocaleString('fr-FR')+'</p><div class="line"></div><p>Signature :</p><img src="'+image+'" alt="Signature du signataire"><p><small>Document de preuve de signature généré depuis le formulaire LAM. Conservez également le contrat correspondant.</small></p><button onclick="window.print()">Imprimer / Enregistrer en PDF</button><script>window.onload=function(){setTimeout(function(){window.print()},300)};<\/script></body></html>');
+        popup.document.close();
+        message('Fenêtre PDF ouverte : choisissez « Enregistrer en PDF » dans les options d’impression.',true);
+      });
+      if(clear) clear.addEventListener('click',function(){
+        validated=false;
+        try{localStorage.removeItem(key);}catch(e){}
+        message('Signature effacée. Vous pouvez recommencer.',true);
+      });
+      if(form) form.addEventListener('submit',function(e){
+        if(!hasInk()){
+          e.preventDefault();e.stopImmediatePropagation();
+          message('Veuillez tracer votre signature avant l’envoi.',false);
+          canvas.scrollIntoView({behavior:'smooth',block:'center'});return;
+        }
+        if(nameField && !nameField.value.trim()){
+          e.preventDefault();e.stopImmediatePropagation();
+          nameField.focus();message('Veuillez saisir le nom complet du signataire.',false);return;
+        }
+        syncHidden();
+      },true);
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
+<style id="lam-signature-workflow-style-20261114">
+.lam-signature-workflow-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.lam-signature-workflow-actions .btn{min-height:42px;padding:10px 15px;font-size:.68rem}
+.lam-signature-status{margin:10px 0 0;font-size:.82rem;line-height:1.5}
+@media(max-width:680px){.lam-signature-workflow-actions{display:grid;grid-template-columns:1fr}.lam-signature-workflow-actions .btn{width:100%}}
+</style>
+
 </body>
 </html>
