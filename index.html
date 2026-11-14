@@ -12262,6 +12262,8 @@ html body label:has(input[type="checkbox"]){
  function init(){
   document.querySelectorAll('.lam-electronic-signature').forEach(function(box){
    if(box.dataset.lamTypedReady==='1')return;
+   /* Les commandes de signature sont déjà intégrées directement dans chaque formulaire. */
+   if(box.querySelector('.lam-signature-direct-tools')){box.dataset.lamTypedReady='1';return;}
    var canvas=box.querySelector('canvas');if(!canvas)return;
    var name=box.querySelector('input[name="Nom complet du signataire"],input[autocomplete="name"]');
    var form=canvas.closest('form');
