@@ -501,6 +501,29 @@ h2::after{content:"";display:block;width:clamp(56px,9vw,100px);height:2px;margin
 .wa{color:var(--lam-text-sky)!important}
 .section.dark,.section.dark p,.section.dark h1,.section.dark h2,.section.dark h3,.section.dark li{color:var(--lam-text-brown)!important}
 
+
+/* LAM — boutons rouge doux */
+.btn,
+button[type="submit"],
+input[type="submit"]{
+  background:#C9787F !important;
+  border-color:#C9787F !important;
+  color:#fff !important;
+  transition:background-color .2s ease,border-color .2s ease,transform .2s ease;
+}
+.btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover{
+  background:#B7656D !important;
+  border-color:#B7656D !important;
+}
+.btn:focus-visible,
+button[type="submit"]:focus-visible,
+input[type="submit"]:focus-visible{
+  outline:3px solid #C9787F55;
+  outline-offset:3px;
+}
+
 </style>
 <style id="tmje-three-form-colors">
 /* Palette commune aux trois formulaires : vert, bleu cobalt et gris */
