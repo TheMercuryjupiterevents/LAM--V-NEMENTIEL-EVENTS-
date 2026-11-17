@@ -2653,6 +2653,7 @@ document.addEventListener('click',function(event){
       <div class="lam-home-event">ÉVÉNEMENTIEL</div>
       <div class="lam-home-events">&amp; EVENTS</div>
       <div class="lam-home-celestial" aria-label="Lune, soleil et étoile"><span>☾</span><span class="sun">☀</span><span>☆</span></div>
+      <div class="lam-home-hayti" aria-label="HAYTI"><span class="hayti-ha">HA</span><span class="hayti-y">Y</span><span class="hayti-ti">TI</span></div>
       <p class="lam-home-slogan">L’ART DE CRÉER DES MOMENTS INOUBLIABLES</p>
       <p class="lead">Nous imaginons, organisons et coordonnons vos événements avec créativité, précision et sens du détail. De la première idée à la réalisation, chaque projet est pensé autour de votre histoire.</p>
       <div class="actions lam-home-actions">
@@ -11445,4 +11446,28 @@ html body .wa{right:12px!important;bottom:12px!important;left:auto!important;wid
  #lam-main-navigation .brand-name{font-size:1.12rem!important;letter-spacing:.09em!important}
  #lam-main-navigation .brand-name small{font-size:8px!important;letter-spacing:.1em!important}
 }
+</style>
+
+
+<style id="lam-hayti-brand-animation-20261117">
+.lam-home-brand h1,.lam-home-event,.lam-home-events,.lam-home-celestial,.lam-home-hayti{animation:lam-brand-arrive .9s cubic-bezier(.2,.75,.25,1) both}
+.lam-home-brand h1{animation-delay:.08s}
+.lam-home-event{animation-delay:.22s}
+.lam-home-events{animation-delay:.34s}
+.lam-home-celestial{animation-delay:.48s}
+.lam-home-hayti{animation-delay:.62s}
+.lam-home-brand .lam-letter-l,.lam-home-brand .lam-letter-m{color:#F00018!important;-webkit-text-fill-color:#F00018!important}
+.lam-home-brand .lam-letter-a{color:#FFD400!important;-webkit-text-fill-color:#FFD400!important}
+.lam-home-event{color:#1748AD!important;-webkit-text-fill-color:#1748AD!important}
+.lam-home-events{color:#F28A00!important;-webkit-text-fill-color:#F28A00!important}
+.lam-home-celestial{gap:22px!important}
+.lam-home-celestial span{display:inline-block;animation:lam-symbol-float 2.8s ease-in-out infinite}
+.lam-home-celestial .sun{animation-delay:.25s;color:#F4C400!important}
+.lam-home-celestial span:last-child{animation-delay:.5s}
+.lam-home-hayti{margin:5px auto 12px!important;font:700 clamp(1.2rem,5vw,1.75rem)/1.1 Arial,sans-serif!important;letter-spacing:.24em!important;text-align:center!important}
+.lam-home-hayti .hayti-ha,.lam-home-hayti .hayti-y{color:#171717!important;-webkit-text-fill-color:#171717!important}
+.lam-home-hayti .hayti-ti{color:#F00018!important;-webkit-text-fill-color:#F00018!important}
+@keyframes lam-brand-arrive{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lam-symbol-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(5deg)}}
+@media(prefers-reduced-motion:reduce){.lam-home-brand h1,.lam-home-event,.lam-home-events,.lam-home-celestial,.lam-home-hayti,.lam-home-celestial span{animation:none!important}}
 </style>
