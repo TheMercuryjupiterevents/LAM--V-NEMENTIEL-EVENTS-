@@ -2553,6 +2553,173 @@ main>section:not([id]){display:none!important}
 <main id="accueil">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div>
+
+<div class="grid grid2" style="margin-top:42px">
+<div style="margin-top:42px">
+<div class="eyebrow">ÉVÉNEMENTS CORPORATIFS</div>
+<h3 style="margin:10px 0 22px">DES RENCONTRES PROFESSIONNELLES BIEN ORCHESTRÉES.</h3>
+<div class="grid grid2">
+<div class="card"><div class="num">01</div><h3>COCKTAIL & RÉCEPTION</h3><p>Des réceptions accueillantes pour vos partenaires, vos équipes et vos invités.</p></div>
+<div class="card"><div class="num">02</div><h3>ACTIVITÉS DE COHÉSION D’ÉQUIPE</h3><p>Des expériences collectives qui encouragent les échanges, la collaboration et la cohésion.</p></div>
+<div class="card"><div class="num">03</div><h3>JOURNÉE D’ENTREPRISE</h3><p>Des journées organisées pour rassembler vos équipes autour d’activités et de moments de partage.</p></div>
+<div class="card"><div class="num">04</div><h3>CONFÉRENCES — UNE OU PLUSIEURS JOURNÉES</h3><p>Une coordination adaptée aux conférences, programmes professionnels et rencontres organisées sur plusieurs journées.</p></div>
+<div class="card"><div class="num">05</div><h3>RÉUNIONS & FORMATIONS</h3><p>Un cadre organisé pour vos réunions, ateliers, formations et séances de travail.</p></div>
+<div class="card"><div class="num">06</div><h3>CÉLÉBRATIONS D’ENTREPRISE</h3><p>Des événements pour célébrer les réussites, remercier vos équipes et renforcer les liens professionnels.</p></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script id="lam-inspiration-form-handler">
+(function(){
+ var form=document.getElementById('lamInspirationForm');
+ if(!form)return;
+ form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!form.reportValidity())return;
+  var labels=[
+   ['Nom','lamInspNom'],['Prénom','lamInspPrenom'],['Adresse e-mail','lamInspEmail'],['Téléphone','lamInspPhone'],
+   ['Type d’événement','lamInspType'],['Date souhaitée','lamInspDate'],['Lieu ou ville','lamInspPlace'],
+   ['Nombre d’invités','lamInspGuests'],['Style souhaité','lamInspStyle'],
+   ['Couleurs préférées','lamInspColors'],['Fleurs souhaitées','lamInspFlowers'],['Décoration souhaitée','lamInspDecor'],['Idées et besoins','lamInspDetails']
+  ];
+  var message='Bonjour LAM ÉVÉNEMENTIEL & EVENTS, je souhaite recevoir des idées pour mon événement.\n\n';
+  labels.forEach(function(item){var el=document.getElementById(item[1]);var value=el?el.value.trim():'';if(value)message+=item[0]+': '+value+'\n';});
+  message+='\nJ’accepte d’être contacté(e) au sujet de cette demande.';
+  window.open('https://wa.me/50937469553?text='+encodeURIComponent(message),'_blank','noopener');
+ });
+})();
+</script>
+
+<script>
+window.showEventForm = function(target){
+  var allowed=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm','minorForm','communionForm'];
+  if(allowed.indexOf(target)===-1) return false;
+  allowed.forEach(function(id){
+    var panel=document.getElementById(id);
+    if(panel) panel.hidden=(id!==target);
+  });
+  document.querySelectorAll('[data-show-form]').forEach(function(button){
+    var active=button.getAttribute('data-show-form')===target;
+    button.classList.toggle('primary',active);    button.setAttribute('aria-pressed',active?'true':'false');
+  });
+  var selected=document.getElementById(target);
+  var status=document.getElementById('formChoiceStatus');  if(status&&selected){
+    var heading=selected.querySelector('h2');
+    status.textContent='Formulaire sélectionné : '+(heading?heading.textContent:'votre demande')+'.';
+  }
+  if(selected){
+    selected.hidden=false;
+    // Show the complete selected form immediately; no extra accordion clicks.
+    selected.querySelectorAll('details').forEach(function(detail){detail.open=true;});
+    selected.scrollIntoView({behavior:'auto',block:'start'});
+  }
+  return false;
+};
+document.addEventListener('click',function(event){
+  var button=event.target.closest('[data-show-form]');
+  if(!button) return;
+  event.preventDefault();
+  window.showEventForm(button.getAttribute('data-show-form'));
+});
+</script>
+
+
+<style id="lam-partnerships-page">
+#partenariats .partnership-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0}
+#partenariats .partnership-type{padding:22px;border:1px solid #aeb4ba66;background:#fff;min-height:180px}
+#partenariats .partnership-type .num{display:block;margin-bottom:13px}
+#partenariats .partnership-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
+#partenariats .partnership-step{padding:18px;border:1px solid #aeb4ba66;background:#fff}
+#partenariats .partnership-step p{margin-bottom:0}
+#partenariats .partnership-form{margin-top:34px;padding:clamp(18px,3vw,32px);background:#fff;border:1px solid #aeb4ba66;box-shadow:0 8px 28px #211c1d08}
+#partenariats .partnership-form .fieldgrid{margin-top:14px}
+#partenariats .partnership-terms{padding:22px;background:#f7f3e9;border:1px solid #aeb4ba66;margin-top:24px}
+#partenariats .partnership-terms ol{padding-left:20px;margin-bottom:0}
+#partenariats .partnership-terms li{margin:0 0 10px}
+#partenariats .partnership-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+#partenariats .partnership-status span{display:block;padding:12px;border:1px solid #aeb4ba66;background:#fff;font-size:.82rem}
+#partenariats .partnership-consent{display:flex;gap:10px;align-items:flex-start;margin:20px 0;font-size:.84rem}
+#partenariats .partnership-consent input{width:18px;height:18px;flex:0 0 auto;margin-top:3px}
+@media(max-width:850px){#partenariats .partnership-types{grid-template-columns:repeat(2,minmax(0,1fr))}#partenariats .partnership-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#partenariats .partnership-types,#partenariats .partnership-process,#partenariats .partnership-status{grid-template-columns:1fr}#partenariats .partnership-type{min-height:0}}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="hero lam-home-hero-final" id="lam-hero">
   <div class="wrap lam-home-hero-inner">
     <img class="lam-home-emblem" src="/LAM--V-NEMENTIEL-EVENTS-/lam-embleme-cercle.svg?v=20261117-final" alt="Logo LAM dans un cercle et un triangle champagne doré">
@@ -2581,6 +2748,60 @@ main>section:not([id]){display:none!important}
   </div>
 </section>
 
+<section id="apropos" class="section">
+<div class="wrap">
+<div class="eyebrow">01 — Notre vision</div>
+<div class="grid grid2" style="margin-top:18px">
+<div><h2>DONNER VIE À VOS PLUS BELLES ENVIES.</h2></div>
+<div><p class="lead">LAM ÉVÉNEMENTIEL & EVENTS accompagne les particuliers, les familles et les organisations dans la création d’événements réfléchis jusque dans les moindres détails.</p><p>Chaque projet part de votre histoire et de vos envies. Nous les transformons en un concept harmonieux, un plan concret et une célébration qui vous ressemble.</p><p>Notre engagement : vous écouter, vous conseiller et coordonner chaque étape avec sérieux, créativité et transparence.</p></div>
+</div>
+</div></section>
+
+<section id="presentation" class="section">
+<div class="wrap">
+<div class="eyebrow">LAM ÉVÉNEMENTIEL & EVENTS · HAÏTI</div>
+<div class="section-head"><h2>UNE ÉQUIPE AU SERVICE DE VOS MOMENTS IMPORTANTS.</h2><p class="lead">Votre vision. Notre créativité. Une expérience inoubliable.</p></div>
+<div class="grid grid2">
+<article class="card"><h3>Notre engagement</h3><p>LAM ÉVÉNEMENTIEL & EVENTS conçoit et coordonne des expériences soignées, personnalisées et mémorables. L’écoute, l’organisation, la créativité et l’attention aux détails guident chaque projet.</p></article>
+<article class="card"><h3>Notre méthode</h3><p>Écouter votre vision, proposer des prestations adaptées, préparer chaque étape et coordonner la réalisation selon les éléments convenus ensemble.</p></article>
+</div>
+
+</div></section>
+
+<section id="services" class="section">
+<div class="wrap">
+<div class="eyebrow">03 — Nos services</div><h2>DES SERVICES À L’IMAGE DE VOTRE ÉVÉNEMENT.</h2>
+<div class="grid grid3">
+<div class="card"><div class="num">01</div><h3>PLANIFICATION ÉVÉNEMENTIELLE</h3><p>Nous organisons les étapes clés de votre projet, du concept initial au calendrier de réalisation.</p></div>
+<div class="card"><div class="num">02</div><h3>COORDINATION ÉVÉNEMENTIELLE</h3><p>Nous facilitons les échanges entre intervenants et veillons au bon déroulement des étapes prévues.</p></div>
+<div class="card"><div class="num">03</div><h3>PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous préparons les besoins opérationnels et suivons les éléments essentiels à la réalisation de votre événement.</p></div>
+<div class="card"><div class="num">04</div><h3>DESIGN & CONCEPT</h3><p>Nous définissons un univers visuel harmonieux à partir de vos goûts, de votre thème et de l’ambiance souhaitée.</p></div>
+<div class="card"><div class="num">05</div><h3>LOGISTIQUE</h3><p>Nous planifions les besoins pratiques, les installations, les prestataires et les échéances.</p></div>
+<div class="card"><div class="num">06</div><h3>EXPÉRIENCE</h3><p>Nous portons attention à l’accueil, au confort et aux détails qui rendent votre événement agréable et personnel.</p></div>
+<div class="card"><div class="num">07</div><h3>SERVICE TRAITEUR</h3><p>Selon vos besoins, une prestation traiteur peut compléter votre événement avec des repas, bouchées et un service adaptés.</p></div>
+<div class="card"><div class="num">08</div><h3>TRAITEUR & EXPÉRIENCE CULINAIRE</h3><p>Nous étudions vos préférences culinaires afin de proposer une formule adaptée au menu, au service et à la présentation souhaités.</p></div>
+<div class="card"><div class="num">09</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous accompagnons les projets de concerts et d’événements musicaux par la planification, la coordination logistique, l’accueil des artistes et des invités VIP, ainsi que la collaboration avec des partenaires techniques spécialisés selon les besoins du projet.</p><p><a class="btn primary" href="#concertForm">Demander un devis</a></p></div>
+<div class="card lam-couture-service-card"><div class="num">10</div><h3>LAM COUTURE &amp; MODE</h3><p>Le département LAM Couture &amp; Mode propose la haute couture, la création de vêtements, la confection sur mesure, le stylisme, les retouches et la personnalisation de tenues pour femmes, hommes et enfants.</p><p><a class="btn primary" href="#lam-couture">DÉCOUVRIR LAM COUTURE</a></p></div>
+</div>
+</div></section>
+
+<section id="departements" class="section alt">
+<div class="wrap">
+<div class="eyebrow">04 — Nos départements</div>
+<h2>TOUT L’UNIVERS DE LAM, EN SIX DÉPARTEMENTS.</h2>
+<p class="lead">Découvrez les domaines d’intervention de LAM ÉVÉNEMENTIEL &amp; EVENTS. Chaque département rassemble des prestations pensées pour accompagner vos projets privés et professionnels.</p>
+<div class="grid grid2 lam-departments-grid">
+<article class="card"><div class="num">01 — DÉPARTEMENT</div><h3>LAM ÉVÉNEMENTIEL</h3><p>Organisation d’événements privés et professionnels, coordination et production événementielle.</p><h4>Nos prestations</h4><ul><li>Mariages, fiançailles et réceptions</li><li>Anniversaires et célébrations privées</li><li>Baby showers, baptêmes et fêtes familiales</li><li>Galas, soirées VIP et lancements</li><li>Conférences, séminaires et événements d’entreprise</li><li>Concerts, spectacles et événements publics</li><li>Planification, coordination et gestion du jour J</li><li>Production et logistique événementielles</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
+<article class="card"><div class="num">02 — DÉPARTEMENT</div><h3>LAM COUTURE &amp; MODE</h3><p>Haute couture, confection de vêtements, stylisme, design, couture sur mesure, retouches, prêt-à-porter et mode événementielle.</p><h4>Nos prestations</h4><ul><li>Haute couture et création de vêtements</li><li>Confection et couture sur mesure</li><li>Stylisme, modélisme et design</li><li>Mode femme, homme et enfant</li><li>Retouches, ajustements et finitions</li><li>Prêt-à-porter et personnalisation</li><li>Tenues de cérémonie, réception et mariage</li><li>Tenues professionnelles, uniformes et mode événementielle</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
+<article class="card"><div class="num">03 — DÉPARTEMENT</div><h3>LAM DÉCOR &amp; DESIGN</h3><p>Décoration événementielle, scénographie et aménagement des espaces.</p><h4>Nos prestations</h4><ul><li>Décoration de mariages et réceptions</li><li>Décoration d’anniversaires et fêtes privées</li><li>Décoration de baptêmes et communions</li><li>Décoration d’événements pour enfants</li><li>Décoration d’événements professionnels</li><li>Scénographie et conception de thèmes</li><li>Mise en place des tables, buffets et espaces</li><li>Arches, fonds décoratifs et installations</li><li>Harmonisation des couleurs et aménagement des lieux</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
+<article class="card"><div class="num">04 — DÉPARTEMENT</div><h3>LAM KIDS EVENTS</h3><p>Organisation d’événements pour enfants, anniversaires, animations et célébrations.</p><h4>Nos prestations</h4><ul><li>Anniversaires pour enfants</li><li>Fêtes à thème et célébrations personnalisées</li><li>Garden parties et pool parties</li><li>Pique-niques et fêtes en plein air</li><li>Fêtes et événements scolaires</li><li>Décoration et aménagement d’espaces enfants</li><li>Animations et activités festives</li><li>Tables gourmandes et buffets pour enfants</li><li>Formules adaptées aux événements des enfants</li></ul><a class="btn primary" href="#lam-kids-form">Découvrir le département</a></article>
+<article class="card"><div class="num">05 — DÉPARTEMENT</div><h3>LAM CATERING</h3><p>Cuisine, gastronomie, service traiteur, cocktails, bouchées et pâtisserie.</p><h4>Nos prestations</h4><ul><li>Cuisine haïtienne et internationale</li><li>Menus personnalisés</li><li>Service traiteur privé et professionnel</li><li>Buffets chauds et froids</li><li>Cocktails, apéritifs et finger food</li><li>Bouchées salées et amuse-bouches</li><li>Charcuterie et plateaux gourmands</li><li>Pâtés, mini-sandwiches et assortiments</li><li>Plats, accompagnements et service de repas</li><li>Pâtisserie, desserts et gâteaux</li></ul><a class="btn primary" href="#service-traiteur">Découvrir le département</a></article>
+<article class="card"><div class="num">06 — DÉPARTEMENT</div><h3>LAM COMMUNION</h3><p>Organisation de premières communions et de communions solennelles, décoration, coordination des célébrations et réceptions personnalisées.</p><h4>Nos prestations</h4><ul><li>Organisation de premières communions</li><li>Communions solennelles</li><li>Formules ESSENTIELLE, PRESTIGE et SIGNATURE</li><li>Décoration et mise en scène de la réception</li><li>Personnalisation du thème et des couleurs</li><li>Coordination de la célébration et de la réception</li><li>Buffets, repas et service traiteur</li><li>Cocktails, bouchées, pâtisserie et gâteaux</li></ul><button class="btn primary" type="button" onclick="window.location.href='#formulaire';return false">Découvrir le département</button></article>
+</div>
+<p class="small">Les prestations et formules sont étudiées selon la nature de votre événement, vos besoins et les disponibilités de l’équipe LAM. Sélectionnez le département qui correspond à votre projet pour poursuivre votre demande.</p>
+</div>
+</section>
+
 <section id="galerie" class="section sky-gallery">
 <div class="wrap">
 <div class="eyebrow">Galerie évolutive</div>
@@ -2602,154 +2823,6 @@ main>section:not([id]){display:none!important}
 </div>
 </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="apropos" class="section">
-<div class="wrap">
-<div class="eyebrow">01 — Notre vision</div>
-<div class="grid grid2" style="margin-top:18px">
-<div><h2>DONNER VIE À VOS PLUS BELLES ENVIES.</h2></div>
-<div><p class="lead">LAM ÉVÉNEMENTIEL & EVENTS accompagne les particuliers, les familles et les organisations dans la création d’événements réfléchis jusque dans les moindres détails.</p><p>Chaque projet part de votre histoire et de vos envies. Nous les transformons en un concept harmonieux, un plan concret et une célébration qui vous ressemble.</p><p>Notre engagement : vous écouter, vous conseiller et coordonner chaque étape avec sérieux, créativité et transparence.</p></div>
-</div>
-</div></section>
-
-
-
-
-<section class="section alt">
-<div class="wrap grid grid2">
-<div class="mission-intro"><div class="eyebrow">02 — Notre méthode</div><h2>CHAQUE DÉTAIL A SA PLACE.</h2><p class="lead">Nous commençons par comprendre vos attentes, puis nous construisons un plan adapté au type d’événement, au calendrier et aux prestations souhaitées.</p><p>À chaque étape, vous bénéficiez d’un suivi clair, de décisions organisées et d’une coordination attentive pour avancer en toute confiance.</p><div class="mission-tags"><span>Écoute</span><span>Planification</span><span>Coordination</span><span>Réalisation</span></div></div>
-<div class="card"><h3>CRÉATIVITÉ + PLANIFICATION + COORDINATION + PRODUCTION + EXPÉRIENCE</h3><p>Une méthode claire, de la conception à la coordination, pour une réalisation cohérente et maîtrisée.</p><ul class="mission-details"><li><strong>01 — Écoute et conception :</strong> comprendre vos envies, votre thème, vos couleurs et vos priorités.</li><li><strong>02 — Organisation :</strong> établir le calendrier, répartir les tâches et coordonner les prestataires.</li><li><strong>03 — Décoration :</strong> harmoniser ballons, fleurs, tissus, éclairage, tables et arrière-plans.</li><li><strong>04 — Jour J :</strong> superviser l’installation, l’accueil et le déroulement de l’événement.</li></ul></div>
-</div></section>
-
-<section id="services" class="section">
-<div class="wrap">
-<div class="eyebrow">03 — Nos services</div><h2>DES SERVICES À L’IMAGE DE VOTRE ÉVÉNEMENT.</h2>
-<div class="grid grid3">
-<div class="card"><div class="num">01</div><h3>PLANIFICATION ÉVÉNEMENTIELLE</h3><p>Nous organisons les étapes clés de votre projet, du concept initial au calendrier de réalisation.</p></div>
-<div class="card"><div class="num">02</div><h3>COORDINATION ÉVÉNEMENTIELLE</h3><p>Nous facilitons les échanges entre intervenants et veillons au bon déroulement des étapes prévues.</p></div>
-<div class="card"><div class="num">03</div><h3>PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous préparons les besoins opérationnels et suivons les éléments essentiels à la réalisation de votre événement.</p></div>
-<div class="card"><div class="num">04</div><h3>DESIGN & CONCEPT</h3><p>Nous définissons un univers visuel harmonieux à partir de vos goûts, de votre thème et de l’ambiance souhaitée.</p></div>
-<div class="card"><div class="num">05</div><h3>LOGISTIQUE</h3><p>Nous planifions les besoins pratiques, les installations, les prestataires et les échéances.</p></div>
-<div class="card"><div class="num">06</div><h3>EXPÉRIENCE</h3><p>Nous portons attention à l’accueil, au confort et aux détails qui rendent votre événement agréable et personnel.</p></div>
-<div class="card"><div class="num">07</div><h3>SERVICE TRAITEUR</h3><p>Selon vos besoins, une prestation traiteur peut compléter votre événement avec des repas, bouchées et un service adaptés.</p></div>
-<div class="card"><div class="num">08</div><h3>TRAITEUR & EXPÉRIENCE CULINAIRE</h3><p>Nous étudions vos préférences culinaires afin de proposer une formule adaptée au menu, au service et à la présentation souhaités.</p></div>
-<div class="card"><div class="num">09</div><h3>ORGANISATION DE CONCERTS & PRODUCTION ÉVÉNEMENTIELLE</h3><p>Nous accompagnons les projets de concerts et d’événements musicaux par la planification, la coordination logistique, l’accueil des artistes et des invités VIP, ainsi que la collaboration avec des partenaires techniques spécialisés selon les besoins du projet.</p><p><a class="btn primary" href="#concertForm">Demander un devis</a></p></div>
-<div class="card lam-couture-service-card"><div class="num">10</div><h3>LAM COUTURE &amp; MODE</h3><p>Le département LAM Couture &amp; Mode propose la haute couture, la création de vêtements, la confection sur mesure, le stylisme, les retouches et la personnalisation de tenues pour femmes, hommes et enfants.</p><p><a class="btn primary" href="#lam-couture">DÉCOUVRIR LAM COUTURE</a></p></div>
-</div>
-</div></section>
-
-
-
-
-
-
-
-
-
-<section id="departements" class="section alt">
-<div class="wrap">
-<div class="eyebrow">04 — Nos départements</div>
-<h2>TOUT L’UNIVERS DE LAM, EN SIX DÉPARTEMENTS.</h2>
-<p class="lead">Découvrez les domaines d’intervention de LAM ÉVÉNEMENTIEL &amp; EVENTS. Chaque département rassemble des prestations pensées pour accompagner vos projets privés et professionnels.</p>
-<div class="grid grid2 lam-departments-grid">
-<article class="card"><div class="num">01 — DÉPARTEMENT</div><h3>LAM ÉVÉNEMENTIEL</h3><p>Organisation d’événements privés et professionnels, coordination et production événementielle.</p><h4>Nos prestations</h4><ul><li>Mariages, fiançailles et réceptions</li><li>Anniversaires et célébrations privées</li><li>Baby showers, baptêmes et fêtes familiales</li><li>Galas, soirées VIP et lancements</li><li>Conférences, séminaires et événements d’entreprise</li><li>Concerts, spectacles et événements publics</li><li>Planification, coordination et gestion du jour J</li><li>Production et logistique événementielles</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
-<article class="card"><div class="num">02 — DÉPARTEMENT</div><h3>LAM COUTURE &amp; MODE</h3><p>Haute couture, confection de vêtements, stylisme, design, couture sur mesure, retouches, prêt-à-porter et mode événementielle.</p><h4>Nos prestations</h4><ul><li>Haute couture et création de vêtements</li><li>Confection et couture sur mesure</li><li>Stylisme, modélisme et design</li><li>Mode femme, homme et enfant</li><li>Retouches, ajustements et finitions</li><li>Prêt-à-porter et personnalisation</li><li>Tenues de cérémonie, réception et mariage</li><li>Tenues professionnelles, uniformes et mode événementielle</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
-<article class="card"><div class="num">03 — DÉPARTEMENT</div><h3>LAM DÉCOR &amp; DESIGN</h3><p>Décoration événementielle, scénographie et aménagement des espaces.</p><h4>Nos prestations</h4><ul><li>Décoration de mariages et réceptions</li><li>Décoration d’anniversaires et fêtes privées</li><li>Décoration de baptêmes et communions</li><li>Décoration d’événements pour enfants</li><li>Décoration d’événements professionnels</li><li>Scénographie et conception de thèmes</li><li>Mise en place des tables, buffets et espaces</li><li>Arches, fonds décoratifs et installations</li><li>Harmonisation des couleurs et aménagement des lieux</li></ul><a class="btn primary" href="#departements">Découvrir le département</a></article>
-<article class="card"><div class="num">04 — DÉPARTEMENT</div><h3>LAM KIDS EVENTS</h3><p>Organisation d’événements pour enfants, anniversaires, animations et célébrations.</p><h4>Nos prestations</h4><ul><li>Anniversaires pour enfants</li><li>Fêtes à thème et célébrations personnalisées</li><li>Garden parties et pool parties</li><li>Pique-niques et fêtes en plein air</li><li>Fêtes et événements scolaires</li><li>Décoration et aménagement d’espaces enfants</li><li>Animations et activités festives</li><li>Tables gourmandes et buffets pour enfants</li><li>Formules adaptées aux événements des enfants</li></ul><a class="btn primary" href="#lam-kids-form">Découvrir le département</a></article>
-<article class="card"><div class="num">05 — DÉPARTEMENT</div><h3>LAM CATERING</h3><p>Cuisine, gastronomie, service traiteur, cocktails, bouchées et pâtisserie.</p><h4>Nos prestations</h4><ul><li>Cuisine haïtienne et internationale</li><li>Menus personnalisés</li><li>Service traiteur privé et professionnel</li><li>Buffets chauds et froids</li><li>Cocktails, apéritifs et finger food</li><li>Bouchées salées et amuse-bouches</li><li>Charcuterie et plateaux gourmands</li><li>Pâtés, mini-sandwiches et assortiments</li><li>Plats, accompagnements et service de repas</li><li>Pâtisserie, desserts et gâteaux</li></ul><a class="btn primary" href="#service-traiteur">Découvrir le département</a></article>
-<article class="card"><div class="num">06 — DÉPARTEMENT</div><h3>LAM COMMUNION</h3><p>Organisation de premières communions et de communions solennelles, décoration, coordination des célébrations et réceptions personnalisées.</p><h4>Nos prestations</h4><ul><li>Organisation de premières communions</li><li>Communions solennelles</li><li>Formules ESSENTIELLE, PRESTIGE et SIGNATURE</li><li>Décoration et mise en scène de la réception</li><li>Personnalisation du thème et des couleurs</li><li>Coordination de la célébration et de la réception</li><li>Buffets, repas et service traiteur</li><li>Cocktails, bouchées, pâtisserie et gâteaux</li></ul><button class="btn primary" type="button" onclick="window.location.href='#formulaire';return false">Découvrir le département</button></article>
-</div>
-<p class="small">Les prestations et formules sont étudiées selon la nature de votre événement, vos besoins et les disponibilités de l’équipe LAM. Sélectionnez le département qui correspond à votre projet pour poursuivre votre demande.</p>
-</div>
-</section>
-
-
-
-
-
-<section class="section section-04-yellow">
-<div class="wrap">
-<div class="eyebrow">04 — Types d’événements</div><h2>UN PROJET UNIQUE, UNE APPROCHE SUR MESURE.</h2>
-<div class="pills"><span class="pill">Mariages</span><span class="pill">Anniversaires &amp; Célébrations Enfants</span><span class="pill">Anniversaires</span><span class="pill">Fiançailles</span><span class="pill">Célébrations privées</span><span class="pill">Événements corporatifs</span><span class="pill">Conférences</span><span class="pill">Galas</span><span class="pill">Lancements de marques</span><span class="pill">Événements VIP</span><span class="pill">Événements sur mesure</span></div>
-<p style="margin-top:28px;font:600 1.7rem Georgia,'Times New Roman',serif">Vous avez une idée particulière ? Présentez-nous votre projet : nous étudierons ensemble la meilleure façon de lui donner vie.</p>
-</div></section>
-
-<section id="formules" class="section alt">
-<div class="wrap">
-<div class="eyebrow">05 — Formules</div><h2>TROUVEZ L’ACCOMPAGNEMENT QUI VOUS CONVIENT.</h2>
-<div class="grid grid4">
-<div class="card package"><div><div class="num">ESSENTIAL</div><h3>ESSENTIAL</h3><p>L’essentiel pour clarifier vos besoins et poser les premières étapes de votre événement.</p></div><div class="actions"><a class="btn" href="#formulaire">Commencer mon projet</a></div></div>
-<div class="card package"><div><div class="num">SIGNATURE</div><h3>SIGNATURE</h3><p>Un accompagnement renforcé, conçu selon vos priorités et le niveau de coordination recherché.</p></div><div class="actions"><a class="btn" href="#formulaire">Demander une consultation</a></div></div>
-<div class="card package"><div><div class="num">PRESTIGE</div><h3>PRESTIGE</h3><p>Une prise en charge approfondie du concept, de l’esthétique et de la coordination.</p></div><div class="actions"><a class="btn" href="#formulaire">Demander une consultation</a></div></div>
-<div class="card package redlabel" id="red-label"><div><div class="eyebrow">Offre premium</div><h3>RED LABEL</h3><p>Une formule premium en cours de développement, destinée aux projets nécessitant une approche particulièrement personnalisée.</p></div><div class="actions"></div></div>
-</div>
-</div></section>
-
-</div></div>
-
-<div class="grid grid2" style="margin-top:42px">
-<div style="margin-top:42px">
-<div class="eyebrow">ÉVÉNEMENTS CORPORATIFS</div>
-<h3 style="margin:10px 0 22px">DES RENCONTRES PROFESSIONNELLES BIEN ORCHESTRÉES.</h3>
-<div class="grid grid2">
-<div class="card"><div class="num">01</div><h3>COCKTAIL & RÉCEPTION</h3><p>Des réceptions accueillantes pour vos partenaires, vos équipes et vos invités.</p></div>
-<div class="card"><div class="num">02</div><h3>ACTIVITÉS DE COHÉSION D’ÉQUIPE</h3><p>Des expériences collectives qui encouragent les échanges, la collaboration et la cohésion.</p></div>
-<div class="card"><div class="num">03</div><h3>JOURNÉE D’ENTREPRISE</h3><p>Des journées organisées pour rassembler vos équipes autour d’activités et de moments de partage.</p></div>
-<div class="card"><div class="num">04</div><h3>CONFÉRENCES — UNE OU PLUSIEURS JOURNÉES</h3><p>Une coordination adaptée aux conférences, programmes professionnels et rencontres organisées sur plusieurs journées.</p></div>
-<div class="card"><div class="num">05</div><h3>RÉUNIONS & FORMATIONS</h3><p>Un cadre organisé pour vos réunions, ateliers, formations et séances de travail.</p></div>
-<div class="card"><div class="num">06</div><h3>CÉLÉBRATIONS D’ENTREPRISE</h3><p>Des événements pour célébrer les réussites, remercier vos équipes et renforcer les liens professionnels.</p></div>
-</div>
-
-<section class="section">
-<div class="wrap grid grid2">
-<div><div class="eyebrow">06 — Notre méthode</div><h2>UNE MÉTHODE CLAIRE, À CHAQUE ÉTAPE.</h2></div>
-<div class="timeline">
-<div class="item"><div class="num">01 — DÉCOUVERTE</div><p>Nous prenons le temps de comprendre vos objectifs, vos attentes et vos contraintes.</p></div>
-<div class="item"><div class="num">02 — CONCEPT</div><p>Nous élaborons un concept et une ambiance cohérents avec votre projet.</p></div>
-<div class="item"><div class="num">03 — PLANIFICATION</div><p>Nous établissons les échéances, les ressources nécessaires et les priorités.</p></div>
-<div class="item"><div class="num">04 — COORDINATION</div><p>Nous organisons les échanges avec les prestataires et le suivi opérationnel.</p></div>
-<div class="item"><div class="num">05 — PRODUCTION</div><p>Nous suivons la mise en place selon le programme et les éléments convenus.</p></div>
-<div class="item"><div class="num">06 — JOUR DE L’ÉVÉNEMENT</div><p>Nous veillons à la coordination des étapes afin de préserver le bon déroulement de l’événement.</p></div>
-<div class="item"><div class="num">07 — CLÔTURE / SUIVI FINAL</div><p>Nous terminons le projet avec soin et faisons le point sur les suites nécessaires.</p></div>
-</div>
-<div class="eyebrow">LES 12 ÉTAPES DE VOTRE ÉVÉNEMENT</div><h3 style="margin:10px 0 22px">DE L’IDÉE À LA CÉLÉBRATION.</h3>
-<div class="grid grid2">
-<div class="card"><div class="num">01</div><h3>DÉFINIR VOTRE ÉVÉNEMENT</h3><p>Objectifs • Type d’événement • Date • Prestations souhaitées</p></div>
-<div class="card"><div class="num">02</div><h3>CHOISIR LE LIEU IDÉAL</h3><p>Recherche • Visite • Disponibilité • Réservation</p></div>
-<div class="card"><div class="num">03</div><h3>GÉRER VOS INVITÉS</h3><p>Liste • Invitations • RSVP • Placement</p></div>
-<div class="card"><div class="num">04</div><h3>PLANIFIER CHAQUE DÉTAIL</h3><p>Planning • Prestataires • Autorisations • Plan B</p></div>
-<div class="card"><div class="num">05</div><h3>ORGANISER LA RESTAURATION</h3><p>Menu • Régimes alimentaires • Traiteur • Boissons</p></div>
-<div class="card"><div class="num">06</div><h3>CRÉER L’AMBIANCE & LA DÉCORATION</h3><p>Thème • Couleurs • Décoration • Éclairage</p></div>
-<div class="card"><div class="num">07</div><h3>PRÉPARER L’ANIMATION</h3><p>DJ / musique • Programme • Son & lumière • Activités</p></div>
-<div class="card"><div class="num">08</div><h3>IMMORTALISER LES MOMENTS</h3><p>Photographe • Vidéaste • Espace photo • Souvenirs</p></div>
-<div class="card"><div class="num">09</div><h3>PROMOUVOIR L’ÉVÉNEMENT</h3><p>Réseaux sociaux • Invitations • Rappels • Communication</p></div>
-<div class="card"><div class="num">10</div><h3>COORDONNER & CONFIRMER</h3><p>Prestataires • Horaires • Vérification • Coordination</p></div>
-<div class="card"><div class="num">11</div><h3>SOIGNER L’EXPÉRIENCE DES INVITÉS</h3><p>Accueil • Confort • Signalétique • Cadeaux</p></div>
-<div class="card"><div class="num">12</div><h3>PROFITER & CÉLÉBRER</h3><p>Vous profitez • Notre équipe coordonne • Vous célébrez</p></div>
-</div></div>
-</div></section>
-
-<section id="experience" class="section alt">
-<div class="wrap grid grid2">
-<div><div class="eyebrow">16 — Expérience client</div><h2>UN ACCOMPAGNEMENT QUI VOUS RESSEMBLE.</h2></div>
-<div><p class="lead">Pour nous, un bel événement se prépare avec écoute, méthode et attention, bien avant l’arrivée des invités.</p><p>Dès notre premier échange, nous clarifions vos attentes et vous guidons à travers les prochaines étapes.</p><h3>COMMENCEZ À CONSTRUIRE</h3><p>Parlez-nous de votre idée, de l’ambiance recherchée et de vos priorités. Ces informations nous aideront à préparer une proposition adaptée.</p><a class="btn primary" href="#formulaire">Planifier mon événement</a></div>
-</div></section>
 
 <section id="experiences-signature" class="section lam-signature-section">
 <div class="wrap">
@@ -2811,6 +2884,65 @@ main>section:not([id]){display:none!important}
 <div class="card"><div class="num">2030+</div><h3>ENTREPRISE D’EXPÉRIENCES</h3><p>Faire évoluer la marque vers une entreprise centrée sur la création d’expériences.</p></div>
 <div class="card"><div class="num">2040</div><h3>MARQUE ÉVÉNEMENTIELLE / GROUPE</h3><p>Une ambition à long terme, présentée comme une vision et non comme un résultat déjà atteint.</p></div>
 </div>
+</div></section>
+
+<section class="section alt">
+<div class="wrap grid grid2">
+<div class="mission-intro"><div class="eyebrow">02 — Notre méthode</div><h2>CHAQUE DÉTAIL A SA PLACE.</h2><p class="lead">Nous commençons par comprendre vos attentes, puis nous construisons un plan adapté au type d’événement, au calendrier et aux prestations souhaitées.</p><p>À chaque étape, vous bénéficiez d’un suivi clair, de décisions organisées et d’une coordination attentive pour avancer en toute confiance.</p><div class="mission-tags"><span>Écoute</span><span>Planification</span><span>Coordination</span><span>Réalisation</span></div></div>
+<div class="card"><h3>CRÉATIVITÉ + PLANIFICATION + COORDINATION + PRODUCTION + EXPÉRIENCE</h3><p>Une méthode claire, de la conception à la coordination, pour une réalisation cohérente et maîtrisée.</p><ul class="mission-details"><li><strong>01 — Écoute et conception :</strong> comprendre vos envies, votre thème, vos couleurs et vos priorités.</li><li><strong>02 — Organisation :</strong> établir le calendrier, répartir les tâches et coordonner les prestataires.</li><li><strong>03 — Décoration :</strong> harmoniser ballons, fleurs, tissus, éclairage, tables et arrière-plans.</li><li><strong>04 — Jour J :</strong> superviser l’installation, l’accueil et le déroulement de l’événement.</li></ul></div>
+</div></section>
+
+<section class="section section-04-yellow">
+<div class="wrap">
+<div class="eyebrow">04 — Types d’événements</div><h2>UN PROJET UNIQUE, UNE APPROCHE SUR MESURE.</h2>
+<div class="pills"><span class="pill">Mariages</span><span class="pill">Anniversaires &amp; Célébrations Enfants</span><span class="pill">Anniversaires</span><span class="pill">Fiançailles</span><span class="pill">Célébrations privées</span><span class="pill">Événements corporatifs</span><span class="pill">Conférences</span><span class="pill">Galas</span><span class="pill">Lancements de marques</span><span class="pill">Événements VIP</span><span class="pill">Événements sur mesure</span></div>
+<p style="margin-top:28px;font:600 1.7rem Georgia,'Times New Roman',serif">Vous avez une idée particulière ? Présentez-nous votre projet : nous étudierons ensemble la meilleure façon de lui donner vie.</p>
+</div></section>
+
+<section id="experience" class="section alt">
+<div class="wrap grid grid2">
+<div><div class="eyebrow">16 — Expérience client</div><h2>UN ACCOMPAGNEMENT QUI VOUS RESSEMBLE.</h2></div>
+<div><p class="lead">Pour nous, un bel événement se prépare avec écoute, méthode et attention, bien avant l’arrivée des invités.</p><p>Dès notre premier échange, nous clarifions vos attentes et vous guidons à travers les prochaines étapes.</p><h3>COMMENCEZ À CONSTRUIRE</h3><p>Parlez-nous de votre idée, de l’ambiance recherchée et de vos priorités. Ces informations nous aideront à préparer une proposition adaptée.</p><a class="btn primary" href="#formulaire">Planifier mon événement</a></div>
+</div></section>
+
+<section id="formules" class="section alt">
+<div class="wrap">
+<div class="eyebrow">05 — Formules</div><h2>TROUVEZ L’ACCOMPAGNEMENT QUI VOUS CONVIENT.</h2>
+<div class="grid grid4">
+<div class="card package"><div><div class="num">ESSENTIAL</div><h3>ESSENTIAL</h3><p>L’essentiel pour clarifier vos besoins et poser les premières étapes de votre événement.</p></div><div class="actions"><a class="btn" href="#formulaire">Commencer mon projet</a></div></div>
+<div class="card package"><div><div class="num">SIGNATURE</div><h3>SIGNATURE</h3><p>Un accompagnement renforcé, conçu selon vos priorités et le niveau de coordination recherché.</p></div><div class="actions"><a class="btn" href="#formulaire">Demander une consultation</a></div></div>
+<div class="card package"><div><div class="num">PRESTIGE</div><h3>PRESTIGE</h3><p>Une prise en charge approfondie du concept, de l’esthétique et de la coordination.</p></div><div class="actions"><a class="btn" href="#formulaire">Demander une consultation</a></div></div>
+<div class="card package redlabel" id="red-label"><div><div class="eyebrow">Offre premium</div><h3>RED LABEL</h3><p>Une formule premium en cours de développement, destinée aux projets nécessitant une approche particulièrement personnalisée.</p></div><div class="actions"></div></div>
+</div>
+</div></section>
+
+<section class="section">
+<div class="wrap grid grid2">
+<div><div class="eyebrow">06 — Notre méthode</div><h2>UNE MÉTHODE CLAIRE, À CHAQUE ÉTAPE.</h2></div>
+<div class="timeline">
+<div class="item"><div class="num">01 — DÉCOUVERTE</div><p>Nous prenons le temps de comprendre vos objectifs, vos attentes et vos contraintes.</p></div>
+<div class="item"><div class="num">02 — CONCEPT</div><p>Nous élaborons un concept et une ambiance cohérents avec votre projet.</p></div>
+<div class="item"><div class="num">03 — PLANIFICATION</div><p>Nous établissons les échéances, les ressources nécessaires et les priorités.</p></div>
+<div class="item"><div class="num">04 — COORDINATION</div><p>Nous organisons les échanges avec les prestataires et le suivi opérationnel.</p></div>
+<div class="item"><div class="num">05 — PRODUCTION</div><p>Nous suivons la mise en place selon le programme et les éléments convenus.</p></div>
+<div class="item"><div class="num">06 — JOUR DE L’ÉVÉNEMENT</div><p>Nous veillons à la coordination des étapes afin de préserver le bon déroulement de l’événement.</p></div>
+<div class="item"><div class="num">07 — CLÔTURE / SUIVI FINAL</div><p>Nous terminons le projet avec soin et faisons le point sur les suites nécessaires.</p></div>
+</div>
+<div class="eyebrow">LES 12 ÉTAPES DE VOTRE ÉVÉNEMENT</div><h3 style="margin:10px 0 22px">DE L’IDÉE À LA CÉLÉBRATION.</h3>
+<div class="grid grid2">
+<div class="card"><div class="num">01</div><h3>DÉFINIR VOTRE ÉVÉNEMENT</h3><p>Objectifs • Type d’événement • Date • Prestations souhaitées</p></div>
+<div class="card"><div class="num">02</div><h3>CHOISIR LE LIEU IDÉAL</h3><p>Recherche • Visite • Disponibilité • Réservation</p></div>
+<div class="card"><div class="num">03</div><h3>GÉRER VOS INVITÉS</h3><p>Liste • Invitations • RSVP • Placement</p></div>
+<div class="card"><div class="num">04</div><h3>PLANIFIER CHAQUE DÉTAIL</h3><p>Planning • Prestataires • Autorisations • Plan B</p></div>
+<div class="card"><div class="num">05</div><h3>ORGANISER LA RESTAURATION</h3><p>Menu • Régimes alimentaires • Traiteur • Boissons</p></div>
+<div class="card"><div class="num">06</div><h3>CRÉER L’AMBIANCE & LA DÉCORATION</h3><p>Thème • Couleurs • Décoration • Éclairage</p></div>
+<div class="card"><div class="num">07</div><h3>PRÉPARER L’ANIMATION</h3><p>DJ / musique • Programme • Son & lumière • Activités</p></div>
+<div class="card"><div class="num">08</div><h3>IMMORTALISER LES MOMENTS</h3><p>Photographe • Vidéaste • Espace photo • Souvenirs</p></div>
+<div class="card"><div class="num">09</div><h3>PROMOUVOIR L’ÉVÉNEMENT</h3><p>Réseaux sociaux • Invitations • Rappels • Communication</p></div>
+<div class="card"><div class="num">10</div><h3>COORDONNER & CONFIRMER</h3><p>Prestataires • Horaires • Vérification • Coordination</p></div>
+<div class="card"><div class="num">11</div><h3>SOIGNER L’EXPÉRIENCE DES INVITÉS</h3><p>Accueil • Confort • Signalétique • Cadeaux</p></div>
+<div class="card"><div class="num">12</div><h3>PROFITER & CÉLÉBRER</h3><p>Vous profitez • Notre équipe coordonne • Vous célébrez</p></div>
+</div></div>
 </div></section>
 
 <section id="formulaire" class="section alt">
@@ -4194,87 +4326,6 @@ main>section:not([id]){display:none!important}
 </section>
 </section>
 
-<script id="lam-inspiration-form-handler">
-(function(){
- var form=document.getElementById('lamInspirationForm');
- if(!form)return;
- form.addEventListener('submit',function(e){
-  e.preventDefault();
-  if(!form.reportValidity())return;
-  var labels=[
-   ['Nom','lamInspNom'],['Prénom','lamInspPrenom'],['Adresse e-mail','lamInspEmail'],['Téléphone','lamInspPhone'],
-   ['Type d’événement','lamInspType'],['Date souhaitée','lamInspDate'],['Lieu ou ville','lamInspPlace'],
-   ['Nombre d’invités','lamInspGuests'],['Style souhaité','lamInspStyle'],
-   ['Couleurs préférées','lamInspColors'],['Fleurs souhaitées','lamInspFlowers'],['Décoration souhaitée','lamInspDecor'],['Idées et besoins','lamInspDetails']
-  ];
-  var message='Bonjour LAM ÉVÉNEMENTIEL & EVENTS, je souhaite recevoir des idées pour mon événement.\n\n';
-  labels.forEach(function(item){var el=document.getElementById(item[1]);var value=el?el.value.trim():'';if(value)message+=item[0]+': '+value+'\n';});
-  message+='\nJ’accepte d’être contacté(e) au sujet de cette demande.';
-  window.open('https://wa.me/50937469553?text='+encodeURIComponent(message),'_blank','noopener');
- });
-})();
-</script>
-
-<script>
-window.showEventForm = function(target){
-  var allowed=['prestigeForm','privateForm','corporateForm','concertForm','pastryForm','minorForm','communionForm'];
-  if(allowed.indexOf(target)===-1) return false;
-  allowed.forEach(function(id){
-    var panel=document.getElementById(id);
-    if(panel) panel.hidden=(id!==target);
-  });
-  document.querySelectorAll('[data-show-form]').forEach(function(button){
-    var active=button.getAttribute('data-show-form')===target;
-    button.classList.toggle('primary',active);    button.setAttribute('aria-pressed',active?'true':'false');
-  });
-  var selected=document.getElementById(target);
-  var status=document.getElementById('formChoiceStatus');  if(status&&selected){
-    var heading=selected.querySelector('h2');
-    status.textContent='Formulaire sélectionné : '+(heading?heading.textContent:'votre demande')+'.';
-  }
-  if(selected){
-    selected.hidden=false;
-    // Show the complete selected form immediately; no extra accordion clicks.
-    selected.querySelectorAll('details').forEach(function(detail){detail.open=true;});
-    selected.scrollIntoView({behavior:'auto',block:'start'});
-  }
-  return false;
-};
-document.addEventListener('click',function(event){
-  var button=event.target.closest('[data-show-form]');
-  if(!button) return;
-  event.preventDefault();
-  window.showEventForm(button.getAttribute('data-show-form'));
-});
-</script>
-
-
-<style id="lam-partnerships-page">
-#partenariats .partnership-types{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0}
-#partenariats .partnership-type{padding:22px;border:1px solid #aeb4ba66;background:#fff;min-height:180px}
-#partenariats .partnership-type .num{display:block;margin-bottom:13px}
-#partenariats .partnership-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px}
-#partenariats .partnership-step{padding:18px;border:1px solid #aeb4ba66;background:#fff}
-#partenariats .partnership-step p{margin-bottom:0}
-#partenariats .partnership-form{margin-top:34px;padding:clamp(18px,3vw,32px);background:#fff;border:1px solid #aeb4ba66;box-shadow:0 8px 28px #211c1d08}
-#partenariats .partnership-form .fieldgrid{margin-top:14px}
-#partenariats .partnership-terms{padding:22px;background:#f7f3e9;border:1px solid #aeb4ba66;margin-top:24px}
-#partenariats .partnership-terms ol{padding-left:20px;margin-bottom:0}
-#partenariats .partnership-terms li{margin:0 0 10px}
-#partenariats .partnership-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-#partenariats .partnership-status span{display:block;padding:12px;border:1px solid #aeb4ba66;background:#fff;font-size:.82rem}
-#partenariats .partnership-consent{display:flex;gap:10px;align-items:flex-start;margin:20px 0;font-size:.84rem}
-#partenariats .partnership-consent input{width:18px;height:18px;flex:0 0 auto;margin-top:3px}
-@media(max-width:850px){#partenariats .partnership-types{grid-template-columns:repeat(2,minmax(0,1fr))}#partenariats .partnership-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){#partenariats .partnership-types,#partenariats .partnership-process,#partenariats .partnership-status{grid-template-columns:1fr}#partenariats .partnership-type{min-height:0}}
-</style>
-
-
-
-
-
-
-
 <section id="budget-estimateur" class="section">
 <div class="wrap">
 <div class="eyebrow">Notre accompagnement</div>
@@ -4287,34 +4338,6 @@ document.addEventListener('click',function(event){
 <div class="actions" style="margin-top:22px"><a class="btn" href="#contact">Contacter LAM</a></div>
 </div>
 </section>
-
-<section id="faq" class="section alt">
-<div class="wrap">
-<div class="eyebrow">Questions fréquentes</div>
-<h2>LES RÉPONSES AVANT LE GRAND JOUR.</h2>
-<p class="lead">Vous préparez un événement ? Voici quelques repères pour commencer sereinement.</p>
-<div class="grid grid2" style="margin-top:28px">
-<article class="card"><h3>QUELS TYPES D’ÉVÉNEMENTS ORGANISEZ-VOUS ?</h3><p>Mariages, fiançailles, anniversaires, baptêmes, baby showers, cérémonies, événements privés, événements professionnels et projets sur mesure.</p></article>
-<article class="card"><h3>QUELS SERVICES PROPOSEZ-VOUS ?</h3><p>Planification, coordination, décoration, production événementielle, organisation de concerts, accueil VIP et service traiteur, selon les besoins et le périmètre retenu pour votre projet.</p></article>
-<article class="card"><h3>COMMENT DEMANDER UN DEVIS ?</h3><p>Contactez-nous par WhatsApp ou par e-mail en précisant le type d’événement, la date souhaitée, le lieu, le nombre approximatif d’invités et les services recherchés.</p></article>
-<article class="card"><h3>QUAND MA RÉSERVATION EST-ELLE CONFIRMÉE ?</h3><p>Après l’étude de votre demande, nous échangeons sur les besoins, la disponibilité, le devis et les modalités. La réservation est confirmée selon les conditions convenues par écrit.</p></article>
-<article class="card"><h3>POUVEZ-VOUS RESPECTER MON BUDGET ?</h3><p>Nous étudions votre enveloppe budgétaire afin de proposer des options cohérentes. Les prestations et coûts sont précisés dans le devis avant tout engagement.</p></article>
-<article class="card"><h3>PUIS-JE PARTAGER MES INSPIRATIONS ?</h3><p>Oui. Vous pouvez joindre des images d’inspiration au formulaire de demande lorsqu’il est disponible, ou nous les envoyer lors de votre échange avec l’équipe.</p></article>
-</div>
-<div class="card" style="margin-top:22px">
-<div class="eyebrow">Notre cadre de collaboration</div>
-<h3>CLARTÉ, ÉCHANGE ET ACCORD ÉCRIT.</h3>
-<p style="margin-bottom:0">Chaque projet est étudié selon sa nature, sa date, les prestations souhaitées et les disponibilités de l’équipe. Le périmètre des prestations, le prix, les échéances de paiement et les éventuelles conditions de modification ou d’annulation sont précisés avant confirmation.</p>
-</div>
-<div class="actions" style="margin-top:24px"><a class="btn primary" href="https://wa.me/50937469553?text=Bonjour%2C%20je%20souhaiterais%20planifier%20un%20premier%20%C3%A9change%20au%20sujet%20de%20mon%20projet%20%C3%A9v%C3%A9nementiel.">Planifier un premier échange</a><a class="btn" href="#presentation">Découvrir notre dossier de présentation</a></div>
-</div>
-<div id="faq-complementaire" class="grid grid2" style="margin-top:18px">
-
-<article class="card"><h3>LE DEVIS EST-IL DÉFINITIF ?</h3><p>Non. Le devis définitif est préparé par l’équipe après vérification des besoins, de la date, du lieu, des prestataires et des options retenues.</p></article>
-<article class="card"><h3>PUIS-JE CHOISIR MES PROPRES COULEURS ?</h3><p>Oui. Indiquez votre palette ou proposez vos couleurs dans le formulaire, même si elles ne figurent pas parmi les exemples.</p></article>
-</div>
-</section>
-
 
 <section id="outils-clients" class="section tools-hub">
 <div class="wrap">
@@ -4458,24 +4481,39 @@ document.addEventListener('click',function(event){
 <div class="card quick-client-tools" id="outils-rapides-clients"><h3>VOS OUTILS POUR PRÉPARER VOTRE PROJET</h3><div class="quick-tools-grid"><a href="#galerie">Explorer les inspirations</a><a href="#galerie">Ajouter une photo</a><a href="#budget-estimateur">Estimer mon budget</a><a href="#faq">Consulter les questions fréquentes</a></div></div>
 </section>
 
-
-
-
 <section id="apres-demande" class="section after-request"><div class="wrap"><div class="eyebrow">Après votre demande</div><h2>LES PROCHAINES ÉTAPES.</h2><div class="grid grid3"><article class="card"><h3>01 — ÉCHANGE</h3><p>Notre équipe prend connaissance de vos besoins et peut vous recontacter pour préciser votre projet.</p></article><article class="card"><h3>02 — PROPOSITION</h3><p>Nous préparons une proposition adaptée aux services demandés et aux informations disponibles.</p></article><article class="card"><h3>03 — CONFIRMATION</h3><p>La réservation n’est confirmée qu’après validation de la date, du devis et des conditions convenues.</p></article></div></div></section>
+
+<section id="faq" class="section alt">
+<div class="wrap">
+<div class="eyebrow">Questions fréquentes</div>
+<h2>LES RÉPONSES AVANT LE GRAND JOUR.</h2>
+<p class="lead">Vous préparez un événement ? Voici quelques repères pour commencer sereinement.</p>
+<div class="grid grid2" style="margin-top:28px">
+<article class="card"><h3>QUELS TYPES D’ÉVÉNEMENTS ORGANISEZ-VOUS ?</h3><p>Mariages, fiançailles, anniversaires, baptêmes, baby showers, cérémonies, événements privés, événements professionnels et projets sur mesure.</p></article>
+<article class="card"><h3>QUELS SERVICES PROPOSEZ-VOUS ?</h3><p>Planification, coordination, décoration, production événementielle, organisation de concerts, accueil VIP et service traiteur, selon les besoins et le périmètre retenu pour votre projet.</p></article>
+<article class="card"><h3>COMMENT DEMANDER UN DEVIS ?</h3><p>Contactez-nous par WhatsApp ou par e-mail en précisant le type d’événement, la date souhaitée, le lieu, le nombre approximatif d’invités et les services recherchés.</p></article>
+<article class="card"><h3>QUAND MA RÉSERVATION EST-ELLE CONFIRMÉE ?</h3><p>Après l’étude de votre demande, nous échangeons sur les besoins, la disponibilité, le devis et les modalités. La réservation est confirmée selon les conditions convenues par écrit.</p></article>
+<article class="card"><h3>POUVEZ-VOUS RESPECTER MON BUDGET ?</h3><p>Nous étudions votre enveloppe budgétaire afin de proposer des options cohérentes. Les prestations et coûts sont précisés dans le devis avant tout engagement.</p></article>
+<article class="card"><h3>PUIS-JE PARTAGER MES INSPIRATIONS ?</h3><p>Oui. Vous pouvez joindre des images d’inspiration au formulaire de demande lorsqu’il est disponible, ou nous les envoyer lors de votre échange avec l’équipe.</p></article>
+</div>
+<div class="card" style="margin-top:22px">
+<div class="eyebrow">Notre cadre de collaboration</div>
+<h3>CLARTÉ, ÉCHANGE ET ACCORD ÉCRIT.</h3>
+<p style="margin-bottom:0">Chaque projet est étudié selon sa nature, sa date, les prestations souhaitées et les disponibilités de l’équipe. Le périmètre des prestations, le prix, les échéances de paiement et les éventuelles conditions de modification ou d’annulation sont précisés avant confirmation.</p>
+</div>
+<div class="actions" style="margin-top:24px"><a class="btn primary" href="https://wa.me/50937469553?text=Bonjour%2C%20je%20souhaiterais%20planifier%20un%20premier%20%C3%A9change%20au%20sujet%20de%20mon%20projet%20%C3%A9v%C3%A9nementiel.">Planifier un premier échange</a><a class="btn" href="#presentation">Découvrir notre dossier de présentation</a></div>
+</div>
+<div id="faq-complementaire" class="grid grid2" style="margin-top:18px">
+
+<article class="card"><h3>LE DEVIS EST-IL DÉFINITIF ?</h3><p>Non. Le devis définitif est préparé par l’équipe après vérification des besoins, de la date, du lieu, des prestataires et des options retenues.</p></article>
+<article class="card"><h3>PUIS-JE CHOISIR MES PROPRES COULEURS ?</h3><p>Oui. Indiquez votre palette ou proposez vos couleurs dans le formulaire, même si elles ne figurent pas parmi les exemples.</p></article>
+</div>
+</section>
+
 <section id="contact" class="section">
 <div class="wrap grid grid2">
 <div><div class="eyebrow">18 — Contact</div><h2>PARLONS DE VOTRE PROJET.</h2><p class="lead">Vous apportez votre vision. Nous construisons l’expérience.</p></div>
 <div class="contactbox"><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553?text=Hello!%20Welcome%20to%20LAM.%20How%20may%20we%20assist%20you%20with%20your%20event%3F">+509 37 46 9553</a></div><div class="contactline"><small>Téléphone</small><a href="tel:+50937469553">+509 37 46 9553</a></div><div class="contactline"><small>Email</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div><div class="contactline"><small>Instagram</small><a href="https://www.instagram.com/lamevenementielevents/" target="_blank" rel="noopener">lamevenementielevents</a></div><div class="contactline"><small>Localisation</small><span>Haïti</span></div></div>
-</div></section>
-<section id="presentation" class="section">
-<div class="wrap">
-<div class="eyebrow">LAM ÉVÉNEMENTIEL & EVENTS · HAÏTI</div>
-<div class="section-head"><h2>UNE ÉQUIPE AU SERVICE DE VOS MOMENTS IMPORTANTS.</h2><p class="lead">Votre vision. Notre créativité. Une expérience inoubliable.</p></div>
-<div class="grid grid2">
-<article class="card"><h3>Notre engagement</h3><p>LAM ÉVÉNEMENTIEL & EVENTS conçoit et coordonne des expériences soignées, personnalisées et mémorables. L’écoute, l’organisation, la créativité et l’attention aux détails guident chaque projet.</p></article>
-<article class="card"><h3>Notre méthode</h3><p>Écouter votre vision, proposer des prestations adaptées, préparer chaque étape et coordonner la réalisation selon les éléments convenus ensemble.</p></article>
-</div>
-
 </div></section>
 </main>
 
