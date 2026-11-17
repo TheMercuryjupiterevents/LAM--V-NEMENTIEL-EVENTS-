@@ -2532,7 +2532,7 @@ main>section:not([id]){display:none!important}
 <header class="nav" id="lam-main-navigation">
   <div class="wrap navin">
     <a class="brand" href="#accueil" aria-label="Accueil LAM ÉVÉNEMENTIEL & EVENTS">
-      <span class="brand-name">LAM <small>ÉVÉNEMENTIEL & EVENTS</small></span>
+      <span class="brand-name"><span class="brand-letter-l">L</span><span class="brand-letter-a">A</span><span class="brand-letter-m">M</span><small><span class="brand-event-word">ÉVÉNEMENTIEL</span> <span class="brand-events-word">&amp; EVENTS</span></small></span>
     </a>
     <nav class="navlinks" aria-label="Navigation principale">
       <a href="#accueil">Accueil</a>
@@ -11484,5 +11484,28 @@ html body main#accueil section#lam-hero.hero .eyebrow{
 <style id="lam-haiti-dark-pink-20261112">
 #lam-hero .hero-event-label{
  color:#C21872!important;-webkit-text-fill-color:#C21872!important;
+}
+</style>
+
+
+<style id="lam-mobile-display-correction-20261117">
+/* Correctif mobile LAM : couleurs du mot-symbole, rythme des sections et bouton WhatsApp */
+#lam-main-navigation .brand-name{color:#171717!important;display:block!important;white-space:nowrap!important}
+#lam-main-navigation .brand-letter-l,#lam-main-navigation .brand-letter-m{color:#F00018!important;-webkit-text-fill-color:#F00018!important}
+#lam-main-navigation .brand-letter-a{color:#F5C400!important;-webkit-text-fill-color:#F5C400!important}
+#lam-main-navigation .brand-name small{display:block!important;white-space:nowrap!important;font-size:clamp(8px,2vw,10px)!important;letter-spacing:.16em!important}
+#lam-main-navigation .brand-event-word{color:#1748AD!important;-webkit-text-fill-color:#1748AD!important}
+#lam-main-navigation .brand-events-word{color:#F28C18!important;-webkit-text-fill-color:#F28C18!important}
+html body .wa{right:12px!important;bottom:12px!important;left:auto!important;width:auto!important;max-width:min(220px,calc(100vw - 32px))!important;min-height:0!important;padding:11px 15px!important;font-size:12px!important;line-height:1.25!important;white-space:normal!important;text-align:center!important;box-shadow:0 5px 16px rgba(0,0,0,.16)!important;z-index:40!important}
+@media(max-width:680px){
+ html body .section,html body .section.alt,html body .sky-gallery{padding:42px 0!important}
+ html body .section-head{margin-bottom:20px!important}
+ html body h2{font-size:clamp(26px,7vw,36px)!important;line-height:1.08!important;letter-spacing:-.025em!important}
+ html body h3{font-size:clamp(20px,5.2vw,27px)!important;line-height:1.15!important}
+ html body .grid,html body .grid.grid2,html body .grid.grid3,html body .grid.grid4{gap:20px!important}
+ html body .grid>.card{padding:10px 0 18px!important}
+ #lam-main-navigation .navin{min-height:70px!important}
+ #lam-main-navigation .brand-name{font-size:1.12rem!important;letter-spacing:.09em!important}
+ #lam-main-navigation .brand-name small{font-size:8px!important;letter-spacing:.1em!important}
 }
 </style>
