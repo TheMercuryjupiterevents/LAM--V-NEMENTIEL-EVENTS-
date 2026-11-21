@@ -11710,3 +11710,45 @@ html body .wa{
   border:2px solid #1748AD!important;
 }
 </style>
+
+
+<style id="lam-checkbox-style-20261121">
+/* LAM — uniformisation des cases à cocher sur tous les formulaires */
+html body main input[type="checkbox"],
+html body main .check input[type="checkbox"],
+html body main .consent input[type="checkbox"]{
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  width:19px!important;height:19px!important;min-width:19px!important;
+  margin:0 9px 0 0!important;
+  border:2px solid #FFD400!important;
+  border-radius:5px!important;
+  background:#FFFFFF!important;
+  accent-color:#FFD400!important;
+  display:inline-grid!important;
+  place-content:center!important;
+  vertical-align:middle!important;
+  cursor:pointer!important;
+  box-shadow:none!important;
+}
+html body main input[type="checkbox"]::before{
+  content:""!important;
+  width:9px!important;height:5px!important;
+  border-left:2px solid #FFFFFF!important;
+  border-bottom:2px solid #FFFFFF!important;
+  transform:rotate(-45deg) scale(0)!important;
+  transform-origin:center!important;
+}
+html body main input[type="checkbox"]:checked{
+  background:#FFD400!important;
+  border-color:#FFD400!important;
+}
+html body main input[type="checkbox"]:checked::before{
+  transform:rotate(-45deg) scale(1)!important;
+}
+html body main input[type="checkbox"]:focus-visible{
+  outline:2px solid #1748AD!important;
+  outline-offset:3px!important;
+}
+</style>
+
