@@ -2810,14 +2810,6 @@ document.addEventListener('click',function(event){
 <article class="gallery-slot"><div class="gallery-icon" aria-hidden="true">✧</div><h3>DÉCORATION & ART DE LA TABLE</h3></article>
 <article class="gallery-slot"><div class="gallery-icon" aria-hidden="true">✧</div><h3>ÉVÉNEMENTS PROFESSIONNELS</h3></article>
 </div>
-<div class="gallery-upload card">
-<div><div class="eyebrow">Préparer une photo</div><h3>AJOUTER UNE PHOTO À LA GALERIE</h3><p class="small">Choisissez une image pour prévisualiser son emplacement. Cet aperçu reste sur votre appareil : pour la publier durablement sur le site, le fichier doit ensuite être ajouté au dépôt du site.</p></div>
-<div class="field"><label for="galleryPhotoInput">Choisir une photo (JPG, PNG ou WEBP)</label><input id="galleryPhotoInput" type="file" accept="image/jpeg,image/png,image/webp"></div>
-<div class="field"><label for="galleryPhotoTitle">Titre de la photo</label><input id="galleryPhotoTitle" type="text" maxlength="80" placeholder="Ex. Décoration de mariage en bleu ciel"></div>
-<button class="btn primary" type="button" id="galleryPreviewButton">Prévisualiser la photo</button>
-<p id="galleryPhotoNotice" class="small" aria-live="polite"></p>
-<div id="galleryLocalPreview" class="gallery-local-preview" hidden><img id="galleryPreviewImage" alt="Aperçu de la photo choisie"><div><strong id="galleryPreviewTitle"></strong><p class="small">Aperçu local uniquement — cette photo n’est pas encore publiée sur le site.</p></div></div>
-</div>
 </div>
 </section>
 
@@ -4644,25 +4636,6 @@ document.addEventListener('click',function(event){
 
 <script>
 (function(){
-  var photoInput=document.getElementById('galleryPhotoInput');
-  var photoTitle=document.getElementById('galleryPhotoTitle');
-  var previewButton=document.getElementById('galleryPreviewButton');
-  var previewWrap=document.getElementById('galleryLocalPreview');
-  var previewImg=document.getElementById('galleryPreviewImage');
-  var previewTitle=document.getElementById('galleryPreviewTitle');
-  var photoNotice=document.getElementById('galleryPhotoNotice');
-  if(previewButton){
-    previewButton.addEventListener('click',function(){
-      var file=photoInput&&photoInput.files&&photoInput.files[0];
-      if(!file){photoNotice.textContent='Choisissez une photo avant de lancer l’aperçu.';return;}
-      if(!['image/jpeg','image/png','image/webp'].includes(file.type)){photoNotice.textContent='Format accepté : JPG, PNG ou WEBP.';return;}
-      if(file.size>8*1024*1024){photoNotice.textContent='La photo doit peser moins de 8 Mo.';return;}
-      if(previewImg.dataset.objectUrl)URL.revokeObjectURL(previewImg.dataset.objectUrl);
-      var objectUrl=URL.createObjectURL(file);previewImg.src=objectUrl;previewImg.dataset.objectUrl=objectUrl;
-      previewTitle.textContent=(photoTitle.value||file.name).trim();previewWrap.hidden=false;
-      photoNotice.textContent='Aperçu créé. Pour le publier sur le site pour tous les visiteurs, il faut ensuite ajouter le fichier au dépôt du site.';
-    });
-  }
   var type=document.getElementById('creatorType'),style=document.getElementById('creatorStyle'),palette=document.getElementById('creatorPalette'),guests=document.getElementById('creatorGuests');
   var colorInputs=Array.from(document.querySelectorAll('input[name="creatorColors"]'));
   function selectedColors(){return colorInputs.filter(function(el){return el.checked;}).map(function(el){return {name:el.value,color:el.dataset.color};});}
