@@ -2629,6 +2629,43 @@ html body #formulaire form.form input[type=checkbox],html body #formulaire form.
 html body #formulaire form.form button[type=submit],html body #formulaire form.form input[type=submit],html body #formulaire form.form .btn.primary{background:#F00018!important;background-image:none!important;border:1px solid #F00018!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
 html body #formulaire #formChoiceCards .card{background:#fff!important;border-color:#1748AD!important}
 </style>
+
+<style id="lam-all-form-checkboxes-yellow">
+/* Toutes les cases à cocher de tous les formulaires LAM */
+html body #formulaire form input[type="checkbox"],
+html body #formulaire form.form input[type="checkbox"]{
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  width:20px!important;height:20px!important;min-width:20px!important;
+  margin:2px 8px 0 0!important;padding:0!important;
+  display:inline-grid!important;place-content:center!important;
+  vertical-align:middle!important;cursor:pointer!important;
+  background:#FFFFFF!important;
+  border:2px solid #1748AD!important;
+  border-radius:4px!important;
+  accent-color:#FFD400!important;
+  box-shadow:none!important;
+}
+html body #formulaire form input[type="checkbox"]::before{
+  content:""!important;width:10px!important;height:6px!important;
+  border-left:2px solid #000000!important;
+  border-bottom:2px solid #000000!important;
+  transform:rotate(-45deg) scale(0)!important;
+  transform-origin:center!important;
+}
+html body #formulaire form input[type="checkbox"]:checked{
+  background:#FFD400!important;border-color:#1748AD!important;
+}
+html body #formulaire form input[type="checkbox"]:checked::before{
+  transform:rotate(-45deg) scale(1)!important;
+}
+html body #formulaire form input[type="checkbox"]:focus-visible{
+  outline:3px solid rgba(23,72,173,.25)!important;outline-offset:2px!important;
+}
+html body #formulaire form input[type="checkbox"]:disabled{
+  opacity:.55!important;cursor:not-allowed!important;
+}
+</style>
 </head>
 <body>
 
