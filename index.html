@@ -1050,6 +1050,12 @@ html,body{max-width:100%;overflow-x:hidden}
 <article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">04 — LAM KIDS</div><h3>LAM KIDS EVENTS</h3><p>Anniversaires et célébrations pour les enfants et adolescents de 1 à 16 ans : décoration, animations, gourmandises et souvenirs.</p><button class="btn primary" type="button" data-show-form="kidsForm" onclick="return showEventForm('kidsForm')" aria-controls="kidsForm" aria-pressed="false">Choisir LAM KIDS</button></article>
 <article class="card"><div class="num">05 — CHARCUTERIE</div><h3>CHARCUTERIE, COCKTAILS & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs, bouchées et plateaux personnalisés.</p><button class="btn primary" type="button" data-show-form="charcuterieForm" onclick="return showEventForm('charcuterieForm')" aria-controls="charcuterieForm" aria-pressed="false">Choisir Charcuterie</button></article>
+
+<article class="card"><div class="num">07 — CUISINE & TRAITEUR</div><h3>CUISINE & SERVICE TRAITEUR</h3><p>Repas, buffets, menus personnalisés et service culinaire pour vos événements.</p><button class="btn primary" type="button" data-show-form="cuisineForm" aria-controls="cuisineForm" aria-pressed="false">Demander un service traiteur</button></article>
+<article class="card"><div class="num">08 — DÉCORATION</div><h3>DÉCORATION ÉVÉNEMENTIELLE</h3><p>Décoration seule, scénographie, tables, fleurs, arches et espaces photo.</p><button class="btn primary" type="button" data-show-form="decorationForm" aria-controls="decorationForm" aria-pressed="false">Demander une décoration</button></article>
+<article class="card"><div class="num">09 — PÂTISSERIE</div><h3>PÂTISSERIE & GÂTEAUX</h3><p>Gâteaux personnalisés, desserts, pâtisseries et douceurs pour vos célébrations.</p><button class="btn primary" type="button" data-show-form="patisserieForm" aria-controls="patisserieForm" aria-pressed="false">Commander des douceurs</button></article>
+<article class="card"><div class="num">10 — LOCATION</div><h3>LOCATION DE MATÉRIEL</h3><p>Mobilier, vaisselle, accessoires et équipements de réception selon disponibilité.</p><button class="btn primary" type="button" data-show-form="locationForm" aria-controls="locationForm" aria-pressed="false">Demander une location</button></article>
+<article class="card"><div class="num">11 — SUIVI CLIENT</div><h3>MODIFICATION / ANNULATION</h3><p>Pour une réservation existante : demande de changement, report ou annulation.</p><button class="btn primary" type="button" data-show-form="modificationForm" aria-controls="modificationForm" aria-pressed="false">Gérer ma réservation</button></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 
@@ -1438,7 +1444,135 @@ html,body{max-width:100%;overflow-x:hidden}
  <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe LAM me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
  <button class="btn primary" type="submit">Envoyer ma demande charcuterie</button>
 </form></div>
-<div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
+
+<div class="form-panel" id="cuisineForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 07 · CUISINE & SERVICE TRAITEUR</div><h3>DEMANDE CUISINE & SERVICE TRAITEUR</h3><p class="lead">Présentez-nous le menu, le service et l’expérience culinaire souhaités.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE CUISINE & SERVICE TRAITEUR — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Cuisine & Service traiteur"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  </div></div>
+  
+  <div class="form-section"><h3>02 — Votre prestation culinaire</h3><div class="fieldgrid">
+   <div class="field"><label>Type de service *</label><select name="Type de service" required><option value="">Sélectionner</option><option>Buffet</option><option>Service à table</option><option>Repas individuel</option><option>Cocktail / bouchées</option><option>Menu familial</option><option>Autre</option></select></div>
+   <div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div>
+   <div class="field"><label>Nombre de personnes *</label><input type="number" name="Nombre de personnes" min="1" required></div>
+   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
+   <div class="field"><label>Type de cuisine souhaitée</label><input name="Type de cuisine"></div>
+   <div class="field"><label>Budget (HTG)</label><input type="number" name="Budget (HTG)" min="0"></div>
+   <div class="field full"><label>Menu, allergies et demandes particulières *</label><textarea name="Menu et demandes particulières" required></textarea></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <button class="btn primary" type="submit">Envoyer ma demande cuisine</button>
+ </form>
+</div>
+
+<div class="form-panel" id="decorationForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 08 · DÉCORATION ÉVÉNEMENTIELLE</div><h3>DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE</h3><p class="lead">Décrivez l’espace à décorer, le style recherché et les éléments souhaités.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Décoration événementielle"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  </div></div>
+  
+  <div class="form-section"><h3>02 — Votre événement</h3><div class="fieldgrid">
+   <div class="field"><label>Type d’événement *</label><select name="Type d’événement" required><option value="">Sélectionner</option><option>Mariage</option><option>Anniversaire</option><option>Événement privé</option><option>Événement professionnel</option><option>Autre</option></select></div>
+   <div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div>
+   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
+   <div class="field"><label>Nombre d’invités</label><input type="number" name="Nombre d’invités" min="1"></div>
+   <div class="field full"><label>Budget prévu (HTG)</label><input type="number" name="Budget prévu (HTG)" min="0"></div>
+   <div class="field full"><label>Détails de votre demande *</label><textarea name="Détails de la demande" required></textarea></div>
+  </div></div>
+  <div class="form-section"><h3>03 — Votre univers décoratif</h3><div class="fieldgrid">
+   <div class="field"><label>Style / thème</label><input name="Style ou thème"></div>
+   <div class="field"><label>Couleurs souhaitées</label><input name="Couleurs souhaitées"></div>
+   <div class="field full"><label>Éléments souhaités</label><textarea name="Éléments de décoration" placeholder="Arche, fleurs, tables, centres de table, espace photo…"></textarea></div>
+   <div class="field full"><label>Photos d’inspiration (facultatif)</label><input type="file" name="Inspirations" accept="image/*" multiple></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <button class="btn primary" type="submit">Envoyer ma demande décoration</button>
+ </form>
+</div>
+
+<div class="form-panel" id="patisserieForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 09 · PÂTISSERIE & GÂTEAUX</div><h3>COMMANDE PÂTISSERIE & GÂTEAUX</h3><p class="lead">Précisez le type de gâteau ou de douceurs, les quantités et la date souhaitée.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="COMMANDE PÂTISSERIE & GÂTEAUX — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Pâtisserie & Gâteaux"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  </div></div>
+  
+  <div class="form-section"><h3>02 — Votre commande</h3><div class="fieldgrid">
+   <div class="field"><label>Type de commande *</label><select name="Type de commande" required><option value="">Sélectionner</option><option>Gâteau personnalisé</option><option>Cupcakes</option><option>Petits fours / pâtisseries</option><option>Desserts</option><option>Assortiment gourmand</option><option>Autre</option></select></div>
+   <div class="field"><label>Date de livraison / retrait *</label><input type="date" name="Date souhaitée" required></div>
+   <div class="field"><label>Nombre de portions / quantité *</label><input name="Quantité" required></div>
+   <div class="field"><label>Saveur souhaitée</label><input name="Saveur"></div>
+   <div class="field"><label>Budget (HTG)</label><input type="number" name="Budget (HTG)" min="0"></div>
+   <div class="field"><label>Thème / couleurs</label><input name="Thème et couleurs"></div>
+   <div class="field full"><label>Inscription, détails et allergies</label><textarea name="Personnalisation et allergies"></textarea></div>
+   <div class="field full"><label>Image d’inspiration (facultatif)</label><input type="file" name="Inspiration" accept="image/*"></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <button class="btn primary" type="submit">Envoyer ma commande pâtisserie</button>
+ </form>
+</div>
+
+<div class="form-panel" id="locationForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 10 · LOCATION DE MATÉRIEL</div><h3>DEMANDE DE LOCATION DE MATÉRIEL</h3><p class="lead">Indiquez le matériel recherché, les quantités et les informations de votre événement.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE DE LOCATION DE MATÉRIEL — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Location de matériel"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  </div></div>
+  
+  <div class="form-section"><h3>02 — Votre location</h3><div class="fieldgrid">
+   <div class="field"><label>Date de l’événement *</label><input type="date" name="Date de l’événement" required></div>
+   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
+   <div class="field"><label>Matériel souhaité *</label><input name="Matériel souhaité" required placeholder="Tables, chaises, vaisselle, nappes…"></div>
+   <div class="field"><label>Quantités *</label><input name="Quantités" required></div>
+   <div class="field"><label>Date de livraison / récupération</label><input type="date" name="Date de livraison ou récupération"></div>
+   <div class="field"><label>Budget estimé (HTG)</label><input type="number" name="Budget estimé (HTG)" min="0"></div>
+   <div class="field full"><label>Précisions supplémentaires</label><textarea name="Précisions"></textarea></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <button class="btn primary" type="submit">Envoyer ma demande de location</button>
+ </form>
+</div>
+
+<div class="form-panel" id="modificationForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 11 · MODIFICATION / ANNULATION</div><h3>DEMANDE DE MODIFICATION OU D’ANNULATION</h3><p class="lead">Ce formulaire est réservé aux clients ayant déjà une réservation auprès de LAM.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE DE MODIFICATION OU D’ANNULATION — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Suivi client — modification / annulation"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  </div></div>
+  
+  <div class="form-section"><h3>02 — Votre réservation existante</h3><div class="fieldgrid">
+   <div class="field"><label>Nom figurant sur la réservation *</label><input name="Nom sur la réservation" required></div>
+   <div class="field"><label>Numéro de réservation / contrat</label><input name="Numéro de réservation ou contrat"></div>
+   <div class="field"><label>Date initiale de l’événement *</label><input type="date" name="Date initiale" required></div>
+   <div class="field"><label>Demande *</label><select name="Type de demande" required><option value="">Sélectionner</option><option>Modification des informations</option><option>Changement de date</option><option>Report de l’événement</option><option>Annulation</option><option>Autre</option></select></div>
+   <div class="field full"><label>Expliquez votre demande *</label><textarea name="Détails de la demande" required></textarea></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <button class="btn primary" type="submit">Envoyer ma demande de suivi client</button>
+ </form>
+</div><div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
 </div></section>
 
 <script id="lam-inspiration-form-handler">
@@ -1464,7 +1598,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm','weddingForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm','weddingForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
