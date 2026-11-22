@@ -1044,6 +1044,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="eyebrow">17 — Votre projet</div><h2>QUEL FORMULAIRE CORRESPOND À VOTRE PROJET ?</h2>
 <p class="lead">Choisissez le type d’événement qui vous concerne pour accéder au formulaire correspondant et nous transmettre les informations utiles à votre demande.</p>
 <div class="grid grid3" id="formChoiceCards" style="margin:28px 0;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+<article class="card"><div class="num">06 — MARIAGE</div><h3>ORGANISATION DE MARIAGE</h3><p>Un accompagnement personnalisé pour votre cérémonie, réception, décoration, cuisine et coordination du grand jour.</p><button class="btn primary" type="button" data-show-form="weddingForm" aria-controls="weddingForm" aria-pressed="false">Planifier mon mariage</button></article>
 <article class="card"><div class="num">01 — PRESTIGE</div><h3>GRANDES RÉCEPTIONS & ÉVÉNEMENTS DE PRESTIGE</h3><p>Mariages de luxe, grands dîners, galas, grandes cérémonies et réceptions haut de gamme.</p><button class="btn primary" type="button" data-show-form="prestigeForm" onclick="return showEventForm('prestigeForm')" aria-controls="prestigeForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm" onclick="return showEventForm('privateForm')" aria-controls="privateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
@@ -1051,6 +1052,31 @@ html,body{max-width:100%;overflow-x:hidden}
 <article class="card"><div class="num">05 — CHARCUTERIE</div><h3>CHARCUTERIE, COCKTAILS & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs, bouchées et plateaux personnalisés.</p><button class="btn primary" type="button" data-show-form="charcuterieForm" onclick="return showEventForm('charcuterieForm')" aria-controls="charcuterieForm" aria-pressed="false">Choisir Charcuterie</button></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
+
+<div class="form-panel" id="weddingForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 06 · MARIAGE</div><h3>PLANIFIEZ VOTRE MARIAGE AVEC LAM</h3><p class="lead">Décrivez-nous votre journée afin que notre équipe prépare une proposition personnalisée.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE D’ORGANISATION DE MARIAGE — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Organisation de mariage"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="payment-policy-inline" role="note"><div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div><p><span class="payment-policy-inline-accent">Acompte de 70 % :</span> requis pour confirmer la réservation et bloquer la date.</p><p><strong>Solde de 30 % :</strong> à régler au plus tard 7 jours avant le mariage.</p><p>L’envoi du formulaire ne confirme pas la réservation. La date est bloquée après accord et réception de l’acompte.</p></div>
+  <div class="form-section"><h3>01 — Les futurs mariés</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet du/de la partenaire 1 *</label><input name="Partenaire 1" required autocomplete="name"></div><div class="field"><label>Nom complet du/de la partenaire 2 *</label><input name="Partenaire 2" required></div><div class="field"><label>E-mail *</label><input type="email" name="E-mail" required autocomplete="email"></div><div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" required autocomplete="tel"></div>
+  </div></div>
+  <div class="form-section"><h3>02 — Votre journée</h3><div class="fieldgrid">
+   <div class="field"><label>Date du mariage *</label><input type="date" name="Date du mariage" required></div><div class="field"><label>Heure de début</label><input type="time" name="Heure de début"></div><div class="field"><label>Ville et lieu envisagé *</label><input name="Ville et lieu" required placeholder="Ville, salle ou adresse"></div><div class="field"><label>Nombre approximatif d’invités *</label><input type="number" name="Nombre d’invités" min="1" required></div>
+   <div class="field"><label>Type de célébration</label><select name="Type de célébration"><option value="">Choisir</option><option>Cérémonie civile</option><option>Cérémonie religieuse</option><option>Cérémonie symbolique</option><option>Cérémonie civile et religieuse</option><option>Réception uniquement</option><option>Autre / à discuter</option></select></div>
+   <div class="field"><label>Style souhaité</label><select name="Style du mariage"><option value="">Choisir</option><option>Chic et élégant</option><option>Romantique et floral</option><option>Classique et intemporel</option><option>Prestige / royal</option><option>Moderne et minimaliste</option><option>Jardin / bord de mer</option><option>Culturel / traditionnel</option><option>Sur mesure</option></select></div>
+  </div></div>
+  <div class="form-section"><h3>03 — Services souhaités</h3><div class="checks">
+   <label class="check"><input type="checkbox" name="Services[]" value="Organisation complète">Organisation complète</label><label class="check"><input type="checkbox" name="Services[]" value="Coordination du jour J">Coordination du jour J</label><label class="check"><input type="checkbox" name="Services[]" value="Décoration et scénographie">Décoration et scénographie</label><label class="check"><input type="checkbox" name="Services[]" value="Fleurs et art de la table">Fleurs et art de la table</label><label class="check"><input type="checkbox" name="Services[]" value="Cuisine et service traiteur">Cuisine et service traiteur</label><label class="check"><input type="checkbox" name="Services[]" value="Gâteau et pâtisserie">Gâteau et pâtisserie</label><label class="check"><input type="checkbox" name="Services[]" value="Location de mobilier et matériel">Location de mobilier et matériel</label><label class="check"><input type="checkbox" name="Services[]" value="Sonorisation et éclairage">Sonorisation et éclairage</label><label class="check"><input type="checkbox" name="Services[]" value="Accueil et service des invités">Accueil et service des invités</label>
+  </div></div>
+  <div class="form-section"><h3>04 — Ambiance, budget et précisions</h3><div class="fieldgrid">
+   <div class="field"><label>Couleurs souhaitées</label><input name="Couleurs souhaitées" placeholder="Ex. blanc, champagne et doré"></div><div class="field"><label>Budget estimatif (HTG)</label><input type="number" name="Budget estimatif HTG" min="0" step="1"></div>
+   <div class="field full"><label>Vos idées, besoins et demandes particulières</label><textarea name="Détails du projet" rows="4" placeholder="Décrivez l’ambiance, le déroulement et vos demandes…"></textarea></div><div class="field full"><label>Images d’inspiration (facultatif)</label><input type="file" name="Inspiration" accept=".jpg,.jpeg,.png,.webp,.pdf" multiple></div>
+  </div></div>
+  <label class="consent"><input type="checkbox" name="Consentement contact" value="J’accepte d’être contacté(e)" required>J’accepte que l’équipe LAM me contacte au sujet de mon projet. Je comprends que l’envoi de ce formulaire ne confirme pas une réservation.</label>
+  <button class="btn primary" type="submit">Envoyer ma demande de mariage</button>
+ </form>
+</div>
 <div class="form-panel" id="kidsForm" hidden style="margin-top:24px">
 <div class="card" style="margin-bottom:18px">
  <div class="num">FORMULAIRE 04 · LAM KIDS EVENTS</div>
@@ -1438,7 +1464,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm','weddingForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
