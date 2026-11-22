@@ -1471,31 +1471,104 @@ html,body{max-width:100%;overflow-x:hidden}
 </div>
 
 <div class="form-panel" id="decorationForm" hidden style="margin-top:24px">
- <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 08 · DÉCORATION ÉVÉNEMENTIELLE</div><h3>DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE</h3><p class="lead">Décrivez l’espace à décorer, le style recherché et les éléments souhaités.</p></div>
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 08 · DÉCORATION ÉVÉNEMENTIELLE</div><h3>DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE</h3><p class="lead">Partagez votre vision avec notre équipe. Plus les détails sont précis, mieux nous pourrons imaginer et préparer votre décor.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_subject" value="DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Décoration événementielle"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
   <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
    <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
    <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
    <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
-   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+   <div class="field"><label>Entreprise / Organisation (facultatif)</label><input name="Entreprise ou organisation"></div>
   </div></div>
-  
-  <div class="form-section"><h3>02 — Votre événement</h3><div class="fieldgrid">
-   <div class="field"><label>Type d’événement *</label><select name="Type d’événement" required><option value="">Sélectionner</option><option>Mariage</option><option>Anniversaire</option><option>Événement privé</option><option>Événement professionnel</option><option>Autre</option></select></div>
-   <div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div>
-   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
-   <div class="field"><label>Nombre d’invités</label><input type="number" name="Nombre d’invités" min="1"></div>
-   <div class="field full"><label>Budget prévu (HTG)</label><input type="number" name="Budget prévu (HTG)" min="0"></div>
-   <div class="field full"><label>Détails de votre demande *</label><textarea name="Détails de la demande" required></textarea></div>
+
+  <div class="form-section"><h3>02 — Informations sur l’événement</h3><div class="fieldgrid">
+   <div class="field"><label>Type d’événement *</label><select name="Type d’événement" required><option value="">Sélectionner</option><option>Mariage</option><option>Fiançailles</option><option>Demande en mariage</option><option>Anniversaire adulte</option><option>Anniversaire enfant</option><option>Baby shower</option><option>Gender reveal</option><option>Baptême / Communion</option><option>Graduation</option><option>Dîner privé</option><option>Gala / Réception</option><option>Conférence / Séminaire</option><option>Lancement de produit</option><option>Événement d’entreprise</option><option>Concert / Spectacle</option><option>Autre</option></select></div>
+   <div class="field"><label>Date de l’événement *</label><input type="date" name="Date de l’événement" required></div>
+   <div class="field"><label>Heure de début</label><input type="time" name="Heure de début"></div>
+   <div class="field"><label>Heure de fin / démontage</label><input type="time" name="Heure de fin"></div>
+   <div class="field"><label>Nombre estimé d’invités *</label><input type="number" name="Nombre d’invités" min="1" required></div>
+   <div class="field"><label>Lieu / adresse / ville *</label><input name="Lieu et adresse" required></div>
+   <div class="field"><label>Type d’espace</label><select name="Type d’espace"><option value="">Sélectionner</option><option>Salle intérieure</option><option>Jardin / extérieur</option><option>Terrasse</option><option>Plage</option><option>Domicile</option><option>Hôtel / salle de réception</option><option>Espace professionnel</option><option>Autre</option></select></div>
+   <div class="field"><label>Dimensions approximatives de l’espace</label><input name="Dimensions de l’espace" placeholder="Ex. 10 m × 15 m"></div>
+   <div class="field full"><label>Y a-t-il des contraintes sur le lieu ?</label><textarea name="Contraintes du lieu" placeholder="Accès, escaliers, hauteur du plafond, électricité, horaires d’installation, règles du lieu…"></textarea></div>
   </div></div>
-  <div class="form-section"><h3>03 — Votre univers décoratif</h3><div class="fieldgrid">
-   <div class="field"><label>Style / thème</label><input name="Style ou thème"></div>
-   <div class="field"><label>Couleurs souhaitées</label><input name="Couleurs souhaitées"></div>
-   <div class="field full"><label>Éléments souhaités</label><textarea name="Éléments de décoration" placeholder="Arche, fleurs, tables, centres de table, espace photo…"></textarea></div>
-   <div class="field full"><label>Photos d’inspiration (facultatif)</label><input type="file" name="Inspirations" accept="image/*" multiple></div>
+
+  <div class="form-section"><h3>03 — Concept, thème et ambiance</h3><div class="fieldgrid">
+   <div class="field"><label>Nom du thème / concept</label><input name="Thème ou concept"></div>
+   <div class="field"><label>Ambiance recherchée</label><select name="Ambiance recherchée"><option value="">Sélectionner</option><option>Élégante / Prestige</option><option>Chic / Minimaliste</option><option>Romantique</option><option>Luxueuse / Glamour</option><option>Moderne / Contemporaine</option><option>Classique</option><option>Naturelle / Botanique</option><option>Colorée / Festive</option><option>Enfantine / Ludique</option><option>Culturelle / Traditionnelle</option><option>Autre</option></select></div>
+   <div class="field"><label>Couleur principale</label><input name="Couleur principale"></div>
+   <div class="field"><label>Couleurs secondaires</label><input name="Couleurs secondaires"></div>
+   <div class="field full"><label>Couleurs ou éléments à éviter</label><input name="Couleurs et éléments à éviter"></div>
+   <div class="field full"><label>Décrivez l’atmosphère que vous imaginez</label><textarea name="Description de l’ambiance" placeholder="Votre inspiration, le rendu souhaité, les détails importants…"></textarea></div>
   </div></div>
-  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+
+  <div class="form-section"><h3>04 — Éléments de décoration souhaités</h3><p class="lead">Cochez tous les éléments qui vous intéressent.</p><div class="fieldgrid">
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Arche / structure décorative"> Arche / structure décorative</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Backdrop / panneau personnalisé"> Backdrop / panneau personnalisé</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Décoration florale"> Décoration florale</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Ballons / installations organiques"> Ballons / installations organiques</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Tables et chaises"> Tables et chaises</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Nappage / chemins de table"> Nappage / chemins de table</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Centres de table"> Centres de table</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Vaisselle / couverts / verrerie"> Vaisselle / couverts / verrerie</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Décoration de plafond / suspensions"> Décoration de plafond / suspensions</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Éclairage décoratif"> Éclairage décoratif</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Bougies / lanternes"> Bougies / lanternes</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Tapis / allée / entrée"> Tapis / allée / entrée</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Plan de table / signalétique"> Plan de table / signalétique</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Espace photo / photobooth"> Espace photo / photobooth</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Scène / podium"> Scène / podium</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Table d’honneur / table gâteau"> Table d’honneur / table gâteau</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Décoration cérémonie"> Décoration de cérémonie</label></div>
+   <div class="field"><label><input type="checkbox" name="Décoration souhaitée" value="Décoration buffet / bar"> Décoration buffet / bar</label></div>
+   <div class="field full"><label>Autres éléments ou demandes spéciales</label><textarea name="Autres éléments décoratifs"></textarea></div>
+  </div></div>
+
+  <div class="form-section"><h3>05 — Zones à décorer</h3><div class="fieldgrid">
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Entrée / accueil"> Entrée / accueil</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Espace cérémonie"> Espace cérémonie</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Espace principal / invités"> Espace principal / invités</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Table d’honneur / VIP"> Table d’honneur / VIP</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Tables invités"> Tables des invités</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Buffet / espace repas"> Buffet / espace repas</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Piste de danse"> Piste de danse</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Espace photo"> Espace photo</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Espace gâteau / desserts"> Espace gâteau / desserts</label></div>
+   <div class="field"><label><input type="checkbox" name="Zones à décorer" value="Extérieur / jardin"> Extérieur / jardin</label></div>
+   <div class="field full"><label>Précisions sur les zones</label><textarea name="Précisions sur les zones"></textarea></div>
+  </div></div>
+
+  <div class="form-section"><h3>06 — Mobilier, quantités et installation</h3><div class="fieldgrid">
+   <div class="field"><label>Nombre de tables souhaité</label><input type="number" name="Nombre de tables" min="0"></div>
+   <div class="field"><label>Nombre de chaises souhaité</label><input type="number" name="Nombre de chaises" min="0"></div>
+   <div class="field"><label>Type de tables / disposition</label><input name="Type de tables et disposition" placeholder="Rondes, rectangulaires, impériales…"></div>
+   <div class="field"><label>Style de chaises</label><input name="Style de chaises"></div>
+   <div class="field"><label>Besoin de livraison ?</label><select name="Livraison"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>À discuter</option></select></div>
+   <div class="field"><label>Besoin de montage et démontage ?</label><select name="Montage et démontage"><option value="">Sélectionner</option><option>Montage et démontage</option><option>Montage seulement</option><option>Démontage seulement</option><option>Non</option><option>À discuter</option></select></div>
+   <div class="field"><label>Date / heure d’accès au lieu</label><input name="Accès au lieu"></div>
+   <div class="field"><label>Autres prestataires déjà prévus ?</label><input name="Autres prestataires"></div>
+  </div></div>
+
+  <div class="form-section"><h3>07 — Budget et services complémentaires</h3><div class="fieldgrid">
+   <div class="field"><label>Budget décoration prévu (HTG) *</label><input type="number" name="Budget décoration prévu (HTG)" min="0" required></div>
+   <div class="field"><label>Type de budget</label><select name="Type de budget"><option value="">Sélectionner</option><option>Budget fixe</option><option>Budget flexible</option><option>J’attends une proposition de LAM</option></select></div>
+   <div class="field full"><label>Services complémentaires souhaités</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Planification événementielle"> Planification événementielle</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Coordination le jour J"> Coordination le jour J</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Service traiteur"> Service traiteur</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Gâteau / pâtisserie"> Gâteau / pâtisserie</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Location de matériel"> Location de matériel</label>
+    <label><input type="checkbox" name="Services complémentaires" value="Sonorisation / éclairage"> Sonorisation / éclairage</label>
+   </div>
+  </div></div>
+
+  <div class="form-section"><h3>08 — Inspirations et informations finales</h3><div class="fieldgrid">
+   <div class="field full"><label>Photos / fichiers d’inspiration (facultatif)</label><input type="file" name="Inspirations" accept="image/*,.pdf" multiple></div>
+   <div class="field full"><label>Lien Pinterest / Instagram / référence (facultatif)</label><input type="url" name="Lien inspiration" placeholder="https://"></div>
+   <div class="field full"><label>Informations supplémentaires, attentes et demandes particulières</label><textarea name="Informations supplémentaires" placeholder="Dites-nous ce qui est essentiel pour vous afin que notre équipe puisse préparer une proposition adaptée."></textarea></div>
+   <div class="field full"><label>Comment avez-vous connu LAM ?</label><select name="Source de référence"><option value="">Sélectionner</option><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>Recommandation</option><option>Site web</option><option>Autre</option></select></div>
+  </div></div>
+  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation. La date sera confirmée uniquement après accord sur la proposition et réception de l’acompte requis.</label></div>
   <button class="btn primary" type="submit">Envoyer ma demande décoration</button>
  </form>
 </div>
