@@ -1446,30 +1446,50 @@ html,body{max-width:100%;overflow-x:hidden}
 </form></div>
 
 <div class="form-panel" id="cuisineForm" hidden style="margin-top:24px">
- <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 07 · CUISINE & SERVICE TRAITEUR</div><h3>DEMANDE CUISINE & SERVICE TRAITEUR</h3><p class="lead">Présentez-nous le menu, le service et l’expérience culinaire souhaités.</p></div>
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 07 · CUISINE & SERVICE TRAITEUR</div><h3>VOTRE PROJET CULINAIRE AVEC LAM</h3><p class="lead">Ce formulaire concerne les repas, menus, buffets et prestations de restauration. Pour les planches apéritives et bouchées cocktail, choisissez le formulaire Charcuterie & Cocktails.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_subject" value="DEMANDE CUISINE & SERVICE TRAITEUR — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Cuisine & Service traiteur"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
-   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
-   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
-   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
-   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  <div class="form-section"><h3>01 — Responsable de la demande</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div><div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div><div class="field"><label>Entreprise / organisation</label><input name="Entreprise ou organisation"></div>
+   <div class="field"><label>Personne à contacter le jour J</label><input name="Contact jour J"></div><div class="field"><label>Téléphone du contact jour J</label><input type="tel" name="Téléphone contact jour J"></div>
   </div></div>
-  
-  <div class="form-section"><h3>02 — Votre prestation culinaire</h3><div class="fieldgrid">
-   <div class="field"><label>Type de service *</label><select name="Type de service" required><option value="">Sélectionner</option><option>Buffet</option><option>Service à table</option><option>Repas individuel</option><option>Cocktail / bouchées</option><option>Menu familial</option><option>Autre</option></select></div>
-   <div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div>
-   <div class="field"><label>Nombre de personnes *</label><input type="number" name="Nombre de personnes" min="1" required></div>
-   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
-   <div class="field"><label>Type de cuisine souhaitée</label><input name="Type de cuisine"></div>
-   <div class="field"><label>Budget (HTG)</label><input type="number" name="Budget (HTG)" min="0"></div>
-   <div class="field full"><label>Menu, allergies et demandes particulières *</label><textarea name="Menu et demandes particulières" required></textarea></div>
+  <div class="form-section"><h3>02 — Votre réception et le service</h3><div class="fieldgrid">
+   <div class="field"><label>Occasion *</label><select name="Occasion" required><option value="">Sélectionner</option><option>Mariage</option><option>Anniversaire</option><option>Réception familiale</option><option>Réunion / conférence</option><option>Événement d’entreprise</option><option>Brunch</option><option>Dîner privé</option><option>Autre</option></select></div>
+   <div class="field"><label>Date du service *</label><input type="date" name="Date du service" required></div>
+   <div class="field"><label>Heure de livraison / début du service *</label><input type="time" name="Heure du service" required></div>
+   <div class="field"><label>Heure de fin prévue</label><input type="time" name="Heure de fin"></div>
+   <div class="field"><label>Nombre de convives *</label><input type="number" name="Nombre de convives" min="1" required></div>
+   <div class="field"><label>Lieu et adresse *</label><input name="Lieu et adresse" required></div>
+   <div class="field"><label>Type de prestation *</label><select name="Type de prestation" required><option value="">Sélectionner</option><option>Buffet chaud</option><option>Buffet froid</option><option>Service à table / repas assis</option><option>Repas individuels / lunch box</option><option>Brunch / petit-déjeuner</option><option>Repas familial</option><option>Station culinaire / live cooking</option><option>Menu plusieurs services</option><option>Autre</option></select></div>
+   <div class="field"><label>Formule de service</label><select name="Formule de service"><option value="">Sélectionner</option><option>Livraison uniquement</option><option>Livraison et installation du buffet</option><option>Personnel de service sur place</option><option>Préparation sur place</option><option>Formule complète avec service</option><option>À définir avec LAM</option></select></div>
   </div></div>
-  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
-  <button class="btn primary" type="submit">Envoyer ma demande cuisine</button>
+  <div class="form-section"><h3>03 — Menu et préférences culinaires</h3><div class="fieldgrid">
+   <div class="field"><label>Style de cuisine</label><select name="Style de cuisine"><option value="">Sélectionner</option><option>Haïtienne</option><option>Caribéenne</option><option>Internationale</option><option>Française</option><option>Italienne</option><option>Américaine</option><option>Fusion</option><option>Végétarienne</option><option>Autre / mélange</option></select></div>
+   <div class="field"><label>Nombre de choix de plats souhaités</label><input type="text" name="Nombre de choix de plats"></div>
+   <div class="field full"><label>Entrées / amuse-bouches souhaités</label><textarea name="Entrées souhaitées" placeholder="Précisez les entrées ou petites assiettes envisagées."></textarea></div>
+   <div class="field full"><label>Plats principaux et accompagnements *</label><textarea name="Plats principaux et accompagnements" required placeholder="Viandes, poissons, volailles, options végétariennes, riz, légumes, gratins, sauces…"></textarea></div>
+   <div class="field full"><label>Desserts et boissons à prévoir</label><textarea name="Desserts et boissons"></textarea></div>
+   <div class="field full"><label>Allergies, intolérances et restrictions alimentaires *</label><textarea name="Allergies et restrictions" required placeholder="Indiquez les allergies, restrictions, régimes particuliers ou « aucune »."></textarea></div>
+  </div></div>
+  <div class="form-section"><h3>04 — Logistique de cuisine et matériel</h3><div class="fieldgrid">
+   <div class="field"><label>Une cuisine est-elle disponible sur place ?</label><select name="Cuisine disponible"><option value="">Sélectionner</option><option>Oui, cuisine équipée</option><option>Oui, accès limité</option><option>Non</option><option>À confirmer</option></select></div>
+   <div class="field"><label>Électricité / eau disponibles ?</label><select name="Électricité et eau"><option value="">Sélectionner</option><option>Les deux disponibles</option><option>Électricité uniquement</option><option>Eau uniquement</option><option>Aucun des deux</option><option>À confirmer</option></select></div>
+   <div class="field"><label>Vaisselle et couverts nécessaires ?</label><select name="Vaisselle et couverts"><option value="">Sélectionner</option><option>Oui, tout le matériel</option><option>Partiellement</option><option>Non, déjà disponibles</option></select></div>
+   <div class="field"><label>Tables de buffet nécessaires ?</label><select name="Tables de buffet"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>À discuter</option></select></div>
+   <div class="field"><label>Nombre de serveurs souhaité</label><input type="number" name="Nombre de serveurs" min="0"></div>
+   <div class="field"><label>Accès / stationnement pour livraison</label><input name="Accès livraison"></div>
+  </div></div>
+  <div class="form-section"><h3>05 — Budget et précisions</h3><div class="fieldgrid">
+   <div class="field"><label>Budget estimé (HTG)</label><input type="number" name="Budget estimé HTG" min="0></div>
+   <div class="field"><label>Budget par personne (si connu, HTG)</label><input type="number" name="Budget par personne HTG" min="0"></div>
+   <div class="field full"><label>Autres demandes, références ou instructions</label><textarea name="Autres demandes culinaires"></textarea></div>
+   <div class="field full"><label>Joindre un menu ou document de référence (facultatif)</label><input type="file" name="Document menu" accept="image/*,.pdf"></div>
+  </div></div>
+  <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation ni la validation du menu.</label>
+  <button class="btn primary" type="submit">Envoyer ma demande traiteur</button>
  </form>
 </div>
-
 <div class="form-panel" id="decorationForm" hidden style="margin-top:24px">
  <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 08 · DÉCORATION ÉVÉNEMENTIELLE</div><h3>DEMANDE DE DÉCORATION ÉVÉNEMENTIELLE</h3><p class="lead">Partagez votre vision avec notre équipe. Plus les détails sont précis, mieux nous pourrons imaginer et préparer votre décor.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
@@ -1574,56 +1594,94 @@ html,body{max-width:100%;overflow-x:hidden}
 </div>
 
 <div class="form-panel" id="patisserieForm" hidden style="margin-top:24px">
- <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 09 · PÂTISSERIE & GÂTEAUX</div><h3>COMMANDE PÂTISSERIE & GÂTEAUX</h3><p class="lead">Précisez le type de gâteau ou de douceurs, les quantités et la date souhaitée.</p></div>
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 09 · PÂTISSERIE & GÂTEAUX</div><h3>COMMANDE PERSONNALISÉE — PÂTISSERIE</h3><p class="lead">Un formulaire dédié aux gâteaux, desserts et créations sucrées. Décrivez la taille, les saveurs, le décor et le message à inscrire.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_subject" value="COMMANDE PÂTISSERIE & GÂTEAUX — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Pâtisserie & Gâteaux"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
-   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
-   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
-   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
-   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  <div class="form-section"><h3>01 — Informations du client</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div><div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div><div class="field"><label>Nom de la personne célébrée (facultatif)</label><input name="Personne célébrée"></div>
   </div></div>
-  
-  <div class="form-section"><h3>02 — Votre commande</h3><div class="fieldgrid">
-   <div class="field"><label>Type de commande *</label><select name="Type de commande" required><option value="">Sélectionner</option><option>Gâteau personnalisé</option><option>Cupcakes</option><option>Petits fours / pâtisseries</option><option>Desserts</option><option>Assortiment gourmand</option><option>Autre</option></select></div>
-   <div class="field"><label>Date de livraison / retrait *</label><input type="date" name="Date souhaitée" required></div>
-   <div class="field"><label>Nombre de portions / quantité *</label><input name="Quantité" required></div>
-   <div class="field"><label>Saveur souhaitée</label><input name="Saveur"></div>
-   <div class="field"><label>Budget (HTG)</label><input type="number" name="Budget (HTG)" min="0"></div>
-   <div class="field"><label>Thème / couleurs</label><input name="Thème et couleurs"></div>
-   <div class="field full"><label>Inscription, détails et allergies</label><textarea name="Personnalisation et allergies"></textarea></div>
-   <div class="field full"><label>Image d’inspiration (facultatif)</label><input type="file" name="Inspiration" accept="image/*"></div>
+  <div class="form-section"><h3>02 — Type de création et quantité</h3><div class="fieldgrid">
+   <div class="field"><label>Produit souhaité *</label><select name="Produit souhaité" required><option value="">Sélectionner</option><option>Gâteau d’anniversaire</option><option>Wedding cake</option><option>Gâteau de célébration</option><option>Cupcakes</option><option>Mini-gâteaux</option><option>Cookies / biscuits</option><option>Donuts</option><option>Tartes / tartelettes</option><option>Petits fours sucrés</option><option>Verrines / desserts individuels</option><option>Table de desserts</option><option>Assortiment gourmand</option><option>Autre</option></select></div>
+   <div class="field"><label>Date souhaitée *</label><input type="date" name="Date souhaitée" required></div>
+   <div class="field"><label>Heure de retrait / livraison</label><input type="time" name="Heure de retrait ou livraison"></div>
+   <div class="field"><label>Quantité / nombre de pièces *</label><input name="Quantité" required placeholder="Ex. 1 gâteau, 24 cupcakes…"></div>
+   <div class="field"><label>Nombre de portions du gâteau</label><input type="number" name="Nombre de portions" min="1"></div>
+   <div class="field"><label>Taille ou dimensions souhaitées</label><input name="Taille ou dimensions" placeholder="Ex. diamètre, hauteur, nombre d’étages"></div>
+   <div class="field"><label>Forme</label><select name="Forme"><option value="">Sélectionner</option><option>Ronde</option><option>Carrée</option><option>Rectangulaire</option><option>Cœur</option><option>Personnalisée</option><option>À conseiller</option></select></div>
+   <div class="field"><label>Nombre d’étages</label><select name="Nombre d’étages"><option value="">Sélectionner</option><option>1</option><option>2</option><option>3</option><option>4 ou plus</option><option>Sans objet</option></select></div>
   </div></div>
-  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <div class="form-section"><h3>03 — Saveurs et composition</h3><div class="fieldgrid">
+   <div class="field"><label>Saveur du gâteau / base</label><select name="Saveur de base"><option value="">Sélectionner</option><option>Vanille</option><option>Chocolat</option><option>Red velvet</option><option>Citron</option><option>Carotte</option><option>Coco</option><option>Marbré</option><option>Fruits</option><option>Autre / à discuter</option></select></div>
+   <div class="field"><label>Garniture / fourrage</label><input name="Garniture souhaitée" placeholder="Crème, fruits, chocolat, confiture…"></div>
+   <div class="field"><label>Type de glaçage / finition</label><select name="Glaçage et finition"><option value="">Sélectionner</option><option>Crème au beurre</option><option>Chantilly</option><option>Ganache chocolat</option><option>Fondant</option><option>Effet semi-nu</option><option>Finition lisse</option><option>À conseiller</option></select></div>
+   <div class="field"><label>Niveau de douceur</label><select name="Niveau de douceur"><option value="">Sélectionner</option><option>Peu sucré</option><option>Équilibré</option><option>Classique</option><option>Sans préférence</option></select></div>
+   <div class="field full"><label>Allergies ou restrictions alimentaires</label><textarea name="Allergies pâtisserie" placeholder="Gluten, lait, œufs, fruits à coque, autres… ou indiquez « aucune »."></textarea></div>
+  </div></div>
+  <div class="form-section"><h3>04 — Design et personnalisation</h3><div class="fieldgrid">
+   <div class="field"><label>Thème / occasion</label><input name="Thème ou occasion"></div><div class="field"><label>Couleurs souhaitées</label><input name="Couleurs du gâteau"></div>
+   <div class="field"><label>Style du décor</label><select name="Style du décor"><option value="">Sélectionner</option><option>Élégant / minimaliste</option><option>Floral</option><option>Luxury / prestige</option><option>Enfant / personnages</option><option>Moderne / tendance</option><option>Classique</option><option>Autre</option></select></div>
+   <div class="field"><label>Message à inscrire</label><input name="Message sur le gâteau"></div>
+   <div class="field full"><label>Décorations ou détails à reproduire</label><textarea name="Détails de décoration" placeholder="Nom, âge, fleurs, figurines, topper, motifs, logo…"></textarea></div>
+   <div class="field full"><label>Photos / croquis d’inspiration</label><input type="file" name="Inspiration pâtisserie" accept="image/*,.pdf" multiple></div>
+  </div></div>
+  <div class="form-section"><h3>05 — Livraison et budget</h3><div class="fieldgrid">
+   <div class="field"><label>Mode de réception *</label><select name="Mode de réception" required><option value="">Sélectionner</option><option>Retrait</option><option>Livraison</option><option>Installation sur table de desserts</option><option>À confirmer</option></select></div>
+   <div class="field"><label>Adresse de livraison / retrait *</label><input name="Adresse de réception" required></div>
+   <div class="field"><label>Budget prévu (HTG)</label><input type="number" name="Budget pâtisserie HTG" min="0"></div>
+   <div class="field"><label>Nom / téléphone du réceptionnaire</label><input name="Réceptionnaire"></div>
+   <div class="field full"><label>Instructions complémentaires</label><textarea name="Instructions pâtisserie"></textarea></div>
+  </div></div>
+  <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte pour confirmer la faisabilité, le tarif et les modalités de ma commande. L’envoi du formulaire ne confirme pas la commande.</label>
   <button class="btn primary" type="submit">Envoyer ma commande pâtisserie</button>
  </form>
 </div>
-
 <div class="form-panel" id="locationForm" hidden style="margin-top:24px">
- <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 10 · LOCATION DE MATÉRIEL</div><h3>DEMANDE DE LOCATION DE MATÉRIEL</h3><p class="lead">Indiquez le matériel recherché, les quantités et les informations de votre événement.</p></div>
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 10 · LOCATION DE MATÉRIEL</div><h3>INVENTAIRE ET DEMANDE DE LOCATION</h3><p class="lead">Indiquez le matériel, les quantités, la période de location et les modalités de livraison ou de récupération.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_subject" value="DEMANDE DE LOCATION DE MATÉRIEL — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="Location de matériel"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
-  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
-   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
-   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
-   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
-   <div class="field"><label>Entreprise (facultatif)</label><input name="Entreprise"></div>
+  <div class="form-section"><h3>01 — Coordonnées du locataire</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet / responsable *</label><input name="Nom complet" autocomplete="name" required></div><div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div><div class="field"><label>Entreprise / organisation</label><input name="Entreprise"></div>
   </div></div>
-  
-  <div class="form-section"><h3>02 — Votre location</h3><div class="fieldgrid">
+  <div class="form-section"><h3>02 — Période et lieu d’utilisation</h3><div class="fieldgrid">
+   <div class="field"><label>Nature de l’événement *</label><select name="Nature de l’événement" required><option value="">Sélectionner</option><option>Mariage / réception</option><option>Anniversaire / fête privée</option><option>Événement professionnel</option><option>Conférence / réunion</option><option>Concert / spectacle</option><option>Autre</option></select></div>
    <div class="field"><label>Date de l’événement *</label><input type="date" name="Date de l’événement" required></div>
-   <div class="field"><label>Lieu / ville *</label><input name="Lieu / ville" required></div>
-   <div class="field"><label>Matériel souhaité *</label><input name="Matériel souhaité" required placeholder="Tables, chaises, vaisselle, nappes…"></div>
-   <div class="field"><label>Quantités *</label><input name="Quantités" required></div>
-   <div class="field"><label>Date de livraison / récupération</label><input type="date" name="Date de livraison ou récupération"></div>
-   <div class="field"><label>Budget estimé (HTG)</label><input type="number" name="Budget estimé (HTG)" min="0"></div>
-   <div class="field full"><label>Précisions supplémentaires</label><textarea name="Précisions"></textarea></div>
+   <div class="field"><label>Date de livraison souhaitée</label><input type="date" name="Date de livraison"></div><div class="field"><label>Date de récupération souhaitée</label><input type="date" name="Date de récupération"></div>
+   <div class="field"><label>Heure d’installation</label><input type="time" name="Heure installation"></div><div class="field"><label>Durée de location</label><select name="Durée de location"><option value="">Sélectionner</option><option>Une journée</option><option>Deux jours</option><option>Trois jours</option><option>Une semaine</option><option>Plus d’une semaine</option><option>À définir</option></select></div>
+   <div class="field full"><label>Adresse exacte de livraison / utilisation *</label><input name="Adresse de livraison" required></div>
+   <div class="field"><label>Type de lieu</label><select name="Type de lieu"><option value="">Sélectionner</option><option>Salle intérieure</option><option>Extérieur / jardin</option><option>Résidence</option><option>Hôtel</option><option>Espace professionnel</option><option>Autre</option></select></div>
+   <div class="field"><label>Accès camion / déchargement</label><select name="Accès déchargement"><option value="">Sélectionner</option><option>Facile</option><option>Accès limité</option><option>Escaliers / étage</option><option>À vérifier sur place</option></select></div>
   </div></div>
-  <div class="form-section"><label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
+  <div class="form-section"><h3>03 — Matériel à louer</h3><p class="small">Sélectionnez les catégories puis détaillez les modèles et quantités dans la zone prévue.</p><div class="checks">
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Tables">Tables</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Chaises">Chaises</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Nappes et linge de table">Nappes et linge de table</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Vaisselle et assiettes">Vaisselle et assiettes</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Couverts">Couverts</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Verres et verrerie">Verres et verrerie</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Tentes et chapiteaux">Tentes et chapiteaux</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Structures et arches">Structures et arches</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Podium et scène">Podium et scène</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Sonorisation">Sonorisation</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Éclairage">Éclairage</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Équipement buffet">Équipement buffet</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Mobilier lounge">Mobilier lounge</label><label class="check"><input type="checkbox" name="Catégories matériel" value="Accessoires décoratifs">Accessoires décoratifs</label>
+   <label class="check"><input type="checkbox" name="Catégories matériel" value="Autre matériel">Autre matériel</label>
+  </div>
+  <div class="field full" style="margin-top:14px"><label>Liste précise du matériel, modèles et quantités *</label><textarea name="Liste détaillée matériel et quantités" required placeholder="Ex. 12 tables rondes, 100 chaises, 12 nappes ivoire, 100 assiettes…"></textarea></div>
+  </div>
+  <div class="form-section"><h3>04 — Transport, installation et état du matériel</h3><div class="fieldgrid">
+   <div class="field"><label>Mode de récupération *</label><select name="Mode de récupération" required><option value="">Sélectionner</option><option>Livraison par LAM</option><option>Retrait par le client</option><option>À convenir</option></select></div>
+   <div class="field"><label>Installation / montage requis ?</label><select name="Installation requise"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>Selon le matériel</option></select></div>
+   <div class="field"><label>Démontage requis ?</label><select name="Démontage requis"><option value="">Sélectionner</option><option>Oui</option><option>Non</option><option>À convenir</option></select></div>
+   <div class="field"><label>Contact présent pour la réception</label><input name="Contact réception matériel"></div>
+   <div class="field full"><label>Contraintes ou consignes de manutention</label><textarea name="Consignes manutention" placeholder="Accès, étage, horaires, protection contre la pluie, espace de stockage…"></textarea></div>
+  </div></div>
+  <div class="form-section"><h3>05 — Budget et conditions</h3><div class="fieldgrid">
+   <div class="field"><label>Budget estimé (HTG)</label><input type="number" name="Budget estimé HTG" min="0"></div>
+   <div class="field"><label>Souhaitez-vous un devis détaillé ?</label><select name="Devis détaillé"><option value="">Sélectionner</option><option>Oui</option><option>Non</option></select></div>
+   <div class="field full"><label>État, dommages préexistants ou observations à signaler</label><textarea name="Observations matériel"></textarea></div>
+   <div class="field full"><label>Autres précisions</label><textarea name="Autres précisions location"></textarea></div>
+  </div></div>
+  <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte pour vérifier les disponibilités, le devis, le dépôt de garantie éventuel et les conditions de location. L’envoi du formulaire ne confirme pas la réservation du matériel.</label>
   <button class="btn primary" type="submit">Envoyer ma demande de location</button>
  </form>
 </div>
-
 <div class="form-panel" id="modificationForm" hidden style="margin-top:24px">
  <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 11 · MODIFICATION / ANNULATION</div><h3>DEMANDE DE MODIFICATION OU D’ANNULATION</h3><p class="lead">Ce formulaire est réservé aux clients ayant déjà une réservation auprès de LAM.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
