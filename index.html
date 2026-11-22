@@ -1066,6 +1066,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <article class="card"><div class="lam-form-tag">Famille & vie privée</div><h3>ÉVÉNEMENTS PRIVÉS</h3><p>Anniversaires, baptêmes, dîners privés et célébrations familiales.</p><button class="btn" type="button" data-show-form="privateForm" aria-controls="privateForm" aria-pressed="false">Choisir ce formulaire</button></article>
 <article class="card"><div class="lam-form-tag">Professionnel & institutionnel</div><h3>ENTREPRISES & INSTITUTIONS</h3><p>Conférences, réunions, cérémonies officielles et événements d’entreprise.</p><button class="btn" type="button" data-show-form="corporateForm" aria-controls="corporateForm" aria-pressed="false">Choisir ce formulaire</button></article>
 <article class="card"><div class="lam-form-tag">Enfants & adolescents · 1 à 16 ans</div><h3>LAM KIDS EVENTS</h3><p>Anniversaires et fêtes pour enfants : décoration, animations, gourmandises et souvenirs.</p><button class="btn" type="button" data-show-form="kidsForm" aria-controls="kidsForm" aria-pressed="false">Choisir LAM KIDS</button></article>
+<article class="card"><div class="lam-form-tag">Demande encadrée par un adulte</div><h3>LAM POUR MINEUR</h3><p>Formulaire destiné aux demandes concernant un mineur, rempli et validé par son parent ou responsable légal.</p><button class="btn" type="button" data-show-form="minorForm" aria-controls="minorForm" aria-pressed="false">Accéder au formulaire mineur</button></article>
 </div>
 </section>
 <section class="lam-form-group" aria-labelledby="lam-service-forms-title">
@@ -1189,6 +1190,60 @@ html,body{max-width:100%;overflow-x:hidden}
  </div>
  <button class="btn primary" type="submit">Envoyer ma demande LAM KIDS</button>
 </form>
+</div>
+
+<div class="form-panel" id="minorForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px">
+  <div class="num">FORMULAIRE — LAM POUR MINEUR</div>
+  <h3>DEMANDE CONCERNANT UN MINEUR</h3>
+  <p class="lead">Ce formulaire doit être rempli par un parent ou un responsable légal. Le mineur ne doit pas transmettre lui-même ses coordonnées personnelles.</p>
+  <p class="small">Les informations demandées servent uniquement à comprendre votre demande et à permettre à l’équipe LAM de communiquer avec l’adulte responsable.</p>
+ </div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="DEMANDE LAM POUR MINEUR — LAM ÉVÉNEMENTIEL & EVENTS">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="Département" value="LAM POUR MINEUR — demande encadrée par un parent ou responsable légal">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section">
+   <h3>01 — Parent ou responsable légal</h3>
+   <div class="fieldgrid">
+    <div class="field"><label>Nom complet du parent / responsable légal *</label><input name="Nom du parent ou responsable légal" autocomplete="name" required></div>
+    <div class="field"><label>Lien avec le mineur *</label><select name="Lien avec le mineur" required><option value="">Sélectionner</option><option>Parent</option><option>Tuteur / tutrice légal(e)</option><option>Responsable légal autorisé</option></select></div>
+    <div class="field"><label>Adresse e-mail de l’adulte *</label><input type="email" name="E-mail du responsable" autocomplete="email" required></div>
+    <div class="field"><label>Téléphone / WhatsApp de l’adulte *</label><input type="tel" name="Téléphone du responsable" autocomplete="tel" required></div>
+   </div>
+  </div>
+  <div class="form-section">
+   <h3>02 — Informations générales sur le mineur</h3>
+   <div class="fieldgrid">
+    <div class="field"><label>Prénom ou initiales (facultatif)</label><input name="Prénom ou initiales du mineur" placeholder="Ne pas inscrire le nom complet si ce n’est pas nécessaire"></div>
+    <div class="field"><label>Tranche d’âge *</label><select name="Tranche d’âge" required><option value="">Sélectionner</option><option>Moins de 6 ans</option><option>6 à 9 ans</option><option>10 à 12 ans</option><option>13 à 15 ans</option><option>16 à 17 ans</option></select></div>
+   </div>
+  </div>
+  <div class="form-section">
+   <h3>03 — Nature de votre demande</h3>
+   <div class="field"><label>Quel type d’accompagnement souhaitez-vous ? *</label><div class="checks">
+    <label class="check"><input type="checkbox" name="Type de demande[]" value="Événement ou célébration">Événement ou célébration</label>
+    <label class="check"><input type="checkbox" name="Type de demande[]" value="LAM Kids">LAM Kids</label>
+    <label class="check"><input type="checkbox" name="Type de demande[]" value="Atelier ou activité créative">Atelier ou activité créative</label>
+    <label class="check"><input type="checkbox" name="Type de demande[]" value="Prestation ou collaboration encadrée">Prestation ou collaboration encadrée</label>
+    <label class="check"><input type="checkbox" name="Type de demande[]" value="Autre demande">Autre demande</label>
+   </div><p class="small">Sélectionnez au moins une option.</p></div>
+   <div class="field"><label>Décrivez votre demande *</label><textarea name="Description de la demande" rows="4" required placeholder="Expliquez le projet et ce que vous attendez de LAM, sans ajouter d’informations personnelles sensibles sur le mineur."></textarea></div>
+   <div class="fieldgrid">
+    <div class="field"><label>Date souhaitée (si applicable)</label><input type="date" name="Date souhaitée"></div>
+    <div class="field"><label>Ville / lieu (si applicable)</label><input name="Ville ou lieu"></div>
+   </div>
+  </div>
+  <div class="form-section">
+   <h3>04 — Autorisation et consentement du responsable</h3>
+   <label class="consent"><input type="checkbox" name="Autorisation parentale ou légale" value="Je confirme être le parent ou responsable légal et autoriser cette demande" required>Je confirme être le parent ou responsable légal du mineur et j’autorise la transmission de cette demande à LAM ÉVÉNEMENTIEL & EVENTS.</label>
+   <label class="consent"><input type="checkbox" name="Consentement de communication adulte" value="J’accepte d’être contacté(e) en tant qu’adulte responsable" required>J’accepte que LAM communique avec moi, en tant qu’adulte responsable, au sujet de cette demande.</label>
+   <label class="consent"><input type="checkbox" name="Prise de connaissance confidentialité" value="J’ai pris connaissance de l’avis" required>Je comprends qu’il ne faut pas transmettre de documents d’identité, d’informations médicales ou d’autres données sensibles du mineur dans ce formulaire.</label>
+  </div>
+  <button class="btn primary" type="submit">Envoyer la demande du responsable légal</button>
+ </form>
 </div>
 
 <div class="form-panel" id="prestigeForm" hidden style="margin-top:24px">
@@ -1755,7 +1810,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm','weddingForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','minorForm','charcuterieForm','weddingForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
@@ -2760,6 +2815,16 @@ html{scroll-padding-top:86px}
 .lam-followup-card .btn{flex-shrink:0}
 #formChoiceStatus{padding:12px 15px;border-left:3px solid #c7a45a;background:#fffaf0}
 @media(max-width:620px){#formChoiceCards{gap:28px}.lam-form-grid{grid-template-columns:1fr}.lam-form-grid>.card{padding:18px}.lam-followup-card{align-items:flex-start;flex-direction:column}.lam-followup-card .btn{width:100%}}
+</style>
+
+
+<style id="lam-minor-form-style">
+#minorForm>.card{border-left:3px solid #c5a45a}
+#minorForm .form-section{margin-bottom:20px}
+#minorForm .form-section>h3{color:#9b762d}
+#minorForm .consent{display:flex;align-items:flex-start;gap:10px;line-height:1.6;margin:12px 0}
+#minorForm .consent input{flex:0 0 auto;margin-top:4px}
+@media(max-width:620px){#minorForm .fieldgrid{grid-template-columns:1fr}}
 </style>
 
 </body>
