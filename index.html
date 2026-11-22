@@ -1057,19 +1057,31 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="wrap">
 <div class="eyebrow">17 — Votre projet</div><h2>QUEL FORMULAIRE CORRESPOND À VOTRE PROJET ?</h2>
 <p class="lead">Choisissez le type d’événement qui vous concerne pour accéder au formulaire correspondant et nous transmettre les informations utiles à votre demande.</p>
-<div class="grid grid3" id="formChoiceCards" style="margin:28px 0;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
-<article class="card"><div class="num">06 — MARIAGE</div><h3>ORGANISATION DE MARIAGE</h3><p>Un accompagnement personnalisé pour votre cérémonie, réception, décoration, cuisine et coordination du grand jour.</p><button class="btn primary" type="button" data-show-form="weddingForm" aria-controls="weddingForm" aria-pressed="false">Planifier mon mariage</button></article>
-<article class="card"><div class="num">01 — PRESTIGE</div><h3>GRANDES RÉCEPTIONS & ÉVÉNEMENTS DE PRESTIGE</h3><p>Mariages de luxe, grands dîners, galas, grandes cérémonies et réceptions haut de gamme.</p><button class="btn primary" type="button" data-show-form="prestigeForm" onclick="return showEventForm('prestigeForm')" aria-controls="prestigeForm" aria-pressed="false">Choisir cette formule</button></article>
-<article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm" onclick="return showEventForm('privateForm')" aria-controls="privateForm" aria-pressed="false">Choisir cette formule</button></article>
-<article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
-<article class="card"><div class="num">04 — LAM KIDS</div><h3>LAM KIDS EVENTS</h3><p>Anniversaires et célébrations pour les enfants et adolescents de 1 à 16 ans : décoration, animations, gourmandises et souvenirs.</p><button class="btn primary" type="button" data-show-form="kidsForm" onclick="return showEventForm('kidsForm')" aria-controls="kidsForm" aria-pressed="false">Choisir LAM KIDS</button></article>
-<article class="card"><div class="num">05 — CHARCUTERIE</div><h3>CHARCUTERIE, COCKTAILS & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs, bouchées et plateaux personnalisés.</p><button class="btn primary" type="button" data-show-form="charcuterieForm" onclick="return showEventForm('charcuterieForm')" aria-controls="charcuterieForm" aria-pressed="false">Choisir Charcuterie</button></article>
-
-<article class="card"><div class="num">07 — CUISINE & TRAITEUR</div><h3>CUISINE & SERVICE TRAITEUR</h3><p>Repas, buffets, menus personnalisés et service culinaire pour vos événements.</p><button class="btn primary" type="button" data-show-form="cuisineForm" aria-controls="cuisineForm" aria-pressed="false">Demander un service traiteur</button></article>
-<article class="card"><div class="num">08 — DÉCORATION</div><h3>DÉCORATION ÉVÉNEMENTIELLE</h3><p>Décoration seule, scénographie, tables, fleurs, arches et espaces photo.</p><button class="btn primary" type="button" data-show-form="decorationForm" aria-controls="decorationForm" aria-pressed="false">Demander une décoration</button></article>
-<article class="card"><div class="num">09 — PÂTISSERIE</div><h3>PÂTISSERIE & GÂTEAUX</h3><p>Gâteaux personnalisés, desserts, pâtisseries et douceurs pour vos célébrations.</p><button class="btn primary" type="button" data-show-form="patisserieForm" aria-controls="patisserieForm" aria-pressed="false">Commander des douceurs</button></article>
-<article class="card"><div class="num">10 — LOCATION</div><h3>LOCATION DE MATÉRIEL</h3><p>Mobilier, vaisselle, accessoires et équipements de réception selon disponibilité.</p><button class="btn primary" type="button" data-show-form="locationForm" aria-controls="locationForm" aria-pressed="false">Demander une location</button></article>
-<article class="card"><div class="num">11 — SUIVI CLIENT</div><h3>MODIFICATION / ANNULATION</h3><p>Pour une réservation existante : demande de changement, report ou annulation.</p><button class="btn primary" type="button" data-show-form="modificationForm" aria-controls="modificationForm" aria-pressed="false">Gérer ma réservation</button></article>
+<div id="formChoiceCards" class="lam-form-directory" style="margin:30px 0">
+<section class="lam-form-group" aria-labelledby="lam-event-forms-title">
+<div class="lam-form-group-heading"><span>01</span><div><h3 id="lam-event-forms-title">ORGANISATION D’ÉVÉNEMENTS</h3><p>Choisissez le type de célébration ou d’événement que vous souhaitez confier à LAM.</p></div></div>
+<div class="grid grid3 lam-form-grid">
+<article class="card"><div class="lam-form-tag">Célébration sur mesure</div><h3>MARIAGE</h3><p>Organisation, cérémonie, réception, décoration, cuisine et coordination de votre grand jour.</p><button class="btn primary" type="button" data-show-form="weddingForm" aria-controls="weddingForm" aria-pressed="false">Planifier mon mariage</button></article>
+<article class="card"><div class="lam-form-tag">Réceptions haut de gamme</div><h3>ÉVÉNEMENTS DE PRESTIGE</h3><p>Galas, grands dîners, cérémonies et réceptions de prestige.</p><button class="btn" type="button" data-show-form="prestigeForm" aria-controls="prestigeForm" aria-pressed="false">Choisir ce formulaire</button></article>
+<article class="card"><div class="lam-form-tag">Famille & vie privée</div><h3>ÉVÉNEMENTS PRIVÉS</h3><p>Anniversaires, baptêmes, dîners privés et célébrations familiales.</p><button class="btn" type="button" data-show-form="privateForm" aria-controls="privateForm" aria-pressed="false">Choisir ce formulaire</button></article>
+<article class="card"><div class="lam-form-tag">Professionnel & institutionnel</div><h3>ENTREPRISES & INSTITUTIONS</h3><p>Conférences, réunions, cérémonies officielles et événements d’entreprise.</p><button class="btn" type="button" data-show-form="corporateForm" aria-controls="corporateForm" aria-pressed="false">Choisir ce formulaire</button></article>
+<article class="card"><div class="lam-form-tag">Enfants & adolescents · 1 à 16 ans</div><h3>LAM KIDS EVENTS</h3><p>Anniversaires et fêtes pour enfants : décoration, animations, gourmandises et souvenirs.</p><button class="btn" type="button" data-show-form="kidsForm" aria-controls="kidsForm" aria-pressed="false">Choisir LAM KIDS</button></article>
+</div>
+</section>
+<section class="lam-form-group" aria-labelledby="lam-service-forms-title">
+<div class="lam-form-group-heading"><span>02</span><div><h3 id="lam-service-forms-title">SERVICES À LA CARTE</h3><p>Pour une demande précise sans organisation complète de l’événement.</p></div></div>
+<div class="grid grid3 lam-form-grid">
+<article class="card"><div class="lam-form-tag">Cuisine & réception</div><h3>CUISINE & SERVICE TRAITEUR</h3><p>Repas, buffets, menus personnalisés et service culinaire.</p><button class="btn" type="button" data-show-form="cuisineForm" aria-controls="cuisineForm" aria-pressed="false">Demander un service traiteur</button></article>
+<article class="card"><div class="lam-form-tag">Scénographie & ambiance</div><h3>DÉCORATION ÉVÉNEMENTIELLE</h3><p>Décoration seule, tables, fleurs, arches et espaces photo.</p><button class="btn" type="button" data-show-form="decorationForm" aria-controls="decorationForm" aria-pressed="false">Demander une décoration</button></article>
+<article class="card"><div class="lam-form-tag">Créations gourmandes</div><h3>PÂTISSERIE & GÂTEAUX</h3><p>Gâteaux personnalisés, desserts, pâtisseries et douceurs.</p><button class="btn" type="button" data-show-form="patisserieForm" aria-controls="patisserieForm" aria-pressed="false">Commander des douceurs</button></article>
+<article class="card"><div class="lam-form-tag">Cocktail & réception</div><h3>CHARCUTERIE & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs et plateaux.</p><button class="btn" type="button" data-show-form="charcuterieForm" aria-controls="charcuterieForm" aria-pressed="false">Demander une prestation</button></article>
+<article class="card"><div class="lam-form-tag">Équipement & mobilier</div><h3>LOCATION DE MATÉRIEL</h3><p>Mobilier, vaisselle, accessoires et équipements de réception, selon disponibilité.</p><button class="btn" type="button" data-show-form="locationForm" aria-controls="locationForm" aria-pressed="false">Demander une location</button></article>
+</div>
+</section>
+<section class="lam-form-group lam-form-followup" aria-labelledby="lam-followup-title">
+<div class="lam-form-group-heading"><span>03</span><div><h3 id="lam-followup-title">VOUS ÊTES DÉJÀ CLIENT ?</h3><p>Cette rubrique concerne uniquement une réservation ou un dossier déjà ouvert auprès de LAM.</p></div></div>
+<div class="lam-followup-card"><div><div class="lam-form-tag">Service clientèle</div><h3>MODIFICATION / REPORT / ANNULATION</h3><p>Pour modifier les informations d’une réservation existante, demander un report ou signaler une annulation.</p></div><button class="btn" type="button" data-show-form="modificationForm" aria-controls="modificationForm" aria-pressed="false">Gérer ma réservation</button></div>
+</section>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 
@@ -2726,6 +2738,28 @@ html{scroll-padding-top:86px}
 @media(max-width:950px){.navlinks{display:none!important}.menu{display:block!important;color:#171717;border:1px solid #c5a45a66;padding:7px 12px}.mobile-nav-inner{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.mobile-nav-inner{grid-template-columns:1fr;gap:18px}.mobile-nav-languages{grid-column:1}.brand-name{font-size:.78rem}.navin{min-height:64px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+
+<style id="lam-form-directory-clean">
+#formChoiceCards{display:grid;gap:38px}
+.lam-form-group{min-width:0}
+.lam-form-group-heading{display:flex;align-items:flex-start;gap:16px;margin:0 0 18px;padding-bottom:14px;border-bottom:1px solid #c7a45a55}
+.lam-form-group-heading>span{font-size:1.25rem;font-weight:700;line-height:1;color:#bd922f;min-width:30px}
+.lam-form-group-heading h3{margin:0 0 6px;font-size:1rem;letter-spacing:.09em}
+.lam-form-group-heading p{margin:0;font-size:.88rem;line-height:1.6;color:#71685f}
+.lam-form-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:16px}
+.lam-form-grid>.card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:22px;gap:10px}
+.lam-form-grid>.card h3{margin:0;font-size:1rem;line-height:1.4}
+.lam-form-grid>.card p{margin:0 0 8px;line-height:1.65;font-size:.9rem;flex:1}
+.lam-form-grid>.card .btn{margin-top:auto;max-width:100%;white-space:normal;text-align:center}
+.lam-form-tag{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a17c31}
+.lam-followup-card{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;border:1px solid #c7a45a66;background:rgba(255,255,255,.65)}
+.lam-followup-card h3{margin:5px 0;font-size:1rem}
+.lam-followup-card p{margin:0;max-width:700px;font-size:.9rem;line-height:1.6}
+.lam-followup-card .btn{flex-shrink:0}
+#formChoiceStatus{padding:12px 15px;border-left:3px solid #c7a45a;background:#fffaf0}
+@media(max-width:620px){#formChoiceCards{gap:28px}.lam-form-grid{grid-template-columns:1fr}.lam-form-grid>.card{padding:18px}.lam-followup-card{align-items:flex-start;flex-direction:column}.lam-followup-card .btn{width:100%}}
 </style>
 
 </body>
