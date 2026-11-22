@@ -1048,6 +1048,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <article class="card"><div class="num">02 — PRIVÉ</div><h3>ÉVÉNEMENTS PRIVÉS & CÉLÉBRATIONS FAMILIALES</h3><p>Anniversaires, dîners privés, baptêmes, fêtes familiales et décoration.</p><button class="btn primary" type="button" data-show-form="privateForm" onclick="return showEventForm('privateForm')" aria-controls="privateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">03 — INSTITUTIONNEL</div><h3>INSTITUTIONS, ENTREPRISES & ÉVÉNEMENTS OFFICIELS</h3><p>Présidences, banques, ONG, grandes entreprises, réunions et cérémonies protocolaires.</p><button class="btn primary" type="button" data-show-form="corporateForm" onclick="return showEventForm('corporateForm')" aria-controls="corporateForm" aria-pressed="false">Choisir cette formule</button></article>
 <article class="card"><div class="num">04 — LAM KIDS</div><h3>LAM KIDS EVENTS</h3><p>Anniversaires et célébrations pour les enfants et adolescents de 1 à 16 ans : décoration, animations, gourmandises et souvenirs.</p><button class="btn primary" type="button" data-show-form="kidsForm" onclick="return showEventForm('kidsForm')" aria-controls="kidsForm" aria-pressed="false">Choisir LAM KIDS</button></article>
+<article class="card"><div class="num">05 — CHARCUTERIE</div><h3>CHARCUTERIE, COCKTAILS & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs, bouchées et plateaux personnalisés.</p><button class="btn primary" type="button" data-show-form="charcuterieForm" onclick="return showEventForm('charcuterieForm')" aria-controls="charcuterieForm" aria-pressed="false">Choisir Charcuterie</button></article>
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 <div class="form-panel" id="kidsForm" hidden style="margin-top:24px">
@@ -1354,6 +1355,63 @@ html,body{max-width:100%;overflow-x:hidden}
 <div class="field"><label>Suivi souhaité</label><select name="Suivi souhaité"><option>Devis professionnel détaillé</option><option>Rendez-vous de consultation</option><option>Les deux</option></select></div><div class="field"><label>Confidentialité, protocole ou exigences particulières</label><textarea name="Exigences particulières"></textarea></div><div class="field full"><label>Joindre le cahier des charges (facultatif)</label><input type="file" name="Cahier des charges" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"></div></div></div>
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
 <button class="btn primary" type="submit">Envoyer la demande institutionnelle</button></form></div>
+<div class="form-panel" id="charcuterieForm" hidden style="margin-top:24px">
+<div class="card" style="margin-bottom:18px">
+ <div class="num">FORMULAIRE 05 · CHARCUTERIE & COCKTAILS</div>
+ <h3>COMPOSEZ VOTRE EXPÉRIENCE CHARCUTERIE</h3>
+ <p class="lead">Décrivez les planches, plateaux et bouchées que vous souhaitez proposer à vos invités. La composition finale, les disponibilités et le devis seront confirmés par notre équipe.</p>
+</div>
+<form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+ <input type="hidden" name="_subject" value="DEMANDE CHARCUTERIE & COCKTAILS — LAM ÉVÉNEMENTIEL & EVENTS">
+ <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true">
+ <input type="hidden" name="Département" value="Charcuterie, cocktails & bouchées">
+ <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+ <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+  <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+  <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+  <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone" autocomplete="tel" required></div>
+  <div class="field"><label>Nom de l’entreprise (facultatif)</label><input name="Entreprise"></div>
+ </div></div>
+ <div class="form-section"><h3>02 — Votre événement</h3><div class="fieldgrid">
+  <div class="field"><label>Type d’événement *</label><select name="Type d’événement" required><option value="">Sélectionner</option><option>Mariage / réception</option><option>Anniversaire</option><option>Cocktail / networking</option><option>Événement professionnel</option><option>Fête familiale</option><option>Autre</option></select></div>
+  <div class="field"><label>Date souhaitée *</label><input type="date" name="Date de l’événement" required></div>
+  <div class="field"><label>Heure de service</label><input type="time" name="Heure de service"></div>
+  <div class="field"><label>Lieu / ville *</label><input name="Lieu et ville" required></div>
+  <div class="field"><label>Nombre d’invités *</label><input type="number" name="Nombre d’invités" min="1" required></div>
+  <div class="field"><label>Mode de présentation *</label><select name="Présentation souhaitée" required><option value="">Sélectionner</option><option>Planches individuelles</option><option>Grandes planches à partager</option><option>Plateaux de service</option><option>Table de charcuterie</option><option>Buffet / cocktail</option><option>À conseiller par LAM</option></select></div>
+ </div></div>
+ <div class="form-section"><h3>03 — Sélection des produits</h3>
+ <p class="small">Cochez les éléments qui vous intéressent. Les produits dépendent des disponibilités et de la validation du menu.</p>
+ <div class="checks">
+  <label class="check"><input type="checkbox" name="Sélection" value="Salami">Salami</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Jambon">Jambon</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Autres charcuteries">Autres charcuteries</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Fromages assortis">Fromages assortis</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Raisins et fruits frais">Raisins et fruits frais</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Olives et noix">Olives et noix</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Crackers et pains">Crackers et pains</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Canapés et mini-toasts">Canapés et mini-toasts</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Mini-sandwichs et wraps">Mini-sandwichs et wraps</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Mini-burgers">Mini-burgers</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Pâtés et feuilletés">Pâtés et feuilletés</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Accras et croquettes">Accras et croquettes</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Brochettes">Brochettes</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Verrines salées">Verrines salées</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Options végétariennes">Options végétariennes</label>
+  <label class="check"><input type="checkbox" name="Sélection" value="Autres bouchées">Autres bouchées</label>
+ </div></div>
+ <div class="form-section"><h3>04 — Personnalisation & logistique</h3><div class="fieldgrid">
+  <div class="field"><label>Style / thème</label><select name="Style"><option value="">Sélectionner</option><option>Chic & élégant</option><option>Old Money / classique</option><option>Moderne & minimaliste</option><option>Coloré & festif</option><option>Personnalisé</option></select></div>
+  <div class="field"><label>Couleurs souhaitées</label><input name="Couleurs" placeholder="Ex. crème, doré, rouge"></div>
+  <div class="field"><label>Budget estimatif (HTG)</label><input type="number" min="0" name="Budget estimatif en HTG"></div>
+  <div class="field"><label>Service souhaité</label><select name="Service"><option value="">Sélectionner</option><option>Préparation et livraison</option><option>Installation de la table</option><option>Installation et service sur place</option><option>À discuter</option></select></div>
+  <div class="field full"><label>Allergies, intolérances et restrictions alimentaires *</label><textarea name="Allergies et restrictions" placeholder="Précisez les allergies connues, restrictions alimentaires ou indiquez « aucune »." required></textarea></div>
+  <div class="field full"><label>Quantités, préférences et demandes particulières</label><textarea name="Détails et demandes" placeholder="Précisez vos préférences, les portions souhaitées et toute demande particulière…"></textarea></div>
+  <div class="field full"><label>Joindre une image d’inspiration (facultatif)</label><input type="file" name="Image inspiration" accept=".jpg,.jpeg,.png,.webp"></div>
+ </div></div>
+ <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que l’équipe LAM me contacte au sujet de cette demande. L’envoi du formulaire ne confirme pas une réservation.</label>
+ <button class="btn primary" type="submit">Envoyer ma demande charcuterie</button>
+</form></div>
 <div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
 </div></section>
 
@@ -1380,7 +1438,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','charcuterieForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
