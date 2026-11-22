@@ -800,6 +800,10 @@ form input[type="checkbox"]:focus-visible{
 #welcome-intro{animation:introFailsafeHide .5s ease 3s forwards!important}
 #welcome-intro.is-hidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 </style>
+<style id="lam-disable-blocking-welcome">
+/* Désactive l'écran d'introduction qui recouvre la page sur certains navigateurs mobiles */
+#welcome-intro{display:none!important}
+</style>
 </head>
 <body>
 
