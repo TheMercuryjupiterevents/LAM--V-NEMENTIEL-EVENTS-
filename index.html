@@ -2195,6 +2195,69 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 </script>
 
+
+<style id="lam-electronic-signature-style">
+.lam-signature{margin:28px 0 18px;padding:4px 0;border-top:1px solid #d8c7a2;color:#263b68}
+.lam-signature h3{font-size:1.05rem;letter-spacing:.08em;color:#263b68;margin:18px 0 8px}
+.lam-signature p{font-size:.92rem;line-height:1.55}
+.lam-signature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.lam-signature label{display:block;font-weight:600;margin:8px 0 5px}
+.lam-signature input,.lam-signature select{max-width:100%;width:100%;min-height:44px;padding:10px 12px;border:1px solid #cbbd9e;border-radius:5px;background:#fff;color:#24385f}
+.lam-signature .lam-signature-preview{min-height:56px;padding:10px 12px;margin:8px 0 12px;border-bottom:1px solid #b9a77f;font-size:30px;color:#263b68;overflow-wrap:anywhere}
+.lam-signature canvas{display:block;width:100%;height:150px;touch-action:none;background:#fff;border:1px solid #cbbd9e;border-radius:4px;cursor:crosshair}
+.lam-signature .lam-signature-actions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.lam-signature button{border:1px solid #263b68;background:#fff;color:#263b68;border-radius:4px;padding:9px 15px;cursor:pointer}
+.lam-signature .lam-signature-consent{display:flex;align-items:flex-start;gap:9px;margin-top:14px;font-weight:400}
+.lam-signature .lam-signature-consent input{width:auto;min-height:0;margin-top:4px}
+.lam-signature .lam-signature-note{font-size:.82rem;color:#5b6475}
+@media(max-width:600px){.lam-signature-grid{grid-template-columns:1fr}.lam-signature canvas{height:135px}}
+</style>
+<script id="lam-electronic-signature-script">
+(function(){
+ if(window.__lamSignatureInstalled)return;window.__lamSignatureInstalled=true;
+ var forms=Array.from(document.querySelectorAll('form'));
+ var fonts=[
+  {v:'"Segoe Script","Brush Script MT",cursive',t:'Manuscrite élégante'},
+  {v:'"URW Chancery L","Apple Chancery",cursive',t:'Cursive raffinée'},
+  {v:'"Comic Sans MS",cursive',t:'Naturelle'},
+  {v:'cursive',t:'Classique manuscrite'}
+ ];
+ forms.forEach(function(form,index){
+  if(form.dataset.lamSignatureReady==='1')return;
+  form.dataset.lamSignatureReady='1';
+  var box=document.createElement('section');box.className='lam-signature';
+  box.innerHTML='<h3>SIGNATURE ÉLECTRONIQUE</h3><p>Veuillez saisir votre nom complet, puis apposer votre signature à la main avec votre doigt ou votre souris.</p>'+
+   '<div class="lam-signature-grid"><div><label>Nom complet du signataire *</label><input type="text" class="lam-sig-name" autocomplete="name" required placeholder="Votre nom complet"></div><div><label>Style du nom *</label><select class="lam-sig-font" required>'+fonts.map(function(f){return '<option value="'+f.v+'">'+f.t+'</option>'}).join('')+'</select></div></div>'+
+   '<div class="lam-signature-preview" aria-live="polite">Votre nom apparaîtra ici</div>'+
+   '<label>Couleur de l’encre *</label><select class="lam-sig-color"><option value="#263b68">Bleu royal</option><option value="#17233f">Bleu nuit</option><option value="#171717">Noir</option></select>'+
+   '<label>Votre signature manuscrite *</label><canvas aria-label="Zone pour dessiner votre signature"></canvas>'+
+   '<div class="lam-signature-actions"><button type="button" class="lam-sig-clear">Effacer / recommencer</button></div>'+
+   '<label class="lam-signature-consent"><input type="checkbox" class="lam-sig-consent" required><span>Je confirme avoir lu et accepté les conditions du formulaire et je reconnais cette signature manuscrite comme la mienne.</span></label>'+
+   '<p class="lam-signature-note">La signature dessinée est jointe aux données du formulaire. Ne signez qu’après avoir lu les conditions applicables.</p>';
+  form.appendChild(box);
+  function hidden(name){var el=form.querySelector('input[name="'+name+'"]');if(!el){el=document.createElement('input');el.type='hidden';el.name=name;form.appendChild(el)}return el}
+  var nameH=hidden('Nom du signataire (signature électronique)');
+  var fontH=hidden('Style du nom du signataire');
+  var colorH=hidden('Couleur de l’encre');
+  var imageH=hidden('Image de la signature manuscrite (PNG base64)');
+  var name=box.querySelector('.lam-sig-name'),font=box.querySelector('.lam-sig-font'),color=box.querySelector('.lam-sig-color'),preview=box.querySelector('.lam-signature-preview'),canvas=box.querySelector('canvas'),ctx=canvas.getContext('2d'),drawn=false,drawing=false;
+  function previewName(){preview.textContent=name.value||'Votre nom apparaîtra ici';preview.style.fontFamily=font.value;preview.style.color=color.value}
+  name.addEventListener('input',previewName);font.addEventListener('change',previewName);color.addEventListener('change',function(){previewName();ctx.strokeStyle=color.value});
+  function resize(){var rect=canvas.getBoundingClientRect(),ratio=Math.max(window.devicePixelRatio||1,1),old=drawn?canvas.toDataURL():null;canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);ctx.lineWidth=2.2;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=color.value;if(old){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,rect.width,rect.height)};im.src=old}}
+  resize();if(window.ResizeObserver){new ResizeObserver(resize).observe(canvas)}
+  function point(e){var r=canvas.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top}}
+  canvas.addEventListener('pointerdown',function(e){e.preventDefault();canvas.setPointerCapture(e.pointerId);drawing=true;var p=point(e);ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(p.x+.1,p.y+.1);ctx.stroke();drawn=true});
+  canvas.addEventListener('pointermove',function(e){if(!drawing)return;var p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});
+  ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){canvas.addEventListener(ev,function(){drawing=false})});
+  box.querySelector('.lam-sig-clear').addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);drawn=false;imageH.value=''});
+  form.addEventListener('submit',function(e){
+   if(!name.value.trim()||!drawn||!box.querySelector('.lam-sig-consent').checked){e.preventDefault();if(!name.value.trim())name.focus();else if(!drawn)canvas.scrollIntoView({behavior:'smooth',block:'center'});else box.querySelector('.lam-sig-consent').focus();alert('Veuillez saisir votre nom, dessiner votre signature et accepter les conditions avant l’envoi.');return}
+   nameH.value=name.value.trim();fontH.value=font.options[font.selectedIndex].text;colorH.value=color.options[color.selectedIndex].text;imageH.value=canvas.toDataURL('image/png');
+  },true);
+  previewName();
+ });
+})();
+</script>
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
