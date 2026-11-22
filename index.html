@@ -805,6 +805,24 @@ form input[type="checkbox"]:focus-visible{
 #welcome-intro{display:none!important}
 </style>
 <style id="lam-main-actions-style">.lam-main-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}.lam-main-actions .btn{min-width:190px;text-align:center}@media(max-width:600px){.lam-main-actions{flex-direction:column;align-items:stretch}.lam-main-actions .btn{width:100%;box-sizing:border-box}}</style>
+<style id="lam-mobile-hero-cleanup">
+/* Ajustement mobile : logo et signature entièrement visibles */
+html,body{max-width:100%;overflow-x:hidden}
+.hero-grid.lam-hero-centered{width:min(100% - 32px,760px)!important;gap:8px!important;padding:24px 0 56px!important}
+.lam-wheat-emblem{width:min(78vw,290px)!important;margin-bottom:12px!important;padding:7px!important;box-shadow:0 6px 18px #183c8a14,0 0 0 3px #fff,0 0 0 5px #d8b43a66!important}
+.lam-hero-brand{width:100%!important;min-width:0!important}
+.lam-hero-brand h1{font-size:clamp(3.2rem,14vw,5rem)!important;line-height:.96!important}
+.lam-hero-event{font-size:clamp(1.25rem,5.8vw,2rem)!important;line-height:1.12!important;letter-spacing:.015em!important;white-space:normal!important;overflow-wrap:anywhere}
+.lam-hero-events{font-size:clamp(1.35rem,6vw,2.15rem)!important;line-height:1.12!important;white-space:normal!important}
+.lam-hero-slogan{font-size:clamp(.88rem,3.7vw,1.15rem)!important;letter-spacing:.07em!important}
+.lam-hero-brand .lead{font-size:.9rem!important;line-height:1.7!important;padding:0 8px}
+.lam-main-actions{width:100%;display:grid!important;grid-template-columns:1fr!important;gap:9px!important}
+.lam-main-actions .btn{width:100%!important;min-height:46px!important;padding:12px 10px!important;font-size:.62rem!important;letter-spacing:.1em!important}
+@media(min-width:681px){
+ .hero-grid.lam-hero-centered{width:min(92%,760px)!important}
+ .lam-wheat-emblem{width:min(34vw,300px)!important}
+}
+</style>
 </head>
 <body>
 
