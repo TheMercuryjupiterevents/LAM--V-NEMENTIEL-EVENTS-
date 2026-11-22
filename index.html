@@ -796,7 +796,11 @@ form input[type="checkbox"]:focus-visible{
 .lam-signature-rule{width:86px;height:2px;margin:26px auto 18px;background:linear-gradient(90deg,#d71920,#d8b43a,#1746a2)}
 .lam-signature-motto{margin:0;color:#1746a2;font-size:.78rem;font-weight:700;letter-spacing:.24em}
 @media(max-width:680px){.lam-signature-quote{padding:48px 0!important}.lam-signature-kicker{font-size:1.05rem;letter-spacing:.08em}.lam-signature-quote-text{font-size:1.45rem}.lam-signature-motto{font-size:.67rem;letter-spacing:.14em}}
-</style>\n</head>
+</style>\n<style id="lam-welcome-overlay-safety">
+#welcome-intro{animation:introFailsafeHide .5s ease 3s forwards!important}
+#welcome-intro.is-hidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+</style>
+</head>
 <body>
 
 <div id="welcome-intro" role="status" aria-label="Bienvenue chez LAM ÉVÉNEMENTIEL & EVENTS Événementiel">
