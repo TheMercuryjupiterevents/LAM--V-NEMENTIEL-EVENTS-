@@ -2741,3 +2741,34 @@ body .section:not(.hero) h2::after{background:linear-gradient(90deg,#d8b43a,#f7f
 @media(max-width:520px){#welcome-intro .welcome-word{font-size:clamp(1.8rem,9vw,2.7rem)!important}#welcome-intro .welcome-brand{font-size:clamp(.9rem,4vw,1.2rem)!important;max-width:330px}}
 @media(prefers-reduced-motion:reduce){#welcome-intro .welcome-word{clip-path:none!important;animation:none!important}#welcome-intro .welcome-brand{opacity:1!important;transform:none!important;animation:none!important}}
 </style>
+
+
+<style id="lam-remove-hero-frame-final">
+.hero .lam-wheat-emblem,
+.hero .lam-wheat-emblem::before,
+.hero .lam-wheat-emblem::after{
+  border:0!important;outline:0!important;box-shadow:none!important;
+  background:transparent!important;border-radius:0!important;
+}
+.hero .lam-wheat-emblem{
+  width:min(88vw,340px)!important;max-width:340px!important;
+  aspect-ratio:1!important;height:auto!important;min-height:0!important;
+  margin:0 auto 14px!important;padding:0!important;overflow:visible!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.hero .lam-wheat-emblem>.lam-wheat-wing,
+.hero .lam-wheat-emblem>svg,
+.hero .lam-wheat-emblem>span{display:none!important;opacity:0!important}
+.hero .lam-wheat-emblem>.hero-logo{
+  display:block!important;visibility:visible!important;opacity:1!important;
+  width:100%!important;max-width:100%!important;height:auto!important;
+  aspect-ratio:1!important;object-fit:contain!important;
+  border:0!important;outline:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+  filter:none!important;transform:none!important;animation:none!important;
+}
+@media(max-width:680px){
+ .hero .lam-wheat-emblem{width:min(88vw,320px)!important;max-width:320px!important}
+ .hero .lam-wheat-emblem>.hero-logo{width:100%!important;max-width:100%!important}
+}
+</style>
