@@ -4094,3 +4094,54 @@ article.card:has(button[data-show-form="kidsForm"]) .btn{background:var(--kids-y
 }
 @media(prefers-reduced-motion:reduce){#lam-grand-spectacle .lam-sun,#lam-grand-spectacle .lam-orb,#lam-grand-spectacle .lam-arch,#lam-grand-spectacle .lam-monogram,#lam-grand-spectacle .lam-welcome,#lam-grand-spectacle .lam-tagline{animation:none!important;opacity:1!important}}
 </style>
+
+<style id="lam-triangle-final-fit">
+/* Final mobile-first geometry: triangle tip meets the yellow sun; every line stays inside */
+#lam-grand-spectacle .lam-triangle{
+  top:29%!important;
+  left:50%!important;
+  width:min(104vw,690px)!important;
+  height:70%!important;
+  transform:translateX(-50%)!important;
+  overflow:visible!important;
+}
+#lam-grand-spectacle .lam-brand-lockup{
+  top:49%!important;
+  left:12%!important;
+  width:76%!important;
+}
+#lam-grand-spectacle .lam-monogram{margin-bottom:1px!important}
+#lam-grand-spectacle .lam-event-name{font-size:clamp(.82rem,3.8vw,1.8rem)!important}
+#lam-grand-spectacle .lam-event-sub{font-size:clamp(.95rem,4.1vw,1.9rem)!important}
+#lam-grand-spectacle .lam-ornament{margin:clamp(5px,1vh,12px) auto!important}
+#lam-grand-spectacle .lam-welcome{
+  display:block!important;
+  white-space:normal!important;
+  font-size:clamp(1.05rem,4.8vw,2.5rem)!important;
+  line-height:1.05!important;
+}
+#lam-grand-spectacle .lam-tagline{
+  display:block!important;
+  white-space:normal!important;
+  font-size:clamp(.82rem,3.4vw,1.8rem)!important;
+  line-height:1.08!important;
+}
+@media(max-width:600px){
+  #lam-grand-spectacle .lam-triangle{
+    top:29%!important;
+    width:104vw!important;
+    height:70%!important;
+  }
+  #lam-grand-spectacle .lam-brand-lockup{
+    top:49%!important;
+    left:11%!important;
+    width:78%!important;
+  }
+  #lam-grand-spectacle .lam-monogram{font-size:clamp(2.7rem,12.5vw,4.6rem)!important}
+  #lam-grand-spectacle .lam-event-name{font-size:clamp(.78rem,3.6vw,1.3rem)!important}
+  #lam-grand-spectacle .lam-event-sub{font-size:clamp(.9rem,4vw,1.45rem)!important}
+  #lam-grand-spectacle .lam-welcome{font-size:clamp(1.05rem,4.8vw,1.65rem)!important}
+  #lam-grand-spectacle .lam-tagline{font-size:clamp(.78rem,3.45vw,1.2rem)!important}
+  #lam-grand-spectacle .lam-ornament{margin:6px auto!important}
+}
+</style>
