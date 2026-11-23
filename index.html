@@ -3454,21 +3454,27 @@ body .hero .lead{max-width:760px!important;margin:0 auto 20px!important}
 @media(max-width:680px){body .hero-grid.lam-hero-centered{gap:8px!important;padding:22px 18px 38px!important}body .hero .lam-wheat-emblem{width:min(76vw,270px)!important;max-width:270px!important;margin-bottom:2px!important}body .hero .lam-hero-brand h1{margin-top:2px!important}}
 </style>
 
-<style id="lam-kids-palette-rose-jaune-bleu-ciel">
-/* LAM KIDS : rose pâle, jaune doux et bleu ciel */
-#kidsForm{background:linear-gradient(135deg,#fff2f6 0%,#fffbea 52%,#eaf7ff 100%)!important;border:1px solid #efd5df!important;border-radius:18px!important;padding:clamp(14px,3vw,26px)!important}
-#kidsForm>.card{background:#fff8fa!important;border:1px solid #f2d4df!important;border-radius:14px!important}
-#kidsForm .form-section{background:rgba(255,255,255,.82)!important;border:1px solid #d9edf8!important;border-radius:13px!important;padding:16px!important;margin:14px 0!important}
-#kidsForm h3,#kidsForm h4{color:#8f5970!important}
-#kidsForm .form-section h3{border-bottom:2px solid #f2d875!important;padding-bottom:8px!important}
-#kidsForm input:not([type=checkbox]):not([type=radio]),#kidsForm select,#kidsForm textarea{background:#fff!important;border:1px solid #b9dff2!important;border-radius:9px!important}
-#kidsForm .check,#kidsForm .consent{background:#fff9fb!important;border:1px solid #f0d6e0!important;border-radius:9px!important;padding:8px 10px!important}
-#kidsForm input[type=checkbox]{accent-color:#e9b7c8!important}
-#kidsForm .btn.primary{background:#f2d875!important;color:#684e28!important;border:1px solid #e8cb65!important}
-#kidsForm .btn.primary:hover{background:#bfe5f6!important;color:#31566b!important}
-#lam-kids{background:linear-gradient(135deg,#fff2f6 0%,#fffbe7 50%,#eaf7ff 100%)!important}
-#lam-kids h2,#lam-kids h3{color:#8f5970!important}
-article.card:has(button[data-show-form="kidsForm"]){background:linear-gradient(135deg,#fff4f7,#fffbea 55%,#edf8ff)!important;border:1px solid #efd5df!important}
-article.card:has(button[data-show-form="kidsForm"]) .num,article.card:has(button[data-show-form="kidsForm"]) h3{color:#8f5970!important}
-article.card:has(button[data-show-form="kidsForm"]) .btn{background:#f2d875!important;color:#684e28!important;border-color:#e8cb65!important}
+<style id="lam-kids-palette-bleu-roi-jaune-rose-pale">
+/* Palette officielle LAM KIDS : bleu roi, jaune et rose pâle */
+#kidsForm{
+  --kids-blue:#1746A2;--kids-yellow:#FFD84A;--kids-pink:#F8DCE7;
+  background:linear-gradient(135deg,#FCEEF3 0%,#FFF9DF 52%,#EEF1FF 100%)!important;
+  border:1px solid var(--kids-blue)!important;border-radius:18px!important;
+  padding:clamp(14px,3vw,26px)!important
+}
+#kidsForm>.card{background:#FFFAFC!important;border:1px solid #F0C9D9!important;border-radius:14px!important}
+#kidsForm .form-section{background:rgba(255,255,255,.9)!important;border:1px solid #D5DDF5!important;border-radius:13px!important;padding:16px!important;margin:14px 0!important}
+#kidsForm h3,#kidsForm h4{color:var(--kids-blue)!important}
+#kidsForm .form-section h3{border-bottom:2px solid var(--kids-yellow)!important;padding-bottom:8px!important}
+#kidsForm input:not([type=checkbox]):not([type=radio]),#kidsForm select,#kidsForm textarea{background:#fff!important;border:1px solid #B9C8EE!important;border-radius:9px!important}
+#kidsForm .check,#kidsForm .consent{background:#FFF7FA!important;border:1px solid #F0D6E0!important;border-radius:9px!important;padding:8px 10px!important}
+#kidsForm input[type=checkbox]{accent-color:var(--kids-blue)!important}
+#kidsForm .btn.primary{background:var(--kids-yellow)!important;color:var(--kids-blue)!important;border:1px solid #E6C23B!important}
+#kidsForm .btn.primary:hover{background:var(--kids-blue)!important;color:#fff!important}
+#lam-kids{background:linear-gradient(135deg,#FCEEF3 0%,#FFF9DF 50%,#EEF1FF 100%)!important}
+#lam-kids h2,#lam-kids h3{color:var(--kids-blue)!important}
+#lam-kids .num{color:var(--kids-blue)!important}
+article.card:has(button[data-show-form="kidsForm"]){background:linear-gradient(135deg,#FCEEF3,#FFF9DF 55%,#EEF1FF)!important;border:1px solid #D5DDF5!important}
+article.card:has(button[data-show-form="kidsForm"]) .num,article.card:has(button[data-show-form="kidsForm"]) h3{color:var(--kids-blue)!important}
+article.card:has(button[data-show-form="kidsForm"]) .btn{background:var(--kids-yellow)!important;color:var(--kids-blue)!important;border-color:#E6C23B!important}
 </style>
