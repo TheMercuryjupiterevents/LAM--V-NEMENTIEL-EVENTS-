@@ -1072,6 +1072,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <section class="lam-form-group" aria-labelledby="lam-service-forms-title">
 <div class="lam-form-group-heading"><span>02</span><div><h3 id="lam-service-forms-title">SERVICES À LA CARTE</h3><p>Pour une demande précise sans organisation complète de l’événement.</p></div></div>
 <div class="grid grid3 lam-form-grid">
+<article class="card"><div class="lam-form-tag">Mode & création sur mesure</div><h3>LAM COUTURE & MODE</h3><p>Création de vêtements, confection sur mesure, tenues de cérémonie, retouches et stylisme.</p><button class="btn" type="button" data-show-form="coutureForm" aria-controls="coutureForm" aria-pressed="false">Demander une création couture</button></article>
 <article class="card"><div class="lam-form-tag">Cuisine & réception</div><h3>CUISINE & SERVICE TRAITEUR</h3><p>Repas, buffets, menus personnalisés et service culinaire.</p><button class="btn" type="button" data-show-form="cuisineForm" aria-controls="cuisineForm" aria-pressed="false">Demander un service traiteur</button></article>
 <article class="card"><div class="lam-form-tag">Scénographie & ambiance</div><h3>DÉCORATION ÉVÉNEMENTIELLE</h3><p>Décoration seule, tables, fleurs, arches et espaces photo.</p><button class="btn" type="button" data-show-form="decorationForm" aria-controls="decorationForm" aria-pressed="false">Demander une décoration</button></article>
 <article class="card"><div class="lam-form-tag">Créations gourmandes</div><h3>PÂTISSERIE & GÂTEAUX</h3><p>Gâteaux personnalisés, desserts, pâtisseries et douceurs.</p><button class="btn" type="button" data-show-form="patisserieForm" aria-controls="patisserieForm" aria-pressed="false">Commander des douceurs</button></article>
@@ -1086,6 +1087,42 @@ html,body{max-width:100%;overflow-x:hidden}
 </div>
 <p id="formChoiceStatus" class="small" role="status" aria-live="polite">Sélectionnez une catégorie pour ouvrir le formulaire correspondant.</p>
 
+
+<div class="form-panel" id="coutureForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 12 · LAM COUTURE & MODE</div><h3>VOTRE PROJET DE CRÉATION AVEC LAM COUTURE</h3><p class="lead">Présentez-nous la pièce que vous souhaitez créer ou ajuster. Notre équipe étudiera votre demande et vous contactera pour préciser les mesures, le tissu, le délai et le devis.</p></div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="NOUVELLE DEMANDE — LAM COUTURE & MODE"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="hidden" name="Département" value="LAM COUTURE & MODE"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Ville / Pays *</label><input name="Ville et pays" required></div>
+  </div></div>
+  <div class="form-section"><h3>02 — Votre demande couture</h3><div class="fieldgrid">
+   <div class="field"><label>Type de demande *</label><select name="Type de demande" required><option value="">Sélectionner</option><option>Création sur mesure</option><option>Tenue de cérémonie / réception</option><option>Robe de mariée / tenue de mariage</option><option>Tenue de soirée</option><option>Prêt-à-porter</option><option>Uniforme personnalisé</option><option>Retouches / ajustements</option><option>Stylisme / conseil en image</option><option>Accessoires personnalisés</option><option>Autre</option></select></div>
+   <div class="field"><label>Pour qui est la création ?</label><select name="Destinataire"><option value="">Sélectionner</option><option>Femme</option><option>Homme</option><option>Enfant</option><option>Adolescent(e)</option><option>Plusieurs personnes</option></select></div>
+   <div class="field"><label>Nom de la pièce / vêtement souhaité *</label><input name="Vêtement souhaité" placeholder="Ex. : robe longue, costume, ensemble…" required></div>
+   <div class="field"><label>Quantité souhaitée</label><input type="number" name="Quantité" min="1" value="1"></div>
+   <div class="field"><label>Occasion / événement</label><input name="Occasion ou événement" placeholder="Facultatif"></div>
+   <div class="field"><label>Date souhaitée de livraison *</label><input type="date" name="Date souhaitée" required></div>
+   <div class="field"><label>Style recherché</label><select name="Style recherché"><option value="">Sélectionner</option><option>Classique</option><option>Chic / élégant</option><option>Haute couture</option><option>Moderne / contemporain</option><option>Minimaliste</option><option>Traditionnel</option><option>Autre / à discuter</option></select></div>
+   <div class="field"><label>Couleurs souhaitées</label><input name="Couleurs souhaitées" placeholder="Précisez les couleurs"></div>
+   <div class="field"><label>Tissu / matière souhaité(e)</label><input name="Tissu ou matière" placeholder="Satin, soie, dentelle, coton… ou conseil de LAM"></div>
+   <div class="field"><label>Budget prévu (Gourdes HTG)</label><input type="number" name="Budget prévu (HTG)" min="0" step="1" placeholder="Montant en Gourdes"></div>
+  </div></div>
+  <div class="form-section"><h3>03 — Mesures et détails</h3><p class="small">Vous pouvez communiquer vos mesures disponibles maintenant. Les mesures définitives pourront être vérifiées avec l’équipe LAM.</p><div class="fieldgrid">
+   <div class="field"><label>Taille habituelle</label><input name="Taille habituelle" placeholder="Ex. : XS, S, M, L, XL ou autre"></div>
+   <div class="field"><label>Mesures disponibles</label><input name="Mesures disponibles" placeholder="Poitrine, taille, hanches, longueur…"></div>
+   <div class="field full"><label>Autres mesures / précisions</label><textarea name="Autres mesures et précisions" rows="3" placeholder="Indiquez les mesures et ajustements utiles, si vous les connaissez."></textarea></div>
+   <div class="field full"><label>Décrivez votre projet *</label><textarea name="Description du projet couture" required placeholder="Coupe, longueur, manches, finitions, détails, inspirations…"></textarea></div>
+   <div class="field full"><label>Joindre une image d’inspiration (facultatif)</label><input type="file" name="Image inspiration" accept="image/*"></div>
+  </div></div>
+  <div class="form-section"><h3>04 — Confirmation</h3><p class="small">L’envoi de ce formulaire constitue une demande de renseignements et de devis. La commande sera confirmée uniquement après validation du modèle, du prix, du délai et des modalités convenues avec LAM COUTURE.</p>
+   <label class="consent"><input type="checkbox" name="Consentement contact" value="J’accepte d’être contacté(e)" required>J’accepte que l’équipe LAM me contacte au sujet de ma demande couture. *</label>
+  </div>
+  <button class="btn primary" type="submit">Envoyer ma demande couture</button>
+ </form>
+</div>
 <div class="form-panel" id="weddingForm" hidden style="margin-top:24px">
  <div class="card" style="margin-bottom:18px"><div class="num">FORMULAIRE 06 · MARIAGE</div><h3>PLANIFIEZ VOTRE MARIAGE AVEC LAM</h3><p class="lead">Décrivez-nous votre journée afin que notre équipe prépare une proposition personnalisée.</p></div>
  <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
@@ -1927,7 +1964,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','minorForm','charcuterieForm','weddingForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','minorForm','charcuterieForm','weddingForm','coutureForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
