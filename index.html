@@ -1057,6 +1057,57 @@ html,body{max-width:100%;overflow-x:hidden}
   margin:25% auto 0!important;border-width:3px!important;outline-offset:4px!important;
  }
 }
+
+/* Logo LAM conforme au modèle fourni : cercle ivoire, triangle ivoire, lettres rouge-jaune-rouge */
+#lam-grand-spectacle .lam-pyramid{
+ border:clamp(4px,.65vw,8px) solid #fff8dc!important;
+ border-radius:50%!important;
+ background:#123cff!important;
+ overflow:visible!important;
+ aspect-ratio:1!important;
+ box-shadow:0 0 0 2px #fff8dc,0 0 34px #315fff,0 0 60px #e51d3555!important;
+}
+#lam-grand-spectacle .lam-pyramid:before{
+ inset:8%!important;
+ clip-path:polygon(50% 0,100% 100%,0 100%)!important;
+ background:#fff8dc!important;
+ filter:none!important;
+}
+#lam-grand-spectacle .lam-pyramid:after{
+ inset:10.5%!important;
+ clip-path:polygon(50% 0,100% 100%,0 100%)!important;
+ background:#123cff!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+#lam-grand-spectacle .lam-monogram{
+ position:relative!important;z-index:2!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ gap:.025em!important;
+ width:auto!important;height:auto!important;aspect-ratio:auto!important;
+ margin:25% auto 0!important;padding:0!important;
+ border:0!important;border-radius:0!important;outline:0!important;
+ background:transparent!important;box-shadow:none!important;
+ color:transparent!important;
+ font-family:Arial,Helvetica,sans-serif!important;
+ font-size:clamp(2.15rem,6.2vw,5rem)!important;
+ font-weight:900!important;line-height:1!important;letter-spacing:-.065em!important;
+ text-shadow:none!important;
+}
+#lam-grand-spectacle .lam-monogram span{
+ display:inline-block!important;font:900 inherit Arial,Helvetica,sans-serif!important;
+ text-shadow:none!important;
+}
+#lam-grand-spectacle .lam-monogram .lam-letter-l,
+#lam-grand-spectacle .lam-monogram .lam-letter-m{color:#f01818!important}
+#lam-grand-spectacle .lam-monogram .lam-letter-a{color:#ffeb00!important}
+@media(max-width:650px){
+ #lam-grand-spectacle .lam-pyramid{
+  width:min(54vw,220px)!important;
+  border-width:4px!important;
+ }
+ #lam-grand-spectacle .lam-monogram{font-size:clamp(2rem,9vw,3.5rem)!important;margin-top:25%!important}
+}
 </style>
 </head>
 <body>
@@ -3336,7 +3387,7 @@ html{scroll-padding-top:86px}
   <div class="lam-topline">PRÉSENTE SON UNIVERS</div>
   <div class="lam-stage-content">
    <div class="lam-departments left"><span>Organisation événementielle</span><span>Décoration &amp; design</span><span>Cuisine &amp; service traiteur</span><span>Concerts &amp; production</span></div>
-   <div class="lam-pyramid"><div class="lam-monogram">LAM</div></div>
+   <div class="lam-pyramid"><div class="lam-monogram" aria-label="LAM"><span class="lam-letter-l">L</span><span class="lam-letter-a">A</span><span class="lam-letter-m">M</span></div></div>
    <div class="lam-departments right"><span>LAM Kids</span><span>LAM Couture</span><span>Événements privés &amp; professionnels</span></div>
   </div>
   <div class="lam-stage-name"><strong>ÉVÉNEMENTIEL &amp; EVENTS</strong><small>PUISSANCE. PRESTIGE. PERFECTION.</small></div>
