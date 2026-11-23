@@ -1153,6 +1153,10 @@ html,body{max-width:100%;overflow-x:hidden}
  #lam-grand-spectacle .lam-pyramid{width:min(53vw,250px)!important}
  #lam-grand-spectacle .lam-monogram{font-size:clamp(2.9rem,10vw,4rem)!important}
 }
+
+/* Intro courte : laisser le site apparaître rapidement */
+#lam-grand-spectacle{transition:opacity .35s ease,visibility .35s ease!important}
+#lam-grand-spectacle .lam-curtain{animation-duration:.9s!important;animation-delay:0s!important}
 </style>
 </head>
 <body>
@@ -3440,7 +3444,7 @@ html{scroll-padding-top:86px}
  </div>
 </div>
 <script id="lam-grand-spectacle-script">
-(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;const close=()=>{intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),1100)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,9500);})();
+(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),450)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,4200);})();
 </script>
 </body>
 </html>
