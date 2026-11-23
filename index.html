@@ -2422,7 +2422,55 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="grid grid2" style="margin-top:18px">
 <article class="card" id="equipe-lam"><h3>NOTRE ÉQUIPE</h3><p>Une équipe organisée autour de la direction, de la coordination, de la communication, de la logistique, de la décoration et du service culinaire.</p></article>
 <article class="card" id="methode-lam"><h3>NOTRE MÉTHODE DE TRAVAIL</h3><p>Écoute, conception, planification, coordination, production et suivi final : chaque étape contribue à une expérience cohérente.</p></article>
-<article class="card" id="recrutement-lam"><h3>REJOINDRE L’ÉQUIPE LAM</h3><p>Les personnes intéressées par une collaboration professionnelle peuvent contacter l’équipe LAM pour présenter leur profil et leur expérience.</p><a class="btn" href="#contact">Contacter LAM</a></article>
+<article class="card" id="recrutement-lam">
+<h3>REJOINDRE L’ÉQUIPE LAM</h3>
+<p>Vous souhaitez contribuer à la création d’événements remarquables ? Présentez votre profil à LAM ÉVÉNEMENTIEL &amp; EVENTS à l’aide du formulaire de candidature ci-dessous. Chaque candidature sera étudiée par notre direction.</p>
+<form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" style="margin-top:18px">
+<input type="hidden" name="_subject" value="CANDIDATURE — REJOINDRE L’ÉQUIPE LAM">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="form-section">
+<h3>01 — Vos coordonnées</h3>
+<div class="fieldgrid">
+<div class="field"><label for="lamCandidateName">Nom complet *</label><input id="lamCandidateName" name="Nom complet" type="text" autocomplete="name" required></div>
+<div class="field"><label for="lamCandidateEmail">Adresse e-mail *</label><input id="lamCandidateEmail" name="Adresse e-mail" type="email" autocomplete="email" required></div>
+<div class="field"><label for="lamCandidatePhone">Téléphone / WhatsApp *</label><input id="lamCandidatePhone" name="Téléphone / WhatsApp" type="tel" autocomplete="tel" required></div>
+<div class="field"><label for="lamCandidateCity">Ville et pays de résidence *</label><input id="lamCandidateCity" name="Ville et pays de résidence" type="text" required></div>
+</div></div>
+<div class="form-section">
+<h3>02 — Le poste qui vous intéresse</h3>
+<div class="field"><label for="lamCandidateRole">Choisissez votre domaine *</label><select id="lamCandidateRole" name="Domaine souhaité" required>
+<option value="">Sélectionnez un domaine</option>
+<option>Coordination / gestion de projet événementiel</option><option>Décoration événementielle / design</option><option>Service événementiel / accueil</option><option>Logistique / organisation</option><option>Cuisine / traiteur / pâtisserie</option><option>Communication / réseaux sociaux</option><option>Photographie / vidéo</option><option>Administration / finances</option><option>Autre spécialité</option>
+</select></div>
+<div class="field" style="margin-top:14px"><label for="lamCandidateOtherRole">Si autre, précisez</label><input id="lamCandidateOtherRole" name="Autre spécialité" type="text"></div>
+</div>
+<div class="form-section">
+<h3>03 — Votre profil</h3>
+<div class="fieldgrid">
+<div class="field"><label for="lamCandidateStudy">Études / formation</label><input id="lamCandidateStudy" name="Études et formation" type="text"></div>
+<div class="field"><label for="lamCandidateExperience">Expérience</label><select id="lamCandidateExperience" name="Niveau d’expérience"><option value="">Sélectionnez</option><option>Débutant(e) / motivé(e)</option><option>Moins d’un an</option><option>1 à 3 ans</option><option>3 à 5 ans</option><option>Plus de 5 ans</option></select></div>
+<div class="field full"><label for="lamCandidateSkills">Compétences et expériences pertinentes *</label><textarea id="lamCandidateSkills" name="Compétences et expériences" placeholder="Présentez vos compétences, vos réalisations et les outils que vous maîtrisez…" required></textarea></div>
+<div class="field full"><label for="lamCandidatePortfolio">Lien vers portfolio, CV ou réalisations (facultatif)</label><input id="lamCandidatePortfolio" name="Lien CV ou portfolio" type="url" placeholder="https://…"></div>
+</div></div>
+<div class="form-section">
+<h3>04 — Disponibilité</h3>
+<div class="fieldgrid">
+<div class="field"><label for="lamCandidateAvailability">Votre disponibilité *</label><select id="lamCandidateAvailability" name="Disponibilité" required><option value="">Sélectionnez</option><option>Par événement</option><option>Temps partiel</option><option>Temps plein</option><option>Selon les besoins et le calendrier</option></select></div>
+<div class="field"><label for="lamCandidateStart">Date possible de début</label><input id="lamCandidateStart" name="Date possible de début" type="date"></div>
+<div class="field full"><label for="lamCandidateMotivation">Pourquoi souhaitez-vous rejoindre LAM ? *</label><textarea id="lamCandidateMotivation" name="Motivation" required placeholder="Expliquez votre intérêt à intégrer notre équipe…"></textarea></div>
+</div></div>
+<div class="form-section">
+<h3>05 — Cadre de collaboration</h3>
+<p class="small">Les collaborations au sein de LAM sont organisées par événement. Les réunions d’équipe sont obligatoires lorsqu’elles sont convoquées. Toute collaboration retenue est encadrée par un contrat précisant les modalités convenues.</p>
+<label class="consent"><input type="checkbox" name="Accord sur le cadre de collaboration" value="J’ai pris connaissance du cadre de collaboration" required><span>Je confirme avoir pris connaissance de ces modalités et comprendre que l’envoi de ma candidature ne garantit pas mon recrutement. *</span></label>
+<label class="consent"><input type="checkbox" name="Consentement données candidature" value="J’accepte l’utilisation de mes informations pour étudier ma candidature" required><span>J’autorise LAM ÉVÉNEMENTIEL &amp; EVENTS à utiliser les informations transmises uniquement pour étudier ma candidature et me contacter à ce sujet. *</span></label>
+</div>
+<p class="small">* Champs obligatoires. L’envoi du formulaire constitue une candidature, et non une promesse d’embauche ou un engagement contractuel.</p>
+<button class="btn primary" type="submit">ENVOYER MA CANDIDATURE</button>
+</form>
+</article>
 </div></div></section>
 <section id="contact" class="section">
 <div class="wrap grid grid2">
