@@ -1923,26 +1923,7 @@ html,body{max-width:100%;overflow-x:hidden}
 </div><div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
 </div></section>
 
-<script id="lam-inspiration-form-handler">
-(function(){
- var form=document.getElementById('lamInspirationForm');
- if(!form)return;
- form.addEventListener('submit',function(e){
-  e.preventDefault();
-  if(!form.reportValidity())return;
-  var labels=[
-   ['Nom','lamInspNom'],['Prénom','lamInspPrenom'],['Adresse e-mail','lamInspEmail'],['Téléphone','lamInspPhone'],
-   ['Type d’événement','lamInspType'],['Date souhaitée','lamInspDate'],['Lieu ou ville','lamInspPlace'],
-   ['Nombre d’invités','lamInspGuests'],['Budget approximatif (HTG)','lamInspBudget'],['Style souhaité','lamInspStyle'],
-   ['Couleurs préférées','lamInspColors'],['Fleurs souhaitées','lamInspFlowers'],['Décoration souhaitée','lamInspDecor'],['Idées et besoins','lamInspDetails']
-  ];
-  var message='Bonjour LAM ÉVÉNEMENTIEL & EVENTS, je souhaite recevoir des idées pour mon événement.\n\n';
-  labels.forEach(function(item){var el=document.getElementById(item[1]);var value=el?el.value.trim():'';if(value)message+=item[0]+': '+value+'\n';});
-  message+='\nJ’accepte d’être contacté(e) au sujet de cette demande.';
-  window.open('https://wa.me/50937469553?text='+encodeURIComponent(message),'_blank','noopener');
- });
-})();
-</script>
+<script id="lam-inspiration-form-handler">/* Envoi natif FormSubmit : les champs et la signature partent ensemble. */</script>
 
 <script>
 function showEventForm(target){
@@ -2107,7 +2088,8 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
   <div class="lam-inspiration-form-layout">
    <div class="lam-inspiration-form-intro"><span class="lam-inspiration-kicker">PARLONS DE VOTRE PROJET</span><h3>Recevez des idées adaptées à votre événement.</h3><p>Remplissez les champs ci-dessous. Si vous n’avez aucune idée précise, choisissez « J’ai besoin de conseils » : nous vous guiderons.</p><p class="lam-inspiration-note">Votre demande ne confirme pas une réservation. La disponibilité et le devis seront étudiés avec notre équipe.</p></div>
-   <form id="lamInspirationForm" class="form lam-inspiration-form">
+   <form id="lamInspirationForm" class="form lam-inspiration-form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="DEMANDE D’INSPIRATION — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true">
     <div class="form-section"><h3>Vos coordonnées</h3><div class="fieldgrid">
      <div class="field"><label for="lamInspNom">Nom *</label><input id="lamInspNom" name="Nom" autocomplete="family-name" required placeholder="Votre nom"></div>
      <div class="field"><label for="lamInspPrenom">Prénom *</label><input id="lamInspPrenom" name="Prénom" autocomplete="given-name" required placeholder="Votre prénom"></div>
@@ -2140,7 +2122,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <h2>PERSONNALISEZ VOTRE ÉVÉNEMENT.</h2>
 <p class="lead">Un anniversaire d’enfant, une fête pour adolescent, une célébration élégante pour une dame ou un événement familial : dites-nous ce que vous imaginez, et notre équipe pourra mieux comprendre votre projet.</p>
 <div class="birthday-panel">
-<form id="birthdayInquiryForm">
+<form id="birthdayInquiryForm" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="DEMANDE PERSONNALISATION ÉVÉNEMENT — LAM ÉVÉNEMENTIEL & EVENTS"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true">
 
 <div class="payment-policy-inline" role="note" aria-label="Politique de réservation et de paiement">
   <div class="payment-policy-inline-title">POLITIQUE DE RÉSERVATION ET DE PAIEMENT</div>
@@ -2150,15 +2133,15 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <div class="birthday-form-grid">
-<div class="birthday-field"><label for="birthdayEventType">Quel type d’événement souhaitez-vous organiser ?</label><select id="birthdayEventType" required><option value="">Choisir un type</option><option>Dîner</option><option>Anniversaire</option><option>Fête pour enfant</option><option>Fête pour adolescent</option><option>Anniversaire surprise</option><option>Fiançailles</option><option>Mariage</option><option>Baby shower</option><option>Bridal shower</option><option>Graduation</option><option>Dîner privé</option><option>Autre célébration</option></select></div>
-<div class="birthday-field"><label for="birthdayForWho">Pour qui organisez-vous la fête ?</label><select id="birthdayForWho" required><option value="">Choisir</option><option>Un enfant</option><option>Un adolescent</option><option>Une adulte / une dame</option><option>Un adulte / un homme</option><option>Un couple</option><option>Un membre de la famille</option><option>Un ami / une amie</option><option>Moi-même</option><option>Autre</option></select></div>
-<div class="birthday-field"><label for="birthdayAge">Quel âge la personne va-t-elle avoir ?</label><input id="birthdayAge" type="text" placeholder="Ex. 5 ans, 18 ans, 30 ans, 50 ans"></div>
-<div class="birthday-field"><label for="birthdayDate">Date souhaitée</label><input id="birthdayDate" type="date" required></div>
-<div class="birthday-field"><label for="birthdayStyle">Style ou ambiance souhaitée</label><select id="birthdayStyle" required><option value="">Choisir une ambiance</option><option>Élégant et luxueux</option><option>Royal et sophistiqué</option><option>Moderne et tendance</option><option>Enfantin et coloré</option><option>Glamour</option><option>Chic et minimaliste</option><option>Thème personnalisé</option><option>J’aimerais des conseils</option></select></div>
-<div class="birthday-field"><label for="birthdayGuests">Nombre approximatif d’invités</label><select id="birthdayGuests"><option>À déterminer</option><option>Moins de 20 personnes</option><option>20 à 50 personnes</option><option>51 à 100 personnes</option><option>Plus de 100 personnes</option></select></div>
-<div class="birthday-field"><label for="birthdayPalette">Couleurs préférées</label><input id="birthdayPalette" type="text" placeholder="Ex. orange et blanc, rouge et or"></div>
-<div class="birthday-field"><label for="birthdayBudget">Budget envisagé en gourdes haïtiennes (HTG)</label><input id="birthdayBudget" type="number" min="0" step="500" placeholder="Ex. 25000, 100000, 1000000"></div>
-<div class="birthday-field full"><label for="birthdayDetails">Racontez-nous votre idée ou votre thème</label><textarea id="birthdayDetails" placeholder="Ex. anniversaire de princesse pour une petite fille, fête élégante pour une dame, fête surprise, décoration, traiteur…"></textarea></div>
+<div class="birthday-field"><label for="birthdayEventType">Quel type d’événement souhaitez-vous organiser ?</label><select id="birthdayEventType" required name="birthdayEventType"><option value="">Choisir un type</option><option>Dîner</option><option>Anniversaire</option><option>Fête pour enfant</option><option>Fête pour adolescent</option><option>Anniversaire surprise</option><option>Fiançailles</option><option>Mariage</option><option>Baby shower</option><option>Bridal shower</option><option>Graduation</option><option>Dîner privé</option><option>Autre célébration</option></select></div>
+<div class="birthday-field"><label for="birthdayForWho">Pour qui organisez-vous la fête ?</label><select id="birthdayForWho" required name="birthdayForWho"><option value="">Choisir</option><option>Un enfant</option><option>Un adolescent</option><option>Une adulte / une dame</option><option>Un adulte / un homme</option><option>Un couple</option><option>Un membre de la famille</option><option>Un ami / une amie</option><option>Moi-même</option><option>Autre</option></select></div>
+<div class="birthday-field"><label for="birthdayAge">Quel âge la personne va-t-elle avoir ?</label><input id="birthdayAge" type="text" placeholder="Ex. 5 ans, 18 ans, 30 ans, 50 ans" name="birthdayAge"></div>
+<div class="birthday-field"><label for="birthdayDate">Date souhaitée</label><input id="birthdayDate" type="date" required name="birthdayDate"></div>
+<div class="birthday-field"><label for="birthdayStyle">Style ou ambiance souhaitée</label><select id="birthdayStyle" required name="birthdayStyle"><option value="">Choisir une ambiance</option><option>Élégant et luxueux</option><option>Royal et sophistiqué</option><option>Moderne et tendance</option><option>Enfantin et coloré</option><option>Glamour</option><option>Chic et minimaliste</option><option>Thème personnalisé</option><option>J’aimerais des conseils</option></select></div>
+<div class="birthday-field"><label for="birthdayGuests">Nombre approximatif d’invités</label><select id="birthdayGuests" name="birthdayGuests"><option>À déterminer</option><option>Moins de 20 personnes</option><option>20 à 50 personnes</option><option>51 à 100 personnes</option><option>Plus de 100 personnes</option></select></div>
+<div class="birthday-field"><label for="birthdayPalette">Couleurs préférées</label><input id="birthdayPalette" type="text" placeholder="Ex. orange et blanc, rouge et or" name="birthdayPalette"></div>
+<div class="birthday-field"><label for="birthdayBudget">Budget envisagé en gourdes haïtiennes (HTG)</label><input id="birthdayBudget" type="number" min="0" step="500" placeholder="Ex. 25000, 100000, 1000000" name="birthdayBudget"></div>
+<div class="birthday-field full"><label for="birthdayDetails">Racontez-nous votre idée ou votre thème</label><textarea id="birthdayDetails" placeholder="Ex. anniversaire de princesse pour une petite fille, fête élégante pour une dame, fête surprise, décoration, traiteur…" name="birthdayDetails"></textarea></div>
 </div>
 <div class="birthday-hint" style="margin-top:18px">Votre demande ne constitue pas une réservation confirmée. Notre équipe échangera avec vous pour préciser les besoins, la disponibilité et le devis.</div>
 <div style="margin-top:18px"><button type="submit" class="btn">Envoyer ma demande sur WhatsApp</button></div>
@@ -2709,29 +2692,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 <script>
-(function(){
- var form=document.getElementById('birthdayInquiryForm');
- if(!form)return;
- form.addEventListener('submit',function(event){
-  event.preventDefault();
-  var get=function(id){return (document.getElementById(id).value||'À préciser').trim();};
-  var fields=[
-   ['Type d’événement',get('birthdayEventType')],
-   ['Pour qui',get('birthdayForWho')],
-   ['Âge célébré',get('birthdayAge')],
-   ['Date souhaitée',get('birthdayDate')],
-   ['Style / ambiance',get('birthdayStyle')],
-   ['Nombre d’invités',get('birthdayGuests')],
-   ['Couleurs',get('birthdayPalette')],
-   ['Budget envisagé',document.getElementById('birthdayBudget').value?document.getElementById('birthdayBudget').value+' gourdes HTG':'Non précisé'],
-   ['Idée / thème',get('birthdayDetails')]
-  ];
-  var message='Bonjour LAM ÉVÉNEMENTIEL & EVENTS — ÉVÉNEMENTIEL. Je souhaite discuter de mon projet de célébration :\n\n'+fields.map(function(item){return item[0]+' : '+item[1];}).join('\n')+'\n\nMerci de me renseigner sur les options, la disponibilité et le devis.';
-  document.getElementById('birthdayInquiryStatus').textContent='Votre demande va s’ouvrir dans WhatsApp. Veuillez vérifier le message et appuyer sur Envoyer.';
-  window.open('https://wa.me/50937469553?text='+encodeURIComponent(message),'_blank','noopener');
- });
-})();
-</script>
+/* Le formulaire anniversaire est transmis par FormSubmit avec sa signature électronique. */
 
 
 
@@ -2977,6 +2938,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var fontH=hidden('Style du nom du signataire');
   var colorH=hidden('Couleur de l’encre');
   var imageH=hidden('Image de la signature manuscrite (PNG base64)');
+  var signedAtH=hidden('Date et heure de signature');
   var name=box.querySelector('.lam-sig-name'),font=box.querySelector('.lam-sig-font'),color=box.querySelector('.lam-sig-color'),preview=box.querySelector('.lam-signature-preview'),canvas=box.querySelector('canvas'),ctx=canvas.getContext('2d'),drawn=false,drawing=false;
   function previewName(){preview.textContent=name.value||'Votre nom apparaîtra ici';preview.style.fontFamily=font.value;preview.style.color=color.value}
   name.addEventListener('input',previewName);font.addEventListener('change',previewName);color.addEventListener('change',function(){previewName();ctx.strokeStyle=color.value});
@@ -2989,7 +2951,7 @@ document.addEventListener('DOMContentLoaded',function(){
   box.querySelector('.lam-sig-clear').addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);drawn=false;imageH.value=''});
   form.addEventListener('submit',function(e){
    if(!name.value.trim()||!drawn||!box.querySelector('.lam-sig-consent').checked){e.preventDefault();if(!name.value.trim())name.focus();else if(!drawn)canvas.scrollIntoView({behavior:'smooth',block:'center'});else box.querySelector('.lam-sig-consent').focus();alert('Veuillez saisir votre nom, dessiner votre signature et accepter les conditions avant l’envoi.');return}
-   nameH.value=name.value.trim();fontH.value=font.options[font.selectedIndex].text;colorH.value=color.options[color.selectedIndex].text;imageH.value=canvas.toDataURL('image/png');
+   nameH.value=name.value.trim();fontH.value=font.options[font.selectedIndex].text;colorH.value=color.options[color.selectedIndex].text;imageH.value=canvas.toDataURL('image/png');signedAtH.value=new Date().toLocaleString('fr-FR',{dateStyle:'long',timeStyle:'short'});
   },true);
   previewName();
  });
