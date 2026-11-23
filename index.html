@@ -848,6 +848,146 @@ html,body{max-width:100%;overflow-x:hidden}
 @keyframes lamCurtainOpen{to{transform:scaleX(.08);opacity:.4}}@keyframes lamStageRise{to{opacity:1;transform:translateY(0)}}@keyframes lamDeptIn{to{opacity:1;transform:translateY(0)}}@keyframes lamPyramidIn{to{opacity:1;transform:scale(1)}}@keyframes lamPyramidGlow{50%{filter:brightness(1.35);opacity:.88}}
 @media(max-width:650px){#lam-grand-spectacle .lam-stage{padding:54px 12px 30px;min-height:100svh}#lam-grand-spectacle .lam-stage-content{grid-template-columns:1fr 1fr;gap:9px}#lam-grand-spectacle .lam-pyramid{grid-column:1/-1;grid-row:1;width:min(48vw,210px);margin:auto}#lam-grand-spectacle .lam-departments{grid-row:2;gap:9px}#lam-grand-spectacle .lam-departments span{font-size:.56rem;letter-spacing:.045em;padding:8px 4px}#lam-grand-spectacle .lam-curtain{width:17%}#lam-grand-spectacle .lam-stage-name{margin-top:16px}}
 @media(prefers-reduced-motion:reduce){#lam-grand-spectacle *,#lam-grand-spectacle *:before,#lam-grand-spectacle *:after{animation-duration:.01ms!important;animation-delay:0ms!important}}
+
+/* LAM — version scène de concert monumentale, référence écrans LED bleus */
+#lam-grand-spectacle{
+ background:radial-gradient(ellipse at 50% 42%,#174c91 0%,#071a35 48%,#020711 100%)!important;
+}
+#lam-grand-spectacle .lam-stage{
+ background:
+  radial-gradient(ellipse at 50% 100%,#1e5a91 0%,transparent 44%),
+  linear-gradient(180deg,#07182d 0%,#0b2c50 52%,#020711 100%);
+ overflow:hidden;
+}
+#lam-grand-spectacle .lam-curtain{display:none!important}
+#lam-grand-spectacle .lam-topline{
+ color:#e7f4ff!important;text-shadow:0 0 16px #58bfff,0 0 30px #287cff;
+ letter-spacing:.24em!important;
+}
+#lam-grand-spectacle .lam-stage-content{
+ position:relative;z-index:3;
+ width:min(1280px,100%)!important;
+ grid-template-columns:minmax(0,1fr) minmax(170px,30vw) minmax(0,1fr)!important;
+ gap:clamp(8px,1.5vw,22px)!important;
+ padding:clamp(8px,2vw,24px) 0 0;
+}
+#lam-grand-spectacle .lam-departments{
+ align-content:center;gap:clamp(9px,1.8vh,18px)!important;
+ min-height:clamp(220px,36vh,390px);
+ padding:clamp(12px,2vw,24px)!important;
+ border:2px solid #78caff;
+ border-radius:12px;
+ background:
+  linear-gradient(180deg,#0d4385e8,#061b3beF),
+  repeating-linear-gradient(0deg,transparent 0 18px,#60baff22 19px 20px);
+ box-shadow:0 0 18px #38aaff99,inset 0 0 28px #4db8ff33,0 0 55px #168bff55;
+ position:relative;overflow:hidden;
+}
+#lam-grand-spectacle .lam-departments:before{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(110deg,transparent 25%,#b9eaff22 48%,transparent 70%);
+ transform:translateX(-120%);animation:lamLedSweep 4s ease-in-out infinite;
+}
+#lam-grand-spectacle .lam-departments span{
+ position:relative;z-index:1;
+ border:1px solid #83d5ff!important;
+ border-radius:3px!important;
+ background:linear-gradient(90deg,#061a36dd,#155da5cc,#061a36dd)!important;
+ color:#fff!important;
+ text-shadow:0 0 10px #8bd9ff;
+ box-shadow:0 0 12px #269dff66,inset 0 0 12px #73caff22;
+ letter-spacing:.055em!important;
+ font:600 clamp(.55rem,1.05vw,.88rem) Georgia,serif!important;
+ padding:clamp(9px,1.2vw,15px) 6px!important;
+}
+#lam-grand-spectacle .lam-pyramid{
+ z-index:4;
+ width:100%;align-self:center;
+ filter:drop-shadow(0 0 22px #4bc5ffcc)!important;
+}
+#lam-grand-spectacle .lam-pyramid:before{
+ inset:0!important;
+ clip-path:polygon(50% 0,100% 100%,0 100%)!important;
+ background:linear-gradient(135deg,#d8f6ff,#43baff 18%,#123d8a 42%,#9deaff 57%,#1555a0 78%,#e4fbff)!important;
+ animation:lamPyramidGlow 2s ease-in-out infinite!important;
+}
+#lam-grand-spectacle .lam-pyramid:after{
+ inset:4%!important;
+ clip-path:polygon(50% 0,100% 100%,0 100%)!important;
+ background:
+  radial-gradient(circle at 50% 35%,#b5efff 0 2px,transparent 3px),
+  radial-gradient(circle at 30% 58%,#6bcaff 0 2px,transparent 3px),
+  radial-gradient(circle at 70% 58%,#6bcaff 0 2px,transparent 3px),
+  linear-gradient(145deg,#03152d,#0c4d9b 55%,#03152d)!important;
+ background-size:26px 26px,31px 31px,31px 31px,auto!important;
+ border:2px solid #c8f3ff!important;
+ box-shadow:inset 0 0 35px #54caff88;
+}
+#lam-grand-spectacle .lam-monogram{
+ color:#f4fbff!important;
+ text-shadow:0 0 12px #fff,0 0 35px #51c7ff,0 4px 20px #000!important;
+}
+#lam-grand-spectacle .lam-runway{
+ z-index:2!important;bottom:-2%!important;
+ width:min(68vw,900px)!important;height:42%!important;
+ clip-path:polygon(43% 0,57% 0,100% 100%,0 100%)!important;
+ background:
+  linear-gradient(90deg,transparent 47%,#d9f5ff66 49%,#fff 50%,#d9f5ff66 51%,transparent 53%),
+  linear-gradient(180deg,#4bc5ff99,#0c3f80cc 35%,#07162e 100%)!important;
+ border-top:3px solid #c8f3ff!important;
+ filter:drop-shadow(0 0 22px #36baff)!important;
+}
+#lam-grand-spectacle .lam-stage:before{
+ content:"";position:absolute;z-index:1;inset:0 0 28%;
+ background:
+  repeating-conic-gradient(from 250deg at 50% 0%,transparent 0deg 7deg,#b7eaff22 7.2deg 7.8deg,transparent 8deg 15deg);
+ opacity:.8;animation:lamConcertBeams 5s ease-in-out infinite alternate;
+ pointer-events:none;
+}
+#lam-grand-spectacle .lam-stage:after{
+ content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;height:29%;
+ background:
+  radial-gradient(ellipse at 50% 0%,#d5f5ff55,transparent 55%),
+  repeating-linear-gradient(90deg,transparent 0 11px,#050b17 12px 16px,transparent 17px 23px);
+ clip-path:polygon(0 18%,4% 5%,7% 22%,11% 0,15% 20%,20% 4%,24% 23%,29% 0,34% 19%,39% 4%,44% 23%,50% 0,56% 20%,61% 3%,66% 22%,71% 0,76% 18%,81% 3%,86% 23%,91% 0,95% 19%,100% 5%,100% 100%,0 100%);
+ opacity:.9;pointer-events:none;
+}
+#lam-grand-spectacle .lam-stage-name{
+ position:relative;z-index:5!important;
+ text-shadow:0 0 14px #5fcaff,0 0 28px #1269c9;
+}
+#lam-grand-spectacle .lam-stage-name strong{color:#f4fbff!important}
+#lam-grand-spectacle .lam-stage-name small{color:#d6edff!important}
+#lam-grand-spectacle .lam-skip{
+ background:#061b36!important;border-color:#8bdcff!important;
+ box-shadow:0 0 16px #38baff66;
+}
+@keyframes lamLedSweep{50%{transform:translateX(120%)}}
+@keyframes lamConcertBeams{from{transform:translateX(-2%) skewX(-3deg);opacity:.45}to{transform:translateX(2%) skewX(3deg);opacity:1}}
+@media(max-width:650px){
+ #lam-grand-spectacle .lam-stage{padding:48px 9px 24px!important;min-height:100svh!important}
+ #lam-grand-spectacle .lam-stage-content{
+  grid-template-columns:1fr 1fr!important;
+  grid-template-rows:auto auto!important;
+  gap:8px!important;
+  padding-top:4px!important;
+ }
+ #lam-grand-spectacle .lam-pyramid{
+  grid-column:1/-1!important;grid-row:1!important;
+  width:min(42vw,190px)!important;margin:0 auto 4px!important;
+ }
+ #lam-grand-spectacle .lam-departments{
+  grid-row:2!important;min-height:0!important;
+  padding:8px 5px!important;gap:8px!important;
+  border-radius:5px!important;
+ }
+ #lam-grand-spectacle .lam-departments span{
+  font-size:clamp(.48rem,2.15vw,.62rem)!important;
+  letter-spacing:.01em!important;padding:9px 3px!important;
+ }
+ #lam-grand-spectacle .lam-runway{width:80vw!important;height:35%!important}
+ #lam-grand-spectacle .lam-stage-name{margin-top:14px!important}
+}
 </style>
 </head>
 <body>
