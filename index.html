@@ -4145,3 +4145,60 @@ article.card:has(button[data-show-form="kidsForm"]) .btn{background:var(--kids-y
   #lam-grand-spectacle .lam-ornament{margin:6px auto!important}
 }
 </style>
+
+
+<style id="lam-triangle-actual-final-override">
+/* Single authoritative override: fixes later legacy rules that hid/moved the triangle */
+#lam-grand-spectacle .lam-center{position:absolute!important;inset:0!important;display:block!important;z-index:5!important}
+#lam-grand-spectacle svg.lam-triangle{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ position:absolute!important;z-index:6!important;
+ left:50%!important;top:28%!important;
+ width:min(100vw,720px)!important;height:68%!important;
+ max-width:none!important;transform:translateX(-50%)!important;
+ overflow:visible!important;
+}
+#lam-grand-spectacle .lam-brand-lockup{
+ position:absolute!important;z-index:9!important;
+ left:8%!important;top:47%!important;width:84%!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:flex-start!important;
+ gap:clamp(3px,.7vh,9px)!important;text-align:center!important;
+}
+#lam-grand-spectacle .lam-brand-lockup .lam-monogram,
+#lam-grand-spectacle .lam-brand-lockup .lam-event-name,
+#lam-grand-spectacle .lam-brand-lockup .lam-event-sub,
+#lam-grand-spectacle .lam-brand-lockup .lam-welcome,
+#lam-grand-spectacle .lam-brand-lockup .lam-tagline,
+#lam-grand-spectacle .lam-brand-lockup .lam-ornament{
+ position:relative!important;inset:auto!important;left:auto!important;top:auto!important;
+ width:100%!important;transform:none!important;margin:0!important;
+}
+#lam-grand-spectacle .lam-brand-lockup .lam-monogram{
+ display:flex!important;justify-content:center!important;
+ font-size:clamp(2.8rem,11vw,5.2rem)!important;line-height:.9!important;
+}
+#lam-grand-spectacle .lam-brand-lockup .lam-event-name{font-size:clamp(.8rem,3.6vw,1.45rem)!important;line-height:1.05!important}
+#lam-grand-spectacle .lam-brand-lockup .lam-event-sub{font-size:clamp(.9rem,4vw,1.55rem)!important;line-height:1.05!important}
+#lam-grand-spectacle .lam-brand-lockup .lam-ornament{display:flex!important;align-items:center!important;justify-content:center!important;margin:clamp(3px,.8vh,9px) 0!important}
+#lam-grand-spectacle .lam-brand-lockup .lam-welcome{
+ display:block!important;color:#0738b7!important;
+ font:italic 500 clamp(1.05rem,4.6vw,2.2rem)/1.05 "Snell Roundhand","Apple Chancery","URW Chancery L",cursive!important;
+ white-space:normal!important;
+}
+#lam-grand-spectacle .lam-brand-lockup .lam-tagline{
+ display:block!important;color:#800d1b!important;
+ font:italic 600 clamp(.9rem,3.8vw,1.8rem)/1.05 "Snell Roundhand","Apple Chancery","URW Chancery L",cursive!important;
+ white-space:normal!important;
+}
+@media(max-width:600px){
+ #lam-grand-spectacle svg.lam-triangle{top:28%!important;width:100vw!important;height:68%!important}
+ #lam-grand-spectacle .lam-brand-lockup{top:47%!important;left:7%!important;width:86%!important;gap:5px!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-monogram{font-size:clamp(2.7rem,11.5vw,4.2rem)!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-event-name{font-size:clamp(.76rem,3.4vw,1.2rem)!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-event-sub{font-size:clamp(.86rem,3.8vw,1.3rem)!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-welcome{font-size:clamp(1rem,4.4vw,1.5rem)!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-tagline{font-size:clamp(.82rem,3.5vw,1.2rem)!important}
+ #lam-grand-spectacle .lam-brand-lockup .lam-ornament{margin:4px 0!important}
+}
+</style>
