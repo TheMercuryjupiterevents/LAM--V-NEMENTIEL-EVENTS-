@@ -2978,7 +2978,13 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   if(form.id==='lamInspirationForm'||form.id==='birthdayInquiryForm')sendButton.textContent='ENVOYER MA DEMANDE';
   sendButton.style.display='block';sendButton.style.width='100%';sendButton.style.margin='22px 0 8px';
+  sendButton.textContent='ENVOYER PAR E-MAIL';
   form.appendChild(sendButton);
+  var whatsappButton=document.createElement('button');
+  whatsappButton.type='button';whatsappButton.className='btn';whatsappButton.textContent='ENVOYER PAR WHATSAPP';
+  whatsappButton.style.display='block';whatsappButton.style.width='100%';whatsappButton.style.margin='10px 0 22px';
+  whatsappButton.style.background='#25D366';whatsappButton.style.color='#fff';whatsappButton.style.borderColor='#25D366';
+  form.appendChild(whatsappButton);
   function hidden(name){var el=form.querySelector('input[name="'+name+'"]');if(!el){el=document.createElement('input');el.type='hidden';el.name=name;form.appendChild(el)}return el}
   var nameH=hidden('Nom du signataire (signature électronique)');
   var fontH=hidden('Style du nom du signataire');
@@ -2995,9 +3001,32 @@ document.addEventListener('DOMContentLoaded',function(){
   canvas.addEventListener('pointermove',function(e){if(!drawing)return;var p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke()});
   ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){canvas.addEventListener(ev,function(){drawing=false})});
   box.querySelector('.lam-sig-clear').addEventListener('click',function(){ctx.clearRect(0,0,canvas.width,canvas.height);drawn=false;imageH.value=''});
+  function prepareSignature(){
+   if(!name.value.trim()||!drawn||!box.querySelector('.lam-sig-consent').checked){
+    if(!name.value.trim())name.focus();else if(!drawn)canvas.scrollIntoView({behavior:'smooth',block:'center'});else box.querySelector('.lam-sig-consent').focus();
+    alert('Veuillez saisir votre nom, dessiner votre signature et accepter les conditions avant l’envoi.');return false;
+   }
+   nameH.value=name.value.trim();fontH.value=font.options[font.selectedIndex].text;colorH.value=color.options[color.selectedIndex].text;
+   imageH.value=canvas.toDataURL('image/png');signedAtH.value=new Date().toLocaleString('fr-FR',{dateStyle:'long',timeStyle:'short'});
+   return true;
+  }
+  whatsappButton.addEventListener('click',function(){
+   if(!form.reportValidity())return;
+   if(!prepareSignature())return;
+   var lines=['DEMANDE LAM ÉVÉNEMENTIEL & EVENTS',''];
+   var data=new FormData(form);
+   data.forEach(function(value,key){
+    if(key.charAt(0)==='_'||key==='Image de la signature manuscrite (PNG base64)'||!value)return;
+    if(value instanceof File){if(value.name)lines.push(key+' : '+value.name);return;}
+    lines.push(key+' : '+value);
+   });
+   lines.push('','La signature manuscrite a été dessinée et validée sur le formulaire. Pour transmettre le tracé lui-même, veuillez joindre également une capture ou le fichier de signature si nécessaire.');
+   var url='https://wa.me/50937469553?text='+encodeURIComponent(lines.join('\\n'));
+   window.open(url,'_blank');
+  });
   form.addEventListener('submit',function(e){
    if(!name.value.trim()||!drawn||!box.querySelector('.lam-sig-consent').checked){e.preventDefault();if(!name.value.trim())name.focus();else if(!drawn)canvas.scrollIntoView({behavior:'smooth',block:'center'});else box.querySelector('.lam-sig-consent').focus();alert('Veuillez saisir votre nom, dessiner votre signature et accepter les conditions avant l’envoi.');return}
-   nameH.value=name.value.trim();fontH.value=font.options[font.selectedIndex].text;colorH.value=color.options[color.selectedIndex].text;imageH.value=canvas.toDataURL('image/png');signedAtH.value=new Date().toLocaleString('fr-FR',{dateStyle:'long',timeStyle:'short'});
+   if(!prepareSignature()){e.preventDefault();return}
   },true);
   previewName();
  });
