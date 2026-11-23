@@ -2970,6 +2970,15 @@ document.addEventListener('DOMContentLoaded',function(){
    '<label class="lam-signature-consent"><input type="checkbox" class="lam-sig-consent" required><span>Je confirme avoir lu et accepté les conditions du formulaire et je reconnais cette signature manuscrite comme la mienne.</span></label>'+
    '<p class="lam-signature-note">La signature dessinée est jointe aux données du formulaire. Ne signez qu’après avoir lu les conditions applicables.</p>';
   form.appendChild(box);
+  /* Keep the real send action after the signature so it is visible at the bottom of every form. */
+  var sendButton=form.querySelector('button[type="submit"],input[type="submit"]');
+  if(!sendButton){sendButton=document.createElement('button');sendButton.type='submit';sendButton.className='btn primary';}
+  if(sendButton.tagName==='INPUT'){
+    var replacement=document.createElement('button');replacement.type='submit';replacement.className='btn primary';replacement.textContent=sendButton.value||'ENVOYER MA DEMANDE';sendButton.parentNode.replaceChild(replacement,sendButton);sendButton=replacement;
+  }
+  if(form.id==='lamInspirationForm'||form.id==='birthdayInquiryForm')sendButton.textContent='ENVOYER MA DEMANDE';
+  sendButton.style.display='block';sendButton.style.width='100%';sendButton.style.margin='22px 0 8px';
+  form.appendChild(sendButton);
   function hidden(name){var el=form.querySelector('input[name="'+name+'"]');if(!el){el=document.createElement('input');el.type='hidden';el.name=name;form.appendChild(el)}return el}
   var nameH=hidden('Nom du signataire (signature électronique)');
   var fontH=hidden('Style du nom du signataire');
