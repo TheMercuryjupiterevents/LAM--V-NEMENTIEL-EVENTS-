@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<script id="lam-welcome-entry">
+(function(){
+  try {
+    if (!sessionStorage.getItem('lamWelcomeSeen')) {
+      sessionStorage.setItem('lamWelcomeSeen','pending');
+      window.location.replace('bienvenue.html');
+    }
+  } catch(e) {
+    if (!new URLSearchParams(window.location.search).has('entered')) {
+      window.location.replace('bienvenue.html');
+    }
+  }
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="LAM ÉVÉNEMENTIEL & EVENTS conçoit et organise des événements privés et professionnels : organisation, décoration, coordination et service traiteur. Présentez-nous votre projet.">
@@ -823,32 +838,7 @@ html,body{max-width:100%;overflow-x:hidden}
  .lam-wheat-emblem{width:min(34vw,300px)!important}
 }
 </style>
-<style id="lam-grand-spectacle">
-#lam-grand-spectacle{position:fixed;inset:0;z-index:100000;background:radial-gradient(circle at 50% 34%,#fffdf3 0%,#fff1c7 42%,#ffb52b 76%,#f47713 100%);color:#8d260b;display:grid;place-items:center;overflow:hidden;opacity:1;visibility:visible;transition:opacity .7s ease,visibility .7s ease}
-#lam-grand-spectacle.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
-#lam-grand-spectacle *{box-sizing:border-box}
-#lam-grand-spectacle .lam-stage{position:relative;width:100%;height:100%;min-height:520px;display:grid;grid-template-rows:auto 1fr auto;align-items:center;justify-items:center;padding:clamp(22px,5vh,54px) 18px}
-#lam-grand-spectacle .lam-sun{position:absolute;width:min(76vw,520px);aspect-ratio:1;border-radius:50%;top:7%;left:50%;transform:translateX(-50%) scale(.35);opacity:0;background:repeating-conic-gradient(from 0deg,#ffc928 0deg 1.3deg,transparent 1.3deg 7deg);mask:radial-gradient(circle,transparent 0 34%,#000 35% 70%,transparent 71%);animation:lamSunRise 1.4s ease .1s forwards}
-#lam-grand-spectacle .lam-orb{position:absolute;top:14%;left:50%;transform:translateX(-50%) scale(.3);width:min(42vw,250px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7d7,#ffd02b 48%,#ff8b13 72%,#f23b12);box-shadow:0 0 55px #ffb31c88;opacity:0;animation:lamOrbIn 1.1s ease .45s forwards}
-#lam-grand-spectacle .lam-topline{z-index:2;text-align:center;font:700 clamp(.8rem,2.5vw,1.2rem) Georgia,serif;letter-spacing:.24em;color:#a33a0c;opacity:0;animation:lamTextIn .7s ease .2s forwards}
-#lam-grand-spectacle .lam-center{position:relative;z-index:2;display:grid;justify-items:center;align-content:center;gap:clamp(12px,2vh,22px);width:100%;margin-top:4vh}
-#lam-grand-spectacle .lam-arch{position:absolute;width:min(70vw,440px);height:min(56vh,460px);border:clamp(8px,1.6vw,15px) solid #f6b72a;border-bottom:0;border-radius:50% 50% 0 0;bottom:8%;opacity:0;transform:scaleY(.5);box-shadow:0 0 28px #f7b82c66;animation:lamArchIn 1.1s ease .9s forwards}
-#lam-grand-spectacle .lam-triangle{position:relative;width:min(47vw,275px);aspect-ratio:1;display:grid;place-items:center;clip-path:polygon(50% 0,100% 88%,0 88%);background:linear-gradient(145deg,#fff4b7,#f5b21c 36%,#ff7b12 62%,#f5c13b);filter:drop-shadow(0 0 24px #ffb21b);opacity:0;transform:scale(.55);animation:lamTriangleIn 1.1s cubic-bezier(.2,.8,.2,1) 1.35s forwards}
-#lam-grand-spectacle .lam-triangle:after{content:"";position:absolute;inset:8% 9% 14%;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(145deg,#fff9df,#ffe6a0 42%,#ff9b20)}
-#lam-grand-spectacle .lam-monogram{position:absolute;z-index:2;top:44%;display:flex;gap:0;font:900 clamp(2.4rem,8vw,4.2rem)/1 Arial,sans-serif;letter-spacing:-.08em;opacity:0;animation:lamTextIn .7s ease 2.1s forwards}
-#lam-grand-spectacle .lam-letter-l,#lam-grand-spectacle .lam-letter-m{color:#f00000}
-#lam-grand-spectacle .lam-letter-a{color:#ffdf00}
-#lam-grand-spectacle .lam-welcome{z-index:2;text-align:center;margin-top:4px;font:700 clamp(1.1rem,4vw,2.2rem) Georgia,serif;letter-spacing:.08em;color:#a42b0a;opacity:0;animation:lamTextIn .8s ease 2.65s forwards}
-#lam-grand-spectacle .lam-tagline{z-index:2;text-align:center;font:600 clamp(.66rem,2vw,.95rem) Arial,sans-serif;letter-spacing:.18em;color:#9b3b0b;opacity:0;animation:lamTextIn .8s ease 3.15s forwards}
-#lam-grand-spectacle .lam-skip{position:absolute;z-index:5;right:20px;top:20px;padding:11px 18px;border:1px solid #d18b18;background:#fff9e9cc;color:#87310d;font:600 .72rem Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
-@keyframes lamSunRise{to{opacity:.9;transform:translateX(-50%) scale(1)}}
-@keyframes lamOrbIn{to{opacity:1;transform:translateX(-50%) scale(1)}}
-@keyframes lamArchIn{to{opacity:.85;transform:scaleY(1)}}
-@keyframes lamTriangleIn{to{opacity:1;transform:scale(1)}}
-@keyframes lamTextIn{to{opacity:1;transform:translateY(0)}}
-@media(max-width:650px){#lam-grand-spectacle .lam-stage{min-height:500px;padding:26px 12px}#lam-grand-spectacle .lam-orb{top:18%;width:44vw}#lam-grand-spectacle .lam-arch{width:86vw;height:46vh}#lam-grand-spectacle .lam-triangle{width:min(62vw,245px)}#lam-grand-spectacle .lam-welcome{margin-top:12px}}
-@media(prefers-reduced-motion:reduce){#lam-grand-spectacle *{animation-duration:.01ms!important;animation-delay:0ms!important}}
-</style>
+
 
 <style id="lam-three-scenes-final">
 /* LAM: les trois tableaux restent visibles, sans panneaux vides */
@@ -3231,23 +3221,7 @@ html{scroll-padding-top:86px}
 
 
 
-<div id="lam-grand-spectacle" aria-label="Bienvenue chez LAM">
- <div class="lam-stage">
-  <div class="lam-sun" aria-hidden="true"></div><div class="lam-orb" aria-hidden="true"></div>
-  <button class="lam-skip" type="button" aria-label="Passer l’animation">Passer</button>
-  <div class="lam-topline">UNE SIGNATURE D’EXCEPTION</div>
-  <div class="lam-center">
-   <div class="lam-arch" aria-hidden="true"></div>
-   <div class="lam-triangle" aria-hidden="true"></div>
-   <div class="lam-monogram" aria-label="LAM"><span class="lam-letter-l">L</span><span class="lam-letter-a">A</span><span class="lam-letter-m">M</span></div>
-   <div class="lam-welcome">BIENVENUE CHEZ LAM</div>
-   <div class="lam-tagline">PUISSANCE. PRESTIGE. PERFECTION.</div>
-  </div>
- </div>
-</div>
-<script id="lam-grand-spectacle-script">
-(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),750)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,6200);})();
-</script>
+
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
