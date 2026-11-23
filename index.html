@@ -1157,6 +1157,86 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Intro courte : laisser le site apparaître rapidement */
 #lam-grand-spectacle{transition:opacity .35s ease,visibility .35s ease!important}
 #lam-grand-spectacle .lam-curtain{animation-duration:.9s!important;animation-delay:0s!important}
+
+/* THREE ACT CONCERT OPENING — three stage looks inspired by the supplied references */
+#lam-grand-spectacle .lam-stage{
+ animation:lamThreeStageScenes 6s linear 1 both!important;
+}
+#lam-grand-spectacle .lam-scene-wall{
+ position:absolute;z-index:0;left:3%;right:3%;top:22%;height:30%;
+ border:3px solid #dcecff;border-radius:3px;
+ background:
+  linear-gradient(90deg,#172f64 0 33%,transparent 33% 34%,#152c5e 34% 66%,transparent 66% 67%,#172f64 67%),
+  radial-gradient(ellipse at 50% 60%,#d9b5b5 0%,#8c6686 22%,#243d70 58%,#08152f 100%);
+ box-shadow:0 0 18px #a9d9ff,0 0 50px #286bff88,inset 0 0 30px #fff5;
+ opacity:0;animation:lamWideScreen 6s ease-in-out 1 both;
+}
+#lam-grand-spectacle .lam-scene-wall:before,
+#lam-grand-spectacle .lam-scene-wall:after{
+ content:"";position:absolute;top:8%;bottom:8%;width:29%;
+ border:2px solid #c8eaff;background:
+ radial-gradient(ellipse at 50% 45%,#f4d3cf 0 12%,#a46b82 13% 28%,#233d72 60%,#09152d 100%);
+ box-shadow:0 0 20px #8bd8ff;
+}
+#lam-grand-spectacle .lam-scene-wall:before{left:2%}
+#lam-grand-spectacle .lam-scene-wall:after{right:2%}
+#lam-grand-spectacle .lam-scene-arch{
+ position:absolute;z-index:1;left:50%;top:24%;width:min(27vw,280px);height:min(27vw,280px);
+ transform:translateX(-50%);border:5px solid #dcecff;border-bottom-color:transparent;
+ border-radius:50% 50% 0 0;box-shadow:0 0 18px #fff,0 0 36px #3f8fff;
+ opacity:0;animation:lamArchScene 6s ease-in-out 1 both;
+}
+#lam-grand-spectacle .lam-stage-content{position:relative;z-index:3}
+#lam-grand-spectacle .lam-runway{animation:lamRunwayScenes 6s linear 1 both!important}
+#lam-grand-spectacle .lam-stage:before{animation:lamBeamScenes 6s linear 1 both!important}
+#lam-grand-spectacle .lam-stage:after{animation:lamCrowdScenes 6s linear 1 both!important}
+#lam-grand-spectacle .lam-stage-name{animation:lamNameScenes 6s linear 1 both!important}
+#lam-grand-spectacle .lam-pyramid{animation:lamLogoScenes 6s ease-in-out 1 both!important}
+#lam-grand-spectacle .lam-departments{animation:lamPanelsScenes 6s ease-in-out 1 both!important}
+@keyframes lamThreeStageScenes{
+  0%,32%{background:linear-gradient(180deg,#24364b 0%,#102344 55%,#050914 100%)!important}
+  33%,65%{background:radial-gradient(ellipse at 50% 40%,#1748d1 0%,#082b91 48%,#03050b 100%)!important}
+  66%,100%{background:linear-gradient(180deg,#470609 0%,#a10f18 45%,#080408 100%)!important}
+}
+@keyframes lamWideScreen{0%,3%{opacity:0;transform:scaleX(.82)}8%,29%{opacity:1;transform:scaleX(1)}33%,100%{opacity:0;transform:scaleX(1.08)}}
+@keyframes lamArchScene{0%,4%{opacity:0;transform:translateX(-50%) scale(.8)}10%,29%{opacity:1;transform:translateX(-50%) scale(1)}34%,100%{opacity:0}}
+@keyframes lamRunwayScenes{
+  0%,32%{background:linear-gradient(180deg,#fff8 0%,#b5d8ff99 35%,#061329 100%)!important;border-color:#fff!important;filter:drop-shadow(0 0 22px #b9eaff)!important}
+  33%,65%{background:linear-gradient(180deg,#fff8 0%,#1748d1aa 35%,#03050b 100%)!important;border-color:#fff!important;filter:drop-shadow(0 0 22px #315fff)!important}
+  66%,100%{background:linear-gradient(180deg,#ffb15a99 0%,#a10f18bb 38%,#090306 100%)!important;border-color:#ffd08a!important;filter:drop-shadow(0 0 24px #ff4b24)!important}
+}
+@keyframes lamBeamScenes{
+  0%,32%{opacity:.38;filter:drop-shadow(0 0 10px #c9e7ff)}
+  33%,65%{opacity:1;filter:drop-shadow(0 0 16px #388dff)}
+  66%,100%{opacity:.88;filter:drop-shadow(0 0 16px #ff3b22)}
+}
+@keyframes lamCrowdScenes{
+  0%,32%{opacity:.65;background:repeating-linear-gradient(90deg,transparent 0 11px,#111b2c 12px 16px,transparent 17px 23px)}
+  33%,65%{opacity:.9;background:repeating-linear-gradient(90deg,transparent 0 11px,#050b17 12px 16px,transparent 17px 23px)}
+  66%,100%{opacity:.8;background:repeating-linear-gradient(90deg,transparent 0 11px,#1a0508 12px 16px,transparent 17px 23px)}
+}
+@keyframes lamNameScenes{
+  0%,32%{text-shadow:0 0 15px #cce9ff,0 0 30px #397cff}
+  33%,65%{text-shadow:0 0 15px #5fcaff,0 0 30px #1269c9}
+  66%,100%{text-shadow:0 0 15px #ffb15a,0 0 30px #ed1828}
+}
+@keyframes lamLogoScenes{
+  0%,32%{filter:drop-shadow(0 0 22px #cce9ff)!important}
+  33%,65%{filter:drop-shadow(0 0 26px #4bc5ff)!important}
+  66%,100%{filter:drop-shadow(0 0 30px #ff3828)!important}
+}
+@keyframes lamPanelsScenes{
+  0%,32%{filter:drop-shadow(0 0 16px #b9eaff)}
+  33%,65%{filter:drop-shadow(0 0 18px #287cff)}
+  66%,100%{filter:drop-shadow(0 0 20px #f12b30)}
+}
+@media(max-width:650px){
+ #lam-grand-spectacle .lam-scene-wall{left:1%;right:1%;top:22%;height:20%;border-width:2px}
+ #lam-grand-spectacle .lam-scene-arch{top:24%;width:32vw;height:32vw;border-width:3px}
+}
+@media(prefers-reduced-motion:reduce){
+ #lam-grand-spectacle .lam-stage,#lam-grand-spectacle .lam-scene-wall,#lam-grand-spectacle .lam-scene-arch{animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -3432,7 +3512,7 @@ html{scroll-padding-top:86px}
 
 <div id="lam-grand-spectacle" aria-label="Ouverture spectaculaire LAM">
  <button class="lam-skip" type="button" aria-label="Passer l’animation">Passer</button>
- <div class="lam-stage"><div class="lam-curtain left"></div><div class="lam-curtain right"></div>
+ <div class="lam-stage"><div class="lam-scene-wall" aria-hidden="true"></div><div class="lam-scene-arch" aria-hidden="true"></div><div class="lam-curtain left"></div><div class="lam-curtain right"></div>
   <div class="lam-topline">PRÉSENTE SON UNIVERS</div>
   <div class="lam-stage-content">
    <div class="lam-departments left"><span>Organisation événementielle</span><span>Décoration &amp; design</span><span>Cuisine &amp; service traiteur</span><span>Concerts &amp; production</span></div>
@@ -3444,7 +3524,7 @@ html{scroll-padding-top:86px}
  </div>
 </div>
 <script id="lam-grand-spectacle-script">
-(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),450)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,4200);})();
+(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),450)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,6000);})();
 </script>
 </body>
 </html>
