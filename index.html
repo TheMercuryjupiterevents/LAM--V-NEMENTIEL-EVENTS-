@@ -1238,6 +1238,73 @@ html,body{max-width:100%;overflow-x:hidden}
  #lam-grand-spectacle .lam-stage,#lam-grand-spectacle .lam-scene-wall,#lam-grand-spectacle .lam-scene-arch{animation:none!important}
 }
 </style>
+
+<style id="lam-three-scenes-final">
+/* LAM: les trois tableaux restent visibles, sans panneaux vides */
+#lam-grand-spectacle .lam-stage{animation:lamThreeStageFinal 4.2s linear 1 both!important}
+#lam-grand-spectacle .lam-scene-wall{
+ top:18%!important;height:29%!important;opacity:1!important;
+ background:
+  radial-gradient(ellipse at 50% 50%,#dff6ff55 0 3%,transparent 4%),
+  linear-gradient(90deg,#1b3f83 0 32%,#0a1a3c 32% 34%,#173e8a 34% 66%,#0a1a3c 66% 68%,#1b3f83 68%),
+  linear-gradient(180deg,#274a78,#071329)!important;
+ animation:lamWallFinal 4.2s linear 1 both!important;
+}
+#lam-grand-spectacle .lam-scene-wall:before,#lam-grand-spectacle .lam-scene-wall:after{
+ background:
+  radial-gradient(ellipse at 50% 45%,#fff5e8 0 4%,#d7a2b4 5% 13%,#9a557c 25%,transparent 55%),
+  linear-gradient(145deg,#3974c7,#07142d)!important;
+ animation:lamScreenFinal 4.2s linear 1 both!important;
+}
+#lam-grand-spectacle .lam-scene-arch{opacity:1!important;animation:lamArchFinal 4.2s linear 1 both!important}
+#lam-grand-spectacle .lam-pyramid{opacity:1!important;transform:scale(1)!important;animation:lamLogoFinal 4.2s linear 1 both!important}
+#lam-grand-spectacle .lam-departments span{
+ opacity:1!important;transform:none!important;animation:none!important;
+}
+#lam-grand-spectacle .lam-stage-name{opacity:1!important;animation:none!important}
+#lam-grand-spectacle .lam-stage-content{opacity:1!important}
+#lam-grand-spectacle .lam-runway{animation:lamRunwayFinal 4.2s linear 1 both!important}
+#lam-grand-spectacle .lam-stage:before{animation:lamBeamFinal 4.2s linear 1 both!important}
+#lam-grand-spectacle .lam-stage:after{animation:lamCrowdFinal 4.2s linear 1 both!important}
+@keyframes lamThreeStageFinal{
+  0%,31%{background:linear-gradient(180deg,#24364b,#102344 55%,#050914)!important}
+  32%,65%{background:radial-gradient(ellipse at 50% 40%,#1748d1,#082b91 48%,#03050b)!important}
+  66%,100%{background:linear-gradient(180deg,#470609,#a10f18 45%,#080408)!important}
+}
+@keyframes lamWallFinal{
+  0%,31%{filter:brightness(1);border-color:#dcecff}
+  32%,65%{filter:brightness(1.45);border-color:#fff}
+  66%,100%{filter:brightness(1.3) sepia(.35);border-color:#ff6a58}
+}
+@keyframes lamScreenFinal{
+  0%,31%{filter:hue-rotate(0deg)}
+  32%,65%{filter:hue-rotate(35deg) saturate(1.5)}
+  66%,100%{filter:hue-rotate(300deg) saturate(1.8)}
+}
+@keyframes lamArchFinal{
+  0%,31%{border-color:#e9f6ff;box-shadow:0 0 22px #9bdcff}
+  32%,65%{border-color:#fff;box-shadow:0 0 32px #287cff}
+  66%,100%{border-color:#ffb5a5;box-shadow:0 0 34px #ed1828}
+}
+@keyframes lamLogoFinal{
+  0%,31%{filter:drop-shadow(0 0 22px #cce9ff)}
+  32%,65%{filter:drop-shadow(0 0 28px #4bc5ff)}
+  66%,100%{filter:drop-shadow(0 0 32px #ff3828)}
+}
+@keyframes lamRunwayFinal{
+  0%,31%{filter:drop-shadow(0 0 22px #b9eaff);background:linear-gradient(180deg,#fff8,#b5d8ff99 35%,#061329);border-color:#fff}
+  32%,65%{filter:drop-shadow(0 0 22px #315fff);background:linear-gradient(180deg,#fff8,#1748d1aa 35%,#03050b);border-color:#fff}
+  66%,100%{filter:drop-shadow(0 0 24px #ff4b24);background:linear-gradient(180deg,#ffb15a99,#a10f18bb 38%,#090306);border-color:#ffd08a}
+}
+@keyframes lamBeamFinal{0%,31%{opacity:.55}32%,65%{opacity:1}66%,100%{opacity:.9}}
+@keyframes lamCrowdFinal{0%,31%{opacity:.6}32%,65%{opacity:.9}66%,100%{opacity:.8}}
+@media(max-width:650px){
+ #lam-grand-spectacle .lam-scene-wall{top:17%!important;height:23%!important}
+ #lam-grand-spectacle .lam-stage-content{margin-top:14px!important}
+ #lam-grand-spectacle .lam-departments{min-height:0!important}
+}
+</style>
+
 </head>
 <body>
 
@@ -3524,7 +3591,7 @@ html{scroll-padding-top:86px}
  </div>
 </div>
 <script id="lam-grand-spectacle-script">
-(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),450)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,6000);})();
+(()=>{const intro=document.getElementById('lam-grand-spectacle');if(!intro)return;let closed=false;const close=()=>{if(closed)return;closed=true;intro.classList.add('is-hidden');setTimeout(()=>intro.remove(),450)};intro.querySelector('.lam-skip')?.addEventListener('click',close);window.setTimeout(close,4200);})();
 </script>
 </body>
 </html>
