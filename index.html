@@ -2861,6 +2861,46 @@ document.addEventListener('DOMContentLoaded',function(){
 .lam-signature .lam-signature-note{font-size:.82rem;color:#5b6475}
 @media(max-width:600px){.lam-signature-grid{grid-template-columns:1fr}.lam-signature canvas{height:135px}}
 </style>
+<script id="lam-complete-project-fields">
+/* Complète les formulaires de projet : budget et art de la table/fleurs.
+   Le formulaire d'avis client est volontairement exclu, car ces choix ne le concernent pas. */
+(function(){
+ var forms=Array.from(document.querySelectorAll('form')).filter(function(form){
+   return !form.querySelector('#reviewNameTMJE');
+ });
+ forms.forEach(function(form){
+   var hasBudget=Array.from(form.querySelectorAll('input,select,textarea')).some(function(el){
+     return /budget/i.test((el.name||'')+' '+(el.id||'')+' '+(el.getAttribute('aria-label')||''));
+   });
+   var hasTableArt=/art de la table|fleurs naturelles|couleurs des bougies|couleur des couverts/i.test(form.textContent);
+   if(!hasBudget){
+     var budget=document.createElement('section');
+     budget.className='form-section lam-universal-budget';
+     budget.innerHTML='<h3>Budget prévisionnel</h3><p class="small">Indiquez le budget que vous souhaitez consacrer à votre projet. Cela nous aidera à vous proposer une offre adaptée.</p><div class="fieldgrid"><div class="field"><label>Budget estimé (HTG) *</label><input type="number" name="Budget estimé (HTG)" min="0" step="500" inputmode="numeric" placeholder="Ex. : 25000" required></div><div class="field"><label>Souplesse du budget</label><select name="Souplesse du budget"><option value="">Choisir</option><option>Budget fixe</option><option>Flexible selon les prestations</option><option>J’aimerais recevoir des conseils</option></select></div></div>';
+     var submit=form.querySelector('button[type="submit"],input[type="submit"]');
+     if(submit)form.insertBefore(budget,submit);else form.appendChild(budget);
+   }
+   if(!hasTableArt){
+     var table=document.createElement('section');
+     table.className='form-section lam-universal-table-art';
+     table.innerHTML='<h3>Art de la table &amp; fleurs</h3><p class="small">Ces options sont facultatives. Vous pouvez les compléter si elles correspondent à votre projet ou si vous souhaitez ajouter une prestation de décoration de table.</p>'+
+      '<div class="fieldgrid">'+
+      '<div class="field"><label>Fleurs</label><select name="Art de la table — fleurs"><option value="">Choisir</option><option>Fleurs naturelles</option><option>Fleurs artificielles</option><option>Mélange de fleurs naturelles et artificielles</option><option>Sans fleurs</option><option>Conseil de LAM</option></select></div>'+
+      '<div class="field"><label>Couleurs des fleurs</label><input name="Couleurs des fleurs" type="text" placeholder="Ex. : blanc, champagne, rouge…"></div>'+
+      '<div class="field"><label>Couleurs des bougies</label><input name="Couleurs des bougies" type="text" placeholder="Une ou plusieurs couleurs"></div>'+
+      '<div class="field"><label>Couleur des couverts (cuillères, fourchettes, couteaux)</label><input name="Couleur des couverts" type="text" placeholder="Ex. : doré, argenté, inox…"></div>'+
+      '<div class="field"><label>Couleur des assiettes de présentation</label><input name="Couleur des assiettes de présentation" type="text" placeholder="Facultatif"></div>'+
+      '<div class="field"><label>Couleur des serviettes de table</label><input name="Couleur des serviettes de table" type="text" placeholder="Facultatif"></div>'+
+      '<div class="field"><label>Chaises, nappes et chemins de table</label><input name="Chaises, nappes et chemins de table" type="text" placeholder="Style, matière ou couleur souhaitée"></div>'+
+      '<div class="field full"><label>Autres souhaits pour la décoration de table</label><textarea name="Autres souhaits — art de la table et fleurs" rows="3" placeholder="Précisez vos préférences ou laissez vide si non concerné."></textarea></div>'+
+      '</div>';
+     var submit2=form.querySelector('button[type="submit"],input[type="submit"]');
+     if(submit2)form.insertBefore(table,submit2);else form.appendChild(table);
+   }
+ });
+})();
+</script>
+
 <script id="lam-electronic-signature-script">
 (function(){
  if(window.__lamSignatureInstalled)return;window.__lamSignatureInstalled=true;
