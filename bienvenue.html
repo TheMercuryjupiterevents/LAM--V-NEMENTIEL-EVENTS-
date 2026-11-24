@@ -13,6 +13,7 @@ body{font-family:Georgia,serif}
 .screen{position:relative;width:100%;height:100svh;min-height:540px;background:linear-gradient(180deg,#fffefa,#fffaf0);overflow:hidden}
 .art{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
 .headline{font-family:Georgia,serif;font-weight:600;letter-spacing:3px;fill:#27191b}
+.lam-wordmark{font-family:"Arial Rounded MT Bold","Arial Rounded MT","Trebuchet MS",sans-serif;font-weight:900;letter-spacing:-7px;stroke-width:2.5px;stroke-linejoin:round;paint-order:stroke fill}
 .skip{position:absolute;z-index:5;right:5%;top:max(28px,env(safe-area-inset-top));border:2px solid var(--orange);border-radius:50px;background:var(--blue);color:#fff;padding:12px 23px;font:700 clamp(12px,3vw,19px) Georgia,serif;letter-spacing:2px;cursor:pointer}
 .sun-rays{transform-origin:450px 610px;opacity:0;animation:raysReveal 1.3s ease-out .15s forwards,sunGlow 3.5s ease-in-out 1.5s infinite alternate}
 .sun-disc{transform-origin:450px 610px;opacity:0;animation:sunReveal 1.35s cubic-bezier(.2,.75,.25,1) .25s forwards}
@@ -53,8 +54,8 @@ body{font-family:Georgia,serif}
  <path d="M450 735 L705 1270 H195 Z" fill="none" stroke="#ffd21a" stroke-width="7"/>
 </g>
 <g class="branding" text-anchor="middle">
- <text x="450" y="965" font-family="Georgia,serif" font-size="125" font-style="italic" font-weight="bold" letter-spacing="-8">
-  <tspan fill="#e51b23">L</tspan><tspan fill="#ffd21a">A</tspan><tspan fill="#e51b23">M</tspan>
+ <text class="lam-wordmark" x="450" y="965" font-size="125">
+  <tspan fill="#e51b23" stroke="#e51b23">L</tspan><tspan fill="#ffd21a" stroke="#ffd21a">A</tspan><tspan fill="#e51b23" stroke="#e51b23">M</tspan>
  </text>
  <text x="450" y="1045" fill="#123fbd" font-family="Georgia,serif" font-size="44" font-weight="bold">ÉVÉNEMENTIEL</text>
  <text x="450" y="1105" fill="#f36b16" font-family="Georgia,serif" font-size="48" font-weight="bold">&amp; EVENTS</text>
