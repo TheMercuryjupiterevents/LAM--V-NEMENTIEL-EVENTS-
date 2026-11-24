@@ -6,28 +6,29 @@
 <meta name="theme-color" content="#fffaf0">
 <title>Bienvenue chez LAM — Puissance. Prestige. Perfection.</title>
 <style>
-:root{--cream:#fffaf0;--blue:#123fbd;--orange:#f36b16;--yellow:#ffd21a;--red:#e51b23;--burgundy:#741b27}
+:root{--cream:#fffaf0;--blue:#123fbd;--orange:#f36b16;--yellow:#ffd21a;--red:#e51b23;--burgundy:#741b27;--deep-rose:#b51659}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--cream)}
 body{font-family:Georgia,serif}
 .screen{position:relative;width:100%;height:100svh;min-height:540px;background:linear-gradient(180deg,#fffefa,#fffaf0);overflow:hidden}
 .art{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
 .headline{font-family:Georgia,serif;font-weight:600;letter-spacing:3px;fill:#27191b}
-.skip{position:absolute;z-index:5;right:5%;top:max(28px,env(safe-area-inset-top));border:4px solid var(--orange);border-radius:50px;background:var(--blue);color:#fff;padding:12px 23px;font:700 clamp(12px,3vw,19px) Georgia,serif;letter-spacing:2px;box-shadow:0 2px 0 #f9b72b;cursor:pointer}
-.sun-rays{transform-origin:450px 640px}
-.sun-disc{transform-origin:450px 640px}
-.arch-lines,.triangle-lines{stroke-dasharray:none;stroke-dashoffset:0}
-
-.branding{opacity:1}
-.welcome{opacity:1}
-.motto{opacity:1}
-}
-to{opacity:1;transform:scale(1)}}
-}
-}
-}
-to{opacity:1;transform:translateY(0)}}
-}
+.skip{position:absolute;z-index:5;right:5%;top:max(28px,env(safe-area-inset-top));border:2px solid var(--orange);border-radius:50px;background:var(--blue);color:#fff;padding:12px 23px;font:700 clamp(12px,3vw,19px) Georgia,serif;letter-spacing:2px;cursor:pointer}
+.sun-rays{transform-origin:450px 610px;opacity:0;animation:raysReveal 1.3s ease-out .15s forwards,sunGlow 3.5s ease-in-out 1.5s infinite alternate}
+.sun-disc{transform-origin:450px 610px;opacity:0;animation:sunReveal 1.35s cubic-bezier(.2,.75,.25,1) .25s forwards}
+.arch-lines{stroke-dasharray:2600;stroke-dashoffset:2600;animation:drawArch 1.5s ease-out 1.1s forwards}
+.triangle-lines{opacity:0;animation:fadeIn .9s ease-out 2.1s forwards}
+.branding{opacity:0;animation:fadeIn .9s ease-out 2.55s forwards}
+.welcome{opacity:0;animation:fadeUp .9s ease-out 3.15s forwards}
+.divider{opacity:0;animation:fadeIn .7s ease-out 3.7s forwards}
+.motto{opacity:0;animation:fadeUp .8s ease-out 4.05s forwards}
+@keyframes sunReveal{0%{opacity:0;transform:scale(.35)}70%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes raysReveal{0%{opacity:0;transform:scale(.65)}100%{opacity:.98;transform:scale(1)}}
+@keyframes sunGlow{from{filter:drop-shadow(0 0 8px #ffd21a88)}to{filter:drop-shadow(0 0 25px #ff9d0088)}}
+@keyframes drawArch{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;animation-iteration-count:1!important}}
 </style>
 </head>
 <body>
@@ -35,18 +36,14 @@ to{opacity:1;transform:translateY(0)}}
 <button class="skip" id="skip">PASSER ›</button>
 <svg class="art" viewBox="0 0 900 1900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="LAM Événementiel & Events — Puissance. Prestige. Perfection.">
 <defs>
- <radialGradient id="sunfill"><stop offset="0" stop-color="#fff46a"/><stop offset=".43" stop-color="#ffd51a"/><stop offset=".72" stop-color="#ff9200"/><stop offset="1" stop-color="#f32618"/></radialGradient>
- <filter id="soft"><feGaussianBlur stdDeviation="1.4"/></filter>
+ <radialGradient id="sunfill"><stop offset="0" stop-color="#fffde0"/><stop offset=".32" stop-color="#fff46a"/><stop offset=".62" stop-color="#ffd21a"/><stop offset=".82" stop-color="#ff9200"/><stop offset="1" stop-color="#f32618"/></radialGradient>
+ <filter id="sunGlow"><feGaussianBlur stdDeviation="13"/></filter>
 </defs>
-<text class="headline" x="48" y="105" font-size="43">UNE SIGNATURE</text>
-<text class="headline" x="48" y="151" font-size="43">D’EXCEPTION</text>
-<g class="sun-rays" stroke="#f5bd18" stroke-width="7" stroke-linecap="square">
- <path d="M450 260V190 M450 1020V950 M70 640H140 M760 640H830 M181 371L230 420 M670 860L719 909 M181 909L230 860 M670 420L719 371
- M300 290L326 354 M574 926L600 990 M150 490L218 516 M682 764L750 790 M150 790L218 764 M682 516L750 490
- M450 260L450 190 M450 1020L450 950 M270 290L296 354 M604 926L630 990 M92 565L164 578 M736 702L808 715 M92 715L164 702 M736 578L808 565
- M370 270L382 342 M518 938L530 1010 M105 450L173 478 M727 802L795 830 M105 830L173 802 M727 478L795 450"/>
+<g class="sun-rays" stroke="#f5bd18" stroke-width="10" stroke-linecap="round" fill="none">
+ <path d="M450.0 295.0L450.0 220.0 M504.7 299.8L517.7 225.9 M557.7 314.0L583.4 243.5 M607.5 337.2L645.0 272.3 M652.5 368.7L700.7 311.2 M691.3 407.5L748.8 359.3 M722.8 452.5L787.7 415.0 M746.0 502.3L816.5 476.6 M760.2 555.3L834.1 542.3 M765.0 610.0L840.0 610.0 M760.2 664.7L834.1 677.7 M746.0 717.7L816.5 743.4 M722.8 767.5L787.7 805.0 M691.3 812.5L748.8 860.7 M652.5 851.3L700.7 908.8 M607.5 882.8L645.0 947.7 M557.7 906.0L583.4 976.5 M504.7 920.2L517.7 994.1 M450.0 925.0L450.0 1000.0 M395.3 920.2L382.3 994.1 M342.3 906.0L316.6 976.5 M292.5 882.8L255.0 947.7 M247.5 851.3L199.3 908.8 M208.7 812.5L151.2 860.7 M177.2 767.5L112.3 805.0 M154.0 717.7L83.5 743.4 M139.8 664.7L65.9 677.7 M135.0 610.0L60.0 610.0 M139.8 555.3L65.9 542.3 M154.0 502.3L83.5 476.6 M177.2 452.5L112.3 415.0 M208.7 407.5L151.2 359.3 M247.5 368.7L199.3 311.2 M292.5 337.2L255.0 272.3 M342.3 314.0L316.6 243.5 M395.3 299.8L382.3 225.9"/>
 </g>
-<circle class="sun-disc" cx="450" cy="640" r="292" fill="url(#sunfill)"/>
+<circle cx="450" cy="610" r="315" fill="#ffd21a" opacity=".2" filter="url(#sunGlow)"/>
+<circle class="sun-disc" cx="450" cy="610" r="292" fill="url(#sunfill)"/>
 <path class="arch-lines" d="M62 1765V1060 C62 830 230 680 450 680 C670 680 838 830 838 1060 V1765" fill="none" stroke="#123fbd" stroke-width="25" stroke-linecap="square" stroke-linejoin="round"/>
 <path class="arch-lines" d="M87 1765V1060 C87 848 244 708 450 708 C656 708 813 848 813 1060 V1765" fill="none" stroke="#f36b16" stroke-width="12" stroke-linecap="square"/>
 <path class="arch-lines" d="M106 1765V1060 C106 865 255 730 450 730 C645 730 794 865 794 1060 V1765" fill="none" stroke="#ffd21a" stroke-width="10" stroke-linecap="square"/>
@@ -62,10 +59,13 @@ to{opacity:1;transform:translateY(0)}}
  <text x="450" y="1045" fill="#123fbd" font-family="Georgia,serif" font-size="44" font-weight="bold">ÉVÉNEMENTIEL</text>
  <text x="450" y="1105" fill="#f36b16" font-family="Georgia,serif" font-size="48" font-weight="bold">&amp; EVENTS</text>
 </g>
-<text class="welcome" x="450" y="1460" text-anchor="middle" fill="#123fbd" font-family="cursive" font-style="italic" font-size="67">Bienvenue chez LAM</text>
-<text class="motto" x="450" y="1585" text-anchor="middle" fill="#741b27" font-family="cursive" font-style="italic" font-size="48">Puissance. Prestige. Perfection.</text>
+<text class="welcome" x="450" y="1460" text-anchor="middle" fill="#b51659" font-family="cursive" font-style="italic" font-size="67">Bienvenue chez LAM</text>
+<g class="divider" fill="none" stroke="#741b27" stroke-width="3" stroke-linecap="round">
+ <path d="M260 1525H410 M490 1525H640"/>
+ <path d="M450 1513l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#741b27" stroke="none"/>
+</g>
+<text class="motto" x="450" y="1600" text-anchor="middle" fill="#741b27" font-family="cursive" font-style="italic" font-size="48">Puissance. Prestige. Perfection.</text>
 </svg>
-
 </main>
 <script>
 (function(){
