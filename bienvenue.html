@@ -11,20 +11,20 @@
 html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--cream)}
 body{font-family:Georgia,serif}
 .screen{position:relative;width:100%;height:100svh;min-height:540px;background:linear-gradient(180deg,#fffefa,#fffaf0);overflow:hidden}
-.art{position:absolute;inset:0;width:100%;height:100%;display:block}
+.art{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;animation:artFade .35s ease 5s forwards}.final-art{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:2;opacity:0;pointer-events:none;animation:finalShow .35s ease 5s forwards}.final-art *{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}
 .headline{font-family:Georgia,serif;font-weight:600;letter-spacing:3px;fill:#27191b}
 .skip{position:absolute;z-index:5;right:5%;top:max(28px,env(safe-area-inset-top));border:4px solid var(--orange);border-radius:50px;background:var(--blue);color:#fff;padding:12px 23px;font:700 clamp(12px,3vw,19px) Georgia,serif;letter-spacing:2px;box-shadow:0 2px 0 #f9b72b;cursor:pointer}
 .sun-rays{transform-origin:450px 640px;animation:rayTurn 70s linear infinite}
-.sun-disc{transform-origin:450px 640px;animation:sunRise 1.5s ease-out both}
-.arch-lines,.triangle-lines{stroke-dasharray:4200;stroke-dashoffset:4200;animation:draw 2s ease-out .4s forwards}
-.triangle-lines{animation-delay:1.05s}
-.branding{opacity:0;animation:fadeUp .9s ease 1.55s forwards}
-.welcome{opacity:0;animation:fadeUp .9s ease 1.9s forwards}
-.motto{opacity:0;animation:fadeUp .9s ease 2.2s forwards}
+.sun-disc{transform-origin:450px 640px;animation:sunRise 2.5s ease-out both}
+.arch-lines,.triangle-lines{stroke-dasharray:4200;stroke-dashoffset:4200;animation:draw 2.8s ease-out .7s forwards}
+.triangle-lines{animation-delay:1.4s}
+.branding{opacity:0;animation:fadeUp .9s ease 2.8s forwards}
+.welcome{opacity:0;animation:fadeUp .9s ease 3.4s forwards}
+.motto{opacity:0;animation:fadeUp .9s ease 4s forwards}
 @keyframes rayTurn{to{transform:rotate(360deg)}}
 @keyframes sunRise{from{opacity:.2;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
 @keyframes draw{to{stroke-dashoffset:0}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes artFade{to{opacity:0}}\n@keyframes finalShow{to{opacity:1}}\n@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
 .screen.finished .sun-rays{animation-play-state:paused}
 .screen.finished .sun-disc,.screen.finished .arch-lines,.screen.finished .triangle-lines,.screen.finished .branding,.screen.finished .welcome,.screen.finished .motto{animation-play-state:paused}
@@ -34,6 +34,38 @@ body{font-family:Georgia,serif}
 <main class="screen" aria-label="Bienvenue chez LAM Événementiel & Events">
 <button class="skip" id="skip">PASSER ›</button>
 <svg class="art" viewBox="0 0 900 1900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="LAM Événementiel & Events — Puissance. Prestige. Perfection.">
+<defs>
+ <radialGradient id="sunfill"><stop offset="0" stop-color="#fff46a"/><stop offset=".43" stop-color="#ffd51a"/><stop offset=".72" stop-color="#ff9200"/><stop offset="1" stop-color="#f32618"/></radialGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="1.4"/></filter>
+</defs>
+<text class="headline" x="48" y="105" font-size="43">UNE SIGNATURE</text>
+<text class="headline" x="48" y="151" font-size="43">D’EXCEPTION</text>
+<g class="sun-rays" stroke="#f5bd18" stroke-width="7" stroke-linecap="square">
+ <path d="M450 260V190 M450 1020V950 M70 640H140 M760 640H830 M181 371L230 420 M670 860L719 909 M181 909L230 860 M670 420L719 371
+ M300 290L326 354 M574 926L600 990 M150 490L218 516 M682 764L750 790 M150 790L218 764 M682 516L750 490
+ M450 260L450 190 M450 1020L450 950 M270 290L296 354 M604 926L630 990 M92 565L164 578 M736 702L808 715 M92 715L164 702 M736 578L808 565
+ M370 270L382 342 M518 938L530 1010 M105 450L173 478 M727 802L795 830 M105 830L173 802 M727 478L795 450"/>
+</g>
+<circle class="sun-disc" cx="450" cy="640" r="292" fill="url(#sunfill)"/>
+<path class="arch-lines" d="M62 1765V1060 C62 830 230 680 450 680 C670 680 838 830 838 1060 V1765" fill="none" stroke="#123fbd" stroke-width="25" stroke-linecap="square" stroke-linejoin="round"/>
+<path class="arch-lines" d="M87 1765V1060 C87 848 244 708 450 708 C656 708 813 848 813 1060 V1765" fill="none" stroke="#f36b16" stroke-width="12" stroke-linecap="square"/>
+<path class="arch-lines" d="M106 1765V1060 C106 865 255 730 450 730 C645 730 794 865 794 1060 V1765" fill="none" stroke="#ffd21a" stroke-width="10" stroke-linecap="square"/>
+<g class="triangle-lines" stroke-linejoin="round">
+ <path d="M450 680 L755 1320 H145 Z" fill="#fffdf7" stroke="#123fbd" stroke-width="16"/>
+ <path d="M450 710 L724 1290 H176 Z" fill="none" stroke="#f36b16" stroke-width="8"/>
+ <path d="M450 735 L705 1270 H195 Z" fill="none" stroke="#ffd21a" stroke-width="7"/>
+</g>
+<g class="branding" text-anchor="middle">
+ <text x="450" y="965" font-family="Georgia,serif" font-size="125" font-style="italic" font-weight="bold" letter-spacing="-8">
+  <tspan fill="#e51b23">L</tspan><tspan fill="#ffd21a">A</tspan><tspan fill="#e51b23">M</tspan>
+ </text>
+ <text x="450" y="1045" fill="#123fbd" font-family="Georgia,serif" font-size="44" font-weight="bold">ÉVÉNEMENTIEL</text>
+ <text x="450" y="1105" fill="#f36b16" font-family="Georgia,serif" font-size="48" font-weight="bold">&amp; EVENTS</text>
+</g>
+<text class="welcome" x="450" y="1460" text-anchor="middle" fill="#123fbd" font-family="cursive" font-style="italic" font-size="67">Bienvenue chez LAM</text>
+<text class="motto" x="450" y="1585" text-anchor="middle" fill="#741b27" font-family="cursive" font-style="italic" font-size="48">Puissance. Prestige. Perfection.</text>
+</svg>
+<svg class="final-art" viewBox="0 0 900 1900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="LAM Événementiel & Events — Puissance. Prestige. Perfection.">
 <defs>
  <radialGradient id="sunfill"><stop offset="0" stop-color="#fff46a"/><stop offset=".43" stop-color="#ffd51a"/><stop offset=".72" stop-color="#ff9200"/><stop offset="1" stop-color="#f32618"/></radialGradient>
  <filter id="soft"><feGaussianBlur stdDeviation="1.4"/></filter>
