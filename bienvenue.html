@@ -26,6 +26,8 @@ body{font-family:Georgia,serif}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}}
+.screen.finished .sun-rays{animation-play-state:paused}
+.screen.finished .sun-disc,.screen.finished .arch-lines,.screen.finished .triangle-lines,.screen.finished .branding,.screen.finished .welcome,.screen.finished .motto{animation-play-state:paused}
 </style>
 </head>
 <body>
@@ -66,9 +68,12 @@ body{font-family:Georgia,serif}
 </main>
 <script>
 (function(){
+ const screen=document.querySelector('.screen');
  const enter=()=>{try{sessionStorage.setItem('lamWelcomeSeen','yes')}catch(e){};window.location.replace('./?entered=1')};
  document.getElementById('skip').addEventListener('click',enter);
- window.setTimeout(enter,5000);
+ // Phase 1: five-second animation. Phase 2: hold the completed LAM artwork.
+ window.setTimeout(()=>{screen.classList.add('finished');},5000);
+ window.setTimeout(enter,8000);
 })();
 </script>
 </body>
