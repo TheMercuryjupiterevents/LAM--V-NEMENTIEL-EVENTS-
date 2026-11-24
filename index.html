@@ -6,11 +6,11 @@
   try {
     if (!sessionStorage.getItem('lamWelcomeSeen')) {
       sessionStorage.setItem('lamWelcomeSeen','pending');
-      window.location.replace('bienvenue.html?v=20261124-final-5s');
+      window.location.replace('bienvenue.html?v=20261124-static-only');
     }
   } catch(e) {
     if (!new URLSearchParams(window.location.search).has('entered')) {
-      window.location.replace('bienvenue.html?v=20261124-final-5s');
+      window.location.replace('bienvenue.html?v=20261124-static-only');
     }
   }
 })();
