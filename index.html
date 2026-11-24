@@ -5,6 +5,19 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* Afficher l’animation de bienvenue avant l’accueil principal */
+(function(){
+  try {
+    if (new URLSearchParams(window.location.search).get('entered') !== '1') {
+      window.location.replace('./bienvenue.html');
+    }
+  } catch (e) {
+    window.location.replace('./bienvenue.html');
+  }
+})();
+</script>
+
 <meta name="description" content="LAM ÉVÉNEMENTIEL & EVENTS conçoit et organise des événements privés et professionnels : organisation, décoration, coordination et service traiteur. Présentez-nous votre projet.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="googlebot" content="index, follow">
