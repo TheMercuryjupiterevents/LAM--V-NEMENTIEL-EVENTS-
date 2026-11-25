@@ -1200,6 +1200,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <article class="card"><div class="lam-form-tag">Créations gourmandes</div><h3>PÂTISSERIE & GÂTEAUX</h3><p>Gâteaux personnalisés, desserts, pâtisseries et douceurs.</p><button class="btn" type="button" data-show-form="patisserieForm" aria-controls="patisserieForm" aria-pressed="false">Commander des douceurs</button></article>
 <article class="card"><div class="lam-form-tag">Cocktail & réception</div><h3>CHARCUTERIE & BOUCHÉES</h3><p>Planches gourmandes, fromages, canapés, mini-sandwichs et plateaux.</p><button class="btn" type="button" data-show-form="charcuterieForm" aria-controls="charcuterieForm" aria-pressed="false">Demander une prestation</button></article>
 <article class="card"><div class="lam-form-tag">Équipement & mobilier</div><h3>LOCATION DE MATÉRIEL</h3><p>Mobilier, vaisselle, accessoires et équipements de réception, selon disponibilité.</p><button class="btn" type="button" data-show-form="locationForm" aria-controls="locationForm" aria-pressed="false">Demander une location</button></article>
+<article class="card"><div class="lam-form-tag">Création & personnalisation</div><h3>CARTE MENU PERSONNALISÉE</h3><p>Composez votre menu, choisissez son nom, son style, ses couleurs et visualisez le résultat avant de l’envoyer à LAM.</p><button class="btn" type="button" data-show-form="menuCreatorForm" aria-controls="menuCreatorForm" aria-pressed="false">Créer ma carte menu</button></article>
 </div>
 </section>
 <section class="lam-form-group lam-form-followup" aria-labelledby="lam-followup-title">
@@ -2104,14 +2105,99 @@ html,body{max-width:100%;overflow-x:hidden}
 <label class="consent"><input type="checkbox" name="Consentement contact" value="Oui" required>J’accepte que LAM me contacte au sujet de cette demande. Je comprends que l’envoi du formulaire ne confirme pas une réservation.</label></div>
   <button class="btn primary" type="submit">Envoyer ma demande de suivi client</button>
  </form>
-</div><div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
+</div><div class="form-panel" id="menuCreatorForm" hidden style="margin-top:24px">
+ <div class="card" style="margin-bottom:18px">
+  <div class="num">NOUVEAU FORMULAIRE · CRÉATION DE MENU</div>
+  <h3>LAM — MON MENU, MA SIGNATURE</h3>
+  <p class="lead">Créez une carte menu qui vous ressemble. Choisissez vos plats, donnez un nom à votre création et observez chaque changement dans l’aperçu en direct avant d’envoyer votre demande.</p>
+ </div>
+ <form class="form" action="https://formsubmit.co/infolamevenementiels@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="NOUVELLE DEMANDE — CRÉATION DE CARTE MENU LAM">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="Département" value="LAM — MON MENU, MA SIGNATURE">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+  <div class="form-section"><h3>01 — Vos coordonnées et votre événement</h3><div class="fieldgrid">
+   <div class="field"><label>Nom complet *</label><input name="Nom complet" autocomplete="name" required></div>
+   <div class="field"><label>E-mail *</label><input type="email" name="E-mail" autocomplete="email" required></div>
+   <div class="field"><label>Téléphone / WhatsApp *</label><input type="tel" name="Téléphone / WhatsApp" autocomplete="tel" required></div>
+   <div class="field"><label>Type d’événement *</label><select name="Type d’événement" required><option value="">Sélectionner</option><option>Mariage</option><option>Anniversaire</option><option>Fiançailles</option><option>Baptême</option><option>Communion</option><option>Graduation</option><option>Gala</option><option>Événement professionnel</option><option>Dîner privé</option><option>Réception familiale</option><option>Autre</option></select></div>
+   <div class="field"><label>Date de l’événement</label><input type="date" name="Date de l’événement"></div>
+   <div class="field"><label>Nombre d’invités</label><input type="number" name="Nombre d’invités" min="1" placeholder="Ex. : 150"></div>
+  </div></div>
+  <div class="form-section"><h3>02 — Le nom de votre carte menu</h3><div class="fieldgrid">
+   <div class="field full"><label>Nom personnalisé de votre menu *</label><input id="menuTitleInput" name="Nom personnalisé du menu" required placeholder="Ex. : A & J WEDDING" value=""></div>
+   <div class="field full"><label>Sous-titre (facultatif)</label><input id="menuSubtitleInput" name="Sous-titre du menu" placeholder="Ex. : Wedding Reception"></div>
+   <div class="field"><label>Catégorie de carte menu</label><select id="menuCategoryInput" name="Catégorie de carte menu"><option>Carte Menu Simple</option><option>Dolce Vita</option><option>Old Money</option><option>Quiet Luxury</option><option>Royal & Prestige</option><option>Chic & Glamour</option><option>Moderne & Minimaliste</option><option>Vintage</option><option>Romantique</option><option>Tropical Luxury</option><option>Gastronomique</option></select></div>
+   <div class="field"><label>Langue du menu</label><select id="menuLanguageInput" name="Langue du menu"><option>Français</option><option>English</option><option>Kreyòl ayisyen</option><option>Français & English</option><option>Français & Kreyòl</option><option>Trilingue</option></select></div>
+  </div></div>
+  <div class="form-section"><h3>03 — Composition gastronomique</h3><div class="fieldgrid">
+   <div class="field full"><label>Entrées</label><textarea id="menuEntreesInput" name="Entrées" rows="2" placeholder="Écrivez les entrées souhaitées…"></textarea></div>
+   <div class="field full"><label>Plats principaux</label><textarea id="menuPlatsInput" name="Plats principaux" rows="2" placeholder="Écrivez les plats principaux…"></textarea></div>
+   <div class="field full"><label>Accompagnements</label><textarea id="menuSidesInput" name="Accompagnements" rows="2" placeholder="Riz, pâtes, légumes, gratins…"></textarea></div>
+   <div class="field full"><label>Desserts et pâtisseries</label><textarea id="menuDessertsInput" name="Desserts et pâtisseries" rows="2" placeholder="Gâteaux, tartes, mousses…"></textarea></div>
+   <div class="field full"><label>Boissons et cocktails</label><textarea id="menuDrinksInput" name="Boissons et cocktails" rows="2" placeholder="Jus naturels, boissons, cocktails sans alcool…"></textarea></div>
+   <div class="field"><label>Cuisine du monde / Fusion</label><select name="Cuisine du monde et fusion"><option>Haïtienne</option><option>Française</option><option>Italienne</option><option>Espagnole</option><option>Américaine</option><option>Mexicaine</option><option>Asiatique</option><option>Japonaise</option><option>Chinoise</option><option>Africaine</option><option>Antillaise</option><option>Méditerranéenne</option><option>Indienne</option><option>Libanaise</option><option>Créole</option><option>Gastronomique internationale</option><option>Fusion personnalisée</option></select></div>
+   <div class="field"><label>Type de service</label><select name="Type de service"><option>Buffet</option><option>Service à table</option><option>Cocktail dînatoire</option><option>Menu individuel</option></select></div>
+  </div></div>
+  <div class="form-section"><h3>04 — Background et design</h3><div class="fieldgrid">
+   <div class="field"><label>Background principal</label><select id="menuBackgroundInput" name="Background principal"><option value="#681D30">Rouge Bordeaux</option><option value="#F1E5D0">Crème & Champagne</option><option value="#CBB69A">Beige nude</option><option value="#171717">Noir & Gold</option><option value="#FFFFFF">Blanc élégant</option><option value="#D71920">Rouge vif</option><option value="#D9B4B9">Rose poudré</option><option value="#92749C">Mauve</option><option value="#78866A">Vert sauge</option><option value="#A8C832">Vert anis</option><option value="#78C9E8">Bleu ciel</option><option value="#173D80">Bleu royal</option><option value="#B08D57">Gold & Doré</option><option value="#AEB3BC">Argent & Silver</option></select></div>
+   <div class="field"><label>Motif / deuxième background</label><select id="menuMotifInput" name="Motif ou deuxième background"><option>Aucun</option><option>Cheetah</option><option>Léopard</option><option>Zèbre</option><option>Serpent</option><option>Floral & Botanique</option><option>Marbre</option><option>Gold & Doré</option><option>Champagne</option><option>Rouge Bordeaux</option><option>Noir</option><option>Crème</option><option>Tropical</option><option>Motif personnalisé</option></select></div>
+   <div class="field"><label>Style graphique</label><select id="menuStyleInput" name="Style graphique"><option>Old Money</option><option>Quiet Luxury</option><option>Royal & Prestige</option><option>Chic & Glamour</option><option>Moderne</option><option>Minimaliste</option><option>Vintage</option><option>Romantique</option><option>Tropical Luxury</option><option>Gastronomique</option></select></div>
+   <div class="field"><label>Format de la carte</label><select id="menuFormatInput" name="Format de la carte"><option>Portrait</option><option>Paysage</option><option>Recto verso</option><option>Menu plié</option><option>Format livret</option><option>Menu digital / QR Code</option></select></div>
+   <div class="field"><label>Logo</label><select name="Logo"><option>Avec logo LAM</option><option>Avec mon propre logo</option><option>Sans logo</option></select></div>
+   <div class="field"><label>Photos des plats</label><select name="Photos des plats"><option>Avec photos</option><option>Sans photos</option></select></div>
+   <div class="field full"><label>Importer une image ou un motif personnel (facultatif)</label><input id="menuImageInput" type="file" name="Image ou motif personnel" accept="image/*"></div>
+  </div></div>
+  <div class="form-section"><h3>05 — Préférences et demandes spéciales</h3><div class="fieldgrid">
+   <div class="field full"><label>Allergies et restrictions alimentaires</label><textarea name="Allergies et restrictions alimentaires" rows="2" placeholder="Indiquez les allergies ou régimes particuliers…"></textarea></div>
+   <div class="field"><label>Budget prévu (HTG)</label><input name="Budget prévu en HTG" type="number" min="0" placeholder="Facultatif"></div>
+   <div class="field full"><label>Autres demandes et précisions</label><textarea name="Autres demandes" rows="3" placeholder="Ajoutez vos idées, couleurs, détails et instructions…"></textarea></div>
+  </div></div>
+  <div class="form-section"><h3>06 — Aperçu de votre carte menu en direct</h3>
+   <p class="small">Chaque modification apportée aux champs ci-dessus actualise automatiquement cet aperçu. Le recto et le verso peuvent être consultés avant l’envoi.</p>
+   <div class="menu-live-preview-wrap">
+    <div id="menuLivePreview" class="menu-live-preview" data-motif="Aucun">
+     <img id="menuPreviewImage" alt="Image personnalisée du menu" hidden>
+     <div class="menu-preview-inner">
+      <div id="menuPreviewEvent" class="menu-preview-event">VOTRE ÉVÉNEMENT</div>
+      <h2 id="menuPreviewTitle">VOTRE NOM DE MENU</h2>
+      <p id="menuPreviewSubtitle">Votre sous-titre</p>
+      <div class="menu-preview-rule"></div>
+      <div id="menuPreviewFront">
+       <h3>MENU</h3>
+       <div class="menu-preview-group"><strong>ENTRÉES</strong><p id="menuPreviewEntrees">Vos entrées apparaîtront ici</p></div>
+       <div class="menu-preview-group"><strong>PLATS PRINCIPAUX</strong><p id="menuPreviewPlats">Vos plats apparaîtront ici</p></div>
+       <div class="menu-preview-group"><strong>ACCOMPAGNEMENTS</strong><p id="menuPreviewSides">Vos accompagnements apparaîtront ici</p></div>
+       <div class="menu-preview-group"><strong>DESSERTS & PÂTISSERIES</strong><p id="menuPreviewDesserts">Vos desserts apparaîtront ici</p></div>
+       <div class="menu-preview-group"><strong>BOISSONS</strong><p id="menuPreviewDrinks">Vos boissons apparaîtront ici</p></div>
+      </div>
+      <div id="menuPreviewBack" hidden><h3>INFORMATIONS</h3><p id="menuPreviewBackText">Les informations complémentaires de votre menu apparaîtront ici.</p></div>
+      <div class="menu-preview-rule"></div>
+      <div class="menu-preview-brand">LAM ÉVÉNEMENTIEL & EVENTS</div>
+      <div id="menuPreviewStyle" class="menu-preview-style">Old Money • Portrait • Français</div>
+     </div>
+    </div>
+    <div class="menu-preview-actions"><button class="btn" type="button" id="menuPreviewRecto">Voir le recto</button><button class="btn" type="button" id="menuPreviewVerso">Voir le verso</button></div>
+   </div>
+  </div>
+  <div class="form-section"><h3>07 — Confirmation</h3>
+   <label class="consent"><input type="checkbox" name="Confirmation aperçu" value="J’ai vérifié l’aperçu de ma carte menu" required>J’ai vérifié l’aperçu de ma carte menu et je confirme que les informations transmises correspondent à ma demande. *</label>
+   <label class="consent"><input type="checkbox" name="Consentement contact" value="J’accepte d’être contacté(e) par LAM" required>J’accepte que LAM ÉVÉNEMENTIEL & EVENTS me contacte au sujet de cette demande. *</label>
+   <p class="small">L’envoi constitue une demande de création et de devis. Le menu et les prestations seront confirmés après vérification par LAM.</p>
+  </div>
+  <button class="btn primary" type="submit">Envoyer ma création à LAM</button>
+ </form>
+</div>
+
+<div class="contactbox" style="margin-top:28px"><h3>UNE QUESTION AVANT DE CHOISIR ?</h3><p class="small">Notre équipe peut vous orienter vers la catégorie adaptée.</p><div class="contactline"><small>WhatsApp</small><a href="https://wa.me/50937469553">+509 37 46 9553</a></div><div class="contactline"><small>E-mail</small><a href="mailto:infolamevenementiels@gmail.com">infolamevenementiels@gmail.com</a></div></div>
 </div></section>
 
 <script id="lam-inspiration-form-handler">/* Envoi natif FormSubmit : les champs et la signature partent ensemble. */</script>
 
 <script>
 function showEventForm(target){
-  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','minorForm','charcuterieForm','weddingForm','coutureForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm'];
+  var ids=['prestigeForm','privateForm','corporateForm','kidsForm','minorForm','charcuterieForm','weddingForm','coutureForm','cuisineForm','decorationForm','patisserieForm','locationForm','modificationForm','menuCreatorForm'];
   ids.forEach(function(id){var panel=document.getElementById(id);if(panel)panel.hidden=(id!==target);});
   document.querySelectorAll('[data-show-form]').forEach(function(button){
     var active=button.getAttribute('data-show-form')===target;
@@ -3249,6 +3335,64 @@ html{scroll-padding-top:86px}
 
 
 
+<style id="lam-menu-creator-styles">
+#menuCreatorForm .menu-live-preview-wrap{max-width:720px;margin:18px auto}
+#menuCreatorForm .menu-live-preview{position:relative;isolation:isolate;overflow:hidden;min-height:520px;padding:30px 22px;background:#681D30;color:#f7e8cf;border:8px double #c9a65b;box-shadow:0 12px 35px #0002;text-align:center}
+#menuCreatorForm .menu-live-preview[data-motif="Cheetah"],#menuCreatorForm .menu-live-preview[data-motif="Léopard"]{background-image:radial-gradient(ellipse at 18% 18%,#2a170f 0 3px,transparent 4px),radial-gradient(ellipse at 78% 26%,#2a170f 0 4px,transparent 5px),radial-gradient(ellipse at 35% 72%,#2a170f 0 4px,transparent 5px),radial-gradient(ellipse at 88% 83%,#2a170f 0 3px,transparent 4px),radial-gradient(ellipse at 56% 42%,#2a170f 0 2px,transparent 3px);background-size:95px 90px,120px 110px,110px 100px,100px 120px,80px 90px}
+#menuCreatorForm .menu-live-preview[data-motif="Zèbre"]{background-image:repeating-linear-gradient(135deg,transparent 0 18px,#17171755 19px 23px,transparent 24px 42px)}
+#menuCreatorForm .menu-live-preview[data-motif="Marbre"]{background-image:repeating-linear-gradient(125deg,transparent 0 38px,#fff5 39px 41px,transparent 42px 78px)}
+#menuCreatorForm .menu-live-preview[data-motif="Floral & Botanique"]{background-image:radial-gradient(circle at 15% 15%,#ffffff33 0 9px,transparent 10px),radial-gradient(circle at 85% 82%,#ffffff33 0 12px,transparent 13px)}
+#menuCreatorForm .menu-live-preview-inner{position:relative;z-index:2}
+#menuCreatorForm .menu-live-preview #menuPreviewImage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;z-index:-1}
+#menuCreatorForm .menu-preview-event{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}
+#menuCreatorForm #menuPreviewTitle{font:500 clamp(1.8rem,5vw,2.7rem)/1.12 Georgia,serif;letter-spacing:.04em;margin:28px 0 8px;color:inherit}
+#menuCreatorForm #menuPreviewSubtitle{font:italic 1rem Georgia,serif;margin-bottom:22px}
+#menuCreatorForm .menu-preview-rule{height:1px;background:currentColor;opacity:.65;max-width:220px;margin:18px auto}
+#menuCreatorForm #menuPreviewFront h3,#menuCreatorForm #menuPreviewBack h3{font:500 1.2rem Georgia,serif;letter-spacing:.2em;margin:20px 0}
+#menuCreatorForm .menu-preview-group{margin:17px auto;max-width:500px}
+#menuCreatorForm .menu-preview-group strong{font-size:.68rem;letter-spacing:.16em}
+#menuCreatorForm .menu-preview-group p{font: .9rem/1.5 Georgia,serif;margin:5px 0;white-space:pre-line}
+#menuCreatorForm .menu-preview-brand{font-size:.64rem;letter-spacing:.16em}
+#menuCreatorForm .menu-preview-style{font-size:.6rem;letter-spacing:.08em;margin-top:8px;opacity:.8}
+#menuCreatorForm .menu-preview-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+@media(max-width:600px){#menuCreatorForm .menu-live-preview{min-height:470px;padding:24px 14px;border-width:5px}#menuCreatorForm .menu-preview-group p{font-size:.82rem}}
+</style>
+<script id="lam-menu-creator-live-preview">
+(function(){
+ function initMenuCreator(){
+  var root=document.getElementById('menuCreatorForm');if(!root||root.dataset.previewReady==='1')return;root.dataset.previewReady='1';
+  var $=function(id){return document.getElementById(id)};
+  var form=root.querySelector('form'),preview=$('menuLivePreview'),image=$('menuPreviewImage');
+  if(!form||!preview)return;
+  var val=function(id,fallback){var el=$(id);return el&&el.value.trim()?el.value.trim():fallback};
+  function update(){
+   $('menuPreviewTitle').textContent=val('menuTitleInput','VOTRE NOM DE MENU');
+   $('menuPreviewSubtitle').textContent=val('menuSubtitleInput','Votre sous-titre');
+   $('menuPreviewEvent').textContent=(form.querySelector('[name="Type d’événement"]')||{}).value||'VOTRE ÉVÉNEMENT';
+   $('menuPreviewEntrees').textContent=val('menuEntreesInput','Vos entrées apparaîtront ici');
+   $('menuPreviewPlats').textContent=val('menuPlatsInput','Vos plats apparaîtront ici');
+   $('menuPreviewSides').textContent=val('menuSidesInput','Vos accompagnements apparaîtront ici');
+   $('menuPreviewDesserts').textContent=val('menuDessertsInput','Vos desserts apparaîtront ici');
+   $('menuPreviewDrinks').textContent=val('menuDrinksInput','Vos boissons apparaîtront ici');
+   var color=$('menuBackgroundInput').value;preview.style.backgroundColor=color;
+   preview.style.color=(color==='#FFFFFF'||color==='#F1E5D0'||color==='#CBB69A'||color==='#D9B4B9')?'#614a30':'#f7e8cf';
+   preview.style.borderColor=(color==='#FFFFFF'||color==='#F1E5D0'||color==='#CBB69A')?'#b08d57':'#d8b76c';
+   preview.dataset.motif=$('menuMotifInput').value;
+   $('menuPreviewStyle').textContent=val('menuStyleInput','Old Money')+' • '+val('menuFormatInput','Portrait')+' • '+val('menuLanguageInput','Français');
+   var eventDate=(form.querySelector('[name="Date de l’événement"]')||{}).value||'Date à préciser';
+   var guests=(form.querySelector('[name="Nombre d’invités"]')||{}).value||'À préciser';
+   $('menuPreviewBackText').textContent='Événement : '+$('menuPreviewEvent').textContent+'\nDate : '+eventDate+'\nNombre d’invités : '+guests+'\nMerci de célébrer avec nous.';
+  }
+  form.addEventListener('input',update);form.addEventListener('change',update);
+  $('menuPreviewRecto').addEventListener('click',function(){$('menuPreviewFront').hidden=false;$('menuPreviewBack').hidden=true;});
+  $('menuPreviewVerso').addEventListener('click',function(){$('menuPreviewFront').hidden=true;$('menuPreviewBack').hidden=false;});
+  $('menuImageInput').addEventListener('change',function(e){var file=e.target.files&&e.target.files[0];if(!file){image.hidden=true;image.removeAttribute('src');return;}if(!file.type.match(/^image\//)){alert('Veuillez sélectionner une image.');e.target.value='';return;}var reader=new FileReader();reader.onload=function(ev){image.src=ev.target.result;image.hidden=false;};reader.readAsDataURL(file);});
+  update();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initMenuCreator);else initMenuCreator();
+ document.addEventListener('click',function(e){if(e.target.closest('[data-show-form="menuCreatorForm"]'))setTimeout(initMenuCreator,80);});
+})();
+</script>
 </body>
 </html>
 <style id="budget-color-refresh">#devis .form-section:has(select[name="Devise souhaitée"]){background:linear-gradient(135deg,#eef8ef,#edf3ff 54%,#f0f1f3)!important;border:2px solid #173a78!important;border-left:7px solid #278447!important;border-radius:16px!important;padding:22px!important;box-shadow:0 8px 24px #173a781c!important}#devis .form-section:has(select[name="Devise souhaitée"]) h3{color:#278447!important;border-bottom:2px solid #173a78!important;padding-bottom:10px!important}#devis .form-section:has(select[name="Devise souhaitée"]) label{color:#173a78!important}#devis .form-section:has(select[name="Devise souhaitée"]) select,#devis .form-section:has(select[name="Devise souhaitée"]) input{border:1.5px solid #173a7866!important;color:#278447!important;background:#fff!important}#devis .form-section:has(select[name="Devise souhaitée"]) select:focus,#devis .form-section:has(select[name="Devise souhaitée"]) input:focus{border-color:#278447!important;box-shadow:0 0 0 3px #27844724!important}</style>
