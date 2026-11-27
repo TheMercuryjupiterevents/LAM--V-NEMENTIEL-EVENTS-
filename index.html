@@ -974,6 +974,25 @@ html,body{max-width:100%;overflow-x:hidden}
 #lam-group .lam-group-footer span:nth-child(2){color:var(--lg-red)}
 @media(max-width:760px){#lam-group .lam-group-heading{grid-template-columns:1fr;gap:12px;margin-bottom:24px}#lam-group .lam-group-grid{grid-template-columns:1fr;gap:13px}#lam-group .lam-division{padding:22px 20px}#lam-group .lam-group-footer{gap:8px 13px;font-size:.6rem}}
 </style>
+
+<script id="lam-language-animation-continuity">
+/* Keep the same fast page experience when visitors switch languages.
+   The destination page still runs its own animations; the French welcome
+   intro is skipped on language switches so it does not replay unexpectedly. */
+(function () {
+  document.addEventListener("click", function (event) {
+    const link = event.target && event.target.closest
+      ? event.target.closest('a[lang="fr"], a[lang="en"], a[lang="ht"]')
+      : null;
+    if (!link || !link.href) return;
+    try {
+      const destination = new URL(link.href, window.location.href);
+      destination.searchParams.set("entered", "1");
+      link.href = destination.href;
+    } catch (error) {}
+  }, true);
+})();
+</script>
 </head>
 <body>
 
